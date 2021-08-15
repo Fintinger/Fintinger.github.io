@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ES6 on Archai &#39;s blog</title>
+    <link>https://www.fintinger.site/tags/es6/</link>
+    <description>Recent content in ES6 on Archai &#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/es6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Es6中的class类</title>
+      <link>https://www.fintinger.site/p/es6%E4%B8%AD%E7%9A%84class%E7%B1%BB/</link>
+      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/es6%E4%B8%AD%E7%9A%84class%E7%B1%BB/</guid>
+      <description>class实质上是对js中继承的封装组合，用一种“语法糖”的形式实现原型链的继承
+ 静态属性/方法  静态方法/属性是指，函数作为对象时，定义在其原型(__proto__)上的方法，而需要实例化继承的动态方法是定义在其原型对象(prototype) 中的，静态方法中的参数都是固定的，直接通过整个构造函数调用，实例化对象并不会继承；而动态方法中的参数会因为实例化对象的不同而产生改变，实例化对象默认是继承的。
+ function User(){} User.__proto__.show=function(){} console.dir(User) //这里的show()方法就属于静态方法 在class中，利用static定义静态属性/方法
+class Admin{ static show(){}//__proto__中  show(){}//prototype中 } console.dir(Admin) 关于class一些注意点  class中声明的方法在prototype对象中，由于默认的属性特征设置，这些方法是不可遍历的！  class Admin{ show(){} } console.log( Object.getOwnPropertyDescriptor( Admin.prototype,&amp;#34;show&amp;#34; )) //enumerable: false class中声明方法时，方法之间不用,隔开！ class中默认开启严格模式  class中的属性保护  主要可以通过三种途径实现属性保护：Symbol,weakmap,私有属性
+ 1.Symbol /*利用Symbol创建一个受保护的属性的集合对象,无法直接获取，只能通过自定义的get/set方法*/ const protects = Symbol(&amp;#39;受保护的属性&amp;#39;) class User { constructor(name) { this.name = name this[protects] = { host: &amp;#39;https://www.fintinger.xyz&amp;#39;, token: &amp;#39;5574f1b81bbe4e3847e7a83c0a84a442&amp;#39;, password: &amp;#39;123456&amp;#39; } } set host(url) { if (!</description>
+    </item>
+    
+    <item>
+      <title>ES6之Promise用法小结</title>
+      <link>https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Tue, 18 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/</guid>
+      <description>Promise 对象用于表示一个异步操作的最终完成 (或失败), 及其结果值。其目的主要是解决以往回调中嵌套回调的&amp;quot;嵌套地狱&amp;quot;问题，使代码可读性更好，更美观!
+基本用法 对于一个标准的Prommise，其基本写法为:
+new Promise(function (resolve, reject) { //do something...  //success  resolve(&amp;#39;success&amp;#39;) //fail &amp;amp; reject  // reject(&amp;#39;rejected&amp;#39;) *resolve和reject只能出现一个 }).then( function (value) { //if succeed,do something...  }, function (reason) { //if fail &amp;amp; reject,do something...  } ) 如果采用ES6的箭头函数写法，则为:
+new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //reject(&amp;#39;rejected&amp;#39;) }).then( value =&amp;gt; {}, reason =&amp;gt; {} )  始终牢记，前一个Promise()必须是在后面一个.then()中处理，
+如果前一个Promsie()中没有改变状态，即没有resolve()/reject()方法，后面的.then就不会针对这个Promsie()处理
+ Promise错误处理  Promise()中的错误处理有两种方式,.then()和.catch()
+ .then()  特点： &amp;ldquo;一一对应&amp;rdquo;，即一个then()对应处理上一个Promise 用法：  new Promise((resolve, reject) =&amp;gt; { // 12+p  // throw new Error(&amp;#39;fail&amp;#39;)  reject(&amp;#39;失败&amp;#39;) }).</description>
+    </item>
+    
+    <item>
+      <title>ES6中新增关于Array的方法</title>
+      <link>https://www.fintinger.site/p/es6%E4%B8%AD%E6%96%B0%E5%A2%9E%E5%85%B3%E4%BA%8Earray%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/es6%E4%B8%AD%E6%96%B0%E5%A2%9E%E5%85%B3%E4%BA%8Earray%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <description>在javascript中，Array()经常用到，利用ES6中的一些新特性会让数组的处理更加方便快捷
+1.迭代空数组 直接创建一个数组
+const arr=new Array(4); //Output:[undefined，undefined，undefined，undefined] 利用map方法，转化成新的数组，企图得到 [0,1,2,3] 数组
+const arr=new Array(4); arr.map((ele,index) =&amp;gt; index); //Output:[undefined，undefined，undefined，undefined] 解决这个问题可以在创建数组时用到Array.apply
+ apply与call类似，都是用来继承父类的方法的，不同之处是：
+  call() 方法分别接受参数。person.fullName.apply(person1, [&amp;quot;Oslo&amp;quot;, &amp;quot;Norway&amp;quot;]);
+  apply() 方法接受数组形式的参数.	person.fullName.call(person1, &amp;quot;Oslo&amp;quot;, &amp;quot;Norway&amp;quot;);
+  如果要使用数组而不是参数列表，则 apply() 方法非常方便。
+ const arr = Array.apply(null, new Array(4)); arr.map((ele,index) =&amp;gt; index); //Output:[0,1,2,3] 由此，我们可以创建一个指定最大值、最小值、或者长度生成指定数列的方法
+/** * 生成自定义的连续数列 * @param{Number}min * @param{Number}max * @param{Number}len */ function newArr({min = null, max = null, len = null} = {}) { let newArray=[], skip = min if (len == null) {len = max - min + 1} if (min == null) {skip = -max} const arr = Array.</description>
+    </item>
+    
+  </channel>
+</rss>

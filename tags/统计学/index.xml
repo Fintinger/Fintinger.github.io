@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>统计学 on Archai &#39;s blog</title>
+    <link>https://www.fintinger.site/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/</link>
+    <description>Recent content in 统计学 on Archai &#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>统计学期末知识总结</title>
+      <link>https://www.fintinger.site/p/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%9C%9F%E6%9C%AB%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%9C%9F%E6%9C%AB%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</guid>
+      <description>第一章 导 论 1.什么是统计学  统计学是收集、处理、分析、解释数据并从数据中得出结论的科学 数据分析所用的方法可分为描述统计方法和推断统计方法  2.参数和统计量   参数：总体特征，所关心的参数通常是总体平均数、总体标准差、总体比例等
+ 由于总体数据通常是不知道的，所以参数是一个未知的常量-
+   统计量：个体特征，所关心的参数通常是样本平均数、样本标准差、样本比例等
+ 由于样本是已经抽出来的，所以统计量总是知道的
+   第二章 数据的搜集 1.数据的来源  **间接来源（二手数据）**与研究内容有关的原信息已经存在，我们只是重新加工、整理，使之成为分析可用的数据，这称为间接来源的数据 **直接来源（一手数据）**通过调查方法获得的为调查数据，实验得到为实验数据，都是直接来源的数据  2.数据误差  抽样误差：由抽样的随机性引起的样本结果与总体真值之间的差异 非抽样误差：抽样框误差、回答误差、无回答误差、调查员误差、测量误差  第三章 数据的图表展示 1.数据预处理  原始数据：完整性、准确性 二手数据：适用性、时效性  2.分类数据图示 ​  1&amp;gt; 组数 5≤ K ≤15
+2&amp;gt; 组距 组距=(Max-Min)/K
+3&amp;gt; 为解决不重的问题，统计分组习惯上规定“上组限不在内”，即当相邻两组的上下限重叠时，恰好等于某一组上限的变量值不算在本组内，而计算在下一组内。即a≤ x &amp;lt;b
+ 第四章 数据的概括性度量 1.集中趋势的度量   众数不受极端值影响，具有不唯一性 中位数不受极端值影响，数据分布偏斜程度较大时 平均数易受极端值影响   2.离散程度的度量    标准分数：也称标准化值或z分数（将数据平均值变为0，标准差为1） $$ z_i=\frac{x_i-\overline{x}}{s} $$</description>
+    </item>
+    
+  </channel>
+</rss>

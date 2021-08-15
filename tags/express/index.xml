@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Express on Archai &#39;s blog</title>
+    <link>https://www.fintinger.site/tags/express/</link>
+    <description>Recent content in Express on Archai &#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 06 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/express/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ajax基础及Express框架基本使用</title>
+      <link>https://www.fintinger.site/p/ajax%E5%9F%BA%E7%A1%80%E5%8F%8Aexpress%E6%A1%86%E6%9E%B6%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Thu, 06 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/ajax%E5%9F%BA%E7%A1%80%E5%8F%8Aexpress%E6%A1%86%E6%9E%B6%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
+      <description>Baike  Ajax 即“AsynchronousJavascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式、快速动态网页应用的网页开发技术，无需重新加载整个网页的情况下，能够更新部分网页的技术。
+通过在后台与服务器进行少量数据交换，Ajax 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。&amp;mdash;百度百科
+ 请求报文 格式以及参数如下
+行 GET / HTTP/1.1 头 Host: fintinger.xyz Cookie: keyword=xyz Content-type: application/x-www-form-urlencoded User-agent: Chrome 83 空行 (必须有) 体 [GET]:空 [POST]:空/username=admin&amp;amp;password=admin 响应报文 格式以及参数如下
+行 HTTP/1.1 200 Ok 头 Content-Type: text/html; charset=utf-8 Content-Length: 22 Content-encoding: gzip 空行 (必须有) 体 &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;Hello!&amp;lt;/h1&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; Express框架使用 //1.引入express const express=require(&amp;#39;express&amp;#39;) //2.创建应用对象 const app=express() //3.创建路由规则 /** * request 请求报文封装 * response 响应报文封装 */ app.</description>
+    </item>
+    
+  </channel>
+</rss>

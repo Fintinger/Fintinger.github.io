@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='   基本寻址方式 特 征 优 点 缺 点 备 注     隐含寻址 操作数的存放地由操作码决定      立即寻址 操作数直接在指令中 加快执行速度 增加指令长度，不方便修改操作数 适用提供常数，设定初始值   寄存器寻址 操作数在指令指定的寄存器中 方便修改，访问寄存器加快指令执行，缩短指令长度，编程更灵活     直接寻址 操作数地址在指令中，操作数在主存单元中  指令字较长，不方便地址修改    间接寻址 操作数地址的地址在指令中，操作数在主存中 方便修改指针，编程更灵活 访问两次主存获取操作数，降低执行速度 形式地址，有效地址EA(=操作数地址)   寄存器间接寻址 操作数地址在指令指定的寄存器中，操作数在主存单元中 压缩指令长度，修改寄存器内容就可以修改主存地址指针  方便编写循环程序   相对寻址 操作数地址由PC和指令提供的地址偏移量决定,操作数在主存单元中   EA=PC&#43;D，适用与地址无关的程序设计   基址寻址 操作数地址由基址寄存器(RB)和指令提供的地址偏移量决定，操作数在主存单元中 缩短指令长度，扩大寻址空间  大型计算机，用户的逻辑地址→主存的物理地址，EA=(RB)&#43;D   变址寻址 操作数地址由变址寄存器(RI)和指令提供的地址偏移量决定，操作数在主存单元中   寻址到操作数RI内容(地址)自动修改，EA=(RI)&#43;D   堆栈寻址 寻址方式由指令操作码决定   适用涉及堆栈操作的指令，EA=(SP)    '><title>寻址方式</title>
+
+<link rel='canonical' href='https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/'>
+
+<link rel="stylesheet" href="/scss/style.min.css">
+
+<meta property='og:title' content='寻址方式'>
+<meta property='og:description' content='   基本寻址方式 特 征 优 点 缺 点 备 注     隐含寻址 操作数的存放地由操作码决定      立即寻址 操作数直接在指令中 加快执行速度 增加指令长度，不方便修改操作数 适用提供常数，设定初始值   寄存器寻址 操作数在指令指定的寄存器中 方便修改，访问寄存器加快指令执行，缩短指令长度，编程更灵活     直接寻址 操作数地址在指令中，操作数在主存单元中  指令字较长，不方便地址修改    间接寻址 操作数地址的地址在指令中，操作数在主存中 方便修改指针，编程更灵活 访问两次主存获取操作数，降低执行速度 形式地址，有效地址EA(=操作数地址)   寄存器间接寻址 操作数地址在指令指定的寄存器中，操作数在主存单元中 压缩指令长度，修改寄存器内容就可以修改主存地址指针  方便编写循环程序   相对寻址 操作数地址由PC和指令提供的地址偏移量决定,操作数在主存单元中   EA=PC&#43;D，适用与地址无关的程序设计   基址寻址 操作数地址由基址寄存器(RB)和指令提供的地址偏移量决定，操作数在主存单元中 缩短指令长度，扩大寻址空间  大型计算机，用户的逻辑地址→主存的物理地址，EA=(RB)&#43;D   变址寻址 操作数地址由变址寄存器(RI)和指令提供的地址偏移量决定，操作数在主存单元中   寻址到操作数RI内容(地址)自动修改，EA=(RI)&#43;D   堆栈寻址 寻址方式由指令操作码决定   适用涉及堆栈操作的指令，EA=(SP)    '>
+<meta property='og:url' content='https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/'>
+<meta property='og:site_name' content='Archai &#39;s blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='计算机组成原理' /><meta property='article:published_time' content='2021-07-22T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-07-22T00:00:00&#43;00:00'/><meta property='og:image' content='https://picsum.photos/seed/xunzhifangsh/640/360' />
+<meta name="twitter:title" content="寻址方式">
+<meta name="twitter:description" content="   基本寻址方式 特 征 优 点 缺 点 备 注     隐含寻址 操作数的存放地由操作码决定      立即寻址 操作数直接在指令中 加快执行速度 增加指令长度，不方便修改操作数 适用提供常数，设定初始值   寄存器寻址 操作数在指令指定的寄存器中 方便修改，访问寄存器加快指令执行，缩短指令长度，编程更灵活     直接寻址 操作数地址在指令中，操作数在主存单元中  指令字较长，不方便地址修改    间接寻址 操作数地址的地址在指令中，操作数在主存中 方便修改指针，编程更灵活 访问两次主存获取操作数，降低执行速度 形式地址，有效地址EA(=操作数地址)   寄存器间接寻址 操作数地址在指令指定的寄存器中，操作数在主存单元中 压缩指令长度，修改寄存器内容就可以修改主存地址指针  方便编写循环程序   相对寻址 操作数地址由PC和指令提供的地址偏移量决定,操作数在主存单元中   EA=PC&#43;D，适用与地址无关的程序设计   基址寻址 操作数地址由基址寄存器(RB)和指令提供的地址偏移量决定，操作数在主存单元中 缩短指令长度，扩大寻址空间  大型计算机，用户的逻辑地址→主存的物理地址，EA=(RB)&#43;D   变址寻址 操作数地址由变址寄存器(RI)和指令提供的地址偏移量决定，操作数在主存单元中   寻址到操作数RI内容(地址)自动修改，EA=(RI)&#43;D   堆栈寻址 寻址方式由指令操作码决定   适用涉及堆栈操作的指令，EA=(SP)    "><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://picsum.photos/seed/xunzhifangsh/640/360' />
+    <link rel="shortcut icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico" />
+
+
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                
+                    <img src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+
+                
+                    <span class="emoji">🤩</span>
+                
+            </figure>
+            
+        
+        <h1 class="site-name"><a href="https://www.fintinger.site">Archai &#39;s blog</a></h1>
+        <h2 class="site-description">Never knows tomorrow...</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/">
+            
+            <img src="https://picsum.photos/seed/xunzhifangsh/640/360" loading="lazy" alt="Featured image of post 寻址方式" />
+            
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%90%8E%E7%AB%AF/" >
+                后端
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/">寻址方式</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jul 22, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 min read
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <table>
+<thead>
+<tr>
+<th>基本寻址方式</th>
+<th align="left">特  征</th>
+<th align="left">优  点</th>
+<th align="left">缺  点</th>
+<th>备  注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>隐含寻址</td>
+<td align="left">操作数的存放地由操作码决定</td>
+<td align="left"></td>
+<td align="left"></td>
+<td></td>
+</tr>
+<tr>
+<td>立即寻址</td>
+<td align="left">操作数直接在指令中</td>
+<td align="left">加快执行速度</td>
+<td align="left">增加指令长度，不方便修改操作数</td>
+<td>适用提供常数，设定初始值</td>
+</tr>
+<tr>
+<td>寄存器寻址</td>
+<td align="left">操作数在指令指定的寄存器中</td>
+<td align="left">方便修改，访问寄存器加快指令执行，缩短指令长度，编程更灵活</td>
+<td align="left"></td>
+<td></td>
+</tr>
+<tr>
+<td>直接寻址</td>
+<td align="left">操作数地址在指令中，操作数在主存单元中</td>
+<td align="left"></td>
+<td align="left">指令字较长，不方便地址修改</td>
+<td></td>
+</tr>
+<tr>
+<td>间接寻址</td>
+<td align="left">操作数地址的地址在指令中，操作数在主存中</td>
+<td align="left">方便修改指针，编程更灵活</td>
+<td align="left">访问两次主存获取操作数，降低执行速度</td>
+<td>形式地址，有效地址EA(=操作数地址)</td>
+</tr>
+<tr>
+<td>寄存器间接寻址</td>
+<td align="left">操作数地址在指令指定的寄存器中，操作数在主存单元中</td>
+<td align="left">压缩指令长度，修改寄存器内容就可以修改主存地址指针</td>
+<td align="left"></td>
+<td>方便编写循环程序</td>
+</tr>
+<tr>
+<td>相对寻址</td>
+<td align="left">操作数地址由PC和指令提供的地址偏移量决定,操作数在主存单元中</td>
+<td align="left"></td>
+<td align="left"></td>
+<td>EA=PC+D，适用与地址无关的程序设计</td>
+</tr>
+<tr>
+<td>基址寻址</td>
+<td align="left">操作数地址由基址寄存器(RB)和指令提供的地址偏移量决定，操作数在主存单元中</td>
+<td align="left">缩短指令长度，扩大寻址空间</td>
+<td align="left"></td>
+<td>大型计算机，用户的逻辑地址→主存的物理地址，EA=(RB)+D</td>
+</tr>
+<tr>
+<td>变址寻址</td>
+<td align="left">操作数地址由变址寄存器(RI)和指令提供的地址偏移量决定，操作数在主存单元中</td>
+<td align="left"></td>
+<td align="left"></td>
+<td>寻址到操作数RI内容(地址)自动修改，EA=(RI)+D</td>
+</tr>
+<tr>
+<td>堆栈寻址</td>
+<td align="left">寻址方式由指令操作码决定</td>
+<td align="left"></td>
+<td align="left"></td>
+<td>适用涉及堆栈操作的指令，EA=(SP)</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210722162708.JPG" alt="结构图示"  /></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/%E5%A4%96%E9%83%A8%E6%8E%92%E5%BA%8F%E7%9B%B8%E5%85%B3/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://picsum.photos/seed/waibupaixu/640/360" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/waibupaixu/640/360"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">外部排序相关</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://picsum.photos/seed/paixu/640/360" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/paixu/640/360"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">排序算法相关</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">查找算法相关</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">图的存储</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">图的应用</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    <script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://pvhtgopk.lc-cn-n1-shared.com","visitor":true});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2018 - 
+        
+        2021 Archai &#39;s blog
+    </section>
+    
+    <section class="powerby">
+        
+            Archai <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>\
+
+<script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.8/clipboard.js"></script>
+<script>
+    let pres = document.querySelectorAll("pre");
+    let copy = `
+<svg t="1628559239763" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4588" width="16" height="16"><path d="M756.537 170.667H109.532c-55.02 0-99.343 44.322-99.343 99.343v647.005c0 55.02 44.322 99.343 99.343 99.343h647.005c55.021 0 99.344-44.322 99.344-99.343V270.01c0-55.02-44.323-99.343-99.344-99.343z m22.926 746.348a22.83 22.83 0 0 1-22.926 22.925H109.532a22.83 22.83 0 0 1-22.925-22.925V270.01a22.83 22.83 0 0 1 22.925-22.925h647.005a22.83 22.83 0 0 1 22.926 22.925v647.005z" p-id="4589"></path><path d="M914.468 12.736H267.463c-20.888 0-38.21 17.322-38.21 38.21s17.322 38.208 38.21 38.208h647.005a22.83 22.83 0 0 1 22.925 22.926v647.005c0 20.887 17.321 38.209 38.209 38.209s38.209-17.322 38.209-38.21V112.08c0-55.021-44.322-99.344-99.343-99.344z" p-id="4590"></path></svg>`
+    let tick = `
+<svg t="1628558717330" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3410" width="16" height="16"><path d="M512 0C228.430769 0 0 228.430769 0 512s228.430769 512 512 512 512-228.430769 512-512S795.569231 0 512 0z m0 945.230769C271.753846 945.230769 78.769231 752.246154 78.769231 512S271.753846 78.769231 512 78.769231s433.230769 192.984615 433.230769 433.230769-192.984615 433.230769-433.230769 433.230769z" p-id="3411" fill="#07a35a"></path><path d="M716.8 330.830769l-208.738462 248.123077c-15.753846 15.753846-43.323077 19.692308-59.076923 7.876923L299.323077 472.615385c-15.753846-11.815385-43.323077-7.876923-55.138462 7.876923-11.815385 15.753846-7.876923 43.323077 7.876923 55.138461l149.661539 114.215385c19.692308 15.753846 47.261538 23.630769 74.830769 23.630769 35.446154 0 70.892308-15.753846 94.523077-43.323077l208.738462-248.123077c15.753846-15.753846 11.815385-43.323077-3.938462-55.138461-19.692308-15.753846-43.323077-15.753846-59.076923 3.938461z" p-id="3412" fill="#07a35a"></path></svg>`
+
+
+    pres.forEach(e => {
+        e.insertAdjacentHTML('beforeend', `<button class="cp_btn">` + copy + `</button>`)
+    })
+    let clp = new ClipboardJS('.cp_btn', {
+        target: function (trigger) {
+            return trigger.previousElementSibling;
+        }
+    });
+    clp.on('success', function (e) {
+        let clpEl=e;
+        e.trigger.innerHTML = tick;
+        e.trigger.parentElement.onmouseleave = _ => {
+            clpEl.trigger.innerHTML = copy
+            clpEl.clearSelection();
+        }
+        // console.info('Action:', e.action);
+        // console.info('Text:', e.text);
+        // console.info('Trigger:', e.trigger);
+        // e.clearSelection();
+    });
+
+    clp.on('error', function (e) {
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+    });
+</script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

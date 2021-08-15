@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Map类型 1.属性 👉 set() 设置值
+let map = new Map() let fn = function () {console.log(&amp;#39;this is function&amp;#39;)} let user = {name: &amp;#39;jqf&amp;#39;, age: 18} map.set(&amp;#39;key&amp;#39;, &amp;#39;value&amp;#39;) map.set(fn, &amp;#39;function&amp;#39;) map.set(user, &amp;#39;object&amp;#39;) console.log(map); /*Map(3){&amp;#34;key&amp;#34; =&amp;gt; &amp;#34;value&amp;#34;, ƒ =&amp;gt; &amp;#34;function&amp;#34;, {…} =&amp;gt; &amp;#34;object&amp;#34;}*/ 注意： Map类型，字符串、函数、对象都可以作为key设置
+👉 size Map长度
+console.log(map.size);//3 👉get() 获取值
+console.log(map.get(fn));//function  //通过key获取value 👉 delete() / clear() 删除某个，清空Map
+console.log(map.delete(fn));//true console.log(map); /*Map(3){&amp;#34;key&amp;#34; =&amp;gt; &amp;#34;value&amp;#34;, {…} =&amp;gt; &amp;#34;object&amp;#34;}*/ 👉 has() 是否有某个key
+console.log(map.has(user));//true 2.遍历 👉forEach(val,key,map)'><title>JavaScript基础之Map与Weakmap类型</title>
+
+<link rel='canonical' href='https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bmap%E4%B8%8Eweakmap%E7%B1%BB%E5%9E%8B/'>
+
+<link rel="stylesheet" href="/scss/style.min.css">
+
+<meta property='og:title' content='JavaScript基础之Map与Weakmap类型'>
+<meta property='og:description' content='Map类型 1.属性 👉 set() 设置值
+let map = new Map() let fn = function () {console.log(&amp;#39;this is function&amp;#39;)} let user = {name: &amp;#39;jqf&amp;#39;, age: 18} map.set(&amp;#39;key&amp;#39;, &amp;#39;value&amp;#39;) map.set(fn, &amp;#39;function&amp;#39;) map.set(user, &amp;#39;object&amp;#39;) console.log(map); /*Map(3){&amp;#34;key&amp;#34; =&amp;gt; &amp;#34;value&amp;#34;, ƒ =&amp;gt; &amp;#34;function&amp;#34;, {…} =&amp;gt; &amp;#34;object&amp;#34;}*/ 注意： Map类型，字符串、函数、对象都可以作为key设置
+👉 size Map长度
+console.log(map.size);//3 👉get() 获取值
+console.log(map.get(fn));//function  //通过key获取value 👉 delete() / clear() 删除某个，清空Map
+console.log(map.delete(fn));//true console.log(map); /*Map(3){&amp;#34;key&amp;#34; =&amp;gt; &amp;#34;value&amp;#34;, {…} =&amp;gt; &amp;#34;object&amp;#34;}*/ 👉 has() 是否有某个key
+console.log(map.has(user));//true 2.遍历 👉forEach(val,key,map)'>
+<meta property='og:url' content='https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bmap%E4%B8%8Eweakmap%E7%B1%BB%E5%9E%8B/'>
+<meta property='og:site_name' content='Archai &#39;s blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Javascript' /><meta property='article:published_time' content='2020-08-26T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-08-26T00:00:00&#43;00:00'/><meta property='og:image' content='https://www.fintinger.site/img/defaultImg.jpg' />
+<meta name="twitter:title" content="JavaScript基础之Map与Weakmap类型">
+<meta name="twitter:description" content="Map类型 1.属性 👉 set() 设置值
+let map = new Map() let fn = function () {console.log(&amp;#39;this is function&amp;#39;)} let user = {name: &amp;#39;jqf&amp;#39;, age: 18} map.set(&amp;#39;key&amp;#39;, &amp;#39;value&amp;#39;) map.set(fn, &amp;#39;function&amp;#39;) map.set(user, &amp;#39;object&amp;#39;) console.log(map); /*Map(3){&amp;#34;key&amp;#34; =&amp;gt; &amp;#34;value&amp;#34;, ƒ =&amp;gt; &amp;#34;function&amp;#34;, {…} =&amp;gt; &amp;#34;object&amp;#34;}*/ 注意： Map类型，字符串、函数、对象都可以作为key设置
+👉 size Map长度
+console.log(map.size);//3 👉get() 获取值
+console.log(map.get(fn));//function  //通过key获取value 👉 delete() / clear() 删除某个，清空Map
+console.log(map.delete(fn));//true console.log(map); /*Map(3){&amp;#34;key&amp;#34; =&amp;gt; &amp;#34;value&amp;#34;, {…} =&amp;gt; &amp;#34;object&amp;#34;}*/ 👉 has() 是否有某个key
+console.log(map.has(user));//true 2.遍历 👉forEach(val,key,map)"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://www.fintinger.site/img/defaultImg.jpg' />
+    <link rel="shortcut icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico" />
+
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="https://www.fintinger.site" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>Back</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%89%8D%E7%AB%AF/" >
+                前端
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bmap%E4%B8%8Eweakmap%E7%B1%BB%E5%9E%8B/">JavaScript基础之Map与Weakmap类型</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Aug 26, 2020</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 min read
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h2 id="map类型">Map类型</h2>
+<h4 id="1属性">1.属性</h4>
+<p>👉 <code>set()</code> 设置值</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">()</span>
+<span class="kd">let</span> <span class="nx">fn</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;this is function&#39;</span><span class="p">)}</span>
+<span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;jqf&#39;</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">18</span><span class="p">}</span>
+
+<span class="nx">map</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)</span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="s1">&#39;function&#39;</span><span class="p">)</span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="s1">&#39;object&#39;</span><span class="p">)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+<span class="cm">/*Map(3){&#34;key&#34; =&gt; &#34;value&#34;, ƒ =&gt; &#34;function&#34;, {…} =&gt; &#34;object&#34;}*/</span>
+</code></pre></div><p><strong>注意：</strong> Map类型，字符串、函数、对象都可以作为key设置</p>
+<p>👉 <code>size</code> Map长度</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">map</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span><span class="c1">//3
+</span></code></pre></div><p>👉<code>get()</code> 获取值</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">map</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">fn</span><span class="p">));</span><span class="c1">//function
+</span><span class="c1"></span>
+<span class="c1">//通过key获取value
+</span></code></pre></div><p>👉 <code>delete() / clear()</code> 删除某个，清空Map</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">map</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">fn</span><span class="p">));</span><span class="c1">//true
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+<span class="cm">/*Map(3){&#34;key&#34; =&gt; &#34;value&#34;,  {…} =&gt; &#34;object&#34;}*/</span>
+</code></pre></div><p>👉 <code>has()</code> 是否有某个key</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">map</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">user</span><span class="p">));</span><span class="c1">//true
+</span></code></pre></div><h4 id="2遍历">2.遍历</h4>
+<p>👉<code>forEach(val,key,map)</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">map</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">value</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">map</span><span class="p">)</span> <span class="p">=&gt;{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span><span class="c1">//value,function,object
+</span><span class="c1"></span>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span><span class="c1">//key,Function,Object
+</span><span class="c1"></span>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span><span class="c1">//map
+</span><span class="c1"></span><span class="p">}</span> <span class="p">)</span>
+</code></pre></div><p>👉<code>for-of(ele)</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="k">for</span> <span class="p">(</span><span class="kr">const</span> <span class="p">[</span><span class="nx">key</span><span class="p">,</span><span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nx">map</span><span class="p">)</span> <span class="p">{</span><span class="c1">//利用解构赋值的方式分别获取！
+</span><span class="c1"></span>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span><span class="c1">//value,function,object
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><p><strong>注意：</strong> 如果用个变量接收<code>for-of</code>遍历的值，得到</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="k">for</span> <span class="p">(</span><span class="kr">const</span> <span class="nx">ele</span> <span class="k">of</span> <span class="nx">map</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ele</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cm">/*OUTPUT:
+</span><span class="cm">* [&#34;key&#34;,&#34;value&#34;]
+</span><span class="cm">* [f,&#34;function&#34;]
+</span><span class="cm">* [{...},&#34;object&#34;]
+</span><span class="cm">* */</span>
+</code></pre></div><h4 id="3类型转换">3.类型转换</h4>
+<blockquote>
+<p>利用展开语法可以快速转换Map为普通数组</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">([...</span><span class="nx">map</span><span class="p">]);</span><span class="c1">//[Array(2), Array(2), Array(2)]
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">([...</span><span class="nx">map</span><span class="p">.</span><span class="nx">values</span><span class="p">()])</span><span class="c1">//[&#34;value&#34;, &#34;function&#34;, &#34;object&#34;]
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">([...</span><span class="nx">map</span><span class="p">.</span><span class="nx">keys</span><span class="p">()]);</span><span class="c1">//[&#34;key&#34;, ƒ, {Object}]
+</span></code></pre></div><h4 id="4用途">4.用途</h4>
+<p>利用Map保存DOM及其属性值，<code>key=DOM,value=属性值</code> ！！</p>
+<h2 id="weakmap">Weakmap</h2>
+<h4 id="1属性-1">1.属性</h4>
+<p>与Map基本一致，参考Weakset！</p>
+<p><strong>注意：</strong> weakMap的key不能是字符串！</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/javascript/">Javascript</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/javascript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Javascript正则表达式</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/es6%E4%B8%AD%E7%9A%84class%E7%B1%BB/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Es6中的class类</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/javascript%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%88%86%E6%9E%90/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">JavaScript中的继承与原型链分析</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%85%B3%E4%BA%8Ejavascript%E6%A8%A1%E5%9D%97%E5%8C%96/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">关于JavaScript模块化</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%AF%B9%E8%B1%A1/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">JavaScript基础之对象</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    <script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://pvhtgopk.lc-cn-n1-shared.com","visitor":true});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2018 - 
+        
+        2021 Archai &#39;s blog
+    </section>
+    
+    <section class="powerby">
+        
+            Archai <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">Table of contents</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#map类型">Map类型</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#1属性">1.属性</a></li>
+            <li><a href="#2遍历">2.遍历</a></li>
+            <li><a href="#3类型转换">3.类型转换</a></li>
+            <li><a href="#4用途">4.用途</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#weakmap">Weakmap</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#1属性-1">1.属性</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>\
+
+<script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.8/clipboard.js"></script>
+<script>
+    let pres = document.querySelectorAll("pre");
+    let copy = `
+<svg t="1628559239763" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4588" width="16" height="16"><path d="M756.537 170.667H109.532c-55.02 0-99.343 44.322-99.343 99.343v647.005c0 55.02 44.322 99.343 99.343 99.343h647.005c55.021 0 99.344-44.322 99.344-99.343V270.01c0-55.02-44.323-99.343-99.344-99.343z m22.926 746.348a22.83 22.83 0 0 1-22.926 22.925H109.532a22.83 22.83 0 0 1-22.925-22.925V270.01a22.83 22.83 0 0 1 22.925-22.925h647.005a22.83 22.83 0 0 1 22.926 22.925v647.005z" p-id="4589"></path><path d="M914.468 12.736H267.463c-20.888 0-38.21 17.322-38.21 38.21s17.322 38.208 38.21 38.208h647.005a22.83 22.83 0 0 1 22.925 22.926v647.005c0 20.887 17.321 38.209 38.209 38.209s38.209-17.322 38.209-38.21V112.08c0-55.021-44.322-99.344-99.343-99.344z" p-id="4590"></path></svg>`
+    let tick = `
+<svg t="1628558717330" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3410" width="16" height="16"><path d="M512 0C228.430769 0 0 228.430769 0 512s228.430769 512 512 512 512-228.430769 512-512S795.569231 0 512 0z m0 945.230769C271.753846 945.230769 78.769231 752.246154 78.769231 512S271.753846 78.769231 512 78.769231s433.230769 192.984615 433.230769 433.230769-192.984615 433.230769-433.230769 433.230769z" p-id="3411" fill="#07a35a"></path><path d="M716.8 330.830769l-208.738462 248.123077c-15.753846 15.753846-43.323077 19.692308-59.076923 7.876923L299.323077 472.615385c-15.753846-11.815385-43.323077-7.876923-55.138462 7.876923-11.815385 15.753846-7.876923 43.323077 7.876923 55.138461l149.661539 114.215385c19.692308 15.753846 47.261538 23.630769 74.830769 23.630769 35.446154 0 70.892308-15.753846 94.523077-43.323077l208.738462-248.123077c15.753846-15.753846 11.815385-43.323077-3.938462-55.138461-19.692308-15.753846-43.323077-15.753846-59.076923 3.938461z" p-id="3412" fill="#07a35a"></path></svg>`
+
+
+    pres.forEach(e => {
+        e.insertAdjacentHTML('beforeend', `<button class="cp_btn">` + copy + `</button>`)
+    })
+    let clp = new ClipboardJS('.cp_btn', {
+        target: function (trigger) {
+            return trigger.previousElementSibling;
+        }
+    });
+    clp.on('success', function (e) {
+        let clpEl=e;
+        e.trigger.innerHTML = tick;
+        e.trigger.parentElement.onmouseleave = _ => {
+            clpEl.trigger.innerHTML = copy
+            clpEl.clearSelection();
+        }
+        // console.info('Action:', e.action);
+        // console.info('Text:', e.text);
+        // console.info('Trigger:', e.trigger);
+        // e.clearSelection();
+    });
+
+    clp.on('error', function (e) {
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+    });
+</script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

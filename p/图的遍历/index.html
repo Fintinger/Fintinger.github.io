@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='广度优先遍历（BFS）  BFS(Breadth-First-Search)，参考对树的层序遍历
+ 对上面的图从①出发进行BFS得到序列：
+①②⑤ ⑥ ③⑦ ④⑧
+若采用不同的储存结构，可能会得到不同的遍历结果（这个差异主要来自寻找邻接点的过程），对于邻接矩阵存储的图，由于邻接矩阵是唯一的，所以BFS序列也是唯一的；同理，邻接表存储的图BFS序列不唯一。
+BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历过程中会出现重复访问的问题，故可构造visited数组，用来标记已访问过的数组。
+此外，还应针对非连通图做额外的判断，遍历完一个连通分量（极大连通子图）后，遍历查找visited数组中是否还存在未遍历的，如果有即为另一连通分量，继续调用BFS即可。
+ void BFS(Graph G,int v); bool visited[MAX_VERTEX_NUM]; SqQueue Q;//辅助队列 void BFSTraverse(Graph G){ //初始化visited数组  for (int i = 0; i &amp;lt; G.vexnum; &#43;&#43;i) {//使下标从1开始  visited[i]=false; } //对非连通图的处理  for (int v = 0; v &amp;lt; G.vexnum; &#43;&#43;v) { if (!visited[v]) BFS(G,v); } } //从顶点v出发广度优先遍历图G void BFS(Graph G,int v){ visit(v); visited[v]=true; EnQueue(Q,v);//顶点v入队列Q  while(!isEmpty(Q)){ DeQueue(Q,v);//顶点v出队列Q  for (w=FirstNeighbor(G,v);w&amp;gt;=0;w=NextNeighbor(G,v,w))//处理v的所有邻接点  if (!'><title>图的遍历</title>
+
+<link rel='canonical' href='https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/'>
+
+<link rel="stylesheet" href="/scss/style.min.css">
+
+<meta property='og:title' content='图的遍历'>
+<meta property='og:description' content='广度优先遍历（BFS）  BFS(Breadth-First-Search)，参考对树的层序遍历
+ 对上面的图从①出发进行BFS得到序列：
+①②⑤ ⑥ ③⑦ ④⑧
+若采用不同的储存结构，可能会得到不同的遍历结果（这个差异主要来自寻找邻接点的过程），对于邻接矩阵存储的图，由于邻接矩阵是唯一的，所以BFS序列也是唯一的；同理，邻接表存储的图BFS序列不唯一。
+BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历过程中会出现重复访问的问题，故可构造visited数组，用来标记已访问过的数组。
+此外，还应针对非连通图做额外的判断，遍历完一个连通分量（极大连通子图）后，遍历查找visited数组中是否还存在未遍历的，如果有即为另一连通分量，继续调用BFS即可。
+ void BFS(Graph G,int v); bool visited[MAX_VERTEX_NUM]; SqQueue Q;//辅助队列 void BFSTraverse(Graph G){ //初始化visited数组  for (int i = 0; i &amp;lt; G.vexnum; &#43;&#43;i) {//使下标从1开始  visited[i]=false; } //对非连通图的处理  for (int v = 0; v &amp;lt; G.vexnum; &#43;&#43;v) { if (!visited[v]) BFS(G,v); } } //从顶点v出发广度优先遍历图G void BFS(Graph G,int v){ visit(v); visited[v]=true; EnQueue(Q,v);//顶点v入队列Q  while(!isEmpty(Q)){ DeQueue(Q,v);//顶点v出队列Q  for (w=FirstNeighbor(G,v);w&amp;gt;=0;w=NextNeighbor(G,v,w))//处理v的所有邻接点  if (!'>
+<meta property='og:url' content='https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/'>
+<meta property='og:site_name' content='Archai &#39;s blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='数据结构' /><meta property='article:tag' content='BFS' /><meta property='article:tag' content='DFS' /><meta property='article:published_time' content='2021-06-02T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-06-02T00:00:00&#43;00:00'/><meta property='og:image' content='https://www.fintinger.site/img/defaultImg.jpg' />
+<meta name="twitter:title" content="图的遍历">
+<meta name="twitter:description" content="广度优先遍历（BFS）  BFS(Breadth-First-Search)，参考对树的层序遍历
+ 对上面的图从①出发进行BFS得到序列：
+①②⑤ ⑥ ③⑦ ④⑧
+若采用不同的储存结构，可能会得到不同的遍历结果（这个差异主要来自寻找邻接点的过程），对于邻接矩阵存储的图，由于邻接矩阵是唯一的，所以BFS序列也是唯一的；同理，邻接表存储的图BFS序列不唯一。
+BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历过程中会出现重复访问的问题，故可构造visited数组，用来标记已访问过的数组。
+此外，还应针对非连通图做额外的判断，遍历完一个连通分量（极大连通子图）后，遍历查找visited数组中是否还存在未遍历的，如果有即为另一连通分量，继续调用BFS即可。
+ void BFS(Graph G,int v); bool visited[MAX_VERTEX_NUM]; SqQueue Q;//辅助队列 void BFSTraverse(Graph G){ //初始化visited数组  for (int i = 0; i &amp;lt; G.vexnum; &#43;&#43;i) {//使下标从1开始  visited[i]=false; } //对非连通图的处理  for (int v = 0; v &amp;lt; G.vexnum; &#43;&#43;v) { if (!visited[v]) BFS(G,v); } } //从顶点v出发广度优先遍历图G void BFS(Graph G,int v){ visit(v); visited[v]=true; EnQueue(Q,v);//顶点v入队列Q  while(!isEmpty(Q)){ DeQueue(Q,v);//顶点v出队列Q  for (w=FirstNeighbor(G,v);w&amp;gt;=0;w=NextNeighbor(G,v,w))//处理v的所有邻接点  if (!"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://www.fintinger.site/img/defaultImg.jpg' />
+    <link rel="shortcut icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico" />
+
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="https://www.fintinger.site" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>Back</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%90%8E%E7%AB%AF/" >
+                后端
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/">图的遍历</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jun 02, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 min read
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h2 id="广度优先遍历bfs">广度优先遍历（BFS）</h2>
+<blockquote>
+<p>BFS(Breadth-First-Search)，参考对树的层序遍历</p>
+</blockquote>
+<p><img src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210529082956.png" alt=""  /></p>
+<p>对上面的图从①出发进行BFS得到序列：</p>
+<p>①②⑤ ⑥ ③⑦ ④⑧</p>
+<p>若采用不同的储存结构，可能会得到不同的遍历结果（这个差异主要来自寻找邻接点的过程），对于<strong>邻接矩阵存储的图，由于邻接矩阵是唯一的，所以BFS序列也是唯一的；同理，邻接表存储的图BFS序列不唯一</strong>。</p>
+<h3 id="bfs算法">BFS算法</h3>
+<blockquote>
+<p>与树的层序遍历不同的是，由于图中存在回路，遍历过程中会出现重复访问的问题，故可构造visited数组，用来标记已访问过的数组。<br/></p>
+<p>此外，还应针对非连通图做额外的判断，遍历完一个连通分量（极大连通子图）后，遍历查找visited数组中是否还存在未遍历的，如果有即为另一连通分量，继续调用BFS即可。</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">BFS</span><span class="p">(</span><span class="n">Graph</span> <span class="n">G</span><span class="p">,</span><span class="kt">int</span> <span class="n">v</span><span class="p">);</span>
+
+<span class="kt">bool</span> <span class="n">visited</span><span class="p">[</span><span class="n">MAX_VERTEX_NUM</span><span class="p">];</span>
+
+<span class="n">SqQueue</span> <span class="n">Q</span><span class="p">;</span><span class="c1">//辅助队列
+</span><span class="c1"></span><span class="kt">void</span> <span class="nf">BFSTraverse</span><span class="p">(</span><span class="n">Graph</span> <span class="n">G</span><span class="p">){</span>
+    <span class="c1">//初始化visited数组
+</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">G</span><span class="p">.</span><span class="n">vexnum</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span><span class="c1">//使下标从1开始
+</span><span class="c1"></span>        <span class="n">visited</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">//对非连通图的处理
+</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="n">G</span><span class="p">.</span><span class="n">vexnum</span><span class="p">;</span> <span class="o">++</span><span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">visited</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+            <span class="n">BFS</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">v</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">//从顶点v出发广度优先遍历图G
+</span><span class="c1"></span><span class="kt">void</span> <span class="nf">BFS</span><span class="p">(</span><span class="n">Graph</span> <span class="n">G</span><span class="p">,</span><span class="kt">int</span> <span class="n">v</span><span class="p">){</span>
+    <span class="n">visit</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+    <span class="n">visited</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>
+    <span class="n">EnQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">v</span><span class="p">);</span><span class="c1">//顶点v入队列Q
+</span><span class="c1"></span>    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">isEmpty</span><span class="p">(</span><span class="n">Q</span><span class="p">)){</span>
+        <span class="n">DeQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">v</span><span class="p">);</span><span class="c1">//顶点v出队列Q
+</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="n">FirstNeighbor</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">v</span><span class="p">);</span><span class="n">w</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="n">w</span><span class="o">=</span><span class="n">NextNeighbor</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">w</span><span class="p">))</span><span class="c1">//处理v的所有邻接点
+</span><span class="c1"></span>            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">visited</span><span class="p">[</span><span class="n">w</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">visit</span><span class="p">(</span><span class="n">w</span><span class="p">);</span>
+                <span class="n">visited</span><span class="p">[</span><span class="n">w</span><span class="p">]</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>
+                <span class="n">EnQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">w</span><span class="p">);</span>
+            <span class="p">}</span><span class="c1">//if
+</span><span class="c1"></span>    <span class="p">}</span><span class="c1">//while
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><p>需要借助辅助队列存储v的所有邻接结点</p>
+<h3 id="复杂度">复杂度</h3>
+<h4 id="一空间">（一）空间</h4>
+<p>空间复杂度主要来自辅助队列，在访问v的邻接结点时会入队，因此最坏的情况下</p>
+<p><img src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210529100353.png" alt=""  /></p>
+<p>复杂度为：$O(|V|)$</p>
+<h4 id="二时间">（二）时间</h4>
+<p>对时间复杂度的分析，不必纠结于算法中的具体循环，只需宏观地分析：</br></p>
+<p>①访问|V|个结点需要的时间复杂度？</br></p>
+<p>②访问各个结点的邻接结点需要的时间？</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>邻接矩阵型</th>
+<th>邻接表型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>$O(V)$</td>
+<td>$O(V)$</td>
+</tr>
+<tr>
+<td>②</td>
+<td>$O(V^2)$</td>
+<td>$O(2E)=O(E)$</td>
+</tr>
+<tr>
+<td>时间复杂度</td>
+<td>$O(V^2)$</td>
+<td>$O(V+E)$</td>
+</tr>
+</tbody>
+</table>
+<p><strong>时间复杂度=访问各结点所需时间+探索各条边所需时间</strong></p>
+<h3 id="广度优先生成树">广度优先生成树</h3>
+<blockquote>
+<p>简而言之，就是 $连通图\overset{BFS}{\rightarrow}树$</p>
+</blockquote>
+<p><img src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210529101642.png" alt=""  /></p>
+<p>即 <strong>仅保留每个节点<u>第一次被访问</u>的那条通路</strong></p>
+<blockquote>
+<p>此外还有广度优先生产森林，即 $非连通图\overset{BFS}{\rightarrow}森林$</p>
+</blockquote>
+<h2 id="深度优先遍历dfs">深度优先遍历（DFS）</h2>
+<blockquote>
+<p>BFS(Depth-First-Search)，参考对树的先序遍历</p>
+</blockquote>
+<p><img src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210529102902.png" alt=""  /></p>
+<p>对上面的图从②出发进行DFS得到序列：</p>
+<p>② ① ⑤ ⑥ ③ ④⑦ ⑧ </br></p>
+<p>同样的，邻接矩阵存储得到序列唯一，邻接表则不唯一。</p>
+<h3 id="dfs算法">DFS算法</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">DFS</span><span class="p">(</span><span class="n">Graph</span> <span class="n">G</span><span class="p">,</span><span class="kt">int</span> <span class="n">v</span><span class="p">);</span>
+
+<span class="kt">bool</span> <span class="n">visited</span><span class="p">[</span><span class="n">MAX_VERTEX_NUM</span><span class="p">];</span>
+<span class="kt">void</span> <span class="nf">DFSTraverse</span><span class="p">(</span><span class="n">Graph</span> <span class="n">G</span><span class="p">){</span>
+    <span class="c1">//初始化visited数组
+</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">G</span><span class="p">.</span><span class="n">vexnum</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">visited</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>
+    <span class="c1">//对非连通图的处理
+</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="n">G</span><span class="p">.</span><span class="n">vexnum</span><span class="p">;</span> <span class="o">++</span><span class="n">v</span><span class="p">)</span> 
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">visited</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+            <span class="n">DFS</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">v</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//从顶点v出发广度优先遍历图G
+</span><span class="c1"></span><span class="kt">void</span> <span class="nf">DFS</span><span class="p">(</span><span class="n">Graph</span> <span class="n">G</span><span class="p">,</span><span class="kt">int</span> <span class="n">v</span><span class="p">){</span>
+    <span class="n">visit</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+    <span class="n">visited</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="n">FirstNeighbor</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">v</span><span class="p">);</span><span class="n">w</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="n">w</span><span class="o">=</span><span class="n">FirstNeighbor</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">v</span><span class="p">))</span><span class="c1">//始终遍历v的第一个邻接点，往“深”处走
+</span><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">visited</span><span class="p">[</span><span class="n">w</span><span class="p">])</span> <span class="p">{</span>
+            <span class="n">DFS</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">w</span><span class="p">);</span>
+        <span class="p">}</span><span class="c1">//if
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><h3 id="复杂度-1">复杂度</h3>
+<h4 id="一空间-1">（一）空间</h4>
+<p>主要来自<strong>函数调用栈</strong>，因此最坏的情况与最好的情况分别是</p>
+<p><img src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210529104525.png" alt=""  /></p>
+<p>因此，空间复杂度为$O(|V|)$</p>
+<h4 id="二时间-1">（二）时间</h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>邻接矩阵型</th>
+<th>邻接表型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>$O(</td>
+<td>V</td>
+</tr>
+<tr>
+<td>②</td>
+<td>$O(</td>
+<td>V</td>
+</tr>
+<tr>
+<td>时间复杂度</td>
+<td>$O(</td>
+<td>V</td>
+</tr>
+</tbody>
+</table>
+<h3 id="深度优先生成树">深度优先生成树</h3>
+<p>同BFS</p>
+<h2 id="思考图的遍历与图的连通性">思考：图的遍历与图的连通性</h2>
+<p>根据上述算法可知，对于无向图，调用BFS/DFS的次数与<u>连通分量</u>的数量有关，即 $BFS|DFS调用次数\propto 连通分量数$ </br></p>
+<p>对于有向图：</p>
+<p><img src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210529102405.png" alt=""  /></p>
+<p>1.若从①出发，需要调用几次DFS?</br></p>
+<p>答：4次。</br></p>
+<p>2.若从⑦出发，需要调用几次DFS?</br></p>
+<p>答：1次。</br></p>
+<p>因此，有</p>
+<table>
+<thead>
+<tr>
+<th align="center">图的分类</th>
+<th align="left">调用BFS|DFS次数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">无向图</td>
+<td align="left">连通：1次<br />非连通：连通分量数</td>
+</tr>
+<tr>
+<td align="center">有向图</td>
+<td align="left">普通有向图：具体分析（与出发点的选择有关）<br />强连通图：1次</td>
+</tr>
+</tbody>
+</table>
+<p>🖋</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+        
+            <a href="/tags/bfs/">BFS</a>
+        
+            <a href="/tags/dfs/">DFS</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/%E5%A4%96%E9%83%A8%E6%8E%92%E5%BA%8F%E7%9B%B8%E5%85%B3/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://picsum.photos/seed/waibupaixu/640/360" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/waibupaixu/640/360"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">外部排序相关</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://picsum.photos/seed/paixu/640/360" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/paixu/640/360"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">排序算法相关</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">查找算法相关</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">图的存储</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">图的应用</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    <script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://pvhtgopk.lc-cn-n1-shared.com","visitor":true});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2018 - 
+        
+        2021 Archai &#39;s blog
+    </section>
+    
+    <section class="powerby">
+        
+            Archai <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">Table of contents</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#广度优先遍历bfs">广度优先遍历（BFS）</a>
+      <ol>
+        <li><a href="#bfs算法">BFS算法</a></li>
+        <li><a href="#复杂度">复杂度</a>
+          <ol>
+            <li><a href="#一空间">（一）空间</a></li>
+            <li><a href="#二时间">（二）时间</a></li>
+          </ol>
+        </li>
+        <li><a href="#广度优先生成树">广度优先生成树</a></li>
+      </ol>
+    </li>
+    <li><a href="#深度优先遍历dfs">深度优先遍历（DFS）</a>
+      <ol>
+        <li><a href="#dfs算法">DFS算法</a></li>
+        <li><a href="#复杂度-1">复杂度</a>
+          <ol>
+            <li><a href="#一空间-1">（一）空间</a></li>
+            <li><a href="#二时间-1">（二）时间</a></li>
+          </ol>
+        </li>
+        <li><a href="#深度优先生成树">深度优先生成树</a></li>
+      </ol>
+    </li>
+    <li><a href="#思考图的遍历与图的连通性">思考：图的遍历与图的连通性</a></li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>\
+
+<script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.8/clipboard.js"></script>
+<script>
+    let pres = document.querySelectorAll("pre");
+    let copy = `
+<svg t="1628559239763" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4588" width="16" height="16"><path d="M756.537 170.667H109.532c-55.02 0-99.343 44.322-99.343 99.343v647.005c0 55.02 44.322 99.343 99.343 99.343h647.005c55.021 0 99.344-44.322 99.344-99.343V270.01c0-55.02-44.323-99.343-99.344-99.343z m22.926 746.348a22.83 22.83 0 0 1-22.926 22.925H109.532a22.83 22.83 0 0 1-22.925-22.925V270.01a22.83 22.83 0 0 1 22.925-22.925h647.005a22.83 22.83 0 0 1 22.926 22.925v647.005z" p-id="4589"></path><path d="M914.468 12.736H267.463c-20.888 0-38.21 17.322-38.21 38.21s17.322 38.208 38.21 38.208h647.005a22.83 22.83 0 0 1 22.925 22.926v647.005c0 20.887 17.321 38.209 38.209 38.209s38.209-17.322 38.209-38.21V112.08c0-55.021-44.322-99.344-99.343-99.344z" p-id="4590"></path></svg>`
+    let tick = `
+<svg t="1628558717330" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3410" width="16" height="16"><path d="M512 0C228.430769 0 0 228.430769 0 512s228.430769 512 512 512 512-228.430769 512-512S795.569231 0 512 0z m0 945.230769C271.753846 945.230769 78.769231 752.246154 78.769231 512S271.753846 78.769231 512 78.769231s433.230769 192.984615 433.230769 433.230769-192.984615 433.230769-433.230769 433.230769z" p-id="3411" fill="#07a35a"></path><path d="M716.8 330.830769l-208.738462 248.123077c-15.753846 15.753846-43.323077 19.692308-59.076923 7.876923L299.323077 472.615385c-15.753846-11.815385-43.323077-7.876923-55.138462 7.876923-11.815385 15.753846-7.876923 43.323077 7.876923 55.138461l149.661539 114.215385c19.692308 15.753846 47.261538 23.630769 74.830769 23.630769 35.446154 0 70.892308-15.753846 94.523077-43.323077l208.738462-248.123077c15.753846-15.753846 11.815385-43.323077-3.938462-55.138461-19.692308-15.753846-43.323077-15.753846-59.076923 3.938461z" p-id="3412" fill="#07a35a"></path></svg>`
+
+
+    pres.forEach(e => {
+        e.insertAdjacentHTML('beforeend', `<button class="cp_btn">` + copy + `</button>`)
+    })
+    let clp = new ClipboardJS('.cp_btn', {
+        target: function (trigger) {
+            return trigger.previousElementSibling;
+        }
+    });
+    clp.on('success', function (e) {
+        let clpEl=e;
+        e.trigger.innerHTML = tick;
+        e.trigger.parentElement.onmouseleave = _ => {
+            clpEl.trigger.innerHTML = copy
+            clpEl.clearSelection();
+        }
+        // console.info('Action:', e.action);
+        // console.info('Text:', e.text);
+        // console.info('Trigger:', e.trigger);
+        // e.clearSelection();
+    });
+
+    clp.on('error', function (e) {
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+    });
+</script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

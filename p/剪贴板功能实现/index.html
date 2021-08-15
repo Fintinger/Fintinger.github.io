@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='经常会用到指定内容的复制粘贴问题，用到document的execCommand 方法,为此，我将这个功能封装为一个简单的函数:
+function doCopy($el, {deepCopy = false, copyTips = true, language = &amp;#34;Chinese&amp;#34;, bgColor = &amp;#34;#ff6666&amp;#34;, fontColor = &amp;#34;#fff&amp;#34;} = {}) { let tempEl = $(&amp;#34;&amp;lt;input id=&amp;#39;selectEl&amp;#39; type=&amp;#39;text&amp;#39; value=&amp;#39;&amp;#39;&amp;gt;&amp;#34;).val($el.text()) if (deepCopy) { tempEl.val($el.html()) } tempEl.appendTo($(&amp;#34;body&amp;#34;)) document.querySelector(&amp;#39;#selectEl&amp;#39;).select(); document.execCommand(&amp;#39;copy&amp;#39;); tempEl.remove() if (copyTips) { let tipEl = $(&amp;#34;&amp;lt;div class=&amp;#39;copyTips&amp;#39; &amp;gt;成功复制到剪切板&amp;lt;/div&amp;gt;&amp;#34;) tipEl.css({fontFamily: &amp;#34;&amp;#39;Microsoft YaHei&amp;#39;, sans-serif&amp;#34;,fontSize: &amp;#34;1.2rem&amp;#34;,position: &amp;#34;fixed&amp;#34;,top: &amp;#34;1rem&amp;#34;,textAlign: &amp;#34;center&amp;#34;, left: &amp;#34;50%&amp;#34;,fontWeight: &amp;#34;bolder&amp;#34;, borderRadius: &amp;#34;.5rem&amp;#34;,marginLeft: &amp;#34;-8rem&amp;#34;,width: &amp;#34;16rem&amp;#34;,height: &amp;#34;3rem&amp;#34;, lineHeight:&amp;#34;3rem&amp;#34;, background: bgColor,boxShadow: &amp;#34;0 6px 10px -8px #000&amp;#34;,color: fontColor, letterSpacing: &amp;#34;4px&amp;#34;,boxSizing: &amp;#34;border-box&amp;#34;,padding: &amp;#34;0 10px 0 10px&amp;#34;, display: &amp;#34;none&amp;#34;}) if (language === &amp;#34;English&amp;#34;) { tipEl.'><title>剪贴板功能实现</title>
+
+<link rel='canonical' href='https://www.fintinger.site/p/%E5%89%AA%E8%B4%B4%E6%9D%BF%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/'>
+
+<link rel="stylesheet" href="/scss/style.min.css">
+
+<meta property='og:title' content='剪贴板功能实现'>
+<meta property='og:description' content='经常会用到指定内容的复制粘贴问题，用到document的execCommand 方法,为此，我将这个功能封装为一个简单的函数:
+function doCopy($el, {deepCopy = false, copyTips = true, language = &amp;#34;Chinese&amp;#34;, bgColor = &amp;#34;#ff6666&amp;#34;, fontColor = &amp;#34;#fff&amp;#34;} = {}) { let tempEl = $(&amp;#34;&amp;lt;input id=&amp;#39;selectEl&amp;#39; type=&amp;#39;text&amp;#39; value=&amp;#39;&amp;#39;&amp;gt;&amp;#34;).val($el.text()) if (deepCopy) { tempEl.val($el.html()) } tempEl.appendTo($(&amp;#34;body&amp;#34;)) document.querySelector(&amp;#39;#selectEl&amp;#39;).select(); document.execCommand(&amp;#39;copy&amp;#39;); tempEl.remove() if (copyTips) { let tipEl = $(&amp;#34;&amp;lt;div class=&amp;#39;copyTips&amp;#39; &amp;gt;成功复制到剪切板&amp;lt;/div&amp;gt;&amp;#34;) tipEl.css({fontFamily: &amp;#34;&amp;#39;Microsoft YaHei&amp;#39;, sans-serif&amp;#34;,fontSize: &amp;#34;1.2rem&amp;#34;,position: &amp;#34;fixed&amp;#34;,top: &amp;#34;1rem&amp;#34;,textAlign: &amp;#34;center&amp;#34;, left: &amp;#34;50%&amp;#34;,fontWeight: &amp;#34;bolder&amp;#34;, borderRadius: &amp;#34;.5rem&amp;#34;,marginLeft: &amp;#34;-8rem&amp;#34;,width: &amp;#34;16rem&amp;#34;,height: &amp;#34;3rem&amp;#34;, lineHeight:&amp;#34;3rem&amp;#34;, background: bgColor,boxShadow: &amp;#34;0 6px 10px -8px #000&amp;#34;,color: fontColor, letterSpacing: &amp;#34;4px&amp;#34;,boxSizing: &amp;#34;border-box&amp;#34;,padding: &amp;#34;0 10px 0 10px&amp;#34;, display: &amp;#34;none&amp;#34;}) if (language === &amp;#34;English&amp;#34;) { tipEl.'>
+<meta property='og:url' content='https://www.fintinger.site/p/%E5%89%AA%E8%B4%B4%E6%9D%BF%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/'>
+<meta property='og:site_name' content='Archai &#39;s blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Jquery' /><meta property='article:tag' content='myFunction' /><meta property='article:published_time' content='2020-07-07T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-07-07T00:00:00&#43;00:00'/><meta property='og:image' content='https://www.fintinger.site/img/defaultImg.jpg' />
+<meta name="twitter:title" content="剪贴板功能实现">
+<meta name="twitter:description" content="经常会用到指定内容的复制粘贴问题，用到document的execCommand 方法,为此，我将这个功能封装为一个简单的函数:
+function doCopy($el, {deepCopy = false, copyTips = true, language = &amp;#34;Chinese&amp;#34;, bgColor = &amp;#34;#ff6666&amp;#34;, fontColor = &amp;#34;#fff&amp;#34;} = {}) { let tempEl = $(&amp;#34;&amp;lt;input id=&amp;#39;selectEl&amp;#39; type=&amp;#39;text&amp;#39; value=&amp;#39;&amp;#39;&amp;gt;&amp;#34;).val($el.text()) if (deepCopy) { tempEl.val($el.html()) } tempEl.appendTo($(&amp;#34;body&amp;#34;)) document.querySelector(&amp;#39;#selectEl&amp;#39;).select(); document.execCommand(&amp;#39;copy&amp;#39;); tempEl.remove() if (copyTips) { let tipEl = $(&amp;#34;&amp;lt;div class=&amp;#39;copyTips&amp;#39; &amp;gt;成功复制到剪切板&amp;lt;/div&amp;gt;&amp;#34;) tipEl.css({fontFamily: &amp;#34;&amp;#39;Microsoft YaHei&amp;#39;, sans-serif&amp;#34;,fontSize: &amp;#34;1.2rem&amp;#34;,position: &amp;#34;fixed&amp;#34;,top: &amp;#34;1rem&amp;#34;,textAlign: &amp;#34;center&amp;#34;, left: &amp;#34;50%&amp;#34;,fontWeight: &amp;#34;bolder&amp;#34;, borderRadius: &amp;#34;.5rem&amp;#34;,marginLeft: &amp;#34;-8rem&amp;#34;,width: &amp;#34;16rem&amp;#34;,height: &amp;#34;3rem&amp;#34;, lineHeight:&amp;#34;3rem&amp;#34;, background: bgColor,boxShadow: &amp;#34;0 6px 10px -8px #000&amp;#34;,color: fontColor, letterSpacing: &amp;#34;4px&amp;#34;,boxSizing: &amp;#34;border-box&amp;#34;,padding: &amp;#34;0 10px 0 10px&amp;#34;, display: &amp;#34;none&amp;#34;}) if (language === &amp;#34;English&amp;#34;) { tipEl."><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://www.fintinger.site/img/defaultImg.jpg' />
+    <link rel="shortcut icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico" />
+
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="https://www.fintinger.site" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>Back</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%89%8D%E7%AB%AF/" >
+                前端
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/%E5%89%AA%E8%B4%B4%E6%9D%BF%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/">剪贴板功能实现</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jul 07, 2020</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 min read
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <p>经常会用到指定内容的复制粘贴问题，用到<code>document</code>的<a class="link" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document/execCommand"  target="_blank" rel="noopener"
+    ><code>execCommand</code></a>  方法,为此，我将这个功能封装为一个简单的函数:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript">    <span class="kd">function</span> <span class="nx">doCopy</span><span class="p">(</span><span class="nx">$el</span><span class="p">,</span> <span class="p">{</span><span class="nx">deepCopy</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">copyTips</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">language</span> <span class="o">=</span> <span class="s2">&#34;Chinese&#34;</span><span class="p">,</span> <span class="nx">bgColor</span> <span class="o">=</span> <span class="s2">&#34;#ff6666&#34;</span><span class="p">,</span> <span class="nx">fontColor</span> <span class="o">=</span> <span class="s2">&#34;#fff&#34;</span><span class="p">}</span> <span class="o">=</span> <span class="p">{})</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">tempEl</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;&lt;input id=&#39;selectEl&#39; type=&#39;text&#39; value=&#39;&#39;&gt;&#34;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">$el</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">deepCopy</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">tempEl</span><span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="nx">$el</span><span class="p">.</span><span class="nx">html</span><span class="p">())</span>
+        <span class="p">}</span>
+        <span class="nx">tempEl</span><span class="p">.</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&#34;body&#34;</span><span class="p">))</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#selectEl&#39;</span><span class="p">).</span><span class="nx">select</span><span class="p">();</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="s1">&#39;copy&#39;</span><span class="p">);</span>
+        <span class="nx">tempEl</span><span class="p">.</span><span class="nx">remove</span><span class="p">()</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">copyTips</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">tipEl</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;&lt;div class=&#39;copyTips&#39; &gt;成功复制到剪切板&lt;/div&gt;&#34;</span><span class="p">)</span>
+            <span class="nx">tipEl</span><span class="p">.</span><span class="nx">css</span><span class="p">({</span><span class="nx">fontFamily</span><span class="o">:</span> <span class="s2">&#34;&#39;Microsoft YaHei&#39;, sans-serif&#34;</span><span class="p">,</span><span class="nx">fontSize</span><span class="o">:</span> <span class="s2">&#34;1.2rem&#34;</span><span class="p">,</span><span class="nx">position</span><span class="o">:</span> <span class="s2">&#34;fixed&#34;</span><span class="p">,</span><span class="nx">top</span><span class="o">:</span> <span class="s2">&#34;1rem&#34;</span><span class="p">,</span><span class="nx">textAlign</span><span class="o">:</span> <span class="s2">&#34;center&#34;</span><span class="p">,</span> <span class="nx">left</span><span class="o">:</span> <span class="s2">&#34;50%&#34;</span><span class="p">,</span><span class="nx">fontWeight</span><span class="o">:</span> <span class="s2">&#34;bolder&#34;</span><span class="p">,</span> <span class="nx">borderRadius</span><span class="o">:</span> <span class="s2">&#34;.5rem&#34;</span><span class="p">,</span><span class="nx">marginLeft</span><span class="o">:</span> <span class="s2">&#34;-8rem&#34;</span><span class="p">,</span><span class="nx">width</span><span class="o">:</span> <span class="s2">&#34;16rem&#34;</span><span class="p">,</span><span class="nx">height</span><span class="o">:</span> <span class="s2">&#34;3rem&#34;</span><span class="p">,</span> <span class="nx">lineHeight</span><span class="o">:</span><span class="s2">&#34;3rem&#34;</span><span class="p">,</span> <span class="nx">background</span><span class="o">:</span> <span class="nx">bgColor</span><span class="p">,</span><span class="nx">boxShadow</span><span class="o">:</span> <span class="s2">&#34;0 6px 10px -8px #000&#34;</span><span class="p">,</span><span class="nx">color</span><span class="o">:</span> <span class="nx">fontColor</span><span class="p">,</span> <span class="nx">letterSpacing</span><span class="o">:</span> <span class="s2">&#34;4px&#34;</span><span class="p">,</span><span class="nx">boxSizing</span><span class="o">:</span> <span class="s2">&#34;border-box&#34;</span><span class="p">,</span><span class="nx">padding</span><span class="o">:</span> <span class="s2">&#34;0 10px 0 10px&#34;</span><span class="p">,</span> <span class="nx">display</span><span class="o">:</span> <span class="s2">&#34;none&#34;</span><span class="p">})</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">language</span> <span class="o">===</span> <span class="s2">&#34;English&#34;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">tipEl</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s1">&#39;Successfully copied!&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">({</span><span class="nx">letterSpacing</span><span class="o">:</span> <span class="s2">&#34;0&#34;</span><span class="p">})</span>
+            <span class="p">}</span>
+            <span class="nx">tipEl</span><span class="p">.</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&#34;body&#34;</span><span class="p">))</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;.copyTips&#34;</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">(</span><span class="mi">800</span><span class="p">)</span>
+            <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;.copyTips&#34;</span><span class="p">).</span><span class="nx">fadeOut</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+            <span class="p">},</span> <span class="mi">1000</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div><h1 id="使用usage">使用(Usage)</h1>
+<blockquote>
+<p>这个方法依赖于jquery，目前最新的jquery为v3.5.1</p>
+</blockquote>
+<h3 id="el">$el</h3>
+<ul>
+<li>
+<p><strong>类型：</strong><code>jquery DOM</code></p>
+</li>
+<li>
+<p><strong>默认值：</strong> 无默认值，必须指定</p>
+</li>
+<li>
+<p><strong>用法：</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript">  <span class="nx">doCopy</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&#34;.custom&#34;</span><span class="p">))</span>
+</code></pre></div><h3 id="deepcopy">deepCopy</h3>
+<ul>
+<li>
+<p><strong>类型：</strong><code>boolean</code></p>
+</li>
+<li>
+<p><strong>默认值：</strong><code>false</code></p>
+</li>
+<li>
+<p><strong>用法：</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript">  <span class="nx">doCopy</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&#34;.custom&#34;</span><span class="p">),{</span>
+  	<span class="nx">deepCopy</span><span class="o">:</span><span class="kc">true</span>
+  <span class="p">})</span>
+</code></pre></div><ul>
+<li><strong>说明：</strong>  是否复制指定元素下的DOM结构，<code>false</code>则为仅复制执行的jqueryDOM里面的文字</li>
+</ul>
+<h3 id="copytips">copyTips</h3>
+<ul>
+<li>
+<p><strong>类型：</strong><code>boolean</code></p>
+</li>
+<li>
+<p><strong>默认值：</strong><code>true</code></p>
+</li>
+<li>
+<p><strong>用法：</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript">  <span class="nx">doCopy</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&#34;.custom&#34;</span><span class="p">),{</span>
+  	<span class="nx">copyTips</span><span class="o">:</span><span class="kc">true</span>
+  <span class="p">})</span>
+</code></pre></div><ul>
+<li><strong>说明：</strong> 是否显示复制完成的提示框</li>
+</ul>
+<h3 id="language">language</h3>
+<ul>
+<li>
+<p><strong>类型：</strong><code>String</code></p>
+</li>
+<li>
+<p><strong>默认值:</strong><code>&quot;Chinese&quot;</code></p>
+</li>
+<li>
+<p><strong>用法：</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript">  <span class="nx">doCopy</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&#34;.custom&#34;</span><span class="p">),{</span>
+  	<span class="nx">language</span><span class="o">:</span><span class="s2">&#34;English&#34;</span>
+  <span class="p">})</span>
+</code></pre></div><ul>
+<li><strong>说明：</strong> 指定提示框的语言，两个值<code>&quot;Chinese&quot; </code> 和<code>&quot;English&quot;</code></li>
+</ul>
+<h3 id="bgcolor">bgColor</h3>
+<ul>
+<li>
+<p><strong>类型：</strong><code>String</code></p>
+</li>
+<li>
+<p><strong>默认值:</strong><code>&quot;#ff6666&quot;</code></p>
+</li>
+<li>
+<p><strong>用法：</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript">  <span class="nx">doCopy</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&#34;.custom&#34;</span><span class="p">),{</span>
+  	<span class="nx">bgColor</span><span class="o">:</span><span class="s2">&#34;green&#34;</span>
+  <span class="p">})</span>
+</code></pre></div><ul>
+<li><strong>说明：</strong> 指定提示框的背景色</li>
+</ul>
+<h3 id="fontcolor">fontColor</h3>
+<ul>
+<li>
+<p><strong>类型：</strong><code>String</code></p>
+</li>
+<li>
+<p><strong>默认值:</strong><code>&quot;#fff&quot;</code></p>
+</li>
+<li>
+<p><strong>用法：</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript">  <span class="nx">doCopy</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&#34;.custom&#34;</span><span class="p">),{</span>
+  	<span class="nx">fontColor</span><span class="o">:</span><span class="s2">&#34;#000&#34;</span>
+  <span class="p">})</span>
+</code></pre></div><ul>
+<li><strong>说明：</strong> 指定提示框的字体颜色</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/jquery/">Jquery</a>
+        
+            <a href="/tags/myfunction/">myFunction</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/%E8%B7%A8%E5%9F%9F%E5%8F%8Acors%E5%AE%98%E6%96%B9%E8%B7%A8%E5%9F%9F/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">跨域及CORS官方跨域</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">获取文件扩展名</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E4%B8%80%E7%BB%84%E5%BE%AA%E7%8E%AF%E6%95%B0%E7%BB%84/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">一组循环数组</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/javascript%E7%80%91%E5%B8%83%E6%B5%81%E5%B8%83%E5%B1%80/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">JavaScript瀑布流布局</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/jquery%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Jquery一些操作</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    <script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://pvhtgopk.lc-cn-n1-shared.com","visitor":true});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2018 - 
+        
+        2021 Archai &#39;s blog
+    </section>
+    
+    <section class="powerby">
+        
+            Archai <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">Table of contents</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#el">$el</a></li>
+        <li><a href="#deepcopy">deepCopy</a></li>
+        <li><a href="#copytips">copyTips</a></li>
+        <li><a href="#language">language</a></li>
+        <li><a href="#bgcolor">bgColor</a></li>
+        <li><a href="#fontcolor">fontColor</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>\
+
+<script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.8/clipboard.js"></script>
+<script>
+    let pres = document.querySelectorAll("pre");
+    let copy = `
+<svg t="1628559239763" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4588" width="16" height="16"><path d="M756.537 170.667H109.532c-55.02 0-99.343 44.322-99.343 99.343v647.005c0 55.02 44.322 99.343 99.343 99.343h647.005c55.021 0 99.344-44.322 99.344-99.343V270.01c0-55.02-44.323-99.343-99.344-99.343z m22.926 746.348a22.83 22.83 0 0 1-22.926 22.925H109.532a22.83 22.83 0 0 1-22.925-22.925V270.01a22.83 22.83 0 0 1 22.925-22.925h647.005a22.83 22.83 0 0 1 22.926 22.925v647.005z" p-id="4589"></path><path d="M914.468 12.736H267.463c-20.888 0-38.21 17.322-38.21 38.21s17.322 38.208 38.21 38.208h647.005a22.83 22.83 0 0 1 22.925 22.926v647.005c0 20.887 17.321 38.209 38.209 38.209s38.209-17.322 38.209-38.21V112.08c0-55.021-44.322-99.344-99.343-99.344z" p-id="4590"></path></svg>`
+    let tick = `
+<svg t="1628558717330" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3410" width="16" height="16"><path d="M512 0C228.430769 0 0 228.430769 0 512s228.430769 512 512 512 512-228.430769 512-512S795.569231 0 512 0z m0 945.230769C271.753846 945.230769 78.769231 752.246154 78.769231 512S271.753846 78.769231 512 78.769231s433.230769 192.984615 433.230769 433.230769-192.984615 433.230769-433.230769 433.230769z" p-id="3411" fill="#07a35a"></path><path d="M716.8 330.830769l-208.738462 248.123077c-15.753846 15.753846-43.323077 19.692308-59.076923 7.876923L299.323077 472.615385c-15.753846-11.815385-43.323077-7.876923-55.138462 7.876923-11.815385 15.753846-7.876923 43.323077 7.876923 55.138461l149.661539 114.215385c19.692308 15.753846 47.261538 23.630769 74.830769 23.630769 35.446154 0 70.892308-15.753846 94.523077-43.323077l208.738462-248.123077c15.753846-15.753846 11.815385-43.323077-3.938462-55.138461-19.692308-15.753846-43.323077-15.753846-59.076923 3.938461z" p-id="3412" fill="#07a35a"></path></svg>`
+
+
+    pres.forEach(e => {
+        e.insertAdjacentHTML('beforeend', `<button class="cp_btn">` + copy + `</button>`)
+    })
+    let clp = new ClipboardJS('.cp_btn', {
+        target: function (trigger) {
+            return trigger.previousElementSibling;
+        }
+    });
+    clp.on('success', function (e) {
+        let clpEl=e;
+        e.trigger.innerHTML = tick;
+        e.trigger.parentElement.onmouseleave = _ => {
+            clpEl.trigger.innerHTML = copy
+            clpEl.clearSelection();
+        }
+        // console.info('Action:', e.action);
+        // console.info('Text:', e.text);
+        // console.info('Trigger:', e.trigger);
+        // e.clearSelection();
+    });
+
+    clp.on('error', function (e) {
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+    });
+</script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='1. 网页出现横向滚动条？ &amp;lt;body style=`overflow:-Scroll;overflow-y:hidden &amp;gt; &amp;lt;/body&amp;gt;让横条没有：
+ &amp;lt;body style=`overflow:-Scroll;overflow-x:hidden&amp;gt; &amp;lt;/body&amp;gt;两个都去掉？更简单了
+&amp;lt;body scroll=&amp;quot;no&amp;quot; &amp;gt; &amp;lt;/body&amp;gt;火狐底部滚动条不显示：
+ html { overflow:-moz-scrollbars-vertical; }2. 网页图标？ &amp;lt;link rel=&amp;quot;shortcut icon &amp;quot; href=&amp;quot;images/favicon.ico&amp;quot;&amp;gt;3. Height:100%失效？ &amp;lt;html style=&amp;quot;height: 100%;&amp;quot;&amp;gt;&amp;lt;body style=&amp;quot;height: 100%;&amp;quot;&amp;gt;&amp;lt;div style=&amp;quot;height: 100%;&amp;quot;&amp;gt;&amp;lt;p&amp;gt; 这样这个div的高度就会100%了 &amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;4. 设置一个元素不可见？ opacity 设为 0、将 visibility 设为 hidden、将 display 设为 none 或者将 position 设为 absolute
+注意：
+1&amp;gt; display=none元素消失，不占位置
+2&amp;gt; opacity =0、 visibility =hidden只是视觉上不可见，其实还在那里占位置
+5.input无法输入？ ==&amp;gt; height:0; (将包裹提示的div高度设置为0，让其不再遮挡即可)'><title>常用的一些html小问题</title>
+
+<link rel='canonical' href='https://www.fintinger.site/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E5%B0%8F%E9%97%AE%E9%A2%98/'>
+
+<link rel="stylesheet" href="/scss/style.min.css">
+
+<meta property='og:title' content='常用的一些html小问题'>
+<meta property='og:description' content='1. 网页出现横向滚动条？ &amp;lt;body style=`overflow:-Scroll;overflow-y:hidden &amp;gt; &amp;lt;/body&amp;gt;让横条没有：
+ &amp;lt;body style=`overflow:-Scroll;overflow-x:hidden&amp;gt; &amp;lt;/body&amp;gt;两个都去掉？更简单了
+&amp;lt;body scroll=&amp;quot;no&amp;quot; &amp;gt; &amp;lt;/body&amp;gt;火狐底部滚动条不显示：
+ html { overflow:-moz-scrollbars-vertical; }2. 网页图标？ &amp;lt;link rel=&amp;quot;shortcut icon &amp;quot; href=&amp;quot;images/favicon.ico&amp;quot;&amp;gt;3. Height:100%失效？ &amp;lt;html style=&amp;quot;height: 100%;&amp;quot;&amp;gt;&amp;lt;body style=&amp;quot;height: 100%;&amp;quot;&amp;gt;&amp;lt;div style=&amp;quot;height: 100%;&amp;quot;&amp;gt;&amp;lt;p&amp;gt; 这样这个div的高度就会100%了 &amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;4. 设置一个元素不可见？ opacity 设为 0、将 visibility 设为 hidden、将 display 设为 none 或者将 position 设为 absolute
+注意：
+1&amp;gt; display=none元素消失，不占位置
+2&amp;gt; opacity =0、 visibility =hidden只是视觉上不可见，其实还在那里占位置
+5.input无法输入？ ==&amp;gt; height:0; (将包裹提示的div高度设置为0，让其不再遮挡即可)'>
+<meta property='og:url' content='https://www.fintinger.site/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E5%B0%8F%E9%97%AE%E9%A2%98/'>
+<meta property='og:site_name' content='Archai &#39;s blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='HTML' /><meta property='article:published_time' content='2020-05-24T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-05-24T00:00:00&#43;00:00'/><meta property='og:image' content='https://www.fintinger.site/img/defaultImg.jpg' />
+<meta name="twitter:title" content="常用的一些html小问题">
+<meta name="twitter:description" content="1. 网页出现横向滚动条？ &amp;lt;body style=`overflow:-Scroll;overflow-y:hidden &amp;gt; &amp;lt;/body&amp;gt;让横条没有：
+ &amp;lt;body style=`overflow:-Scroll;overflow-x:hidden&amp;gt; &amp;lt;/body&amp;gt;两个都去掉？更简单了
+&amp;lt;body scroll=&amp;quot;no&amp;quot; &amp;gt; &amp;lt;/body&amp;gt;火狐底部滚动条不显示：
+ html { overflow:-moz-scrollbars-vertical; }2. 网页图标？ &amp;lt;link rel=&amp;quot;shortcut icon &amp;quot; href=&amp;quot;images/favicon.ico&amp;quot;&amp;gt;3. Height:100%失效？ &amp;lt;html style=&amp;quot;height: 100%;&amp;quot;&amp;gt;&amp;lt;body style=&amp;quot;height: 100%;&amp;quot;&amp;gt;&amp;lt;div style=&amp;quot;height: 100%;&amp;quot;&amp;gt;&amp;lt;p&amp;gt; 这样这个div的高度就会100%了 &amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;4. 设置一个元素不可见？ opacity 设为 0、将 visibility 设为 hidden、将 display 设为 none 或者将 position 设为 absolute
+注意：
+1&amp;gt; display=none元素消失，不占位置
+2&amp;gt; opacity =0、 visibility =hidden只是视觉上不可见，其实还在那里占位置
+5.input无法输入？ ==&amp;gt; height:0; (将包裹提示的div高度设置为0，让其不再遮挡即可)"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://www.fintinger.site/img/defaultImg.jpg' />
+    <link rel="shortcut icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico" />
+
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="https://www.fintinger.site" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>Back</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%89%8D%E7%AB%AF/" >
+                前端
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E5%B0%8F%E9%97%AE%E9%A2%98/">常用的一些html小问题</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 24, 2020</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    3 min read
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h2 id="1-网页出现横向滚动条">1. 网页出现横向滚动条？</h2>
+<pre><code>&lt;body style=`overflow:-Scroll;overflow-y:hidden &gt;  &lt;/body&gt;
+</code></pre><p><em>让横条没有：</em></p>
+<pre><code> &lt;body style=`overflow:-Scroll;overflow-x:hidden&gt; &lt;/body&gt;
+</code></pre><p><em>两个都去掉？更简单了</em></p>
+<pre><code>&lt;body scroll=&quot;no&quot; &gt;  &lt;/body&gt;
+</code></pre><p><em>火狐底部滚动条不显示：</em></p>
+<pre><code> html { overflow:-moz-scrollbars-vertical; }
+</code></pre><h2 id="2-网页图标">2. 网页图标？</h2>
+<pre><code>&lt;link rel=&quot;shortcut icon &quot; href=&quot;images/favicon.ico&quot;&gt;
+</code></pre><h2 id="3-height100失效">3. Height:100%失效？</h2>
+<pre><code>&lt;html style=&quot;height: 100%;&quot;&gt;
+
+        &lt;body style=&quot;height: 100%;&quot;&gt;
+
+                  &lt;div style=&quot;height: 100%;&quot;&gt;
+
+                          &lt;p&gt;        这样这个div的高度就会100%了      &lt;/p&gt;
+
+                 &lt;/div&gt;
+
+           &lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre><h2 id="4-设置一个元素不可见">4. 设置一个元素不可见？</h2>
+<p><em>opacity 设为 0、将 visibility 设为 hidden、将 display 设为 none 或者将 position 设为 absolute</em></p>
+<p><em><strong>注意：</strong></em></p>
+<p><em>1&gt; display=none元素消失，不占位置</em></p>
+<p><em>2&gt; opacity =0、 visibility =hidden只是视觉上不可见，其实还在那里占位置</em></p>
+<h2 id="5input无法输入">5.input无法输入？</h2>
+<p><img src="http://m.qpic.cn/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYk3deCXgANSfusOc27uwWvtbht1AY*rXQHj67maLLPy*B6zFAIM0qX*950aqkK0bmOZ8F1c42GuXetWlvTrzxK1o!/b&amp;bo=tgLRALYC0QACKQ0!&amp;rf=viewer_4" alt=""  /></p>
+<p><em>==&gt;    height:0;    (将包裹提示的div高度设置为0，让其不再遮挡即可)</em></p>
+<h2 id="6input标签显示手势">6.input标签显示手势？</h2>
+<pre><code>input{
+cursor:pointer;           
+}  
+ /* 鼠标移入按钮范围时出现手势 */*
+</code></pre><h2 id="7-js中的一些语法">7. JS中的一些语法</h2>
+<p><em>1&gt; 注意书写其中的  &ldquo;&quot;（引号） ！！！！</em></p>
+<pre><code>document.getElementById(&quot;btn&quot;);
+</code></pre><p><em>2&gt;onclick,.onload&hellip;等事件都可以用这个，可以避免代码污染啥的（也不一定）</em></p>
+<pre><code>.addEventListener('click',function f1() {}**
+</code></pre><p><em>3&gt;可以给一个标签中加入另一个标签</em></p>
+<pre><code>createElement('')***
+</code></pre><h2 id="8addeventlistener--onmouse的区别">8.addEventListener &amp; onmouse×××的区别：</h2>
+<ul>
+<li>onmouseover
+<img src="http://m.qpic.cn/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYkwbv3rUZYzJz1ui9ouSJnYUv.XY519lpYDe1MSUcSpFZ3p85bI9e6bQtkGpI2ieN1YGj58LaGfkNZtOhQ*8Xexc!/b&amp;bo=GQYsARkGLAECGT0!&amp;rf=viewer_4" alt="正常"  /></li>
+</ul>
+<pre><code>&lt;!--CSS部分--&gt;
+ *{margin: 0;padding: 0;border: none;}
+        ##progress{width: 1000px;height: 20px;line-height: 20px;
+            /*background-color: ##e8e8e8;*/
+            margin: 100px auto;position: relative;
+        }
+        ##progress_bar{width: 900px;height: 100%;background-color: ##ccc;border-radius: 8px;
+            position: relative;}
+        ##progress_value{position: absolute;right: 30px;top: 0;}
+        ##progress_bar_fg{width: 0;height: 100%;background-color: purple;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;}
+        span{
+            width: 10px;
+            height: 30px;
+            background-color: purple;
+            position: absolute;
+            left: 0;
+            top: -5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+&lt;!--HTML部分--&gt;
+    &lt;div id=&quot;progress&quot;&gt;
+        &lt;div id=&quot;progress_bar&quot;&gt;
+            &lt;div id=&quot;progress_bar_fg&quot;&gt;&lt;/div&gt;
+            &lt;span&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div id=&quot;progress_value&quot;&gt;0%&lt;/div&gt;
+    &lt;/div&gt;
+&lt;!--JS部分--&gt;
+ window.onload = function () {
+        // 1. 获取需要的标签
+        var progress = document.getElementById(&quot;progress&quot;);
+        var progress_bar = progress.children[0];
+        var progress_bar_fg = progress_bar.children[0];
+        var mask = progress_bar.children[1];
+        var progress_value =  progress.children[1];
+
+        // 2. 监听鼠标按下
+        mask.onmousedown = function (event) {
+            var e = event || window.event;
+
+            // 2.1 获取初始位置
+            var offsetLeft = event.clientX - mask.offsetLeft;
+
+            // 2.2 监听鼠标的移动
+            document.onmousemove = function (event) {
+                var e = event || window.event;
+
+                // 2.3 获取移动的位置
+                var x = e.clientX - offsetLeft;
+
+                // 边界值处理
+                if(x &lt; 0){
+                    x = 0;
+                }else if(x &gt;= progress_bar.offsetWidth - mask.offsetWidth){
+                    x = progress_bar.offsetWidth - mask.offsetWidth;
+                }
+
+                // 2.4 走起来
+                mask.style.left = x + 'px';
+                progress_bar_fg.style.width = x + 'px';
+                progress_value.innerHTML = parseInt(x / (progress_bar.offsetWidth - mask.offsetWidth) * 100) + '%';
+
+                return false;
+            };
+
+            // 2.5 监听鼠标抬起
+            document.onmouseup = function () {
+                document.onmousemove = null;
+            }
+        }
+    }
+</code></pre><ul>
+<li>addEventListener</li>
+</ul>
+<p><img src="http://m.qpic.cn/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYkw0qFWjdCLVjo0yOP2tk6YYs2O7N*IlnmdpYHipdXbNEstazeVKEpFoGEsIxs0xz00TkxlFh84TbXwoXob9TPuc!/b&amp;bo=GQYsARkGLAECGT0!&amp;rf=viewer_4" alt="出现BUG"  /></p>
+<pre><code>&lt;!--CSS部分--&gt;
+ *{margin: 0;padding: 0;border: none;}
+        ##progress{width: 1000px;height: 20px;line-height: 20px;
+            /*background-color: ##e8e8e8;*/
+            margin: 100px auto;position: relative;
+        }
+        ##progress_bar{width: 900px;height: 100%;background-color: ##ccc;border-radius: 8px;
+            position: relative;}
+        ##progress_value{position: absolute;right: 30px;top: 0;}
+        ##progress_bar_fg{width: 0;height: 100%;background-color: purple;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;}
+        span{
+            width: 10px;
+            height: 30px;
+            background-color: purple;
+            position: absolute;
+            left: 0;
+            top: -5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+&lt;!--HTML部分--&gt;
+&lt;div id=&quot;progress&quot;&gt;
+    &lt;div id=&quot;progress_bar&quot;&gt;
+        &lt;div id=&quot;progress_bar_fg&quot;&gt;&lt;/div&gt;
+        &lt;span&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;progress_value&quot;&gt;0%&lt;/div&gt;
+&lt;/div&gt;
+&lt;!--JS部分--&gt;
+//  addEventListener();
+    //  removeEventListener();
+    window.addEventListener('load', function (ev) {
+        // 1. 获取标签
+        var progress = document.getElementById('progress');
+        var progressBar = progress.children[0];
+        var progressBarFg= progressBar.children[0];
+        var mask= progressBar.children[1];
+        var progressValue= progress.children[1];
+
+        // 2. 监听鼠标在mask上面的按下
+        mask.addEventListener('mousedown', function (evt) {
+            var e = evt || window.event;
+            // 2.1 获取按下的坐标
+            var pointX = e.pageX - mask.offsetLeft;
+            // 2.2 监听鼠标的移动
+            document.addEventListener('mousemove', function (ev1) {
+                var e = ev1 || window.event;
+                // 2.3 获取水平方向移动的距离
+                var x = e.pageX - pointX;
+
+                if(x &lt; 0){
+                    x = 0;
+                }else if(x &gt; progressBar.offsetWidth - mask.offsetWidth){
+                    x =  progressBar.offsetWidth - mask.offsetWidth
+                }
+
+                // 2.4 走起来
+                mask.style.left = x + 'px';
+                progressBarFg.style.width = x + 'px';
+                progressValue.innerText = parseInt(x / (progressBar.offsetWidth - mask.offsetWidth)* 100) + '%';
+                return false;
+            }, false)
+        }, false);
+
+        // 3. 监听鼠标松开
+        /* document.onmouseup = function (ev1) {
+             document.addEventListener('mousemove', null);
+         };*/
+
+
+        document.addEventListener('mouseup', function (ev1) {
+            document.removeEventListener('mousemove', null, false);
+        }, false);
+
+
+
+    });
+</code></pre><h2 id="9手机端开发">9.手机端开发</h2>
+<p>务必写上</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!-简写meta:vp 按Tab即可---&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="p">&gt;</span>
+</code></pre></div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/html/">HTML</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E4%BB%A3%E7%A0%81/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">常用的一些html代码</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/php%E5%BC%80%E5%8F%91%E9%AA%8C%E8%AF%81%E7%A0%81%E7%B1%BB/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PHP开发验证码类</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/git%E7%9B%B8%E5%85%B3/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Git相关</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/javascript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Javascript正则表达式</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/es6%E4%B8%AD%E7%9A%84class%E7%B1%BB/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Es6中的class类</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    <script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://pvhtgopk.lc-cn-n1-shared.com","visitor":true});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2018 - 
+        
+        2021 Archai &#39;s blog
+    </section>
+    
+    <section class="powerby">
+        
+            Archai <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">Table of contents</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#1-网页出现横向滚动条">1. 网页出现横向滚动条？</a></li>
+    <li><a href="#2-网页图标">2. 网页图标？</a></li>
+    <li><a href="#3-height100失效">3. Height:100%失效？</a></li>
+    <li><a href="#4-设置一个元素不可见">4. 设置一个元素不可见？</a></li>
+    <li><a href="#5input无法输入">5.input无法输入？</a></li>
+    <li><a href="#6input标签显示手势">6.input标签显示手势？</a></li>
+    <li><a href="#7-js中的一些语法">7. JS中的一些语法</a></li>
+    <li><a href="#8addeventlistener--onmouse的区别">8.addEventListener &amp; onmouse×××的区别：</a></li>
+    <li><a href="#9手机端开发">9.手机端开发</a></li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>\
+
+<script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.8/clipboard.js"></script>
+<script>
+    let pres = document.querySelectorAll("pre");
+    let copy = `
+<svg t="1628559239763" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4588" width="16" height="16"><path d="M756.537 170.667H109.532c-55.02 0-99.343 44.322-99.343 99.343v647.005c0 55.02 44.322 99.343 99.343 99.343h647.005c55.021 0 99.344-44.322 99.344-99.343V270.01c0-55.02-44.323-99.343-99.344-99.343z m22.926 746.348a22.83 22.83 0 0 1-22.926 22.925H109.532a22.83 22.83 0 0 1-22.925-22.925V270.01a22.83 22.83 0 0 1 22.925-22.925h647.005a22.83 22.83 0 0 1 22.926 22.925v647.005z" p-id="4589"></path><path d="M914.468 12.736H267.463c-20.888 0-38.21 17.322-38.21 38.21s17.322 38.208 38.21 38.208h647.005a22.83 22.83 0 0 1 22.925 22.926v647.005c0 20.887 17.321 38.209 38.209 38.209s38.209-17.322 38.209-38.21V112.08c0-55.021-44.322-99.344-99.343-99.344z" p-id="4590"></path></svg>`
+    let tick = `
+<svg t="1628558717330" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3410" width="16" height="16"><path d="M512 0C228.430769 0 0 228.430769 0 512s228.430769 512 512 512 512-228.430769 512-512S795.569231 0 512 0z m0 945.230769C271.753846 945.230769 78.769231 752.246154 78.769231 512S271.753846 78.769231 512 78.769231s433.230769 192.984615 433.230769 433.230769-192.984615 433.230769-433.230769 433.230769z" p-id="3411" fill="#07a35a"></path><path d="M716.8 330.830769l-208.738462 248.123077c-15.753846 15.753846-43.323077 19.692308-59.076923 7.876923L299.323077 472.615385c-15.753846-11.815385-43.323077-7.876923-55.138462 7.876923-11.815385 15.753846-7.876923 43.323077 7.876923 55.138461l149.661539 114.215385c19.692308 15.753846 47.261538 23.630769 74.830769 23.630769 35.446154 0 70.892308-15.753846 94.523077-43.323077l208.738462-248.123077c15.753846-15.753846 11.815385-43.323077-3.938462-55.138461-19.692308-15.753846-43.323077-15.753846-59.076923 3.938461z" p-id="3412" fill="#07a35a"></path></svg>`
+
+
+    pres.forEach(e => {
+        e.insertAdjacentHTML('beforeend', `<button class="cp_btn">` + copy + `</button>`)
+    })
+    let clp = new ClipboardJS('.cp_btn', {
+        target: function (trigger) {
+            return trigger.previousElementSibling;
+        }
+    });
+    clp.on('success', function (e) {
+        let clpEl=e;
+        e.trigger.innerHTML = tick;
+        e.trigger.parentElement.onmouseleave = _ => {
+            clpEl.trigger.innerHTML = copy
+            clpEl.clearSelection();
+        }
+        // console.info('Action:', e.action);
+        // console.info('Text:', e.text);
+        // console.info('Trigger:', e.trigger);
+        // e.clearSelection();
+    });
+
+    clp.on('error', function (e) {
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+    });
+</script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='模块功能主要由两个命令构成：export和import。export命令用于规定模块的对外接口，import命令用于输入其他模块提供的功能。
+//profile.jsexport var firstName = &#39;Michael&#39;;export var lastName = &#39;Jackson&#39;;export function sayName () {return firstName &#43; lastName;}export default function () {console.log(&#39;foo&#39;);}// main.jsimport { firstName, lastName , sayName} from &#39;./profile.js&#39;; 注意：在index.html中引入的时候需要给script加type=&amp;ldquo;module&amp;rdquo;,即
+ &amp;lt;script type=&amp;quot;module&amp;quot; src=&amp;quot;./profiles.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script type=&amp;quot;module&amp;quot; src=&amp;quot;./main.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;'><title>关于Javascript模块化</title>
+
+<link rel='canonical' href='https://www.fintinger.site/p/%E5%85%B3%E4%BA%8Ejavascript%E6%A8%A1%E5%9D%97%E5%8C%96/'>
+
+<link rel="stylesheet" href="/scss/style.min.css">
+
+<meta property='og:title' content='关于Javascript模块化'>
+<meta property='og:description' content='模块功能主要由两个命令构成：export和import。export命令用于规定模块的对外接口，import命令用于输入其他模块提供的功能。
+//profile.jsexport var firstName = &#39;Michael&#39;;export var lastName = &#39;Jackson&#39;;export function sayName () {return firstName &#43; lastName;}export default function () {console.log(&#39;foo&#39;);}// main.jsimport { firstName, lastName , sayName} from &#39;./profile.js&#39;; 注意：在index.html中引入的时候需要给script加type=&amp;ldquo;module&amp;rdquo;,即
+ &amp;lt;script type=&amp;quot;module&amp;quot; src=&amp;quot;./profiles.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script type=&amp;quot;module&amp;quot; src=&amp;quot;./main.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;'>
+<meta property='og:url' content='https://www.fintinger.site/p/%E5%85%B3%E4%BA%8Ejavascript%E6%A8%A1%E5%9D%97%E5%8C%96/'>
+<meta property='og:site_name' content='Archai &#39;s blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Javascript' /><meta property='article:published_time' content='2020-09-02T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-09-02T00:00:00&#43;00:00'/><meta property='og:image' content='https://www.fintinger.site/img/defaultImg.jpg' />
+<meta name="twitter:title" content="关于Javascript模块化">
+<meta name="twitter:description" content="模块功能主要由两个命令构成：export和import。export命令用于规定模块的对外接口，import命令用于输入其他模块提供的功能。
+//profile.jsexport var firstName = &#39;Michael&#39;;export var lastName = &#39;Jackson&#39;;export function sayName () {return firstName &#43; lastName;}export default function () {console.log(&#39;foo&#39;);}// main.jsimport { firstName, lastName , sayName} from &#39;./profile.js&#39;; 注意：在index.html中引入的时候需要给script加type=&amp;ldquo;module&amp;rdquo;,即
+ &amp;lt;script type=&amp;quot;module&amp;quot; src=&amp;quot;./profiles.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script type=&amp;quot;module&amp;quot; src=&amp;quot;./main.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://www.fintinger.site/img/defaultImg.jpg' />
+    <link rel="shortcut icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico" />
+
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="https://www.fintinger.site" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>Back</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%89%8D%E7%AB%AF/" >
+                前端
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/%E5%85%B3%E4%BA%8Ejavascript%E6%A8%A1%E5%9D%97%E5%8C%96/">关于Javascript模块化</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 29, 2020</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 min read
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h2 id="自定义一个模块引擎">自定义一个模块引擎</h2>
+<p><strong>要求：</strong> 能够让模块之间产生依赖关系</p>
+<p><strong>代码</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="mi">_</span><span class="nx">module</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">moduleList</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="kd">function</span> <span class="nx">define</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">modules</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">modules</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">n</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="c1">//将传入的只含名称的模块数组 =&gt; 指定名称模块的返回结果
+</span><span class="c1"></span>            <span class="nx">modules</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">moduleList</span><span class="p">[</span><span class="nx">n</span><span class="p">]</span>
+        <span class="p">})</span>
+        <span class="nx">moduleList</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=</span> <span class="nx">action</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">modules</span><span class="p">)</span>
+        <span class="c1">// console.log(moduleList);
+</span><span class="c1"></span>    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span><span class="nx">define</span><span class="p">}</span>
+<span class="p">})();</span>
+<span class="c1">//定义一个工具库，暴露给外界使用，输出
+</span><span class="c1"></span><span class="mi">_</span><span class="nx">module</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="s1">&#39;tools&#39;</span><span class="p">,</span> <span class="p">[],</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">max</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">b</span> <span class="o">-</span> <span class="nx">a</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="c1">//获取最大值挺别致昂
+</span><span class="c1"></span>        <span class="p">},</span>
+        <span class="nx">min</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">b</span> <span class="o">-</span> <span class="nx">a</span><span class="p">)[</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+<span class="c1">//使用之前定义的工具库，引入
+</span><span class="c1"></span><span class="mi">_</span><span class="nx">module</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="s1">&#39;use&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;tools&#39;</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">m</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">m</span><span class="p">.</span><span class="nx">max</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">]));</span><span class="c1">//8
+</span><span class="c1"></span>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">m</span><span class="p">.</span><span class="nx">min</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">]));</span><span class="c1">//1
+</span><span class="c1"></span><span class="p">})</span>
+</code></pre></div><h2 id="js中模块化的使用">JS中模块化的使用</h2>
+<h4 id="1基本使用">1.基本使用</h4>
+<blockquote>
+<p><code>export</code> 暴露给外界使用，<code>import</code> 引入</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="cm">/*module.js*/</span>
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="s2">&#34;jqf&#34;</span>
+
+<span class="kd">function</span> <span class="nx">getName</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">//利用export暴露给外界
+</span><span class="c1"></span><span class="kr">export</span> <span class="p">{</span><span class="nx">a</span><span class="p">,</span> <span class="nx">getName</span><span class="p">}</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--use.html--&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;module&#34;</span><span class="p">&gt;</span>
+<span class="c1">// type=&#34;module&#34;，./ 都必须书写！
+</span><span class="c1"></span>     
+<span class="kr">import</span> <span class="p">{</span><span class="nx">a</span><span class="p">,</span><span class="nx">getName</span><span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;./module.js&#34;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="c1">//jqf
+</span><span class="c1"></span><span class="nx">getName</span><span class="p">();</span><span class="c1">//jqf
+</span><span class="c1"></span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div><h4 id="2批量导入">2.批量导入</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">api</span> <span class="nx">from</span> <span class="s1">&#39;./modules.js&#39;</span>
+</code></pre></div><p><strong>使用：</strong> <code>api.a</code> |<code>api.getName()</code>&hellip;</p>
+<blockquote>
+<p>不太建议直接使用这种方法，因为有时候并不需要全部导入，只导入需要即可</p>
+</blockquote>
+<h4 id="3别名导出导入">3.别名导出导入</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="p">{</span><span class="nx">a</span> <span class="nx">as</span> <span class="nx">user</span><span class="p">,</span><span class="nx">getName</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./modules.js&#39;</span>
+</code></pre></div><p>=&gt; 将导入的<code>a</code> 命名为 <code>user</code></p>
+<p>同理，导出时也可以重命名</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">export</span> <span class="p">{</span><span class="nx">a</span> <span class="nx">as</span> <span class="nx">user</span><span class="p">,</span><span class="nx">getName</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./modules.js&#39;</span>
+</code></pre></div><h4 id="4默认导出">4.默认导出</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">getName</span><span class="p">(){</span>
+	<span class="c1">//...
+</span><span class="c1"></span><span class="p">}</span>
+<span class="c1">//或者
+</span><span class="c1"></span><span class="kr">export</span> <span class="p">{</span><span class="nx">getName</span> <span class="nx">as</span> <span class="k">default</span><span class="p">}</span>
+</code></pre></div><p>导入时，</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="nx">gName</span> <span class="nx">from</span> <span class="s1">&#39;./modules.js&#39;</span>
+</code></pre></div><p><strong>说明：</strong> 默认导出只有一个，用任意名接收即可，但是，规范化的要求是<strong>导入默认导出的时候，名称尽量与文件名一样或者相同</strong></p>
+<p>另外，当混合时</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">export</span> <span class="p">{</span><span class="nx">a</span><span class="p">,</span> <span class="nx">getName</span> <span class="nx">as</span> <span class="k">default</span><span class="p">}</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="nx">modules</span><span class="p">,{</span><span class="nx">a</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./modules.js&#39;</span>
+<span class="c1">//默认导出和普通导出用&#39;,&#39;隔开
+</span></code></pre></div><h4 id="5模块的合并导出">5.模块的合并导出</h4>
+<p><strong>方法：</strong> 建立一个js文件，导入所有的模块，并且编成组再导出</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">m1</span> <span class="nx">from</span> <span class="s1">&#39;./module1.js&#39;</span>
+<span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">m2</span> <span class="nx">from</span> <span class="s1">&#39;./module2.js&#39;</span>
+
+<span class="kr">export</span> <span class="p">{</span><span class="nx">m1</span><span class="p">,</span><span class="nx">m2</span><span class="p">}</span>
+</code></pre></div><blockquote>
+<p>编成组之后可以避免不同模块中导出重名的情况</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">//使用
+</span><span class="c1"></span><span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">api</span> <span class="nx">from</span> <span class="s1">&#39;./index.js&#39;</span>
+
+<span class="nx">api</span><span class="p">.</span><span class="nx">m1</span><span class="p">.</span><span class="nx">getName</span><span class="p">()</span>
+</code></pre></div><h4 id="6按需加载">6.按需加载</h4>
+<blockquote>
+<p>由于 import 只能在外部顶层，无法在{ }等中使用，因此无法做到按需加载，事件触发加载&hellip;&hellip;</p>
+</blockquote>
+<p>**方法： ** <code>import(src)</code> 函数</p>
+<p><strong>参数：</strong> <code>src</code> js文件的加载路径</p>
+<p><strong>返回值：</strong> 返回一个<code>Promise</code>，进行后续操作</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&#34;button&#34;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;click&#34;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;./modules.js&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">module</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">module</span><span class="p">.</span><span class="nx">max</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">]));</span>
+    <span class="p">})</span>
+<span class="p">})</span>
+</code></pre></div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/javascript/">Javascript</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/javascript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Javascript正则表达式</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/es6%E4%B8%AD%E7%9A%84class%E7%B1%BB/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Es6中的class类</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/javascript%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%88%86%E6%9E%90/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">JavaScript中的继承与原型链分析</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%AF%B9%E8%B1%A1/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">JavaScript基础之对象</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">JavaScript基础之函数相关</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    <script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://pvhtgopk.lc-cn-n1-shared.com","visitor":true});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2018 - 
+        
+        2021 Archai &#39;s blog
+    </section>
+    
+    <section class="powerby">
+        
+            Archai <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">Table of contents</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#自定义一个模块引擎">自定义一个模块引擎</a></li>
+    <li><a href="#js中模块化的使用">JS中模块化的使用</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#1基本使用">1.基本使用</a></li>
+            <li><a href="#2批量导入">2.批量导入</a></li>
+            <li><a href="#3别名导出导入">3.别名导出导入</a></li>
+            <li><a href="#4默认导出">4.默认导出</a></li>
+            <li><a href="#5模块的合并导出">5.模块的合并导出</a></li>
+            <li><a href="#6按需加载">6.按需加载</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>\
+
+<script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.8/clipboard.js"></script>
+<script>
+    let pres = document.querySelectorAll("pre");
+    let copy = `
+<svg t="1628559239763" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4588" width="16" height="16"><path d="M756.537 170.667H109.532c-55.02 0-99.343 44.322-99.343 99.343v647.005c0 55.02 44.322 99.343 99.343 99.343h647.005c55.021 0 99.344-44.322 99.344-99.343V270.01c0-55.02-44.323-99.343-99.344-99.343z m22.926 746.348a22.83 22.83 0 0 1-22.926 22.925H109.532a22.83 22.83 0 0 1-22.925-22.925V270.01a22.83 22.83 0 0 1 22.925-22.925h647.005a22.83 22.83 0 0 1 22.926 22.925v647.005z" p-id="4589"></path><path d="M914.468 12.736H267.463c-20.888 0-38.21 17.322-38.21 38.21s17.322 38.208 38.21 38.208h647.005a22.83 22.83 0 0 1 22.925 22.926v647.005c0 20.887 17.321 38.209 38.209 38.209s38.209-17.322 38.209-38.21V112.08c0-55.021-44.322-99.344-99.343-99.344z" p-id="4590"></path></svg>`
+    let tick = `
+<svg t="1628558717330" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3410" width="16" height="16"><path d="M512 0C228.430769 0 0 228.430769 0 512s228.430769 512 512 512 512-228.430769 512-512S795.569231 0 512 0z m0 945.230769C271.753846 945.230769 78.769231 752.246154 78.769231 512S271.753846 78.769231 512 78.769231s433.230769 192.984615 433.230769 433.230769-192.984615 433.230769-433.230769 433.230769z" p-id="3411" fill="#07a35a"></path><path d="M716.8 330.830769l-208.738462 248.123077c-15.753846 15.753846-43.323077 19.692308-59.076923 7.876923L299.323077 472.615385c-15.753846-11.815385-43.323077-7.876923-55.138462 7.876923-11.815385 15.753846-7.876923 43.323077 7.876923 55.138461l149.661539 114.215385c19.692308 15.753846 47.261538 23.630769 74.830769 23.630769 35.446154 0 70.892308-15.753846 94.523077-43.323077l208.738462-248.123077c15.753846-15.753846 11.815385-43.323077-3.938462-55.138461-19.692308-15.753846-43.323077-15.753846-59.076923 3.938461z" p-id="3412" fill="#07a35a"></path></svg>`
+
+
+    pres.forEach(e => {
+        e.insertAdjacentHTML('beforeend', `<button class="cp_btn">` + copy + `</button>`)
+    })
+    let clp = new ClipboardJS('.cp_btn', {
+        target: function (trigger) {
+            return trigger.previousElementSibling;
+        }
+    });
+    clp.on('success', function (e) {
+        let clpEl=e;
+        e.trigger.innerHTML = tick;
+        e.trigger.parentElement.onmouseleave = _ => {
+            clpEl.trigger.innerHTML = copy
+            clpEl.clearSelection();
+        }
+        // console.info('Action:', e.action);
+        // console.info('Text:', e.text);
+        // console.info('Trigger:', e.trigger);
+        // e.clearSelection();
+    });
+
+    clp.on('error', function (e) {
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+    });
+</script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

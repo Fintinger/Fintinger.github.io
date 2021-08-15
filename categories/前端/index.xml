@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>前端 on Archai &#39;s blog</title>
+    <link>https://www.fintinger.site/categories/%E5%89%8D%E7%AB%AF/</link>
+    <description>Recent content in 前端 on Archai &#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 03 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/categories/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PHP开发验证码类</title>
+      <link>https://www.fintinger.site/p/php%E5%BC%80%E5%8F%91%E9%AA%8C%E8%AF%81%E7%A0%81%E7%B1%BB/</link>
+      <pubDate>Sat, 03 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/php%E5%BC%80%E5%8F%91%E9%AA%8C%E8%AF%81%E7%A0%81%E7%B1%BB/</guid>
+      <description>利用php中的GD库可以完成验证码类的开发。后盾人教程
+ PHP创建图像步骤 发送HTTP头信息，声明内容为图像 header(&amp;#39;Content-type:image/gif&amp;#39;); header(&amp;#39;Content-type:image/jpeg&amp;#39;); header(&amp;#39;Content-type:image/png&amp;#39;); 通过设置头信息让浏览器渲染出图像，而不是HTML等其他类型
+创建画布 imageCreateTrueColor(width,height); width &amp;amp; height 画布宽高，即为输出图片的尺寸,返回为source 类型，后续操作都是针对这个资源展开。
+创建绘图所需要的颜色 imageColorAllocate(img_resource,R,G,B); 颜色从属于创建画布产生的图像资源而存在，后面三个值分别为红绿蓝三个通道的值，为int类型,在0—255之间。
+绘图（填充画布、画圆、画方块、画线条、画布上写字） 👉 填充画布(画布背景)
+imageFill(img_resource,x,y,color); 👉 画圆
+//绘制空心圆形 imageEllipse(img_res,x,y,w,h,color); //绘制填充好的实心圆 imageFilledEllipse(img_res,x,y,w,h,color); 绘制 圆心(x,y) 宽 x，高 h，的圆
+👉 画方
+//空心矩形 imageRectangle(img_res,x1,y1,x2,y2,color); //实心矩形 imageFilledRectangle (img_res,x1,y1,x2,y2,color); (x1,y1)为左上角坐标， (x2,y2)为右下角坐标
+👉画线条
+imageLine(img_res,x1,y1,x2,y2,color)(x1,y1)与(x2,y2)两点确定的直线。
+👉 绘制像素(点)
+imagesetpixel ( img_res , x , y , color ) 👉 输入文本
+imagettftext (img_res , size , angle , x , y , color , fontfile ,text ) 图像资源，字体尺寸，角度，第一个字符的基本点（大概是字符的左下角），Y 坐标（字体基线的位置），颜色 ，字体文件绝对路径(realpath($path)获取)，文本字符串（UTF-8 编码）</description>
+    </item>
+    
+    <item>
+      <title>Git相关</title>
+      <link>https://www.fintinger.site/p/git%E7%9B%B8%E5%85%B3/</link>
+      <pubDate>Tue, 29 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/git%E7%9B%B8%E5%85%B3/</guid>
+      <description>基本命令 git config --global =&amp;gt;全局配置 git config =&amp;gt;当前仓库配置 mkdir =&amp;gt;创建文件夹 ls =&amp;gt;列出当前目录下(文件，文件夹) ls -a =&amp;gt;所有all rm -rf * =&amp;gt;删除当前目录下所有 touch =&amp;gt;新建文件 cat =&amp;gt;查看文件中的内容  不想`git add . 所有？
+ 配置.gitignore 定义忽略提交的文件，其中
+ 所有空行或者以注释符号 ＃ 开头的行都会被 Git 忽略。 匹配模式最后跟反斜杠（/）说明要忽略的是目录。 可以使用标准的 glob 模式(php)匹配。  从版本库删除 git rm ... =&amp;gt;从版本库中删除，本地也会删除 git rm --cached ... =&amp;gt;只从版本库删除 从版本库改名 git mv ... ... =&amp;gt;改名 log git log -p =&amp;gt;显示文件变动信息 git log -1 =&amp;gt;最近一次提交 git log --oneline 修改最新一次提交commit描述 git commit --amend =&amp;gt;最近一次提交的描述  也可以把最新的git add .</description>
+    </item>
+    
+    <item>
+      <title>Javascript正则表达式</title>
+      <link>https://www.fintinger.site/p/javascript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
+      <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/javascript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
+      <description>关于正则表达式的创建，就不做过多的赘述
+ ::: tip
+由于不知名原因，span标签报错，因此全部替换为[sp]
+:::
+关于转义 1.字面量形式创建的RegExp 转义形式： \d, \., \s 等
+let str=&amp;#39;fintinger2592030861.com$323e&amp;#39; let reg=/\d+\.com/ str.match(reg);//2592030861.com 2.对象形式创建的RegExp 转义形式： \\d, \\., \\s等
+let str = &amp;#39;fintinger2592030861.com$323e&amp;#39; let reg = new RegExp(&amp;#39;\\d+\\.com&amp;#39;, &amp;#39;g&amp;#39;) str.match(reg)//2592030861.com 边界约束  利用^和$分别限制开头和结尾
+ let str = &amp;#39;bdhw42556jbjkhb2592030861jrh4jbhkfehrbj43jk32kbbjhb&amp;#39; let reg = /\d{3,6}/ let reg2 = /^\d{3,6}$/ str.match(reg)//42556 str.match(reg2)//null 元字符    元字符 用法     \d &amp;amp; \D 表示数字和非数字   \s &amp;amp; \S 表示空白（空格，换行，Tab制表符等）和非空白   \w &amp;amp; \W 表示字母，数字，下划线和非&amp;hellip;   .</description>
+    </item>
+    
+    <item>
+      <title>Es6中的class类</title>
+      <link>https://www.fintinger.site/p/es6%E4%B8%AD%E7%9A%84class%E7%B1%BB/</link>
+      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/es6%E4%B8%AD%E7%9A%84class%E7%B1%BB/</guid>
+      <description>class实质上是对js中继承的封装组合，用一种“语法糖”的形式实现原型链的继承
+ 静态属性/方法  静态方法/属性是指，函数作为对象时，定义在其原型(__proto__)上的方法，而需要实例化继承的动态方法是定义在其原型对象(prototype) 中的，静态方法中的参数都是固定的，直接通过整个构造函数调用，实例化对象并不会继承；而动态方法中的参数会因为实例化对象的不同而产生改变，实例化对象默认是继承的。
+ function User(){} User.__proto__.show=function(){} console.dir(User) //这里的show()方法就属于静态方法 在class中，利用static定义静态属性/方法
+class Admin{ static show(){}//__proto__中  show(){}//prototype中 } console.dir(Admin) 关于class一些注意点  class中声明的方法在prototype对象中，由于默认的属性特征设置，这些方法是不可遍历的！  class Admin{ show(){} } console.log( Object.getOwnPropertyDescriptor( Admin.prototype,&amp;#34;show&amp;#34; )) //enumerable: false class中声明方法时，方法之间不用,隔开！ class中默认开启严格模式  class中的属性保护  主要可以通过三种途径实现属性保护：Symbol,weakmap,私有属性
+ 1.Symbol /*利用Symbol创建一个受保护的属性的集合对象,无法直接获取，只能通过自定义的get/set方法*/ const protects = Symbol(&amp;#39;受保护的属性&amp;#39;) class User { constructor(name) { this.name = name this[protects] = { host: &amp;#39;https://www.fintinger.xyz&amp;#39;, token: &amp;#39;5574f1b81bbe4e3847e7a83c0a84a442&amp;#39;, password: &amp;#39;123456&amp;#39; } } set host(url) { if (!</description>
+    </item>
+    
+    <item>
+      <title>JavaScript中的继承与原型链分析</title>
+      <link>https://www.fintinger.site/p/javascript%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%88%86%E6%9E%90/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/javascript%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%88%86%E6%9E%90/</guid>
+      <description>原型链自定义设置  原型链的设置可以通过Object.creative , __proto__, Object.setProperty三种方法
+ Object.creative () 说明： 该方法只能设置原型链，而不能获取
+let a1 = {name: &amp;#39;a1&amp;#39;} let b1 = Object.create(a1) b1.name = &amp;#39;b1&amp;#39; console.log(b1);  Object.creative()为创建对象的方法，第一个参数为其原型对象，第二个参数为其默认属性，这些属性默认是不可写，不可遍历，不可修改的
+ let b=Object.create(null,{ a:{value:&amp;#39;ohh&amp;#39;, enumerable:true}, b:{value:&amp;#39;jqf&amp;#39;}, }) console.log(Object.getOwnPropertyDescriptors(b)); //a: {value: &amp;#34;ohh&amp;#34;, writable: false, enumerable: true, configurable: false} //b: {value: &amp;#34;jqf&amp;#34;, writable: false, enumerable: false, configurable: false} __proto__ 说明： 能设置，能获取，实质上是setter，getter
+let a2 = {name: &amp;#39;a2&amp;#39;} let b2 = {name: &amp;#39;b2&amp;#39;} a2.__proto__ = b2 console.log(a2); console.log(a2.__proto__);//{name: &amp;#34;b2&amp;#34;}  关于__proto__是setter,getter？</description>
+    </item>
+    
+    <item>
+      <title>关于JavaScript模块化</title>
+      <link>https://www.fintinger.site/p/%E5%85%B3%E4%BA%8Ejavascript%E6%A8%A1%E5%9D%97%E5%8C%96/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/%E5%85%B3%E4%BA%8Ejavascript%E6%A8%A1%E5%9D%97%E5%8C%96/</guid>
+      <description>自定义一个模块引擎 要求： 能够让模块之间产生依赖关系
+代码
+let _module = (function () { let moduleList = {} function define(name, modules, action) { modules.map((n, i) =&amp;gt; { //将传入的只含名称的模块数组 =&amp;gt; 指定名称模块的返回结果  modules[i] = moduleList[n] }) moduleList[name] = action.apply(null, modules) // console.log(moduleList);  } return {define} })(); //定义一个工具库，暴露给外界使用，输出 _module.define(&amp;#39;tools&amp;#39;, [], function () { return { max(arr) { return arr.sort((a, b) =&amp;gt; b - a)[0]//获取最大值挺别致昂  }, min(arr) { return arr.sort((a, b) =&amp;gt; b - a)[arr.length - 1]; } } }); //使用之前定义的工具库，引入 _module.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript基础之对象</title>
+      <link>https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%AF%B9%E8%B1%A1/</link>
+      <pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%AF%B9%E8%B1%A1/</guid>
+      <description>对象中参数获取和值的接收 1.对象中利用key获取value. |  [] let obj = {name: &amp;#39;jqf&amp;#39;, age: 19} for (let key in obj) { // console.log(obj.key);//会报undefined  console.log(obj[key]);//jqf,19 } 👉 delete Object.key()
+delete obj.name console.log(obj);//{ age: 19 } 2.参数/配置合并 👉 展开语法
+ 利用展开语法合并对象，让后面传入的参数覆盖默认参数，完成合并
+ function upload(params) { let config = { url: &amp;#39;/images&amp;#39;, type: &amp;#39;*.jpg,*.png&amp;#39; } config = {...config, ...params} //do something...  console.log(config); } upload({type:&amp;#39;*.webp&amp;#39;})//{ url: &amp;#39;/images&amp;#39;, type: &amp;#39;*.webp&amp;#39; } 👉 解构赋值
+ 解构赋值会把相同key的进行合并，后面覆盖掉前面的
+ function upload(params = {}) { let {url = &amp;#39;/images&amp;#39;, type = &amp;#39;*.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript基础之函数相关</title>
+      <link>https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3/</link>
+      <pubDate>Fri, 28 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3/</guid>
+      <description>关于函数传参  当参数数量不确定时，通常用arguments 来统一接收
+ function sum() { return [...arguments].reduce((res, i,) =&amp;gt; res + i, 0) } let res = sum(1, 2, 3) console.log(res);//6 可以用展开语法代替arguments接收所有的参数：
+function sum(...args) { return args.reduce((res, i,) =&amp;gt; res + i, 0) } let res = sum(1, 2, 3) console.log(res);//6 注意： 接收参数时展开语法放其他形参后面，做统一接收
+递归函数  递归函数有两个关键点，一是要有退出执行的条件，二是要不断执行自身并返回
+ 递归思想实现阶乘函数 function factorial(num) { if (num === 1) { return num } return num * factorial(--num) } 如果用到箭头函数，可以简写为：
+function factorial(num) { return num === 1 ?</description>
+    </item>
+    
+    <item>
+      <title>JavaScript基础之Map与Weakmap类型</title>
+      <link>https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bmap%E4%B8%8Eweakmap%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bmap%E4%B8%8Eweakmap%E7%B1%BB%E5%9E%8B/</guid>
+      <description>Map类型 1.属性 👉 set() 设置值
+let map = new Map() let fn = function () {console.log(&amp;#39;this is function&amp;#39;)} let user = {name: &amp;#39;jqf&amp;#39;, age: 18} map.set(&amp;#39;key&amp;#39;, &amp;#39;value&amp;#39;) map.set(fn, &amp;#39;function&amp;#39;) map.set(user, &amp;#39;object&amp;#39;) console.log(map); /*Map(3){&amp;#34;key&amp;#34; =&amp;gt; &amp;#34;value&amp;#34;, ƒ =&amp;gt; &amp;#34;function&amp;#34;, {…} =&amp;gt; &amp;#34;object&amp;#34;}*/ 注意： Map类型，字符串、函数、对象都可以作为key设置
+👉 size Map长度
+console.log(map.size);//3 👉get() 获取值
+console.log(map.get(fn));//function  //通过key获取value 👉 delete() / clear() 删除某个，清空Map
+console.log(map.delete(fn));//true console.log(map); /*Map(3){&amp;#34;key&amp;#34; =&amp;gt; &amp;#34;value&amp;#34;, {…} =&amp;gt; &amp;#34;object&amp;#34;}*/ 👉 has() 是否有某个key
+console.log(map.has(user));//true 2.遍历 👉forEach(val,key,map)</description>
+    </item>
+    
+    <item>
+      <title>JavaScript基础之Set与Weakset</title>
+      <link>https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bset%E4%B8%8Eweakset/</link>
+      <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bset%E4%B8%8Eweakset/</guid>
+      <description>Set类型 1.属性 👉 size ：数组长度
+let set = new Set([1, 2, 3]) console.log(set.size);//9 👉 add() ：添加元素
+console.log(set.add(99));//返回修改后的数组Set(4) { 1, 2, 3, 99 } console.log(set);//原数组已经被修改Set(4) { 1, 2, 3, 99 } 👉 delete() ：删除元素
+console.log(set.delete(99));//true console.log(set);//Set(3) { 1, 2, 3 } 👉 has() ：有某个元素
+console.log(set.has(3)); //true 👉 clear()：清空数组
+set.clear()//返回undefined console.log(set);//Set(0) {} 2.遍历Set 👉 forEach() 方法
+let set=new Set([&amp;#39;jqf&amp;#39;,&amp;#39;fin&amp;#39;,&amp;#39;zzh&amp;#39;]) set.forEach((value, samevalue, set) =&amp;gt; { console.log(value);//jqf,fin,zzh  console.log(samevalue);//jqf,fin,zzh  console.log(set);//Set(3) { &amp;#39;jqf&amp;#39;, &amp;#39;fin&amp;#39;, &amp;#39;zzh&amp;#39; } }) //这里回调中的参数，前两个都是一样的值， //第三个参数为遍历的Set 👉 [.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.fintinger.site/p/</link>
+      <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/</guid>
+      <description>Symbol() 类型不能当做普通对象(不能加属性值)，只能当做一种永远都不会重复的字符串
+ 定义 方法： Symbol(desc)、Symbol.for(desc)
+let s1 = Symbol(&amp;#39;d&amp;#39;) let s2 = Symbol.for(&amp;#39;d&amp;#39;) let s3 = Symbol.for(&amp;#39;d&amp;#39;) console.log(s1.description);//d console.log(Symbol.keyFor(s2));//d console.log(s1 === s3);//false console.log(s2 === s3);//true 注意： 利用Symbol() 定义的值永远都不会相等，而Symbol.for() 定义的，如果描述相同，则值相等
+定义对象时，key相同会覆盖的问题 普通方式定义：
+let user1={ name:&amp;#39;李四&amp;#39; } let user2={ name:&amp;#39;李四&amp;#39; } let grade={ [user1.name]:{C:98,E:60}, [user2.name]:{C:99,E:59} } console.log(grade);//{&amp;#39;李四&amp;#39;:{C:99,E:59}} 可以看到，后面的覆盖掉了前面的
+利用Symbol() 定义
+let user1={ name:&amp;#39;李四&amp;#39;, key:Symbol() } let user2={ name:&amp;#39;李四&amp;#39;, key:Symbol() } let grade={ [user1.key]:{C:98,E:60}, [user2.key]:{C:99,E:59} } console.log(grade)//{[Symbol(user1)]: { C: 98, E: 60 },[Symbol(user2)]: { C: 99, E: 59 }} console.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript基础之数组深倔</title>
+      <link>https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%95%B0%E7%BB%84%E6%B7%B1%E5%80%94/</link>
+      <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%95%B0%E7%BB%84%E6%B7%B1%E5%80%94/</guid>
+      <description>数组是经常用到的一种数据结构
+ 定义方法 let a = new Array(3) let b = [1, 2, 3]  如何定义一个只有一个元素的数组？
+ new Array(n)表示有n个空元素的的数组，利用Array.of(n),可以定义一个只有n元素的数组
+类型转换  利用join 可以把数组转成字符串
+ let a = [1, 2, 3, 4, 5] let b = a.join(&amp;#39;&amp;#39;) console.log(b); 说明： join 的作用就是将数组中的所有元素用指定的符号连接，成为一个字符串
+ 如何把DOM集合NodeList转换成普通数组形式？
+ Nodelist形式无法使用.map(),reduce()等方法(能用forEach())，处理不太方便，因此需要转换成普通数组类型
+let titles = document.querySelectorAll(&amp;#39;h1&amp;#39;); [...titles].map((v, i,titles) =&amp;gt; { console.log(v); }) titles.map()//Uncaught TypeError: titles.map is not a function 注意： 利用展开语法可以把DOM集合转换成普通数组形式
+解构赋值  是一种数组间批量赋值的方法
+ let [name, age] = [&amp;#39;fin&amp;#39;, 18] console.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript基础之值类型</title>
+      <link>https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%80%BC%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%80%BC%E7%B1%BB%E5%9E%8B/</guid>
+      <description>字符串 1.截取字符串  主要有slice()、substr()、substring() 三种方法
+  一个参数[i]  都是从i开始截取，返回n及其后面的全部字符串。
+ 第二个参数[i,n]  slice(i,n)和substring(i,n)表示从i开始截取到n；substr(i,n)，表示从i开始截取n个
+ 负参数  slice()和substr()将最后一位记为-1，然后依次编号；substring()则会将任何负参数变为0，然后查找
+let w = &amp;#39;fintinger.xyz&amp;#39; let a = w.slice(-4, w.length) let b = w.substring(-1, 2) let c = w.substr(-4, 4) console.log(a, b, c);//.xyz fi .xyz 2.查找字符串  主要有indexof()、includes()、lastIndexof() 三种方法
+ 共同点：
+ 两个参数[searchString,position]，第一个为要检索的字符串，第二个为开始检索位置； 若position &amp;lt; 0，则position = 0 position可以省略  不同之处：
+ lastIndexof()为从右往左找，找到第一个立即返回索引！其他两个都是从左往右 indexof(),lastIndexof()找不到则返回-1，includes()找不到返回false position 省略之后，includes(),indexof()默认值为0，lastIndexof()则为str.length  3.重复函数 repeat() 作用： 复制粘贴指定字符串指定次数
+案例：
+/** * 电话号码模糊处理 * @param{String|Number}number * @param{Number}len * @returns {Error|string} * @constructor */ function Phone(number, len = 4) { number = String(number) return number.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript基础之JS黑洞</title>
+      <link>https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bjs%E9%BB%91%E6%B4%9E/</link>
+      <pubDate>Sat, 22 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bjs%E9%BB%91%E6%B4%9E/</guid>
+      <description>JavaScript中最容易忽视的一些点
+ let和var  都用来定义变量，但二者之间有些细微的差别
+ 区别1: 是否有块作用域 var a = 1 { // var a=2  let a = 2 } console.log(a); //output var:a=2 let:a=1 var i=1 // for (var i = 0; i &amp;lt;3; i++) { for (let i = 0; i &amp;lt;3; i++) { //..do something } console.log(i); //output var:i=3 let:i=1 说明： 可以看出，var并没有作用域的概念，定义在特定作用于内的变量会受到作用域外的影响，let则不会
+区别2：全局污染问题 console.log(window.screenLeft);//600 // var screenLeft = 1 let screenLeft = 1 console.log(window.screenLeft); //output var:1 let:600 说明： var定义的变量用window对象也可以访问，当定义一些特定的key时，会造成全局的污染!</description>
+    </item>
+    
+    <item>
+      <title>JavaScript基础之运算符</title>
+      <link>https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E8%BF%90%E7%AE%97%E7%AC%A6/</link>
+      <pubDate>Sat, 22 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E8%BF%90%E7%AE%97%E7%AC%A6/</guid>
+      <description>++的前置与后置 let a1 = 1 let b1 = 2 let c1 = b1 + a1++ console.log(a1, b1, c1);//2,2,3  let a2 = 1 let b2 = 2 let c2 = b2 + ++a2 console.log(a2, b2, c2);//2,2,4 说明：
+ 后置是先计算再++ 前置是先++再计算  短路运算 let a = 0; let b = 1; let c = a || b; console.log(c);//1 利用这个原理，我们可以简化一些函数
+let sex = prompt(&amp;#39;您的性别?&amp;#39;) if (!sex){ sex=&amp;#34;保密&amp;#34; } console.log(sex); =&amp;gt;
+let sex = prompt(&amp;#39;您的性别?</description>
+    </item>
+    
+    <item>
+      <title>ES6之Promise用法小结</title>
+      <link>https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Tue, 18 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/</guid>
+      <description>Promise 对象用于表示一个异步操作的最终完成 (或失败), 及其结果值。其目的主要是解决以往回调中嵌套回调的&amp;quot;嵌套地狱&amp;quot;问题，使代码可读性更好，更美观!
+基本用法 对于一个标准的Prommise，其基本写法为:
+new Promise(function (resolve, reject) { //do something...  //success  resolve(&amp;#39;success&amp;#39;) //fail &amp;amp; reject  // reject(&amp;#39;rejected&amp;#39;) *resolve和reject只能出现一个 }).then( function (value) { //if succeed,do something...  }, function (reason) { //if fail &amp;amp; reject,do something...  } ) 如果采用ES6的箭头函数写法，则为:
+new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //reject(&amp;#39;rejected&amp;#39;) }).then( value =&amp;gt; {}, reason =&amp;gt; {} )  始终牢记，前一个Promise()必须是在后面一个.then()中处理，
+如果前一个Promsie()中没有改变状态，即没有resolve()/reject()方法，后面的.then就不会针对这个Promsie()处理
+ Promise错误处理  Promise()中的错误处理有两种方式,.then()和.catch()
+ .then()  特点： &amp;ldquo;一一对应&amp;rdquo;，即一个then()对应处理上一个Promise 用法：  new Promise((resolve, reject) =&amp;gt; { // 12+p  // throw new Error(&amp;#39;fail&amp;#39;)  reject(&amp;#39;失败&amp;#39;) }).</description>
+    </item>
+    
+    <item>
+      <title>Ajax重复请求</title>
+      <link>https://www.fintinger.site/p/ajax%E9%87%8D%E5%A4%8D%E8%AF%B7%E6%B1%82/</link>
+      <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/ajax%E9%87%8D%E5%A4%8D%E8%AF%B7%E6%B1%82/</guid>
+      <description>在发送某一次请求时，如果不对请求做去重处理那么，同一个请求有可能会发送很多次，一个个慢慢响应，这会很大程度影响性能以及页面的使用体验
+ 全局变量
+/** * baseURL 是每次请求的地址 * x 表示XMLHttpRequest实例，初始为null * isSending 是用来判断请求是否处于发送状态的标识 */ const baseURL = &amp;#34;http://127.0.0.1:8000/delay&amp;#34; let x = null, isSending = false 原生请求 if (isSending) x.abort() x = new XMLHttpRequest() //正处于发送状态，修改标识 isSending = true x.open(&amp;#34;GET&amp;#34;, baseURL) x.send() x.onreadystatechange = function () { if (x.readyState === 4) {//当readyState=4,表示已经发送完毕，修改标识，是否成功返回则无需关心  isSending = false if (x.status &amp;gt;= 200 &amp;amp;&amp;amp; x.status &amp;lt; 300) { console.log(x.response); } } } jQuery 请求  jQuery做ajax请求时，可以仅针对一次请求，也可以利用jQuery全局事件对所有请求加以限制</description>
+    </item>
+    
+    <item>
+      <title>跨域及CORS官方跨域</title>
+      <link>https://www.fintinger.site/p/%E8%B7%A8%E5%9F%9F%E5%8F%8Acors%E5%AE%98%E6%96%B9%E8%B7%A8%E5%9F%9F/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/%E8%B7%A8%E5%9F%9F%E5%8F%8Acors%E5%AE%98%E6%96%B9%E8%B7%A8%E5%9F%9F/</guid>
+      <description>JSONP  jsonp跨域的实现仅限于GET请求，不可用于POST
+ 说明：实现的基本思路是利用html中script标签本身可跨域的特性，在发送请求时，在页面中创建script标签，追加到页面中。这实际上就像利用script标签引入外部资源
+/*main.js*/ //申明handle函数 function handle(data) { //do something.... } ele.onclick = function () { //1.创建script标签  const script = document.createElement(&amp;#34;script&amp;#34;) //2.修改script的src属性  script.src = &amp;#34;http://127.0.0.1:8000/jsonP&amp;#34; script.id=&amp;#34;tempScript&amp;#34;//添加id方便移除  //3.追加到页面中  document.body.appendChild(script) } /*server.js*/ app.get(&amp;#39;/jsonP&amp;#39;, (request, response) =&amp;gt; { const data = { exist:1, msg:&amp;#34;用户名已经存在!&amp;#34; } let str = JSON.stringify(data) response.send(` handle(${str}); document.body.removeChild(document.querySelector(&amp;#34;#tempScript&amp;#34;)) `) }) 注意：response.send()/response.end()中利用ES6语法规范中的模板字符串直接返回一段js代码，script标签会自动解析并作用到页面上
+CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置CORS响应头实现跨域，这种跨域GET或POST请求均有效
+//服务端设置响应头 app.all(&amp;#39;/data&amp;#39;, (request, response) =&amp;gt; { response.setHeader(&amp;#39;Access-Control-Allow-Origin&amp;#39;, &amp;#39;*&amp;#39;)//允许来自所有域的请求  response.setHeader(&amp;#39;Access-Control-Allow-Headers&amp;#39;, &amp;#39;*&amp;#39;)//请求中允许携带的首部字段(可以携带自定义请求头)  response.</description>
+    </item>
+    
+    <item>
+      <title>Ajax学习小结</title>
+      <link>https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/</guid>
+      <description>学习地址:https://www.bilibili.com/video/BV1WC4y1b78y，主要通过express的简单功能来搭建本地的服务，进而更好地学习Ajax
+ 发送Ajax请求的方式 原生Ajax //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(&amp;#34;GET&amp;#34;,&amp;#34;https://www.x.com&amp;#34;) //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status &amp;gt;= 200 &amp;amp;&amp;amp; xhr.status &amp;lt; 300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } } 说明：
+ readyState: 返回一个 XMLHttpRequest 代理当前所处的状态     值 状态 描述     0 UNSENT 代理被创建，但尚未调用 open() 方法。   1 OPENED open() 方法已经被调用。   2 HEADERS_RECEIVED send() 方法已经被调用，并且头部和状态已经可获得。   3 LOADING 下载中； responseText 属性已经包含部分数据。   4 DONE 下载操作已完成。     因此，xhr.</description>
+    </item>
+    
+    <item>
+      <title>Ajax基础及Express框架基本使用</title>
+      <link>https://www.fintinger.site/p/ajax%E5%9F%BA%E7%A1%80%E5%8F%8Aexpress%E6%A1%86%E6%9E%B6%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Thu, 06 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/ajax%E5%9F%BA%E7%A1%80%E5%8F%8Aexpress%E6%A1%86%E6%9E%B6%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
+      <description>Baike  Ajax 即“AsynchronousJavascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式、快速动态网页应用的网页开发技术，无需重新加载整个网页的情况下，能够更新部分网页的技术。
+通过在后台与服务器进行少量数据交换，Ajax 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。&amp;mdash;百度百科
+ 请求报文 格式以及参数如下
+行 GET / HTTP/1.1 头 Host: fintinger.xyz Cookie: keyword=xyz Content-type: application/x-www-form-urlencoded User-agent: Chrome 83 空行 (必须有) 体 [GET]:空 [POST]:空/username=admin&amp;amp;password=admin 响应报文 格式以及参数如下
+行 HTTP/1.1 200 Ok 头 Content-Type: text/html; charset=utf-8 Content-Length: 22 Content-encoding: gzip 空行 (必须有) 体 &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;Hello!&amp;lt;/h1&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; Express框架使用 //1.引入express const express=require(&amp;#39;express&amp;#39;) //2.创建应用对象 const app=express() //3.创建路由规则 /** * request 请求报文封装 * response 响应报文封装 */ app.</description>
+    </item>
+    
+    <item>
+      <title>vue.js学习心得</title>
+      <link>https://www.fintinger.site/p/vue.js%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</link>
+      <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/vue.js%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</guid>
+      <description>1. 关于元素显示与隐藏  # v-show=&amp;quot;name&amp;quot;  说明： 如果data中name为true就显示，否则该元素display:none   # v-if=&amp;quot;name&amp;quot;  说明： 如果data中name为true就显示，否则该元素变成一段注释&amp;lt;!----&amp;gt;，就被删掉了!   v-if 是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。
+v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。
+相比之下，v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。
+一般来说，v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。
+ 2. 访问data 　# v-model  说明： 与data中的值绑定，会随着data中的值得改变而改变，如果是input则data中的值会随着input中的值的改变而改变  # v-if   **说明：**用于条件性地渲染一块内容
+ 在&amp;lt;template&amp;gt;元素上使用 v-if 条件渲染分组
+因为 v-if 是一个指令，所以必须将它添加到一个元素上。但是如果想切换(隐藏或显示)多个元素呢？此时可以把一个&amp;lt;template&amp;gt;元素当做不可见的包裹元素，并在上面使用 v-if。最终的渲染结果将不包含&amp;lt;template&amp;gt;元素。
+这样做的好处就是不用再写一个&amp;lt;div&amp;gt;将需要隐藏的元素包裹
+   # v-show  说明： 条件切换display属性  # v-for  说明： 在data中定义一个数组arr，然后用v-for=&amp;quot;val in arr&amp;quot;访问到  3.</description>
+    </item>
+    
+    <item>
+      <title>获取文件扩展名</title>
+      <link>https://www.fintinger.site/p/%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D/</link>
+      <pubDate>Thu, 09 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D/</guid>
+      <description>该怎么去获得文件名字符串中的文件扩展名呢？
+一种较为强大的解决方法是利用String的slice、lastIndexOf方法：
+function getFileExtension(filename) { return filename.slice((filename.lastIndexOf(&amp;#34;.&amp;#34;) - 1 &amp;gt;&amp;gt;&amp;gt; 0) + 2); } console.log(getFileExtension3(&amp;#39;&amp;#39;)); // &amp;#39;&amp;#39; console.log(getFileExtension3(&amp;#39;filename&amp;#39;)); // &amp;#39;&amp;#39; console.log(getFileExtension3(&amp;#39;filename.txt&amp;#39;)); // &amp;#39;txt&amp;#39; console.log(getFileExtension3(&amp;#39;.hiddenfile&amp;#39;)); // &amp;#39;&amp;#39; console.log(getFileExtension3(&amp;#39;hiddenfile.&amp;#39;)); // &amp;#39;&amp;#39; console.log(getFileExtension3(&amp;#39;filename.with.many.dots.ext&amp;#39;)); // &amp;#39;ext&amp;#39; 说明 filename.slice((filename.lastIndexOf(&amp;quot;.&amp;quot;) - 1 &amp;gt;&amp;gt;&amp;gt; 0) + 2)
+ 本方法中的&amp;gt;&amp;gt;&amp;gt;运算目的是
+找到最后一个.所在索引，然后索引-1+2，相当于+1，则slice方法返回.后面的后缀名
+.不会再开头，否则索引会是0，因为-1&amp;gt;&amp;gt;&amp;gt;0 =﻿﻿﻿﻿ 4294967295，所不会匹配到
+.出现在末尾，索引会等于length+1，也不会匹配到
+ slice(start,end)  说明：start必须指定，负值为从后往前数，若只指定start值，则返回start位置及后面一直到数组结尾所有的元素 **注意：**区别于删除数组中的一段元素的方法 Array.splice()  lastIndexOf(searchvalue,fromindex)  **说明：**如果要检索的字符串值没有出现，则该方法返回 -1，该方法对大小写敏感 使用：  var str=&amp;#34;Hello world!&amp;#34; document.write(str.lastIndexOf(&amp;#34;Hello&amp;#34;) + &amp;#34;&amp;lt;br /&amp;gt;&amp;#34;)//0 document.write(str.lastIndexOf(&amp;#34;World&amp;#34;) + &amp;#34;&amp;lt;br /&amp;gt;&amp;#34;)//-1 document.</description>
+    </item>
+    
+    <item>
+      <title>一组循环数组</title>
+      <link>https://www.fintinger.site/p/%E4%B8%80%E7%BB%84%E5%BE%AA%E7%8E%AF%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/%E4%B8%80%E7%BB%84%E5%BE%AA%E7%8E%AF%E6%95%B0%E7%BB%84/</guid>
+      <description>做网页轮播图，或者音乐播放列表时经常要用到一组循环的数组，到最后一项返回第一项，第一项返回最后一项
+利用两次判断 function doLoop( arr ){ arr.loop_idx = 0; // 返回当前的元素  arr.current = function(){ if( this.loop_idx &amp;lt; 0 ){// 第一次检查  this.loop_idx = this.length - 1;// 更新 loop_idx  } if( this.loop_idx &amp;gt;= this.length ){// 第二次检查  this.loop_idx = 0;// 更新 loop_idx  } return arr[ this.loop_idx ];//返回元素  }; // 增加 loop_idx 然后返回新的当前元素  arr.next = function(){ this.loop_idx++; return this.current(); }; // 减少 loop_idx 然后返回新的当前元素  arr.prev = function(){ this.</description>
+    </item>
+    
+    <item>
+      <title>剪贴板功能实现</title>
+      <link>https://www.fintinger.site/p/%E5%89%AA%E8%B4%B4%E6%9D%BF%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/</link>
+      <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/%E5%89%AA%E8%B4%B4%E6%9D%BF%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/</guid>
+      <description>经常会用到指定内容的复制粘贴问题，用到document的execCommand 方法,为此，我将这个功能封装为一个简单的函数:
+function doCopy($el, {deepCopy = false, copyTips = true, language = &amp;#34;Chinese&amp;#34;, bgColor = &amp;#34;#ff6666&amp;#34;, fontColor = &amp;#34;#fff&amp;#34;} = {}) { let tempEl = $(&amp;#34;&amp;lt;input id=&amp;#39;selectEl&amp;#39; type=&amp;#39;text&amp;#39; value=&amp;#39;&amp;#39;&amp;gt;&amp;#34;).val($el.text()) if (deepCopy) { tempEl.val($el.html()) } tempEl.appendTo($(&amp;#34;body&amp;#34;)) document.querySelector(&amp;#39;#selectEl&amp;#39;).select(); document.execCommand(&amp;#39;copy&amp;#39;); tempEl.remove() if (copyTips) { let tipEl = $(&amp;#34;&amp;lt;div class=&amp;#39;copyTips&amp;#39; &amp;gt;成功复制到剪切板&amp;lt;/div&amp;gt;&amp;#34;) tipEl.css({fontFamily: &amp;#34;&amp;#39;Microsoft YaHei&amp;#39;, sans-serif&amp;#34;,fontSize: &amp;#34;1.2rem&amp;#34;,position: &amp;#34;fixed&amp;#34;,top: &amp;#34;1rem&amp;#34;,textAlign: &amp;#34;center&amp;#34;, left: &amp;#34;50%&amp;#34;,fontWeight: &amp;#34;bolder&amp;#34;, borderRadius: &amp;#34;.5rem&amp;#34;,marginLeft: &amp;#34;-8rem&amp;#34;,width: &amp;#34;16rem&amp;#34;,height: &amp;#34;3rem&amp;#34;, lineHeight:&amp;#34;3rem&amp;#34;, background: bgColor,boxShadow: &amp;#34;0 6px 10px -8px #000&amp;#34;,color: fontColor, letterSpacing: &amp;#34;4px&amp;#34;,boxSizing: &amp;#34;border-box&amp;#34;,padding: &amp;#34;0 10px 0 10px&amp;#34;, display: &amp;#34;none&amp;#34;}) if (language === &amp;#34;English&amp;#34;) { tipEl.</description>
+    </item>
+    
+    <item>
+      <title>ES6中新增关于Array的方法</title>
+      <link>https://www.fintinger.site/p/es6%E4%B8%AD%E6%96%B0%E5%A2%9E%E5%85%B3%E4%BA%8Earray%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/es6%E4%B8%AD%E6%96%B0%E5%A2%9E%E5%85%B3%E4%BA%8Earray%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <description>在javascript中，Array()经常用到，利用ES6中的一些新特性会让数组的处理更加方便快捷
+1.迭代空数组 直接创建一个数组
+const arr=new Array(4); //Output:[undefined，undefined，undefined，undefined] 利用map方法，转化成新的数组，企图得到 [0,1,2,3] 数组
+const arr=new Array(4); arr.map((ele,index) =&amp;gt; index); //Output:[undefined，undefined，undefined，undefined] 解决这个问题可以在创建数组时用到Array.apply
+ apply与call类似，都是用来继承父类的方法的，不同之处是：
+  call() 方法分别接受参数。person.fullName.apply(person1, [&amp;quot;Oslo&amp;quot;, &amp;quot;Norway&amp;quot;]);
+  apply() 方法接受数组形式的参数.	person.fullName.call(person1, &amp;quot;Oslo&amp;quot;, &amp;quot;Norway&amp;quot;);
+  如果要使用数组而不是参数列表，则 apply() 方法非常方便。
+ const arr = Array.apply(null, new Array(4)); arr.map((ele,index) =&amp;gt; index); //Output:[0,1,2,3] 由此，我们可以创建一个指定最大值、最小值、或者长度生成指定数列的方法
+/** * 生成自定义的连续数列 * @param{Number}min * @param{Number}max * @param{Number}len */ function newArr({min = null, max = null, len = null} = {}) { let newArray=[], skip = min if (len == null) {len = max - min + 1} if (min == null) {skip = -max} const arr = Array.</description>
+    </item>
+    
+    <item>
+      <title>避免多条件并列</title>
+      <link>https://www.fintinger.site/p/%E9%81%BF%E5%85%8D%E5%A4%9A%E6%9D%A1%E4%BB%B6%E5%B9%B6%E5%88%97/</link>
+      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/%E9%81%BF%E5%85%8D%E5%A4%9A%E6%9D%A1%E4%BB%B6%E5%B9%B6%E5%88%97/</guid>
+      <description>开发中有时会遇到多个条件，执行相同的语句，也就是多个||这种：
+if (status === &amp;#39;process&amp;#39; || status === &amp;#39;wait&amp;#39; || status === &amp;#39;fail&amp;#39;) { doSomething() } 这种写法语义性、可读性都不太好。可以通过switch case或includes这种进行改造。
+switch case switch(status) { case &amp;#39;process&amp;#39;: case &amp;#39;wait&amp;#39;: case &amp;#39;fail&amp;#39;: doSomething() } includes const enum = [&amp;#39;process&amp;#39;, &amp;#39;wait&amp;#39;, &amp;#39;fail&amp;#39;] if (enum.includes(status)) { doSomething() </description>
+    </item>
+    
+    <item>
+      <title>JavaScript瀑布流布局</title>
+      <link>https://www.fintinger.site/p/javascript%E7%80%91%E5%B8%83%E6%B5%81%E5%B8%83%E5%B1%80/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/javascript%E7%80%91%E5%B8%83%E6%B5%81%E5%B8%83%E5%B1%80/</guid>
+      <description>什么是瀑布流？ 一种图片在网页的布局方式，具体要求为：从页面第二行开始，后续图片跟在页面中最矮的那张图片后面
+用JavaScript怎么实现？ 为此我将整个过程封装为一个函数。
+/*HTML部分*/ &amp;lt;head&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;main.css&amp;#34;&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;div id=&amp;#34;box&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;//container和img由js动态加入 &amp;lt;script src=&amp;#34;jquery.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;loadFile.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;main.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; /*CSS部分*/ /*首先清空默认样式*/ #box{ position: relative; } .container{ float: left; } .container&amp;gt;.pic{ width: 200px; } .container&amp;gt;.pic&amp;gt;img{ width: 100%; } /*JS部分*/ /*loadFile.js(在window.onload之前执行，加载DOM树)*/	$(function () { function addImg(imgNum,eleID) { let container for (let i = 1; i &amp;lt; imgNum; i++) { container=$(&amp;#34;&amp;lt;div class=&amp;#39;container&amp;#39;&amp;gt;&amp;lt;div class=&amp;#39;pic&amp;#39;&amp;gt;&amp;lt;img src=&amp;#39;images/&amp;#34;+i+&amp;#34;.jpg&amp;#39; alt=&amp;#39;&amp;#39;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;#34;) $(eleID).append(container) } } addImg(109,&amp;#34;#box&amp;#34;); }) /*******************************************/ /*main.js(在$(function(){})之前执行，DOM树加载完毕 )*/ window.onload=function () { let waterFall=function (eleID) { let boxWidth = 0, colo = 0, $egEle = $(eleID).</description>
+    </item>
+    
+    <item>
+      <title>关于Javascript模块化</title>
+      <link>https://www.fintinger.site/p/%E5%85%B3%E4%BA%8Ejavascript%E6%A8%A1%E5%9D%97%E5%8C%96/</link>
+      <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/%E5%85%B3%E4%BA%8Ejavascript%E6%A8%A1%E5%9D%97%E5%8C%96/</guid>
+      <description>模块功能主要由两个命令构成：export和import。export命令用于规定模块的对外接口，import命令用于输入其他模块提供的功能。
+//profile.jsexport var firstName = &#39;Michael&#39;;export var lastName = &#39;Jackson&#39;;export function sayName () {return firstName + lastName;}export default function () {console.log(&#39;foo&#39;);}// main.jsimport { firstName, lastName , sayName} from &#39;./profile.js&#39;; 注意：在index.html中引入的时候需要给script加type=&amp;ldquo;module&amp;rdquo;,即
+ &amp;lt;script type=&amp;quot;module&amp;quot; src=&amp;quot;./profiles.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script type=&amp;quot;module&amp;quot; src=&amp;quot;./main.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>常用的一些html小问题</title>
+      <link>https://www.fintinger.site/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E5%B0%8F%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E5%B0%8F%E9%97%AE%E9%A2%98/</guid>
+      <description>1. 网页出现横向滚动条？ &amp;lt;body style=`overflow:-Scroll;overflow-y:hidden &amp;gt; &amp;lt;/body&amp;gt;让横条没有：
+ &amp;lt;body style=`overflow:-Scroll;overflow-x:hidden&amp;gt; &amp;lt;/body&amp;gt;两个都去掉？更简单了
+&amp;lt;body scroll=&amp;quot;no&amp;quot; &amp;gt; &amp;lt;/body&amp;gt;火狐底部滚动条不显示：
+ html { overflow:-moz-scrollbars-vertical; }2. 网页图标？ &amp;lt;link rel=&amp;quot;shortcut icon &amp;quot; href=&amp;quot;images/favicon.ico&amp;quot;&amp;gt;3. Height:100%失效？ &amp;lt;html style=&amp;quot;height: 100%;&amp;quot;&amp;gt;&amp;lt;body style=&amp;quot;height: 100%;&amp;quot;&amp;gt;&amp;lt;div style=&amp;quot;height: 100%;&amp;quot;&amp;gt;&amp;lt;p&amp;gt; 这样这个div的高度就会100%了 &amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;4. 设置一个元素不可见？ opacity 设为 0、将 visibility 设为 hidden、将 display 设为 none 或者将 position 设为 absolute
+注意：
+1&amp;gt; display=none元素消失，不占位置
+2&amp;gt; opacity =0、 visibility =hidden只是视觉上不可见，其实还在那里占位置
+5.input无法输入？ ==&amp;gt; height:0; (将包裹提示的div高度设置为0，让其不再遮挡即可)</description>
+    </item>
+    
+    <item>
+      <title>Jquery一些操作</title>
+      <link>https://www.fintinger.site/p/jquery%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Thu, 23 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/jquery%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/</guid>
+      <description>Jquery属性操作 1.属性 attr(attrName [,attrValue]) 操作所有属性（自定义和内置的）
+prop(attrName [,attrValue)) 操作HTML元素内置属性
+removeAttr(attrNam)删除属性
+removeProp(attrName) 并不能删除HMTL元素上的属性
+2.CSS类 addclass()添加一个class值
+removeClass()删除一个class值
+toggleClass()切换一个class值(有则删掉该class，没有则加上，其他class不动)
+hasClasss() 判断是否有指定class
+3.HTML代码/文本/值 html([html]) 相当于innerHTML
+text([text)相当于innerText
+val([value]) 设置/获取表单控件的值
+Jquery样式操作 1.CSS操作 css(atr,[value])设置/获取CSS值
+ 参数可以是一个对象的形式css({atr: value,})
+ 2.位置 offset()[.left/.top]元素在页面中的坐标
+ 设置只需要传一个对象即可 {&amp;quot;left:num,top:num&amp;quot;}
+ position()[.left/.top] 元素在第一个定位的祖先元素内的坐标 (只读！)
+scollTop &amp;hellip;
+scollLeft &amp;hellip;
+3.尺寸 width()/height()内容尺寸
+innerwidth()/ innerHeight()内容尺寸+ padding
+outerWidth()/ outerHeight() 盒子的尺寸
+Jquery筛选操作 1. 过滤操作 first ()
+last() 
+eq()
+not() 
+filter()
+slice ()
+has()
+3.串联 add()把选中的元素加入当前集合
+addBack()把调用该方法的元素加入当前集合
+end()返回最后一次破坏性操作之前的DOM
+contents()返回所有子节点的集合</description>
+    </item>
+    
+    <item>
+      <title>Javascript一些操作</title>
+      <link>https://www.fintinger.site/p/javascript%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Thu, 02 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/javascript%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/</guid>
+      <description>1.通过id获取元素 function $(id) { return typeof id === &amp;#39;string&amp;#39; ? document.getElementById(id): null; } 2.日期格式化 function formatDate(cDate) { //1.判断  if (!cDate instanceof Date){ return; } //2.转化  var year=cDate.getFullYear(); var month=cDate.getMonth(); var date=cDate.getDate(); var hour=cDate.getHours(); var minute=cDate.getMinutes(); var second=cDate.getSeconds(); //2.1 补0  month=month&amp;lt;10? &amp;#39;0&amp;#39;+month:month; date=date&amp;lt;10? &amp;#39;0&amp;#39;+date: date; minute=minute&amp;lt;10? &amp;#39;0&amp;#39;+minute:minute; second=second&amp;lt;10? &amp;#39;0&amp;#39;+second:second; return year + &amp;#39;-&amp;#39; + month + &amp;#39;-&amp;#39; + date + &amp;#39; &amp;#39; +hour+&amp;#39;:&amp;#39;+minute+&amp;#34;:&amp;#34;+second; } console.log(formatDate(new Date())); 3.匀速运动封装 /** * 设置一个盒子右边距匀速变化 * @param{string} btnId * @param{string} boxId * @param{number} step * @param{number}target */ function linearAnimation(btnId, boxId, step, target) { // 1.</description>
+    </item>
+    
+    <item>
+      <title>常用的一些html代码</title>
+      <link>https://www.fintinger.site/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E4%BB%A3%E7%A0%81/</guid>
+      <description>1. 获取网页logo 京东 : www.jd.com
+ 后面加 &amp;ldquo;/favicon.ico&amp;quot;即可
+ 京东logo : www.jd.com/favicon.ico
+2. webstorm网页logo简易写法  link:favicon 按Tab键  3.meta标签  为搜索引擎提供的关键字列表( name=&amp;ldquo;keywords&amp;rdquo;)：   各关键词间用英文逗号“,”隔开。META的通常用处是指定搜索引擎用来提高搜索质量的关键词。
+ &amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;牙疼怎么办，智齿是什么，拔牙多少钱，矫正多少钱，九院医生，北大口腔，瑞尔口腔，拜耳口腔&amp;quot;&amp;gt;
+ 用来告诉搜索引擎你的网站主要内容(name=&amp;ldquo;description&amp;rdquo;)：  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;有牙齿问题,找河马牙医,儿童口腔，全国儿童口腔在线咨询，牙疼怎么办，拔牙多少钱，矫正多少钱，种植牙，有牙齿问题&amp;quot;&amp;gt;
+ 优先以webkit内核渲染页面(&amp;ldquo;renderer&amp;rdquo;)：  &amp;lt;meta name=&amp;quot;renderer&amp;quot; content=&amp;quot;webkit&amp;quot; /&amp;gt;
+4.复合选择器 div#main{ color:green}
+ 表示选中div中id为main的元素
+ 5.标签居中  水平居中 行内标签/行内-块级标签: text-align:center  块级标签:
+margin:0 auto
+2)垂直居中
+  行内标签/行内-块级标签:
+ 设置行高为盒子高度line-hight:50px; 图片加文字时:vertical-align:middle;    块级标签:
+   设置“子绝父相” ==&amp;gt; top，left设置为50% ==&amp;gt; margin-left和nargin-top设置为负的盒子对应宽高的一半</description>
+    </item>
+    
+    <item>
+      <title>CSS揭秘一书中的知识</title>
+      <link>https://www.fintinger.site/p/css%E6%8F%AD%E7%A7%98%E4%B8%80%E4%B9%A6%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Mon, 23 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/css%E6%8F%AD%E7%A7%98%E4%B8%80%E4%B9%A6%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86/</guid>
+      <description>1.backgrouond简写  在background简写属性中指定background-sizing时，需要提供一个background-position值，而且要使用/作为分隔。  background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [ background-size] [background-origin] [background-clip]; &amp;mdash;&amp;ndash;P13&amp;mdash;&amp;ndash;
+2.background-clip 规定背景的绘制区域：得到一个白色背景并且有白色边框的盒子：
+border:10px solid hsla(0,0,100%,.5); background:white; background-clip:padding-box 若不设置background-clip，背景会延伸至边框，边框的透明无法显示
+&amp;mdash;&amp;mdash;P18&amp;mdash;&amp;mdash;-
+3.双重边框  box-shadow   background:orange;box-shadow:0 0 010px #655 , 0 0 0 15px deeppink; /*可以加任意层数边框*/ outline  width:180px; height:90px; margin:30px auto; text-align:center; padding:10px; background:##655; outline: ##fff dashed 1px; outline-offset: -15px; /*设置outline向内缩进*/ border-radius:8px; 注意： outline可能会产生不贴合border-radius圆角的情况 &amp;mdash;-P20&amp;mdash;-
+4.box-shadow  只给下方设置阴影，（扩张半径为负的模糊半径）:  box-shadow: 0 5px 4px -4px black;  临边投影，(扩张半径为负的模糊半径的一半):  box-shadow: 3px 3px 6px -3px black; &amp;mdash;-P88&amp;mdash;-</description>
+    </item>
+    
+  </channel>
+</rss>

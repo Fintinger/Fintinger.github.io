@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='1. 关于元素显示与隐藏  # v-show=&amp;quot;name&amp;quot;  说明： 如果data中name为true就显示，否则该元素display:none   # v-if=&amp;quot;name&amp;quot;  说明： 如果data中name为true就显示，否则该元素变成一段注释&amp;lt;!----&amp;gt;，就被删掉了!   v-if 是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。
+v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。
+相比之下，v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。
+一般来说，v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。
+ 2. 访问data 　# v-model  说明： 与data中的值绑定，会随着data中的值得改变而改变，如果是input则data中的值会随着input中的值的改变而改变  # v-if   **说明：**用于条件性地渲染一块内容
+ 在&amp;lt;template&amp;gt;元素上使用 v-if 条件渲染分组
+因为 v-if 是一个指令，所以必须将它添加到一个元素上。但是如果想切换(隐藏或显示)多个元素呢？此时可以把一个&amp;lt;template&amp;gt;元素当做不可见的包裹元素，并在上面使用 v-if。最终的渲染结果将不包含&amp;lt;template&amp;gt;元素。
+这样做的好处就是不用再写一个&amp;lt;div&amp;gt;将需要隐藏的元素包裹
+   # v-show  说明： 条件切换display属性  # v-for  说明： 在data中定义一个数组arr，然后用v-for=&amp;quot;val in arr&amp;quot;访问到  3.'><title>vue.js学习心得</title>
+
+<link rel='canonical' href='https://www.fintinger.site/p/vue.js%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/'>
+
+<link rel="stylesheet" href="/scss/style.min.css">
+
+<meta property='og:title' content='vue.js学习心得'>
+<meta property='og:description' content='1. 关于元素显示与隐藏  # v-show=&amp;quot;name&amp;quot;  说明： 如果data中name为true就显示，否则该元素display:none   # v-if=&amp;quot;name&amp;quot;  说明： 如果data中name为true就显示，否则该元素变成一段注释&amp;lt;!----&amp;gt;，就被删掉了!   v-if 是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。
+v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。
+相比之下，v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。
+一般来说，v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。
+ 2. 访问data 　# v-model  说明： 与data中的值绑定，会随着data中的值得改变而改变，如果是input则data中的值会随着input中的值的改变而改变  # v-if   **说明：**用于条件性地渲染一块内容
+ 在&amp;lt;template&amp;gt;元素上使用 v-if 条件渲染分组
+因为 v-if 是一个指令，所以必须将它添加到一个元素上。但是如果想切换(隐藏或显示)多个元素呢？此时可以把一个&amp;lt;template&amp;gt;元素当做不可见的包裹元素，并在上面使用 v-if。最终的渲染结果将不包含&amp;lt;template&amp;gt;元素。
+这样做的好处就是不用再写一个&amp;lt;div&amp;gt;将需要隐藏的元素包裹
+   # v-show  说明： 条件切换display属性  # v-for  说明： 在data中定义一个数组arr，然后用v-for=&amp;quot;val in arr&amp;quot;访问到  3.'>
+<meta property='og:url' content='https://www.fintinger.site/p/vue.js%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/'>
+<meta property='og:site_name' content='Archai &#39;s blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Vue.js' /><meta property='article:published_time' content='2020-07-18T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-07-18T00:00:00&#43;00:00'/><meta property='og:image' content='https://www.fintinger.site/img/defaultImg.jpg' />
+<meta name="twitter:title" content="vue.js学习心得">
+<meta name="twitter:description" content="1. 关于元素显示与隐藏  # v-show=&amp;quot;name&amp;quot;  说明： 如果data中name为true就显示，否则该元素display:none   # v-if=&amp;quot;name&amp;quot;  说明： 如果data中name为true就显示，否则该元素变成一段注释&amp;lt;!----&amp;gt;，就被删掉了!   v-if 是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。
+v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。
+相比之下，v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。
+一般来说，v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。
+ 2. 访问data 　# v-model  说明： 与data中的值绑定，会随着data中的值得改变而改变，如果是input则data中的值会随着input中的值的改变而改变  # v-if   **说明：**用于条件性地渲染一块内容
+ 在&amp;lt;template&amp;gt;元素上使用 v-if 条件渲染分组
+因为 v-if 是一个指令，所以必须将它添加到一个元素上。但是如果想切换(隐藏或显示)多个元素呢？此时可以把一个&amp;lt;template&amp;gt;元素当做不可见的包裹元素，并在上面使用 v-if。最终的渲染结果将不包含&amp;lt;template&amp;gt;元素。
+这样做的好处就是不用再写一个&amp;lt;div&amp;gt;将需要隐藏的元素包裹
+   # v-show  说明： 条件切换display属性  # v-for  说明： 在data中定义一个数组arr，然后用v-for=&amp;quot;val in arr&amp;quot;访问到  3."><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://www.fintinger.site/img/defaultImg.jpg' />
+    <link rel="shortcut icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico" />
+
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="https://www.fintinger.site" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>Back</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%89%8D%E7%AB%AF/" >
+                前端
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/vue.js%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/">vue.js学习心得</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jul 18, 2020</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    2 min read
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h2 id="1-关于元素显示与隐藏">1. 关于元素显示与隐藏</h2>
+<h3 id="--v-showname"><code> # v-show=&quot;name&quot;</code></h3>
+<ul>
+<li><strong>说明：</strong> 如果data中name为true就显示，否则该元素<code>display:none</code></li>
+</ul>
+<h3 id="--v-ifname"><code> # v-if=&quot;name&quot;</code></h3>
+<ul>
+<li><strong>说明：</strong> 如果data中name为true就显示，否则该元素变成一段注释<code>&lt;!----&gt;</code>，就被删掉了!</li>
+</ul>
+<blockquote>
+<p><code>v-if</code> 是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。</p>
+<p><code>v-if</code> 也是<strong>惰性的</strong>：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。</p>
+<p>相比之下，<code>v-show</code> 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。</p>
+<p>一般来说，<code>v-if</code> 有更高的切换开销，而 <code>v-show</code> 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 <code>v-show</code> 较好；如果在运行时条件很少改变，则使用 <code>v-if</code> 较好。</p>
+</blockquote>
+<h2 id="2-访问data">2. 访问data</h2>
+<h3 id="-v-model"><code>　# v-model</code></h3>
+<ul>
+<li><strong>说明：</strong> 与data中的值绑定，会随着data中的值得改变而改变，如果是<code>input</code>则data中的值会随着<code>input</code>中的值的改变而改变</li>
+</ul>
+<h3 id="-v-if"><code># v-if</code></h3>
+<ul>
+<li>
+<p>**说明：**用于条件性地渲染一块内容</p>
+<blockquote>
+<p><strong>在<code>&lt;template&gt;</code>元素上使用 v-if 条件渲染分组</strong></p>
+<p>因为 <code>v-if</code> 是一个指令，所以必须将它添加到一个元素上。但是如果想切换(隐藏或显示)多个元素呢？此时可以把一个<code>&lt;template&gt;</code>元素当做不可见的包裹元素，并在上面使用 <code>v-if</code>。最终的渲染结果将不包含<code>&lt;template&gt;</code>元素。</p>
+<p>这样做的好处就是不用再写一个<code>&lt;div&gt;</code>将需要隐藏的元素包裹</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="-v-show"><code># v-show</code></h3>
+<ul>
+<li><strong>说明：</strong> 条件切换<code>display</code>属性</li>
+</ul>
+<h3 id="-v-for"><code># v-for</code></h3>
+<ul>
+<li><strong>说明：</strong> 在data中定义一个数组<code>arr</code>，然后用<code>v-for=&quot;val in arr&quot;</code>访问到</li>
+</ul>
+<h2 id="3-v-on">3. v-on</h2>
+<ul>
+<li><strong>简写</strong>：@</li>
+<li><strong>说明：</strong> <code>v-on=&quot;fn()&quot;</code>
+<ul>
+<li>如果函数<code>fn</code>没有参数，直接写<code>fn</code>即可</li>
+<li>如果有参数，带括号传参即可</li>
+<li>如果需要一次性绑定多个事件，用对象的形式，比如<code>v-on=&quot;{mouseenter:entereDiv,mouseleave:leaveDiv}&quot;</code> 这时候就不能简写了</li>
+</ul>
+</li>
+</ul>
+<h2 id="4全局组件和局部组件">4.全局组件和局部组件</h2>
+<h3 id="全局组件">全局组件</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">Vue</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="s1">&#39;my_web&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">template</span><span class="o">:</span> <span class="s2">&#34;&lt;a target=&#39;_blank&#39; href=&#39;https://www.fintinger.xyz&#39;&gt;Fintinger&#39;blog✍&lt;/a&gt;&#34;</span><span class="p">,</span>
+<span class="p">});</span>
+<span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+    <span class="nx">el</span><span class="o">:</span> <span class="s2">&#34;#app&#34;</span><span class="p">,</span>
+<span class="p">})</span>
+</code></pre></div><blockquote>
+<p><strong>注意为component，单数</strong></p>
+</blockquote>
+<h3 id="局部组件">局部组件</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">surf_web</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">template</span><span class="o">:</span> <span class="s2">&#34;&lt;a target=&#39;_blank&#39; href=&#39;https://www.fintinger.xyz&#39;&gt;Fintinger&#39;blog✍&lt;/a&gt;&#34;</span>
+<span class="p">}</span>
+<span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+    <span class="nx">el</span><span class="o">:</span> <span class="s2">&#34;#app&#34;</span><span class="p">,</span>
+    <span class="nx">components</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">surf_web</span><span class="o">:</span> <span class="nx">surf_web</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div><blockquote>
+<p><strong>注意为components，复数</strong></p>
+</blockquote>
+<h3 id="vueextend-options-">Vue.extend( options )</h3>
+<ul>
+<li>
+<p><strong>参数</strong>：</p>
+<ul>
+<li><code>{Object} options</code></li>
+</ul>
+</li>
+<li>
+<p><strong>用法</strong>：</p>
+<p>使用基础 Vue 构造器，创建一个“子类”。参数是一个包含组件选项的对象。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// 创建构造器
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">Profile</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="s1">&#39;&lt;p&gt;{{firstName}} {{lastName}} aka {{alias}}&lt;/p&gt;&#39;</span><span class="p">,</span>
+  <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">firstName</span><span class="o">:</span> <span class="s1">&#39;Walter&#39;</span><span class="p">,</span>
+      <span class="nx">lastName</span><span class="o">:</span> <span class="s1">&#39;White&#39;</span><span class="p">,</span>
+      <span class="nx">alias</span><span class="o">:</span> <span class="s1">&#39;Heisenberg&#39;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+<span class="c1">// 创建 Profile 实例，并挂载到一个元素上。
+</span><span class="c1"></span><span class="k">new</span> <span class="nx">Profile</span><span class="p">().</span><span class="nx">$mount</span><span class="p">(</span><span class="s1">&#39;#mount-point&#39;</span><span class="p">)</span>
+
+<span class="c1">//result: &lt;p&gt;Walter White aka Heisenberg&lt;/p&gt;	
+</span></code></pre></div></li>
+</ul>
+<blockquote>
+<p>Vue.extend可以利用$mount将构建的组件挂载到任意一个元素上，不一定是<code>#app</code>，但必须先实例化Profile,</p>
+<p>组件中的data要通过function方法返回出来，而且不能使用箭头函数</p>
+</blockquote>
+<h2 id="5驼峰式的一些坑">5.驼峰式的一些坑</h2>
+<ul>
+<li>
+<p>在定义组件名的时候，不能用&quot;驼峰式&quot;，应该用<code>_</code>或者<code>-</code></p>
+</li>
+<li>
+<p>定义函数名的时候最好也不用驼峰式，我在使用<code>this.$emit(fn,data)</code>时，使用驼峰式出现错误</p>
+</li>
+</ul>
+<h2 id="6组件间的通信">6.组件间的通信</h2>
+<h3 id="父子通信自定义属性传参">父子通信(自定义属性传参)</h3>
+<ul>
+<li>
+<p>**情形：**假设自定义一个<code>eg-el</code>组件，希望通过<code>&lt;eg-el username=&quot;lsd&quot;&gt;&lt;/eg-el&gt;</code>这种方式传入username的值给到template使用</p>
+</li>
+<li>
+<p><strong>实现：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--html--&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;app&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">eg-el</span> <span class="na">username</span><span class="o">=</span><span class="s">&#34;lsd&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">eg-el</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">template</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;egEl&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">:href</span><span class="o">=</span><span class="s">&#34;&#39;/user/&#39;+username&#34;</span><span class="p">&gt;</span>@{{username}}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">//javascript
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">egEl</span><span class="o">=</span><span class="p">{</span>
+    <span class="nx">template</span><span class="o">:</span><span class="s2">&#34;#egEl&#34;</span><span class="p">,</span>
+    <span class="nx">props</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">],</span><span class="c1">//这里使用到prop
+</span><span class="c1"></span><span class="p">}</span>
+<span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+    <span class="nx">el</span><span class="o">:</span><span class="s2">&#34;#app&#34;</span><span class="p">,</span>
+    <span class="nx">components</span><span class="o">:</span><span class="p">{</span>
+        <span class="s2">&#34;eg-el&#34;</span><span class="o">:</span> <span class="nx">egEl</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div></li>
+</ul>
+<h3 id="子父通信一个组间中包含另一个组件">子父通信(一个组间中包含另一个组件)</h3>
+<ul>
+<li>
+<p><strong>情形：</strong> 假定有两个组件<code>&lt;father&gt;</code>和<code>&lt;child&gt;</code>，而<code>&lt;father&gt;</code>中有<code>&lt;child&gt;</code>组件，且子组件事件的触发需要引起父组件中的某些变化！</p>
+</li>
+<li>
+<p><strong>实现：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--只使用父组件，子组件已经包含在父组件中，无需单独使用--&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;app&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">my-balance</span><span class="p">&gt;&lt;/</span><span class="nt">my-balance</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="c">&lt;!--子组件template--&gt;</span>
+<span class="p">&lt;</span><span class="nt">template</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;show_balance&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&#34;myClick&#34;</span><span class="p">&gt;</span>我的余额<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<span class="c">&lt;!--父组件template，其中使用到子组件！--&gt;</span>
+<span class="p">&lt;</span><span class="nt">template</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;my_balance&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">show-balance</span> <span class="err">@</span><span class="na">my_fn</span><span class="o">=</span><span class="s">&#34;toShowMyBalance&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">show-balance</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&#34;ToShow&#34;</span><span class="p">&gt;</span>您的余额为9800<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+</code></pre></div><blockquote>
+<p>这里的<code>@my_fn</code>是子组件中通过<code>this.$emit</code>出来的方法</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="cm">/*注册父组件*/</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="s2">&#34;my-balance&#34;</span><span class="p">,{</span>
+    <span class="nx">template</span><span class="o">:</span> <span class="s2">&#34;#my_balance&#34;</span><span class="p">,</span>
+    <span class="nx">methods</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">toShowMyBalance</span><span class="o">:</span><span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">ToShow</span><span class="o">=</span><span class="kc">true</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span><span class="c1">//是子组件传入的数据
+</span><span class="c1"></span>        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">data</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">{</span>
+            <span class="nx">ToShow</span><span class="o">:</span><span class="kc">false</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+<span class="cm">/*注册子组件*/</span>
+  <span class="nx">Vue</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="s2">&#34;show-balance&#34;</span><span class="p">,{</span>
+    <span class="nx">template</span><span class="o">:</span> <span class="s2">&#34;#show_balance&#34;</span><span class="p">,</span>
+    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">myClick</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="s2">&#34;my_fn&#34;</span><span class="p">,</span> <span class="p">{</span><span class="nx">a</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span> <span class="mi">2</span><span class="p">})</span><span class="c1">//$emit触发当前实例上的事件。附加参数都会传给监听器回调。
+</span><span class="c1"></span>        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+<span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+    <span class="nx">el</span><span class="o">:</span> <span class="s2">&#34;#app&#34;</span><span class="p">,</span>
+<span class="p">})</span>
+</code></pre></div></li>
+</ul>
+<h3 id="平行组件通信任意两个不相干的组件">平行组件通信(任意两个不相干的组件)</h3>
+<ul>
+<li>
+<p><strong>情形：</strong> 假定有两个平行组件，需要一个组件能随着另一个组件的变化产生相应的变化！</p>
+</li>
+<li>
+<p><strong>实现</strong>：[思路]首先定义全局Vue实例<code>let vm=new Vue()</code>,通过<code>vm.$emit</code>把fn和data传入，另一组件在<a class="link" href="https://cn.vuejs.org/v2/api/#mounted"  target="_blank" rel="noopener"
+    >mounted</a>的时候用<code>vm.$on</code>接收，其中数据用回调<code>callback</code>接收（不严谨，后面有解释）！</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;app&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">origin-input</span><span class="p">&gt;&lt;/</span><span class="nt">origin-input</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">deal-input</span><span class="p">&gt;&lt;/</span><span class="nt">deal-input</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">template</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;originInp&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>originInput:<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;oText&#34;</span> <span class="err">@</span><span class="na">keyup</span><span class="o">=</span><span class="s">&#34;o_input&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">template</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;dealInp&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;dealInp&#34;</span><span class="p">&gt;&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>dealInp:<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>{{dText}}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="cm">/**
+</span><span class="cm"> *&lt;origin-input&gt;输入，在&lt;deal-input&gt;中也显示出来
+</span><span class="cm"> */</span>
+<span class="kd">let</span> <span class="nx">vm</span><span class="o">=</span><span class="k">new</span> <span class="nx">Vue</span><span class="p">()</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="s2">&#34;origin-input&#34;</span><span class="p">,{</span>
+    <span class="nx">template</span><span class="o">:</span><span class="s2">&#34;#originInp&#34;</span><span class="p">,</span>
+    <span class="nx">data</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">{</span>
+            <span class="nx">oText</span><span class="o">:</span><span class="s2">&#34;&#34;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">methods</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">o_input</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">vm</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="s2">&#34;d_input&#34;</span><span class="p">,</span><span class="k">this</span><span class="p">.</span><span class="nx">oText</span><span class="p">)</span><span class="c1">//类似trigger,出入的数据为this.oText
+</span><span class="c1"></span>        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="s2">&#34;deal-input&#34;</span><span class="p">,{</span>
+    <span class="nx">template</span><span class="o">:</span> <span class="s2">&#34;#dealInp&#34;</span><span class="p">,</span>
+    <span class="nx">data</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">{</span>
+            <span class="nx">dText</span><span class="o">:</span><span class="s2">&#34;&#34;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">mounted</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">vm</span><span class="p">.</span><span class="nx">$on</span><span class="p">(</span><span class="s2">&#34;d_input&#34;</span><span class="p">,(</span><span class="nx">data</span><span class="p">)=&gt;</span><span class="k">this</span><span class="p">.</span><span class="nx">dText</span><span class="o">=</span><span class="nx">data</span><span class="p">)</span><span class="c1">//监听d_input事件的触发
+</span><span class="c1"></span>    <span class="p">}</span>
+<span class="p">})</span>
+<span class="kd">let</span> <span class="nx">app</span><span class="o">=</span><span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+    <span class="nx">el</span><span class="o">:</span><span class="s2">&#34;#app&#34;</span><span class="p">,</span>
+<span class="p">})</span>
+</code></pre></div><blockquote>
+<p><strong>关于<code> vm.$on</code></strong></p>
+<p><code> vm.$on</code>会监听当前实例上的自定义事件。事件可以由 <code>vm.$emit</code> 触发。回调函数会接收所有传入事件触发函数的额外参数。</p>
+<p>因此本例中的js部分从后往前阅读，则先是用<code> vm.$on</code>监听自定义事件<code>d_input</code>的触发并提供数据的处理回调，然后在上面用<code>vm.$emit</code>触发并传入数据</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="7directive自定义指令">7.directive自定义指令</h2>
+<ul>
+<li>
+<p><strong>说明：</strong> 定义<code>v-×××</code>这种指令</p>
+</li>
+<li>
+<p><strong>用法：</strong></p>
+<pre><code>Vue.directive(name,callback(el,biding))
+</code></pre><ul>
+<li>name：指令的名称，并不用指定为<code>v-×××</code>的形式</li>
+<li>el：调用的元素</li>
+<li>binding：<code>binding.value</code>为<code>v-×××</code>后面赋的值</li>
+</ul>
+</li>
+<li>
+<p><strong>详细用法：</strong> <a class="link" href="https://cn.vuejs.org/v2/guide/custom-directive.html"  target="_blank" rel="noopener"
+    >GO</a></p>
+</li>
+</ul>
+<h2 id="8mixins混合">8.mixins混合</h2>
+<ul>
+<li>
+<p><strong>说明：</strong> 是一个类似于封装函数的东西，将组建中的data，methods等封装起来公用</p>
+</li>
+<li>
+<p><strong>用法：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">//定义一个base公用对象，其中的data，methods可以复用，即使不用也无妨，mixins会挑有用的使用
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">base</span><span class="o">=</span><span class="p">{</span>
+    <span class="nx">data</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">{</span>
+            <span class="nx">visible</span><span class="o">:</span><span class="kc">false</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">methods</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">show</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">visible</span><span class="o">=</span><span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="nx">hide</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">visible</span><span class="o">=</span><span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="nx">toggle</span><span class="o">:</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">visible</span><span class="o">=!</span><span class="k">this</span><span class="p">.</span><span class="nx">visible</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="s2">&#34;show-details&#34;</span><span class="p">,{</span>
+    <span class="nx">template</span><span class="o">:</span><span class="s2">&#34;#hove_details&#34;</span><span class="p">,</span>
+    <span class="nx">mixins</span><span class="o">:</span><span class="p">[</span><span class="nx">base</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="s2">&#34;more-details&#34;</span><span class="p">,{</span>
+    <span class="nx">template</span><span class="o">:</span><span class="s2">&#34;#more_details&#34;</span><span class="p">,</span>
+    <span class="nx">mixins</span><span class="o">:</span><span class="p">[</span><span class="nx">base</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+    <span class="nx">el</span><span class="o">:</span><span class="s2">&#34;#app&#34;</span><span class="p">,</span>
+<span class="p">})</span>
+</code></pre></div></li>
+</ul>
+<h2 id="9slot插槽">9.slot插槽</h2>
+<ul>
+<li><strong>说明：</strong> 插槽的引入会让同一个组件的内容具有可更改行</li>
+<li><strong>用法：</strong> 在template中用<code>&lt;slot name=&quot;title&quot;&gt;Title&lt;/slot&gt;</code>指定插槽，在#app中利用<code>&lt;div slot=&quot;titl e&quot;&gt;Modified Title&lt;/div&gt;</code> 使用插槽，其中<strong>slot中的内容为默认值，而div中的为修改值，可以不指定</strong></li>
+<li><strong>具体用法：</strong> <a class="link" href="https://cn.vuejs.org/v2/guide/components-slots.html"  target="_blank" rel="noopener"
+    >Go</a></li>
+</ul>
+<hr />
+<p>skrskr~</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/vue.js/">Vue.js</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/php%E5%BC%80%E5%8F%91%E9%AA%8C%E8%AF%81%E7%A0%81%E7%B1%BB/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PHP开发验证码类</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/git%E7%9B%B8%E5%85%B3/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Git相关</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/javascript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Javascript正则表达式</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/es6%E4%B8%AD%E7%9A%84class%E7%B1%BB/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Es6中的class类</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/javascript%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%88%86%E6%9E%90/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">JavaScript中的继承与原型链分析</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    <script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://pvhtgopk.lc-cn-n1-shared.com","visitor":true});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2018 - 
+        
+        2021 Archai &#39;s blog
+    </section>
+    
+    <section class="powerby">
+        
+            Archai <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">Table of contents</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#1-关于元素显示与隐藏">1. 关于元素显示与隐藏</a>
+      <ol>
+        <li><a href="#--v-showname"><code> # v-show=&quot;name&quot;</code></a></li>
+        <li><a href="#--v-ifname"><code> # v-if=&quot;name&quot;</code></a></li>
+      </ol>
+    </li>
+    <li><a href="#2-访问data">2. 访问data</a>
+      <ol>
+        <li><a href="#-v-model"><code>　# v-model</code></a></li>
+        <li><a href="#-v-if"><code># v-if</code></a></li>
+        <li><a href="#-v-show"><code># v-show</code></a></li>
+        <li><a href="#-v-for"><code># v-for</code></a></li>
+      </ol>
+    </li>
+    <li><a href="#3-v-on">3. v-on</a></li>
+    <li><a href="#4全局组件和局部组件">4.全局组件和局部组件</a>
+      <ol>
+        <li><a href="#全局组件">全局组件</a></li>
+        <li><a href="#局部组件">局部组件</a></li>
+        <li><a href="#vueextend-options-">Vue.extend( options )</a></li>
+      </ol>
+    </li>
+    <li><a href="#5驼峰式的一些坑">5.驼峰式的一些坑</a></li>
+    <li><a href="#6组件间的通信">6.组件间的通信</a>
+      <ol>
+        <li><a href="#父子通信自定义属性传参">父子通信(自定义属性传参)</a></li>
+        <li><a href="#子父通信一个组间中包含另一个组件">子父通信(一个组间中包含另一个组件)</a></li>
+        <li><a href="#平行组件通信任意两个不相干的组件">平行组件通信(任意两个不相干的组件)</a></li>
+      </ol>
+    </li>
+    <li><a href="#7directive自定义指令">7.directive自定义指令</a></li>
+    <li><a href="#8mixins混合">8.mixins混合</a></li>
+    <li><a href="#9slot插槽">9.slot插槽</a></li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>\
+
+<script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.8/clipboard.js"></script>
+<script>
+    let pres = document.querySelectorAll("pre");
+    let copy = `
+<svg t="1628559239763" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4588" width="16" height="16"><path d="M756.537 170.667H109.532c-55.02 0-99.343 44.322-99.343 99.343v647.005c0 55.02 44.322 99.343 99.343 99.343h647.005c55.021 0 99.344-44.322 99.344-99.343V270.01c0-55.02-44.323-99.343-99.344-99.343z m22.926 746.348a22.83 22.83 0 0 1-22.926 22.925H109.532a22.83 22.83 0 0 1-22.925-22.925V270.01a22.83 22.83 0 0 1 22.925-22.925h647.005a22.83 22.83 0 0 1 22.926 22.925v647.005z" p-id="4589"></path><path d="M914.468 12.736H267.463c-20.888 0-38.21 17.322-38.21 38.21s17.322 38.208 38.21 38.208h647.005a22.83 22.83 0 0 1 22.925 22.926v647.005c0 20.887 17.321 38.209 38.209 38.209s38.209-17.322 38.209-38.21V112.08c0-55.021-44.322-99.344-99.343-99.344z" p-id="4590"></path></svg>`
+    let tick = `
+<svg t="1628558717330" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3410" width="16" height="16"><path d="M512 0C228.430769 0 0 228.430769 0 512s228.430769 512 512 512 512-228.430769 512-512S795.569231 0 512 0z m0 945.230769C271.753846 945.230769 78.769231 752.246154 78.769231 512S271.753846 78.769231 512 78.769231s433.230769 192.984615 433.230769 433.230769-192.984615 433.230769-433.230769 433.230769z" p-id="3411" fill="#07a35a"></path><path d="M716.8 330.830769l-208.738462 248.123077c-15.753846 15.753846-43.323077 19.692308-59.076923 7.876923L299.323077 472.615385c-15.753846-11.815385-43.323077-7.876923-55.138462 7.876923-11.815385 15.753846-7.876923 43.323077 7.876923 55.138461l149.661539 114.215385c19.692308 15.753846 47.261538 23.630769 74.830769 23.630769 35.446154 0 70.892308-15.753846 94.523077-43.323077l208.738462-248.123077c15.753846-15.753846 11.815385-43.323077-3.938462-55.138461-19.692308-15.753846-43.323077-15.753846-59.076923 3.938461z" p-id="3412" fill="#07a35a"></path></svg>`
+
+
+    pres.forEach(e => {
+        e.insertAdjacentHTML('beforeend', `<button class="cp_btn">` + copy + `</button>`)
+    })
+    let clp = new ClipboardJS('.cp_btn', {
+        target: function (trigger) {
+            return trigger.previousElementSibling;
+        }
+    });
+    clp.on('success', function (e) {
+        let clpEl=e;
+        e.trigger.innerHTML = tick;
+        e.trigger.parentElement.onmouseleave = _ => {
+            clpEl.trigger.innerHTML = copy
+            clpEl.clearSelection();
+        }
+        // console.info('Action:', e.action);
+        // console.info('Text:', e.text);
+        // console.info('Trigger:', e.trigger);
+        // e.clearSelection();
+    });
+
+    clp.on('error', function (e) {
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+    });
+</script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

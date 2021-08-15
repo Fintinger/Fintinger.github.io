@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DFS on Archai &#39;s blog</title>
+    <link>https://www.fintinger.site/tags/dfs/</link>
+    <description>Recent content in DFS on Archai &#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 02 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>图的遍历</title>
+      <link>https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/</link>
+      <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/</guid>
+      <description>广度优先遍历（BFS）  BFS(Breadth-First-Search)，参考对树的层序遍历
+ 对上面的图从①出发进行BFS得到序列：
+①②⑤ ⑥ ③⑦ ④⑧
+若采用不同的储存结构，可能会得到不同的遍历结果（这个差异主要来自寻找邻接点的过程），对于邻接矩阵存储的图，由于邻接矩阵是唯一的，所以BFS序列也是唯一的；同理，邻接表存储的图BFS序列不唯一。
+BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历过程中会出现重复访问的问题，故可构造visited数组，用来标记已访问过的数组。
+此外，还应针对非连通图做额外的判断，遍历完一个连通分量（极大连通子图）后，遍历查找visited数组中是否还存在未遍历的，如果有即为另一连通分量，继续调用BFS即可。
+ void BFS(Graph G,int v); bool visited[MAX_VERTEX_NUM]; SqQueue Q;//辅助队列 void BFSTraverse(Graph G){ //初始化visited数组  for (int i = 0; i &amp;lt; G.vexnum; ++i) {//使下标从1开始  visited[i]=false; } //对非连通图的处理  for (int v = 0; v &amp;lt; G.vexnum; ++v) { if (!visited[v]) BFS(G,v); } } //从顶点v出发广度优先遍历图G void BFS(Graph G,int v){ visit(v); visited[v]=true; EnQueue(Q,v);//顶点v入队列Q  while(!isEmpty(Q)){ DeQueue(Q,v);//顶点v出队列Q  for (w=FirstNeighbor(G,v);w&amp;gt;=0;w=NextNeighbor(G,v,w))//处理v的所有邻接点  if (!</description>
+    </item>
+    
+  </channel>
+</rss>

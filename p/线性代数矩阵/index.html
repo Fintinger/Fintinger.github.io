@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='基本计算  对角矩阵存在交换律，即 $\bigwedge_1 \bigwedge_2=\bigwedge_2 \bigwedge_1$​
+  $$ {\begin{bmatrix} O &amp;amp; A \
+B &amp;amp; O \end{bmatrix}}^{-1}= {\begin{bmatrix} O &amp;amp; B^{-1} \
+A^{-1} &amp;amp; O \end{bmatrix}} \
+{\begin{bmatrix} A &amp;amp; B \
+C &amp;amp; D \end{bmatrix}}^{T} = {\begin{bmatrix} A^T &amp;amp; C^T \
+B^T &amp;amp; D^T \end{bmatrix}} $$
+注意交换位置
+ 对于 AB=C  B &amp;amp; C均按列分块，则$A(\beta_1 \beta_2 \beta_3)=(\gamma_1 \gamma_2 \gamma_3)$，故B的列向量都是$AX=\gamma$ 的解，特别的，当AB=O即C=O时，B的列向量均是 $AX=0$ 的解。 B &amp;amp; C按行分块，则 AB的行向量均可由B的行向量线性表出。 A &amp;amp; C按列分块，则 AB的列向量均可由A的列向量线性表出。[2013]   规律1与解联系起来，尤其是AB=O推出B的列向量是Ax=0的解这一规律，除此之外AB=O也经常用r(A)&#43;r(B)≤ n这个不等式。'><title>线性代数——矩阵</title>
+
+<link rel='canonical' href='https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/'>
+
+<link rel="stylesheet" href="/scss/style.min.css">
+
+<meta property='og:title' content='线性代数——矩阵'>
+<meta property='og:description' content='基本计算  对角矩阵存在交换律，即 $\bigwedge_1 \bigwedge_2=\bigwedge_2 \bigwedge_1$​
+  $$ {\begin{bmatrix} O &amp;amp; A \
+B &amp;amp; O \end{bmatrix}}^{-1}= {\begin{bmatrix} O &amp;amp; B^{-1} \
+A^{-1} &amp;amp; O \end{bmatrix}} \
+{\begin{bmatrix} A &amp;amp; B \
+C &amp;amp; D \end{bmatrix}}^{T} = {\begin{bmatrix} A^T &amp;amp; C^T \
+B^T &amp;amp; D^T \end{bmatrix}} $$
+注意交换位置
+ 对于 AB=C  B &amp;amp; C均按列分块，则$A(\beta_1 \beta_2 \beta_3)=(\gamma_1 \gamma_2 \gamma_3)$，故B的列向量都是$AX=\gamma$ 的解，特别的，当AB=O即C=O时，B的列向量均是 $AX=0$ 的解。 B &amp;amp; C按行分块，则 AB的行向量均可由B的行向量线性表出。 A &amp;amp; C按列分块，则 AB的列向量均可由A的列向量线性表出。[2013]   规律1与解联系起来，尤其是AB=O推出B的列向量是Ax=0的解这一规律，除此之外AB=O也经常用r(A)&#43;r(B)≤ n这个不等式。'>
+<meta property='og:url' content='https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/'>
+<meta property='og:site_name' content='Archai &#39;s blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='线性代数' /><meta property='article:published_time' content='2021-08-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-08-10T00:00:00&#43;00:00'/><meta property='og:image' content='https://picsum.photos/seed/matrix/640/' />
+<meta name="twitter:title" content="线性代数——矩阵">
+<meta name="twitter:description" content="基本计算  对角矩阵存在交换律，即 $\bigwedge_1 \bigwedge_2=\bigwedge_2 \bigwedge_1$​
+  $$ {\begin{bmatrix} O &amp;amp; A \
+B &amp;amp; O \end{bmatrix}}^{-1}= {\begin{bmatrix} O &amp;amp; B^{-1} \
+A^{-1} &amp;amp; O \end{bmatrix}} \
+{\begin{bmatrix} A &amp;amp; B \
+C &amp;amp; D \end{bmatrix}}^{T} = {\begin{bmatrix} A^T &amp;amp; C^T \
+B^T &amp;amp; D^T \end{bmatrix}} $$
+注意交换位置
+ 对于 AB=C  B &amp;amp; C均按列分块，则$A(\beta_1 \beta_2 \beta_3)=(\gamma_1 \gamma_2 \gamma_3)$，故B的列向量都是$AX=\gamma$ 的解，特别的，当AB=O即C=O时，B的列向量均是 $AX=0$ 的解。 B &amp;amp; C按行分块，则 AB的行向量均可由B的行向量线性表出。 A &amp;amp; C按列分块，则 AB的列向量均可由A的列向量线性表出。[2013]   规律1与解联系起来，尤其是AB=O推出B的列向量是Ax=0的解这一规律，除此之外AB=O也经常用r(A)&#43;r(B)≤ n这个不等式。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://picsum.photos/seed/matrix/640/' />
+    <link rel="shortcut icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico" />
+
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="https://www.fintinger.site" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>Back</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/">
+            
+            <img src="https://picsum.photos/seed/matrix/640/" loading="lazy" alt="Featured image of post 线性代数——矩阵" />
+            
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" >
+                学习总结
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/">线性代数——矩阵</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Aug 10, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    2 min read
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h2 id="基本计算">基本计算</h2>
+<blockquote>
+<p>对角矩阵存在交换律，即 $\bigwedge_1 \bigwedge_2=\bigwedge_2 \bigwedge_1$​</p>
+</blockquote>
+<blockquote>
+<p>$$
+{\begin{bmatrix}
+O &amp; A \<br />
+B &amp; O
+\end{bmatrix}}^{-1}=
+{\begin{bmatrix}
+O &amp; B^{-1} \<br />
+A^{-1} &amp; O
+\end{bmatrix}}
+\<br />
+{\begin{bmatrix}
+A &amp; B \<br />
+C &amp; D
+\end{bmatrix}}^{T} =
+{\begin{bmatrix}
+A^T &amp; C^T \<br />
+B^T &amp; D^T
+\end{bmatrix}}
+$$</p>
+<p>注意交换位置</p>
+</blockquote>
+<h3 id="对于-abc">对于 AB=C</h3>
+<ol>
+<li>B &amp; C均按列分块，则$A(\beta_1 \beta_2 \beta_3)=(\gamma_1 \gamma_2 \gamma_3)$，故B<strong>的列向量都是$AX=\gamma$  的解</strong>，特别的，当AB=O即C=O时，B的列向量均是 $AX=0$ 的解。</li>
+<li>B &amp; C按行分块，则 <strong>AB的行向量均可由B的行向量线性表出</strong>。</li>
+<li>A &amp; C按列分块，则 <strong>AB的列向量均可由A的列向量线性表出</strong>。[2013]</li>
+</ol>
+<blockquote>
+<p>规律1与解联系起来，尤其是AB=O推出B的列向量是Ax=0的解这一规律，除此之外AB=O也经常用r(A)+r(B)≤ n这个不等式。</p>
+</blockquote>
+<blockquote>
+<p>规律2,3与线性表出关联，进而可以跟秩，向量组等价(能互相线性表出则等价)联系起来。</p>
+</blockquote>
+<h3 id="几个特殊符号">几个特殊符号</h3>
+<blockquote>
+<p>$a(a_1,a_2,a_3)^T$</p>
+</blockquote>
+<ol>
+<li>矩阵</li>
+</ol>
+<p>$ab^T$ = $(ba^T)^T$</p>
+<p>$aa^T$:  对称矩阵</p>
+<ol start="2">
+<li>数</li>
+</ol>
+<p>$a^Tb = b^Ta$:   $ab^T$ 或 $ba^T$​​​的绩(主对角线元素之和)</p>
+<p>$a^Ta$: 平方和</p>
+<h3 id="an">$A^n$​​</h3>
+<blockquote>
+<p>主要有三种形式</p>
+</blockquote>
+<h4 id="题型一ra1">题型一：r(A)=1</h4>
+<p><figure style="flex-grow: 113; flex-basis: 272px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813172022038.png" data-size="443x390"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813172022038.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813172022038_hua753c3bf136133da0064c73dafd3fd04_58917_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813172022038_hua753c3bf136133da0064c73dafd3fd04_58917_1024x0_resize_box_3.png 1024w"
+				width="443"
+				height="390"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<blockquote>
+<p>若秩r(A)=1,则A可分解为一个列向量与一个行向量的乘积,有A2=A之规律,从而$A^{n}=l^{n-1}A$</p>
+<p>$$
+\begin{array}{l}
+A=\left[\begin{array}{lll}
+a_{1} b_{1} &amp; a_{1} b_{2} &amp; a_{1} b_{1} \<br />
+a_{2} b_{1} &amp; a_{2} b_{2} &amp; a_{2} b_{3} \<br />
+a_{3} b_{1} &amp; a_{3} b_{2} &amp; a_{3} b_{3}
+\end{array}\right]=\left[\begin{array}{l}
+a_{1} \<br />
+a_{2} \<br />
+a_{3}
+\end{array}\right]\left[b_{1}, b_{2}, b_{3}\right]=\alpha \boldsymbol{\beta}^{\top}, \<br />
+\boldsymbol{A}^{2}=\left(\alpha \boldsymbol{\beta}^{\mathrm{T}}\right)\left(\alpha \boldsymbol{\beta}^{\mathrm{T}}\right)=\boldsymbol{\alpha}\left(\boldsymbol{\beta}^{\mathrm{T}} \boldsymbol{\alpha}\right) \boldsymbol{\beta}^{\mathrm{T}}=l \alpha \boldsymbol{\beta}^{\mathrm{T}}=l \mathbf{A} \<br />
+l=\boldsymbol{\beta}^{\mathrm{T}} \boldsymbol{\alpha}=\boldsymbol{\alpha}^{\mathrm{T}} \boldsymbol{\beta}=a_{1} b_{1}+a_{2} b_{2}+a_{3} b_{3}=\sum a_{ii}
+\end{array}
+$$</p>
+<p>即$A^{n}=(\sum a_{ii})^{n-1}A$​​</p>
+</blockquote>
+<h4 id="题型二主对角线和一侧全为0">题型二：主对角线和一侧全为0</h4>
+<p><figure style="flex-grow: 370; flex-basis: 889px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813173611560.png" data-size="393x106"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813173611560.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813173611560_hu60b1aa370d688e2dafec7f9f773143f4_40649_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813173611560_hu60b1aa370d688e2dafec7f9f773143f4_40649_1024x0_resize_box_3.png 1024w"
+				width="393"
+				height="106"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<blockquote>
+<p>这类对于n阶矩阵A，$A^{n}=0$</p>
+</blockquote>
+<p><figure style="flex-grow: 98; flex-basis: 235px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813174423804.png" data-size="353x360"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813174423804.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813174423804_hu505380e596f50324deb9f7d1763abfc8_57539_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813174423804_hu505380e596f50324deb9f7d1763abfc8_57539_1024x0_resize_box_3.png 1024w"
+				width="353"
+				height="360"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<h4 id="题型三相似">题型三：相似</h4>
+<blockquote>
+<p>$A^{n}=PB^{n}P^{-1}$​​，关键在于选择B矩阵，</p>
+</blockquote>
+<blockquote>
+<p>通常$A ∽ \wedge$ ，即选B为与A相似对角矩阵，根据与相似对角化的知识，有$A^n=P \wedge P^{-1}$，P为特征向量组，$\wedge$​对角元素为A特征值。</p>
+</blockquote>
+<p><figure style="flex-grow: 468; flex-basis: 1124px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175437570.png" data-size="562x120"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175437570.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175437570_hu4946e6ed122d7b325fd1b10ec4ce12e5_28149_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175437570_hu4946e6ed122d7b325fd1b10ec4ce12e5_28149_1024x0_resize_box_3.png 1024w"
+				width="562"
+				height="120"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<blockquote>
+<p>解：</p>
+<p><figure style="flex-grow: 105; flex-basis: 254px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175806227.png" data-size="481x454"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175806227.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175806227_hude009d57626627447db0a01b1f9df646_71186_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175806227_hude009d57626627447db0a01b1f9df646_71186_1024x0_resize_box_3.png 1024w"
+				width="481"
+				height="454"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+</blockquote>
+<h2 id="伴随矩阵可逆矩阵">伴随矩阵，可逆矩阵</h2>
+<h3 id="一伴随矩阵">（一）伴随矩阵</h3>
+<blockquote>
+<p>由基本公式$AA^{<em>}=A^{</em>}A=|A|E$​,可以推导出以下几个公式：</p>
+<ul>
+<li>$A^{-1}= \frac{1}{|A|}A^{*}$</li>
+<li>$(A^{-1})^{<em>} =(A^{</em>})^{-1}=  \frac{1}{|A|}A$</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>设A是n阶矩阵
+$$
+r(A^{*}) =<br />
+\begin{cases} <br />
+n &amp; r(A)=n \ 
+1 &amp; r(A)=n-1\<br />
+0 &amp; r(A)&lt;n-1
+\end{cases}
+$$
+证明过程：</p>
+<p><figure style="flex-grow: 82; flex-basis: 197px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814163731935.png" data-size="717x871"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814163731935.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814163731935_hub731f429dad2cec3a81b0271bf69a635_486543_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814163731935_hub731f429dad2cec3a81b0271bf69a635_486543_1024x0_resize_box_3.png 1024w"
+				width="717"
+				height="871"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+</blockquote>
+<h5 id="真题">真题</h5>
+<p><figure style="flex-grow: 509; flex-basis: 1222px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814164511403.png" data-size="555x109"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814164511403.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814164511403_hu7b5b2bae3fdcbc785a86cb20c92cbdbd_39547_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814164511403_hu7b5b2bae3fdcbc785a86cb20c92cbdbd_39547_1024x0_resize_box_3.png 1024w"
+				width="555"
+				height="109"
+				loading="lazy"
+				alt="2005-数三">
+		</a>
+		
+		<figcaption>2005-数三</figcaption>
+		
+	</figure></p>
+<blockquote>
+<p>由 $A^{*}=A^{T}$，可得：</p>
+<p>$A_{ij}=a_{ij},\forall i,j=1,2,3$</p>
+<p>则 对A按照第一行展开有：</p>
+<p>$\begin{aligned}
+A
+&amp;=a_{11}A_{11}+a_{12}A_{12}+a_{13}A_{13}\<br />
+&amp;=(a_{11})^2+(a_{12})^2+(a_{13})^2\<br />
+&amp;=3(a_{11})^2
+\end{aligned} $​​</p>
+<p>又根据 $A^{*}=A^{T}$ 有：</p>
+<p>$|A^{*}|=|A^{T}|$</p>
+<p>即，$|A|^{3-1}=|A|$​​，$|A|(|A|-1)=0$​，易知|A|≠0，</p>
+<p>故 A=1​</p>
+<p>进而 $3(a_{11})^2=1$ ，$a_{11}=\frac{√3}{2}$</p>
+</blockquote>
+<h3 id="二可逆矩阵">（二）可逆矩阵</h3>
+<blockquote>
+<p>A可逆 $\Leftrightarrow$ |A| ≠ 0</p>
+<p>​			$\Leftrightarrow$​ r(A) = n</p>
+<p>​			$\Leftrightarrow$​ A的列(行)向量线性无关</p>
+<p>​			$\Leftrightarrow$ 0不是A的特征值</p>
+</blockquote>
+<h4 id="真题-1">真题</h4>
+<p><figure style="flex-grow: 128; flex-basis: 308px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171403317.png" data-size="403x314"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171403317.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171403317_hu92a8f99263abe91026aad2a5eb0a1ba6_76383_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171403317_hu92a8f99263abe91026aad2a5eb0a1ba6_76383_1024x0_resize_box_3.png 1024w"
+				width="403"
+				height="314"
+				loading="lazy"
+				alt="2000-数二">
+		</a>
+		
+		<figcaption>2000-数二</figcaption>
+		
+	</figure></p>
+<blockquote>
+<p><strong>单位矩阵与矩阵的转置</strong></p>
+<p><figure style="flex-grow: 208; flex-basis: 499px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171542485.png" data-size="816x392"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171542485.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171542485_hu4a2f61b5bdbe7d605503bb33e474d2cb_306794_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171542485_hu4a2f61b5bdbe7d605503bb33e474d2cb_306794_1024x0_resize_box_3.png 1024w"
+				width="816"
+				height="392"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+</blockquote>
+<h2 id="初等矩阵">初等矩阵</h2>
+<blockquote>
+<p>用初等矩阵P左（右）乘矩阵A，结果PA（AP）就是对矩阵A作一次相应的初等行（列）变换。</p>
+<p>“左乘行变换，右乘列变换”</p>
+</blockquote>
+<blockquote>
+<p>初等矩阵均可逆，且其逆是同类型的初等矩阵:</p>
+<p>$[\text{倍加}]^{-1}$​​=[倍数取反]​</p>
+<p>$[\text{倍乘}]^{-1}$​​​=[取倒数]  (对角矩阵也能理解)</p>
+<p>$[\text{互换}]^{-1}$​=[不变]</p>
+</blockquote>
+<h3 id="例题">例题</h3>
+<p><figure style="flex-grow: 268; flex-basis: 645px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814173915899.png" data-size="406x151"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814173915899.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814173915899_hu189132b1569032c4e1767c5032a3c215_25014_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814173915899_hu189132b1569032c4e1767c5032a3c215_25014_1024x0_resize_box_3.png 1024w"
+				width="406"
+				height="151"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<blockquote>
+<p>观察下标得变换规律</p>
+</blockquote>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://picsum.photos/seed/det/640/360" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/det/640/360"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">线性代数——行列式</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">向量空间管理策略</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%87%8F%E8%80%8C%E6%B2%BB%E4%B9%8B%E4%B8%8E%E5%88%86%E8%80%8C%E6%B2%BB%E4%B9%8B/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">减而治之与分而治之</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/ds%E5%AF%BC%E8%AE%BA/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">DS导论</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/php%E8%AF%AD%E6%B3%95%E5%B0%8F%E7%BB%93/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PHP语法小结</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    <script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://pvhtgopk.lc-cn-n1-shared.com","visitor":true});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2018 - 
+        
+        2021 Archai &#39;s blog
+    </section>
+    
+    <section class="powerby">
+        
+            Archai <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">Table of contents</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#基本计算">基本计算</a>
+      <ol>
+        <li><a href="#对于-abc">对于 AB=C</a></li>
+        <li><a href="#几个特殊符号">几个特殊符号</a></li>
+        <li><a href="#an">$A^n$​​</a>
+          <ol>
+            <li><a href="#题型一ra1">题型一：r(A)=1</a></li>
+            <li><a href="#题型二主对角线和一侧全为0">题型二：主对角线和一侧全为0</a></li>
+            <li><a href="#题型三相似">题型三：相似</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#伴随矩阵可逆矩阵">伴随矩阵，可逆矩阵</a>
+      <ol>
+        <li><a href="#一伴随矩阵">（一）伴随矩阵</a>
+          <ol>
+            <li></li>
+          </ol>
+        </li>
+        <li><a href="#二可逆矩阵">（二）可逆矩阵</a>
+          <ol>
+            <li><a href="#真题-1">真题</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#初等矩阵">初等矩阵</a>
+      <ol>
+        <li><a href="#例题">例题</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>\
+
+<script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.8/clipboard.js"></script>
+<script>
+    let pres = document.querySelectorAll("pre");
+    let copy = `
+<svg t="1628559239763" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4588" width="16" height="16"><path d="M756.537 170.667H109.532c-55.02 0-99.343 44.322-99.343 99.343v647.005c0 55.02 44.322 99.343 99.343 99.343h647.005c55.021 0 99.344-44.322 99.344-99.343V270.01c0-55.02-44.323-99.343-99.344-99.343z m22.926 746.348a22.83 22.83 0 0 1-22.926 22.925H109.532a22.83 22.83 0 0 1-22.925-22.925V270.01a22.83 22.83 0 0 1 22.925-22.925h647.005a22.83 22.83 0 0 1 22.926 22.925v647.005z" p-id="4589"></path><path d="M914.468 12.736H267.463c-20.888 0-38.21 17.322-38.21 38.21s17.322 38.208 38.21 38.208h647.005a22.83 22.83 0 0 1 22.925 22.926v647.005c0 20.887 17.321 38.209 38.209 38.209s38.209-17.322 38.209-38.21V112.08c0-55.021-44.322-99.344-99.343-99.344z" p-id="4590"></path></svg>`
+    let tick = `
+<svg t="1628558717330" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3410" width="16" height="16"><path d="M512 0C228.430769 0 0 228.430769 0 512s228.430769 512 512 512 512-228.430769 512-512S795.569231 0 512 0z m0 945.230769C271.753846 945.230769 78.769231 752.246154 78.769231 512S271.753846 78.769231 512 78.769231s433.230769 192.984615 433.230769 433.230769-192.984615 433.230769-433.230769 433.230769z" p-id="3411" fill="#07a35a"></path><path d="M716.8 330.830769l-208.738462 248.123077c-15.753846 15.753846-43.323077 19.692308-59.076923 7.876923L299.323077 472.615385c-15.753846-11.815385-43.323077-7.876923-55.138462 7.876923-11.815385 15.753846-7.876923 43.323077 7.876923 55.138461l149.661539 114.215385c19.692308 15.753846 47.261538 23.630769 74.830769 23.630769 35.446154 0 70.892308-15.753846 94.523077-43.323077l208.738462-248.123077c15.753846-15.753846 11.815385-43.323077-3.938462-55.138461-19.692308-15.753846-43.323077-15.753846-59.076923 3.938461z" p-id="3412" fill="#07a35a"></path></svg>`
+
+
+    pres.forEach(e => {
+        e.insertAdjacentHTML('beforeend', `<button class="cp_btn">` + copy + `</button>`)
+    })
+    let clp = new ClipboardJS('.cp_btn', {
+        target: function (trigger) {
+            return trigger.previousElementSibling;
+        }
+    });
+    clp.on('success', function (e) {
+        let clpEl=e;
+        e.trigger.innerHTML = tick;
+        e.trigger.parentElement.onmouseleave = _ => {
+            clpEl.trigger.innerHTML = copy
+            clpEl.clearSelection();
+        }
+        // console.info('Action:', e.action);
+        // console.info('Text:', e.text);
+        // console.info('Trigger:', e.trigger);
+        // e.clearSelection();
+    });
+
+    clp.on('error', function (e) {
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+    });
+</script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

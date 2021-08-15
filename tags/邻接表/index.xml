@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>邻接表 on Archai &#39;s blog</title>
+    <link>https://www.fintinger.site/tags/%E9%82%BB%E6%8E%A5%E8%A1%A8/</link>
+    <description>Recent content in 邻接表 on Archai &#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 02 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/%E9%82%BB%E6%8E%A5%E8%A1%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>图的存储</title>
+      <link>https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/</link>
+      <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/</guid>
+      <description>邻接矩阵  Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.
+ 代码实现 #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph; 即找度 根据邻接矩阵计算结点的度TD
+    无向图 有向图     $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数
+$OD(V_i)$: i列非零元素个数
+TD=ID+OD    对于带权图（网） #define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph; 复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|+|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。</description>
+    </item>
+    
+  </channel>
+</rss>

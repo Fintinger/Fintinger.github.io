@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>线性代数 on Archai &#39;s blog</title>
+    <link>https://www.fintinger.site/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</link>
+    <description>Recent content in 线性代数 on Archai &#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>线性代数——矩阵</title>
+      <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/</link>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/</guid>
+      <description>基本计算  对角矩阵存在交换律，即 $\bigwedge_1 \bigwedge_2=\bigwedge_2 \bigwedge_1$​
+  $$ {\begin{bmatrix} O &amp;amp; A \
+B &amp;amp; O \end{bmatrix}}^{-1}= {\begin{bmatrix} O &amp;amp; B^{-1} \
+A^{-1} &amp;amp; O \end{bmatrix}} \
+{\begin{bmatrix} A &amp;amp; B \
+C &amp;amp; D \end{bmatrix}}^{T} = {\begin{bmatrix} A^T &amp;amp; C^T \
+B^T &amp;amp; D^T \end{bmatrix}} $$
+注意交换位置
+ 对于 AB=C  B &amp;amp; C均按列分块，则$A(\beta_1 \beta_2 \beta_3)=(\gamma_1 \gamma_2 \gamma_3)$，故B的列向量都是$AX=\gamma$ 的解，特别的，当AB=O即C=O时，B的列向量均是 $AX=0$ 的解。 B &amp;amp; C按行分块，则 AB的行向量均可由B的行向量线性表出。 A &amp;amp; C按列分块，则 AB的列向量均可由A的列向量线性表出。[2013]   规律1与解联系起来，尤其是AB=O推出B的列向量是Ax=0的解这一规律，除此之外AB=O也经常用r(A)+r(B)≤ n这个不等式。</description>
+    </item>
+    
+    <item>
+      <title>线性代数——行列式</title>
+      <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/</link>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/</guid>
+      <description>计算※ 数字型 题型 注意“存在三条对角线的情况”，通过 逐行相加 的到 “三角型”计算
+经典例题 
+2008-真题
+抽象型 题型  行列式性质恒等变形 矩阵公式、法则恒等变形，E恒等变形 形特征值、相似  
+经典例题 
+ 思路：利用单位矩阵恒等变形
+ 
+ 思路一：利用矩阵相似
+利用乘法公式凑$PAP^{-1}=B$
+思路二：用行列式性质
+ 
+ 思路：“不可逆”=&amp;gt;“行列式为0”=&amp;gt;观察看到为特征值形式$|\lambda E-A|=0$，利用特征值与行列式的关系求解
+ 应用 特征值 思路 “消0且得公因式”
+例题 
+
+ 对于特征多项式应两行（或列）加加减减，至多是三行（或列）的加加减减找出 $\lambda-a$ 的公因式，然后再解一个二次方程，就可求出矩阵A的三个特征值
+ 克拉默法则 思路  不用来解大的方程组，常用小的证明题，齐次中“AX=0”→ |A|=0
+ 经典例题 image-20210811155745415
+ &amp;ldquo;AB=O&amp;rdquo; 👉 方程的解(B的列向量是A的解)
+​	👉 秩 r(A)+r(B) ≤ n (n为A的列,B的行)</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='计算※ 数字型 题型 注意“存在三条对角线的情况”，通过 逐行相加 的到 “三角型”计算
+经典例题 
+2008-真题
+抽象型 题型  行列式性质恒等变形 矩阵公式、法则恒等变形，E恒等变形 形特征值、相似  
+经典例题 
+ 思路：利用单位矩阵恒等变形
+ 
+ 思路一：利用矩阵相似
+利用乘法公式凑$PAP^{-1}=B$
+思路二：用行列式性质
+ 
+ 思路：“不可逆”=&amp;gt;“行列式为0”=&amp;gt;观察看到为特征值形式$|\lambda E-A|=0$，利用特征值与行列式的关系求解
+ 应用 特征值 思路 “消0且得公因式”
+例题 
+
+ 对于特征多项式应两行（或列）加加减减，至多是三行（或列）的加加减减找出 $\lambda-a$ 的公因式，然后再解一个二次方程，就可求出矩阵A的三个特征值
+ 克拉默法则 思路  不用来解大的方程组，常用小的证明题，齐次中“AX=0”→ |A|=0
+ 经典例题 image-20210811155745415
+ &amp;ldquo;AB=O&amp;rdquo; 👉 方程的解(B的列向量是A的解)
+​	👉 秩 r(A)&#43;r(B) ≤ n (n为A的列,B的行)'><title>线性代数——行列式</title>
+
+<link rel='canonical' href='https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/'>
+
+<link rel="stylesheet" href="/scss/style.min.css">
+
+<meta property='og:title' content='线性代数——行列式'>
+<meta property='og:description' content='计算※ 数字型 题型 注意“存在三条对角线的情况”，通过 逐行相加 的到 “三角型”计算
+经典例题 
+2008-真题
+抽象型 题型  行列式性质恒等变形 矩阵公式、法则恒等变形，E恒等变形 形特征值、相似  
+经典例题 
+ 思路：利用单位矩阵恒等变形
+ 
+ 思路一：利用矩阵相似
+利用乘法公式凑$PAP^{-1}=B$
+思路二：用行列式性质
+ 
+ 思路：“不可逆”=&amp;gt;“行列式为0”=&amp;gt;观察看到为特征值形式$|\lambda E-A|=0$，利用特征值与行列式的关系求解
+ 应用 特征值 思路 “消0且得公因式”
+例题 
+
+ 对于特征多项式应两行（或列）加加减减，至多是三行（或列）的加加减减找出 $\lambda-a$ 的公因式，然后再解一个二次方程，就可求出矩阵A的三个特征值
+ 克拉默法则 思路  不用来解大的方程组，常用小的证明题，齐次中“AX=0”→ |A|=0
+ 经典例题 image-20210811155745415
+ &amp;ldquo;AB=O&amp;rdquo; 👉 方程的解(B的列向量是A的解)
+​	👉 秩 r(A)&#43;r(B) ≤ n (n为A的列,B的行)'>
+<meta property='og:url' content='https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/'>
+<meta property='og:site_name' content='Archai &#39;s blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='线性代数' /><meta property='article:published_time' content='2021-08-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-08-10T00:00:00&#43;00:00'/><meta property='og:image' content='https://picsum.photos/seed/det/640/360' />
+<meta name="twitter:title" content="线性代数——行列式">
+<meta name="twitter:description" content="计算※ 数字型 题型 注意“存在三条对角线的情况”，通过 逐行相加 的到 “三角型”计算
+经典例题 
+2008-真题
+抽象型 题型  行列式性质恒等变形 矩阵公式、法则恒等变形，E恒等变形 形特征值、相似  
+经典例题 
+ 思路：利用单位矩阵恒等变形
+ 
+ 思路一：利用矩阵相似
+利用乘法公式凑$PAP^{-1}=B$
+思路二：用行列式性质
+ 
+ 思路：“不可逆”=&amp;gt;“行列式为0”=&amp;gt;观察看到为特征值形式$|\lambda E-A|=0$，利用特征值与行列式的关系求解
+ 应用 特征值 思路 “消0且得公因式”
+例题 
+
+ 对于特征多项式应两行（或列）加加减减，至多是三行（或列）的加加减减找出 $\lambda-a$ 的公因式，然后再解一个二次方程，就可求出矩阵A的三个特征值
+ 克拉默法则 思路  不用来解大的方程组，常用小的证明题，齐次中“AX=0”→ |A|=0
+ 经典例题 image-20210811155745415
+ &amp;ldquo;AB=O&amp;rdquo; 👉 方程的解(B的列向量是A的解)
+​	👉 秩 r(A)&#43;r(B) ≤ n (n为A的列,B的行)"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://picsum.photos/seed/det/640/360' />
+    <link rel="shortcut icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico" />
+
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="https://www.fintinger.site" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>Back</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/">
+            
+            <img src="https://picsum.photos/seed/det/640/360" loading="lazy" alt="Featured image of post 线性代数——行列式" />
+            
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" >
+                学习总结
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/">线性代数——行列式</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Aug 10, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 min read
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h2 id="计算">计算※</h2>
+<h3 id="数字型">数字型</h3>
+<h4 id="题型">题型</h4>
+<p>注意“存在三条对角线的情况”，通过 <strong>逐行相加</strong> 的到 “三角型”计算</p>
+<h4 id="经典例题">经典例题</h4>
+<p><figure style="flex-grow: 301; flex-basis: 722px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/1.jpg" data-size="3264x1084"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/1.jpg"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/1_hu311bc18b485814a4b59391289cfcb720_140786_480x0_resize_q75_box.jpg 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/1_hu311bc18b485814a4b59391289cfcb720_140786_1024x0_resize_q75_box.jpg 1024w"
+				width="3264"
+				height="1084"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<hr />
+<p><figure style="flex-grow: 42; flex-basis: 102px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/2.png" data-size="402x940"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/2.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/2_hue9cce05d362902a32593202fdaa56f9b_255623_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/2_hue9cce05d362902a32593202fdaa56f9b_255623_1024x0_resize_box_3.png 1024w"
+				width="402"
+				height="940"
+				loading="lazy"
+				alt="2008-真题">
+		</a>
+		
+		<figcaption>2008-真题</figcaption>
+		
+	</figure></p>
+<h3 id="抽象型">抽象型</h3>
+<h4 id="题型-1">题型</h4>
+<ol>
+<li>行列式性质恒等变形</li>
+<li>矩阵公式、法则恒等变形，<strong>E恒等变形</strong></li>
+<li>形特征值、相似</li>
+</ol>
+<p><figure style="flex-grow: 217; flex-basis: 520px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/3.png" data-size="382x176"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/3.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/3_hu879317c0d3e0dfbe17747872461cb176_54829_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/3_hu879317c0d3e0dfbe17747872461cb176_54829_1024x0_resize_box_3.png 1024w"
+				width="382"
+				height="176"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<h4 id="经典例题-1">经典例题</h4>
+<p><figure style="flex-grow: 742; flex-basis: 1782px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/4.png" data-size="401x54"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/4.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/4_hu09756dd3367e03c5b5137ba2633e0de2_17426_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/4_hu09756dd3367e03c5b5137ba2633e0de2_17426_1024x0_resize_box_3.png 1024w"
+				width="401"
+				height="54"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<blockquote>
+<p>思路：利用单位矩阵恒等变形</p>
+</blockquote>
+<p><figure style="flex-grow: 750; flex-basis: 1800px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/5.png" data-size="405x54"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/5.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/5_hu5afb9a0d061853082aa482c68218210d_22274_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/5_hu5afb9a0d061853082aa482c68218210d_22274_1024x0_resize_box_3.png 1024w"
+				width="405"
+				height="54"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<blockquote>
+<p>思路一：利用矩阵相似</p>
+<p>利用乘法公式凑$PAP^{-1}=B$</p>
+<p>思路二：用行列式性质</p>
+</blockquote>
+<p><figure style="flex-grow: 347; flex-basis: 833px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/6.png" data-size="931x268"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/6.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/6_huaf72e8276698e114d7020861c1e47d6c_231255_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/6_huaf72e8276698e114d7020861c1e47d6c_231255_1024x0_resize_box_3.png 1024w"
+				width="931"
+				height="268"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<blockquote>
+<p>思路：“不可逆”=&gt;“行列式为0”=&gt;观察看到为特征值形式$|\lambda E-A|=0$，利用特征值与行列式的关系求解</p>
+</blockquote>
+<h2 id="应用">应用</h2>
+<h3 id="特征值">特征值</h3>
+<h4 id="思路">思路</h4>
+<p>“消0且得公因式”</p>
+<h4 id="例题">例题</h4>
+<p><figure style="flex-grow: 405; flex-basis: 972px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/7.png" data-size="466x115"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/7.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/7_hue1381d5a6941dced7c90615b1d7a7b27_23824_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/7_hue1381d5a6941dced7c90615b1d7a7b27_23824_1024x0_resize_box_3.png 1024w"
+				width="466"
+				height="115"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<hr />
+<p><figure style="flex-grow: 597; flex-basis: 1434px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/8.png" data-size="502x84"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/8.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/8_hud84f620aabd1aa2e0b1549ff83d36742_23419_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/8_hud84f620aabd1aa2e0b1549ff83d36742_23419_1024x0_resize_box_3.png 1024w"
+				width="502"
+				height="84"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<blockquote>
+<p>对于特征多项式应两行（或列）加加减减，至多是三行（或列）的加加减减找出 $\lambda-a$ 的公因式，然后再解一个二次方程，就可求出矩阵A的三个特征值</p>
+</blockquote>
+<h3 id="克拉默法则">克拉默法则</h3>
+<h4 id="思路-1">思路</h4>
+<blockquote>
+<p>不用来解大的方程组，常用小的证明题，齐次中“AX=0”→ |A|=0</p>
+</blockquote>
+<h4 id="经典例题-2">经典例题</h4>
+<p><figure style="flex-grow: 125; flex-basis: 301px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210811155745415-16286686696181.png" data-size="819x653"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210811155745415-16286686696181.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210811155745415-16286686696181_hu19c1ee6f964153da2385f6640da74d64_344186_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210811155745415-16286686696181_hu19c1ee6f964153da2385f6640da74d64_344186_1024x0_resize_box_3.png 1024w"
+				width="819"
+				height="653"
+				loading="lazy"
+				alt="image-20210811155745415">
+		</a>
+		
+		<figcaption>image-20210811155745415</figcaption>
+		
+	</figure></p>
+<blockquote>
+<p>&ldquo;AB=O&rdquo; 👉 方程的解(B的列向量是A的解)</p>
+<p>​			    👉 秩 r(A)+r(B) ≤ n (n为A的列,B的行)</p>
+</blockquote>
+<h3 id="矩阵秩">矩阵秩</h3>
+<h4 id="注意点">注意点</h4>
+<blockquote>
+<p>r(A) =  r 👉A中有r阶子式不为0,任何r+1阶子式(若还有)必全为0.</p>
+<p>r(A) &lt; r 👉A中每一个r阶子式全为0</p>
+<p>r(A)≥r 👉A中有r阶子式不为0.(<em>能确定r的范围</em>)</p>
+<p>A ≠ O   👉 r|A| ≥ 1</p>
+<p>A是n阶,</p>
+<ul>
+<li>r(A) = n 👉 |A|≠0👉A可逆</li>
+<li>r(A) &lt; n 👉 |A| = 0👉A不可逆</li>
+</ul>
+<p>A是m×n矩阵,则r(A)≤min(m,n)</p>
+</blockquote>
+<blockquote>
+<p>&ldquo;三阶矩阵r(A)=2&rdquo; → |A|=0</p>
+</blockquote>
+<blockquote>
+<p>A — m×n ,  B — n×s  ※</p>
+<p>r(AB) ≤ min { r(A), r(B) }</p>
+<ul>
+<li>若A可逆，👉 r(AB)=r(BA)=r(B)</li>
+<li>若A列满秩(r(A)=n)，👉 r(AB)=r(B)</li>
+</ul>
+</blockquote>
+<h2 id="证-a--0-">证 |A| = 0 ？</h2>
+<blockquote>
+<p>构思一：证Ax=0有非零解(克拉默法则)</p>
+</blockquote>
+<blockquote>
+<p>构思二：假设|A|≠0，用$A^{-1}$ 找出矛盾</p>
+</blockquote>
+<blockquote>
+<p>构思三：证明 r(A) &lt; n</p>
+</blockquote>
+<blockquote>
+<p>构思四：$|A|= \Pi \lambda_i$​ (特征值)</p>
+</blockquote>
+<blockquote>
+<p>构思五：证明 $|A|$ = $|A|^{-1}$</p>
+</blockquote>
+<h3 id="经典例题-3">经典例题</h3>
+<p><figure style="flex-grow: 164; flex-basis: 394px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210811165203850-16286719246932.png" data-size="409x249"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210811165203850-16286719246932.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210811165203850-16286719246932_hu18a26ba77f94f13b2d4edabe4745560f_93067_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210811165203850-16286719246932_hu18a26ba77f94f13b2d4edabe4745560f_93067_1024x0_resize_box_3.png 1024w"
+				width="409"
+				height="249"
+				loading="lazy"
+				alt="image-20210811165203850">
+		</a>
+		
+		<figcaption>image-20210811165203850</figcaption>
+		
+	</figure></p>
+<blockquote>
+<p>这里又用到了 AB=O 型！！！！</p>
+</blockquote>
+<p><figure style="flex-grow: 526; flex-basis: 1263px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210811172107972-16286736700433.png" data-size="800x152"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210811172107972-16286736700433.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210811172107972-16286736700433_huc4942a1ca2e5443dedb349512bec736d_80013_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210811172107972-16286736700433_huc4942a1ca2e5443dedb349512bec736d_80013_1024x0_resize_box_3.png 1024w"
+				width="800"
+				height="152"
+				loading="lazy"
+				alt="image-20210811172107972">
+		</a>
+		
+		<figcaption>image-20210811172107972</figcaption>
+		
+	</figure></p>
+<blockquote>
+<p><strong>解法一：用秩</strong></p>
+<p>​	r(AB) ≤ r(A) ≤ n &lt; m</p>
+<p>​	∵ AB为m阶</p>
+<p>​	故，|AB| = 0	(  <em>r(AB) &lt; m</em> )</p>
+<p><strong>解法二：用克拉默法则</strong></p>
+<p>​	构造两个齐次方程组，如下：</p>
+<p>​	ABX = 0 (1)</p>
+<p>​	BX = 0    (2)</p>
+<p>​	显然，(2)的解一定为(1)的解     ※</p>
+<p>​	又∵ B为n×m，且 n &lt; m</p>
+<p>​	∴  BX=0 一定有非零解</p>
+<p>​	故，ABX = 0 一定有非零解</p>
+<p>​	|AB|=0</p>
+</blockquote>
+<h2 id="代数余子式">代数余子式</h2>
+<h3 id="定理">定理</h3>
+<blockquote>
+<p>i≠j时，有：</p>
+<p>$a_{i1}A_{j1}+a_{i2}A_{j2}+&hellip;+a_{in}A_{jn}=0$</p>
+<p>$a_{1j}A_{1k}+a_{2j}A_{2k}+&hellip;+a_{nj}A_{nk}=0$​</p>
+<p>某一行元素与另一行对应余子式乘积和为0（第j行与第i行的元素完全相同，故行列式为0）</p>
+</blockquote>
+<blockquote>
+<p>$A_{ij}$元素大小与$a_{ij}$无关，可构造以$A_{ij}$元素系数为一行(列)的向量，则该构造的向量按$A_{ij}$​元素系数一行(列)的展开的行列式的值就为$\sum A_{ij}$的值</p>
+</blockquote>
+<h4 id="例题-1">例题</h4>
+<p><figure style="flex-grow: 237; flex-basis: 570px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210812162231281.png" data-size="321x135"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210812162231281.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210812162231281_hu6408b8de7049c3f3093be9da94520627_21303_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210812162231281_hu6408b8de7049c3f3093be9da94520627_21303_1024x0_resize_box_3.png 1024w"
+				width="321"
+				height="135"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<p>解答如下：</p>
+<p><figure style="flex-grow: 118; flex-basis: 285px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210812162255101.png" data-size="453x381"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210812162255101.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210812162255101_hu78053b3d8458b07504a2e0c66be09bf3_116319_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210812162255101_hu78053b3d8458b07504a2e0c66be09bf3_116319_1024x0_resize_box_3.png 1024w"
+				width="453"
+				height="381"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<h3 id="真题">真题</h3>
+<p><figure style="flex-grow: 1274; flex-basis: 3058px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210812160337838.png" data-size="548x43"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210812160337838.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210812160337838_hub3459da11446bda07051dd8bf9d76ba8_18232_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210812160337838_hub3459da11446bda07051dd8bf9d76ba8_18232_1024x0_resize_box_3.png 1024w"
+				width="548"
+				height="43"
+				loading="lazy"
+				alt="2021-数一">
+		</a>
+		
+		<figcaption>2021-数一</figcaption>
+		
+	</figure></p>
+<p><figure style="flex-grow: 186; flex-basis: 448px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210812161311360.png" data-size="463x248"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210812161311360.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210812161311360_hue7ba18bc76da0442a47c6189c9e96bf3_55794_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/index.assets/image-20210812161311360_hue7ba18bc76da0442a47c6189c9e96bf3_55794_1024x0_resize_box_3.png 1024w"
+				width="463"
+				height="248"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://picsum.photos/seed/matrix/640/" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/matrix/640/"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">线性代数——矩阵</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">向量空间管理策略</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%87%8F%E8%80%8C%E6%B2%BB%E4%B9%8B%E4%B8%8E%E5%88%86%E8%80%8C%E6%B2%BB%E4%B9%8B/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">减而治之与分而治之</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/ds%E5%AF%BC%E8%AE%BA/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">DS导论</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/php%E8%AF%AD%E6%B3%95%E5%B0%8F%E7%BB%93/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PHP语法小结</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    <script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://pvhtgopk.lc-cn-n1-shared.com","visitor":true});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2018 - 
+        
+        2021 Archai &#39;s blog
+    </section>
+    
+    <section class="powerby">
+        
+            Archai <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">Table of contents</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#计算">计算※</a>
+      <ol>
+        <li><a href="#数字型">数字型</a>
+          <ol>
+            <li><a href="#题型">题型</a></li>
+            <li><a href="#经典例题">经典例题</a></li>
+          </ol>
+        </li>
+        <li><a href="#抽象型">抽象型</a>
+          <ol>
+            <li><a href="#题型-1">题型</a></li>
+            <li><a href="#经典例题-1">经典例题</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#应用">应用</a>
+      <ol>
+        <li><a href="#特征值">特征值</a>
+          <ol>
+            <li><a href="#思路">思路</a></li>
+            <li><a href="#例题">例题</a></li>
+          </ol>
+        </li>
+        <li><a href="#克拉默法则">克拉默法则</a>
+          <ol>
+            <li><a href="#思路-1">思路</a></li>
+            <li><a href="#经典例题-2">经典例题</a></li>
+          </ol>
+        </li>
+        <li><a href="#矩阵秩">矩阵秩</a>
+          <ol>
+            <li><a href="#注意点">注意点</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#证-a--0-">证 |A| = 0 ？</a>
+      <ol>
+        <li><a href="#经典例题-3">经典例题</a></li>
+      </ol>
+    </li>
+    <li><a href="#代数余子式">代数余子式</a>
+      <ol>
+        <li><a href="#定理">定理</a>
+          <ol>
+            <li><a href="#例题-1">例题</a></li>
+          </ol>
+        </li>
+        <li><a href="#真题">真题</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>\
+
+<script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.8/clipboard.js"></script>
+<script>
+    let pres = document.querySelectorAll("pre");
+    let copy = `
+<svg t="1628559239763" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4588" width="16" height="16"><path d="M756.537 170.667H109.532c-55.02 0-99.343 44.322-99.343 99.343v647.005c0 55.02 44.322 99.343 99.343 99.343h647.005c55.021 0 99.344-44.322 99.344-99.343V270.01c0-55.02-44.323-99.343-99.344-99.343z m22.926 746.348a22.83 22.83 0 0 1-22.926 22.925H109.532a22.83 22.83 0 0 1-22.925-22.925V270.01a22.83 22.83 0 0 1 22.925-22.925h647.005a22.83 22.83 0 0 1 22.926 22.925v647.005z" p-id="4589"></path><path d="M914.468 12.736H267.463c-20.888 0-38.21 17.322-38.21 38.21s17.322 38.208 38.21 38.208h647.005a22.83 22.83 0 0 1 22.925 22.926v647.005c0 20.887 17.321 38.209 38.209 38.209s38.209-17.322 38.209-38.21V112.08c0-55.021-44.322-99.344-99.343-99.344z" p-id="4590"></path></svg>`
+    let tick = `
+<svg t="1628558717330" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3410" width="16" height="16"><path d="M512 0C228.430769 0 0 228.430769 0 512s228.430769 512 512 512 512-228.430769 512-512S795.569231 0 512 0z m0 945.230769C271.753846 945.230769 78.769231 752.246154 78.769231 512S271.753846 78.769231 512 78.769231s433.230769 192.984615 433.230769 433.230769-192.984615 433.230769-433.230769 433.230769z" p-id="3411" fill="#07a35a"></path><path d="M716.8 330.830769l-208.738462 248.123077c-15.753846 15.753846-43.323077 19.692308-59.076923 7.876923L299.323077 472.615385c-15.753846-11.815385-43.323077-7.876923-55.138462 7.876923-11.815385 15.753846-7.876923 43.323077 7.876923 55.138461l149.661539 114.215385c19.692308 15.753846 47.261538 23.630769 74.830769 23.630769 35.446154 0 70.892308-15.753846 94.523077-43.323077l208.738462-248.123077c15.753846-15.753846 11.815385-43.323077-3.938462-55.138461-19.692308-15.753846-43.323077-15.753846-59.076923 3.938461z" p-id="3412" fill="#07a35a"></path></svg>`
+
+
+    pres.forEach(e => {
+        e.insertAdjacentHTML('beforeend', `<button class="cp_btn">` + copy + `</button>`)
+    })
+    let clp = new ClipboardJS('.cp_btn', {
+        target: function (trigger) {
+            return trigger.previousElementSibling;
+        }
+    });
+    clp.on('success', function (e) {
+        let clpEl=e;
+        e.trigger.innerHTML = tick;
+        e.trigger.parentElement.onmouseleave = _ => {
+            clpEl.trigger.innerHTML = copy
+            clpEl.clearSelection();
+        }
+        // console.info('Action:', e.action);
+        // console.info('Text:', e.text);
+        // console.info('Trigger:', e.trigger);
+        // e.clearSelection();
+    });
+
+    clp.on('error', function (e) {
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+    });
+</script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

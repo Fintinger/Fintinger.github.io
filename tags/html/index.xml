@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTML on Archai &#39;s blog</title>
+    <link>https://www.fintinger.site/tags/html/</link>
+    <description>Recent content in HTML on Archai &#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 24 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>常用的一些html小问题</title>
+      <link>https://www.fintinger.site/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E5%B0%8F%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E5%B0%8F%E9%97%AE%E9%A2%98/</guid>
+      <description>1. 网页出现横向滚动条？ &amp;lt;body style=`overflow:-Scroll;overflow-y:hidden &amp;gt; &amp;lt;/body&amp;gt;让横条没有：
+ &amp;lt;body style=`overflow:-Scroll;overflow-x:hidden&amp;gt; &amp;lt;/body&amp;gt;两个都去掉？更简单了
+&amp;lt;body scroll=&amp;quot;no&amp;quot; &amp;gt; &amp;lt;/body&amp;gt;火狐底部滚动条不显示：
+ html { overflow:-moz-scrollbars-vertical; }2. 网页图标？ &amp;lt;link rel=&amp;quot;shortcut icon &amp;quot; href=&amp;quot;images/favicon.ico&amp;quot;&amp;gt;3. Height:100%失效？ &amp;lt;html style=&amp;quot;height: 100%;&amp;quot;&amp;gt;&amp;lt;body style=&amp;quot;height: 100%;&amp;quot;&amp;gt;&amp;lt;div style=&amp;quot;height: 100%;&amp;quot;&amp;gt;&amp;lt;p&amp;gt; 这样这个div的高度就会100%了 &amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;4. 设置一个元素不可见？ opacity 设为 0、将 visibility 设为 hidden、将 display 设为 none 或者将 position 设为 absolute
+注意：
+1&amp;gt; display=none元素消失，不占位置
+2&amp;gt; opacity =0、 visibility =hidden只是视觉上不可见，其实还在那里占位置
+5.input无法输入？ ==&amp;gt; height:0; (将包裹提示的div高度设置为0，让其不再遮挡即可)</description>
+    </item>
+    
+    <item>
+      <title>常用的一些html代码</title>
+      <link>https://www.fintinger.site/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E4%BB%A3%E7%A0%81/</guid>
+      <description>1. 获取网页logo 京东 : www.jd.com
+ 后面加 &amp;ldquo;/favicon.ico&amp;quot;即可
+ 京东logo : www.jd.com/favicon.ico
+2. webstorm网页logo简易写法  link:favicon 按Tab键  3.meta标签  为搜索引擎提供的关键字列表( name=&amp;ldquo;keywords&amp;rdquo;)：   各关键词间用英文逗号“,”隔开。META的通常用处是指定搜索引擎用来提高搜索质量的关键词。
+ &amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;牙疼怎么办，智齿是什么，拔牙多少钱，矫正多少钱，九院医生，北大口腔，瑞尔口腔，拜耳口腔&amp;quot;&amp;gt;
+ 用来告诉搜索引擎你的网站主要内容(name=&amp;ldquo;description&amp;rdquo;)：  &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;有牙齿问题,找河马牙医,儿童口腔，全国儿童口腔在线咨询，牙疼怎么办，拔牙多少钱，矫正多少钱，种植牙，有牙齿问题&amp;quot;&amp;gt;
+ 优先以webkit内核渲染页面(&amp;ldquo;renderer&amp;rdquo;)：  &amp;lt;meta name=&amp;quot;renderer&amp;quot; content=&amp;quot;webkit&amp;quot; /&amp;gt;
+4.复合选择器 div#main{ color:green}
+ 表示选中div中id为main的元素
+ 5.标签居中  水平居中 行内标签/行内-块级标签: text-align:center  块级标签:
+margin:0 auto
+2)垂直居中
+  行内标签/行内-块级标签:
+ 设置行高为盒子高度line-hight:50px; 图片加文字时:vertical-align:middle;    块级标签:
+   设置“子绝父相” ==&amp;gt; top，left设置为50% ==&amp;gt; margin-left和nargin-top设置为负的盒子对应宽高的一半</description>
+    </item>
+    
+  </channel>
+</rss>
