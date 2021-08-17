@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog|Extra</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="./dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @tailwind base; /* Preflight will be injected here */
+
+        @tailwind components;
+
+        @tailwind utilities;
+    </style>
+</head>
+<body>
+<!--<div class="container">-->
+<!--    <a href="./lorem">lorem</a>-->
+<!--    <a href="./musicPlayer">myMusicPlayer</a>-->
+<!--    <a href="./lorem">lorem</a>-->
+<!--</div>-->
+<div id="app" class="grid grid-cols-1 gap-4 sm:grid-cols-3 max-w-screen-lg center  m-auto mt-36">
+        <span v-for="ls in list" class="rounded-md h-72  p-3 bg-yellow-200">
+            <a :href=ls.url>{{ls.name}}</a>
+        </span>
+</div>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            list:[
+                {name:"lorem",url:"./lorem"},
+                {name:"lorem",url:"./lorem"},
+                {name:"lorem",url:"./lorem"},
+                {name:"lorem",url:"./lorem"},
+                {name:"lorem",url:"./lorem"},
+                {name:"lorem",url:"./lorem"},
+                {name:"lorem",url:"./lorem"},
+                {name:"myMusicPlayer",url:"./musicPlayer"},
+                {name:"myMusicPlayer",url:"./musicPlayer"},
+                {name:"myMusicPlayer",url:"./musicPlayer"},
+                {name:"myMusicPlayer",url:"./musicPlayer"},
+                {name:"myMusicPlayer",url:"./musicPlayer"},
+            ]
+        }
+    })
+</script>
+</body>
+</html>

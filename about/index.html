@@ -10,6 +10,7 @@
 
 <link rel="stylesheet" href="/scss/style.min.css">
 
+
 <meta property='og:title' content='About'>
 <meta property='og:description' content='About me Hello 陌生人，欢迎访问 Archai&amp;rsquo;s blog
 联系我   QQ : 2592030861
@@ -29,8 +30,12 @@
 
     </head>
     <body class="
-    article-page has-toc
-">
+    article-page 
+ art_list">
+
+
+
+                <div class="section main_content">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -55,22 +60,138 @@
 </script>
 <div class="container main-container flex 
     
-        extended
+        on-phone--column extended
     
 ">
     
-        <div id="article-toolbar">
-            <a href="https://www.fintinger.site" class="back-home">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                
+                    <img src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+
+                
+                    <span class="emoji">🤩</span>
+                
+            </figure>
+            
+        
+        <h1 class="site-name"><a href="https://www.fintinger.site">Archai &#39;s blog</a></h1>
+        <h2 class="site-description">Never knows tomorrow...</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
-  <polyline points="15 6 9 12 15 18" />
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
 </svg>
 
 
 
-                <span>Back</span>
+                
+                <span>Home</span>
             </a>
-        </div>
+        </li>
+        
+        
+
+        <li  class='current' >
+            <a href='/about/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1629187226881" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1449" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16"><defs><style type="text/css"></style></defs><path d="M273.3 96.2c47.2 0 91.5 18.4 124.9 51.7 33.4 33.4 51.7 77.7 51.7 124.9s-18.4 91.5-51.7 124.9c-33.4 33.4-77.7 51.7-124.9 51.7s-91.5-18.4-124.9-51.7C115 364.4 96.6 320 96.6 272.9S115 181.3 148.4 148c33.3-33.4 77.7-51.8 124.9-51.8m0-32c-115.2 0-208.6 93.4-208.6 208.6s93.4 208.6 208.6 208.6c115.2 0 208.6-93.4 208.6-208.6S388.5 64.2 273.3 64.2zM273.3 573.9c47.2 0 91.5 18.4 124.9 51.7 33.4 33.4 51.7 77.7 51.7 124.9s-18.4 91.5-51.7 124.9c-33.4 33.4-77.7 51.7-124.9 51.7s-91.5-18.4-124.9-51.7C115 842 96.7 797.7 96.7 750.5s18.4-91.5 51.7-124.9c33.3-33.3 77.7-51.7 124.9-51.7m0-32c-115.2 0-208.6 93.4-208.6 208.6s93.4 208.6 208.6 208.6c115.2 0 208.6-93.4 208.6-208.6s-93.4-208.6-208.6-208.6zM751.4 573.9c47.2 0 91.5 18.4 124.9 51.7 33.4 33.4 51.7 77.8 51.7 125s-18.4 91.5-51.7 124.9c-33.4 33.4-77.7 51.7-124.9 51.7s-91.5-18.4-124.9-51.7c-33.4-33.4-51.7-77.7-51.7-124.9s18.4-91.5 51.7-124.9c33.3-33.4 77.7-51.8 124.9-51.8m0-32c-115.2 0-208.6 93.4-208.6 208.6s93.4 208.6 208.6 208.6c115.2 0 208.6-93.4 208.6-208.6s-93.4-208.6-208.6-208.6zM751.4 96.2c47.2 0 91.5 18.4 124.9 51.7 33.4 33.4 51.7 77.7 51.7 124.9s-18.4 91.5-51.7 124.9c-33.4 33.4-77.7 51.7-124.9 51.7s-91.5-18.4-124.9-51.7c-33.4-33.4-51.7-77.7-51.7-124.9s18.4-91.5 51.7-124.9c33.3-33.3 77.7-51.7 124.9-51.7m0-32c-115.2 0-208.6 93.4-208.6 208.6 0 115.2 93.4 208.6 208.6 208.6C866.6 481.4 960 388 960 272.8c0-115.2-93.4-208.6-208.6-208.6z" p-id="1450" fill="#cdcdcd"></path><path d="M751.4 215.3c31.7 0 57.6 25.8 57.6 57.6s-25.8 57.6-57.6 57.6-57.6-25.8-57.6-57.6 25.8-57.6 57.6-57.6m0-32c-49.5 0-89.6 40.1-89.6 89.6s40.1 89.6 89.6 89.6 89.6-40.1 89.6-89.6-40.1-89.6-89.6-89.6z" p-id="1451" fill="#cdcdcd"></path></svg>
+                
+                <span>C&amp;A</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/extra/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Extra</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href=''>
+                
+                <span></span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
     
 <main class="main full-width">
     <article class="main-article">
@@ -309,38 +430,11 @@
                 href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
             >
 
-            </main>
-    
-        <aside class="sidebar right-sidebar sticky">
-            <section class="widget archives">
-                <div class="widget-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <line x1="5" y1="9" x2="19" y2="9" />
-  <line x1="5" y1="15" x2="19" y2="15" />
-  <line x1="11" y1="4" x2="7" y2="20" />
-  <line x1="17" y1="4" x2="13" y2="20" />
-</svg>
-
-
-
-                </div>
-                <h2 class="widget-title section-title">Table of contents</h2>
-                
-                <div class="widget--toc">
-                    <nav id="TableOfContents">
-  <ol>
-    <li><a href="#about-me">About me</a></li>
-    <li><a href="#联系我">联系我</a></li>
-  </ol>
-</nav>
-                </div>
-            </section>
-        </aside>
+                        </main>
     
 
-        </div>
-        <script 
+                    </div>
+                    <script 
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
                 defer="false"
                 >
@@ -392,6 +486,13 @@
         document.head.appendChild(customFont);
     }());
 </script>
+
+<script src="https://lc-gluttony.s3.amazonaws.com/jzhqULdhhNJt/FEVhtpM96UAdc34kpAnfvQNwG4suygiM/fullpage.min.js"></script>
+<script>
+  
+
+</script>
+                </div>
 
     </body>
 </html>

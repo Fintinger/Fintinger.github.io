@@ -15,6 +15,7 @@ B^T &amp;amp; D^T \end{bmatrix}} $$
 
 <link rel="stylesheet" href="/scss/style.min.css">
 
+
 <meta property='og:title' content='线性代数——矩阵'>
 <meta property='og:description' content='基本计算  对角矩阵存在交换律，即 $\bigwedge_1 \bigwedge_2=\bigwedge_2 \bigwedge_1$​
   $$ {\begin{bmatrix} O &amp;amp; A \
@@ -45,7 +46,11 @@ B^T &amp;amp; D^T \end{bmatrix}} $$
     </head>
     <body class="
     article-page has-toc
-">
+ art_list">
+
+
+
+                <div class="section main_content">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -188,6 +193,8 @@ $$</p>
 </ol>
 <blockquote>
 <p>规律1与解联系起来，尤其是AB=O推出B的列向量是Ax=0的解这一规律，除此之外AB=O也经常用r(A)+r(B)≤ n这个不等式。</p>
+<p>&ldquo;AB=O&rdquo; 👉 方程的解(B的列向量是A的解)</p>
+<p>​			    👉 秩 r(A)+r(B) ≤ n (n为A的列,B的行)</p>
 </blockquote>
 <blockquote>
 <p>规律2,3与线性表出关联，进而可以跟秩，向量组等价(能互相线性表出则等价)联系起来。</p>
@@ -208,10 +215,10 @@ $$</p>
 </blockquote>
 <h4 id="题型一ra1">题型一：r(A)=1</h4>
 <p><figure style="flex-grow: 113; flex-basis: 272px">
-		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813172022038.png" data-size="443x390"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813172022038.png"
-				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813172022038_hua753c3bf136133da0064c73dafd3fd04_58917_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813172022038_hua753c3bf136133da0064c73dafd3fd04_58917_1024x0_resize_box_3.png 1024w"
-				width="443"
-				height="390"
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813172022038.png" data-size="951x837"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813172022038.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813172022038_hu8b28648f953fa7c17135639524744393_165448_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813172022038_hu8b28648f953fa7c17135639524744393_165448_1024x0_resize_box_3.png 1024w"
+				width="951"
+				height="837"
 				loading="lazy"
 				>
 		</a>
@@ -237,11 +244,11 @@ $$</p>
 <p>即$A^{n}=(\sum a_{ii})^{n-1}A$​​</p>
 </blockquote>
 <h4 id="题型二主对角线和一侧全为0">题型二：主对角线和一侧全为0</h4>
-<p><figure style="flex-grow: 370; flex-basis: 889px">
-		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813173611560.png" data-size="393x106"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813173611560.png"
-				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813173611560_hu60b1aa370d688e2dafec7f9f773143f4_40649_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813173611560_hu60b1aa370d688e2dafec7f9f773143f4_40649_1024x0_resize_box_3.png 1024w"
-				width="393"
-				height="106"
+<p><figure style="flex-grow: 370; flex-basis: 888px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813173611560.png" data-size="951x257"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813173611560.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813173611560_hue798a3b184e88e0efbe0209069a98380_137120_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813173611560_hue798a3b184e88e0efbe0209069a98380_137120_1024x0_resize_box_3.png 1024w"
+				width="951"
+				height="257"
 				loading="lazy"
 				>
 		</a>
@@ -251,10 +258,10 @@ $$</p>
 <p>这类对于n阶矩阵A，$A^{n}=0$</p>
 </blockquote>
 <p><figure style="flex-grow: 98; flex-basis: 235px">
-		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813174423804.png" data-size="353x360"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813174423804.png"
-				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813174423804_hu505380e596f50324deb9f7d1763abfc8_57539_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813174423804_hu505380e596f50324deb9f7d1763abfc8_57539_1024x0_resize_box_3.png 1024w"
-				width="353"
-				height="360"
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813174423804.png" data-size="951x970"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813174423804.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813174423804_hu2220cfe50f521e679c508ffb25394428_220522_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813174423804_hu2220cfe50f521e679c508ffb25394428_220522_1024x0_resize_box_3.png 1024w"
+				width="951"
+				height="970"
 				loading="lazy"
 				>
 		</a>
@@ -265,13 +272,13 @@ $$</p>
 <p>$A^{n}=PB^{n}P^{-1}$​​，关键在于选择B矩阵，</p>
 </blockquote>
 <blockquote>
-<p>通常$A ∽ \wedge$ ，即选B为与A相似对角矩阵，根据与相似对角化的知识，有$A^n=P \wedge P^{-1}$，P为特征向量组，$\wedge$​对角元素为A特征值。</p>
+<p>通常$A ∽ \wedge$​ ，即选B为与A相似对角矩阵，根据与相似对角化的知识，有$A^n=P \wedge^{n} P^{-1}$​，P为特征向量组，$\wedge$​​对角元素为A特征值。</p>
 </blockquote>
 <p><figure style="flex-grow: 468; flex-basis: 1124px">
-		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175437570.png" data-size="562x120"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175437570.png"
-				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175437570_hu4946e6ed122d7b325fd1b10ec4ce12e5_28149_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175437570_hu4946e6ed122d7b325fd1b10ec4ce12e5_28149_1024x0_resize_box_3.png 1024w"
-				width="562"
-				height="120"
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175437570.png" data-size="951x203"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175437570.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175437570_hu604f7d28cfbe1059de56826b309d5d81_52504_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175437570_hu604f7d28cfbe1059de56826b309d5d81_52504_1024x0_resize_box_3.png 1024w"
+				width="951"
+				height="203"
 				loading="lazy"
 				>
 		</a>
@@ -280,10 +287,10 @@ $$</p>
 <blockquote>
 <p>解：</p>
 <p><figure style="flex-grow: 105; flex-basis: 254px">
-		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175806227.png" data-size="481x454"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175806227.png"
-				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175806227_hude009d57626627447db0a01b1f9df646_71186_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175806227_hude009d57626627447db0a01b1f9df646_71186_1024x0_resize_box_3.png 1024w"
-				width="481"
-				height="454"
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175806227.png" data-size="951x898"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175806227.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175806227_hu09938051dcfb7a393f761a733edea9c1_175083_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210813175806227_hu09938051dcfb7a393f761a733edea9c1_175083_1024x0_resize_box_3.png 1024w"
+				width="951"
+				height="898"
 				loading="lazy"
 				>
 		</a>
@@ -296,7 +303,7 @@ $$</p>
 <p>由基本公式$AA^{<em>}=A^{</em>}A=|A|E$​,可以推导出以下几个公式：</p>
 <ul>
 <li>$A^{-1}= \frac{1}{|A|}A^{*}$</li>
-<li>$(A^{-1})^{<em>} =(A^{</em>})^{-1}=  \frac{1}{|A|}A$</li>
+<li>$(A^{-1})^{<em>} =(A^{</em>})^{-1}=\frac{1}{|A|}A$​</li>
 </ul>
 </blockquote>
 <blockquote>
@@ -311,10 +318,10 @@ n &amp; r(A)=n \
 $$
 证明过程：</p>
 <p><figure style="flex-grow: 82; flex-basis: 197px">
-		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814163731935.png" data-size="717x871"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814163731935.png"
-				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814163731935_hub731f429dad2cec3a81b0271bf69a635_486543_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814163731935_hub731f429dad2cec3a81b0271bf69a635_486543_1024x0_resize_box_3.png 1024w"
-				width="717"
-				height="871"
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814163731935.png" data-size="951x1155"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814163731935.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814163731935_hu71258fd77137f1bf038f77f18adf745c_785140_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814163731935_hu71258fd77137f1bf038f77f18adf745c_785140_1024x0_resize_box_3.png 1024w"
+				width="951"
+				height="1155"
 				loading="lazy"
 				>
 		</a>
@@ -322,11 +329,11 @@ $$
 	</figure></p>
 </blockquote>
 <h5 id="真题">真题</h5>
-<p><figure style="flex-grow: 509; flex-basis: 1222px">
-		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814164511403.png" data-size="555x109"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814164511403.png"
-				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814164511403_hu7b5b2bae3fdcbc785a86cb20c92cbdbd_39547_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814164511403_hu7b5b2bae3fdcbc785a86cb20c92cbdbd_39547_1024x0_resize_box_3.png 1024w"
-				width="555"
-				height="109"
+<p><figure style="flex-grow: 508; flex-basis: 1220px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814164511403.png" data-size="951x187"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814164511403.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814164511403_huc8f50a475b2e8cfd66b201c4edd0b605_71012_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814164511403_huc8f50a475b2e8cfd66b201c4edd0b605_71012_1024x0_resize_box_3.png 1024w"
+				width="951"
+				height="187"
 				loading="lazy"
 				alt="2005-数三">
 		</a>
@@ -359,10 +366,10 @@ A
 </blockquote>
 <h4 id="真题-1">真题</h4>
 <p><figure style="flex-grow: 128; flex-basis: 308px">
-		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171403317.png" data-size="403x314"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171403317.png"
-				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171403317_hu92a8f99263abe91026aad2a5eb0a1ba6_76383_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171403317_hu92a8f99263abe91026aad2a5eb0a1ba6_76383_1024x0_resize_box_3.png 1024w"
-				width="403"
-				height="314"
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171403317.png" data-size="951x741"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171403317.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171403317_hu0da9197fccc73ae4607fdcbb84f41252_238727_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171403317_hu0da9197fccc73ae4607fdcbb84f41252_238727_1024x0_resize_box_3.png 1024w"
+				width="951"
+				height="741"
 				loading="lazy"
 				alt="2000-数二">
 		</a>
@@ -373,10 +380,10 @@ A
 <blockquote>
 <p><strong>单位矩阵与矩阵的转置</strong></p>
 <p><figure style="flex-grow: 208; flex-basis: 499px">
-		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171542485.png" data-size="816x392"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171542485.png"
-				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171542485_hu4a2f61b5bdbe7d605503bb33e474d2cb_306794_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171542485_hu4a2f61b5bdbe7d605503bb33e474d2cb_306794_1024x0_resize_box_3.png 1024w"
-				width="816"
-				height="392"
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171542485.png" data-size="951x457"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171542485.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171542485_huce728ecc06c2ce13b6211f994bbafff8_413218_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814171542485_huce728ecc06c2ce13b6211f994bbafff8_413218_1024x0_resize_box_3.png 1024w"
+				width="951"
+				height="457"
 				loading="lazy"
 				>
 		</a>
@@ -395,11 +402,11 @@ A
 <p>$[\text{互换}]^{-1}$​=[不变]</p>
 </blockquote>
 <h3 id="例题">例题</h3>
-<p><figure style="flex-grow: 268; flex-basis: 645px">
-		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814173915899.png" data-size="406x151"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814173915899.png"
-				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814173915899_hu189132b1569032c4e1767c5032a3c215_25014_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814173915899_hu189132b1569032c4e1767c5032a3c215_25014_1024x0_resize_box_3.png 1024w"
-				width="406"
-				height="151"
+<p><figure style="flex-grow: 268; flex-basis: 644px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814173915899.png" data-size="951x354"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814173915899.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814173915899_hu8e7eab79873b8f9a19b5631332813250_76329_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814173915899_hu8e7eab79873b8f9a19b5631332813250_76329_1024x0_resize_box_3.png 1024w"
+				width="951"
+				height="354"
 				loading="lazy"
 				>
 		</a>
@@ -527,9 +534,15 @@ A
 </article>
                 
                     
-<article class="">
+<article class="has-image">
     <a href="/p/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5/">
         
+        
+            <div class="article-image">
+                
+                    <img src="https://picsum.photos/seed/kongjianguali/640/360" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/kongjianguali/640/360"/>
+                
+            </div>
         
 
         <div class="article-details">
@@ -539,9 +552,15 @@ A
 </article>
                 
                     
-<article class="">
+<article class="has-image">
     <a href="/p/%E5%87%8F%E8%80%8C%E6%B2%BB%E4%B9%8B%E4%B8%8E%E5%88%86%E8%80%8C%E6%B2%BB%E4%B9%8B/">
         
+        
+            <div class="article-image">
+                
+                    <img src="https://picsum.photos/seed/Decreaseconquer/640/360" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/Decreaseconquer/640/360"/>
+                
+            </div>
         
 
         <div class="article-details">
@@ -551,9 +570,15 @@ A
 </article>
                 
                     
-<article class="">
+<article class="has-image">
     <a href="/p/ds%E5%AF%BC%E8%AE%BA/">
         
+        
+            <div class="article-image">
+                
+                    <img src="https://picsum.photos/seed/dsdl/640/360" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/dsdl/640/360"/>
+                
+            </div>
         
 
         <div class="article-details">
@@ -684,7 +709,7 @@ A
                 href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
             >
 
-            </main>
+                        </main>
     
         <aside class="sidebar right-sidebar sticky">
             <section class="widget archives">
@@ -750,8 +775,8 @@ A
         </aside>
     
 
-        </div>
-        <script 
+                    </div>
+                    <script 
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
                 defer="false"
                 >
@@ -803,6 +828,13 @@ A
         document.head.appendChild(customFont);
     }());
 </script>
+
+<script src="https://lc-gluttony.s3.amazonaws.com/jzhqULdhhNJt/FEVhtpM96UAdc34kpAnfvQNwG4suygiM/fullpage.min.js"></script>
+<script>
+  
+
+</script>
+                </div>
 
     </body>
 </html>
