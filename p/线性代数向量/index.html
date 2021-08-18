@@ -293,16 +293,86 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
 <p>注意等式 $r(\beta_1,\beta_2) ≤ n-r(A)$​​ 的含义，对于一个齐次方程组AX=0，其未知数为n个，则其<strong>线性无关的解</strong>有 n-r(A) 个，即所有解的秩 ≤ n-r(A)</p>
 </blockquote>
 <h2 id="线性表出">线性表出</h2>
-<h3 id="定理">定理</h3>
+<h3 id="计算-1">计算</h3>
+<h4 id="定理">定理</h4>
 <blockquote>
 <p>转化为AX=B后有如下情况(如果含参)</p>
 <p><img src="index.assets/axbdzqk.jpg" style="zoom:50%;" /></p>
 </blockquote>
-<h3 id="计算-1">计算</h3>
 <blockquote>
-<p>细致小心计算</p>
+<p>现题型多为两个<strong>向量小组</strong>互相线性表出的问题</p>
+<p>$\alpha_1\alpha_1\alpha_1&hellip;\alpha_s$​​ (1）</p>
+<p>$\beta_1 \beta_2 \beta_3 &hellip;\beta_t$    (2)</p>
+<p>“向量组线性表出”$\rightarrow$​ 组中<strong>任意</strong>向量可以由另一向量组线性表出</p>
+<p>“向量组等价” $\rightarrow$​ 可互相线性表出</p>
+<p>“矩阵等价”$\rightarrow$​ 秩相等</p>
+</blockquote>
+<h4 id="真题">真题</h4>
+<p><figure style="flex-grow: 638; flex-basis: 1531px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210818162556084.png" data-size="1602x251"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210818162556084.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210818162556084_hu97e63dbac21acfe212be88022e70970f_266626_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210818162556084_hu97e63dbac21acfe212be88022e70970f_266626_1024x0_resize_box_3.png 1024w"
+				width="1602"
+				height="251"
+				loading="lazy"
+				alt="2002-数二">
+		</a>
+		
+		<figcaption>2002-数二</figcaption>
+		
+	</figure></p>
+<blockquote>
+<p>解：（定义法）</p>
+<p><figure style="flex-grow: 63; flex-basis: 151px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210818163950347.png" data-size="634x1006"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210818163950347.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210818163950347_hud0384125e98f491f4189fc6b71676cef_756101_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210818163950347_hud0384125e98f491f4189fc6b71676cef_756101_1024x0_resize_box_3.png 1024w"
+				width="634"
+				height="1006"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<p>解法二（秩的方法）</p>
+<p><figure style="flex-grow: 90; flex-basis: 216px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210818164111177.png" data-size="634x703"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210818164111177.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210818164111177_hue42197beed22e17b29d5ce7224e29045_174877_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210818164111177_hue42197beed22e17b29d5ce7224e29045_174877_1024x0_resize_box_3.png 1024w"
+				width="634"
+				height="703"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
 </blockquote>
 <h3 id="选择证明">选择、证明</h3>
+<h4 id="定理-1">定理</h4>
+<blockquote>
+<p>(设A为向量组$\alpha_1\alpha_2&hellip;\alpha_s$ ，B为$\beta_1\beta_2&hellip;\beta_t$)</p>
+<ol>
+<li>
+<p>子集合相关，整体必相关</p>
+</li>
+<li>
+<p>低维无关，高维必无关</p>
+<p><em>基础解系求解过程中，先构造1 0/0 1两个无关的低维向量，然后带到方程中求导的另外两个值后，组成的高维向量必然无关。</em></p>
+</li>
+<li>
+<p>A线性相关 $\Leftrightarrow $ 存在$\alpha_i$ 可由A中剩余向量线性表出</p>
+</li>
+<li>
+<p>A线性无关，$A,\beta$​线性相关，则$\beta$​​可以由A线性表出，且 <strong>表示方法唯一</strong></p>
+</li>
+<li>
+<p>多数向量可由少数向量线性表出，<strong>多</strong>必线性相关</p>
+<blockquote>
+<p>(<strong>判断向量个数</strong>) A无关，A可由B线性表出，则s ≤ t</p>
+</blockquote>
+</li>
+<li>
+<p>A可由B线性表出，则r(A) ≤ r(B)</p>
+</li>
+</ol>
+</blockquote>
 
 </section>
 
@@ -609,9 +679,17 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
     </li>
     <li><a href="#线性表出">线性表出</a>
       <ol>
-        <li><a href="#定理">定理</a></li>
-        <li><a href="#计算-1">计算</a></li>
-        <li><a href="#选择证明">选择、证明</a></li>
+        <li><a href="#计算-1">计算</a>
+          <ol>
+            <li><a href="#定理">定理</a></li>
+            <li><a href="#真题">真题</a></li>
+          </ol>
+        </li>
+        <li><a href="#选择证明">选择、证明</a>
+          <ol>
+            <li><a href="#定理-1">定理</a></li>
+          </ol>
+        </li>
       </ol>
     </li>
   </ol>

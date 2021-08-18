@@ -3,45 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <title>Blog|Extra</title>
+    <link rel="shortcut icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"
+          type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link href="./dist/tailwind.min.css" rel="stylesheet">
     <style>
-        @tailwind base; /* Preflight will be injected here */
 
+        /*.card:hover {*/
+        /*    transform: translateY(0.8rem);*/
+        /*}*/
+
+        .card {
+            /*min-width:00px;*/
+        }
+    </style>
+    <style>
+        @tailwind base;
         @tailwind components;
-
         @tailwind utilities;
     </style>
 </head>
-<body>
-<!--<div class="container">-->
-<!--    <a href="./lorem">lorem</a>-->
-<!--    <a href="./musicPlayer">myMusicPlayer</a>-->
-<!--    <a href="./lorem">lorem</a>-->
-<!--</div>-->
-<div id="app" class="grid grid-cols-1 gap-4 sm:grid-cols-3 max-w-screen-lg center  m-auto mt-36">
-        <span v-for="ls in list" class="rounded-md h-72  p-3 bg-yellow-200">
-            <a :href=ls.url>{{ls.name}}</a>
-        </span>
+<body class="bg-gray-200">
+<header class="w-full h-14 bg-gray-800 shadow-xl flex flex-row">
+    <div class="logo h-full w-1/5"><span
+            style="display:inline-block;background:url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg') center/cover;"
+            class="h-10 w-10 rounded-full ring-2 ring-gray-100 ml-5 mt-2 transform transition duration-300 md:hover:rotate-180 cursor-pointer"></span>
+    </div>
+    <div class="h_right h-full w-4/5"></div>
+</header>
+<div class="w-full h-36 flex-col overflow-hidden border-solid border-gray-300 border-b">
+    <div class="content my-0 mx-auto md:w-max font-mono h-20 text-center">
+        <h1 class="mt-8 text-6xl   font-mono tracking-widest"><i class="text-purple-700 not-italic font-semibold">E</i>xtra
+        </h1>
+        <h2 class="text-gray-400 mt-5">分享有趣的Github开源小项目</h2>
+    </div>
 </div>
+<div id="app"
+     class="flex flex-wrap sm:w-full  md:w-4/5  xl:w-3/5 mx-auto px-5 pt-20 bg-gray-100 shadow-xl overflow-hidden ">
+    <!--
+    xl:PC
+    md:pad
+    sm:mobile
+    -->
+    <div v-for="ls in list"
+         class="card rounded-md overflow-hidden ml-7 mb-10  h-80 w-full xl:w-60 shadow-xl hover:shadow-2xl font-sans  transition duration-300 ease-in-out transform hover:translate-y-2">
+        <div :style="{backgroundImage: 'url(' + ls.img + ')', backgroundSize:'cover', backgroundRepeat: 'no-repeat'}"
+             class="h-4/6 overflow-hidden">
+
+        </div>
+        <div class="title h-1/6 cursor-pointer bg-white">
+            <a target="_blank" :href=ls.url style="display:block"
+               class="description w-full h-full  p-3  text-xl text-left font-bold hover:underline">{{ls.name}}</a>
+        </div>
+        <div class="description h-1/6  p-3 pt-0 cursor-pointer bg-white">
+            <p class="w-full h-full text-sm text-gray-500 break-all overflow-hidden text-left">{{ls.des}}</p>
+        </div>
+    </div>
+</div>
+<footer class="bg-gray-900 w-full h-60 ">
+
+</footer>
 <script>
     new Vue({
-        el:"#app",
-        data:{
-            list:[
-                {name:"lorem",url:"./lorem"},
-                {name:"lorem",url:"./lorem"},
-                {name:"lorem",url:"./lorem"},
-                {name:"lorem",url:"./lorem"},
-                {name:"lorem",url:"./lorem"},
-                {name:"lorem",url:"./lorem"},
-                {name:"lorem",url:"./lorem"},
-                {name:"myMusicPlayer",url:"./musicPlayer"},
-                {name:"myMusicPlayer",url:"./musicPlayer"},
-                {name:"myMusicPlayer",url:"./musicPlayer"},
-                {name:"myMusicPlayer",url:"./musicPlayer"},
-                {name:"myMusicPlayer",url:"./musicPlayer"},
-            ]
+        el: "#app",
+        data: {
+            list: [
+                {
+                    name: "MusicPlayer",
+                    url: "./musicPlayer",
+                    des: "一个美观简洁的音乐播放器",
+                    img: "https://picsum.photos/seed/musicplayer/400/300"
+                },
+                {
+                    name: "JD-ShoppingCart",
+                    url: "./JDshoppingCart",
+                    des: "基于vue.js实现的仿京东购物车页面",
+                    img: "https://picsum.photos/seed/jd/400/300"
+                },
+                {
+                    name: "Smartisan.com",
+                    url: "./Smartisan",
+                    des: "仿写锤子官网",
+                    img: "https://picsum.photos/seed/chuizi/400/300"
+                },
+                {
+                    name: "MyMusicPlayer",
+                    url: "./MyMusicPlayer",
+                    des: "利用大佬开发的网易云音乐API写的一款具有搜索功能的音乐播放器(无法在线体验)",
+                    img: "https://picsum.photos/seed/cloudmusic/400/300"
+                },
+                {
+                    name: "赛车小游戏",
+                    url: "./oneGame",
+                    des: "初学jquery时做的一个小游戏",
+                    img: "https://picsum.photos/seed/cargame/400/300"
+                },
+            ],
+
+
         }
     })
 </script>
