@@ -1,0 +1,44 @@
+{
+  "lists":[
+    {
+      "name": "MusicPlayer",
+      "url": "./musicPlayer",
+      "des": "一个美观简洁的音乐播放器",
+      "img": "https://gitee.com/fintinger/figure-bed/raw/master//images/20210819132713.png",
+      "githubLink": "",
+      "downloadLink": "https://lc-gluttony.s3.amazonaws.com/jzhqULdhhNJt/e9sACicMsKHaxQOEmp8TXBoHIFoKlI5R/musicPlayer.zip"
+    },
+    {
+      "name": "JD-ShoppingCart",
+      "url": "./JDshoppingCart",
+      "des": "基于vue.js实现的仿京东购物车页面",
+      "img": "https://gitee.com/fintinger/figure-bed/raw/master//images/20210818222510.jpeg",
+      "githubLink": "https://github.com/Fintinger/JDshoppingcart.git",
+      "downloadLink": "https://lc-gluttony.s3.amazonaws.com/jzhqULdhhNJt/tqr67P4T8BsJnkhMib7LFnVkFBrQhkGL/JDshoppingCart.zip"
+    },
+    {
+      "name": "Smartisan.com",
+      "url": "./Smartisan",
+      "des": "仿写锤子官网",
+      "img": "https://gitee.com/fintinger/figure-bed/raw/master//images/20210818222554.jpeg",
+      "githubLink": "https://github.com/Fintinger/Smartisan.com.git",
+      "downloadLink": "https://lc-gluttony.s3.amazonaws.com/jzhqULdhhNJt/heuqyE2iweoXERykhqKr0kMdV9V1RYai/Smartisan.zip"
+    },
+    {
+      "name": "MyMusicPlayer",
+      "url": "./MyMusicPlayer",
+      "des": "利用大佬开发的网易云音乐API写的一款具有搜索功能的音乐播放器(无法在线体验)",
+      "img": "https://gitee.com/fintinger/figure-bed/raw/master//images/20210818222618.jpeg",
+      "githubLink": "https://github.com/Fintinger/MyMusicPlayer.git",
+      "downloadLink": "https://lc-gluttony.s3.amazonaws.com/jzhqULdhhNJt/2NTWYtNm0Q2x11XmP4JRHq1lqmUXFAAq/MyMusicPlayer.zip"
+    },
+    {
+      "name": "赛车小游戏",
+      "url": "./oneGame",
+      "des": "初学jquery时做的一个小游戏",
+      "img": "https://gitee.com/fintinger/figure-bed/raw/master//images/20210818222650.png",
+      "githubLink": "https://github.com/Fintinger/One-Game.git",
+      "downloadLink": "https://lc-gluttony.s3.amazonaws.com/jzhqULdhhNJt/3KdqCmUHTndVuTj0Xum4z45I2JTrCwFd/oneGame.zip"
+    }
+  ]
+}
