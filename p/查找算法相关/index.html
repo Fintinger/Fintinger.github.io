@@ -17,6 +17,7 @@ typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数�
 <link rel="stylesheet" href="/scss/style.min.css">
 
 
+
 <meta property='og:title' content='查找算法相关'>
 <meta property='og:description' content='顺序查找 typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数组基址  int TableLen;//查找表长度 }SSTable; int Seq_Search(SSTable ST,int key){ ST.elem[0]=key; int i; for (i = ST.TableLen;ST.elem[i]!=key ; i--) {}//从后往前查找，最终返回下标i  return i;//返回0说明没找到 } 效率分析 对于长度为n的顺序表，如果查找成功 $$ ASL={\frac{1&#43;2&#43;&amp;hellip;&#43;n}{n}}=\frac{n&#43;1}{2} $$ 若果查找失败，则 $ASL=n&#43;1$
 总体上，该算法时间复杂度为 $O(n)$
@@ -768,11 +769,6 @@ $$
     }());
 </script>
 
-<script src="https://lc-gluttony.s3.amazonaws.com/jzhqULdhhNJt/FEVhtpM96UAdc34kpAnfvQNwG4suygiM/fullpage.min.js"></script>
-<script>
-  
-
-</script>
                 </div>
 
     </body>

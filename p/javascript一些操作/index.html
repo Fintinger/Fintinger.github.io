@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="/scss/style.min.css">
 
 
+
 <meta property='og:title' content='Javascript一些操作'>
 <meta property='og:description' content='1.通过id获取元素 function $(id) { return typeof id === &amp;#39;string&amp;#39; ? document.getElementById(id): null; } 2.日期格式化 function formatDate(cDate) { //1.判断  if (!cDate instanceof Date){ return; } //2.转化  var year=cDate.getFullYear(); var month=cDate.getMonth(); var date=cDate.getDate(); var hour=cDate.getHours(); var minute=cDate.getMinutes(); var second=cDate.getSeconds(); //2.1 补0  month=month&amp;lt;10? &amp;#39;0&amp;#39;&#43;month:month; date=date&amp;lt;10? &amp;#39;0&amp;#39;&#43;date: date; minute=minute&amp;lt;10? &amp;#39;0&amp;#39;&#43;minute:minute; second=second&amp;lt;10? &amp;#39;0&amp;#39;&#43;second:second; return year &#43; &amp;#39;-&amp;#39; &#43; month &#43; &amp;#39;-&amp;#39; &#43; date &#43; &amp;#39; &amp;#39; &#43;hour&#43;&amp;#39;:&amp;#39;&#43;minute&#43;&amp;#34;:&amp;#34;&#43;second; } console.log(formatDate(new Date())); 3.匀速运动封装 /** * 设置一个盒子右边距匀速变化 * @param{string} btnId * @param{string} boxId * @param{number} step * @param{number}target */ function linearAnimation(btnId, boxId, step, target) { // 1.'>
 <meta property='og:url' content='https://www.fintinger.site/p/javascript%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/'>
@@ -540,11 +541,6 @@ stuProto.constructor=Student;
     }());
 </script>
 
-<script src="https://lc-gluttony.s3.amazonaws.com/jzhqULdhhNJt/FEVhtpM96UAdc34kpAnfvQNwG4suygiM/fullpage.min.js"></script>
-<script>
-  
-
-</script>
                 </div>
 
     </body>

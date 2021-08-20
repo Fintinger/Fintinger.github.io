@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="/scss/style.min.css">
 
 
+
 <meta property='og:title' content='一组循环数组'>
 <meta property='og:description' content='做网页轮播图，或者音乐播放列表时经常要用到一组循环的数组，到最后一项返回第一项，第一项返回最后一项
 利用两次判断 function doLoop( arr ){ arr.loop_idx = 0; // 返回当前的元素  arr.current = function(){ if( this.loop_idx &amp;lt; 0 ){// 第一次检查  this.loop_idx = this.length - 1;// 更新 loop_idx  } if( this.loop_idx &amp;gt;= this.length ){// 第二次检查  this.loop_idx = 0;// 更新 loop_idx  } return arr[ this.loop_idx ];//返回元素  }; // 增加 loop_idx 然后返回新的当前元素  arr.next = function(){ this.loop_idx&#43;&#43;; return this.current(); }; // 减少 loop_idx 然后返回新的当前元素  arr.prev = function(){ this.'>
@@ -604,11 +605,6 @@
     }());
 </script>
 
-<script src="https://lc-gluttony.s3.amazonaws.com/jzhqULdhhNJt/FEVhtpM96UAdc34kpAnfvQNwG4suygiM/fullpage.min.js"></script>
-<script>
-  
-
-</script>
                 </div>
 
     </body>

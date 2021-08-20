@@ -10,6 +10,7 @@ const path=require(&amp;#34;path&amp;#34;); const fs = require(&amp;#39;fs&amp;#
 <link rel="stylesheet" href="/scss/style.min.css">
 
 
+
 <meta property='og:title' content='JavaScript生成图片文件路径json'>
 <meta property='og:description' content='在写小demo的过程中，经常需要把某个文件夹的图片文件的路径给引入，除非全部重命名成有序的数字，不然不好处理，这就用到了node中的fs和path模块，还没学&amp;hellip;
 const path=require(&amp;#34;path&amp;#34;); const fs = require(&amp;#39;fs&amp;#39;); fs.stat(&amp;#39;../images&amp;#39;,(err)=&amp;gt;{//图片文件所在目录  if (err)return; var result=&amp;#39;{&amp;#39; fs.readdir(&amp;#34;../images&amp;#34;,(err,data)=&amp;gt;{//图片文件所在目录  for(var i=0;i&amp;lt;Object.keys(data).length;i&#43;&#43;){ let ImgPath=&amp;#34;\&amp;#34;images/&amp;#34;&#43;data[i]&#43;&amp;#34;\&amp;#34;&amp;#34;; result&#43;=&amp;#34;\&amp;#34;&amp;#34;&#43;i&#43;&amp;#34;\&amp;#34;:&amp;#34;&#43;ImgPath&#43;&amp;#34;,&amp;#34;; } result=result.substring(0,result.length-1); let length=&amp;#34;\&amp;#34;&amp;#34;&#43;&amp;#34;length&amp;#34;&#43;&amp;#34;\&amp;#34;&amp;#34;&#43;&amp;#34;:&amp;#34;&#43;&amp;#34;\&amp;#34;&amp;#34;&#43;Object.keys(data).length&#43;&amp;#34;\&amp;#34;&amp;#34;//文件数量  result&#43;=&amp;#34;,&amp;#34;&#43;length&#43;&amp;#39;}&amp;#39; fs.writeFile(&amp;#34;../data/imgPath.json&amp;#34;,result,(err)=&amp;gt;{ if(err)return; console.log(&amp;#34;写入文件成功，一共&amp;#34;&#43;Object.keys(data).length&#43;&amp;#34;个文件&amp;#34;); }); }); }); 生成的文件大概就是这样的一个json数据
@@ -592,11 +593,6 @@ const path=require(&amp;#34;path&amp;#34;); const fs = require(&amp;#39;fs&amp;#
     }());
 </script>
 
-<script src="https://lc-gluttony.s3.amazonaws.com/jzhqULdhhNJt/FEVhtpM96UAdc34kpAnfvQNwG4suygiM/fullpage.min.js"></script>
-<script>
-  
-
-</script>
                 </div>
 
     </body>
