@@ -1,87 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head><meta charset='utf-8'>
+<head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='相关、无关    向量组中含零向量必然线性相关
   组中至少存在两个成比例的向量必然线性相关
-   计算  $A(\alpha_1,\alpha_2,\alpha_3&amp;hellip;\alpha_s)$​ 是否线性相关？
+   相关计算  $A(\alpha_1,\alpha_2,\alpha_3&amp;hellip;\alpha_s)$​ 是否线性相关？
 $\Leftrightarrow$​​​ AX=0是否有非零解？(联系克拉默法则)
 $\Leftrightarrow$​​ r(A) &amp;lt; s
- 特别的，对于n维向量：
+ 特别的，对于n维向量：⭐⭐
   n个n维向量相关 $\Leftrightarrow$​ 行列式得0，即|A|=0 n&#43;1个n维向量必然线性相关   此外，还有以下几何性质
  “$\alpha$相关”$\Leftrightarrow$ $\alpha=0$
-“$\alpha_1,\alpha_2$相关”$\Leftrightarrow$ $\alpha_1,\alpha_2$共线
-“$\alpha_1,\alpha_2,\alpha_3$​相关”$\Leftrightarrow$​ $\alpha_1,\alpha_2,\alpha_3$​​共面
+“$\alpha_1,\alpha_2$相关”$\Leftrightarrow$ $\alpha_1,\alpha_2$​共线
+ 存在$\alpha_1=k\alpha_2$
+ “$\alpha_1,\alpha_2,\alpha_3$​相关”$\Leftrightarrow$​ $\alpha_1,\alpha_2,\alpha_3$​​共面
  证明、选择  这是难点，重点
  证明线性无关 ​	判定方法
  ⭐特征值不同的特征向量必线性无关。
 此外，不同特征值中如果某一特征值存在“一对多”的关系，这些特征向量也线性无关。即若$A \alpha_1=\lambda_1\alpha_1,A \alpha_2=\lambda_1\alpha_2,A \alpha=\lambda\alpha$，那么$\alpha_1,\alpha_2,\alpha_3$​线性无关​
   恒等变形中乘的思路：
  利用已知构造出0使得式子变短 直接两边乘A，得出式子，然后通过两个式子的加加减减化简   真题&amp;amp;经典例题
-2008-数二、三、四
- 本题第二问“写出和A相似的矩阵”(3分)
-分析：$\alpha_1，\alpha_2，\alpha_3$无关，后面出现$A\alpha_1，A\alpha_2，A\alpha_3$​想到相似'><title>线性代数——向量</title>
-
+2008-数二、三、四'><title>线性代数——向量</title>
 <link rel='canonical' href='https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/'>
 
 <link rel="stylesheet" href="/scss/style.min.css">
 
+<link rel="stylesheet" href="/scss/external/tailwind.min.css">
 
-
-<meta property='og:title' content='线性代数——向量'>
+<link rel="stylesheet" href="/scss/loadingPage.css"><meta property='og:title' content='线性代数——向量'>
 <meta property='og:description' content='相关、无关    向量组中含零向量必然线性相关
   组中至少存在两个成比例的向量必然线性相关
-   计算  $A(\alpha_1,\alpha_2,\alpha_3&amp;hellip;\alpha_s)$​ 是否线性相关？
+   相关计算  $A(\alpha_1,\alpha_2,\alpha_3&amp;hellip;\alpha_s)$​ 是否线性相关？
 $\Leftrightarrow$​​​ AX=0是否有非零解？(联系克拉默法则)
 $\Leftrightarrow$​​ r(A) &amp;lt; s
- 特别的，对于n维向量：
+ 特别的，对于n维向量：⭐⭐
   n个n维向量相关 $\Leftrightarrow$​ 行列式得0，即|A|=0 n&#43;1个n维向量必然线性相关   此外，还有以下几何性质
  “$\alpha$相关”$\Leftrightarrow$ $\alpha=0$
-“$\alpha_1,\alpha_2$相关”$\Leftrightarrow$ $\alpha_1,\alpha_2$共线
-“$\alpha_1,\alpha_2,\alpha_3$​相关”$\Leftrightarrow$​ $\alpha_1,\alpha_2,\alpha_3$​​共面
+“$\alpha_1,\alpha_2$相关”$\Leftrightarrow$ $\alpha_1,\alpha_2$​共线
+ 存在$\alpha_1=k\alpha_2$
+ “$\alpha_1,\alpha_2,\alpha_3$​相关”$\Leftrightarrow$​ $\alpha_1,\alpha_2,\alpha_3$​​共面
  证明、选择  这是难点，重点
  证明线性无关 ​	判定方法
  ⭐特征值不同的特征向量必线性无关。
 此外，不同特征值中如果某一特征值存在“一对多”的关系，这些特征向量也线性无关。即若$A \alpha_1=\lambda_1\alpha_1,A \alpha_2=\lambda_1\alpha_2,A \alpha=\lambda\alpha$，那么$\alpha_1,\alpha_2,\alpha_3$​线性无关​
   恒等变形中乘的思路：
  利用已知构造出0使得式子变短 直接两边乘A，得出式子，然后通过两个式子的加加减减化简   真题&amp;amp;经典例题
-2008-数二、三、四
- 本题第二问“写出和A相似的矩阵”(3分)
-分析：$\alpha_1，\alpha_2，\alpha_3$无关，后面出现$A\alpha_1，A\alpha_2，A\alpha_3$​想到相似'>
+2008-数二、三、四'>
 <meta property='og:url' content='https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/'>
 <meta property='og:site_name' content='Archai &#39;s blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='线性代数' /><meta property='article:published_time' content='2021-08-15T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-08-15T00:00:00&#43;00:00'/><meta property='og:image' content='https://picsum.photos/seed/vector/640/360' />
 <meta name="twitter:title" content="线性代数——向量">
 <meta name="twitter:description" content="相关、无关    向量组中含零向量必然线性相关
   组中至少存在两个成比例的向量必然线性相关
-   计算  $A(\alpha_1,\alpha_2,\alpha_3&amp;hellip;\alpha_s)$​ 是否线性相关？
+   相关计算  $A(\alpha_1,\alpha_2,\alpha_3&amp;hellip;\alpha_s)$​ 是否线性相关？
 $\Leftrightarrow$​​​ AX=0是否有非零解？(联系克拉默法则)
 $\Leftrightarrow$​​ r(A) &amp;lt; s
- 特别的，对于n维向量：
+ 特别的，对于n维向量：⭐⭐
   n个n维向量相关 $\Leftrightarrow$​ 行列式得0，即|A|=0 n&#43;1个n维向量必然线性相关   此外，还有以下几何性质
  “$\alpha$相关”$\Leftrightarrow$ $\alpha=0$
-“$\alpha_1,\alpha_2$相关”$\Leftrightarrow$ $\alpha_1,\alpha_2$共线
-“$\alpha_1,\alpha_2,\alpha_3$​相关”$\Leftrightarrow$​ $\alpha_1,\alpha_2,\alpha_3$​​共面
+“$\alpha_1,\alpha_2$相关”$\Leftrightarrow$ $\alpha_1,\alpha_2$​共线
+ 存在$\alpha_1=k\alpha_2$
+ “$\alpha_1,\alpha_2,\alpha_3$​相关”$\Leftrightarrow$​ $\alpha_1,\alpha_2,\alpha_3$​​共面
  证明、选择  这是难点，重点
  证明线性无关 ​	判定方法
  ⭐特征值不同的特征向量必线性无关。
 此外，不同特征值中如果某一特征值存在“一对多”的关系，这些特征向量也线性无关。即若$A \alpha_1=\lambda_1\alpha_1,A \alpha_2=\lambda_1\alpha_2,A \alpha=\lambda\alpha$，那么$\alpha_1,\alpha_2,\alpha_3$​线性无关​
   恒等变形中乘的思路：
  利用已知构造出0使得式子变短 直接两边乘A，得出式子，然后通过两个式子的加加减减化简   真题&amp;amp;经典例题
-2008-数二、三、四
- 本题第二问“写出和A相似的矩阵”(3分)
-分析：$\alpha_1，\alpha_2，\alpha_3$无关，后面出现$A\alpha_1，A\alpha_2，A\alpha_3$​想到相似"><meta name="twitter:card" content="summary_large_image">
+2008-数二、三、四"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://picsum.photos/seed/vector/640/360' />
     <link rel="shortcut icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico" />
 
-
-    </head>
-    <body class="
+</head>
+<body style="overflow-y: hidden" class="
     article-page has-toc
- art_list">
+">
 
+<div style="background:url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg') center/cover;"
+     class="welcome_page w-full h-screen shadow-2xl flex flex-col justify-center items-center">
+    <div style="user-select: none"
+         class="h-max xl:w-max py-10 xl:py-32 px-32 xl:px-96 bg-gray-100 rounded-2xl shadow-2xl cursor-pointer flex flex-col justify-center relative">
+        <span class="absolute w-16 h-16 bg-purple-200 bg-opacity0 top-14 right-14 rounded-full text-center border-2 border-purple-600 border-opacity-10 leading-loose text-3xl animate-pulse">😋</span>
+        <div class="flex flex-col items-center space-y-8 font-sans">
+            <div style="background: url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg') center/cover"
+                 class="w-44 h-44 rounded-full"></div>
+            <h1 class="text-6xl font-semibold">ARCHAI</h1>
+            <p style="margin-top: 7px" class="text-xl text-gray-500">Undergraduate / Rookie</p>
+            <div class="bg-purple-600 px-5 py-3 rounded-md "><a href="#main_content"
+                                                                class="text-white hover:text-white">Read more</a></div>
+        </div>
+    </div>
+    <footer class="h-1/5 flex flex-col justify-end">
+        <a href="#main_content">
+            <svg class="animate-bounce" t="1629475731927" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="2357" width="80" height="80">
+                <path d="M896.32 336.992 523.648 709.664c-0.064 0.064-0.16 0.064-0.192 0.128-0.064 0.064-0.064 0.128-0.128 0.192-2.752 2.752-6.304 4.032-9.952 4.32-0.48 0.032-0.896 0.256-1.376 0.256-0.48 0-0.896-0.192-1.376-0.256-3.648-0.288-7.2-1.568-9.952-4.32-0.064-0.064-0.064-0.128-0.128-0.192-0.064-0.064-0.16-0.064-0.192-0.128L127.68 336.992c-6.432-6.432-6.592-16.704-0.32-22.976 6.24-6.24 16.512-6.112 22.976 0.32L512 676.064 873.696 314.368c6.432-6.432 16.704-6.592 22.976-0.32C902.912 320.288 902.752 330.56 896.32 336.992z"
+                      p-id="2358" fill="#dbdbdb"></path>
+            </svg>
+        </a>
+    </footer>
+</div>
 
-
-                <div class="section main_content">
+<div class="loading-page w-full h-full z-50 fixed top-0 text-purple-900">
+</div>
+<div id="main_content" class="main_content">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -201,13 +221,13 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
 </li>
 </ul>
 </blockquote>
-<h3 id="计算">计算</h3>
+<h3 id="相关计算">相关计算</h3>
 <blockquote>
 <p>$A(\alpha_1,\alpha_2,\alpha_3&hellip;\alpha_s)$​ 是否线性相关？</p>
 <p>$\Leftrightarrow$​​​ AX=0是否有非零解？(联系克拉默法则)</p>
 <p>$\Leftrightarrow$​​  r(A) &lt; s</p>
 </blockquote>
-<p>特别的，对于<strong>n维向量</strong>：</p>
+<p>特别的，对于<strong>n维向量</strong>：⭐⭐</p>
 <blockquote>
 <ul>
 <li>n个n维向量相关 $\Leftrightarrow$​ 行列式得0，即|A|=0</li>
@@ -217,7 +237,10 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
 <p>此外，还有以下<strong>几何性质</strong></p>
 <blockquote>
 <p>“$\alpha$相关”$\Leftrightarrow$ $\alpha=0$</p>
-<p>“$\alpha_1,\alpha_2$相关”$\Leftrightarrow$ $\alpha_1,\alpha_2$共线</p>
+<p>“$\alpha_1,\alpha_2$相关”$\Leftrightarrow$ $\alpha_1,\alpha_2$​共线</p>
+<blockquote>
+<p>存在$\alpha_1=k\alpha_2$</p>
+</blockquote>
 <p>“$\alpha_1,\alpha_2,\alpha_3$​相关”$\Leftrightarrow$​  $\alpha_1,\alpha_2,\alpha_3$​​共面</p>
 </blockquote>
 <h3 id="证明选择">证明、选择</h3>
@@ -294,7 +317,7 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
 <p>注意等式 $r(\beta_1,\beta_2) ≤ n-r(A)$​​ 的含义，对于一个齐次方程组AX=0，其未知数为n个，则其<strong>线性无关的解</strong>有 n-r(A) 个，即所有解的秩 ≤ n-r(A)</p>
 </blockquote>
 <h2 id="线性表出">线性表出</h2>
-<h3 id="计算-1">计算</h3>
+<h3 id="计算">计算</h3>
 <h4 id="定理">定理</h4>
 <blockquote>
 <p>转化为AX=B后有如下情况(如果含参)</p>
@@ -346,7 +369,7 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
 	</figure></p>
 </blockquote>
 <h3 id="选择证明">选择、证明</h3>
-<h4 id="定理方法">定理&amp;方法</h4>
+<h4 id="定理方法">定理&amp;方法⭐⭐⭐</h4>
 <blockquote>
 <p>(设A为向量组$\alpha_1\alpha_2&hellip;\alpha_s$ ，B为$\beta_1\beta_2&hellip;\beta_t$)</p>
 <ol>
@@ -428,6 +451,94 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
 		
 	</figure></p>
 </blockquote>
+<h4 id="例题">例题</h4>
+<p><figure style="flex-grow: 322; flex-basis: 773px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210820163408515.png" data-size="960x298"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210820163408515.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210820163408515_hu6c527b15d3f63d182339567b4e949890_171480_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210820163408515_hu6c527b15d3f63d182339567b4e949890_171480_1024x0_resize_box_3.png 1024w"
+				width="960"
+				height="298"
+				loading="lazy"
+				alt="2010-数二、三">
+		</a>
+		
+		<figcaption>2010-数二、三</figcaption>
+		
+	</figure></p>
+<blockquote>
+<p>解法(一)——<a href="#定理方法"><u>定理6</u></a></p>
+<blockquote>
+<p>Ⅰ可以由Ⅱ表出，</p>
+<p>则r(Ⅰ) ≤ r(Ⅱ) ≤ s</p>
+<p>根据A，若Ⅰ无关，则r(Ⅰ) = r</p>
+<p>故 r ≤ s，A说法正确</p>
+</blockquote>
+<p>解法二：<a href="#定理方法"><u>定理5推论</u></a></p>
+<blockquote>
+<p>Ⅰ可以由Ⅱ表出，Ⅰ无关，则  r ≤ s</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>本题可以举反例加以说明</p>
+<p><figure style="flex-grow: 225; flex-basis: 542px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/fl.jpg" data-size="2900x1284"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/fl.jpg"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/fl_huea13396cd3a3b21f5c4d5c406713ceac_120546_480x0_resize_q75_box.jpg 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/fl_huea13396cd3a3b21f5c4d5c406713ceac_120546_1024x0_resize_q75_box.jpg 1024w"
+				width="2900"
+				height="1284"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+</blockquote>
+<h3 id="矩阵的秩">矩阵的秩</h3>
+<blockquote>
+<p>前面有涉及，回顾 <a href="../线性代数行列式/#矩阵秩"><u>GO</u></a></p>
+</blockquote>
+<p>此外</p>
+<blockquote>
+<p>r(A) = A的列秩 = A的行秩 (概念不同，数值相等)</p>
+<p>就是 A的秩等于A的列向量组的秩，那么可以<strong>用列向量组的秩求解矩阵的秩</strong>，反过来用矩阵的秩可以求得向量组的秩。</p>
+</blockquote>
+<blockquote>
+<p>⭐经过<strong>初等变换</strong>矩阵的秩不变，也就意味着，在进行秩的计算时，可以对矩阵<strong>既做行变换，又做列变换</strong>，这点要区别于方程组计算过程中尽可以做行变换。</p>
+</blockquote>
+<h4 id="公式">公式</h4>
+<blockquote>
+<ol>
+<li>
+<p>$r(A^TA) = r(A)$​</p>
+</li>
+<li>
+<p>$r(kA) = r(A)$​，当k≠0</p>
+</li>
+<li>
+<p>$r(A+B)≤ r(A)+r(B)$​</p>
+</li>
+<li>
+<p>r(AB)≤ min{r(A),r(B)},A-m×n,B-n×s</p>
+</li>
+<li>
+<p>A可逆，r(AB)=r(B),r(BA)=r(B)</p>
+</li>
+</ol>
+</blockquote>
+<h4 id="真题-1">真题</h4>
+<p><figure style="flex-grow: 99; flex-basis: 239px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210821162726519.png" data-size="1028x1031"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210821162726519.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210821162726519_hu58f9851e3401bb64f3d2db9869039b32_964520_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210821162726519_hu58f9851e3401bb64f3d2db9869039b32_964520_1024x0_resize_box_3.png 1024w"
+				width="1028"
+				height="1031"
+				loading="lazy"
+				alt="2018-数一、二、三">
+		</a>
+		
+		<figcaption>2018-数一、二、三</figcaption>
+		
+	</figure></p>
+<blockquote>
+<p>先利用特殊值排除掉简单的CD选项</p>
+<p>A选项的判断利用矩阵中AB=C的规律，<a href="../线性代数矩阵/#对于-abc"><u>GO</u></a></p>
+</blockquote>
 
 </section>
 
@@ -488,6 +599,24 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
         <h2 class="section-title">Related contents</h2>
         <div class="related-contents">
             <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://picsum.photos/seed/equationset/640/360" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/equationset/640/360"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">线性代数——方程组</h2>
+        </div>
+    </a>
+</article>
                 
                     
 <article class="has-image">
@@ -557,24 +686,6 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
 
         <div class="article-details">
             <h2 class="article-title">减而治之与分而治之</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="has-image">
-    <a href="/p/ds%E5%AF%BC%E8%AE%BA/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="https://picsum.photos/seed/dsdl/640/360" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/dsdl/640/360"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">DS导论</h2>
         </div>
     </a>
 </article>
@@ -701,7 +812,7 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
                 href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
             >
 
-                        </main>
+        </main>
     
         <aside class="sidebar right-sidebar sticky">
             <section class="widget archives">
@@ -724,7 +835,7 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
   <ol>
     <li><a href="#相关无关">相关、无关</a>
       <ol>
-        <li><a href="#计算">计算</a></li>
+        <li><a href="#相关计算">相关计算</a></li>
         <li><a href="#证明选择">证明、选择</a>
           <ol>
             <li><a href="#证明线性无关">证明线性无关</a></li>
@@ -734,7 +845,7 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
     </li>
     <li><a href="#线性表出">线性表出</a>
       <ol>
-        <li><a href="#计算-1">计算</a>
+        <li><a href="#计算">计算</a>
           <ol>
             <li><a href="#定理">定理</a></li>
             <li><a href="#真题">真题</a></li>
@@ -742,7 +853,7 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
         </li>
         <li><a href="#选择证明">选择、证明</a>
           <ol>
-            <li><a href="#定理方法">定理&amp;方法</a></li>
+            <li><a href="#定理方法">定理&amp;方法⭐⭐⭐</a></li>
             <li><a href="#真题例题">真题&amp;例题</a></li>
           </ol>
         </li>
@@ -750,7 +861,17 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
     </li>
     <li><a href="#秩">秩</a>
       <ol>
-        <li><a href="#向量组的秩极大无关组">向量组的秩——极大无关组</a></li>
+        <li><a href="#向量组的秩极大无关组">向量组的秩——极大无关组</a>
+          <ol>
+            <li><a href="#例题">例题</a></li>
+          </ol>
+        </li>
+        <li><a href="#矩阵的秩">矩阵的秩</a>
+          <ol>
+            <li><a href="#公式">公式</a></li>
+            <li><a href="#真题-1">真题</a></li>
+          </ol>
+        </li>
       </ol>
     </li>
   </ol>
@@ -760,48 +881,15 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
         </aside>
     
 
-                    </div>
-                    <script 
+    </div>
+    <script 
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
                 defer="false"
                 >
-            </script><script type="text/javascript" src="/ts/main.js" defer></script>\
-
-<script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.8/clipboard.js"></script>
-<script>
-    let pres = document.querySelectorAll("pre");
-    let copy = `
-<svg t="1628559239763" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4588" width="16" height="16"><path d="M756.537 170.667H109.532c-55.02 0-99.343 44.322-99.343 99.343v647.005c0 55.02 44.322 99.343 99.343 99.343h647.005c55.021 0 99.344-44.322 99.344-99.343V270.01c0-55.02-44.323-99.343-99.344-99.343z m22.926 746.348a22.83 22.83 0 0 1-22.926 22.925H109.532a22.83 22.83 0 0 1-22.925-22.925V270.01a22.83 22.83 0 0 1 22.925-22.925h647.005a22.83 22.83 0 0 1 22.926 22.925v647.005z" p-id="4589"></path><path d="M914.468 12.736H267.463c-20.888 0-38.21 17.322-38.21 38.21s17.322 38.208 38.21 38.208h647.005a22.83 22.83 0 0 1 22.925 22.926v647.005c0 20.887 17.321 38.209 38.209 38.209s38.209-17.322 38.209-38.21V112.08c0-55.021-44.322-99.344-99.343-99.344z" p-id="4590"></path></svg>`
-    let tick = `
-<svg t="1628558717330" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3410" width="16" height="16"><path d="M512 0C228.430769 0 0 228.430769 0 512s228.430769 512 512 512 512-228.430769 512-512S795.569231 0 512 0z m0 945.230769C271.753846 945.230769 78.769231 752.246154 78.769231 512S271.753846 78.769231 512 78.769231s433.230769 192.984615 433.230769 433.230769-192.984615 433.230769-433.230769 433.230769z" p-id="3411" fill="#07a35a"></path><path d="M716.8 330.830769l-208.738462 248.123077c-15.753846 15.753846-43.323077 19.692308-59.076923 7.876923L299.323077 472.615385c-15.753846-11.815385-43.323077-7.876923-55.138462 7.876923-11.815385 15.753846-7.876923 43.323077 7.876923 55.138461l149.661539 114.215385c19.692308 15.753846 47.261538 23.630769 74.830769 23.630769 35.446154 0 70.892308-15.753846 94.523077-43.323077l208.738462-248.123077c15.753846-15.753846 11.815385-43.323077-3.938462-55.138461-19.692308-15.753846-43.323077-15.753846-59.076923 3.938461z" p-id="3412" fill="#07a35a"></path></svg>`
-
-
-    pres.forEach(e => {
-        e.insertAdjacentHTML('beforeend', `<button class="cp_btn">` + copy + `</button>`)
-    })
-    let clp = new ClipboardJS('.cp_btn', {
-        target: function (trigger) {
-            return trigger.previousElementSibling;
-        }
-    });
-    clp.on('success', function (e) {
-        let clpEl=e;
-        e.trigger.innerHTML = tick;
-        e.trigger.parentElement.onmouseleave = _ => {
-            clpEl.trigger.innerHTML = copy
-            clpEl.clearSelection();
-        }
-        // console.info('Action:', e.action);
-        // console.info('Text:', e.text);
-        // console.info('Trigger:', e.trigger);
-        // e.clearSelection();
-    });
-
-    clp.on('error', function (e) {
-        console.error('Action:', e.action);
-        console.error('Trigger:', e.trigger);
-    });
-</script>
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script type="text/javascript" src="/js/clipboard/clipbordComplete.js" defer></script>
+<script type="text/javascript" src="/js/loadingPage.js" defer></script>
+<script type="text/javascript" src="/js/welcomePage.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
@@ -814,7 +902,11 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
     }());
 </script>
 
-                </div>
 
-    </body>
+    <div style="background:url('https://s2.hdslb.com/bfs/static/blive/blfe-dynamic-web/static/img/rocket_top.bcc748c3.png') center/cover;display: none"
+         id="goTop"
+         class="xl:w-60 xl:h-60 w-48 h-48 fixed  bg-gray-900 z-40 right-0 bottom-0 xl:right-10 xl:bottom-10 cursor-pointer"></div>
+</div>
+</body>
 </html>
+0

@@ -6,7 +6,107 @@
         <description>Recent content on Archai &#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Sun, 15 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 21 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>线性代数——方程组</title>
+        <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/</link>
+        <pubDate>Sat, 21 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/</guid>
+        <description>&lt;img src="https://picsum.photos/seed/equationset/640/360" alt="Featured image of post 线性代数——方程组" /&gt;&lt;h2 id=&#34;ax0&#34;&gt;Ax=0&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ax=0有非零解 $\Leftrightarrow $​​ r(A) &amp;lt; n (未知数个数)$\Leftrightarrow $​​​  A的列向量线性相关&lt;/p&gt;
+&lt;p&gt;特别地(&lt;strong&gt;针对水平型阵和方阵&lt;/strong&gt;)，※&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A-m×n,m&amp;lt;n, Ax=0 必有非零解&lt;/li&gt;
+&lt;li&gt;A-n×n，Ax=0有非零解 $\Leftrightarrow $​ |A|=0（&lt;strong&gt;克拉默法则&lt;/strong&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ax=0有非零解，则其解线性组合必为Ax=0的解，所以&lt;strong&gt;Ax=0若有非零解，则必有无穷多解&lt;/strong&gt;，在这无穷多解中，&lt;strong&gt;线性无关的解向量个数&lt;/strong&gt;为 $t=n-r(A)$​​​​​，这就是基础解系​，&lt;strong&gt;基础解系是Ax=0的解向量中的极大线性无关组&lt;/strong&gt;。此外，根据定理可知，&lt;strong&gt;Ax=0的任一解都可以由基础解系线性表出&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;基础解系⭐&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;是解&lt;/li&gt;
+&lt;li&gt;是线性无关组&lt;/li&gt;
+&lt;li&gt;个数t=n-r(A)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;真题&#34;&gt;真题&lt;/h3&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 429; flex-basis: 1030px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210821165916845.png&#34; data-size=&#34;1005x234&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210821165916845.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210821165916845_hu78952bba1000b6de18c698e2798b00c1_177944_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210821165916845_hu78952bba1000b6de18c698e2798b00c1_177944_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1005&#34;
+				height=&#34;234&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;2004-数三&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;2004-数三&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;【分析】“基础解系不存在”即为Ax=0没有非零解，根据 t=n-r(A) 知，本题等价转化为求解A的秩，求解秩时，&lt;strong&gt;找个大，找个小，通过夹逼，确定秩的值&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;【解】$A^{*}\neq0$，则$r(A^{ *})\geq 1$​，则$r(A)\geq n-1$&lt;/p&gt;
+&lt;p&gt;Ax=b有解且不唯一，则$r(A) &amp;lt; n$&lt;/p&gt;
+&lt;p&gt;联立得，r(A)=n-1&lt;/p&gt;
+&lt;p&gt;故t = n-r(A) = 1&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;⭐⭐⭐⭐⭐&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 286; flex-basis: 687px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210821171952638.png&#34; data-size=&#34;920x321&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210821171952638.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210821171952638_hu6d3d735613133a72ec9064724847727c_203180_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210821171952638_hu6d3d735613133a72ec9064724847727c_203180_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;920&#34;
+				height=&#34;321&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;2002-数二、三&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;2002-数二、三&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;【分析】根据通解的定义可知，若为通解，解必然线性无关，本题转化为证明 $a_1,a_2,a_3,a_4$哪三个线性无关&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 194; flex-basis: 467px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210821172913555.png&#34; data-size=&#34;1115x572&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210821172913555.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210821172913555_hua1b1203764fdbd354cb994bbff321e8a_505295_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210821172913555_hua1b1203764fdbd354cb994bbff321e8a_505295_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1115&#34;
+				height=&#34;572&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;这里用到了“&lt;strong&gt;低维无关，添加向量后的高维必无关&lt;/strong&gt;”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此外，如果本题为&lt;strong&gt;证明计算题（证明基础解系）&lt;/strong&gt;，即 求$A^{*}x=0$​ 的基础解系，则&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;根据$t=n-r(A^{*})$得基础解系解向量个数。
+&lt;ol&gt;
+&lt;li&gt;求解$r(A^{*})$​ (&lt;strong&gt;找大找小&lt;/strong&gt;)  ，&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;根据A不可逆得，$|A|=0, r(A)&amp;lt; n=4$​​&lt;/li&gt;
+&lt;li&gt;由 $A_{12} \neq 0$​，则$r(A) \geq n-1=3$​​&lt;/li&gt;
+&lt;li&gt;则r(A)=3，则$r(A^{*})$ = 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;t = 4-1=3，即基础解系有三个解向量&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;证明是解
+&lt;ol&gt;
+&lt;li&gt;$A^{*}A=|A| E=0,\text{且}|A|=0$​​ ，有 $A^{ *} (a_1a_2a_3a_4)=0$​​，则向量$a_1,a_2,a_3,a_4$​​ 均为$A^{ *}x=0$​​​ 的解&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;证明线性无关（上面选择题过程）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;🤓&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
         <title>线性代数——向量</title>
         <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/</link>
         <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
@@ -23,13 +123,13 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&#34;计算&#34;&gt;计算&lt;/h3&gt;
+&lt;h3 id=&#34;相关计算&#34;&gt;相关计算&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;$A(\alpha_1,\alpha_2,\alpha_3&amp;hellip;\alpha_s)$​ 是否线性相关？&lt;/p&gt;
 &lt;p&gt;$\Leftrightarrow$​​​ AX=0是否有非零解？(联系克拉默法则)&lt;/p&gt;
 &lt;p&gt;$\Leftrightarrow$​​  r(A) &amp;lt; s&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;特别的，对于&lt;strong&gt;n维向量&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;特别的，对于&lt;strong&gt;n维向量&lt;/strong&gt;：⭐⭐&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;n个n维向量相关 $\Leftrightarrow$​ 行列式得0，即|A|=0&lt;/li&gt;
@@ -39,7 +139,10 @@
 &lt;p&gt;此外，还有以下&lt;strong&gt;几何性质&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;“$\alpha$相关”$\Leftrightarrow$ $\alpha=0$&lt;/p&gt;
-&lt;p&gt;“$\alpha_1,\alpha_2$相关”$\Leftrightarrow$ $\alpha_1,\alpha_2$共线&lt;/p&gt;
+&lt;p&gt;“$\alpha_1,\alpha_2$相关”$\Leftrightarrow$ $\alpha_1,\alpha_2$​共线&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;存在$\alpha_1=k\alpha_2$&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;“$\alpha_1,\alpha_2,\alpha_3$​相关”$\Leftrightarrow$​  $\alpha_1,\alpha_2,\alpha_3$​​共面&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;证明选择&#34;&gt;证明、选择&lt;/h3&gt;
@@ -116,7 +219,7 @@
 &lt;p&gt;注意等式 $r(\beta_1,\beta_2) ≤ n-r(A)$​​ 的含义，对于一个齐次方程组AX=0，其未知数为n个，则其&lt;strong&gt;线性无关的解&lt;/strong&gt;有 n-r(A) 个，即所有解的秩 ≤ n-r(A)&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;线性表出&#34;&gt;线性表出&lt;/h2&gt;
-&lt;h3 id=&#34;计算-1&#34;&gt;计算&lt;/h3&gt;
+&lt;h3 id=&#34;计算&#34;&gt;计算&lt;/h3&gt;
 &lt;h4 id=&#34;定理&#34;&gt;定理&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;转化为AX=B后有如下情况(如果含参)&lt;/p&gt;
@@ -168,7 +271,7 @@
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;选择证明&#34;&gt;选择、证明&lt;/h3&gt;
-&lt;h4 id=&#34;定理方法&#34;&gt;定理&amp;amp;方法&lt;/h4&gt;
+&lt;h4 id=&#34;定理方法&#34;&gt;定理&amp;amp;方法⭐⭐⭐&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;(设A为向量组$\alpha_1\alpha_2&amp;hellip;\alpha_s$ ，B为$\beta_1\beta_2&amp;hellip;\beta_t$)&lt;/p&gt;
 &lt;ol&gt;
@@ -250,6 +353,94 @@
 		
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;h4 id=&#34;例题&#34;&gt;例题&lt;/h4&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 322; flex-basis: 773px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210820163408515.png&#34; data-size=&#34;960x298&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210820163408515.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210820163408515_hu6c527b15d3f63d182339567b4e949890_171480_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210820163408515_hu6c527b15d3f63d182339567b4e949890_171480_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;960&#34;
+				height=&#34;298&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;2010-数二、三&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;2010-数二、三&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;解法(一)——&lt;a href=&#34;#定理方法&#34;&gt;&lt;u&gt;定理6&lt;/u&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ⅰ可以由Ⅱ表出，&lt;/p&gt;
+&lt;p&gt;则r(Ⅰ) ≤ r(Ⅱ) ≤ s&lt;/p&gt;
+&lt;p&gt;根据A，若Ⅰ无关，则r(Ⅰ) = r&lt;/p&gt;
+&lt;p&gt;故 r ≤ s，A说法正确&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;解法二：&lt;a href=&#34;#定理方法&#34;&gt;&lt;u&gt;定理5推论&lt;/u&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ⅰ可以由Ⅱ表出，Ⅰ无关，则  r ≤ s&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本题可以举反例加以说明&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 225; flex-basis: 542px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/fl.jpg&#34; data-size=&#34;2900x1284&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/fl.jpg&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/fl_huea13396cd3a3b21f5c4d5c406713ceac_120546_480x0_resize_q75_box.jpg 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/fl_huea13396cd3a3b21f5c4d5c406713ceac_120546_1024x0_resize_q75_box.jpg 1024w&#34;
+				width=&#34;2900&#34;
+				height=&#34;1284&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;矩阵的秩&#34;&gt;矩阵的秩&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;前面有涉及，回顾 &lt;a href=&#34;../线性代数行列式/#矩阵秩&#34;&gt;&lt;u&gt;GO&lt;/u&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;此外&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;r(A) = A的列秩 = A的行秩 (概念不同，数值相等)&lt;/p&gt;
+&lt;p&gt;就是 A的秩等于A的列向量组的秩，那么可以&lt;strong&gt;用列向量组的秩求解矩阵的秩&lt;/strong&gt;，反过来用矩阵的秩可以求得向量组的秩。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⭐经过&lt;strong&gt;初等变换&lt;/strong&gt;矩阵的秩不变，也就意味着，在进行秩的计算时，可以对矩阵&lt;strong&gt;既做行变换，又做列变换&lt;/strong&gt;，这点要区别于方程组计算过程中尽可以做行变换。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;公式&#34;&gt;公式&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;$r(A^TA) = r(A)$​&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$r(kA) = r(A)$​，当k≠0&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$r(A+B)≤ r(A)+r(B)$​&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;r(AB)≤ min{r(A),r(B)},A-m×n,B-n×s&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A可逆，r(AB)=r(B),r(BA)=r(B)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;真题-1&#34;&gt;真题&lt;/h4&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 99; flex-basis: 239px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210821162726519.png&#34; data-size=&#34;1028x1031&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210821162726519.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210821162726519_hu58f9851e3401bb64f3d2db9869039b32_964520_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/index.assets/image-20210821162726519_hu58f9851e3401bb64f3d2db9869039b32_964520_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1028&#34;
+				height=&#34;1031&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;2018-数一、二、三&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;2018-数一、二、三&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;先利用特殊值排除掉简单的CD选项&lt;/p&gt;
+&lt;p&gt;A选项的判断利用矩阵中AB=C的规律，&lt;a href=&#34;../线性代数矩阵/#对于-abc&#34;&gt;&lt;u&gt;GO&lt;/u&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
         </item>
         <item>
@@ -263,25 +454,7 @@
 &lt;p&gt;对角矩阵存在交换律，即 $\bigwedge_1 \bigwedge_2=\bigwedge_2 \bigwedge_1$​&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;$$
-{\begin{bmatrix}
-O &amp;amp; A \&lt;br /&gt;
-B &amp;amp; O
-\end{bmatrix}}^{-1}=
-{\begin{bmatrix}
-O &amp;amp; B^{-1} \&lt;br /&gt;
-A^{-1} &amp;amp; O
-\end{bmatrix}}
-\&lt;br /&gt;
-{\begin{bmatrix}
-A &amp;amp; B \&lt;br /&gt;
-C &amp;amp; D
-\end{bmatrix}}^{T} =
-{\begin{bmatrix}
-A^T &amp;amp; C^T \&lt;br /&gt;
-B^T &amp;amp; D^T
-\end{bmatrix}}
-$$&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;index.assets/mylatex20210820_174119.png&#34; style=&#34;zoom:100%;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;注意交换位置&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;对于-abc&#34;&gt;对于 AB=C&lt;/h3&gt;
@@ -304,6 +477,10 @@ $$&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h4 id=&#34;矩阵&#34;&gt;矩阵:&lt;/h4&gt;
 &lt;p&gt;$ab^T$ = $(ba^T)^T$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$r(ab^T)$​​ ≤ $r(a)$​ ≤ 1&lt;/p&gt;
+&lt;p&gt;任何两行成比例&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;$aa^T$:  对称矩阵&lt;/p&gt;
 &lt;h4 id=&#34;数&#34;&gt;数:&lt;/h4&gt;
 &lt;p&gt;$a^Tb = b^Ta$:   $ab^T$ 或 $ba^T$​​​的绩(主对角线元素之和)&lt;/p&gt;
@@ -325,21 +502,18 @@ $$&lt;/p&gt;
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;若秩r(A)=1,则A可分解为一个列向量与一个行向量的乘积,有A2=A之规律,从而$A^{n}=l^{n-1}A$&lt;/p&gt;
-&lt;p&gt;$$
-\begin{array}{l}
-A=\left[\begin{array}{lll}
-a_{1} b_{1} &amp;amp; a_{1} b_{2} &amp;amp; a_{1} b_{1} \&lt;br /&gt;
-a_{2} b_{1} &amp;amp; a_{2} b_{2} &amp;amp; a_{2} b_{3} \&lt;br /&gt;
-a_{3} b_{1} &amp;amp; a_{3} b_{2} &amp;amp; a_{3} b_{3}
-\end{array}\right]=\left[\begin{array}{l}
-a_{1} \&lt;br /&gt;
-a_{2} \&lt;br /&gt;
-a_{3}
-\end{array}\right]\left[b_{1}, b_{2}, b_{3}\right]=\alpha \boldsymbol{\beta}^{\top}, \&lt;br /&gt;
-\boldsymbol{A}^{2}=\left(\alpha \boldsymbol{\beta}^{\mathrm{T}}\right)\left(\alpha \boldsymbol{\beta}^{\mathrm{T}}\right)=\boldsymbol{\alpha}\left(\boldsymbol{\beta}^{\mathrm{T}} \boldsymbol{\alpha}\right) \boldsymbol{\beta}^{\mathrm{T}}=l \alpha \boldsymbol{\beta}^{\mathrm{T}}=l \mathbf{A} \&lt;br /&gt;
-l=\boldsymbol{\beta}^{\mathrm{T}} \boldsymbol{\alpha}=\boldsymbol{\alpha}^{\mathrm{T}} \boldsymbol{\beta}=a_{1} b_{1}+a_{2} b_{2}+a_{3} b_{3}=\sum a_{ii}
-\end{array}
-$$&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 361; flex-basis: 868px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/png.png&#34; data-size=&#34;883x244&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/png.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/png_hu000f7cfa11dd81c47cb73c6d404e7403_12362_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/png_hu000f7cfa11dd81c47cb73c6d404e7403_12362_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;883&#34;
+				height=&#34;244&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;证明过程&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;证明过程&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;即$A^{n}=(\sum a_{ii})^{n-1}A$​​&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h4 id=&#34;题型二主对角线和一侧全为0&#34;&gt;题型二：主对角线和一侧全为0&lt;/h4&gt;
@@ -402,20 +576,13 @@ $$&lt;/p&gt;
 &lt;p&gt;由基本公式$AA^{&lt;em&gt;}=A^{&lt;/em&gt;}A=|A|E$​,可以推导出以下几个公式：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;$A^{-1}= \frac{1}{|A|}A^{*}$&lt;/li&gt;
-&lt;li&gt;$(A^{-1})^{&lt;em&gt;} =(A^{&lt;/em&gt;})^{-1}=\frac{1}{|A|}A$​&lt;/li&gt;
+&lt;li&gt;$(A^{-1})^{ * } =(A^{*})^{-1}=\frac{1}{|A|}A$​​&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;设A是n阶矩阵
-$$
-r(A^{*}) =&lt;br /&gt;
-\begin{cases} &lt;br /&gt;
-n &amp;amp; r(A)=n \ 
-1 &amp;amp; r(A)=n-1\&lt;br /&gt;
-0 &amp;amp; r(A)&amp;lt;n-1
-\end{cases}
-$$
-证明过程：&lt;/p&gt;
+&lt;p&gt;设A是n阶矩阵&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;index.assets/png12.png&#34; style=&#34;zoom:100%;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;证明过程：&lt;/p&gt;
 &lt;p&gt;&lt;figure style=&#34;flex-grow: 82; flex-basis: 197px&#34;&gt;
 		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814163731935.png&#34; data-size=&#34;951x1155&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814163731935.png&#34;
 				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814163731935_hu71258fd77137f1bf038f77f18adf745c_785140_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/index.assets/image-20210814163731935_hu71258fd77137f1bf038f77f18adf745c_785140_1024x0_resize_box_3.png 1024w&#34;
@@ -444,12 +611,7 @@ $$
 &lt;p&gt;由 $A^{*}=A^{T}$，可得：&lt;/p&gt;
 &lt;p&gt;$A_{ij}=a_{ij},\forall i,j=1,2,3$&lt;/p&gt;
 &lt;p&gt;则 对A按照第一行展开有：&lt;/p&gt;
-&lt;p&gt;$\begin{aligned}
-A
-&amp;amp;=a_{11}A_{11}+a_{12}A_{12}+a_{13}A_{13}\&lt;br /&gt;
-&amp;amp;=(a_{11})^2+(a_{12})^2+(a_{13})^2\&lt;br /&gt;
-&amp;amp;=3(a_{11})^2
-\end{aligned} $​​&lt;/p&gt;
+&lt;p&gt;$A=a_{11}A_{11}+a_{12}A_{12}+a_{13}A_{13}=(a_{11})^2+(a_{12})^2+(a_{13})^2=3(a_{11})^2$​​​​&lt;/p&gt;
 &lt;p&gt;又根据 $A^{*}=A^{T}$ 有：&lt;/p&gt;
 &lt;p&gt;$|A^{*}|=|A^{T}|$&lt;/p&gt;
 &lt;p&gt;即，$|A|^{3-1}=|A|$​​，$|A|(|A|-1)=0$​，易知|A|≠0，&lt;/p&gt;
