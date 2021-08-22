@@ -14,6 +14,9 @@
         <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/</guid>
         <description>&lt;img src="https://picsum.photos/seed/equationset/640/360" alt="Featured image of post 线性代数——方程组" /&gt;&lt;h2 id=&#34;ax0&#34;&gt;Ax=0&lt;/h2&gt;
 &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;重点： n-r(A)，基础解系&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;Ax=0有非零解 $\Leftrightarrow $​​ r(A) &amp;lt; n (未知数个数)$\Leftrightarrow $​​​  A的列向量线性相关&lt;/p&gt;
 &lt;p&gt;特别地(&lt;strong&gt;针对水平型阵和方阵&lt;/strong&gt;)，※&lt;/p&gt;
 &lt;ul&gt;
@@ -103,6 +106,97 @@
 &lt;li&gt;证明线性无关（上面选择题过程）&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;🤓&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;axb&#34;&gt;Ax=b&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;重点：有解判定，解的结构&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;解的性质：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;非齐的解相减为齐的解&lt;/li&gt;
+&lt;li&gt;齐的解+非齐解为非齐解&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;解的结构：非齐特解+齐的基础解系=非齐通解&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;公共解同解&#34;&gt;公共解、同解&lt;/h2&gt;
+&lt;h3 id=&#34;一公共解&#34;&gt;（一）公共解&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;两个方程解联立得公共解&lt;/li&gt;
+&lt;li&gt;已知一个方程的基础解系，求得另一个方程的基础解系，设$\beta$​为公共解，则$\beta$​能由两个基础解系分别表出，进而相减得齐次方程组求解。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;注意零解一定是公共解。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 351; flex-basis: 844px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210822170349234.png&#34; data-size=&#34;1136x323&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210822170349234.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210822170349234_hue678bbdf4cc31a22e473fe332c4cc38a_177670_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210822170349234_hue678bbdf4cc31a22e473fe332c4cc38a_177670_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1136&#34;
+				height=&#34;323&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;二同解&#34;&gt;（二）同解&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;对Ax=0，Bx=0，若同解，则&lt;/p&gt;
+&lt;p&gt;n-r(A)=n-r(B)&lt;/p&gt;
+&lt;p&gt;故必要条件 &lt;strong&gt;r(A)-r(B)&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 72; flex-basis: 173px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210822171516847.png&#34; data-size=&#34;950x1313&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210822171516847.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210822171516847_hu291363c421c686216a6a685f57c905be_473475_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210822171516847_hu291363c421c686216a6a685f57c905be_473475_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;950&#34;
+				height=&#34;1313&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;2005-数三、四&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;2005-数三、四&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&#34;秩关系的证明&#34;&gt;秩关系的证明&lt;/h4&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 106; flex-basis: 255px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210822172251887.png&#34; data-size=&#34;950x894&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210822172251887.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210822172251887_hu909c0e50d899a504dd762574410aeddc_685009_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210822172251887_hu909c0e50d899a504dd762574410aeddc_685009_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;950&#34;
+				height=&#34;894&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;应用&#34;&gt;应用&lt;/h2&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 837; flex-basis: 2009px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210822172925078.png&#34; data-size=&#34;1097x131&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210822172925078.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210822172925078_hu07541cba0412764034ef549871f1fc63_93536_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210822172925078_hu07541cba0412764034ef549871f1fc63_93536_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1097&#34;
+				height=&#34;131&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;2014-数一、二、三&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;2014-数一、二、三&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;根据已知，假设出C，解方程组拼出C，考察基本功&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;命题：若Ax=0只有零解，那么Ax=b有唯一解&lt;/strong&gt;  ❌&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 215; flex-basis: 518px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210822173810993.png&#34; data-size=&#34;1332x617&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210822173810993.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210822173810993_hu6c8aeadd3f7bd59736eb35fd5879f1c1_257439_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/index.assets/image-20210822173810993_hu6c8aeadd3f7bd59736eb35fd5879f1c1_257439_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1332&#34;
+				height=&#34;617&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         </item>
@@ -408,7 +502,7 @@
 &lt;blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;$r(A^TA) = r(A)$​&lt;/p&gt;
+&lt;p&gt;$r(A^TA) = r(A)$  &lt;a href=&#34;../线性代数方程组#秩关系的证明&#34;&gt;&lt;u&gt;（证明过程）&lt;/u&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;$r(kA) = r(A)$​，当k≠0&lt;/p&gt;

@@ -13,7 +13,8 @@
       <pubDate>Sat, 21 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/</guid>
-      <description>Ax=0  Ax=0有非零解 $\Leftrightarrow $​​ r(A) &amp;lt; n (未知数个数)$\Leftrightarrow $​​​ A的列向量线性相关
+      <description>Ax=0  重点： n-r(A)，基础解系
+  Ax=0有非零解 $\Leftrightarrow $​​ r(A) &amp;lt; n (未知数个数)$\Leftrightarrow $​​​ A的列向量线性相关
 特别地(针对水平型阵和方阵)，※
  A-m×n,m&amp;lt;n, Ax=0 必有非零解 A-n×n，Ax=0有非零解 $\Leftrightarrow $​ |A|=0（克拉默法则）    Ax=0有非零解，则其解线性组合必为Ax=0的解，所以Ax=0若有非零解，则必有无穷多解，在这无穷多解中，线性无关的解向量个数为 $t=n-r(A)$​​​​​，这就是基础解系​，基础解系是Ax=0的解向量中的极大线性无关组。此外，根据定理可知，Ax=0的任一解都可以由基础解系线性表出。
   基础解系⭐
@@ -27,8 +28,7 @@ Ax=b有解且不唯一，则$r(A) &amp;lt; n$
 2002-数二、三
  【分析】根据通解的定义可知，若为通解，解必然线性无关，本题转化为证明 $a_1,a_2,a_3,a_4$哪三个线性无关
 
-这里用到了“低维无关，添加向量后的高维必无关”
-  此外，如果本题为证明计算题（证明基础解系），即 求$A^{*}x=0$​ 的基础解系，则</description>
+这里用到了“低维无关，添加向量后的高维必无关”</description>
     </item>
     
     <item>
