@@ -7,12 +7,12 @@
 class Admin{ static show(){}//__proto__中  show(){}//prototype中 } console.dir(Admin) 关于class一些注意点  class中声明的方法在prototype对象中，由于默认的属性特征设置，这些方法是不可遍历的！  class Admin{ show(){} } console.log( Object.getOwnPropertyDescriptor( Admin.prototype,&amp;#34;show&amp;#34; )) //enumerable: false class中声明方法时，方法之间不用,隔开！ class中默认开启严格模式  class中的属性保护  主要可以通过三种途径实现属性保护：Symbol,weakmap,私有属性
  1.Symbol /*利用Symbol创建一个受保护的属性的集合对象,无法直接获取，只能通过自定义的get/set方法*/ const protects = Symbol(&amp;#39;受保护的属性&amp;#39;) class User { constructor(name) { this.name = name this[protects] = { host: &amp;#39;https://www.fintinger.xyz&amp;#39;, token: &amp;#39;5574f1b81bbe4e3847e7a83c0a84a442&amp;#39;, password: &amp;#39;123456&amp;#39; } } set host(url) { if (!'><title>Es6中的class类</title>
 <link rel='canonical' href='https://www.fintinger.site/p/es6%E4%B8%AD%E7%9A%84class%E7%B1%BB/'>
+<link rel="stylesheet" href="/scss/loadingPage.css">
+
 
 <link rel="stylesheet" href="/scss/style.min.css">
 
-<link rel="stylesheet" href="/scss/external/tailwind.min.css">
-
-<link rel="stylesheet" href="/scss/loadingPage.css"><meta property='og:title' content='Es6中的class类'>
+<link rel="stylesheet" href="/scss/external/tailwind.min.css"><meta property='og:title' content='Es6中的class类'>
 <meta property='og:description' content='class实质上是对js中继承的封装组合，用一种“语法糖”的形式实现原型链的继承
  静态属性/方法  静态方法/属性是指，函数作为对象时，定义在其原型(__proto__)上的方法，而需要实例化继承的动态方法是定义在其原型对象(prototype) 中的，静态方法中的参数都是固定的，直接通过整个构造函数调用，实例化对象并不会继承；而动态方法中的参数会因为实例化对象的不同而产生改变，实例化对象默认是继承的。
  function User(){} User.__proto__.show=function(){} console.dir(User) //这里的show()方法就属于静态方法 在class中，利用static定义静态属性/方法
@@ -38,18 +38,18 @@ class Admin{ static show(){}//__proto__中  show(){}//prototype中 } console.dir
 <div style="background:url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg') center/cover;"
      class="welcome_page w-full h-screen shadow-2xl flex flex-col justify-center items-center">
     <div style="user-select: none"
-         class="h-max xl:w-max py-10 xl:py-32 px-32 xl:px-96 bg-gray-100 rounded-2xl shadow-2xl cursor-pointer flex flex-col justify-center relative">
+         class="h-max xl:w-max py-10 xl:py-32 px-32 xl:px-96 bg-gray-100 rounded-2xl shadow-2xl  flex flex-col justify-center relative mb-10">
         <span class="absolute w-16 h-16 bg-purple-200 bg-opacity0 top-14 right-14 rounded-full text-center border-2 border-purple-600 border-opacity-10 leading-loose text-3xl animate-pulse">😋</span>
         <div class="flex flex-col items-center space-y-8 font-sans">
             <div style="background: url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg') center/cover"
                  class="w-44 h-44 rounded-full"></div>
             <h1 class="text-6xl font-semibold">ARCHAI</h1>
             <p style="margin-top: 7px" class="text-xl text-gray-500">Undergraduate / Rookie</p>
-            <div class="bg-purple-600 px-5 py-3 rounded-md "><a href="#main_content"
+            <div class="bg-purple-600 px-5 py-3 rounded-md cursor-pointer"><a href="#main_content"
                                                                 class="text-white hover:text-white">Read more</a></div>
         </div>
     </div>
-    <footer class="h-1/5 flex flex-col justify-end">
+    <footer class="h-1/5 flex flex-col justify-end ">
         <a href="#main_content">
             <svg class="animate-bounce" t="1629475731927" class="icon" viewBox="0 0 1024 1024" version="1.1"
                  xmlns="http://www.w3.org/2000/svg" p-id="2357" width="80" height="80">

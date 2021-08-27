@@ -9,12 +9,12 @@ console.log(map.get(fn));//function  //通过key获取value 👉 delete() / clea
 console.log(map.delete(fn));//true console.log(map); /*Map(3){&amp;#34;key&amp;#34; =&amp;gt; &amp;#34;value&amp;#34;, {…} =&amp;gt; &amp;#34;object&amp;#34;}*/ 👉 has() 是否有某个key
 console.log(map.has(user));//true 2.遍历 👉forEach(val,key,map)'><title>JavaScript基础之Map与Weakmap类型</title>
 <link rel='canonical' href='https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bmap%E4%B8%8Eweakmap%E7%B1%BB%E5%9E%8B/'>
+<link rel="stylesheet" href="/scss/loadingPage.css">
+
 
 <link rel="stylesheet" href="/scss/style.min.css">
 
-<link rel="stylesheet" href="/scss/external/tailwind.min.css">
-
-<link rel="stylesheet" href="/scss/loadingPage.css"><meta property='og:title' content='JavaScript基础之Map与Weakmap类型'>
+<link rel="stylesheet" href="/scss/external/tailwind.min.css"><meta property='og:title' content='JavaScript基础之Map与Weakmap类型'>
 <meta property='og:description' content='Map类型 1.属性 👉 set() 设置值
 let map = new Map() let fn = function () {console.log(&amp;#39;this is function&amp;#39;)} let user = {name: &amp;#39;jqf&amp;#39;, age: 18} map.set(&amp;#39;key&amp;#39;, &amp;#39;value&amp;#39;) map.set(fn, &amp;#39;function&amp;#39;) map.set(user, &amp;#39;object&amp;#39;) console.log(map); /*Map(3){&amp;#34;key&amp;#34; =&amp;gt; &amp;#34;value&amp;#34;, ƒ =&amp;gt; &amp;#34;function&amp;#34;, {…} =&amp;gt; &amp;#34;object&amp;#34;}*/ 注意： Map类型，字符串、函数、对象都可以作为key设置
 👉 size Map长度
@@ -44,18 +44,18 @@ console.log(map.has(user));//true 2.遍历 👉forEach(val,key,map)"><meta name=
 <div style="background:url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg') center/cover;"
      class="welcome_page w-full h-screen shadow-2xl flex flex-col justify-center items-center">
     <div style="user-select: none"
-         class="h-max xl:w-max py-10 xl:py-32 px-32 xl:px-96 bg-gray-100 rounded-2xl shadow-2xl cursor-pointer flex flex-col justify-center relative">
+         class="h-max xl:w-max py-10 xl:py-32 px-32 xl:px-96 bg-gray-100 rounded-2xl shadow-2xl  flex flex-col justify-center relative mb-10">
         <span class="absolute w-16 h-16 bg-purple-200 bg-opacity0 top-14 right-14 rounded-full text-center border-2 border-purple-600 border-opacity-10 leading-loose text-3xl animate-pulse">😋</span>
         <div class="flex flex-col items-center space-y-8 font-sans">
             <div style="background: url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg') center/cover"
                  class="w-44 h-44 rounded-full"></div>
             <h1 class="text-6xl font-semibold">ARCHAI</h1>
             <p style="margin-top: 7px" class="text-xl text-gray-500">Undergraduate / Rookie</p>
-            <div class="bg-purple-600 px-5 py-3 rounded-md "><a href="#main_content"
+            <div class="bg-purple-600 px-5 py-3 rounded-md cursor-pointer"><a href="#main_content"
                                                                 class="text-white hover:text-white">Read more</a></div>
         </div>
     </div>
-    <footer class="h-1/5 flex flex-col justify-end">
+    <footer class="h-1/5 flex flex-col justify-end ">
         <a href="#main_content">
             <svg class="animate-bounce" t="1629475731927" class="icon" viewBox="0 0 1024 1024" version="1.1"
                  xmlns="http://www.w3.org/2000/svg" p-id="2357" width="80" height="80">

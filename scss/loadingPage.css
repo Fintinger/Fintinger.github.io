@@ -21,6 +21,7 @@
     margin-left: 2rem;
     border-radius: 999px;
     background-color: #4b9cdb;
+    transition: transform,1s;
 }
 
 .load-3 .line:nth-last-child(3) {

@@ -7,12 +7,12 @@
 行 GET / HTTP/1.1 头 Host: fintinger.xyz Cookie: keyword=xyz Content-type: application/x-www-form-urlencoded User-agent: Chrome 83 空行 (必须有) 体 [GET]:空 [POST]:空/username=admin&amp;amp;password=admin 响应报文 格式以及参数如下
 行 HTTP/1.1 200 Ok 头 Content-Type: text/html; charset=utf-8 Content-Length: 22 Content-encoding: gzip 空行 (必须有) 体 &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;Hello!&amp;lt;/h1&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; Express框架使用 //1.引入express const express=require(&amp;#39;express&amp;#39;) //2.创建应用对象 const app=express() //3.创建路由规则 /** * request 请求报文封装 * response 响应报文封装 */ app.'><title>Ajax基础及Express框架基本使用</title>
 <link rel='canonical' href='https://www.fintinger.site/p/ajax%E5%9F%BA%E7%A1%80%E5%8F%8Aexpress%E6%A1%86%E6%9E%B6%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/'>
+<link rel="stylesheet" href="/scss/loadingPage.css">
+
 
 <link rel="stylesheet" href="/scss/style.min.css">
 
-<link rel="stylesheet" href="/scss/external/tailwind.min.css">
-
-<link rel="stylesheet" href="/scss/loadingPage.css"><meta property='og:title' content='Ajax基础及Express框架基本使用'>
+<link rel="stylesheet" href="/scss/external/tailwind.min.css"><meta property='og:title' content='Ajax基础及Express框架基本使用'>
 <meta property='og:description' content='Baike  Ajax 即“AsynchronousJavascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式、快速动态网页应用的网页开发技术，无需重新加载整个网页的情况下，能够更新部分网页的技术。
 通过在后台与服务器进行少量数据交换，Ajax 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。&amp;mdash;百度百科
  请求报文 格式以及参数如下
@@ -38,18 +38,18 @@
 <div style="background:url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg') center/cover;"
      class="welcome_page w-full h-screen shadow-2xl flex flex-col justify-center items-center">
     <div style="user-select: none"
-         class="h-max xl:w-max py-10 xl:py-32 px-32 xl:px-96 bg-gray-100 rounded-2xl shadow-2xl cursor-pointer flex flex-col justify-center relative">
+         class="h-max xl:w-max py-10 xl:py-32 px-32 xl:px-96 bg-gray-100 rounded-2xl shadow-2xl  flex flex-col justify-center relative mb-10">
         <span class="absolute w-16 h-16 bg-purple-200 bg-opacity0 top-14 right-14 rounded-full text-center border-2 border-purple-600 border-opacity-10 leading-loose text-3xl animate-pulse">😋</span>
         <div class="flex flex-col items-center space-y-8 font-sans">
             <div style="background: url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg') center/cover"
                  class="w-44 h-44 rounded-full"></div>
             <h1 class="text-6xl font-semibold">ARCHAI</h1>
             <p style="margin-top: 7px" class="text-xl text-gray-500">Undergraduate / Rookie</p>
-            <div class="bg-purple-600 px-5 py-3 rounded-md "><a href="#main_content"
+            <div class="bg-purple-600 px-5 py-3 rounded-md cursor-pointer"><a href="#main_content"
                                                                 class="text-white hover:text-white">Read more</a></div>
         </div>
     </div>
-    <footer class="h-1/5 flex flex-col justify-end">
+    <footer class="h-1/5 flex flex-col justify-end ">
         <a href="#main_content">
             <svg class="animate-bounce" t="1629475731927" class="icon" viewBox="0 0 1024 1024" version="1.1"
                  xmlns="http://www.w3.org/2000/svg" p-id="2357" width="80" height="80">

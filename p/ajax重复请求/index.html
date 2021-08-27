@@ -5,12 +5,12 @@
  全局变量
 /** * baseURL 是每次请求的地址 * x 表示XMLHttpRequest实例，初始为null * isSending 是用来判断请求是否处于发送状态的标识 */ const baseURL = &amp;#34;http://127.0.0.1:8000/delay&amp;#34; let x = null, isSending = false 原生请求 if (isSending) x.abort() x = new XMLHttpRequest() //正处于发送状态，修改标识 isSending = true x.open(&amp;#34;GET&amp;#34;, baseURL) x.send() x.onreadystatechange = function () { if (x.readyState === 4) {//当readyState=4,表示已经发送完毕，修改标识，是否成功返回则无需关心  isSending = false if (x.status &amp;gt;= 200 &amp;amp;&amp;amp; x.status &amp;lt; 300) { console.log(x.response); } } } jQuery 请求  jQuery做ajax请求时，可以仅针对一次请求，也可以利用jQuery全局事件对所有请求加以限制'><title>Ajax重复请求</title>
 <link rel='canonical' href='https://www.fintinger.site/p/ajax%E9%87%8D%E5%A4%8D%E8%AF%B7%E6%B1%82/'>
+<link rel="stylesheet" href="/scss/loadingPage.css">
+
 
 <link rel="stylesheet" href="/scss/style.min.css">
 
-<link rel="stylesheet" href="/scss/external/tailwind.min.css">
-
-<link rel="stylesheet" href="/scss/loadingPage.css"><meta property='og:title' content='Ajax重复请求'>
+<link rel="stylesheet" href="/scss/external/tailwind.min.css"><meta property='og:title' content='Ajax重复请求'>
 <meta property='og:description' content='在发送某一次请求时，如果不对请求做去重处理那么，同一个请求有可能会发送很多次，一个个慢慢响应，这会很大程度影响性能以及页面的使用体验
  全局变量
 /** * baseURL 是每次请求的地址 * x 表示XMLHttpRequest实例，初始为null * isSending 是用来判断请求是否处于发送状态的标识 */ const baseURL = &amp;#34;http://127.0.0.1:8000/delay&amp;#34; let x = null, isSending = false 原生请求 if (isSending) x.abort() x = new XMLHttpRequest() //正处于发送状态，修改标识 isSending = true x.open(&amp;#34;GET&amp;#34;, baseURL) x.send() x.onreadystatechange = function () { if (x.readyState === 4) {//当readyState=4,表示已经发送完毕，修改标识，是否成功返回则无需关心  isSending = false if (x.status &amp;gt;= 200 &amp;amp;&amp;amp; x.status &amp;lt; 300) { console.log(x.response); } } } jQuery 请求  jQuery做ajax请求时，可以仅针对一次请求，也可以利用jQuery全局事件对所有请求加以限制'>
@@ -32,18 +32,18 @@
 <div style="background:url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg') center/cover;"
      class="welcome_page w-full h-screen shadow-2xl flex flex-col justify-center items-center">
     <div style="user-select: none"
-         class="h-max xl:w-max py-10 xl:py-32 px-32 xl:px-96 bg-gray-100 rounded-2xl shadow-2xl cursor-pointer flex flex-col justify-center relative">
+         class="h-max xl:w-max py-10 xl:py-32 px-32 xl:px-96 bg-gray-100 rounded-2xl shadow-2xl  flex flex-col justify-center relative mb-10">
         <span class="absolute w-16 h-16 bg-purple-200 bg-opacity0 top-14 right-14 rounded-full text-center border-2 border-purple-600 border-opacity-10 leading-loose text-3xl animate-pulse">😋</span>
         <div class="flex flex-col items-center space-y-8 font-sans">
             <div style="background: url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg') center/cover"
                  class="w-44 h-44 rounded-full"></div>
             <h1 class="text-6xl font-semibold">ARCHAI</h1>
             <p style="margin-top: 7px" class="text-xl text-gray-500">Undergraduate / Rookie</p>
-            <div class="bg-purple-600 px-5 py-3 rounded-md "><a href="#main_content"
+            <div class="bg-purple-600 px-5 py-3 rounded-md cursor-pointer"><a href="#main_content"
                                                                 class="text-white hover:text-white">Read more</a></div>
         </div>
     </div>
-    <footer class="h-1/5 flex flex-col justify-end">
+    <footer class="h-1/5 flex flex-col justify-end ">
         <a href="#main_content">
             <svg class="animate-bounce" t="1629475731927" class="icon" viewBox="0 0 1024 1024" version="1.1"
                  xmlns="http://www.w3.org/2000/svg" p-id="2357" width="80" height="80">

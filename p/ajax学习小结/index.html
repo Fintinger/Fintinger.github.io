@@ -5,12 +5,12 @@
  发送Ajax请求的方式 原生Ajax //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(&amp;#34;GET&amp;#34;,&amp;#34;https://www.x.com&amp;#34;) //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status &amp;gt;= 200 &amp;amp;&amp;amp; xhr.status &amp;lt; 300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } } 说明：
  readyState: 返回一个 XMLHttpRequest 代理当前所处的状态     值 状态 描述     0 UNSENT 代理被创建，但尚未调用 open() 方法。   1 OPENED open() 方法已经被调用。   2 HEADERS_RECEIVED send() 方法已经被调用，并且头部和状态已经可获得。   3 LOADING 下载中； responseText 属性已经包含部分数据。   4 DONE 下载操作已完成。     因此，xhr.'><title>Ajax学习小结</title>
 <link rel='canonical' href='https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/'>
+<link rel="stylesheet" href="/scss/loadingPage.css">
+
 
 <link rel="stylesheet" href="/scss/style.min.css">
 
-<link rel="stylesheet" href="/scss/external/tailwind.min.css">
-
-<link rel="stylesheet" href="/scss/loadingPage.css"><meta property='og:title' content='Ajax学习小结'>
+<link rel="stylesheet" href="/scss/external/tailwind.min.css"><meta property='og:title' content='Ajax学习小结'>
 <meta property='og:description' content='学习地址:https://www.bilibili.com/video/BV1WC4y1b78y，主要通过express的简单功能来搭建本地的服务，进而更好地学习Ajax
  发送Ajax请求的方式 原生Ajax //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(&amp;#34;GET&amp;#34;,&amp;#34;https://www.x.com&amp;#34;) //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status &amp;gt;= 200 &amp;amp;&amp;amp; xhr.status &amp;lt; 300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } } 说明：
  readyState: 返回一个 XMLHttpRequest 代理当前所处的状态     值 状态 描述     0 UNSENT 代理被创建，但尚未调用 open() 方法。   1 OPENED open() 方法已经被调用。   2 HEADERS_RECEIVED send() 方法已经被调用，并且头部和状态已经可获得。   3 LOADING 下载中； responseText 属性已经包含部分数据。   4 DONE 下载操作已完成。     因此，xhr.'>
@@ -32,18 +32,18 @@
 <div style="background:url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg') center/cover;"
      class="welcome_page w-full h-screen shadow-2xl flex flex-col justify-center items-center">
     <div style="user-select: none"
-         class="h-max xl:w-max py-10 xl:py-32 px-32 xl:px-96 bg-gray-100 rounded-2xl shadow-2xl cursor-pointer flex flex-col justify-center relative">
+         class="h-max xl:w-max py-10 xl:py-32 px-32 xl:px-96 bg-gray-100 rounded-2xl shadow-2xl  flex flex-col justify-center relative mb-10">
         <span class="absolute w-16 h-16 bg-purple-200 bg-opacity0 top-14 right-14 rounded-full text-center border-2 border-purple-600 border-opacity-10 leading-loose text-3xl animate-pulse">😋</span>
         <div class="flex flex-col items-center space-y-8 font-sans">
             <div style="background: url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg') center/cover"
                  class="w-44 h-44 rounded-full"></div>
             <h1 class="text-6xl font-semibold">ARCHAI</h1>
             <p style="margin-top: 7px" class="text-xl text-gray-500">Undergraduate / Rookie</p>
-            <div class="bg-purple-600 px-5 py-3 rounded-md "><a href="#main_content"
+            <div class="bg-purple-600 px-5 py-3 rounded-md cursor-pointer"><a href="#main_content"
                                                                 class="text-white hover:text-white">Read more</a></div>
         </div>
     </div>
-    <footer class="h-1/5 flex flex-col justify-end">
+    <footer class="h-1/5 flex flex-col justify-end ">
         <a href="#main_content">
             <svg class="animate-bounce" t="1629475731927" class="icon" viewBox="0 0 1024 1024" version="1.1"
                  xmlns="http://www.w3.org/2000/svg" p-id="2357" width="80" height="80">
@@ -625,18 +625,18 @@
                 
                     
 <article class="has-image">
-    <a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/">
+    <a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/">
         
         
             <div class="article-image">
                 
-                    <img src="https://picsum.photos/seed/equationset/640/360" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/equationset/640/360"/>
+                    <img src="https://picsum.photos/seed/eigenvalue/640/360" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/eigenvalue/640/360"/>
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">线性代数——方程组</h2>
+            <h2 class="article-title">线性代数——特征值特征向量</h2>
         </div>
     </a>
 </article>

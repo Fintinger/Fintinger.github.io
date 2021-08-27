@@ -6,7 +6,282 @@
         <description>Recent content on Archai &#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Sat, 21 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 23 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>线性代数——特征值特征向量</title>
+        <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/</link>
+        <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/</guid>
+        <description>&lt;img src="https://picsum.photos/seed/eigenvalue/640/360" alt="Featured image of post 线性代数——特征值特征向量" /&gt;&lt;h2 id=&#34;特征值与特征向量&#34;&gt;特征值与特征向量&lt;/h2&gt;
+&lt;h3 id=&#34;性质&#34;&gt;性质&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1.不同特征值的特征向量线性无关。&lt;/p&gt;
+&lt;p&gt;2.ｋ重特征值至多有ｋ个线性无关的特征向量。(※)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;基本运算逻辑&#34;&gt;基本运算逻辑&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 178; flex-basis: 428px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823161157458.png&#34; data-size=&#34;1409x789&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823161157458.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823161157458_huaca28621f111fc4ce3eee9c6d9115604_893985_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823161157458_huaca28621f111fc4ce3eee9c6d9115604_893985_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1409&#34;
+				height=&#34;789&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;三角矩阵特征值为主对角线元素⭐&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;index.assets/image-20210823162054364.png&#34; style=&#34;zoom:80%;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;注意，当$\lambda=1$时😢&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;index.assets/image-20210823162232681.png&#34; style=&#34;zoom:98%;&#34; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;秩为1的矩阵A&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;特征值 $\sum_{aii},0,0&amp;hellip;$&lt;/li&gt;
+&lt;li&gt;$A^n=\sum_{aii}^{n-1} A$​&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;特征值证明：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;index.assets/image-20210823163039209.png&#34; style=&#34;zoom:80%;&#34; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;求特征值不能先对A做任何变换，而应该带着λ变换&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;定义法&#34;&gt;定义法&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 671; flex-basis: 1611px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823163524579.png&#34; data-size=&#34;913x136&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823163524579.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823163524579_hu93e0dbf017dd7d9053a21ad026b1d7bb_48343_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823163524579_hu93e0dbf017dd7d9053a21ad026b1d7bb_48343_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;913&#34;
+				height=&#34;136&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;如果两矩阵相似&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 346; flex-basis: 830px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823165733234.png&#34; data-size=&#34;1346x389&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823165733234.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823165733234_hu5738fc5d8d329615257f86a84dfb31b3_387181_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823165733234_hu5738fc5d8d329615257f86a84dfb31b3_387181_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1346&#34;
+				height=&#34;389&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;即 &lt;strong&gt;“两矩阵相似则具有相同特征值，特征向量也存在关系”&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;真题例题&#34;&gt;真题&amp;amp;例题&lt;/h4&gt;
+&lt;p&gt;常识题？😢&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 156; flex-basis: 374px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823163744984.png&#34; data-size=&#34;963x617&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823163744984.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823163744984_hu30213362639ddc8ac5e620a5b4641c75_221469_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823163744984_hu30213362639ddc8ac5e620a5b4641c75_221469_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;963&#34;
+				height=&#34;617&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;关于&lt;strong&gt;AB=0&lt;/strong&gt;引申出的一题多解&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 67; flex-basis: 161px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823165301880.png&#34; data-size=&#34;950x1409&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823165301880.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823165301880_huf466194114653085b17d36173cc23d5e_1114565_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823165301880_huf466194114653085b17d36173cc23d5e_1114565_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;950&#34;
+				height=&#34;1409&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;相似&#34;&gt;相似&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;AB相似，则 &lt;strong&gt;A+kE ~ B+kE&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;行列式相等&lt;/li&gt;
+&lt;li&gt;俩秩相等&lt;/li&gt;
+&lt;li&gt;特征值相等&lt;/li&gt;
+&lt;li&gt;绩相等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;利用已知构造方程组求参，进行预处理&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;由 $A^n=PB^nP^{-1}$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;若取&lt;strong&gt;B为∧&lt;/strong&gt;，容易求得$A^n$​的值。&lt;a class=&#34;link&#34; href=&#34;../%e7%ba%bf%e6%80%a7%e4%bb%a3%e6%95%b0%e7%9f%a9%e9%98%b5/#an&#34; &gt;(其他方法)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;特征值也存在关系。(&lt;a class=&#34;link&#34; href=&#34;./#%e5%ae%9a%e4%b9%89%e6%b3%95&#34; &gt;特征值规律&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;用相似的传递性证明两矩阵相似&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;a-&#34;&gt;A~∧ ⭐&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A~∧，$A=P∧P^{-1}$则&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;∧是矩阵A的特征值&lt;/li&gt;
+&lt;li&gt;P列向量是A的特征向量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;（&lt;strong&gt;要对应，别错位&lt;/strong&gt;）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A~∧  ⇔   矩阵A有n个线性无关的特征向量。&lt;/strong&gt; （注意是充要条件）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 165; flex-basis: 396px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826162913554.png&#34; data-size=&#34;1334x807&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826162913554.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826162913554_hud1e770351612881f318a3cf98940cf9a_916535_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826162913554_hud1e770351612881f318a3cf98940cf9a_916535_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1334&#34;
+				height=&#34;807&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;要&lt;strong&gt;求解A~∧(相似对角化)&lt;/strong&gt; ，注意下面图解&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;检查是否和对称矩阵相似&lt;/li&gt;
+&lt;li&gt;检查是否有n个特征值&lt;/li&gt;
+&lt;li&gt;检查k重特征值是否有k个无关的特征向量(n-r(λE-A))&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 169; flex-basis: 407px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826164534300.png&#34; data-size=&#34;1433x844&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826164534300.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826164534300_hucc136545b4c2906741ee4c6d6c97de4a_888013_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826164534300_hucc136545b4c2906741ee4c6d6c97de4a_888013_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1433&#34;
+				height=&#34;844&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;⇳&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;⇳&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 402; flex-basis: 966px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826164634618.png&#34; data-size=&#34;1079x268&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826164634618.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826164634618_huf9fc2eb9086cc39600584ed9b8961386_171326_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826164634618_huf9fc2eb9086cc39600584ed9b8961386_171326_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1079&#34;
+				height=&#34;268&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;例题&#34;&gt;例题&lt;/h4&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 253; flex-basis: 608px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826170449802.png&#34; data-size=&#34;1256x495&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826170449802.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826170449802_hu28f52042aad739c39f738c227a2d8b03_319523_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826170449802_hu28f52042aad739c39f738c227a2d8b03_319523_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1256&#34;
+				height=&#34;495&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一正一负必能相似对角化&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 66; flex-basis: 160px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827163729532.png&#34; data-size=&#34;950x1423&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827163729532.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827163729532_hucdb89e7ab2b56b528a0244802e6fed42_623492_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827163729532_hucdb89e7ab2b56b528a0244802e6fed42_623492_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;950&#34;
+				height=&#34;1423&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;第(1)问这一思路一定要熟练把握$A\alpha$出现求特征值，想到用定义！！&lt;/p&gt;
+&lt;p&gt;第（2）问两种思路，&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;已知特征值、特征向量反求A矩阵&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 142; flex-basis: 341px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827165258198.png&#34; data-size=&#34;1022x719&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827165258198.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827165258198_hu51d8ba4eeccba7c2028d020634ab9bd1_300896_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827165258198_hu51d8ba4eeccba7c2028d020634ab9bd1_300896_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1022&#34;
+				height=&#34;719&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;image-20210827165258198&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;image-20210827165258198&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;实对称&#34;&gt;实对称&lt;/h2&gt;
+&lt;h3 id=&#34;性质-1&#34;&gt;性质&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;实对称矩阵必与对角矩阵相似；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;实对称矩阵特征值不同特征向量相互正交；&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;内积为0 ⇒ 齐次方程组 ⇒ 求得特征值&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;实对称矩阵可用正交矩阵相似对角化&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$Q^{-1}AQ=Q^{T}AQ$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;实对称矩阵特征值必为实数&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;例题-1&#34;&gt;例题&lt;/h3&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 104; flex-basis: 250px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827170742051.png&#34; data-size=&#34;940x899&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827170742051.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827170742051_hubfd6bf2539f6547d78c0984a9abc5a9b_442818_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827170742051_hubfd6bf2539f6547d78c0984a9abc5a9b_442818_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;940&#34;
+				height=&#34;899&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;用正交矩阵相似对角化&#34;&gt;用正交矩阵相似对角化&lt;/h3&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 115; flex-basis: 277px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827171630484.png&#34; data-size=&#34;1137x982&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827171630484.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827171630484_hu9e123680e6be5d7170da8a174401f95b_837721_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827171630484_hu9e123680e6be5d7170da8a174401f95b_837721_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1137&#34;
+				height=&#34;982&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;对比&lt;a class=&#34;link&#34; href=&#34;./#a-&#34; &gt;相似矩阵对角化&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这里需要用到正交化↧&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;schmidt正交化&#34;&gt;Schmidt正交化&lt;/h3&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 233; flex-basis: 561px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827174206234.png&#34; data-size=&#34;1167x499&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827174206234.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827174206234_hu10ae3f6bc248d5ab0a54b717f6ca66fe_277704_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827174206234_hu10ae3f6bc248d5ab0a54b717f6ca66fe_277704_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1167&#34;
+				height=&#34;499&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;||β|| 是向量的长度&lt;/p&gt;
+&lt;p&gt;分子为内积&lt;/p&gt;
+&lt;p&gt;分母为平方和&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
         <title>线性代数——方程组</title>
         <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/</link>
         <pubDate>Sat, 21 Aug 2021 00:00:00 +0000</pubDate>

@@ -6,7 +6,35 @@
     <description>Recent content in 学习总结 on Archai &#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 21 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>线性代数——特征值特征向量</title>
+      <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/</guid>
+      <description>特征值与特征向量 性质  1.不同特征值的特征向量线性无关。
+2.ｋ重特征值至多有ｋ个线性无关的特征向量。(※)
+ 基本运算逻辑  
+  三角矩阵特征值为主对角线元素⭐
+注意，当$\lambda=1$时😢
+  秩为1的矩阵A
+ 特征值 $\sum_{aii},0,0&amp;hellip;$ $A^n=\sum_{aii}^{n-1} A$​  特征值证明：
+  求特征值不能先对A做任何变换，而应该带着λ变换
+ 定义法  
+  如果两矩阵相似
+
+即 “两矩阵相似则具有相同特征值，特征向量也存在关系”
+ 真题&amp;amp;例题 常识题？😢
+
+关于AB=0引申出的一题多解
+
+相似  AB相似，则 A+kE ~ B+kE
+ 行列式相等 俩秩相等 特征值相等 绩相等  利用已知构造方程组求参，进行预处理
+  由 $A^n=PB^nP^{-1}$
+ 若取B为∧，容易求得$A^n$​的值。(其他方法) 特征值也存在关系。(特征值规律)    用相似的传递性证明两矩阵相似</description>
+    </item>
+    
     <item>
       <title>线性代数——方程组</title>
       <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/</link>

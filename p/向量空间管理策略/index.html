@@ -16,12 +16,12 @@ T* oldElem = _elem; _elem = new T[ _capacity &amp;lt;&amp;lt;= 1 ]; 考虑最坏
 两种策略的复杂度分析 考虑最坏的情况，两种策略的复杂度分别为
  递增策略： 为算术级数，0&#43;I&#43;2I&#43;&amp;hellip;=O(n ²) 倍增策略： 为几何级数，1&#43;2¹&#43;2²&#43;2³&#43;&amp;hellip;=O(2^m)=O(n)      递增策略 倍增策略     累计时间 O(n ²) O(n)   分摊时间 O(n) O(1)   装填因子 λ ≈100% &amp;gt;50%    可以看出，倍增策略在牺牲空间的基础上，换取时间上的巨大提升，可采取√'><title>向量空间管理策略</title>
 <link rel='canonical' href='https://www.fintinger.site/p/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5/'>
+<link rel="stylesheet" href="/scss/loadingPage.css">
+
 
 <link rel="stylesheet" href="/scss/style.min.css">
 
-<link rel="stylesheet" href="/scss/external/tailwind.min.css">
-
-<link rel="stylesheet" href="/scss/loadingPage.css"><meta property='og:title' content='向量空间管理策略'>
+<link rel="stylesheet" href="/scss/external/tailwind.min.css"><meta property='og:title' content='向量空间管理策略'>
 <meta property='og:description' content='向量的空间管理，有静态和动态两种策略
  静态空间管理策略 开辟内部数组_elem[]并使用一段地址连续的物理空间，_capacity表示总容量 ，_size表示当前的实际规模n，示意图如下：
 若采用静态空间管理策略，容量_capacity固定，则有明显的不足&amp;hellip;
@@ -65,18 +65,18 @@ T* oldElem = _elem; _elem = new T[ _capacity &amp;lt;&amp;lt;= 1 ]; 考虑最坏
 <div style="background:url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg') center/cover;"
      class="welcome_page w-full h-screen shadow-2xl flex flex-col justify-center items-center">
     <div style="user-select: none"
-         class="h-max xl:w-max py-10 xl:py-32 px-32 xl:px-96 bg-gray-100 rounded-2xl shadow-2xl cursor-pointer flex flex-col justify-center relative">
+         class="h-max xl:w-max py-10 xl:py-32 px-32 xl:px-96 bg-gray-100 rounded-2xl shadow-2xl  flex flex-col justify-center relative mb-10">
         <span class="absolute w-16 h-16 bg-purple-200 bg-opacity0 top-14 right-14 rounded-full text-center border-2 border-purple-600 border-opacity-10 leading-loose text-3xl animate-pulse">😋</span>
         <div class="flex flex-col items-center space-y-8 font-sans">
             <div style="background: url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg') center/cover"
                  class="w-44 h-44 rounded-full"></div>
             <h1 class="text-6xl font-semibold">ARCHAI</h1>
             <p style="margin-top: 7px" class="text-xl text-gray-500">Undergraduate / Rookie</p>
-            <div class="bg-purple-600 px-5 py-3 rounded-md "><a href="#main_content"
+            <div class="bg-purple-600 px-5 py-3 rounded-md cursor-pointer"><a href="#main_content"
                                                                 class="text-white hover:text-white">Read more</a></div>
         </div>
     </div>
-    <footer class="h-1/5 flex flex-col justify-end">
+    <footer class="h-1/5 flex flex-col justify-end ">
         <a href="#main_content">
             <svg class="animate-bounce" t="1629475731927" class="icon" viewBox="0 0 1024 1024" version="1.1"
                  xmlns="http://www.w3.org/2000/svg" p-id="2357" width="80" height="80">
@@ -361,6 +361,24 @@ T* oldElem = _elem; _elem = new T[ _capacity &amp;lt;&amp;lt;= 1 ]; 考虑最坏
                 
                     
 <article class="has-image">
+    <a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://picsum.photos/seed/eigenvalue/640/360" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/eigenvalue/640/360"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">线性代数——特征值特征向量</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
     <a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/">
         
         
@@ -391,24 +409,6 @@ T* oldElem = _elem; _elem = new T[ _capacity &amp;lt;&amp;lt;= 1 ]; 考虑最坏
 
         <div class="article-details">
             <h2 class="article-title">线性代数——向量</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="has-image">
-    <a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="https://picsum.photos/seed/matrix/640/" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/matrix/640/"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">线性代数——矩阵</h2>
         </div>
     </a>
 </article>

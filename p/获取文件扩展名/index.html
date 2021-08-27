@@ -10,12 +10,12 @@ function getFileExtension(filename) { return filename.slice((filename.lastIndexO
 .出现在末尾，索引会等于length&#43;1，也不会匹配到
  slice(start,end)  说明：start必须指定，负值为从后往前数，若只指定start值，则返回start位置及后面一直到数组结尾所有的元素 **注意：**区别于删除数组中的一段元素的方法 Array.splice()  lastIndexOf(searchvalue,fromindex)  **说明：**如果要检索的字符串值没有出现，则该方法返回 -1，该方法对大小写敏感 使用：  var str=&amp;#34;Hello world!&amp;#34; document.write(str.lastIndexOf(&amp;#34;Hello&amp;#34;) &#43; &amp;#34;&amp;lt;br /&amp;gt;&amp;#34;)//0 document.write(str.lastIndexOf(&amp;#34;World&amp;#34;) &#43; &amp;#34;&amp;lt;br /&amp;gt;&amp;#34;)//-1 document.'><title>获取文件扩展名</title>
 <link rel='canonical' href='https://www.fintinger.site/p/%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D/'>
+<link rel="stylesheet" href="/scss/loadingPage.css">
+
 
 <link rel="stylesheet" href="/scss/style.min.css">
 
-<link rel="stylesheet" href="/scss/external/tailwind.min.css">
-
-<link rel="stylesheet" href="/scss/loadingPage.css"><meta property='og:title' content='获取文件扩展名'>
+<link rel="stylesheet" href="/scss/external/tailwind.min.css"><meta property='og:title' content='获取文件扩展名'>
 <meta property='og:description' content='该怎么去获得文件名字符串中的文件扩展名呢？
 一种较为强大的解决方法是利用String的slice、lastIndexOf方法：
 function getFileExtension(filename) { return filename.slice((filename.lastIndexOf(&amp;#34;.&amp;#34;) - 1 &amp;gt;&amp;gt;&amp;gt; 0) &#43; 2); } console.log(getFileExtension3(&amp;#39;&amp;#39;)); // &amp;#39;&amp;#39; console.log(getFileExtension3(&amp;#39;filename&amp;#39;)); // &amp;#39;&amp;#39; console.log(getFileExtension3(&amp;#39;filename.txt&amp;#39;)); // &amp;#39;txt&amp;#39; console.log(getFileExtension3(&amp;#39;.hiddenfile&amp;#39;)); // &amp;#39;&amp;#39; console.log(getFileExtension3(&amp;#39;hiddenfile.&amp;#39;)); // &amp;#39;&amp;#39; console.log(getFileExtension3(&amp;#39;filename.with.many.dots.ext&amp;#39;)); // &amp;#39;ext&amp;#39; 说明 filename.slice((filename.lastIndexOf(&amp;quot;.&amp;quot;) - 1 &amp;gt;&amp;gt;&amp;gt; 0) &#43; 2)
@@ -47,18 +47,18 @@ function getFileExtension(filename) { return filename.slice((filename.lastIndexO
 <div style="background:url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg') center/cover;"
      class="welcome_page w-full h-screen shadow-2xl flex flex-col justify-center items-center">
     <div style="user-select: none"
-         class="h-max xl:w-max py-10 xl:py-32 px-32 xl:px-96 bg-gray-100 rounded-2xl shadow-2xl cursor-pointer flex flex-col justify-center relative">
+         class="h-max xl:w-max py-10 xl:py-32 px-32 xl:px-96 bg-gray-100 rounded-2xl shadow-2xl  flex flex-col justify-center relative mb-10">
         <span class="absolute w-16 h-16 bg-purple-200 bg-opacity0 top-14 right-14 rounded-full text-center border-2 border-purple-600 border-opacity-10 leading-loose text-3xl animate-pulse">😋</span>
         <div class="flex flex-col items-center space-y-8 font-sans">
             <div style="background: url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg') center/cover"
                  class="w-44 h-44 rounded-full"></div>
             <h1 class="text-6xl font-semibold">ARCHAI</h1>
             <p style="margin-top: 7px" class="text-xl text-gray-500">Undergraduate / Rookie</p>
-            <div class="bg-purple-600 px-5 py-3 rounded-md "><a href="#main_content"
+            <div class="bg-purple-600 px-5 py-3 rounded-md cursor-pointer"><a href="#main_content"
                                                                 class="text-white hover:text-white">Read more</a></div>
         </div>
     </div>
-    <footer class="h-1/5 flex flex-col justify-end">
+    <footer class="h-1/5 flex flex-col justify-end ">
         <a href="#main_content">
             <svg class="animate-bounce" t="1629475731927" class="icon" viewBox="0 0 1024 1024" version="1.1"
                  xmlns="http://www.w3.org/2000/svg" p-id="2357" width="80" height="80">

@@ -7,12 +7,12 @@ let a1 = {name: &amp;#39;a1&amp;#39;} let b1 = Object.create(a1) b1.name = &amp;
  let b=Object.create(null,{ a:{value:&amp;#39;ohh&amp;#39;, enumerable:true}, b:{value:&amp;#39;jqf&amp;#39;}, }) console.log(Object.getOwnPropertyDescriptors(b)); //a: {value: &amp;#34;ohh&amp;#34;, writable: false, enumerable: true, configurable: false} //b: {value: &amp;#34;jqf&amp;#34;, writable: false, enumerable: false, configurable: false} __proto__ 说明： 能设置，能获取，实质上是setter，getter
 let a2 = {name: &amp;#39;a2&amp;#39;} let b2 = {name: &amp;#39;b2&amp;#39;} a2.__proto__ = b2 console.log(a2); console.log(a2.__proto__);//{name: &amp;#34;b2&amp;#34;}  关于__proto__是setter,getter？'><title>JavaScript中的继承与原型链分析</title>
 <link rel='canonical' href='https://www.fintinger.site/p/javascript%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%88%86%E6%9E%90/'>
+<link rel="stylesheet" href="/scss/loadingPage.css">
+
 
 <link rel="stylesheet" href="/scss/style.min.css">
 
-<link rel="stylesheet" href="/scss/external/tailwind.min.css">
-
-<link rel="stylesheet" href="/scss/loadingPage.css"><meta property='og:title' content='JavaScript中的继承与原型链分析'>
+<link rel="stylesheet" href="/scss/external/tailwind.min.css"><meta property='og:title' content='JavaScript中的继承与原型链分析'>
 <meta property='og:description' content='原型链自定义设置  原型链的设置可以通过Object.creative , __proto__, Object.setProperty三种方法
  Object.creative () 说明： 该方法只能设置原型链，而不能获取
 let a1 = {name: &amp;#39;a1&amp;#39;} let b1 = Object.create(a1) b1.name = &amp;#39;b1&amp;#39; console.log(b1);  Object.creative()为创建对象的方法，第一个参数为其原型对象，第二个参数为其默认属性，这些属性默认是不可写，不可遍历，不可修改的
@@ -38,18 +38,18 @@ let a2 = {name: &amp;#39;a2&amp;#39;} let b2 = {name: &amp;#39;b2&amp;#39;} a2._
 <div style="background:url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg') center/cover;"
      class="welcome_page w-full h-screen shadow-2xl flex flex-col justify-center items-center">
     <div style="user-select: none"
-         class="h-max xl:w-max py-10 xl:py-32 px-32 xl:px-96 bg-gray-100 rounded-2xl shadow-2xl cursor-pointer flex flex-col justify-center relative">
+         class="h-max xl:w-max py-10 xl:py-32 px-32 xl:px-96 bg-gray-100 rounded-2xl shadow-2xl  flex flex-col justify-center relative mb-10">
         <span class="absolute w-16 h-16 bg-purple-200 bg-opacity0 top-14 right-14 rounded-full text-center border-2 border-purple-600 border-opacity-10 leading-loose text-3xl animate-pulse">😋</span>
         <div class="flex flex-col items-center space-y-8 font-sans">
             <div style="background: url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg') center/cover"
                  class="w-44 h-44 rounded-full"></div>
             <h1 class="text-6xl font-semibold">ARCHAI</h1>
             <p style="margin-top: 7px" class="text-xl text-gray-500">Undergraduate / Rookie</p>
-            <div class="bg-purple-600 px-5 py-3 rounded-md "><a href="#main_content"
+            <div class="bg-purple-600 px-5 py-3 rounded-md cursor-pointer"><a href="#main_content"
                                                                 class="text-white hover:text-white">Read more</a></div>
         </div>
     </div>
-    <footer class="h-1/5 flex flex-col justify-end">
+    <footer class="h-1/5 flex flex-col justify-end ">
         <a href="#main_content">
             <svg class="animate-bounce" t="1629475731927" class="icon" viewBox="0 0 1024 1024" version="1.1"
                  xmlns="http://www.w3.org/2000/svg" p-id="2357" width="80" height="80">

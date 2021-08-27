@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='特征值与特征向量 性质  1.不同特征值的特征向量线性无关。
+2.ｋ重特征值至多有ｋ个线性无关的特征向量。(※)
+ 基本运算逻辑  
+  三角矩阵特征值为主对角线元素⭐
+注意，当$\lambda=1$时😢
+  秩为1的矩阵A
+ 特征值 $\sum_{aii},0,0&amp;hellip;$ $A^n=\sum_{aii}^{n-1} A$​  特征值证明：
+  求特征值不能先对A做任何变换，而应该带着λ变换
+ 定义法  
+  如果两矩阵相似
+
+即 “两矩阵相似则具有相同特征值，特征向量也存在关系”
+ 真题&amp;amp;例题 常识题？😢
+
+关于AB=0引申出的一题多解
+
+相似  AB相似，则 A&#43;kE ~ B&#43;kE
+ 行列式相等 俩秩相等 特征值相等 绩相等  利用已知构造方程组求参，进行预处理
+  由 $A^n=PB^nP^{-1}$
+ 若取B为∧，容易求得$A^n$​的值。(其他方法) 特征值也存在关系。(特征值规律)    用相似的传递性证明两矩阵相似'><title>线性代数——特征值特征向量</title>
+<link rel='canonical' href='https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/'>
+<link rel="stylesheet" href="/scss/loadingPage.css">
+
+
+<link rel="stylesheet" href="/scss/style.min.css">
+
+<link rel="stylesheet" href="/scss/external/tailwind.min.css"><meta property='og:title' content='线性代数——特征值特征向量'>
+<meta property='og:description' content='特征值与特征向量 性质  1.不同特征值的特征向量线性无关。
+2.ｋ重特征值至多有ｋ个线性无关的特征向量。(※)
+ 基本运算逻辑  
+  三角矩阵特征值为主对角线元素⭐
+注意，当$\lambda=1$时😢
+  秩为1的矩阵A
+ 特征值 $\sum_{aii},0,0&amp;hellip;$ $A^n=\sum_{aii}^{n-1} A$​  特征值证明：
+  求特征值不能先对A做任何变换，而应该带着λ变换
+ 定义法  
+  如果两矩阵相似
+
+即 “两矩阵相似则具有相同特征值，特征向量也存在关系”
+ 真题&amp;amp;例题 常识题？😢
+
+关于AB=0引申出的一题多解
+
+相似  AB相似，则 A&#43;kE ~ B&#43;kE
+ 行列式相等 俩秩相等 特征值相等 绩相等  利用已知构造方程组求参，进行预处理
+  由 $A^n=PB^nP^{-1}$
+ 若取B为∧，容易求得$A^n$​的值。(其他方法) 特征值也存在关系。(特征值规律)    用相似的传递性证明两矩阵相似'>
+<meta property='og:url' content='https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/'>
+<meta property='og:site_name' content='Archai &#39;s blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='线性代数' /><meta property='article:published_time' content='2021-08-23T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-08-23T00:00:00&#43;00:00'/><meta property='og:image' content='https://picsum.photos/seed/eigenvalue/640/360' />
+<meta name="twitter:title" content="线性代数——特征值特征向量">
+<meta name="twitter:description" content="特征值与特征向量 性质  1.不同特征值的特征向量线性无关。
+2.ｋ重特征值至多有ｋ个线性无关的特征向量。(※)
+ 基本运算逻辑  
+  三角矩阵特征值为主对角线元素⭐
+注意，当$\lambda=1$时😢
+  秩为1的矩阵A
+ 特征值 $\sum_{aii},0,0&amp;hellip;$ $A^n=\sum_{aii}^{n-1} A$​  特征值证明：
+  求特征值不能先对A做任何变换，而应该带着λ变换
+ 定义法  
+  如果两矩阵相似
+
+即 “两矩阵相似则具有相同特征值，特征向量也存在关系”
+ 真题&amp;amp;例题 常识题？😢
+
+关于AB=0引申出的一题多解
+
+相似  AB相似，则 A&#43;kE ~ B&#43;kE
+ 行列式相等 俩秩相等 特征值相等 绩相等  利用已知构造方程组求参，进行预处理
+  由 $A^n=PB^nP^{-1}$
+ 若取B为∧，容易求得$A^n$​的值。(其他方法) 特征值也存在关系。(特征值规律)    用相似的传递性证明两矩阵相似"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://picsum.photos/seed/eigenvalue/640/360' />
+    <link rel="shortcut icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico" />
+
+</head>
+<body style="overflow-y: hidden" class="
+    article-page has-toc
+">
+
+<div style="background:url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg') center/cover;"
+     class="welcome_page w-full h-screen shadow-2xl flex flex-col justify-center items-center">
+    <div style="user-select: none"
+         class="h-max xl:w-max py-10 xl:py-32 px-32 xl:px-96 bg-gray-100 rounded-2xl shadow-2xl  flex flex-col justify-center relative mb-10">
+        <span class="absolute w-16 h-16 bg-purple-200 bg-opacity0 top-14 right-14 rounded-full text-center border-2 border-purple-600 border-opacity-10 leading-loose text-3xl animate-pulse">😋</span>
+        <div class="flex flex-col items-center space-y-8 font-sans">
+            <div style="background: url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg') center/cover"
+                 class="w-44 h-44 rounded-full"></div>
+            <h1 class="text-6xl font-semibold">ARCHAI</h1>
+            <p style="margin-top: 7px" class="text-xl text-gray-500">Undergraduate / Rookie</p>
+            <div class="bg-purple-600 px-5 py-3 rounded-md cursor-pointer"><a href="#main_content"
+                                                                class="text-white hover:text-white">Read more</a></div>
+        </div>
+    </div>
+    <footer class="h-1/5 flex flex-col justify-end ">
+        <a href="#main_content">
+            <svg class="animate-bounce" t="1629475731927" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                 xmlns="http://www.w3.org/2000/svg" p-id="2357" width="80" height="80">
+                <path d="M896.32 336.992 523.648 709.664c-0.064 0.064-0.16 0.064-0.192 0.128-0.064 0.064-0.064 0.128-0.128 0.192-2.752 2.752-6.304 4.032-9.952 4.32-0.48 0.032-0.896 0.256-1.376 0.256-0.48 0-0.896-0.192-1.376-0.256-3.648-0.288-7.2-1.568-9.952-4.32-0.064-0.064-0.064-0.128-0.128-0.192-0.064-0.064-0.16-0.064-0.192-0.128L127.68 336.992c-6.432-6.432-6.592-16.704-0.32-22.976 6.24-6.24 16.512-6.112 22.976 0.32L512 676.064 873.696 314.368c6.432-6.432 16.704-6.592 22.976-0.32C902.912 320.288 902.752 330.56 896.32 336.992z"
+                      p-id="2358" fill="#dbdbdb"></path>
+            </svg>
+        </a>
+    </footer>
+</div>
+
+<div class="loading-page w-full h-full z-50 fixed top-0 text-purple-900 flex justify-center items-center">
+    <div class="load-3">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</div>
+<div id="main_content" class="main_content">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="https://www.fintinger.site" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>Back</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/">
+            
+            <img src="https://picsum.photos/seed/eigenvalue/640/360" loading="lazy" alt="Featured image of post 线性代数——特征值特征向量" />
+            
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" >
+                学习总结
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/">线性代数——特征值特征向量</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Aug 23, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 min read
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h2 id="特征值与特征向量">特征值与特征向量</h2>
+<h3 id="性质">性质</h3>
+<blockquote>
+<p>1.不同特征值的特征向量线性无关。</p>
+<p>2.ｋ重特征值至多有ｋ个线性无关的特征向量。(※)</p>
+</blockquote>
+<h3 id="基本运算逻辑">基本运算逻辑</h3>
+<blockquote>
+<p><figure style="flex-grow: 178; flex-basis: 428px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823161157458.png" data-size="1409x789"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823161157458.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823161157458_huaca28621f111fc4ce3eee9c6d9115604_893985_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823161157458_huaca28621f111fc4ce3eee9c6d9115604_893985_1024x0_resize_box_3.png 1024w"
+				width="1409"
+				height="789"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+</blockquote>
+<blockquote>
+<p><strong>三角矩阵特征值为主对角线元素⭐</strong></p>
+<p><img src="index.assets/image-20210823162054364.png" style="zoom:80%;" /></p>
+<p>注意，当$\lambda=1$时😢</p>
+<p><img src="index.assets/image-20210823162232681.png" style="zoom:98%;" /></p>
+</blockquote>
+<blockquote>
+<p><strong>秩为1的矩阵A</strong></p>
+<ul>
+<li>特征值 $\sum_{aii},0,0&hellip;$</li>
+<li>$A^n=\sum_{aii}^{n-1} A$​</li>
+</ul>
+<p>特征值证明：</p>
+<p><img src="index.assets/image-20210823163039209.png" style="zoom:80%;" /></p>
+</blockquote>
+<blockquote>
+<p><strong>求特征值不能先对A做任何变换，而应该带着λ变换</strong></p>
+</blockquote>
+<h3 id="定义法">定义法</h3>
+<blockquote>
+<p><figure style="flex-grow: 671; flex-basis: 1611px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823163524579.png" data-size="913x136"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823163524579.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823163524579_hu93e0dbf017dd7d9053a21ad026b1d7bb_48343_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823163524579_hu93e0dbf017dd7d9053a21ad026b1d7bb_48343_1024x0_resize_box_3.png 1024w"
+				width="913"
+				height="136"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+</blockquote>
+<blockquote>
+<p><strong>如果两矩阵相似</strong></p>
+<p><figure style="flex-grow: 346; flex-basis: 830px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823165733234.png" data-size="1346x389"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823165733234.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823165733234_hu5738fc5d8d329615257f86a84dfb31b3_387181_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823165733234_hu5738fc5d8d329615257f86a84dfb31b3_387181_1024x0_resize_box_3.png 1024w"
+				width="1346"
+				height="389"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<p>即 <strong>“两矩阵相似则具有相同特征值，特征向量也存在关系”</strong></p>
+</blockquote>
+<h4 id="真题例题">真题&amp;例题</h4>
+<p>常识题？😢</p>
+<p><figure style="flex-grow: 156; flex-basis: 374px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823163744984.png" data-size="963x617"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823163744984.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823163744984_hu30213362639ddc8ac5e620a5b4641c75_221469_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823163744984_hu30213362639ddc8ac5e620a5b4641c75_221469_1024x0_resize_box_3.png 1024w"
+				width="963"
+				height="617"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<p>关于<strong>AB=0</strong>引申出的一题多解</p>
+<p><figure style="flex-grow: 67; flex-basis: 161px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823165301880.png" data-size="950x1409"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823165301880.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823165301880_huf466194114653085b17d36173cc23d5e_1114565_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210823165301880_huf466194114653085b17d36173cc23d5e_1114565_1024x0_resize_box_3.png 1024w"
+				width="950"
+				height="1409"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<h2 id="相似">相似</h2>
+<blockquote>
+<p>AB相似，则 <strong>A+kE ~ B+kE</strong></p>
+<ul>
+<li>行列式相等</li>
+<li>俩秩相等</li>
+<li>特征值相等</li>
+<li>绩相等</li>
+</ul>
+<p><strong>利用已知构造方程组求参，进行预处理</strong></p>
+</blockquote>
+<blockquote>
+<p>由 $A^n=PB^nP^{-1}$</p>
+<ul>
+<li>若取<strong>B为∧</strong>，容易求得$A^n$​的值。<a class="link" href="../%e7%ba%bf%e6%80%a7%e4%bb%a3%e6%95%b0%e7%9f%a9%e9%98%b5/#an" >(其他方法)</a></li>
+<li>特征值也存在关系。(<a class="link" href="./#%e5%ae%9a%e4%b9%89%e6%b3%95" >特征值规律</a>)</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>用相似的传递性证明两矩阵相似</strong></p>
+</blockquote>
+<h3 id="a-">A~∧ ⭐</h3>
+<blockquote>
+<p>A~∧，$A=P∧P^{-1}$则</p>
+<ul>
+<li>∧是矩阵A的特征值</li>
+<li>P列向量是A的特征向量</li>
+</ul>
+<p>（<strong>要对应，别错位</strong>）</p>
+<ul>
+<li><strong>A~∧  ⇔   矩阵A有n个线性无关的特征向量。</strong> （注意是充要条件）</li>
+</ul>
+<p><figure style="flex-grow: 165; flex-basis: 396px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826162913554.png" data-size="1334x807"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826162913554.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826162913554_hud1e770351612881f318a3cf98940cf9a_916535_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826162913554_hud1e770351612881f318a3cf98940cf9a_916535_1024x0_resize_box_3.png 1024w"
+				width="1334"
+				height="807"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+</blockquote>
+<blockquote>
+<p>要<strong>求解A~∧(相似对角化)</strong> ，注意下面图解</p>
+<ol>
+<li>检查是否和对称矩阵相似</li>
+<li>检查是否有n个特征值</li>
+<li>检查k重特征值是否有k个无关的特征向量(n-r(λE-A))</li>
+</ol>
+<p><figure style="flex-grow: 169; flex-basis: 407px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826164534300.png" data-size="1433x844"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826164534300.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826164534300_hucc136545b4c2906741ee4c6d6c97de4a_888013_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826164534300_hucc136545b4c2906741ee4c6d6c97de4a_888013_1024x0_resize_box_3.png 1024w"
+				width="1433"
+				height="844"
+				loading="lazy"
+				alt="⇳">
+		</a>
+		
+		<figcaption>⇳</figcaption>
+		
+	</figure></p>
+<p><figure style="flex-grow: 402; flex-basis: 966px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826164634618.png" data-size="1079x268"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826164634618.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826164634618_huf9fc2eb9086cc39600584ed9b8961386_171326_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826164634618_huf9fc2eb9086cc39600584ed9b8961386_171326_1024x0_resize_box_3.png 1024w"
+				width="1079"
+				height="268"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+</blockquote>
+<h4 id="例题">例题</h4>
+<p><figure style="flex-grow: 253; flex-basis: 608px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826170449802.png" data-size="1256x495"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826170449802.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826170449802_hu28f52042aad739c39f738c227a2d8b03_319523_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210826170449802_hu28f52042aad739c39f738c227a2d8b03_319523_1024x0_resize_box_3.png 1024w"
+				width="1256"
+				height="495"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<blockquote>
+<p>一正一负必能相似对角化</p>
+</blockquote>
+<p><figure style="flex-grow: 66; flex-basis: 160px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827163729532.png" data-size="950x1423"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827163729532.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827163729532_hucdb89e7ab2b56b528a0244802e6fed42_623492_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827163729532_hucdb89e7ab2b56b528a0244802e6fed42_623492_1024x0_resize_box_3.png 1024w"
+				width="950"
+				height="1423"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<blockquote>
+<p>第(1)问这一思路一定要熟练把握$A\alpha$出现求特征值，想到用定义！！</p>
+<p>第（2）问两种思路，</p>
+</blockquote>
+<p><strong>已知特征值、特征向量反求A矩阵</strong></p>
+<p><figure style="flex-grow: 142; flex-basis: 341px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827165258198.png" data-size="1022x719"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827165258198.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827165258198_hu51d8ba4eeccba7c2028d020634ab9bd1_300896_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827165258198_hu51d8ba4eeccba7c2028d020634ab9bd1_300896_1024x0_resize_box_3.png 1024w"
+				width="1022"
+				height="719"
+				loading="lazy"
+				alt="image-20210827165258198">
+		</a>
+		
+		<figcaption>image-20210827165258198</figcaption>
+		
+	</figure></p>
+<h2 id="实对称">实对称</h2>
+<h3 id="性质-1">性质</h3>
+<blockquote>
+<ol>
+<li>
+<p>实对称矩阵必与对角矩阵相似；</p>
+</li>
+<li>
+<p>实对称矩阵特征值不同特征向量相互正交；</p>
+<blockquote>
+<p>内积为0 ⇒ 齐次方程组 ⇒ 求得特征值</p>
+</blockquote>
+</li>
+<li>
+<p>实对称矩阵可用正交矩阵相似对角化</p>
+<blockquote>
+<p>$Q^{-1}AQ=Q^{T}AQ$</p>
+</blockquote>
+</li>
+<li>
+<p>实对称矩阵特征值必为实数</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="例题-1">例题</h3>
+<p><figure style="flex-grow: 104; flex-basis: 250px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827170742051.png" data-size="940x899"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827170742051.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827170742051_hubfd6bf2539f6547d78c0984a9abc5a9b_442818_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827170742051_hubfd6bf2539f6547d78c0984a9abc5a9b_442818_1024x0_resize_box_3.png 1024w"
+				width="940"
+				height="899"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<h3 id="用正交矩阵相似对角化">用正交矩阵相似对角化</h3>
+<p><figure style="flex-grow: 115; flex-basis: 277px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827171630484.png" data-size="1137x982"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827171630484.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827171630484_hu9e123680e6be5d7170da8a174401f95b_837721_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827171630484_hu9e123680e6be5d7170da8a174401f95b_837721_1024x0_resize_box_3.png 1024w"
+				width="1137"
+				height="982"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<blockquote>
+<p>对比<a class="link" href="./#a-" >相似矩阵对角化</a></p>
+<p>这里需要用到正交化↧</p>
+</blockquote>
+<h3 id="schmidt正交化">Schmidt正交化</h3>
+<p><figure style="flex-grow: 233; flex-basis: 561px">
+		<a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827174206234.png" data-size="1167x499"><img src="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827174206234.png"
+				srcset="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827174206234_hu10ae3f6bc248d5ab0a54b717f6ca66fe_277704_480x0_resize_box_3.png 480w, /p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/index.assets/image-20210827174206234_hu10ae3f6bc248d5ab0a54b717f6ca66fe_277704_1024x0_resize_box_3.png 1024w"
+				width="1167"
+				height="499"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<blockquote>
+<p>||β|| 是向量的长度</p>
+<p>分子为内积</p>
+<p>分母为平方和</p>
+</blockquote>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"integrity="sha384-vZTG03m&#43;2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://picsum.photos/seed/equationset/640/360" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/equationset/640/360"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">线性代数——方程组</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://picsum.photos/seed/vector/640/360" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/vector/640/360"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">线性代数——向量</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://picsum.photos/seed/matrix/640/" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/matrix/640/"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">线性代数——矩阵</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://picsum.photos/seed/det/640/360" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/det/640/360"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">线性代数——行列式</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://picsum.photos/seed/kongjianguali/640/360" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/kongjianguali/640/360"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">向量空间管理策略</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    <script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://waline-q3l7of5hj-fintinger.vercel.app/","visitor":true});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2018 - 
+        
+        2021 Archai &#39;s blog
+    </section>
+    
+    <section class="powerby">
+        
+            Archai <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+        </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">Table of contents</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#特征值与特征向量">特征值与特征向量</a>
+      <ol>
+        <li><a href="#性质">性质</a></li>
+        <li><a href="#基本运算逻辑">基本运算逻辑</a></li>
+        <li><a href="#定义法">定义法</a>
+          <ol>
+            <li><a href="#真题例题">真题&amp;例题</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#相似">相似</a>
+      <ol>
+        <li><a href="#a-">A~∧ ⭐</a>
+          <ol>
+            <li><a href="#例题">例题</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#实对称">实对称</a>
+      <ol>
+        <li><a href="#性质-1">性质</a></li>
+        <li><a href="#例题-1">例题</a></li>
+        <li><a href="#用正交矩阵相似对角化">用正交矩阵相似对角化</a></li>
+        <li><a href="#schmidt正交化">Schmidt正交化</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+    </div>
+    <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script type="text/javascript" src="/js/clipboard/clipbordComplete.js" defer></script>
+<script type="text/javascript" src="/js/loadingPage.js" defer></script>
+<script type="text/javascript" src="/js/welcomePage.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+
+    <div style="background:url('https://s2.hdslb.com/bfs/static/blive/blfe-dynamic-web/static/img/rocket_top.bcc748c3.png') center/cover;display: none"
+         id="goTop"
+         class="xl:w-60 xl:h-60 w-48 h-48 fixed  bg-gray-900 z-40 right-0 bottom-0 xl:right-10 xl:bottom-10 cursor-pointer"></div>
+</div>
+</body>
+</html>
