@@ -6,7 +6,74 @@
         <description>Recent content on Archai &#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Mon, 23 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 28 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>线性代数—-常用公式定理总结</title>
+        <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/</link>
+        <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/</guid>
+        <description>&lt;img src="https://picsum.photos/seed/formulary/640/360" alt="Featured image of post 线性代数—-常用公式定理总结" /&gt;&lt;h2 id=&#34;公式&#34;&gt;公式&lt;/h2&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 17; flex-basis: 43px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/gs.png&#34; data-size=&#34;950x5294&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/gs.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/gs_hu872639653affa295458b3c4108485fef_1027481_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/gs_hu872639653affa295458b3c4108485fef_1027481_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;950&#34;
+				height=&#34;5294&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;公式&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;公式&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;定理&#34;&gt;定理&lt;/h2&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 16; flex-basis: 40px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/dl.png&#34; data-size=&#34;950x5647&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/dl.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/dl_hu8ac4230b0ece40d23a1b78ab8cf53521_1203411_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/dl_hu8ac4230b0ece40d23a1b78ab8cf53521_1203411_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;950&#34;
+				height=&#34;5647&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;定理&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;定理&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;附录&#34;&gt;附录&lt;/h2&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 33; flex-basis: 81px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/fl.png&#34; data-size=&#34;950x2801&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/fl.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/fl_hucc1446a501f880448d5bae2496bb1f09_511381_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/fl_hucc1446a501f880448d5bae2496bb1f09_511381_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;950&#34;
+				height=&#34;2801&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;附录(秩)&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;附录(秩)&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;yo起来&#34;&gt;YO起来！&lt;/h2&gt;
+
+
+
+
+
+
+    
+
+
+&lt;div class=&#34;video-wrapper&#34;&gt;
+    &lt;iframe src=&#34;//player.bilibili.com/player.html?as_wide=1&amp;amp;high_quality=1&amp;amp;page=1&amp;bvid=BV1dg41157Uy&#34;
+            scrolling=&#34;no&#34;
+            frameborder=&#34;no&#34;
+            framespacing=&#34;0&#34;
+            allowfullscreen=&#34;true&#34;
+    &gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+        </item>
+        <item>
         <title>线性代数——特征值特征向量</title>
         <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/</link>
         <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
