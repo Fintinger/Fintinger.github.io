@@ -152,11 +152,11 @@ let set=new Set([&amp;#39;jqf&amp;#39;,&amp;#39;fin&amp;#39;,&amp;#39;zzh&amp;#3
     </item>
     
     <item>
-      <title></title>
-      <link>https://www.fintinger.site/p/</link>
+      <title>JavaScript基础之Symbol类型</title>
+      <link>https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bsymbol%E7%B1%BB%E5%9E%8B/</link>
       <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/</guid>
+      <guid>https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bsymbol%E7%B1%BB%E5%9E%8B/</guid>
       <description>Symbol() 类型不能当做普通对象(不能加属性值)，只能当做一种永远都不会重复的字符串
  定义 方法： Symbol(desc)、Symbol.for(desc)
 let s1 = Symbol(&amp;#39;d&amp;#39;) let s2 = Symbol.for(&amp;#39;d&amp;#39;) let s3 = Symbol.for(&amp;#39;d&amp;#39;) console.log(s1.description);//d console.log(Symbol.keyFor(s2));//d console.log(s1 === s3);//false console.log(s2 === s3);//true 注意： 利用Symbol() 定义的值永远都不会相等，而Symbol.for() 定义的，如果描述相同，则值相等

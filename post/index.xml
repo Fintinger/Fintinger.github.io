@@ -6,17 +6,44 @@
     <description>Recent content in Posts on Archai &#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 28 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>线性代数—-常用公式定理总结</title>
-      <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/</link>
-      <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
+      <title>线性代数——常用公式定理总结</title>
+      <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/</guid>
       <description>公式 公式
 定理 定理
 附录 附录(秩)
 YO起来！ </description>
+    </item>
+    
+    <item>
+      <title>线性代数——二次型</title>
+      <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/</link>
+      <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/</guid>
+      <description>性质定理  二次型$x^{T}Ax$经坐标变换$x=Cy$得二次型$y^{T}By$，其中 $B=C^{T}C$，通俗的讲，就是 二次型矩阵经过任意的一次坐标变换得到新的二次型，前后二次型矩阵合同。
+  任一二次型都可经坐标变换变成标准型。
+  配方法
+从$x_1$开始先合并再配方，将 f(x)⇒f(y)
+  正交变换法
+   例题 
+ 说明在正交变换下，A不仅与∧合同，而且A与∧相似
+ 用正交变换化二次型为标准形  参考用正交矩阵相似对角化
+ 
+ 若是求正负惯性指数，根据特征值即可得到（特征值是二次型二次项系数✅）
+ 标准型到规范型 
+
+ 标准型到规范性与系数的大小无关，只与系数的正负相关，即正负惯性系数，注意先排序，依次“大于0，等于0，小于0&amp;hellip;”
+ 例题 
+ 第一问参数的求解用到标准型化成规范型的规律。
+第二问的求解实际上就是正交矩阵相似对角化
+ 正定  
+  注意正定矩阵是二次型，所以正定矩阵必对称，检验正定之前，先检验对称性，即证明$A^{T}=A$
+ 正定必要条件  $a_{ii}&amp;gt;0$ |A| &amp;gt; 0  正定充分必要条件  顺序主子式全大于0 特征值大于0 正惯性指数 p=n $A=C^TEC$，其中C可逆 ▲  经典例题 九几年的</description>
     </item>
     
     <item>
@@ -628,11 +655,11 @@ let set=new Set([&amp;#39;jqf&amp;#39;,&amp;#39;fin&amp;#39;,&amp;#39;zzh&amp;#3
     </item>
     
     <item>
-      <title></title>
-      <link>https://www.fintinger.site/p/</link>
+      <title>JavaScript基础之Symbol类型</title>
+      <link>https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bsymbol%E7%B1%BB%E5%9E%8B/</link>
       <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/</guid>
+      <guid>https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bsymbol%E7%B1%BB%E5%9E%8B/</guid>
       <description>Symbol() 类型不能当做普通对象(不能加属性值)，只能当做一种永远都不会重复的字符串
  定义 方法： Symbol(desc)、Symbol.for(desc)
 let s1 = Symbol(&amp;#39;d&amp;#39;) let s2 = Symbol.for(&amp;#39;d&amp;#39;) let s3 = Symbol.for(&amp;#39;d&amp;#39;) console.log(s1.description);//d console.log(Symbol.keyFor(s2));//d console.log(s1 === s3);//false console.log(s2 === s3);//true 注意： 利用Symbol() 定义的值永远都不会相等，而Symbol.for() 定义的，如果描述相同，则值相等

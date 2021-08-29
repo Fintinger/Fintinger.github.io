@@ -6,16 +6,16 @@
         <description>Recent content on Archai &#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Sat, 28 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>线性代数—-常用公式定理总结</title>
-        <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/</link>
-        <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
+        <lastBuildDate>Sun, 29 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>线性代数——常用公式定理总结</title>
+        <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/</link>
+        <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
         
-        <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/</guid>
-        <description>&lt;img src="https://picsum.photos/seed/formulary/640/360" alt="Featured image of post 线性代数—-常用公式定理总结" /&gt;&lt;h2 id=&#34;公式&#34;&gt;公式&lt;/h2&gt;
+        <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/</guid>
+        <description>&lt;img src="https://picsum.photos/seed/formulary/640/360" alt="Featured image of post 线性代数——常用公式定理总结" /&gt;&lt;h2 id=&#34;公式&#34;&gt;公式&lt;/h2&gt;
 &lt;p&gt;&lt;figure style=&#34;flex-grow: 17; flex-basis: 43px&#34;&gt;
-		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/gs.png&#34; data-size=&#34;950x5294&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/gs.png&#34;
-				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/gs_hu872639653affa295458b3c4108485fef_1027481_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/gs_hu872639653affa295458b3c4108485fef_1027481_1024x0_resize_box_3.png 1024w&#34;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/gs.png&#34; data-size=&#34;950x5294&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/gs.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/gs_hu872639653affa295458b3c4108485fef_1027481_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/gs_hu872639653affa295458b3c4108485fef_1027481_1024x0_resize_box_3.png 1024w&#34;
 				width=&#34;950&#34;
 				height=&#34;5294&#34;
 				loading=&#34;lazy&#34;
@@ -27,8 +27,8 @@
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;h2 id=&#34;定理&#34;&gt;定理&lt;/h2&gt;
 &lt;p&gt;&lt;figure style=&#34;flex-grow: 16; flex-basis: 40px&#34;&gt;
-		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/dl.png&#34; data-size=&#34;950x5647&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/dl.png&#34;
-				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/dl_hu8ac4230b0ece40d23a1b78ab8cf53521_1203411_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/dl_hu8ac4230b0ece40d23a1b78ab8cf53521_1203411_1024x0_resize_box_3.png 1024w&#34;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/dl.png&#34; data-size=&#34;950x5647&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/dl.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/dl_hu8ac4230b0ece40d23a1b78ab8cf53521_1203411_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/dl_hu8ac4230b0ece40d23a1b78ab8cf53521_1203411_1024x0_resize_box_3.png 1024w&#34;
 				width=&#34;950&#34;
 				height=&#34;5647&#34;
 				loading=&#34;lazy&#34;
@@ -40,8 +40,8 @@
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;h2 id=&#34;附录&#34;&gt;附录&lt;/h2&gt;
 &lt;p&gt;&lt;figure style=&#34;flex-grow: 33; flex-basis: 81px&#34;&gt;
-		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/fl.png&#34; data-size=&#34;950x2801&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/fl.png&#34;
-				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/fl_hucc1446a501f880448d5bae2496bb1f09_511381_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/fl_hucc1446a501f880448d5bae2496bb1f09_511381_1024x0_resize_box_3.png 1024w&#34;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/fl.png&#34; data-size=&#34;950x2801&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/fl.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/fl_hucc1446a501f880448d5bae2496bb1f09_511381_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/index.assets/fl_hucc1446a501f880448d5bae2496bb1f09_511381_1024x0_resize_box_3.png 1024w&#34;
 				width=&#34;950&#34;
 				height=&#34;2801&#34;
 				loading=&#34;lazy&#34;
@@ -71,6 +71,188 @@
     &lt;/iframe&gt;
 &lt;/div&gt;
 
+</description>
+        </item>
+        <item>
+        <title>线性代数——二次型</title>
+        <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/</link>
+        <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/</guid>
+        <description>&lt;img src="https://picsum.photos/seed/ercixing/640/360" alt="Featured image of post 线性代数——二次型" /&gt;&lt;h2 id=&#34;性质定理&#34;&gt;性质定理&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;二次型$x^{T}Ax$经坐标变换$x=Cy$得二次型$y^{T}By$，其中 $B=C^{T}C$，通俗的讲，就是 &lt;strong&gt;二次型矩阵经过任意的一次坐标变换得到新的二次型，前后二次型矩阵合同。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;任一二次型都可经坐标变换&lt;strong&gt;变成标准型&lt;/strong&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;配方法&lt;/p&gt;
+&lt;p&gt;从$x_1$开始先合并再配方，将 f(x)⇒f(y)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;正交变换法&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;index.assets/image-20210828165928477.png&#34; style=&#34;zoom:100%;&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;例题&#34;&gt;例题&lt;/h3&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 95; flex-basis: 229px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210828173057239.png&#34; data-size=&#34;914x955&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210828173057239.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210828173057239_hu02b7bb1d5db773d725e67a9df68f193d_440155_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210828173057239_hu02b7bb1d5db773d725e67a9df68f193d_440155_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;914&#34;
+				height=&#34;955&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;说明&lt;strong&gt;在正交变换下，A不仅与∧合同，而且A与∧相似&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;用正交变换化二次型为标准形&#34;&gt;用正交变换化二次型为标准形&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;../%e7%ba%bf%e6%80%a7%e4%bb%a3%e6%95%b0%e7%89%b9%e5%be%81%e5%80%bc%e7%89%b9%e5%be%81%e5%90%91%e9%87%8f#%e7%94%a8%e6%ad%a3%e4%ba%a4%e7%9f%a9%e9%98%b5%e7%9b%b8%e4%bc%bc%e5%af%b9%e8%a7%92%e5%8c%96&#34; &gt;用正交矩阵相似对角化&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 293; flex-basis: 705px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210828174229211.png&#34; data-size=&#34;1120x381&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210828174229211.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210828174229211_hu69ea8b7ff3f7c75d07ec2aa1dbcea3fb_393702_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210828174229211_hu69ea8b7ff3f7c75d07ec2aa1dbcea3fb_393702_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1120&#34;
+				height=&#34;381&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;若是求正负惯性指数，根据特征值即可得到（特征值是二次型二次项系数✅）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;标准型到规范型&#34;&gt;标准型到规范型&lt;/h3&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 277; flex-basis: 667px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210828174554399.png&#34; data-size=&#34;1412x508&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210828174554399.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210828174554399_hu8a2c82a5c94f58a298e011e2b831a82d_352652_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210828174554399_hu8a2c82a5c94f58a298e011e2b831a82d_352652_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1412&#34;
+				height=&#34;508&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 179; flex-basis: 431px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210828175033458.png&#34; data-size=&#34;1399x779&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210828175033458.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210828175033458_hu2a670a926fa01087f18a261442537797_607392_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210828175033458_hu2a670a926fa01087f18a261442537797_607392_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1399&#34;
+				height=&#34;779&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;标准型到规范性与系数的大小无关，只与系数的正负相关，即&lt;strong&gt;正负惯性系数&lt;/strong&gt;，注意先排序，依次“大于0，等于0，小于0&amp;hellip;”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;例题-1&#34;&gt;例题&lt;/h3&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 42; flex-basis: 102px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210828180240337.png&#34; data-size=&#34;950x2219&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210828180240337.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210828180240337_huba0afc5a64208708e7c32e879d1adda3_755934_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210828180240337_huba0afc5a64208708e7c32e879d1adda3_755934_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;950&#34;
+				height=&#34;2219&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;第一问参数的求解用到标准型化成规范型的规律。&lt;/p&gt;
+&lt;p&gt;第二问的求解实际上就是&lt;a class=&#34;link&#34; href=&#34;../%e7%ba%bf%e6%80%a7%e4%bb%a3%e6%95%b0%e7%89%b9%e5%be%81%e5%80%bc%e7%89%b9%e5%be%81%e5%90%91%e9%87%8f#%e7%94%a8%e6%ad%a3%e4%ba%a4%e7%9f%a9%e9%98%b5%e7%9b%b8%e4%bc%bc%e5%af%b9%e8%a7%92%e5%8c%96&#34; &gt;正交矩阵相似对角化&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;正定&#34;&gt;正定&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 232; flex-basis: 558px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210829155936422.png&#34; data-size=&#34;1384x595&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210829155936422.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210829155936422_hub6b704dd3e1c8433104212cdb2e72707_573359_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210829155936422_hub6b704dd3e1c8433104212cdb2e72707_573359_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1384&#34;
+				height=&#34;595&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注意正定矩阵是二次型，所以正定矩阵必对称，检验正定之前，先检验对称性，即证明$A^{T}=A$&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;正定必要条件&#34;&gt;正定必要条件&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;$a_{ii}&amp;gt;0$&lt;/li&gt;
+&lt;li&gt;|A| &amp;gt; 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;正定充分必要条件&#34;&gt;正定充分必要条件&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;顺序主子式全大于0&lt;/li&gt;
+&lt;li&gt;特征值大于0&lt;/li&gt;
+&lt;li&gt;正惯性指数 p=n&lt;/li&gt;
+&lt;li&gt;$A=C^TEC$，其中C可逆 ▲&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;经典例题&#34;&gt;经典例题&lt;/h3&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 443; flex-basis: 1063px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210829161900861.png&#34; data-size=&#34;1356x306&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210829161900861.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210829161900861_hu985e3c76a2ca9c299085200a7144653c_250858_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210829161900861_hu985e3c76a2ca9c299085200a7144653c_250858_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1356&#34;
+				height=&#34;306&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;九几年的&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;九几年的&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$(A^{T}A)^{T}=A^TA$，故$A^{T}A$实对称矩阵&lt;/p&gt;
+&lt;p&gt;现证$\forall X$，有$X^T(A^TA)X&amp;gt;0$&lt;/p&gt;
+&lt;p&gt;$X^T(A^TA)X=(AX)^{T}AX \geq 0$&lt;/p&gt;
+&lt;p&gt;现证$(AX)^{T}AX \neq 0$&lt;/p&gt;
+&lt;p&gt;相当于证 $AX \neq0$&lt;/p&gt;
+&lt;p&gt;由于A-m×n，且r(A)=n&lt;/p&gt;
+&lt;p&gt;故 AX=0只有零解&lt;/p&gt;
+&lt;p&gt;等价于 $\forall X\neq0,AX \neq0$&lt;/p&gt;
+&lt;p&gt;得证&lt;/p&gt;
+&lt;p&gt;即$\forall X, X^T(A^TA)X=(AX)^{T}AX &amp;gt; 0$&lt;/p&gt;
+&lt;p&gt;故$A^TA$为正定矩阵&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;补充：“&lt;strong&gt;反对称矩阵&lt;/strong&gt;”&lt;/p&gt;
+&lt;p&gt;$A^T=-A$&lt;/p&gt;
+&lt;p&gt;规律：&lt;/p&gt;
+&lt;p&gt;$a_{ii} = 0\text{；}a_{ij}=-a_{ji}$&lt;/p&gt;
+&lt;p&gt;$|A|=|A^T|=|A^{-1}|=(-1)^n|A|$，即奇数项行列式必为0&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;合同&#34;&gt;合同&lt;/h2&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 103; flex-basis: 248px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210829164642257.png&#34; data-size=&#34;1008x972&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210829164642257.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210829164642257_huca7a743c54f272e1e266a59e4a5b08b6_509702_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210829164642257_huca7a743c54f272e1e266a59e4a5b08b6_509702_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1008&#34;
+				height=&#34;972&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;相似&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;若不是实对称矩阵，为普通矩阵，则通过∧作为媒介判断，其中∧为特征值组成的🤓&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 190; flex-basis: 457px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210829171155588.png&#34; data-size=&#34;1284x673&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210829171155588.png&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210829171155588_hud47eaa26bde2a97188ff12df09f0e877_440011_480x0_resize_box_3.png 480w, https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.assets/image-20210829171155588_hud47eaa26bde2a97188ff12df09f0e877_440011_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1284&#34;
+				height=&#34;673&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;即 “&lt;strong&gt;相似⇒合同，合同⇏相似&lt;/strong&gt;”&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
         </item>
         <item>
@@ -288,7 +470,7 @@
 &lt;p&gt;实对称矩阵必与对角矩阵相似；&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;实对称矩阵特征值不同特征向量相互正交；&lt;/p&gt;
+&lt;p&gt;实对称矩阵特征值不同特征向量&lt;strong&gt;相互正交&lt;/strong&gt;；&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;内积为0 ⇒ 齐次方程组 ⇒ 求得特征值&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -7264,11 +7446,11 @@ B.m() // 3
 </description>
         </item>
         <item>
-        <title></title>
-        <link>https://www.fintinger.site/p/</link>
+        <title>JavaScript基础之Symbol类型</title>
+        <link>https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bsymbol%E7%B1%BB%E5%9E%8B/</link>
         <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
         
-        <guid>https://www.fintinger.site/p/</guid>
+        <guid>https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bsymbol%E7%B1%BB%E5%9E%8B/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;Symbol()&lt;/code&gt; 类型不能当做普通对象(不能加属性值)，只能当做一种永远都不会重复的字符串&lt;/p&gt;
 &lt;/blockquote&gt;
