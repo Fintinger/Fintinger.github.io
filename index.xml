@@ -5387,7 +5387,7 @@ Algorithms + Data Structures = Programs&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;(x1,y1)为左上角坐标， (x2,y2)为右下角坐标&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://gitee.com/fintinger/figure-bed/raw/master//images/20201003214907.gif&#34; alt=&#34;绘制矩形图示&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;👉&lt;strong&gt;画线条&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;imageLine(img_res,x1,y1,x2,y2,color)
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;imageLine(img_res,x1,y1,x2,y2,color)
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;(x1,y1)与(x2,y2)两点确定的直线。&lt;/p&gt;
 &lt;p&gt;👉 &lt;strong&gt;绘制像素(点)&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;nx&#34;&gt;imagesetpixel&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;img_res&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;y&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;color&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
@@ -6370,7 +6370,7 @@ git tag ...&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&amp;gt;打标签
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;👉 &lt;strong&gt;super在静态方法中及此时的 this 关键字指向&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;super作为对象，用在静态方法之中，这时 super 将直接指向父类，而不是父类的原型对象。&lt;/p&gt;
 &lt;p&gt;在子类的静态方法中通过 super 调用父类的方法时，方法内部的 this 指向当前的子类，而不是子类的实例。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;class A {
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;class A {
   constructor() {
     this.x = 1;
   }
@@ -7875,7 +7875,7 @@ B.m() // 3
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;也可以利用&lt;code&gt;parseInt()&lt;/code&gt;判断&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;let num=2
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;let num=2
 
 console.log(Number.isInteger(num));//true
 console.log(parseInt(num) === num);//true
@@ -9366,7 +9366,7 @@ console.log(parseInt(num) === num);//true
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;用法：&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Vue.directive(name,callback(el,biding))
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Vue.directive(name,callback(el,biding))
 &lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
 &lt;li&gt;name：指令的名称，并不用指定为&lt;code&gt;v-×××&lt;/code&gt;的形式&lt;/li&gt;
 &lt;li&gt;el：调用的元素&lt;/li&gt;
@@ -10095,7 +10095,7 @@ console.log(parseInt(num) === num);//true
 &lt;li&gt;&lt;code&gt;LookupError&lt;/code&gt;指定了未知的编码&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;UnicodeDecodeError&lt;/code&gt;读取文件时无法按指定方式解码&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;def main():
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;def main():
     f = None
     try:
         f = open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;utf-8&#39;)
@@ -10118,7 +10118,7 @@ if __name__ == &#39;__main__&#39;:
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;或者，&lt;/strong&gt;
 &lt;code&gt;with&lt;/code&gt;关键字指定文件对象的上下文环境并在离开上下文环境时自动释放文件资源&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;def main():
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;def main():
     try:
         with open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;utf-8&#39;) as f:
             print(f.read())
@@ -10594,7 +10594,7 @@ $$&lt;/p&gt;
         
         <guid>https://www.fintinger.site/p/%E5%85%B3%E4%BA%8Ejavascript%E6%A8%A1%E5%9D%97%E5%8C%96/</guid>
         <description>&lt;p&gt;模块功能主要由两个命令构成：&lt;code&gt;export&lt;/code&gt;和&lt;code&gt;import&lt;/code&gt;。&lt;code&gt;export&lt;/code&gt;命令用于规定模块的对外接口，&lt;code&gt;import&lt;/code&gt;命令用于输入其他模块提供的功能。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;//profile.js
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//profile.js
 export var firstName = &#39;Michael&#39;;
 export var lastName = &#39;Jackson&#39;;
 export function sayName () {
@@ -10603,12 +10603,12 @@ export function sayName () {
 export default function () {
     console.log(&#39;foo&#39;);
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;// main.js
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;// main.js
 import { firstName, lastName , sayName} from &#39;./profile.js&#39;;
 &lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
 &lt;p&gt;注意：在index.html中引入的时候需要给script加type=&amp;ldquo;module&amp;rdquo;,即&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;script type=&amp;quot;module&amp;quot; src=&amp;quot;./profiles.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;script type=&amp;quot;module&amp;quot; src=&amp;quot;./profiles.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
 &amp;lt;script type=&amp;quot;module&amp;quot; src=&amp;quot;./main.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;hr /&gt;
 &lt;p&gt;&lt;img src=&#34;https://gitee.com/fintinger/figure-bed/raw/master//images/20201012130740.png&#34; alt=&#34; 本文来自公众号“前端者也”&#34;  /&gt;&lt;/p&gt;
@@ -10621,17 +10621,17 @@ import { firstName, lastName , sayName} from &#39;./profile.js&#39;;
         
         <guid>https://www.fintinger.site/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E5%B0%8F%E9%97%AE%E9%A2%98/</guid>
         <description>&lt;h2 id=&#34;1-网页出现横向滚动条&#34;&gt;1. 网页出现横向滚动条？&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;body style=`overflow:-Scroll;overflow-y:hidden &amp;gt;  &amp;lt;/body&amp;gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;body style=`overflow:-Scroll;overflow-y:hidden &amp;gt;  &amp;lt;/body&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;让横条没有：&lt;/em&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt; &amp;lt;body style=`overflow:-Scroll;overflow-x:hidden&amp;gt; &amp;lt;/body&amp;gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; &amp;lt;body style=`overflow:-Scroll;overflow-x:hidden&amp;gt; &amp;lt;/body&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;两个都去掉？更简单了&lt;/em&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;body scroll=&amp;quot;no&amp;quot; &amp;gt;  &amp;lt;/body&amp;gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;body scroll=&amp;quot;no&amp;quot; &amp;gt;  &amp;lt;/body&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;火狐底部滚动条不显示：&lt;/em&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt; html { overflow:-moz-scrollbars-vertical; }
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; html { overflow:-moz-scrollbars-vertical; }
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;2-网页图标&#34;&gt;2. 网页图标？&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;shortcut icon &amp;quot; href=&amp;quot;images/favicon.ico&amp;quot;&amp;gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;shortcut icon &amp;quot; href=&amp;quot;images/favicon.ico&amp;quot;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;3-height100失效&#34;&gt;3. Height:100%失效？&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;html style=&amp;quot;height: 100%;&amp;quot;&amp;gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;html style=&amp;quot;height: 100%;&amp;quot;&amp;gt;
 
         &amp;lt;body style=&amp;quot;height: 100%;&amp;quot;&amp;gt;
 
@@ -10653,23 +10653,23 @@ import { firstName, lastName , sayName} from &#39;./profile.js&#39;;
 &lt;p&gt;&lt;img src=&#34;http://m.qpic.cn/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYk3deCXgANSfusOc27uwWvtbht1AY*rXQHj67maLLPy*B6zFAIM0qX*950aqkK0bmOZ8F1c42GuXetWlvTrzxK1o!/b&amp;amp;bo=tgLRALYC0QACKQ0!&amp;amp;rf=viewer_4&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;==&amp;gt;    height:0;    (将包裹提示的div高度设置为0，让其不再遮挡即可)&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;6input标签显示手势&#34;&gt;6.input标签显示手势？&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;input{
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;input{
 cursor:pointer;           
 }  
  /* 鼠标移入按钮范围时出现手势 */*
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;7-js中的一些语法&#34;&gt;7. JS中的一些语法&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;1&amp;gt; 注意书写其中的  &amp;ldquo;&amp;quot;（引号） ！！！！&lt;/em&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;document.getElementById(&amp;quot;btn&amp;quot;);
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;document.getElementById(&amp;quot;btn&amp;quot;);
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;2&amp;gt;onclick,.onload&amp;hellip;等事件都可以用这个，可以避免代码污染啥的（也不一定）&lt;/em&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;.addEventListener(&#39;click&#39;,function f1() {}**
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.addEventListener(&#39;click&#39;,function f1() {}**
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;3&amp;gt;可以给一个标签中加入另一个标签&lt;/em&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;createElement(&#39;&#39;)***
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;createElement(&#39;&#39;)***
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;8addeventlistener--onmouse的区别&#34;&gt;8.addEventListener &amp;amp; onmouse×××的区别：&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;onmouseover
 &lt;img src=&#34;http://m.qpic.cn/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYkwbv3rUZYzJz1ui9ouSJnYUv.XY519lpYDe1MSUcSpFZ3p85bI9e6bQtkGpI2ieN1YGj58LaGfkNZtOhQ*8Xexc!/b&amp;amp;bo=GQYsARkGLAECGT0!&amp;amp;rf=viewer_4&#34; alt=&#34;正常&#34;  /&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;!--CSS部分--&amp;gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;!--CSS部分--&amp;gt;
  *{margin: 0;padding: 0;border: none;}
         ##progress{width: 1000px;height: 20px;line-height: 20px;
             /*background-color: ##e8e8e8;*/
@@ -10747,7 +10747,7 @@ cursor:pointer;
 &lt;li&gt;addEventListener&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;http://m.qpic.cn/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYkw0qFWjdCLVjo0yOP2tk6YYs2O7N*IlnmdpYHipdXbNEstazeVKEpFoGEsIxs0xz00TkxlFh84TbXwoXob9TPuc!/b&amp;amp;bo=GQYsARkGLAECGT0!&amp;amp;rf=viewer_4&#34; alt=&#34;出现BUG&#34;  /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;!--CSS部分--&amp;gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;!--CSS部分--&amp;gt;
  *{margin: 0;padding: 0;border: none;}
         ##progress{width: 1000px;height: 20px;line-height: 20px;
             /*background-color: ##e8e8e8;*/
@@ -11045,7 +11045,7 @@ cursor:pointer;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;ajax()&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$.ajax{
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$.ajax{
 	url:,//地址
 	type:&amp;quot;get&amp;quot;&amp;quot;post&amp;quot;, //请求方式
     async:,//是否异步
@@ -11071,7 +11071,7 @@ cursor:pointer;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;用法&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$(dom).select2()
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$(dom).select2()
 $(dom).select2({
 	width:,
 	data:,
@@ -11088,7 +11088,7 @@ $(dom).select2({
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;用法&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;//设置语言
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//设置语言
 $.datetimepicker.setLocal(&amp;quot;zh&amp;quot;);
 //调用插件
 $(dom).datetimepicker({
@@ -11112,7 +11112,7 @@ $(dom).datetimepicker({
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;用法&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;!--HTML部分--&amp;gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;!--HTML部分--&amp;gt;
 &amp;lt;div id=&amp;quot;fulPage&amp;quot;&amp;gt;
 	&amp;lt;div class=&amp;quot;section&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
 	&amp;lt;div class=&amp;quot;section&amp;quot;&amp;gt;
@@ -11148,7 +11148,7 @@ $(dom).datetimepicker({
 &lt;p&gt;用法：&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;  $(&amp;quot;#lazyWrapper img&amp;quot;).lazyload()
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  $(&amp;quot;#lazyWrapper img&amp;quot;).lazyload()
 &lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;5layer弹窗插件&#34;&gt;5.layer弹窗插件&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -11157,7 +11157,7 @@ $(dom).datetimepicker({
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;用法&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;layer.alert()
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;layer.alert()
 layer.confirm()
 layer.msg()
 layer.load()
@@ -11180,7 +11180,7 @@ layer.open({
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;使用&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$(&amp;quot;form&amp;quot;).validator
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$(&amp;quot;form&amp;quot;).validator
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;7jquery-easing&#34;&gt;7.jQuery-easing&lt;/h4&gt;
@@ -11308,7 +11308,7 @@ layer.open({
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;6js继承&#34;&gt;6.JS继承&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;http://r.photo.store.qq.com/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYk8htZSIHm9ixnVJEqwpdVEqi91R89AXCZrzF7FgWX24mYcglaiA260.asSOs7L*c2j4ySplFLO7Lv.X*NW66QGI!/r&#34; alt=&#34;&#34;  /&gt;
 &lt;strong&gt;代码如下:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;function Temp(){};
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;function Temp(){};
 
 Temp.prototype=Person.prototype;
 
@@ -11384,7 +11384,7 @@ stuProto.constructor=Student;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;设置“子绝父相”&lt;/code&gt;  ==&amp;gt; &lt;code&gt;top，left设置为50%&lt;/code&gt; ==&amp;gt; &lt;code&gt;margin-left和nargin-top设置为负的盒子对应宽高的一半&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;     .father{
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;     .father{
         background-color:red;
         height:150px;
         width:150px;
@@ -11420,7 +11420,7 @@ stuProto.constructor=Student;
 父元素之后加&lt;code&gt;&amp;lt;div style=&amp;quot;clear:both&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;方案3: 使用after伪类(注意设置content)，向父元素后添加一个块元素，并对其清除浮动     √&lt;/strong&gt; 
 添加CSS&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;.clearfix:after{
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.clearfix:after{
    content:&amp;quot;&amp;quot;;
    display:block;
    clear:both;
@@ -11430,7 +11430,7 @@ stuProto.constructor=Student;
 解决方案：&lt;code&gt; .clearfix::before{ content: &#39;&#39;; display: table; clear: both;}&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;最终，把要解决这两个问题的元素加&lt;code&gt;class=&amp;quot;clearfix&amp;quot; &lt;/code&gt;,然后设置&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;.clearfix::before,.clearfix::after{
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.clearfix::before,.clearfix::after{
 content: &#39;&#39;; 
 display: table; 
 clear: both; 
@@ -11443,7 +11443,7 @@ clear: both;
 &lt;ul&gt;
 &lt;li&gt;双飞翼&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;!--CSS部分--&amp;gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;!--CSS部分--&amp;gt;
         *{
             margin: 0;
             padding: 0;
@@ -11491,7 +11491,7 @@ clear: both;
 &lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
 &lt;li&gt;圣杯&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;!--CSS部分--&amp;gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;!--CSS部分--&amp;gt;
         *{
             margin: 0;
             padding: 0;
@@ -11540,7 +11540,7 @@ clear: both;
 &amp;lt;/div&amp;gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;11溢出文字显示为省略号&#34;&gt;11.溢出文字显示为省略号&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;overflow: hidden;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;overflow: hidden;
 text-overflow:ellipsis; 
 white-space: nowrap;
 &lt;/code&gt;&lt;/pre&gt;</description>
@@ -11571,7 +11571,7 @@ white-space: nowrap;
 &lt;li&gt;box-shadow
 &lt;img src=&#34;https://upload-images.jianshu.io/upload_images/14911395-0e08160fd3115f5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&#34; alt=&#34;&#34;  /&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;background:orange;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;background:orange;
 box-shadow:0 0 010px #655 , 0 0 0 15px deeppink; /*可以加任意层数边框*/
 &lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
 &lt;li&gt;outline&lt;/li&gt;

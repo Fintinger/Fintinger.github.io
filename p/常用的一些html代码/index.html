@@ -66,7 +66,7 @@ margin:0 auto
 ">
 
 <div style="background:url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg') center/cover;"
-     class="welcome_page w-full h-screen shadow-2xl flex flex-col justify-center items-center">
+     class="welcome_page w-full h-screen shadow-md flex flex-col justify-center items-center">
     <div style="user-select: none"
          class="h-max xl:w-max py-10 xl:py-32 px-32 xl:px-96 bg-gray-100 rounded-2xl shadow-2xl  flex flex-col justify-center relative mb-10">
         <span class="absolute w-16 h-16 bg-purple-200 bg-opacity0 top-14 right-14 rounded-full text-center border-2 border-purple-600 border-opacity-10 leading-loose text-3xl animate-pulse">😋</span>
@@ -257,7 +257,7 @@ margin:0 auto
 <blockquote>
 <p><code>设置“子绝父相”</code>  ==&gt; <code>top，left设置为50%</code> ==&gt; <code>margin-left和nargin-top设置为负的盒子对应宽高的一半</code></p>
 </blockquote>
-<pre><code>     .father{
+<pre tabindex="0"><code>     .father{
         background-color:red;
         height:150px;
         width:150px;
@@ -293,7 +293,7 @@ margin:0 auto
 父元素之后加<code>&lt;div style=&quot;clear:both&quot;&gt;&lt;/div&gt;</code></p>
 <p><strong>方案3: 使用after伪类(注意设置content)，向父元素后添加一个块元素，并对其清除浮动     √</strong> 
 添加CSS</p>
-<pre><code>.clearfix:after{
+<pre tabindex="0"><code>.clearfix:after{
    content:&quot;&quot;;
    display:block;
    clear:both;
@@ -303,7 +303,7 @@ margin:0 auto
 解决方案：<code> .clearfix::before{ content: ''; display: table; clear: both;}</code></p>
 </blockquote>
 <p>最终，把要解决这两个问题的元素加<code>class=&quot;clearfix&quot; </code>,然后设置</p>
-<pre><code>.clearfix::before,.clearfix::after{
+<pre tabindex="0"><code>.clearfix::before,.clearfix::after{
 content: ''; 
 display: table; 
 clear: both; 
@@ -316,7 +316,7 @@ clear: both;
 <ul>
 <li>双飞翼</li>
 </ul>
-<pre><code>&lt;!--CSS部分--&gt;
+<pre tabindex="0"><code>&lt;!--CSS部分--&gt;
         *{
             margin: 0;
             padding: 0;
@@ -364,7 +364,7 @@ clear: both;
 </code></pre><ul>
 <li>圣杯</li>
 </ul>
-<pre><code>&lt;!--CSS部分--&gt;
+<pre tabindex="0"><code>&lt;!--CSS部分--&gt;
         *{
             margin: 0;
             padding: 0;
@@ -413,7 +413,7 @@ clear: both;
 &lt;/div&gt;
 
 </code></pre><h2 id="11溢出文字显示为省略号">11.溢出文字显示为省略号</h2>
-<pre><code>overflow: hidden;
+<pre tabindex="0"><code>overflow: hidden;
 text-overflow:ellipsis; 
 white-space: nowrap;
 </code></pre>

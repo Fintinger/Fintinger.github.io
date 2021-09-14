@@ -33,7 +33,7 @@ def main():try:with open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;u
 ">
 
 <div style="background:url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg') center/cover;"
-     class="welcome_page w-full h-screen shadow-2xl flex flex-col justify-center items-center">
+     class="welcome_page w-full h-screen shadow-md flex flex-col justify-center items-center">
     <div style="user-select: none"
          class="h-max xl:w-max py-10 xl:py-32 px-32 xl:px-96 bg-gray-100 rounded-2xl shadow-2xl  flex flex-col justify-center relative mb-10">
         <span class="absolute w-16 h-16 bg-purple-200 bg-opacity0 top-14 right-14 rounded-full text-center border-2 border-purple-600 border-opacity-10 leading-loose text-3xl animate-pulse">😋</span>
@@ -310,7 +310,7 @@ def main():try:with open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;u
 <li><code>LookupError</code>指定了未知的编码</li>
 <li><code>UnicodeDecodeError</code>读取文件时无法按指定方式解码</li>
 </ul>
-<pre><code>def main():
+<pre tabindex="0"><code>def main():
     f = None
     try:
         f = open('致橡树.txt', 'r', encoding='utf-8')
@@ -333,7 +333,7 @@ if __name__ == '__main__':
 </blockquote>
 <p><strong>或者，</strong>
 <code>with</code>关键字指定文件对象的上下文环境并在离开上下文环境时自动释放文件资源</p>
-<pre><code>def main():
+<pre tabindex="0"><code>def main():
     try:
         with open('致橡树.txt', 'r', encoding='utf-8') as f:
             print(f.read())

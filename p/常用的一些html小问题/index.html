@@ -45,7 +45,7 @@
 ">
 
 <div style="background:url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg') center/cover;"
-     class="welcome_page w-full h-screen shadow-2xl flex flex-col justify-center items-center">
+     class="welcome_page w-full h-screen shadow-md flex flex-col justify-center items-center">
     <div style="user-select: none"
          class="h-max xl:w-max py-10 xl:py-32 px-32 xl:px-96 bg-gray-100 rounded-2xl shadow-2xl  flex flex-col justify-center relative mb-10">
         <span class="absolute w-16 h-16 bg-purple-200 bg-opacity0 top-14 right-14 rounded-full text-center border-2 border-purple-600 border-opacity-10 leading-loose text-3xl animate-pulse">😋</span>
@@ -178,17 +178,17 @@
 
     <section class="article-content">
     <h2 id="1-网页出现横向滚动条">1. 网页出现横向滚动条？</h2>
-<pre><code>&lt;body style=`overflow:-Scroll;overflow-y:hidden &gt;  &lt;/body&gt;
+<pre tabindex="0"><code>&lt;body style=`overflow:-Scroll;overflow-y:hidden &gt;  &lt;/body&gt;
 </code></pre><p><em>让横条没有：</em></p>
-<pre><code> &lt;body style=`overflow:-Scroll;overflow-x:hidden&gt; &lt;/body&gt;
+<pre tabindex="0"><code> &lt;body style=`overflow:-Scroll;overflow-x:hidden&gt; &lt;/body&gt;
 </code></pre><p><em>两个都去掉？更简单了</em></p>
-<pre><code>&lt;body scroll=&quot;no&quot; &gt;  &lt;/body&gt;
+<pre tabindex="0"><code>&lt;body scroll=&quot;no&quot; &gt;  &lt;/body&gt;
 </code></pre><p><em>火狐底部滚动条不显示：</em></p>
-<pre><code> html { overflow:-moz-scrollbars-vertical; }
+<pre tabindex="0"><code> html { overflow:-moz-scrollbars-vertical; }
 </code></pre><h2 id="2-网页图标">2. 网页图标？</h2>
-<pre><code>&lt;link rel=&quot;shortcut icon &quot; href=&quot;images/favicon.ico&quot;&gt;
+<pre tabindex="0"><code>&lt;link rel=&quot;shortcut icon &quot; href=&quot;images/favicon.ico&quot;&gt;
 </code></pre><h2 id="3-height100失效">3. Height:100%失效？</h2>
-<pre><code>&lt;html style=&quot;height: 100%;&quot;&gt;
+<pre tabindex="0"><code>&lt;html style=&quot;height: 100%;&quot;&gt;
 
         &lt;body style=&quot;height: 100%;&quot;&gt;
 
@@ -210,23 +210,23 @@
 <p><img src="http://m.qpic.cn/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYk3deCXgANSfusOc27uwWvtbht1AY*rXQHj67maLLPy*B6zFAIM0qX*950aqkK0bmOZ8F1c42GuXetWlvTrzxK1o!/b&amp;bo=tgLRALYC0QACKQ0!&amp;rf=viewer_4" alt=""  /></p>
 <p><em>==&gt;    height:0;    (将包裹提示的div高度设置为0，让其不再遮挡即可)</em></p>
 <h2 id="6input标签显示手势">6.input标签显示手势？</h2>
-<pre><code>input{
+<pre tabindex="0"><code>input{
 cursor:pointer;           
 }  
  /* 鼠标移入按钮范围时出现手势 */*
 </code></pre><h2 id="7-js中的一些语法">7. JS中的一些语法</h2>
 <p><em>1&gt; 注意书写其中的  &ldquo;&quot;（引号） ！！！！</em></p>
-<pre><code>document.getElementById(&quot;btn&quot;);
+<pre tabindex="0"><code>document.getElementById(&quot;btn&quot;);
 </code></pre><p><em>2&gt;onclick,.onload&hellip;等事件都可以用这个，可以避免代码污染啥的（也不一定）</em></p>
-<pre><code>.addEventListener('click',function f1() {}**
+<pre tabindex="0"><code>.addEventListener('click',function f1() {}**
 </code></pre><p><em>3&gt;可以给一个标签中加入另一个标签</em></p>
-<pre><code>createElement('')***
+<pre tabindex="0"><code>createElement('')***
 </code></pre><h2 id="8addeventlistener--onmouse的区别">8.addEventListener &amp; onmouse×××的区别：</h2>
 <ul>
 <li>onmouseover
 <img src="http://m.qpic.cn/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYkwbv3rUZYzJz1ui9ouSJnYUv.XY519lpYDe1MSUcSpFZ3p85bI9e6bQtkGpI2ieN1YGj58LaGfkNZtOhQ*8Xexc!/b&amp;bo=GQYsARkGLAECGT0!&amp;rf=viewer_4" alt="正常"  /></li>
 </ul>
-<pre><code>&lt;!--CSS部分--&gt;
+<pre tabindex="0"><code>&lt;!--CSS部分--&gt;
  *{margin: 0;padding: 0;border: none;}
         ##progress{width: 1000px;height: 20px;line-height: 20px;
             /*background-color: ##e8e8e8;*/
@@ -304,7 +304,7 @@ cursor:pointer;
 <li>addEventListener</li>
 </ul>
 <p><img src="http://m.qpic.cn/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYkw0qFWjdCLVjo0yOP2tk6YYs2O7N*IlnmdpYHipdXbNEstazeVKEpFoGEsIxs0xz00TkxlFh84TbXwoXob9TPuc!/b&amp;bo=GQYsARkGLAECGT0!&amp;rf=viewer_4" alt="出现BUG"  /></p>
-<pre><code>&lt;!--CSS部分--&gt;
+<pre tabindex="0"><code>&lt;!--CSS部分--&gt;
  *{margin: 0;padding: 0;border: none;}
         ##progress{width: 1000px;height: 20px;line-height: 20px;
             /*background-color: ##e8e8e8;*/
