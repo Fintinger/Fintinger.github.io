@@ -1,1 +1,1 @@
-(()=>{var e=document.querySelector(".article-list"),l=document.querySelector(".welcome_page");e||(l.style.display="none");})();
+(()=>{var t=document.querySelector(".article-list"),n=document.querySelector(".welcome_page"),e=document.querySelector(".main");e.style.height=window.innerHeight+"px";window.onresize=function(){e.style.height=window.innerHeight+"px"};t||(n.style.display="none",window.document.documentElement.style.overflowY="hidden");})();
