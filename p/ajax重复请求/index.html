@@ -13,8 +13,10 @@
 <link rel="stylesheet" href="/scss/external/tailwind.min.css">
 
 
+<link rel="stylesheet" href="/scss/mobtoc.min.css">
 
-<link rel="stylesheet" href="/scss/mobtoc.min.css"><meta property='og:title' content='Ajax重复请求'>
+
+<link rel="stylesheet" href="/scss/welcomepage.min.css"><meta property='og:title' content='Ajax重复请求'>
 <meta property='og:description' content='在发送某一次请求时，如果不对请求做去重处理那么，同一个请求有可能会发送很多次，一个个慢慢响应，这会很大程度影响性能以及页面的使用体验
  全局变量
 /** * baseURL 是每次请求的地址 * x 表示XMLHttpRequest实例，初始为null * isSending 是用来判断请求是否处于发送状态的标识 */ const baseURL = &amp;#34;http://127.0.0.1:8000/delay&amp;#34; let x = null, isSending = false 原生请求 if (isSending) x.abort() x = new XMLHttpRequest() //正处于发送状态，修改标识 isSending = true x.open(&amp;#34;GET&amp;#34;, baseURL) x.send() x.onreadystatechange = function () { if (x.readyState === 4) {//当readyState=4,表示已经发送完毕，修改标识，是否成功返回则无需关心  isSending = false if (x.status &amp;gt;= 200 &amp;amp;&amp;amp; x.status &amp;lt; 300) { console.log(x.response); } } } jQuery 请求  jQuery做ajax请求时，可以仅针对一次请求，也可以利用jQuery全局事件对所有请求加以限制'>
@@ -32,24 +34,11 @@
   <body style="overflow-y: hidden" class="
     article-page has-toc
 ">
-    <div
-      style="
-        background: url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg')
-          center/cover;
-      "
-      class="
-        welcome_page
-        w-full
-        h-screen
-        shadow-md
-        flex flex-col
-        justify-center
-        items-center
-      "
-    >
+    <div class="welcome_page">
       <div
         style="user-select: none"
         class="
+        infoCard
           h-max
           xl:w-max
           py-10
@@ -70,7 +59,7 @@
             absolute
             w-16
             h-16
-            bg-purple-200 bg-opacity0
+            bg-purple-100 bg-opacity0
             top-14
             right-14
             rounded-full
@@ -80,7 +69,7 @@
             text-3xl
             animate-pulse
           "
-          >😋</span
+          >❤️</span
         >
         <div class="flex flex-col items-center space-y-8 font-sans">
           <div
@@ -676,7 +665,24 @@
 
       <div class="fixedEls">
         <div id="goTop"></div>
-        <div class="show_mobToc"><svg t="1631963864136" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2699" width="100%" height="100%"><path d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z" fill="#ededed" p-id="2700"></path></svg></div>
+        <div class="show_mobToc">
+          <svg
+            t="1631963864136"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="2699"
+            width="100%"
+            height="100%"
+          >
+            <path
+              d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z"
+              fill="#ededed"
+              p-id="2700"
+            ></path>
+          </svg>
+        </div>
       </div>
     </div>
   </body>

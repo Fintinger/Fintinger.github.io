@@ -14,8 +14,10 @@ def main():try:with open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;u
 <link rel="stylesheet" href="/scss/external/tailwind.min.css">
 
 
+<link rel="stylesheet" href="/scss/mobtoc.min.css">
 
-<link rel="stylesheet" href="/scss/mobtoc.min.css"><meta property='og:title' content='python中关于文件的种种问题'>
+
+<link rel="stylesheet" href="/scss/welcomepage.min.css"><meta property='og:title' content='python中关于文件的种种问题'>
 <meta property='og:description' content=' 在python中，我们可以将那些在运行时可能会出现状况的代码放在try代码块中，在try代码块的后面可以跟上一个或多个except来捕获可能出现的异常状况。
   FileNotFoundError，文件找不到 LookupError指定了未知的编码 UnicodeDecodeError读取文件时无法按指定方式解码  def main():f = Nonetry:f = open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;utf-8&#39;)print(f.read())except FileNotFoundError:print(&#39;无法打开指定的文件!&#39;)except LookupError:print(&#39;指定了未知的编码!&#39;)except UnicodeDecodeError:print(&#39;读取文件时解码错误!&#39;)finally:if f:f.close()if __name__ == &#39;__main__&#39;:main() finally块的代码不论程序正常还是异常都会执行到（甚至是调用了sys模块的exit函数退出Python环境，finally块都会被执行，因为exit函数实质上是引发了SystemExit异常），因此我们通常把finally块称为“总是执行代码块”，它最适合用来做释放外部资源的操作。
  或者， with关键字指定文件对象的上下文环境并在离开上下文环境时自动释放文件资源
@@ -35,24 +37,11 @@ def main():try:with open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;u
   <body style="overflow-y: hidden" class="
     article-page 
 ">
-    <div
-      style="
-        background: url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg')
-          center/cover;
-      "
-      class="
-        welcome_page
-        w-full
-        h-screen
-        shadow-md
-        flex flex-col
-        justify-center
-        items-center
-      "
-    >
+    <div class="welcome_page">
       <div
         style="user-select: none"
         class="
+        infoCard
           h-max
           xl:w-max
           py-10
@@ -73,7 +62,7 @@ def main():try:with open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;u
             absolute
             w-16
             h-16
-            bg-purple-200 bg-opacity0
+            bg-purple-100 bg-opacity0
             top-14
             right-14
             rounded-full
@@ -83,7 +72,7 @@ def main():try:with open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;u
             text-3xl
             animate-pulse
           "
-          >😋</span
+          >❤️</span
         >
         <div class="flex flex-col items-center space-y-8 font-sans">
           <div
@@ -724,7 +713,24 @@ if __name__ == '__main__':
 
       <div class="fixedEls">
         <div id="goTop"></div>
-        <div class="show_mobToc"><svg t="1631963864136" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2699" width="100%" height="100%"><path d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z" fill="#ededed" p-id="2700"></path></svg></div>
+        <div class="show_mobToc">
+          <svg
+            t="1631963864136"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="2699"
+            width="100%"
+            height="100%"
+          >
+            <path
+              d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z"
+              fill="#ededed"
+              p-id="2700"
+            ></path>
+          </svg>
+        </div>
       </div>
     </div>
   </body>

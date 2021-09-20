@@ -13,8 +13,10 @@
 <link rel="stylesheet" href="/scss/external/tailwind.min.css">
 
 
+<link rel="stylesheet" href="/scss/mobtoc.min.css">
 
-<link rel="stylesheet" href="/scss/mobtoc.min.css"><meta property='og:title' content='Ajax学习小结'>
+
+<link rel="stylesheet" href="/scss/welcomepage.min.css"><meta property='og:title' content='Ajax学习小结'>
 <meta property='og:description' content='学习地址:https://www.bilibili.com/video/BV1WC4y1b78y，主要通过express的简单功能来搭建本地的服务，进而更好地学习Ajax
  发送Ajax请求的方式 原生Ajax //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(&amp;#34;GET&amp;#34;,&amp;#34;https://www.x.com&amp;#34;) //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status &amp;gt;= 200 &amp;amp;&amp;amp; xhr.status &amp;lt; 300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } } 说明：
  readyState: 返回一个 XMLHttpRequest 代理当前所处的状态     值 状态 描述     0 UNSENT 代理被创建，但尚未调用 open() 方法。   1 OPENED open() 方法已经被调用。   2 HEADERS_RECEIVED send() 方法已经被调用，并且头部和状态已经可获得。   3 LOADING 下载中； responseText 属性已经包含部分数据。   4 DONE 下载操作已完成。     因此，xhr.'>
@@ -32,24 +34,11 @@
   <body style="overflow-y: hidden" class="
     article-page has-toc
 ">
-    <div
-      style="
-        background: url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg')
-          center/cover;
-      "
-      class="
-        welcome_page
-        w-full
-        h-screen
-        shadow-md
-        flex flex-col
-        justify-center
-        items-center
-      "
-    >
+    <div class="welcome_page">
       <div
         style="user-select: none"
         class="
+        infoCard
           h-max
           xl:w-max
           py-10
@@ -70,7 +59,7 @@
             absolute
             w-16
             h-16
-            bg-purple-200 bg-opacity0
+            bg-purple-100 bg-opacity0
             top-14
             right-14
             rounded-full
@@ -80,7 +69,7 @@
             text-3xl
             animate-pulse
           "
-          >😋</span
+          >❤️</span
         >
         <div class="flex flex-col items-center space-y-8 font-sans">
           <div
@@ -919,7 +908,24 @@
 
       <div class="fixedEls">
         <div id="goTop"></div>
-        <div class="show_mobToc"><svg t="1631963864136" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2699" width="100%" height="100%"><path d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z" fill="#ededed" p-id="2700"></path></svg></div>
+        <div class="show_mobToc">
+          <svg
+            t="1631963864136"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="2699"
+            width="100%"
+            height="100%"
+          >
+            <path
+              d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z"
+              fill="#ededed"
+              p-id="2700"
+            ></path>
+          </svg>
+        </div>
       </div>
     </div>
   </body>

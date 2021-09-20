@@ -22,8 +22,10 @@
 <link rel="stylesheet" href="/scss/external/tailwind.min.css">
 
 
+<link rel="stylesheet" href="/scss/mobtoc.min.css">
 
-<link rel="stylesheet" href="/scss/mobtoc.min.css"><meta property='og:title' content='线性代数——矩阵'>
+
+<link rel="stylesheet" href="/scss/welcomepage.min.css"><meta property='og:title' content='线性代数——矩阵'>
 <meta property='og:description' content='基本计算  对角矩阵存在交换律，即 $\bigwedge_1 \bigwedge_2=\bigwedge_2 \bigwedge_1$​
   注意交换位置
  对于 AB=C  B &amp;amp; C均按列分块，则$A(\beta_1 \beta_2 \beta_3)=(\gamma_1 \gamma_2 \gamma_3)$，故B的列向量都是$AX=\gamma$ 的解，特别的，当AB=O即C=O时，B的列向量均是 $AX=0$ 的解。 B &amp;amp; C按行分块，则 AB的行向量均可由B的行向量线性表出。 A &amp;amp; C按列分块，则 AB的列向量均可由A的列向量线性表出。[2013]   规律1与解联系起来，尤其是AB=O推出B的列向量是Ax=0的解这一规律，除此之外AB=O也经常用r(A)&#43;r(B)≤ n这个不等式。
@@ -59,24 +61,11 @@
   <body style="overflow-y: hidden" class="
     article-page has-toc
 ">
-    <div
-      style="
-        background: url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg')
-          center/cover;
-      "
-      class="
-        welcome_page
-        w-full
-        h-screen
-        shadow-md
-        flex flex-col
-        justify-center
-        items-center
-      "
-    >
+    <div class="welcome_page">
       <div
         style="user-select: none"
         class="
+        infoCard
           h-max
           xl:w-max
           py-10
@@ -97,7 +86,7 @@
             absolute
             w-16
             h-16
-            bg-purple-200 bg-opacity0
+            bg-purple-100 bg-opacity0
             top-14
             right-14
             rounded-full
@@ -107,7 +96,7 @@
             text-3xl
             animate-pulse
           "
-          >😋</span
+          >❤️</span
         >
         <div class="flex flex-col items-center space-y-8 font-sans">
           <div
@@ -897,7 +886,24 @@
 
       <div class="fixedEls">
         <div id="goTop"></div>
-        <div class="show_mobToc"><svg t="1631963864136" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2699" width="100%" height="100%"><path d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z" fill="#ededed" p-id="2700"></path></svg></div>
+        <div class="show_mobToc">
+          <svg
+            t="1631963864136"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="2699"
+            width="100%"
+            height="100%"
+          >
+            <path
+              d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z"
+              fill="#ededed"
+              p-id="2700"
+            ></path>
+          </svg>
+        </div>
       </div>
     </div>
   </body>

@@ -13,8 +13,10 @@
 <link rel="stylesheet" href="/scss/external/tailwind.min.css">
 
 
+<link rel="stylesheet" href="/scss/mobtoc.min.css">
 
-<link rel="stylesheet" href="/scss/mobtoc.min.css"><meta property='og:title' content='JavaScript瀑布流布局'>
+
+<link rel="stylesheet" href="/scss/welcomepage.min.css"><meta property='og:title' content='JavaScript瀑布流布局'>
 <meta property='og:description' content='什么是瀑布流？ 一种图片在网页的布局方式，具体要求为：从页面第二行开始，后续图片跟在页面中最矮的那张图片后面
 用JavaScript怎么实现？ 为此我将整个过程封装为一个函数。
 /*HTML部分*/ &amp;lt;head&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;main.css&amp;#34;&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;div id=&amp;#34;box&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;//container和img由js动态加入 &amp;lt;script src=&amp;#34;jquery.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;loadFile.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;main.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; /*CSS部分*/ /*首先清空默认样式*/ #box{ position: relative; } .container{ float: left; } .container&amp;gt;.pic{ width: 200px; } .container&amp;gt;.pic&amp;gt;img{ width: 100%; } /*JS部分*/ /*loadFile.js(在window.onload之前执行，加载DOM树)*/	$(function () { function addImg(imgNum,eleID) { let container for (let i = 1; i &amp;lt; imgNum; i&#43;&#43;) { container=$(&amp;#34;&amp;lt;div class=&amp;#39;container&amp;#39;&amp;gt;&amp;lt;div class=&amp;#39;pic&amp;#39;&amp;gt;&amp;lt;img src=&amp;#39;images/&amp;#34;&#43;i&#43;&amp;#34;.jpg&amp;#39; alt=&amp;#39;&amp;#39;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;#34;) $(eleID).append(container) } } addImg(109,&amp;#34;#box&amp;#34;); }) /*******************************************/ /*main.js(在$(function(){})之前执行，DOM树加载完毕 )*/ window.onload=function () { let waterFall=function (eleID) { let boxWidth = 0, colo = 0, $egEle = $(eleID).'>
@@ -32,24 +34,11 @@
   <body style="overflow-y: hidden" class="
     article-page 
 ">
-    <div
-      style="
-        background: url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg')
-          center/cover;
-      "
-      class="
-        welcome_page
-        w-full
-        h-screen
-        shadow-md
-        flex flex-col
-        justify-center
-        items-center
-      "
-    >
+    <div class="welcome_page">
       <div
         style="user-select: none"
         class="
+        infoCard
           h-max
           xl:w-max
           py-10
@@ -70,7 +59,7 @@
             absolute
             w-16
             h-16
-            bg-purple-200 bg-opacity0
+            bg-purple-100 bg-opacity0
             top-14
             right-14
             rounded-full
@@ -80,7 +69,7 @@
             text-3xl
             animate-pulse
           "
-          >😋</span
+          >❤️</span
         >
         <div class="flex flex-col items-center space-y-8 font-sans">
           <div
@@ -783,7 +772,24 @@
 
       <div class="fixedEls">
         <div id="goTop"></div>
-        <div class="show_mobToc"><svg t="1631963864136" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2699" width="100%" height="100%"><path d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z" fill="#ededed" p-id="2700"></path></svg></div>
+        <div class="show_mobToc">
+          <svg
+            t="1631963864136"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="2699"
+            width="100%"
+            height="100%"
+          >
+            <path
+              d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z"
+              fill="#ededed"
+              p-id="2700"
+            ></path>
+          </svg>
+        </div>
       </div>
     </div>
   </body>

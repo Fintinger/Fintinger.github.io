@@ -17,8 +17,10 @@ let user1={ name:&amp;#39;李四&amp;#39;, key:Symbol() } let user2={ name:&amp;
 <link rel="stylesheet" href="/scss/external/tailwind.min.css">
 
 
+<link rel="stylesheet" href="/scss/mobtoc.min.css">
 
-<link rel="stylesheet" href="/scss/mobtoc.min.css"><meta property='og:title' content='JavaScript基础之Symbol类型'>
+
+<link rel="stylesheet" href="/scss/welcomepage.min.css"><meta property='og:title' content='JavaScript基础之Symbol类型'>
 <meta property='og:description' content='Symbol() 类型不能当做普通对象(不能加属性值)，只能当做一种永远都不会重复的字符串
  定义 方法： Symbol(desc)、Symbol.for(desc)
 let s1 = Symbol(&amp;#39;d&amp;#39;) let s2 = Symbol.for(&amp;#39;d&amp;#39;) let s3 = Symbol.for(&amp;#39;d&amp;#39;) console.log(s1.description);//d console.log(Symbol.keyFor(s2));//d console.log(s1 === s3);//false console.log(s2 === s3);//true 注意： 利用Symbol() 定义的值永远都不会相等，而Symbol.for() 定义的，如果描述相同，则值相等
@@ -44,24 +46,11 @@ let user1={ name:&amp;#39;李四&amp;#39;, key:Symbol() } let user2={ name:&amp;
   <body style="overflow-y: hidden" class="
     article-page has-toc
 ">
-    <div
-      style="
-        background: url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg')
-          center/cover;
-      "
-      class="
-        welcome_page
-        w-full
-        h-screen
-        shadow-md
-        flex flex-col
-        justify-center
-        items-center
-      "
-    >
+    <div class="welcome_page">
       <div
         style="user-select: none"
         class="
+        infoCard
           h-max
           xl:w-max
           py-10
@@ -82,7 +71,7 @@ let user1={ name:&amp;#39;李四&amp;#39;, key:Symbol() } let user2={ name:&amp;
             absolute
             w-16
             h-16
-            bg-purple-200 bg-opacity0
+            bg-purple-100 bg-opacity0
             top-14
             right-14
             rounded-full
@@ -92,7 +81,7 @@ let user1={ name:&amp;#39;李四&amp;#39;, key:Symbol() } let user2={ name:&amp;
             text-3xl
             animate-pulse
           "
-          >😋</span
+          >❤️</span
         >
         <div class="flex flex-col items-center space-y-8 font-sans">
           <div
@@ -653,7 +642,24 @@ let user1={ name:&amp;#39;李四&amp;#39;, key:Symbol() } let user2={ name:&amp;
 
       <div class="fixedEls">
         <div id="goTop"></div>
-        <div class="show_mobToc"><svg t="1631963864136" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2699" width="100%" height="100%"><path d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z" fill="#ededed" p-id="2700"></path></svg></div>
+        <div class="show_mobToc">
+          <svg
+            t="1631963864136"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="2699"
+            width="100%"
+            height="100%"
+          >
+            <path
+              d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z"
+              fill="#ededed"
+              p-id="2700"
+            ></path>
+          </svg>
+        </div>
       </div>
     </div>
   </body>

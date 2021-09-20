@@ -15,8 +15,10 @@ CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置C
 <link rel="stylesheet" href="/scss/external/tailwind.min.css">
 
 
+<link rel="stylesheet" href="/scss/mobtoc.min.css">
 
-<link rel="stylesheet" href="/scss/mobtoc.min.css"><meta property='og:title' content='跨域及CORS官方跨域'>
+
+<link rel="stylesheet" href="/scss/welcomepage.min.css"><meta property='og:title' content='跨域及CORS官方跨域'>
 <meta property='og:description' content='JSONP  jsonp跨域的实现仅限于GET请求，不可用于POST
  说明：实现的基本思路是利用html中script标签本身可跨域的特性，在发送请求时，在页面中创建script标签，追加到页面中。这实际上就像利用script标签引入外部资源
 /*main.js*/ //申明handle函数 function handle(data) { //do something.... } ele.onclick = function () { //1.创建script标签  const script = document.createElement(&amp;#34;script&amp;#34;) //2.修改script的src属性  script.src = &amp;#34;http://127.0.0.1:8000/jsonP&amp;#34; script.id=&amp;#34;tempScript&amp;#34;//添加id方便移除  //3.追加到页面中  document.body.appendChild(script) } /*server.js*/ app.get(&amp;#39;/jsonP&amp;#39;, (request, response) =&amp;gt; { const data = { exist:1, msg:&amp;#34;用户名已经存在!&amp;#34; } let str = JSON.stringify(data) response.send(` handle(${str}); document.body.removeChild(document.querySelector(&amp;#34;#tempScript&amp;#34;)) `) }) 注意：response.send()/response.end()中利用ES6语法规范中的模板字符串直接返回一段js代码，script标签会自动解析并作用到页面上
@@ -38,24 +40,11 @@ CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置C
   <body style="overflow-y: hidden" class="
     article-page has-toc
 ">
-    <div
-      style="
-        background: url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg')
-          center/cover;
-      "
-      class="
-        welcome_page
-        w-full
-        h-screen
-        shadow-md
-        flex flex-col
-        justify-center
-        items-center
-      "
-    >
+    <div class="welcome_page">
       <div
         style="user-select: none"
         class="
+        infoCard
           h-max
           xl:w-max
           py-10
@@ -76,7 +65,7 @@ CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置C
             absolute
             w-16
             h-16
-            bg-purple-200 bg-opacity0
+            bg-purple-100 bg-opacity0
             top-14
             right-14
             rounded-full
@@ -86,7 +75,7 @@ CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置C
             text-3xl
             animate-pulse
           "
-          >😋</span
+          >❤️</span
         >
         <div class="flex flex-col items-center space-y-8 font-sans">
           <div
@@ -634,7 +623,24 @@ CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置C
 
       <div class="fixedEls">
         <div id="goTop"></div>
-        <div class="show_mobToc"><svg t="1631963864136" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2699" width="100%" height="100%"><path d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z" fill="#ededed" p-id="2700"></path></svg></div>
+        <div class="show_mobToc">
+          <svg
+            t="1631963864136"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="2699"
+            width="100%"
+            height="100%"
+          >
+            <path
+              d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z"
+              fill="#ededed"
+              p-id="2700"
+            ></path>
+          </svg>
+        </div>
       </div>
     </div>
   </body>

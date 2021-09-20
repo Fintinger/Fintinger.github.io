@@ -11,8 +11,10 @@
 <link rel="stylesheet" href="/scss/external/tailwind.min.css">
 
 
+<link rel="stylesheet" href="/scss/mobtoc.min.css">
 
-<link rel="stylesheet" href="/scss/mobtoc.min.css"><meta property='og:title' content='Javascript一些操作'>
+
+<link rel="stylesheet" href="/scss/welcomepage.min.css"><meta property='og:title' content='Javascript一些操作'>
 <meta property='og:description' content='1.通过id获取元素 function $(id) { return typeof id === &amp;#39;string&amp;#39; ? document.getElementById(id): null; } 2.日期格式化 function formatDate(cDate) { //1.判断  if (!cDate instanceof Date){ return; } //2.转化  var year=cDate.getFullYear(); var month=cDate.getMonth(); var date=cDate.getDate(); var hour=cDate.getHours(); var minute=cDate.getMinutes(); var second=cDate.getSeconds(); //2.1 补0  month=month&amp;lt;10? &amp;#39;0&amp;#39;&#43;month:month; date=date&amp;lt;10? &amp;#39;0&amp;#39;&#43;date: date; minute=minute&amp;lt;10? &amp;#39;0&amp;#39;&#43;minute:minute; second=second&amp;lt;10? &amp;#39;0&amp;#39;&#43;second:second; return year &#43; &amp;#39;-&amp;#39; &#43; month &#43; &amp;#39;-&amp;#39; &#43; date &#43; &amp;#39; &amp;#39; &#43;hour&#43;&amp;#39;:&amp;#39;&#43;minute&#43;&amp;#34;:&amp;#34;&#43;second; } console.log(formatDate(new Date())); 3.匀速运动封装 /** * 设置一个盒子右边距匀速变化 * @param{string} btnId * @param{string} boxId * @param{number} step * @param{number}target */ function linearAnimation(btnId, boxId, step, target) { // 1.'>
 <meta property='og:url' content='https://www.fintinger.site/p/javascript%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/'>
 <meta property='og:site_name' content='Archai &#39;s blog'>
@@ -26,24 +28,11 @@
   <body style="overflow-y: hidden" class="
     article-page has-toc
 ">
-    <div
-      style="
-        background: url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg')
-          center/cover;
-      "
-      class="
-        welcome_page
-        w-full
-        h-screen
-        shadow-md
-        flex flex-col
-        justify-center
-        items-center
-      "
-    >
+    <div class="welcome_page">
       <div
         style="user-select: none"
         class="
+        infoCard
           h-max
           xl:w-max
           py-10
@@ -64,7 +53,7 @@
             absolute
             w-16
             h-16
-            bg-purple-200 bg-opacity0
+            bg-purple-100 bg-opacity0
             top-14
             right-14
             rounded-full
@@ -74,7 +63,7 @@
             text-3xl
             animate-pulse
           "
-          >😋</span
+          >❤️</span
         >
         <div class="flex flex-col items-center space-y-8 font-sans">
           <div
@@ -628,7 +617,24 @@ stuProto.constructor=Student;
 
       <div class="fixedEls">
         <div id="goTop"></div>
-        <div class="show_mobToc"><svg t="1631963864136" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2699" width="100%" height="100%"><path d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z" fill="#ededed" p-id="2700"></path></svg></div>
+        <div class="show_mobToc">
+          <svg
+            t="1631963864136"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="2699"
+            width="100%"
+            height="100%"
+          >
+            <path
+              d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z"
+              fill="#ededed"
+              p-id="2700"
+            ></path>
+          </svg>
+        </div>
       </div>
     </div>
   </body>

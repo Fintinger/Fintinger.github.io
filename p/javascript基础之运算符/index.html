@@ -14,8 +14,10 @@ let sex = prompt(&amp;#39;您的性别?'><title>JavaScript基础之运算符</ti
 <link rel="stylesheet" href="/scss/external/tailwind.min.css">
 
 
+<link rel="stylesheet" href="/scss/mobtoc.min.css">
 
-<link rel="stylesheet" href="/scss/mobtoc.min.css"><meta property='og:title' content='JavaScript基础之运算符'>
+
+<link rel="stylesheet" href="/scss/welcomepage.min.css"><meta property='og:title' content='JavaScript基础之运算符'>
 <meta property='og:description' content='&#43;&#43;的前置与后置 let a1 = 1 let b1 = 2 let c1 = b1 &#43; a1&#43;&#43; console.log(a1, b1, c1);//2,2,3  let a2 = 1 let b2 = 2 let c2 = b2 &#43; &#43;&#43;a2 console.log(a2, b2, c2);//2,2,4 说明：
  后置是先计算再&#43;&#43; 前置是先&#43;&#43;再计算  短路运算 let a = 0; let b = 1; let c = a || b; console.log(c);//1 利用这个原理，我们可以简化一些函数
 let sex = prompt(&amp;#39;您的性别?&amp;#39;) if (!sex){ sex=&amp;#34;保密&amp;#34; } console.log(sex); =&amp;gt;
@@ -35,24 +37,11 @@ let sex = prompt(&amp;#39;您的性别?"><meta name="twitter:card" content="summ
   <body style="overflow-y: hidden" class="
     article-page has-toc
 ">
-    <div
-      style="
-        background: url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg')
-          center/cover;
-      "
-      class="
-        welcome_page
-        w-full
-        h-screen
-        shadow-md
-        flex flex-col
-        justify-center
-        items-center
-      "
-    >
+    <div class="welcome_page">
       <div
         style="user-select: none"
         class="
+        infoCard
           h-max
           xl:w-max
           py-10
@@ -73,7 +62,7 @@ let sex = prompt(&amp;#39;您的性别?"><meta name="twitter:card" content="summ
             absolute
             w-16
             h-16
-            bg-purple-200 bg-opacity0
+            bg-purple-100 bg-opacity0
             top-14
             right-14
             rounded-full
@@ -83,7 +72,7 @@ let sex = prompt(&amp;#39;您的性别?"><meta name="twitter:card" content="summ
             text-3xl
             animate-pulse
           "
-          >😋</span
+          >❤️</span
         >
         <div class="flex flex-col items-center space-y-8 font-sans">
           <div
@@ -602,7 +591,24 @@ let sex = prompt(&amp;#39;您的性别?"><meta name="twitter:card" content="summ
 
       <div class="fixedEls">
         <div id="goTop"></div>
-        <div class="show_mobToc"><svg t="1631963864136" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2699" width="100%" height="100%"><path d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z" fill="#ededed" p-id="2700"></path></svg></div>
+        <div class="show_mobToc">
+          <svg
+            t="1631963864136"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="2699"
+            width="100%"
+            height="100%"
+          >
+            <path
+              d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z"
+              fill="#ededed"
+              p-id="2700"
+            ></path>
+          </svg>
+        </div>
       </div>
     </div>
   </body>

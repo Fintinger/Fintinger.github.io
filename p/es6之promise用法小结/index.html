@@ -17,8 +17,10 @@ new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //r
 <link rel="stylesheet" href="/scss/external/tailwind.min.css">
 
 
+<link rel="stylesheet" href="/scss/mobtoc.min.css">
 
-<link rel="stylesheet" href="/scss/mobtoc.min.css"><meta property='og:title' content='ES6之Promise用法小结'>
+
+<link rel="stylesheet" href="/scss/welcomepage.min.css"><meta property='og:title' content='ES6之Promise用法小结'>
 <meta property='og:description' content='Promise 对象用于表示一个异步操作的最终完成 (或失败), 及其结果值。其目的主要是解决以往回调中嵌套回调的&amp;quot;嵌套地狱&amp;quot;问题，使代码可读性更好，更美观!
 基本用法 对于一个标准的Prommise，其基本写法为:
 new Promise(function (resolve, reject) { //do something...  //success  resolve(&amp;#39;success&amp;#39;) //fail &amp;amp; reject  // reject(&amp;#39;rejected&amp;#39;) *resolve和reject只能出现一个 }).then( function (value) { //if succeed,do something...  }, function (reason) { //if fail &amp;amp; reject,do something...  } ) 如果采用ES6的箭头函数写法，则为:
@@ -44,24 +46,11 @@ new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //r
   <body style="overflow-y: hidden" class="
     article-page has-toc
 ">
-    <div
-      style="
-        background: url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg')
-          center/cover;
-      "
-      class="
-        welcome_page
-        w-full
-        h-screen
-        shadow-md
-        flex flex-col
-        justify-center
-        items-center
-      "
-    >
+    <div class="welcome_page">
       <div
         style="user-select: none"
         class="
+        infoCard
           h-max
           xl:w-max
           py-10
@@ -82,7 +71,7 @@ new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //r
             absolute
             w-16
             h-16
-            bg-purple-200 bg-opacity0
+            bg-purple-100 bg-opacity0
             top-14
             right-14
             rounded-full
@@ -92,7 +81,7 @@ new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //r
             text-3xl
             animate-pulse
           "
-          >😋</span
+          >❤️</span
         >
         <div class="flex flex-col items-center space-y-8 font-sans">
           <div
@@ -844,7 +833,24 @@ new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //r
 
       <div class="fixedEls">
         <div id="goTop"></div>
-        <div class="show_mobToc"><svg t="1631963864136" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2699" width="100%" height="100%"><path d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z" fill="#ededed" p-id="2700"></path></svg></div>
+        <div class="show_mobToc">
+          <svg
+            t="1631963864136"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="2699"
+            width="100%"
+            height="100%"
+          >
+            <path
+              d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z"
+              fill="#ededed"
+              p-id="2700"
+            ></path>
+          </svg>
+        </div>
       </div>
     </div>
   </body>

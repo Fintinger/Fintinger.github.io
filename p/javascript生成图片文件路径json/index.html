@@ -13,8 +13,10 @@ const path=require(&amp;#34;path&amp;#34;); const fs = require(&amp;#39;fs&amp;#
 <link rel="stylesheet" href="/scss/external/tailwind.min.css">
 
 
+<link rel="stylesheet" href="/scss/mobtoc.min.css">
 
-<link rel="stylesheet" href="/scss/mobtoc.min.css"><meta property='og:title' content='JavaScript生成图片文件路径json'>
+
+<link rel="stylesheet" href="/scss/welcomepage.min.css"><meta property='og:title' content='JavaScript生成图片文件路径json'>
 <meta property='og:description' content='在写小demo的过程中，经常需要把某个文件夹的图片文件的路径给引入，除非全部重命名成有序的数字，不然不好处理，这就用到了node中的fs和path模块，还没学&amp;hellip;
 const path=require(&amp;#34;path&amp;#34;); const fs = require(&amp;#39;fs&amp;#39;); fs.stat(&amp;#39;../images&amp;#39;,(err)=&amp;gt;{//图片文件所在目录  if (err)return; var result=&amp;#39;{&amp;#39; fs.readdir(&amp;#34;../images&amp;#34;,(err,data)=&amp;gt;{//图片文件所在目录  for(var i=0;i&amp;lt;Object.keys(data).length;i&#43;&#43;){ let ImgPath=&amp;#34;\&amp;#34;images/&amp;#34;&#43;data[i]&#43;&amp;#34;\&amp;#34;&amp;#34;; result&#43;=&amp;#34;\&amp;#34;&amp;#34;&#43;i&#43;&amp;#34;\&amp;#34;:&amp;#34;&#43;ImgPath&#43;&amp;#34;,&amp;#34;; } result=result.substring(0,result.length-1); let length=&amp;#34;\&amp;#34;&amp;#34;&#43;&amp;#34;length&amp;#34;&#43;&amp;#34;\&amp;#34;&amp;#34;&#43;&amp;#34;:&amp;#34;&#43;&amp;#34;\&amp;#34;&amp;#34;&#43;Object.keys(data).length&#43;&amp;#34;\&amp;#34;&amp;#34;//文件数量  result&#43;=&amp;#34;,&amp;#34;&#43;length&#43;&amp;#39;}&amp;#39; fs.writeFile(&amp;#34;../data/imgPath.json&amp;#34;,result,(err)=&amp;gt;{ if(err)return; console.log(&amp;#34;写入文件成功，一共&amp;#34;&#43;Object.keys(data).length&#43;&amp;#34;个文件&amp;#34;); }); }); }); 生成的文件大概就是这样的一个json数据
 {&amp;#34;0&amp;#34;:&amp;#34;images/1.jpg&amp;#34;,&amp;#34;1&amp;#34;:&amp;#34;images/10.jpg&amp;#34;,&amp;#34;2&amp;#34;:&amp;#34;images/100.jpg&amp;#34;,&amp;#34;3&amp;#34;:&amp;#34;images/101.jpg&amp;#34;,&amp;#34;4&amp;#34;:&amp;#34;images/102.jpg&amp;#34;,&amp;#34;5&amp;#34;:&amp;#34;images/103.jpg&amp;#34;,&amp;#34;6&amp;#34;:&amp;#34;images/104.jpg&amp;#34;,&amp;#34;7&amp;#34;:&amp;#34;images/105.jpg&amp;#34;,&amp;#34;8&amp;#34;:&amp;#34;images/106.jpg&amp;#34;,&amp;#34;9&amp;#34;:&amp;#34;images/107.jpg&amp;#34;,&amp;#34;10&amp;#34;:&amp;#34;images/108.jpg&amp;#34;,&amp;#34;length&amp;#34;:&amp;#34;109&amp;#34;} '>
@@ -32,24 +34,11 @@ const path=require(&amp;#34;path&amp;#34;); const fs = require(&amp;#39;fs&amp;#
   <body style="overflow-y: hidden" class="
     article-page 
 ">
-    <div
-      style="
-        background: url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg')
-          center/cover;
-      "
-      class="
-        welcome_page
-        w-full
-        h-screen
-        shadow-md
-        flex flex-col
-        justify-center
-        items-center
-      "
-    >
+    <div class="welcome_page">
       <div
         style="user-select: none"
         class="
+        infoCard
           h-max
           xl:w-max
           py-10
@@ -70,7 +59,7 @@ const path=require(&amp;#34;path&amp;#34;); const fs = require(&amp;#39;fs&amp;#
             absolute
             w-16
             h-16
-            bg-purple-200 bg-opacity0
+            bg-purple-100 bg-opacity0
             top-14
             right-14
             rounded-full
@@ -80,7 +69,7 @@ const path=require(&amp;#34;path&amp;#34;); const fs = require(&amp;#39;fs&amp;#
             text-3xl
             animate-pulse
           "
-          >😋</span
+          >❤️</span
         >
         <div class="flex flex-col items-center space-y-8 font-sans">
           <div
@@ -701,7 +690,24 @@ const path=require(&amp;#34;path&amp;#34;); const fs = require(&amp;#39;fs&amp;#
 
       <div class="fixedEls">
         <div id="goTop"></div>
-        <div class="show_mobToc"><svg t="1631963864136" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2699" width="100%" height="100%"><path d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z" fill="#ededed" p-id="2700"></path></svg></div>
+        <div class="show_mobToc">
+          <svg
+            t="1631963864136"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="2699"
+            width="100%"
+            height="100%"
+          >
+            <path
+              d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z"
+              fill="#ededed"
+              p-id="2700"
+            ></path>
+          </svg>
+        </div>
       </div>
     </div>
   </body>

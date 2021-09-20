@@ -6,7 +6,35 @@
         <description>Recent content on Archai &#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Sun, 29 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 19 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>通过U盘安装Windows系统</title>
+        <link>https://www.fintinger.site/p/%E9%80%9A%E8%BF%87u%E7%9B%98%E5%AE%89%E8%A3%85windows%E7%B3%BB%E7%BB%9F/</link>
+        <pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://www.fintinger.site/p/%E9%80%9A%E8%BF%87u%E7%9B%98%E5%AE%89%E8%A3%85windows%E7%B3%BB%E7%BB%9F/</guid>
+        <description>&lt;img src="https://c.s-microsoft.com/en-us/CMSImages/hero_animation_poster_4K_Sharpened.jpg?version=e252e57c-4949-6726-4a60-a50c0aeec2ce" alt="Featured image of post 通过U盘安装Windows系统" /&gt;&lt;h2 id=&#34;创建u盘介质&#34;&gt;创建U盘介质&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有至少 8GB 空间的&lt;strong&gt;空白&lt;/strong&gt; U 盘，若不是空白创建介质时会自动清空。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;🐾官方工具: &lt;a class=&#34;link&#34; href=&#34;https://go.microsoft.com/fwlink/?LinkId=691209&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://go.microsoft.com/fwlink/?LinkId=691209&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;直接下载按照提示操作就行了，不过仅限&lt;strong&gt;win10&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;🐾ventoy(绿色开源)： &lt;a class=&#34;link&#34; href=&#34;https://www.ventoy.net/cn/index.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官网&lt;/a&gt; &lt;a class=&#34;link&#34; href=&#34;https://www.lanzouw.com/i1tAAu8zyhe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;蓝奏云&lt;/a&gt; &lt;a class=&#34;link&#34; href=&#34;https://archai.oss-cn-beijing.aliyuncs.com/ventoy-1.0.52-windows.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;直链下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/fintinger/figure-bed/raw/master/img/202109192250138.png&#34; alt=&#34;image-20210919225025265&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;第一步：选择设备&lt;/p&gt;
+&lt;p&gt;第二步：安装&lt;/p&gt;
+&lt;p&gt;第三步：将下载的系统镜像 &lt;strong&gt;.iso&lt;/strong&gt; 文件移动到U盘即可，这里推荐一个下载windows正版系统的网站 &lt;a class=&#34;link&#34; href=&#34;https://next.itellyou.cn/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ITELLYOU&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;注意保存必要文件&#34;&gt;注意保存必要文件&lt;/h2&gt;
+&lt;h3 id=&#34;如果电脑无法正常打开&#34;&gt;如果电脑无法正常打开&lt;/h3&gt;
+</description>
+        </item>
+        <item>
         <title>线性代数——常用公式定理总结</title>
         <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/</link>
         <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>

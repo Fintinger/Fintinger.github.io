@@ -13,8 +13,10 @@ switch case switch(status) { case &amp;#39;process&amp;#39;: case &amp;#39;wait&
 <link rel="stylesheet" href="/scss/external/tailwind.min.css">
 
 
+<link rel="stylesheet" href="/scss/mobtoc.min.css">
 
-<link rel="stylesheet" href="/scss/mobtoc.min.css"><meta property='og:title' content='避免多条件并列'>
+
+<link rel="stylesheet" href="/scss/welcomepage.min.css"><meta property='og:title' content='避免多条件并列'>
 <meta property='og:description' content='开发中有时会遇到多个条件，执行相同的语句，也就是多个||这种：
 if (status === &amp;#39;process&amp;#39; || status === &amp;#39;wait&amp;#39; || status === &amp;#39;fail&amp;#39;) { doSomething() } 这种写法语义性、可读性都不太好。可以通过switch case或includes这种进行改造。
 switch case switch(status) { case &amp;#39;process&amp;#39;: case &amp;#39;wait&amp;#39;: case &amp;#39;fail&amp;#39;: doSomething() } includes const enum = [&amp;#39;process&amp;#39;, &amp;#39;wait&amp;#39;, &amp;#39;fail&amp;#39;] if (enum.includes(status)) { doSomething() '>
@@ -32,24 +34,11 @@ switch case switch(status) { case &amp;#39;process&amp;#39;: case &amp;#39;wait&
   <body style="overflow-y: hidden" class="
     article-page 
 ">
-    <div
-      style="
-        background: url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210821130928.jpg')
-          center/cover;
-      "
-      class="
-        welcome_page
-        w-full
-        h-screen
-        shadow-md
-        flex flex-col
-        justify-center
-        items-center
-      "
-    >
+    <div class="welcome_page">
       <div
         style="user-select: none"
         class="
+        infoCard
           h-max
           xl:w-max
           py-10
@@ -70,7 +59,7 @@ switch case switch(status) { case &amp;#39;process&amp;#39;: case &amp;#39;wait&
             absolute
             w-16
             h-16
-            bg-purple-200 bg-opacity0
+            bg-purple-100 bg-opacity0
             top-14
             right-14
             rounded-full
@@ -80,7 +69,7 @@ switch case switch(status) { case &amp;#39;process&amp;#39;: case &amp;#39;wait&
             text-3xl
             animate-pulse
           "
-          >😋</span
+          >❤️</span
         >
         <div class="flex flex-col items-center space-y-8 font-sans">
           <div
@@ -676,7 +665,24 @@ switch case switch(status) { case &amp;#39;process&amp;#39;: case &amp;#39;wait&
 
       <div class="fixedEls">
         <div id="goTop"></div>
-        <div class="show_mobToc"><svg t="1631963864136" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2699" width="100%" height="100%"><path d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z" fill="#ededed" p-id="2700"></path></svg></div>
+        <div class="show_mobToc">
+          <svg
+            t="1631963864136"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="2699"
+            width="100%"
+            height="100%"
+          >
+            <path
+              d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z"
+              fill="#ededed"
+              p-id="2700"
+            ></path>
+          </svg>
+        </div>
       </div>
     </div>
   </body>
