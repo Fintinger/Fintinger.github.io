@@ -1649,12 +1649,13 @@
 </description>
         </item>
         <item>
-        <title>寻址方式</title>
-        <link>https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/</link>
+        <title>寻址方式与存储模式</title>
+        <link>https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F/</link>
         <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
         
-        <guid>https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/</guid>
-        <description>&lt;img src="https://picsum.photos/seed/xunzhifangsh/640/360" alt="Featured image of post 寻址方式" /&gt;&lt;table&gt;
+        <guid>https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F/</guid>
+        <description>&lt;img src="https://picsum.photos/seed/findAddr&MemoryStore/640/360" alt="Featured image of post 寻址方式与存储模式" /&gt;&lt;h2 id=&#34;寻址方式&#34;&gt;寻址方式&lt;/h2&gt;
+&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;基本寻址方式&lt;/th&gt;
@@ -1737,10 +1738,9 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;blockquote&gt;
 &lt;p&gt;&lt;figure style=&#34;flex-grow: 119; flex-basis: 286px&#34;&gt;
-		&lt;a href=&#34;https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/FindAddr.assets/xhfs.jpg&#34; data-size=&#34;2391x2000&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/FindAddr.assets/xhfs.jpg&#34;
-				srcset=&#34;https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/FindAddr.assets/xhfs_hu87ad9af38d42c6d3dc7ef2ba742d3604_277515_480x0_resize_q75_box.jpg 480w, https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/FindAddr.assets/xhfs_hu87ad9af38d42c6d3dc7ef2ba742d3604_277515_1024x0_resize_q75_box.jpg 1024w&#34;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F/FindAddr.assets/xhfs.jpg&#34; data-size=&#34;2391x2000&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F/FindAddr.assets/xhfs.jpg&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F/FindAddr.assets/xhfs_hu87ad9af38d42c6d3dc7ef2ba742d3604_277515_480x0_resize_q75_box.jpg 480w, https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F/FindAddr.assets/xhfs_hu87ad9af38d42c6d3dc7ef2ba742d3604_277515_1024x0_resize_q75_box.jpg 1024w&#34;
 				width=&#34;2391&#34;
 				height=&#34;2000&#34;
 				loading=&#34;lazy&#34;
@@ -1750,7 +1750,73 @@
 		&lt;figcaption&gt;基本寻址方式示意图&lt;/figcaption&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;存储模式&#34;&gt;存储模式&lt;/h2&gt;
+&lt;h3 id=&#34;按字节编址&#34;&gt;“按字节编址”&lt;/h3&gt;
+&lt;p&gt;主存将一个存储单元定为8位，即一个字节，这称为&lt;strong&gt;按字节编址的存储器&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;区分字，字节，位&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;1Byte(字节) = 8bit(位或比特)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;32位系统 ⇒ 32位为1字 ⇒由4个字节组成 ⇒ 在主存中占用4个连续的字节单元&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;64位系统 ⇒ 64位为1字 ⇒由8个字节组成 ⇒ 在主存中占用8个连续的字节单元&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一般英文字母数字为1个字节，汉字为2字节(ASCII)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1.ASCII码: 一个英文字母(不分大小写)占一个字节的空间,一个中文汉字占两个字节的空间。&lt;/li&gt;
+&lt;li&gt;2.UTF-8编码: 一个英文字符等于一个字节,一个中文(含繁体)等于三个字节。中文标点占三个字节,英文标点占一个字节&lt;/li&gt;
+&lt;li&gt;3.Unicode编码: 一个英文等于两个字节,一个中文(含繁体)等于两个字节。中文标点占两个字节,英文标点占两个字节&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/blockquote&gt;
+&lt;h3 id=&#34;数据存储顺序&#34;&gt;数据存储顺序&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;大端存储：&lt;/strong&gt; 数据的&lt;strong&gt;最低有效字节&lt;/strong&gt;存储在高地址单元&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;小端存储：&lt;/strong&gt; 数据的&lt;strong&gt;最低有效字节&lt;/strong&gt;存储在低地址单元&lt;/p&gt;
+&lt;p&gt;对于下面这个数据结构&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;c1&#34;&gt;//0x1112131415161718
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在主存中的大端存储和小端存储如图所示&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;index.assets/1.jpg&#34; alt=&#34;新文档 35_1&#34; style=&#34;zoom:15%;&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;边界对齐&#34;&gt;边界对齐&lt;/h3&gt;
+&lt;p&gt;数据存储在地位地址以全0开始的连续存储单元中，若不满足，可填充一至多个空白字节。否则，读写一个完整的数据需要访问两次存储器。&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 187; flex-basis: 450px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F/index.assets/123.jpg&#34; data-size=&#34;854x455&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F/index.assets/123.jpg&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F/index.assets/123_hu5fa5a6311ac3fd81a831df527fc28553_80440_480x0_resize_q75_box.jpg 480w, https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F/index.assets/123_hu5fa5a6311ac3fd81a831df527fc28553_80440_1024x0_resize_q75_box.jpg 1024w&#34;
+				width=&#34;854&#34;
+				height=&#34;455&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;注意是小端模式&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;注意是小端模式&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;冯诺依曼结构和哈佛结构&#34;&gt;冯·诺依曼结构和哈佛结构&lt;/h3&gt;
+&lt;p&gt;冯：指令数据混合存放在&lt;strong&gt;主存&lt;/strong&gt;中&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在cache中采用冯或哈不等价于主存也采用相应的结构&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;哈：主存分成指令地址空间和数据地址空间两部分(多见于RISC)&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 234; flex-basis: 563px&#34;&gt;
+		&lt;a href=&#34;https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F/index.assets/img35_3.jpg&#34; data-size=&#34;2028x864&#34;&gt;&lt;img src=&#34;https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F/index.assets/img35_3.jpg&#34;
+				srcset=&#34;https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F/index.assets/img35_3_hude3b589871dddc42e46f619acc76bccb_85291_480x0_resize_q75_box.jpg 480w, https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F/index.assets/img35_3_hude3b589871dddc42e46f619acc76bccb_85291_1024x0_resize_q75_box.jpg 1024w&#34;
+				width=&#34;2028&#34;
+				height=&#34;864&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;冯·诺依曼结构和哈佛结构示意图&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;冯·诺依曼结构和哈佛结构示意图&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -2414,179 +2480,12 @@ $$
 </description>
         </item>
         <item>
-        <title>图的存储</title>
-        <link>https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/</link>
-        <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/</guid>
-        <description>&lt;h2 id=&#34;邻接矩阵&#34;&gt;邻接矩阵&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/fintinger/figure-bed/raw/master//images/20210526095923.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
-&lt;h3 id=&#34;代码实现&#34;&gt;代码实现&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define MaxVextexNum 100&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//容许存储的最大顶点数
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Vex&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MaxVextexNum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
-    &lt;span class=&#34;c1&#34;&gt;//可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Edge&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MaxVextexNum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MaxVextexNum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
-    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;vexnum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;arcnum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//顶点数和弧|边数
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MGraph&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;即&lt;img src=&#34;https://gitee.com/fintinger/figure-bed/raw/master//images/20210526102019.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
-&lt;h3 id=&#34;找度&#34;&gt;找度&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;根据邻接矩阵计算结点的度TD&lt;/strong&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;无向图&lt;/th&gt;
-&lt;th&gt;有向图&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;$TD(V_i)$&lt;/td&gt;
-&lt;td&gt;第i行（或i列）中非零元素的个数&lt;/td&gt;
-&lt;td&gt;$ID(V_i)$ : i行非零元素个数&lt;br /&gt;$OD(V_i)$: i列非零元素个数&lt;br /&gt;TD=ID+OD&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;对于带权图网&#34;&gt;对于带权图（网）&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/fintinger/figure-bed/raw/master//images/20210526104343.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define MaxVextexNum 100&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//容许存储的最大顶点数
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define INIFINITY &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//宏定义，表示无穷
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;VextexType&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//顶点
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;EdgeType&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//权值
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;n&#34;&gt;VextexType&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Vex&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MaxVextexNum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
-    &lt;span class=&#34;n&#34;&gt;EdgeType&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Edge&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MaxVextexNum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MaxVextexNum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
-    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;vexnum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;arcnum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MGraph&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;复杂度&#34;&gt;复杂度&lt;/h3&gt;
-&lt;p&gt;空间复杂度来自数组&lt;code&gt;Vex[]&lt;/code&gt;跟&lt;code&gt;Edge[]&lt;/code&gt;，故空间复杂度为$|V|+|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更&lt;strong&gt;适合存储稠密图&lt;/strong&gt;，不然有较多浪费。&lt;/p&gt;
-&lt;h3 id=&#34;性质&#34;&gt;性质&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;设图G的邻接矩阵为A（矩阵元素为0/1），则&lt;span style=&#34;background:#ffa502;&#34;&gt;$A^n$的元素$A^n[i][j]$等于由顶点$i$到顶点$j$的长度为$n$的路径的数目。&lt;/span&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/fintinger/figure-bed/raw/master//images/20210526105313.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
-&lt;p&gt;对于$A^2[1][4]=a_{1,1}a_{1,4}+a_{1,2}a_{2,4}+a_{1,3}a_{3,4}+a_{4,1}a_{4,4}=1$，&lt;/br&gt;
-&lt;span style=&#34;background:#ffa502;&#34;&gt;$a_{1,2}a_{2,4}=1*1$表示，有一条从$Vex[1]→Vex[2]→Vex[4]$的线，总结果$A^2[1][4]=1$表示从A到D路径长为2的路径数目为1，也就是$A→B→$D.&lt;/span&gt;&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;对给定的图G，其邻接矩阵是唯一的。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;邻接表&#34;&gt;邻接表&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;adjacency list 邻接表;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/fintinger/figure-bed/raw/master//images/20210526110617.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
-&lt;h3 id=&#34;代码实现-1&#34;&gt;代码实现&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define MaxVextexNum 100
-&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;VextexType&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//顶点
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;c1&#34;&gt;//&amp;#34;边|弧&amp;#34;
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;ArcNode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;adjvex&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//边|弧指向哪一节点,&amp;#34;相邻的结点&amp;#34;
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;ArcNode&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//指向下一条弧的指针
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;//Infotype info; //边权值
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ArcNode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//定义边结点
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;c1&#34;&gt;//&amp;#34;顶点&amp;#34;
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;VNode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;n&#34;&gt;VextexType&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//数据域
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;ArcNode&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;first&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//第一条边|弧
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;VNode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;AdjList&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MaxVextexNum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//定义顶点结点，AdjList为VNode类型的数组
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;c1&#34;&gt;//&amp;#34;邻接表&amp;#34;
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;n&#34;&gt;AdjList&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;vertices&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//定义一个邻接链表
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;vexnum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;arcnum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//节点数，边|弧数
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ALGraph&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;复杂度-1&#34;&gt;复杂度&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;无向图&lt;/th&gt;
-&lt;th&gt;有向图&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;$O(V+2E)$&lt;/td&gt;
-&lt;td&gt;$O(V+E)$ [只记出度]&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;适合稀疏图&lt;/strong&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;找度-1&#34;&gt;找度&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;入度&lt;/th&gt;
-&lt;th&gt;出度&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;结点$i$的&lt;code&gt;*first&lt;/code&gt;+&lt;code&gt;*next&lt;/code&gt;数量&lt;/td&gt;
-&lt;td&gt;遍历所有节点，找到指向当前节点的所有指针数，之和即为出度（较复杂）&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;性质-1&#34;&gt;性质&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;邻接表的表示方式不唯一。&lt;/li&gt;
-&lt;li&gt;找有向图的入边不太方便。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;十字链表有向图&#34;&gt;十字链表（有向图）&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;十字链表只用于存储有向图&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/fintinger/figure-bed/raw/master//images/20210526155808.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
-&lt;h3 id=&#34;复杂度-2&#34;&gt;复杂度&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;空间复杂度：&lt;/strong&gt;  $O(|V|+|E|)$，存储了所有顶点和边&lt;/p&gt;
-&lt;h3 id=&#34;找度-2&#34;&gt;找度&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;入度&lt;/th&gt;
-&lt;th&gt;出度&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;顺着橙色🍍找，直至^&lt;/td&gt;
-&lt;td&gt;顺着绿色🥒找，直至^&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;拿找A结点的出度为例&lt;/br&gt;&lt;/p&gt;
-&lt;p&gt;从A绿色🥒出发，箭头指向01，即找到A→B的路径&lt;/br&gt;&lt;/p&gt;
-&lt;p&gt;继续从绿色🥒出发，箭头指向02，即找到A→C的路径&lt;/br&gt;&lt;/p&gt;
-&lt;p&gt;02绿色🥒处为^即再无出度&lt;/p&gt;
-&lt;h2 id=&#34;邻接多重表无向图&#34;&gt;邻接多重表（无向图）&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/fintinger/figure-bed/raw/master//images/20210526161505.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
-&lt;h3 id=&#34;复杂度-3&#34;&gt;复杂度&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;空间复杂度：&lt;/strong&gt; $O(|V|+|E|)$&lt;/p&gt;
-&lt;h3 id=&#34;找度-3&#34;&gt;找度&lt;/h3&gt;
-&lt;p&gt;从A出发，第一条边为01即AB这条边&lt;/br&gt;&lt;/p&gt;
-&lt;p&gt;顺着iLink（即橙色）找到下一条边为01，即AD这条边&lt;/br&gt;&lt;/p&gt;
-&lt;p&gt;至此，橙色为^即，无与0（即A）直接相连的边！&lt;/br&gt;&lt;/p&gt;
-&lt;p&gt;其他类似&lt;/p&gt;
-&lt;h2 id=&#34;横向对比&#34;&gt;横向对比&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitee.com/fintinger/figure-bed/raw/master//images/20210526165434.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
-&lt;p&gt;🤩后续研究一般只针对&lt;strong&gt;邻接矩阵&lt;/strong&gt;和&lt;strong&gt;邻接表&lt;/strong&gt;进行&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>图的应用</title>
         <link>https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8/</link>
-        <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
+        <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
         
         <guid>https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
-        <description>&lt;h2 id=&#34;一最小生成树&#34;&gt;一、最小生成树&lt;/h2&gt;
+        <description>&lt;img src="https://picsum.photos/seed/graphapply/640/360" alt="Featured image of post 图的应用" /&gt;&lt;h2 id=&#34;一最小生成树&#34;&gt;一、最小生成树&lt;/h2&gt;
 &lt;h5 id=&#34;什么是生成树&#34;&gt;📌什么是生成树？&lt;/h5&gt;
 &lt;p&gt;连通图的生成树是包含图中所有顶点的一个&lt;strong&gt;极小连通子图&lt;/strong&gt;，通俗地讲，就是“边尽可能少，但需保持连通”。&lt;/br&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;规律：&lt;/strong&gt; 对于一个顶点数|V|=n的树，其生成树的边数|E|=n-1。如果将|E|+1，必然会形成回路；如果将|E|-1，则会成为非连通图。&lt;/p&gt;
@@ -3007,10 +2906,10 @@ A.5    B.6     C.8     D.9 &lt;br/&gt;&lt;/p&gt;
         <item>
         <title>图的遍历</title>
         <link>https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/</link>
-        <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
+        <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
         
         <guid>https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/</guid>
-        <description>&lt;h2 id=&#34;广度优先遍历bfs&#34;&gt;广度优先遍历（BFS）&lt;/h2&gt;
+        <description>&lt;img src="https://picsum.photos/seed/graphtraverse/640/360" alt="Featured image of post 图的遍历" /&gt;&lt;h2 id=&#34;广度优先遍历bfs&#34;&gt;广度优先遍历（BFS）&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;BFS(Breadth-First-Search)，参考对树的层序遍历&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -3194,6 +3093,173 @@ A.5    B.6     C.8     D.9 &lt;br/&gt;&lt;/p&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;🖋&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>图的存储</title>
+        <link>https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/</link>
+        <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/</guid>
+        <description>&lt;img src="https://picsum.photos/seed/graphstroage/640/360" alt="Featured image of post 图的存储" /&gt;&lt;h2 id=&#34;邻接矩阵&#34;&gt;邻接矩阵&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/fintinger/figure-bed/raw/master//images/20210526095923.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;代码实现&#34;&gt;代码实现&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define MaxVextexNum 100&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//容许存储的最大顶点数
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Vex&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MaxVextexNum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+    &lt;span class=&#34;c1&#34;&gt;//可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Edge&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MaxVextexNum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MaxVextexNum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;vexnum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;arcnum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//顶点数和弧|边数
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MGraph&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;即&lt;img src=&#34;https://gitee.com/fintinger/figure-bed/raw/master//images/20210526102019.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;找度&#34;&gt;找度&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;根据邻接矩阵计算结点的度TD&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;无向图&lt;/th&gt;
+&lt;th&gt;有向图&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;$TD(V_i)$&lt;/td&gt;
+&lt;td&gt;第i行（或i列）中非零元素的个数&lt;/td&gt;
+&lt;td&gt;$ID(V_i)$ : i行非零元素个数&lt;br /&gt;$OD(V_i)$: i列非零元素个数&lt;br /&gt;TD=ID+OD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;对于带权图网&#34;&gt;对于带权图（网）&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/fintinger/figure-bed/raw/master//images/20210526104343.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define MaxVextexNum 100&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//容许存储的最大顶点数
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define INIFINITY &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//宏定义，表示无穷
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;VextexType&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//顶点
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;EdgeType&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//权值
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;VextexType&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Vex&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MaxVextexNum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;EdgeType&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Edge&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MaxVextexNum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MaxVextexNum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;vexnum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;arcnum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MGraph&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;复杂度&#34;&gt;复杂度&lt;/h3&gt;
+&lt;p&gt;空间复杂度来自数组&lt;code&gt;Vex[]&lt;/code&gt;跟&lt;code&gt;Edge[]&lt;/code&gt;，故空间复杂度为$|V|+|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更&lt;strong&gt;适合存储稠密图&lt;/strong&gt;，不然有较多浪费。&lt;/p&gt;
+&lt;h3 id=&#34;性质&#34;&gt;性质&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;设图G的邻接矩阵为A（矩阵元素为0/1），则&lt;span style=&#34;background:#ffa502;&#34;&gt;$A^n$的元素$A^n[i][j]$等于由顶点$i$到顶点$j$的长度为$n$的路径的数目。&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/fintinger/figure-bed/raw/master//images/20210526105313.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;对于$A^2[1][4]=a_{1,1}a_{1,4}+a_{1,2}a_{2,4}+a_{1,3}a_{3,4}+a_{4,1}a_{4,4}=1$，&lt;/br&gt;
+&lt;span style=&#34;background:#ffa502;&#34;&gt;$a_{1,2}a_{2,4}=1*1$表示，有一条从$Vex[1]→Vex[2]→Vex[4]$的线，总结果$A^2[1][4]=1$表示从A到D路径长为2的路径数目为1，也就是$A→B→$D.&lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;对给定的图G，其邻接矩阵是唯一的。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;邻接表&#34;&gt;邻接表&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;adjacency list 邻接表;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/fintinger/figure-bed/raw/master//images/20210526110617.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;代码实现-1&#34;&gt;代码实现&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define MaxVextexNum 100
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;VextexType&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//顶点
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;//&amp;#34;边|弧&amp;#34;
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;ArcNode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;adjvex&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//边|弧指向哪一节点,&amp;#34;相邻的结点&amp;#34;
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;ArcNode&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//指向下一条弧的指针
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;//Infotype info; //边权值
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ArcNode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//定义边结点
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;//&amp;#34;顶点&amp;#34;
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;VNode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;VextexType&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//数据域
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;ArcNode&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;first&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//第一条边|弧
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;VNode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;AdjList&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MaxVextexNum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//定义顶点结点，AdjList为VNode类型的数组
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;//&amp;#34;邻接表&amp;#34;
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;AdjList&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;vertices&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//定义一个邻接链表
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;vexnum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;arcnum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//节点数，边|弧数
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ALGraph&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;复杂度-1&#34;&gt;复杂度&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;无向图&lt;/th&gt;
+&lt;th&gt;有向图&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;$O(V+2E)$&lt;/td&gt;
+&lt;td&gt;$O(V+E)$ [只记出度]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;适合稀疏图&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;找度-1&#34;&gt;找度&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;入度&lt;/th&gt;
+&lt;th&gt;出度&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;结点$i$的&lt;code&gt;*first&lt;/code&gt;+&lt;code&gt;*next&lt;/code&gt;数量&lt;/td&gt;
+&lt;td&gt;遍历所有节点，找到指向当前节点的所有指针数，之和即为出度（较复杂）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;性质-1&#34;&gt;性质&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;邻接表的表示方式不唯一。&lt;/li&gt;
+&lt;li&gt;找有向图的入边不太方便。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;十字链表有向图&#34;&gt;十字链表（有向图）&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;十字链表只用于存储有向图&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/fintinger/figure-bed/raw/master//images/20210526155808.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;复杂度-2&#34;&gt;复杂度&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;空间复杂度：&lt;/strong&gt;  $O(|V|+|E|)$，存储了所有顶点和边&lt;/p&gt;
+&lt;h3 id=&#34;找度-2&#34;&gt;找度&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;入度&lt;/th&gt;
+&lt;th&gt;出度&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;顺着橙色🍍找，直至^&lt;/td&gt;
+&lt;td&gt;顺着绿色🥒找，直至^&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;拿找A结点的出度为例&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;从A绿色🥒出发，箭头指向01，即找到A→B的路径&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;继续从绿色🥒出发，箭头指向02，即找到A→C的路径&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;02绿色🥒处为^即再无出度&lt;/p&gt;
+&lt;h2 id=&#34;邻接多重表无向图&#34;&gt;邻接多重表（无向图）&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/fintinger/figure-bed/raw/master//images/20210526161505.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;复杂度-3&#34;&gt;复杂度&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;空间复杂度：&lt;/strong&gt; $O(|V|+|E|)$&lt;/p&gt;
+&lt;h3 id=&#34;找度-3&#34;&gt;找度&lt;/h3&gt;
+&lt;p&gt;从A出发，第一条边为01即AB这条边&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;顺着iLink（即橙色）找到下一条边为01，即AD这条边&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;至此，橙色为^即，无与0（即A）直接相连的边！&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;其他类似&lt;/p&gt;
+&lt;h2 id=&#34;横向对比&#34;&gt;横向对比&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/fintinger/figure-bed/raw/master//images/20210526165434.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;🤩后续研究一般只针对&lt;strong&gt;邻接矩阵&lt;/strong&gt;和&lt;strong&gt;邻接表&lt;/strong&gt;进行&lt;/p&gt;
 </description>
         </item>
         <item>

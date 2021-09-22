@@ -6,11 +6,11 @@
     <description>Recent content in BFS on Archai &#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 02 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/bfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/bfs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>图的遍历</title>
       <link>https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/</link>
-      <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/</guid>
       <description>广度优先遍历（BFS）  BFS(Breadth-First-Search)，参考对树的层序遍历

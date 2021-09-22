@@ -26,14 +26,14 @@ $OD(V_i)$: i列非零元素个数
 TD=ID&#43;OD    对于带权图（网） #define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph; 复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|&#43;|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。'>
 <meta property='og:url' content='https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/'>
 <meta property='og:site_name' content='Archai &#39;s blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='数据结构' /><meta property='article:tag' content='邻接矩阵' /><meta property='article:tag' content='邻接表' /><meta property='article:tag' content='十字链表' /><meta property='article:tag' content='邻接多重表' /><meta property='article:published_time' content='2021-06-02T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-06-02T00:00:00&#43;00:00'/><meta property='og:image' content='https://www.fintinger.site/img/defaultImg.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='数据结构' /><meta property='article:tag' content='邻接矩阵' /><meta property='article:tag' content='邻接表' /><meta property='article:tag' content='十字链表' /><meta property='article:tag' content='邻接多重表' /><meta property='article:published_time' content='2021-06-02T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-06-02T00:00:00&#43;00:00'/><meta property='og:image' content='https://picsum.photos/seed/graphstroage/640/360' />
 <meta name="twitter:title" content="图的存储">
 <meta name="twitter:description" content="邻接矩阵  Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.
  代码实现 #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph; 即找度 根据邻接矩阵计算结点的度TD
     无向图 有向图     $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数
 $OD(V_i)$: i列非零元素个数
 TD=ID&#43;OD    对于带权图（网） #define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph; 复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|&#43;|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://www.fintinger.site/img/defaultImg.jpg' />
+    <meta name="twitter:image" content='https://picsum.photos/seed/graphstroage/640/360' />
     <link rel="shortcut icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico" />
 
   </head>
@@ -184,8 +184,16 @@ TD=ID&#43;OD    对于带权图（网） #define MaxVextexNum 100//容许存储�
         </div>
     
 <main class="main full-width">
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+    <div class="article-image">
+        <a href="/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/">
+            
+            <img src="https://picsum.photos/seed/graphstroage/640/360" loading="lazy" alt="Featured image of post 图的存储" />
+            
+        </a>
+    </div>
+    
 
     <div class="article-details">
     
@@ -519,9 +527,15 @@ TD=ID&#43;OD    对于带权图（网） #define MaxVextexNum 100//容许存储�
 </article>
                 
                     
-<article class="">
+<article class="has-image">
     <a href="/p/%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8/">
         
+        
+            <div class="article-image">
+                
+                    <img src="https://picsum.photos/seed/graphapply/640/360" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/graphapply/640/360"/>
+                
+            </div>
         
 
         <div class="article-details">
@@ -531,9 +545,15 @@ TD=ID&#43;OD    对于带权图（网） #define MaxVextexNum 100//容许存储�
 </article>
                 
                     
-<article class="">
+<article class="has-image">
     <a href="/p/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/">
         
+        
+            <div class="article-image">
+                
+                    <img src="https://picsum.photos/seed/graphtraverse/640/360" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/graphtraverse/640/360"/>
+                
+            </div>
         
 
         <div class="article-details">

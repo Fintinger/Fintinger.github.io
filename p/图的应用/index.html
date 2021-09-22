@@ -32,7 +32,7 @@ Prim（普利姆算法），Kruskal（克鲁斯卡尔算法）就是寻找最小
 代码实现 void MiniSpanTree_PRIMI(Graph G,int u){ //从顶点u出发找G的最小生成树  for (int i = 0; i &amp;lt;G.vexnum; &#43;&#43;i) {//辅助数组初始化  if(i!=u){ closedge[i]={u,G.arcs[u][i]}; } } closedge[u].lowcost=0; for (int j = 0; j &amp;lt; G.vexnum; j&#43;&#43;) { k=minimum(closedge);//求生成树的下一个节点  cout&amp;lt;&amp;lt;cloedge[k].adjvex&amp;lt;&amp;lt;G.vex[k]; closedge[k].lowcost=0; for (int i = 0; i &amp;lt; G.vexnum; i&#43;&#43;) { if (G.arc[k][j].adj&amp;lt;closedge[j].lowcost) { closedge[j]={G.vexs[k],G.arcs[k][j].adj}; } } } } 2.'>
 <meta property='og:url' content='https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8/'>
 <meta property='og:site_name' content='Archai &#39;s blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='数据结构' /><meta property='article:tag' content='最小生成树' /><meta property='article:tag' content='Prim' /><meta property='article:tag' content='Kruskal' /><meta property='article:tag' content='最短路径' /><meta property='article:tag' content='Dijkstra' /><meta property='article:tag' content='Floyd' /><meta property='article:tag' content='拓扑排序' /><meta property='article:tag' content='关键路径' /><meta property='article:published_time' content='2021-06-02T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-06-02T00:00:00&#43;00:00'/><meta property='og:image' content='https://www.fintinger.site/img/defaultImg.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='数据结构' /><meta property='article:tag' content='最小生成树' /><meta property='article:tag' content='Prim' /><meta property='article:tag' content='Kruskal' /><meta property='article:tag' content='最短路径' /><meta property='article:tag' content='Dijkstra' /><meta property='article:tag' content='Floyd' /><meta property='article:tag' content='拓扑排序' /><meta property='article:tag' content='关键路径' /><meta property='article:published_time' content='2021-06-04T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-06-04T00:00:00&#43;00:00'/><meta property='og:image' content='https://picsum.photos/seed/graphapply/640/360' />
 <meta name="twitter:title" content="图的应用">
 <meta name="twitter:description" content="一、最小生成树 📌什么是生成树？ 连通图的生成树是包含图中所有顶点的一个极小连通子图，通俗地讲，就是“边尽可能少，但需保持连通”。
 规律： 对于一个顶点数|V|=n的树，其生成树的边数|E|=n-1。如果将|E|&#43;1，必然会形成回路；如果将|E|-1，则会成为非连通图。
@@ -42,7 +42,7 @@ Prim（普利姆算法），Kruskal（克鲁斯卡尔算法）就是寻找最小
 1.Prim（普利姆算法）  从某一顶点开始，每次将代价最小的新顶点纳入生成树，直至所有顶点都纳入为止。
  图示 易知，此方法得到的最小生成子树是不唯一的。
 代码实现 void MiniSpanTree_PRIMI(Graph G,int u){ //从顶点u出发找G的最小生成树  for (int i = 0; i &amp;lt;G.vexnum; &#43;&#43;i) {//辅助数组初始化  if(i!=u){ closedge[i]={u,G.arcs[u][i]}; } } closedge[u].lowcost=0; for (int j = 0; j &amp;lt; G.vexnum; j&#43;&#43;) { k=minimum(closedge);//求生成树的下一个节点  cout&amp;lt;&amp;lt;cloedge[k].adjvex&amp;lt;&amp;lt;G.vex[k]; closedge[k].lowcost=0; for (int i = 0; i &amp;lt; G.vexnum; i&#43;&#43;) { if (G.arc[k][j].adj&amp;lt;closedge[j].lowcost) { closedge[j]={G.vexs[k],G.arcs[k][j].adj}; } } } } 2."><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://www.fintinger.site/img/defaultImg.jpg' />
+    <meta name="twitter:image" content='https://picsum.photos/seed/graphapply/640/360' />
     <link rel="shortcut icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico" />
 
   </head>
@@ -193,8 +193,16 @@ Prim（普利姆算法），Kruskal（克鲁斯卡尔算法）就是寻找最小
         </div>
     
 <main class="main full-width">
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+    <div class="article-image">
+        <a href="/p/%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8/">
+            
+            <img src="https://picsum.photos/seed/graphapply/640/360" loading="lazy" alt="Featured image of post 图的应用" />
+            
+        </a>
+    </div>
+    
 
     <div class="article-details">
     
@@ -226,7 +234,7 @@ Prim（普利姆算法），Kruskal（克鲁斯卡尔算法）就是寻找最小
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Jun 02, 2021</time>
+                <time class="article-time--published">Jun 04, 2021</time>
             </div>
         
 
@@ -793,25 +801,37 @@ A.5    B.6     C.8     D.9 <br/></p>
 </article>
                 
                     
-<article class="">
-    <a href="/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/">
+<article class="has-image">
+    <a href="/p/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/">
         
+        
+            <div class="article-image">
+                
+                    <img src="https://picsum.photos/seed/graphtraverse/640/360" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/graphtraverse/640/360"/>
+                
+            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">图的存储</h2>
+            <h2 class="article-title">图的遍历</h2>
         </div>
     </a>
 </article>
                 
                     
-<article class="">
-    <a href="/p/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/">
+<article class="has-image">
+    <a href="/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/">
         
+        
+            <div class="article-image">
+                
+                    <img src="https://picsum.photos/seed/graphstroage/640/360" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/graphstroage/640/360"/>
+                
+            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">图的遍历</h2>
+            <h2 class="article-title">图的存储</h2>
         </div>
     </a>
 </article>

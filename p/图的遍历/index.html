@@ -30,7 +30,7 @@ BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历
  void BFS(Graph G,int v); bool visited[MAX_VERTEX_NUM]; SqQueue Q;//辅助队列 void BFSTraverse(Graph G){ //初始化visited数组  for (int i = 0; i &amp;lt; G.vexnum; &#43;&#43;i) {//使下标从1开始  visited[i]=false; } //对非连通图的处理  for (int v = 0; v &amp;lt; G.vexnum; &#43;&#43;v) { if (!visited[v]) BFS(G,v); } } //从顶点v出发广度优先遍历图G void BFS(Graph G,int v){ visit(v); visited[v]=true; EnQueue(Q,v);//顶点v入队列Q  while(!isEmpty(Q)){ DeQueue(Q,v);//顶点v出队列Q  for (w=FirstNeighbor(G,v);w&amp;gt;=0;w=NextNeighbor(G,v,w))//处理v的所有邻接点  if (!'>
 <meta property='og:url' content='https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/'>
 <meta property='og:site_name' content='Archai &#39;s blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='数据结构' /><meta property='article:tag' content='BFS' /><meta property='article:tag' content='DFS' /><meta property='article:published_time' content='2021-06-02T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-06-02T00:00:00&#43;00:00'/><meta property='og:image' content='https://www.fintinger.site/img/defaultImg.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='数据结构' /><meta property='article:tag' content='BFS' /><meta property='article:tag' content='DFS' /><meta property='article:published_time' content='2021-06-03T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-06-03T00:00:00&#43;00:00'/><meta property='og:image' content='https://picsum.photos/seed/graphtraverse/640/360' />
 <meta name="twitter:title" content="图的遍历">
 <meta name="twitter:description" content="广度优先遍历（BFS）  BFS(Breadth-First-Search)，参考对树的层序遍历
  对上面的图从①出发进行BFS得到序列：
@@ -39,7 +39,7 @@ BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历
 BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历过程中会出现重复访问的问题，故可构造visited数组，用来标记已访问过的数组。
 此外，还应针对非连通图做额外的判断，遍历完一个连通分量（极大连通子图）后，遍历查找visited数组中是否还存在未遍历的，如果有即为另一连通分量，继续调用BFS即可。
  void BFS(Graph G,int v); bool visited[MAX_VERTEX_NUM]; SqQueue Q;//辅助队列 void BFSTraverse(Graph G){ //初始化visited数组  for (int i = 0; i &amp;lt; G.vexnum; &#43;&#43;i) {//使下标从1开始  visited[i]=false; } //对非连通图的处理  for (int v = 0; v &amp;lt; G.vexnum; &#43;&#43;v) { if (!visited[v]) BFS(G,v); } } //从顶点v出发广度优先遍历图G void BFS(Graph G,int v){ visit(v); visited[v]=true; EnQueue(Q,v);//顶点v入队列Q  while(!isEmpty(Q)){ DeQueue(Q,v);//顶点v出队列Q  for (w=FirstNeighbor(G,v);w&amp;gt;=0;w=NextNeighbor(G,v,w))//处理v的所有邻接点  if (!"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://www.fintinger.site/img/defaultImg.jpg' />
+    <meta name="twitter:image" content='https://picsum.photos/seed/graphtraverse/640/360' />
     <link rel="shortcut icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico" />
 
   </head>
@@ -190,8 +190,16 @@ BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历
         </div>
     
 <main class="main full-width">
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+    <div class="article-image">
+        <a href="/p/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/">
+            
+            <img src="https://picsum.photos/seed/graphtraverse/640/360" loading="lazy" alt="Featured image of post 图的遍历" />
+            
+        </a>
+    </div>
+    
 
     <div class="article-details">
     
@@ -223,7 +231,7 @@ BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Jun 02, 2021</time>
+                <time class="article-time--published">Jun 03, 2021</time>
             </div>
         
 
@@ -546,25 +554,37 @@ BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历
 </article>
                 
                     
-<article class="">
-    <a href="/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/">
+<article class="has-image">
+    <a href="/p/%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8/">
         
+        
+            <div class="article-image">
+                
+                    <img src="https://picsum.photos/seed/graphapply/640/360" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/graphapply/640/360"/>
+                
+            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">图的存储</h2>
+            <h2 class="article-title">图的应用</h2>
         </div>
     </a>
 </article>
                 
                     
-<article class="">
-    <a href="/p/%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8/">
+<article class="has-image">
+    <a href="/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/">
         
+        
+            <div class="article-image">
+                
+                    <img src="https://picsum.photos/seed/graphstroage/640/360" loading="lazy" data-key="" data-hash="https://picsum.photos/seed/graphstroage/640/360"/>
+                
+            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">图的应用</h2>
+            <h2 class="article-title">图的存储</h2>
         </div>
     </a>
 </article>
