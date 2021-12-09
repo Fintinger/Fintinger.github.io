@@ -36,7 +36,7 @@ typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数�
 typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数组基址  int TableLen;//查找表长度 }SSTable; int BinarySearch(SSTable L,int key){ int low=0,high=L.TableLen-1,mid; while (low&amp;lt;=high) { mid=(low&#43;high)/2; if (L.'>
 <meta property='og:url' content='https://www.fintinger.site/p/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/'>
 <meta property='og:site_name' content='Archai &#39;s blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='数据结构' /><meta property='article:tag' content='顺序查找' /><meta property='article:tag' content='折半查找' /><meta property='article:tag' content='B树' /><meta property='article:tag' content='散列查找' /><meta property='article:published_time' content='2021-06-06T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-06-06T00:00:00&#43;00:00'/><meta property='og:image' content='https://www.fintinger.site/img/defaultImg.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='数据结构' /><meta property='article:tag' content='顺序查找' /><meta property='article:tag' content='折半查找' /><meta property='article:tag' content='B树' /><meta property='article:tag' content='散列查找' /><meta property='article:published_time' content='2021-06-06T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-06-06T00:00:00&#43;00:00'/><meta property='og:image' content='https://picsum.photos/seed/Serach/640/360' />
 <meta name="twitter:title" content="查找算法相关">
 <meta name="twitter:description" content="顺序查找 typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数组基址  int TableLen;//查找表长度 }SSTable; int Seq_Search(SSTable ST,int key){ ST.elem[0]=key; int i; for (i = ST.TableLen;ST.elem[i]!=key ; i--) {}//从后往前查找，最终返回下标i  return i;//返回0说明没找到 } 效率分析 对于长度为n的顺序表，如果查找成功 $$ ASL={\frac{1&#43;2&#43;&amp;hellip;&#43;n}{n}}=\frac{n&#43;1}{2} $$ 若果查找失败，则 $ASL=n&#43;1$
 总体上，该算法时间复杂度为 $O(n)$
@@ -48,7 +48,7 @@ typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数�
 折半查找  折半查找，又称“二分查找”，仅适用于有序的顺序表。
  针对升序排列的顺序表，代码实现如下
 typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数组基址  int TableLen;//查找表长度 }SSTable; int BinarySearch(SSTable L,int key){ int low=0,high=L.TableLen-1,mid; while (low&amp;lt;=high) { mid=(low&#43;high)/2; if (L."><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://www.fintinger.site/img/defaultImg.jpg' />
+    <meta name="twitter:image" content='https://picsum.photos/seed/Serach/640/360' />
     <link rel="shortcut icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico" />
 
   </head>
@@ -56,10 +56,11 @@ typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数�
     article-page has-toc
 ">
     <div class="welcome_page">
+      
       <div
         style="user-select: none"
         class="
-        infoCard
+          infoCard
           h-max
           xl:w-max
           py-10
@@ -102,7 +103,7 @@ typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数�
           ></div>
           <h1 class="text-6xl font-semibold">ARCHAI</h1>
           <p style="margin-top: 7px" class="text-xl text-gray-500">
-            Undergraduate / Rookie
+            Graduate / Rookie
           </p>
           <div class="bg-purple-600 px-5 py-3 rounded-md cursor-pointer">
             <a href="#main_content" class="text-white hover:text-white"
@@ -199,8 +200,16 @@ typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数�
         </div>
     
 <main class="main full-width">
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+    <div class="article-image">
+        <a href="/p/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/">
+            
+            <img src="https://picsum.photos/seed/Serach/640/360" loading="lazy" alt="Featured image of post 查找算法相关" />
+            
+        </a>
+    </div>
+    
 
     <div class="article-details">
     

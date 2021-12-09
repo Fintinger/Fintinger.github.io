@@ -2269,7 +2269,7 @@
         <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
         
         <guid>https://www.fintinger.site/p/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/</guid>
-        <description>&lt;h2 id=&#34;顺序查找&#34;&gt;顺序查找&lt;/h2&gt;
+        <description>&lt;img src="https://picsum.photos/seed/Serach/640/360" alt="Featured image of post 查找算法相关" /&gt;&lt;h2 id=&#34;顺序查找&#34;&gt;顺序查找&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//查找表的数据结构（顺序表）
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;elem&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//动态数组基址
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;TableLen&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//查找表长度
@@ -3048,18 +3048,18 @@ A.5    B.6     C.8     D.9 &lt;br/&gt;&lt;/p&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;①&lt;/td&gt;
-&lt;td&gt;$O(&lt;/td&gt;
-&lt;td&gt;V&lt;/td&gt;
+&lt;td&gt;$O(V)$&lt;/td&gt;
+&lt;td&gt;$O(V)$&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;②&lt;/td&gt;
-&lt;td&gt;$O(&lt;/td&gt;
-&lt;td&gt;V&lt;/td&gt;
+&lt;td&gt;$O(V^2)$&lt;/td&gt;
+&lt;td&gt;$O(E)$&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;时间复杂度&lt;/td&gt;
-&lt;td&gt;$O(&lt;/td&gt;
-&lt;td&gt;V&lt;/td&gt;
+&lt;td&gt;$O(V^2)$&lt;/td&gt;
+&lt;td&gt;$O(V+E)$&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -3268,7 +3268,7 @@ A.5    B.6     C.8     D.9 &lt;br/&gt;&lt;/p&gt;
         <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
         
         <guid>https://www.fintinger.site/p/avl%E6%A0%91/</guid>
-        <description>&lt;blockquote&gt;
+        <description>&lt;img src="https://picsum.photos/seed/AVLTREE/640/360" alt="Featured image of post AVL树" /&gt;&lt;blockquote&gt;
 &lt;p&gt;平衡二叉树是Adelson-Velsky和 Landis发明，故命名为AVL树。也称平衡二叉查找树。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;✨&lt;strong&gt;特点：&lt;/strong&gt; ①左子树&amp;lt;根&amp;lt;右子树； ②任一节点，左右子树高度之差不超过1.&lt;/p&gt;
