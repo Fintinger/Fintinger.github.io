@@ -12,28 +12,28 @@
     <lastBuildDate>Thu, 10 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>外部排序相关</title>
-      <link>https://www.fintinger.site/post/2021/06/10/externalsort/</link>
+      <link>https://www.fintinger.site/posts/2021/06/10/externalsort/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/06/10/externalsort/</guid>
+      <guid>https://www.fintinger.site/posts/2021/06/10/externalsort/</guid>
       <description>由于数据元素太多，无法一次全部读入内存进行内部排序，这是就要通过外部排序来解决...</description>
     </item>
     
     <item>
       <title>排序算法相关</title>
-      <link>https://www.fintinger.site/post/2021/06/10/sort/</link>
+      <link>https://www.fintinger.site/posts/2021/06/10/sort/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/06/10/sort/</guid>
+      <guid>https://www.fintinger.site/posts/2021/06/10/sort/</guid>
       <description>排序算法 平均时间复杂度 空间复杂度 稳定性 适用情况     插入排序 $O(n^2)$ O(1) 稳定 n较小，初始序列基本有序   希尔排序 $O(n^{1.3})$ O(1) 不稳定    冒泡排序 $O(n^2)$ O(1) 稳定 n较小，初始序列基本有序   快速排序 $O(n\log_2n)$ $O(nlog_2n)$ 不稳定 初始序列无序   简单选择排序 $O(n^2)$ O(1) 不稳定 n较小   堆排序 $O(n\log_2n)$ O(1) 不稳定 n较大或只排前几位   2-路归并排序 $O(n\log_2n)$ O(n) 稳定 n很大   链式基数排序 $O(d(n+rd))$ $O(rd)$ 稳定 n大，关键字值小    相关概念 1.</description>
     </item>
     
     <item>
       <title>查找算法相关</title>
-      <link>https://www.fintinger.site/post/2021/06/06/search/</link>
+      <link>https://www.fintinger.site/posts/2021/06/06/search/</link>
       <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/06/06/search/</guid>
+      <guid>https://www.fintinger.site/posts/2021/06/06/search/</guid>
       <description>顺序查找 typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数组基址  int TableLen;//查找表长度 }SSTable; int Seq_Search(SSTable ST,int key){ ST.elem[0]=key; int i; for (i = ST.TableLen;ST.elem[i]!=key ; i--) {}//从后往前查找，最终返回下标i  return i;//返回0说明没找到 } 效率分析 对于长度为n的顺序表，如果查找成功$$ ASL={\frac{1+2+&amp;hellip;+n}{n}}=\frac{n+1}{2} $$ 若果查找失败，则 $ASL=n+1$
 总体上，该算法时间复杂度为 $O(n)$
 优化思路 1.如果使得表中的元素有序存放……，可以构造出一棵查找判定树
@@ -46,10 +46,10 @@ typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数�
     
     <item>
       <title>图的应用</title>
-      <link>https://www.fintinger.site/post/2021/06/02/02_application/</link>
+      <link>https://www.fintinger.site/posts/2021/06/02/02_application/</link>
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/06/02/02_application/</guid>
+      <guid>https://www.fintinger.site/posts/2021/06/02/02_application/</guid>
       <description>一、最小生成树 📌什么是生成树？ 连通图的生成树是包含图中所有顶点的一个极小连通子图，通俗地讲，就是“边尽可能少，但需保持连通”。规律： 对于一个顶点数|V|=n的树，其生成树的边数|E|=n-1。如果将|E|+1，必然会形成回路；如果将|E|-1，则会成为非连通图。
 📌什么是最小生成树？  最小生成树，也称最小代价树(Minimum Spanning Tree，MST)
  是带权连通无向图的生成树中边的权值之和最小的一棵树，联系实际问题不难理解其中“最小代价”的意味。Prim（普利姆算法），Kruskal（克鲁斯卡尔算法）就是寻找最小生成树的常用算法。
@@ -60,10 +60,10 @@ typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数�
     
     <item>
       <title>图的遍历</title>
-      <link>https://www.fintinger.site/post/2021/06/02/01_traverse/</link>
+      <link>https://www.fintinger.site/posts/2021/06/02/01_traverse/</link>
       <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/06/02/01_traverse/</guid>
+      <guid>https://www.fintinger.site/posts/2021/06/02/01_traverse/</guid>
       <description>广度优先遍历（BFS）  BFS(Breadth-First-Search)，参考对树的层序遍历
  对上面的图从①出发进行BFS得到序列：
 ①②⑤ ⑥ ③⑦ ④⑧
@@ -74,10 +74,10 @@ BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历
     
     <item>
       <title>图的存储</title>
-      <link>https://www.fintinger.site/post/2021/06/02/00_storage/</link>
+      <link>https://www.fintinger.site/posts/2021/06/02/00_storage/</link>
       <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/06/02/00_storage/</guid>
+      <guid>https://www.fintinger.site/posts/2021/06/02/00_storage/</guid>
       <description>邻接矩阵  Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.
  代码实现 #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph; 即找度 根据邻接矩阵计算结点的度TD
     无向图 有向图     $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数$OD(V_i)$: i列非零元素个数TD=ID+OD    对于带权图（网） #define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph; 复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|+|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。</description>
@@ -85,10 +85,10 @@ BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历
     
     <item>
       <title>AVL树</title>
-      <link>https://www.fintinger.site/post/2021/05/23/avl/</link>
+      <link>https://www.fintinger.site/posts/2021/05/23/avl/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/05/23/avl/</guid>
+      <guid>https://www.fintinger.site/posts/2021/05/23/avl/</guid>
       <description>平衡二叉树是Adelson-Velsky和 Landis发明，故命名为AVL树。也称平衡二叉查找树。
  ✨特点： ①左子树&amp;lt;根&amp;lt;右子树； ②任一节点，左右子树高度之差不超过1.
 平衡因子 $平衡因子=左子树高-右子树高$
@@ -116,10 +116,10 @@ $n_0=0$,$n_1=1$,$n_2=2$&amp;hellip;存在递归关系 $n_h=n_{h-1}+n_{h-2}+1$,�
     
     <item>
       <title>哈夫曼树</title>
-      <link>https://www.fintinger.site/post/2021/05/23/huffmantree/</link>
+      <link>https://www.fintinger.site/posts/2021/05/23/huffmantree/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/05/23/huffmantree/</guid>
+      <guid>https://www.fintinger.site/posts/2021/05/23/huffmantree/</guid>
       <description>基本概念 1.结点的权
 每个结点带有的具有某种现实意义的数值(比如代表重要性等)
 2.结点的带权路径长度
@@ -154,10 +154,10 @@ $v=\frac{WPL_{min}}{WPL}$</description>
     
     <item>
       <title>树</title>
-      <link>https://www.fintinger.site/post/2021/05/22/</link>
+      <link>https://www.fintinger.site/posts/2021/05/22/</link>
       <pubDate>Sat, 22 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/05/22/</guid>
+      <guid>https://www.fintinger.site/posts/2021/05/22/</guid>
       <description>普通树 对于一棵普通类型的树形结构，可将其转化为二叉树之后再参考二叉树的方法进行相关操作。
 孩子兄弟表示法（链式结构） 通过此方法可将普通树转化为二叉树
 //孩子兄弟即Child, Sibling typedef struct CSNode{ Elemtype data; struct CSNode *firstchild,*nextsibling;//第一个孩子和右兄弟指针,等价于*lchild,*rchild }CSNode,*CSTree 图示如下
@@ -178,10 +178,10 @@ B	C	D	A
     
     <item>
       <title>线索二叉树</title>
-      <link>https://www.fintinger.site/post/2021/05/15/</link>
+      <link>https://www.fintinger.site/posts/2021/05/15/</link>
       <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/05/15/</guid>
+      <guid>https://www.fintinger.site/posts/2021/05/15/</guid>
       <description>线索二叉树 WHY  方便从任一个结点出发，找到其前驱、后继；方便遍历
  普通二叉树中，对任意一个结点，若想找到其前驱/后继结点，只能再进行一次相应的前/中/后序遍历才行，复杂度太高。
 为此，我们引入前驱线索，后继线索的概念。其中，前驱线索由左孩子指针充当，后继线索由右孩子指针充当。
@@ -200,10 +200,10 @@ void CreatInThread(ThreadTree T){ pre=NULL; if(T!=NULL){ InThread(T); if(pre-&am
     
     <item>
       <title>由遍历序列构造出二叉树</title>
-      <link>https://www.fintinger.site/post/2021/05/09/</link>
+      <link>https://www.fintinger.site/posts/2021/05/09/</link>
       <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/05/09/</guid>
+      <guid>https://www.fintinger.site/posts/2021/05/09/</guid>
       <description>由遍历序列构造出二叉树 仅知道一种遍历序列是无法确定唯一的二叉树的，以中序遍历为例，对于一个中序遍历序列“BDCAE”，其对应的树形结构可能有下面三种：
 因此，至少需要两种遍历序列才可以推知树形结构。
 1.前序+中序遍历序列 🎈基本步骤 由前序遍历的特性得知，前序遍历中第一个节点必然为根节点，因此根据中序遍历特性，根节点左边为左子树下的所有节点，右边为右子树下的所有节点，然后分别在左子树序列右子树序列中重复进行即可。
@@ -224,10 +224,10 @@ void CreatInThread(ThreadTree T){ pre=NULL; if(T!=NULL){ InThread(T); if(pre-&am
     
     <item>
       <title>向量空间管理策略</title>
-      <link>https://www.fintinger.site/post/2020/11/16/</link>
+      <link>https://www.fintinger.site/posts/2020/11/16/</link>
       <pubDate>Mon, 16 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/11/16/</guid>
+      <guid>https://www.fintinger.site/posts/2020/11/16/</guid>
       <description>向量的空间管理，有静态和动态两种策略
  静态空间管理策略 开辟内部数组_elem[]并使用一段地址连续的物理空间，_capacity表示总容量 ，_size表示当前的实际规模n，示意图如下：
 若采用静态空间管理策略，容量_capacity固定，则有明显的不足&amp;hellip;
@@ -246,10 +246,10 @@ T* oldElem = _elem; _elem = new T[ _capacity &amp;lt;&amp;lt;= 1 ]; 考虑最坏
     
     <item>
       <title>减而治之与分而治之</title>
-      <link>https://www.fintinger.site/post/2020/11/15/</link>
+      <link>https://www.fintinger.site/posts/2020/11/15/</link>
       <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/11/15/</guid>
+      <guid>https://www.fintinger.site/posts/2020/11/15/</guid>
       <description>减而治之(Decrease and conquer)  什么是“减而治之”？
 为求解一个大规模的问题，可以将其划分为两个问题，其一平凡，另一规模缩减 ，分别求解子问题，由子问题的解得原问题的解
  比如说，对于一个数组A的求和问题，可以设计如下的算法
@@ -269,10 +269,10 @@ T(n) =O(1) × (n+1) =O(n)
     
     <item>
       <title>DS导论</title>
-      <link>https://www.fintinger.site/post/2020/11/10/</link>
+      <link>https://www.fintinger.site/posts/2020/11/10/</link>
       <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/11/10/</guid>
+      <guid>https://www.fintinger.site/posts/2020/11/10/</guid>
       <description>导论  所谓算法，即特定计算模型下，旨在解决特定问题的指令序列。输入：待处理的信息（问题）输出：经处理的信息（答案）
  正确性 的确可以解决指定的问题
 确定性 任一算法都可以描述为一个由基本操作组成的序列

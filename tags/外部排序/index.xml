@@ -12,10 +12,10 @@
     <lastBuildDate>Thu, 10 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/%E5%A4%96%E9%83%A8%E6%8E%92%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>外部排序相关</title>
-      <link>https://www.fintinger.site/post/2021/06/10/externalsort/</link>
+      <link>https://www.fintinger.site/posts/2021/06/10/externalsort/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/06/10/externalsort/</guid>
+      <guid>https://www.fintinger.site/posts/2021/06/10/externalsort/</guid>
       <description>由于数据元素太多，无法一次全部读入内存进行内部排序，这是就要通过外部排序来解决...</description>
     </item>
     

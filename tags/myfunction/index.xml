@@ -12,10 +12,10 @@
     <lastBuildDate>Thu, 09 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/myfunction/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>获取文件扩展名</title>
-      <link>https://www.fintinger.site/post/2020/07/09/</link>
+      <link>https://www.fintinger.site/posts/2020/07/09/</link>
       <pubDate>Thu, 09 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/07/09/</guid>
+      <guid>https://www.fintinger.site/posts/2020/07/09/</guid>
       <description>该怎么去获得文件名字符串中的文件扩展名呢？
 一种较为强大的解决方法是利用String的slice、lastIndexOf方法：
 function getFileExtension(filename) { return filename.slice((filename.lastIndexOf(&amp;#34;.&amp;#34;) - 1 &amp;gt;&amp;gt;&amp;gt; 0) + 2); } console.log(getFileExtension3(&amp;#39;&amp;#39;)); // &amp;#39;&amp;#39; console.log(getFileExtension3(&amp;#39;filename&amp;#39;)); // &amp;#39;&amp;#39; console.log(getFileExtension3(&amp;#39;filename.txt&amp;#39;)); // &amp;#39;txt&amp;#39; console.log(getFileExtension3(&amp;#39;.hiddenfile&amp;#39;)); // &amp;#39;&amp;#39; console.log(getFileExtension3(&amp;#39;hiddenfile.&amp;#39;)); // &amp;#39;&amp;#39; console.log(getFileExtension3(&amp;#39;filename.with.many.dots.ext&amp;#39;)); // &amp;#39;ext&amp;#39; 说明 filename.slice((filename.lastIndexOf(&amp;quot;.&amp;quot;) - 1 &amp;gt;&amp;gt;&amp;gt; 0) + 2)
@@ -28,30 +28,30 @@ function getFileExtension(filename) { return filename.slice((filename.lastIndexO
     
     <item>
       <title>一组循环数组</title>
-      <link>https://www.fintinger.site/post/2020/07/08/</link>
+      <link>https://www.fintinger.site/posts/2020/07/08/</link>
       <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/07/08/</guid>
+      <guid>https://www.fintinger.site/posts/2020/07/08/</guid>
       <description>做网页轮播图，或者音乐播放列表时经常要用到一组循环的数组，到最后一项返回第一项，第一项返回最后一项
 利用两次判断 function doLoop( arr ){ arr.loop_idx = 0; // 返回当前的元素  arr.current = function(){ if( this.loop_idx &amp;lt; 0 ){// 第一次检查  this.loop_idx = this.length - 1;// 更新 loop_idx  } if( this.loop_idx &amp;gt;= this.length ){// 第二次检查  this.loop_idx = 0;// 更新 loop_idx  } return arr[ this.loop_idx ];//返回元素  }; // 增加 loop_idx 然后返回新的当前元素  arr.next = function(){ this.loop_idx++; return this.current(); }; // 减少 loop_idx 然后返回新的当前元素  arr.prev = function(){ this.</description>
     </item>
     
     <item>
       <title>剪贴板功能实现</title>
-      <link>https://www.fintinger.site/post/2020/07/07/</link>
+      <link>https://www.fintinger.site/posts/2020/07/07/</link>
       <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/07/07/</guid>
+      <guid>https://www.fintinger.site/posts/2020/07/07/</guid>
       <description>经常会用到指定内容的复制粘贴问题，用到document的execCommand 方法,为此，我将这个功能封装为一个简单的函数:
 function doCopy($el, {deepCopy = false, copyTips = true, language = &amp;#34;Chinese&amp;#34;, bgColor = &amp;#34;#ff6666&amp;#34;, fontColor = &amp;#34;#fff&amp;#34;} = {}) { let tempEl = $(&amp;#34;&amp;lt;input id=&amp;#39;selectEl&amp;#39; type=&amp;#39;text&amp;#39; value=&amp;#39;&amp;#39;&amp;gt;&amp;#34;).val($el.text()) if (deepCopy) { tempEl.val($el.html()) } tempEl.appendTo($(&amp;#34;body&amp;#34;)) document.querySelector(&amp;#39;#selectEl&amp;#39;).select(); document.execCommand(&amp;#39;copy&amp;#39;); tempEl.remove() if (copyTips) { let tipEl = $(&amp;#34;&amp;lt;div class=&amp;#39;copyTips&amp;#39; &amp;gt;成功复制到剪切板&amp;lt;/div&amp;gt;&amp;#34;) tipEl.css({fontFamily: &amp;#34;&amp;#39;Microsoft YaHei&amp;#39;, sans-serif&amp;#34;,fontSize: &amp;#34;1.2rem&amp;#34;,position: &amp;#34;fixed&amp;#34;,top: &amp;#34;1rem&amp;#34;,textAlign: &amp;#34;center&amp;#34;, left: &amp;#34;50%&amp;#34;,fontWeight: &amp;#34;bolder&amp;#34;, borderRadius: &amp;#34;.5rem&amp;#34;,marginLeft: &amp;#34;-8rem&amp;#34;,width: &amp;#34;16rem&amp;#34;,height: &amp;#34;3rem&amp;#34;, lineHeight:&amp;#34;3rem&amp;#34;, background: bgColor,boxShadow: &amp;#34;0 6px 10px -8px #000&amp;#34;,color: fontColor, letterSpacing: &amp;#34;4px&amp;#34;,boxSizing: &amp;#34;border-box&amp;#34;,padding: &amp;#34;0 10px 0 10px&amp;#34;, display: &amp;#34;none&amp;#34;}) if (language === &amp;#34;English&amp;#34;) { tipEl.</description>
     </item>
     
     <item>
       <title>JavaScript瀑布流布局</title>
-      <link>https://www.fintinger.site/post/2020/07/01/</link>
+      <link>https://www.fintinger.site/posts/2020/07/01/</link>
       <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/07/01/</guid>
+      <guid>https://www.fintinger.site/posts/2020/07/01/</guid>
       <description>什么是瀑布流？ 一种图片在网页的布局方式，具体要求为：从页面第二行开始，后续图片跟在页面中最矮的那张图片后面
 用JavaScript怎么实现？ 为此我将整个过程封装为一个函数。
 /*HTML部分*/ &amp;lt;head&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;main.css&amp;#34;&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;div id=&amp;#34;box&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;//container和img由js动态加入 &amp;lt;script src=&amp;#34;jquery.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;loadFile.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;main.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; /*CSS部分*/ /*首先清空默认样式*/ #box{ position: relative; } .container{ float: left; } .container&amp;gt;.pic{ width: 200px; } .container&amp;gt;.pic&amp;gt;img{ width: 100%; } /*JS部分*/ /*loadFile.js(在window.onload之前执行，加载DOM树)*/	$(function () { function addImg(imgNum,eleID) { let container for (let i = 1; i &amp;lt; imgNum; i++) { container=$(&amp;#34;&amp;lt;div class=&amp;#39;container&amp;#39;&amp;gt;&amp;lt;div class=&amp;#39;pic&amp;#39;&amp;gt;&amp;lt;img src=&amp;#39;images/&amp;#34;+i+&amp;#34;.jpg&amp;#39; alt=&amp;#39;&amp;#39;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;#34;) $(eleID).append(container) } } addImg(109,&amp;#34;#box&amp;#34;); }) /*******************************************/ /*main.js(在$(function(){})之前执行，DOM树加载完毕 )*/ window.onload=function () { let waterFall=function (eleID) { let boxWidth = 0, colo = 0, $egEle = $(eleID).</description>

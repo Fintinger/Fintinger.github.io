@@ -12,10 +12,10 @@
     <lastBuildDate>Sun, 19 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>通过U盘安装Windows系统</title>
-      <link>https://www.fintinger.site/post/2021/09/19/</link>
+      <link>https://www.fintinger.site/posts/2021/09/19/</link>
       <pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/09/19/</guid>
+      <guid>https://www.fintinger.site/posts/2021/09/19/</guid>
       <description>创建U盘介质  有至少 8GB 空间的空白 U 盘，若不是空白创建介质时会自动清空。
  🐾官方工具: https://go.microsoft.com/fwlink/?LinkId=691209
  直接下载按照提示操作就行了，不过仅限win10
@@ -28,19 +28,19 @@
     
     <item>
       <title>线性代数——常用公式定理总结</title>
-      <link>https://www.fintinger.site/post/2021/08/29/</link>
+      <link>https://www.fintinger.site/posts/2021/08/29/</link>
       <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/08/29/</guid>
+      <guid>https://www.fintinger.site/posts/2021/08/29/</guid>
       <description>公式 定理 附录 YO起来！ </description>
     </item>
     
     <item>
       <title>线性代数——二次型</title>
-      <link>https://www.fintinger.site/post/2021/08/28/</link>
+      <link>https://www.fintinger.site/posts/2021/08/28/</link>
       <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/08/28/</guid>
+      <guid>https://www.fintinger.site/posts/2021/08/28/</guid>
       <description>性质定理  二次型$x^{T}Ax$经坐标变换$x=Cy$得二次型$y^{T}By$，其中 $B=C^{T}C$，通俗的讲，就是 二次型矩阵经过任意的一次坐标变换得到新的二次型，前后二次型矩阵合同。
   任一二次型都可经坐标变换变成标准型。
   配方法
@@ -61,10 +61,10 @@ $X^T(A^TA)X=(AX)^{T}AX \geq 0$
     
     <item>
       <title>线性代数——特征值特征向量</title>
-      <link>https://www.fintinger.site/post/2021/08/23/</link>
+      <link>https://www.fintinger.site/posts/2021/08/23/</link>
       <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/08/23/</guid>
+      <guid>https://www.fintinger.site/posts/2021/08/23/</guid>
       <description>特征值与特征向量 性质  1.不同特征值的特征向量线性无关。
 2.ｋ重特征值至多有ｋ个线性无关的特征向量。(※)
  基本运算逻辑    三角矩阵特征值为主对角线元素⭐
@@ -86,10 +86,10 @@ $X^T(A^TA)X=(AX)^{T}AX \geq 0$
     
     <item>
       <title>线性代数——方程组</title>
-      <link>https://www.fintinger.site/post/2021/08/21/</link>
+      <link>https://www.fintinger.site/posts/2021/08/21/</link>
       <pubDate>Sat, 21 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/08/21/</guid>
+      <guid>https://www.fintinger.site/posts/2021/08/21/</guid>
       <description>Ax=0  重点： n-r(A)，基础解系
   Ax=0有非零解 $\Leftrightarrow $​​ r(A) &amp;lt; n (未知数个数)$\Leftrightarrow $​​​ A的列向量线性相关
 特别地(针对水平型阵和方阵)，※
@@ -109,10 +109,10 @@ Ax=b有解且不唯一，则$r(A) &amp;lt; n$
     
     <item>
       <title>线性代数——向量</title>
-      <link>https://www.fintinger.site/post/2021/08/15/</link>
+      <link>https://www.fintinger.site/posts/2021/08/15/</link>
       <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/08/15/</guid>
+      <guid>https://www.fintinger.site/posts/2021/08/15/</guid>
       <description>相关、无关    向量组中含零向量必然线性相关
   组中至少存在两个成比例的向量必然线性相关
    相关计算  $A(\alpha_1,\alpha_2,\alpha_3&amp;hellip;\alpha_s)$​ 是否线性相关？
@@ -136,10 +136,10 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
     
     <item>
       <title>线性代数——矩阵</title>
-      <link>https://www.fintinger.site/post/2021/08/13/</link>
+      <link>https://www.fintinger.site/posts/2021/08/13/</link>
       <pubDate>Fri, 13 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/08/13/</guid>
+      <guid>https://www.fintinger.site/posts/2021/08/13/</guid>
       <description>基本计算  对角矩阵存在交换律，即 $\bigwedge_1 \bigwedge_2=\bigwedge_2 \bigwedge_1$​
   注意交换位置
  对于 AB=C  B &amp;amp; C均按列分块，则$A(\beta_1 \beta_2 \beta_3)=(\gamma_1 \gamma_2 \gamma_3)$，故B的列向量都是$AX=\gamma$ 的解，特别的，当AB=O即C=O时，B的列向量均是 $AX=0$ 的解。 B &amp;amp; C按行分块，则 AB的行向量均可由B的行向量线性表出。 A &amp;amp; C按列分块，则 AB的列向量均可由A的列向量线性表出。[2013]   规律1与解联系起来，尤其是AB=O推出B的列向量是Ax=0的解这一规律，除此之外AB=O也经常用r(A)+r(B)≤ n这个不等式。
@@ -156,10 +156,10 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
     
     <item>
       <title>线性代数——行列式</title>
-      <link>https://www.fintinger.site/post/2021/08/10/</link>
+      <link>https://www.fintinger.site/posts/2021/08/10/</link>
       <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/08/10/</guid>
+      <guid>https://www.fintinger.site/posts/2021/08/10/</guid>
       <description>计算※ 数字型 题型 注意“存在三条对角线的情况”，通过 逐行相加 的到 “三角型”计算
 经典例题  抽象型 题型  行列式性质恒等变形 矩阵公式、法则恒等变形，E恒等变形 形特征值、相似  经典例题  思路：利用单位矩阵恒等变形
   思路一：利用矩阵相似（$\alpha_1，\alpha_2，\alpha_3$无关，后面出现$A\alpha_1，A\alpha_2，A\alpha_3$想到相似）
@@ -176,37 +176,37 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
     
     <item>
       <title>寻址方式与存储模式</title>
-      <link>https://www.fintinger.site/post/2021/07/22/</link>
+      <link>https://www.fintinger.site/posts/2021/07/22/</link>
       <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/07/22/</guid>
+      <guid>https://www.fintinger.site/posts/2021/07/22/</guid>
       <description>寻址方式    基本寻址方式 特 征 优 点 缺 点 备 注     隐含寻址 操作数的存放地由操作码决定      立即寻址 操作数直接在指令中 加快执行速度 增加指令长度，不方便修改操作数 适用提供常数，设定初始值   寄存器寻址 操作数在指令指定的寄存器中 方便修改，访问寄存器加快指令执行，缩短指令长度，编程更灵活     直接寻址 操作数地址在指令中，操作数在主存单元中  指令字较长，不方便地址修改    间接寻址 操作数地址的地址在指令中，操作数在主存中 方便修改指针，编程更灵活 访问两次主存获取操作数，降低执行速度 形式地址，有效地址EA(=操作数地址)   寄存器间接寻址 操作数地址在指令指定的寄存器中，操作数在主存单元中 压缩指令长度，修改寄存器内容就可以修改主存地址指针  方便编写循环程序   相对寻址 操作数地址由PC和指令提供的地址偏移量决定,操作数在主存单元中   EA=PC+D，适用与地址无关的程序设计   基址寻址 操作数地址由基址寄存器(RB)和指令提供的地址偏移量决定，操作数在主存单元中 缩短指令长度，扩大寻址空间  大型计算机，用户的逻辑地址→主存的物理地址，EA=(RB)+D   变址寻址 操作数地址由变址寄存器(RI)和指令提供的地址偏移量决定，操作数在主存单元中   寻址到操作数RI内容(地址)自动修改，EA=(RI)+D   堆栈寻址 寻址方式由指令操作码决定   适用涉及堆栈操作的指令，EA=(SP)    存储模式 “按字节编址” 主存将一个存储单元定为8位，即一个字节，这称为按字节编址的存储器</description>
     </item>
     
     <item>
       <title>外部排序相关</title>
-      <link>https://www.fintinger.site/post/2021/06/10/externalsort/</link>
+      <link>https://www.fintinger.site/posts/2021/06/10/externalsort/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/06/10/externalsort/</guid>
+      <guid>https://www.fintinger.site/posts/2021/06/10/externalsort/</guid>
       <description>由于数据元素太多，无法一次全部读入内存进行内部排序，这是就要通过外部排序来解决...</description>
     </item>
     
     <item>
       <title>排序算法相关</title>
-      <link>https://www.fintinger.site/post/2021/06/10/sort/</link>
+      <link>https://www.fintinger.site/posts/2021/06/10/sort/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/06/10/sort/</guid>
+      <guid>https://www.fintinger.site/posts/2021/06/10/sort/</guid>
       <description>排序算法 平均时间复杂度 空间复杂度 稳定性 适用情况     插入排序 $O(n^2)$ O(1) 稳定 n较小，初始序列基本有序   希尔排序 $O(n^{1.3})$ O(1) 不稳定    冒泡排序 $O(n^2)$ O(1) 稳定 n较小，初始序列基本有序   快速排序 $O(n\log_2n)$ $O(nlog_2n)$ 不稳定 初始序列无序   简单选择排序 $O(n^2)$ O(1) 不稳定 n较小   堆排序 $O(n\log_2n)$ O(1) 不稳定 n较大或只排前几位   2-路归并排序 $O(n\log_2n)$ O(n) 稳定 n很大   链式基数排序 $O(d(n+rd))$ $O(rd)$ 稳定 n大，关键字值小    相关概念 1.</description>
     </item>
     
     <item>
       <title>查找算法相关</title>
-      <link>https://www.fintinger.site/post/2021/06/06/search/</link>
+      <link>https://www.fintinger.site/posts/2021/06/06/search/</link>
       <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/06/06/search/</guid>
+      <guid>https://www.fintinger.site/posts/2021/06/06/search/</guid>
       <description>顺序查找 typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数组基址  int TableLen;//查找表长度 }SSTable; int Seq_Search(SSTable ST,int key){ ST.elem[0]=key; int i; for (i = ST.TableLen;ST.elem[i]!=key ; i--) {}//从后往前查找，最终返回下标i  return i;//返回0说明没找到 } 效率分析 对于长度为n的顺序表，如果查找成功$$ ASL={\frac{1+2+&amp;hellip;+n}{n}}=\frac{n+1}{2} $$ 若果查找失败，则 $ASL=n+1$
 总体上，该算法时间复杂度为 $O(n)$
 优化思路 1.如果使得表中的元素有序存放……，可以构造出一棵查找判定树
@@ -219,10 +219,10 @@ typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数�
     
     <item>
       <title>图的应用</title>
-      <link>https://www.fintinger.site/post/2021/06/02/02_application/</link>
+      <link>https://www.fintinger.site/posts/2021/06/02/02_application/</link>
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/06/02/02_application/</guid>
+      <guid>https://www.fintinger.site/posts/2021/06/02/02_application/</guid>
       <description>一、最小生成树 📌什么是生成树？ 连通图的生成树是包含图中所有顶点的一个极小连通子图，通俗地讲，就是“边尽可能少，但需保持连通”。规律： 对于一个顶点数|V|=n的树，其生成树的边数|E|=n-1。如果将|E|+1，必然会形成回路；如果将|E|-1，则会成为非连通图。
 📌什么是最小生成树？  最小生成树，也称最小代价树(Minimum Spanning Tree，MST)
  是带权连通无向图的生成树中边的权值之和最小的一棵树，联系实际问题不难理解其中“最小代价”的意味。Prim（普利姆算法），Kruskal（克鲁斯卡尔算法）就是寻找最小生成树的常用算法。
@@ -233,10 +233,10 @@ typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数�
     
     <item>
       <title>图的遍历</title>
-      <link>https://www.fintinger.site/post/2021/06/02/01_traverse/</link>
+      <link>https://www.fintinger.site/posts/2021/06/02/01_traverse/</link>
       <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/06/02/01_traverse/</guid>
+      <guid>https://www.fintinger.site/posts/2021/06/02/01_traverse/</guid>
       <description>广度优先遍历（BFS）  BFS(Breadth-First-Search)，参考对树的层序遍历
  对上面的图从①出发进行BFS得到序列：
 ①②⑤ ⑥ ③⑦ ④⑧
@@ -247,10 +247,10 @@ BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历
     
     <item>
       <title>图的存储</title>
-      <link>https://www.fintinger.site/post/2021/06/02/00_storage/</link>
+      <link>https://www.fintinger.site/posts/2021/06/02/00_storage/</link>
       <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/06/02/00_storage/</guid>
+      <guid>https://www.fintinger.site/posts/2021/06/02/00_storage/</guid>
       <description>邻接矩阵  Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.
  代码实现 #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph; 即找度 根据邻接矩阵计算结点的度TD
     无向图 有向图     $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数$OD(V_i)$: i列非零元素个数TD=ID+OD    对于带权图（网） #define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph; 复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|+|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。</description>
@@ -258,10 +258,10 @@ BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历
     
     <item>
       <title>AVL树</title>
-      <link>https://www.fintinger.site/post/2021/05/23/avl/</link>
+      <link>https://www.fintinger.site/posts/2021/05/23/avl/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/05/23/avl/</guid>
+      <guid>https://www.fintinger.site/posts/2021/05/23/avl/</guid>
       <description>平衡二叉树是Adelson-Velsky和 Landis发明，故命名为AVL树。也称平衡二叉查找树。
  ✨特点： ①左子树&amp;lt;根&amp;lt;右子树； ②任一节点，左右子树高度之差不超过1.
 平衡因子 $平衡因子=左子树高-右子树高$
@@ -289,10 +289,10 @@ $n_0=0$,$n_1=1$,$n_2=2$&amp;hellip;存在递归关系 $n_h=n_{h-1}+n_{h-2}+1$,�
     
     <item>
       <title>哈夫曼树</title>
-      <link>https://www.fintinger.site/post/2021/05/23/huffmantree/</link>
+      <link>https://www.fintinger.site/posts/2021/05/23/huffmantree/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/05/23/huffmantree/</guid>
+      <guid>https://www.fintinger.site/posts/2021/05/23/huffmantree/</guid>
       <description>基本概念 1.结点的权
 每个结点带有的具有某种现实意义的数值(比如代表重要性等)
 2.结点的带权路径长度
@@ -327,10 +327,10 @@ $v=\frac{WPL_{min}}{WPL}$</description>
     
     <item>
       <title>树</title>
-      <link>https://www.fintinger.site/post/2021/05/22/</link>
+      <link>https://www.fintinger.site/posts/2021/05/22/</link>
       <pubDate>Sat, 22 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/05/22/</guid>
+      <guid>https://www.fintinger.site/posts/2021/05/22/</guid>
       <description>普通树 对于一棵普通类型的树形结构，可将其转化为二叉树之后再参考二叉树的方法进行相关操作。
 孩子兄弟表示法（链式结构） 通过此方法可将普通树转化为二叉树
 //孩子兄弟即Child, Sibling typedef struct CSNode{ Elemtype data; struct CSNode *firstchild,*nextsibling;//第一个孩子和右兄弟指针,等价于*lchild,*rchild }CSNode,*CSTree 图示如下
@@ -351,10 +351,10 @@ B	C	D	A
     
     <item>
       <title>线索二叉树</title>
-      <link>https://www.fintinger.site/post/2021/05/15/</link>
+      <link>https://www.fintinger.site/posts/2021/05/15/</link>
       <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/05/15/</guid>
+      <guid>https://www.fintinger.site/posts/2021/05/15/</guid>
       <description>线索二叉树 WHY  方便从任一个结点出发，找到其前驱、后继；方便遍历
  普通二叉树中，对任意一个结点，若想找到其前驱/后继结点，只能再进行一次相应的前/中/后序遍历才行，复杂度太高。
 为此，我们引入前驱线索，后继线索的概念。其中，前驱线索由左孩子指针充当，后继线索由右孩子指针充当。
@@ -373,10 +373,10 @@ void CreatInThread(ThreadTree T){ pre=NULL; if(T!=NULL){ InThread(T); if(pre-&am
     
     <item>
       <title>由遍历序列构造出二叉树</title>
-      <link>https://www.fintinger.site/post/2021/05/09/</link>
+      <link>https://www.fintinger.site/posts/2021/05/09/</link>
       <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/05/09/</guid>
+      <guid>https://www.fintinger.site/posts/2021/05/09/</guid>
       <description>由遍历序列构造出二叉树 仅知道一种遍历序列是无法确定唯一的二叉树的，以中序遍历为例，对于一个中序遍历序列“BDCAE”，其对应的树形结构可能有下面三种：
 因此，至少需要两种遍历序列才可以推知树形结构。
 1.前序+中序遍历序列 🎈基本步骤 由前序遍历的特性得知，前序遍历中第一个节点必然为根节点，因此根据中序遍历特性，根节点左边为左子树下的所有节点，右边为右子树下的所有节点，然后分别在左子树序列右子树序列中重复进行即可。
@@ -397,10 +397,10 @@ void CreatInThread(ThreadTree T){ pre=NULL; if(T!=NULL){ InThread(T); if(pre-&am
     
     <item>
       <title>向量空间管理策略</title>
-      <link>https://www.fintinger.site/post/2020/11/16/</link>
+      <link>https://www.fintinger.site/posts/2020/11/16/</link>
       <pubDate>Mon, 16 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/11/16/</guid>
+      <guid>https://www.fintinger.site/posts/2020/11/16/</guid>
       <description>向量的空间管理，有静态和动态两种策略
  静态空间管理策略 开辟内部数组_elem[]并使用一段地址连续的物理空间，_capacity表示总容量 ，_size表示当前的实际规模n，示意图如下：
 若采用静态空间管理策略，容量_capacity固定，则有明显的不足&amp;hellip;
@@ -419,10 +419,10 @@ T* oldElem = _elem; _elem = new T[ _capacity &amp;lt;&amp;lt;= 1 ]; 考虑最坏
     
     <item>
       <title>减而治之与分而治之</title>
-      <link>https://www.fintinger.site/post/2020/11/15/</link>
+      <link>https://www.fintinger.site/posts/2020/11/15/</link>
       <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/11/15/</guid>
+      <guid>https://www.fintinger.site/posts/2020/11/15/</guid>
       <description>减而治之(Decrease and conquer)  什么是“减而治之”？
 为求解一个大规模的问题，可以将其划分为两个问题，其一平凡，另一规模缩减 ，分别求解子问题，由子问题的解得原问题的解
  比如说，对于一个数组A的求和问题，可以设计如下的算法
@@ -442,10 +442,10 @@ T(n) =O(1) × (n+1) =O(n)
     
     <item>
       <title>DS导论</title>
-      <link>https://www.fintinger.site/post/2020/11/10/</link>
+      <link>https://www.fintinger.site/posts/2020/11/10/</link>
       <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/11/10/</guid>
+      <guid>https://www.fintinger.site/posts/2020/11/10/</guid>
       <description>导论  所谓算法，即特定计算模型下，旨在解决特定问题的指令序列。输入：待处理的信息（问题）输出：经处理的信息（答案）
  正确性 的确可以解决指定的问题
 确定性 任一算法都可以描述为一个由基本操作组成的序列
@@ -460,10 +460,10 @@ T(n) =O(1) × (n+1) =O(n)
     
     <item>
       <title>PHP语法小结</title>
-      <link>https://www.fintinger.site/post/2020/10/14/</link>
+      <link>https://www.fintinger.site/posts/2020/10/14/</link>
       <pubDate>Tue, 13 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/10/14/</guid>
+      <guid>https://www.fintinger.site/posts/2020/10/14/</guid>
       <description>基本语法 输出语句    语句 功能     echo 输出字符串类型   print_r 输出引用类型(对象,数组等)   var_dunp 检测变量类型    ::: tip echo语句可用于给前端返回响应体。比如前端通过ajax请求，可以在xhr.response中直接得到echo的内容 :::
 变量&amp;amp;常量 👉🏼 变量
    语句 功能 返回值     isset() 检测变量是否存在 boolean   unset() 删除某个变量 none    👉🏼 常量
@@ -479,10 +479,10 @@ const不能在条件语句中使用，必出错
     
     <item>
       <title>PHP开发验证码类</title>
-      <link>https://www.fintinger.site/post/2020/10/03/</link>
+      <link>https://www.fintinger.site/posts/2020/10/03/</link>
       <pubDate>Sat, 03 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/10/03/</guid>
+      <guid>https://www.fintinger.site/posts/2020/10/03/</guid>
       <description>利用php中的GD库可以完成验证码类的开发。后盾人教程
  PHP创建图像步骤 发送HTTP头信息，声明内容为图像 header(&amp;#39;Content-type:image/gif&amp;#39;); header(&amp;#39;Content-type:image/jpeg&amp;#39;); header(&amp;#39;Content-type:image/png&amp;#39;); 通过设置头信息让浏览器渲染出图像，而不是HTML等其他类型
 创建画布 imageCreateTrueColor(width,height); width &amp;amp; height 画布宽高，即为输出图片的尺寸,返回为source 类型，后续操作都是针对这个资源展开。
@@ -501,10 +501,10 @@ imagettftext (img_res , size , angle , x , y , color , fontfile ,text ) 图像�
     
     <item>
       <title>Git相关</title>
-      <link>https://www.fintinger.site/post/2020/09/29/</link>
+      <link>https://www.fintinger.site/posts/2020/09/29/</link>
       <pubDate>Tue, 29 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/09/29/</guid>
+      <guid>https://www.fintinger.site/posts/2020/09/29/</guid>
       <description>基本命令 git config --global =&amp;gt;全局配置 git config =&amp;gt;当前仓库配置 mkdir =&amp;gt;创建文件夹 ls =&amp;gt;列出当前目录下(文件，文件夹) ls -a =&amp;gt;所有all rm -rf * =&amp;gt;删除当前目录下所有 touch =&amp;gt;新建文件 cat =&amp;gt;查看文件中的内容  不想`git add . 所有？
  配置.gitignore 定义忽略提交的文件，其中
  所有空行或者以注释符号 ＃ 开头的行都会被 Git 忽略。 匹配模式最后跟反斜杠（/）说明要忽略的是目录。 可以使用标准的 glob 模式(php)匹配。  从版本库删除 git rm ... =&amp;gt;从版本库中删除，本地也会删除 git rm --cached ... =&amp;gt;只从版本库删除 从版本库改名 git mv ... ... =&amp;gt;改名 log git log -p =&amp;gt;显示文件变动信息 git log -1 =&amp;gt;最近一次提交 git log --oneline 修改最新一次提交commit描述 git commit --amend =&amp;gt;最近一次提交的描述  也可以把最新的git add .</description>
@@ -512,10 +512,10 @@ imagettftext (img_res , size , angle , x , y , color , fontfile ,text ) 图像�
     
     <item>
       <title>Javascript正则表达式</title>
-      <link>https://www.fintinger.site/post/2020/09/20/</link>
+      <link>https://www.fintinger.site/posts/2020/09/20/</link>
       <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/09/20/</guid>
+      <guid>https://www.fintinger.site/posts/2020/09/20/</guid>
       <description>关于正则表达式的创建，就不做过多的赘述
  ::: tip
 由于不知名原因，span标签报错，因此全部替换为[sp]
@@ -528,10 +528,10 @@ let str = &amp;#39;fintinger2592030861.com$323e&amp;#39; let reg = new RegExp(&a
     
     <item>
       <title>Es6中的class类</title>
-      <link>https://www.fintinger.site/post/2020/09/09/</link>
+      <link>https://www.fintinger.site/posts/2020/09/09/</link>
       <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/09/09/</guid>
+      <guid>https://www.fintinger.site/posts/2020/09/09/</guid>
       <description>class实质上是对js中继承的封装组合，用一种“语法糖”的形式实现原型链的继承
  静态属性/方法  静态方法/属性是指，函数作为对象时，定义在其原型(__proto__)上的方法，而需要实例化继承的动态方法是定义在其原型对象(prototype) 中的，静态方法中的参数都是固定的，直接通过整个构造函数调用，实例化对象并不会继承；而动态方法中的参数会因为实例化对象的不同而产生改变，实例化对象默认是继承的。
  function User(){} User.__proto__.show=function(){} console.dir(User) //这里的show()方法就属于静态方法 在class中，利用static定义静态属性/方法
@@ -541,10 +541,10 @@ class Admin{ static show(){}//__proto__中  show(){}//prototype中 } console.dir
     
     <item>
       <title>JavaScript中的继承与原型链分析</title>
-      <link>https://www.fintinger.site/post/2020/09/04/</link>
+      <link>https://www.fintinger.site/posts/2020/09/04/</link>
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/09/04/</guid>
+      <guid>https://www.fintinger.site/posts/2020/09/04/</guid>
       <description>原型链自定义设置  原型链的设置可以通过Object.creative , __proto__, Object.setProperty三种方法
  Object.creative () 说明： 该方法只能设置原型链，而不能获取
 let a1 = {name: &amp;#39;a1&amp;#39;} let b1 = Object.create(a1) b1.name = &amp;#39;b1&amp;#39; console.log(b1);  Object.creative()为创建对象的方法，第一个参数为其原型对象，第二个参数为其默认属性，这些属性默认是不可写，不可遍历，不可修改的
@@ -554,10 +554,10 @@ let a2 = {name: &amp;#39;a2&amp;#39;} let b2 = {name: &amp;#39;b2&amp;#39;} a2._
     
     <item>
       <title>关于JavaScript模块化</title>
-      <link>https://www.fintinger.site/post/2020/09/02/</link>
+      <link>https://www.fintinger.site/posts/2020/09/02/</link>
       <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/09/02/</guid>
+      <guid>https://www.fintinger.site/posts/2020/09/02/</guid>
       <description>自定义一个模块引擎 要求： 能够让模块之间产生依赖关系
 代码
 let _module = (function () { let moduleList = {} function define(name, modules, action) { modules.map((n, i) =&amp;gt; { //将传入的只含名称的模块数组 =&amp;gt; 指定名称模块的返回结果  modules[i] = moduleList[n] }) moduleList[name] = action.apply(null, modules) // console.log(moduleList);  } return {define} })(); //定义一个工具库，暴露给外界使用，输出 _module.define(&amp;#39;tools&amp;#39;, [], function () { return { max(arr) { return arr.sort((a, b) =&amp;gt; b - a)[0]//获取最大值挺别致昂  }, min(arr) { return arr.sort((a, b) =&amp;gt; b - a)[arr.length - 1]; } } }); //使用之前定义的工具库，引入 _module.</description>
@@ -565,10 +565,10 @@ let _module = (function () { let moduleList = {} function define(name, modules, 
     
     <item>
       <title>JavaScript基础之对象</title>
-      <link>https://www.fintinger.site/post/2020/08/31/</link>
+      <link>https://www.fintinger.site/posts/2020/08/31/</link>
       <pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/08/31/</guid>
+      <guid>https://www.fintinger.site/posts/2020/08/31/</guid>
       <description>对象中参数获取和值的接收 1.对象中利用key获取value. |  [] let obj = {name: &amp;#39;jqf&amp;#39;, age: 19} for (let key in obj) { // console.log(obj.key);//会报undefined  console.log(obj[key]);//jqf,19 } 👉 delete Object.key()
 delete obj.name console.log(obj);//{ age: 19 } 2.参数/配置合并 👉 展开语法
  利用展开语法合并对象，让后面传入的参数覆盖默认参数，完成合并
@@ -579,10 +579,10 @@ delete obj.name console.log(obj);//{ age: 19 } 2.参数/配置合并 👉 展开
     
     <item>
       <title>JavaScript基础之函数相关</title>
-      <link>https://www.fintinger.site/post/2020/08/28/</link>
+      <link>https://www.fintinger.site/posts/2020/08/28/</link>
       <pubDate>Fri, 28 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/08/28/</guid>
+      <guid>https://www.fintinger.site/posts/2020/08/28/</guid>
       <description>关于函数传参  当参数数量不确定时，通常用arguments 来统一接收
  function sum() { return [...arguments].reduce((res, i,) =&amp;gt; res + i, 0) } let res = sum(1, 2, 3) console.log(res);//6 可以用展开语法代替arguments接收所有的参数：
 function sum(...args) { return args.reduce((res, i,) =&amp;gt; res + i, 0) } let res = sum(1, 2, 3) console.log(res);//6 注意： 接收参数时展开语法放其他形参后面，做统一接收
@@ -593,10 +593,10 @@ function factorial(num) { return num === 1 ?</description>
     
     <item>
       <title>JavaScript基础之Map与Weakmap类型</title>
-      <link>https://www.fintinger.site/post/2020/08/26/</link>
+      <link>https://www.fintinger.site/posts/2020/08/26/</link>
       <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/08/26/</guid>
+      <guid>https://www.fintinger.site/posts/2020/08/26/</guid>
       <description>Map类型 1.属性 👉 set() 设置值
 let map = new Map() let fn = function () {console.log(&amp;#39;this is function&amp;#39;)} let user = {name: &amp;#39;jqf&amp;#39;, age: 18} map.set(&amp;#39;key&amp;#39;, &amp;#39;value&amp;#39;) map.set(fn, &amp;#39;function&amp;#39;) map.set(user, &amp;#39;object&amp;#39;) console.log(map); /*Map(3){&amp;#34;key&amp;#34; =&amp;gt; &amp;#34;value&amp;#34;, ƒ =&amp;gt; &amp;#34;function&amp;#34;, {…} =&amp;gt; &amp;#34;object&amp;#34;}*/ 注意： Map类型，字符串、函数、对象都可以作为key设置
 👉 size Map长度
@@ -608,10 +608,10 @@ console.log(map.has(user));//true 2.遍历 👉forEach(val,key,map)</description
     
     <item>
       <title>JavaScript基础之Set与Weakset</title>
-      <link>https://www.fintinger.site/post/2020/08/27/</link>
+      <link>https://www.fintinger.site/posts/2020/08/27/</link>
       <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/08/27/</guid>
+      <guid>https://www.fintinger.site/posts/2020/08/27/</guid>
       <description>Set类型 1.属性 👉 size ：数组长度
 let set = new Set([1, 2, 3]) console.log(set.size);//9 👉 add() ：添加元素
 console.log(set.add(99));//返回修改后的数组Set(4) { 1, 2, 3, 99 } console.log(set);//原数组已经被修改Set(4) { 1, 2, 3, 99 } 👉 delete() ：删除元素
@@ -623,10 +623,10 @@ let set=new Set([&amp;#39;jqf&amp;#39;,&amp;#39;fin&amp;#39;,&amp;#39;zzh&amp;#3
     
     <item>
       <title>JavaScript基础之Symbol类型</title>
-      <link>https://www.fintinger.site/post/2020/08/24/</link>
+      <link>https://www.fintinger.site/posts/2020/08/24/</link>
       <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/08/24/</guid>
+      <guid>https://www.fintinger.site/posts/2020/08/24/</guid>
       <description>Symbol() 类型不能当做普通对象(不能加属性值)，只能当做一种永远都不会重复的字符串
  定义 方法： Symbol(desc)、Symbol.for(desc)
 let s1 = Symbol(&amp;#39;d&amp;#39;) let s2 = Symbol.for(&amp;#39;d&amp;#39;) let s3 = Symbol.for(&amp;#39;d&amp;#39;) console.log(s1.description);//d console.log(Symbol.keyFor(s2));//d console.log(s1 === s3);//false console.log(s2 === s3);//true 注意： 利用Symbol() 定义的值永远都不会相等，而Symbol.for() 定义的，如果描述相同，则值相等
@@ -638,10 +638,10 @@ let user1={ name:&amp;#39;李四&amp;#39;, key:Symbol() } let user2={ name:&amp;
     
     <item>
       <title>JavaScript基础之数组深倔</title>
-      <link>https://www.fintinger.site/post/2020/08/25/</link>
+      <link>https://www.fintinger.site/posts/2020/08/25/</link>
       <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/08/25/</guid>
+      <guid>https://www.fintinger.site/posts/2020/08/25/</guid>
       <description>数组是经常用到的一种数据结构
  定义方法 let a = new Array(3) let b = [1, 2, 3]  如何定义一个只有一个元素的数组？
  new Array(n)表示有n个空元素的的数组，利用Array.of(n),可以定义一个只有n元素的数组
@@ -656,10 +656,10 @@ let titles = document.querySelectorAll(&amp;#39;h1&amp;#39;); [...titles].map((v
     
     <item>
       <title>JavaScript基础之值类型</title>
-      <link>https://www.fintinger.site/post/2020/08/23/</link>
+      <link>https://www.fintinger.site/posts/2020/08/23/</link>
       <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/08/23/</guid>
+      <guid>https://www.fintinger.site/posts/2020/08/23/</guid>
       <description>字符串 1.截取字符串  主要有slice()、substr()、substring() 三种方法
   一个参数[i]  都是从i开始截取，返回n及其后面的全部字符串。
  第二个参数[i,n]  slice(i,n)和substring(i,n)表示从i开始截取到n；substr(i,n)，表示从i开始截取n个
@@ -674,10 +674,10 @@ let w = &amp;#39;fintinger.xyz&amp;#39; let a = w.slice(-4, w.length) let b = w.
     
     <item>
       <title>JavaScript基础之JS黑洞</title>
-      <link>https://www.fintinger.site/post/2020/08/19/</link>
+      <link>https://www.fintinger.site/posts/2020/08/19/</link>
       <pubDate>Sat, 22 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/08/19/</guid>
+      <guid>https://www.fintinger.site/posts/2020/08/19/</guid>
       <description>JavaScript中最容易忽视的一些点
  let和var  都用来定义变量，但二者之间有些细微的差别
  区别1: 是否有块作用域 var a = 1 { // var a=2  let a = 2 } console.log(a); //output var:a=2 let:a=1 var i=1 // for (var i = 0; i &amp;lt;3; i++) { for (let i = 0; i &amp;lt;3; i++) { //..do something } console.log(i); //output var:i=3 let:i=1 说明： 可以看出，var并没有作用域的概念，定义在特定作用于内的变量会受到作用域外的影响，let则不会
@@ -686,10 +686,10 @@ let w = &amp;#39;fintinger.xyz&amp;#39; let a = w.slice(-4, w.length) let b = w.
     
     <item>
       <title>JavaScript基础之运算符</title>
-      <link>https://www.fintinger.site/post/2020/08/22/</link>
+      <link>https://www.fintinger.site/posts/2020/08/22/</link>
       <pubDate>Sat, 22 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/08/22/</guid>
+      <guid>https://www.fintinger.site/posts/2020/08/22/</guid>
       <description>++的前置与后置 let a1 = 1 let b1 = 2 let c1 = b1 + a1++ console.log(a1, b1, c1);//2,2,3  let a2 = 1 let b2 = 2 let c2 = b2 + ++a2 console.log(a2, b2, c2);//2,2,4 说明：
  后置是先计算再++ 前置是先++再计算  短路运算 let a = 0; let b = 1; let c = a || b; console.log(c);//1 利用这个原理，我们可以简化一些函数
 let sex = prompt(&amp;#39;您的性别?&amp;#39;) if (!sex){ sex=&amp;#34;保密&amp;#34; } console.log(sex); =&amp;gt;
@@ -698,10 +698,10 @@ let sex = prompt(&amp;#39;您的性别?</description>
     
     <item>
       <title>ES6之Promise用法小结</title>
-      <link>https://www.fintinger.site/post/2020/08/18/</link>
+      <link>https://www.fintinger.site/posts/2020/08/18/</link>
       <pubDate>Tue, 18 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/08/18/</guid>
+      <guid>https://www.fintinger.site/posts/2020/08/18/</guid>
       <description>Promise 对象用于表示一个异步操作的最终完成 (或失败), 及其结果值。其目的主要是解决以往回调中嵌套回调的&amp;quot;嵌套地狱&amp;quot;问题，使代码可读性更好，更美观!
 基本用法 对于一个标准的Prommise，其基本写法为:
 new Promise(function (resolve, reject) { //do something...  //success  resolve(&amp;#39;success&amp;#39;) //fail &amp;amp; reject  // reject(&amp;#39;rejected&amp;#39;) *resolve和reject只能出现一个 }).then( function (value) { //if succeed,do something...  }, function (reason) { //if fail &amp;amp; reject,do something...  } ) 如果采用ES6的箭头函数写法，则为:
@@ -713,19 +713,19 @@ new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //r
     
     <item>
       <title>红警常见问题(收录中……)</title>
-      <link>https://www.fintinger.site/post/2020/08/15/</link>
+      <link>https://www.fintinger.site/posts/2020/08/15/</link>
       <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/08/15/</guid>
+      <guid>https://www.fintinger.site/posts/2020/08/15/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ajax重复请求</title>
-      <link>https://www.fintinger.site/post/2020/08/13/</link>
+      <link>https://www.fintinger.site/posts/2020/08/13/</link>
       <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/08/13/</guid>
+      <guid>https://www.fintinger.site/posts/2020/08/13/</guid>
       <description>在发送某一次请求时，如果不对请求做去重处理那么，同一个请求有可能会发送很多次，一个个慢慢响应，这会很大程度影响性能以及页面的使用体验
  全局变量
 /** * baseURL 是每次请求的地址 * x 表示XMLHttpRequest实例，初始为null * isSending 是用来判断请求是否处于发送状态的标识 */ const baseURL = &amp;#34;http://127.0.0.1:8000/delay&amp;#34; let x = null, isSending = false 原生请求 if (isSending) x.abort() x = new XMLHttpRequest() //正处于发送状态，修改标识 isSending = true x.open(&amp;#34;GET&amp;#34;, baseURL) x.send() x.onreadystatechange = function () { if (x.readyState === 4) {//当readyState=4,表示已经发送完毕，修改标识，是否成功返回则无需关心  isSending = false if (x.status &amp;gt;= 200 &amp;amp;&amp;amp; x.status &amp;lt; 300) { console.log(x.response); } } } jQuery 请求  jQuery做ajax请求时，可以仅针对一次请求，也可以利用jQuery全局事件对所有请求加以限制</description>
@@ -733,10 +733,10 @@ new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //r
     
     <item>
       <title>跨域及CORS官方跨域</title>
-      <link>https://www.fintinger.site/post/2020/08/11/</link>
+      <link>https://www.fintinger.site/posts/2020/08/11/</link>
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/08/11/</guid>
+      <guid>https://www.fintinger.site/posts/2020/08/11/</guid>
       <description>JSONP  jsonp跨域的实现仅限于GET请求，不可用于POST
  说明：实现的基本思路是利用html中script标签本身可跨域的特性，在发送请求时，在页面中创建script标签，追加到页面中。这实际上就像利用script标签引入外部资源
 /*main.js*/ //申明handle函数 function handle(data) { //do something.... } ele.onclick = function () { //1.创建script标签  const script = document.createElement(&amp;#34;script&amp;#34;) //2.修改script的src属性  script.src = &amp;#34;http://127.0.0.1:8000/jsonP&amp;#34; script.id=&amp;#34;tempScript&amp;#34;//添加id方便移除  //3.追加到页面中  document.body.appendChild(script) } /*server.js*/ app.get(&amp;#39;/jsonP&amp;#39;, (request, response) =&amp;gt; { const data = { exist:1, msg:&amp;#34;用户名已经存在!&amp;#34; } let str = JSON.stringify(data) response.send(` handle(${str}); document.body.removeChild(document.querySelector(&amp;#34;#tempScript&amp;#34;)) `) }) 注意：response.send()/response.end()中利用ES6语法规范中的模板字符串直接返回一段js代码，script标签会自动解析并作用到页面上
@@ -746,10 +746,10 @@ CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置C
     
     <item>
       <title>Ajax学习小结</title>
-      <link>https://www.fintinger.site/post/2020/08/10/</link>
+      <link>https://www.fintinger.site/posts/2020/08/10/</link>
       <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/08/10/</guid>
+      <guid>https://www.fintinger.site/posts/2020/08/10/</guid>
       <description>学习地址:https://www.bilibili.com/video/BV1WC4y1b78y，主要通过express的简单功能来搭建本地的服务，进而更好地学习Ajax
  发送Ajax请求的方式 原生Ajax //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(&amp;#34;GET&amp;#34;,&amp;#34;https://www.x.com&amp;#34;) //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status &amp;gt;= 200 &amp;amp;&amp;amp; xhr.status &amp;lt; 300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } } 说明：
  readyState: 返回一个 XMLHttpRequest 代理当前所处的状态     值 状态 描述     0 UNSENT 代理被创建，但尚未调用 open() 方法。   1 OPENED open() 方法已经被调用。   2 HEADERS_RECEIVED send() 方法已经被调用，并且头部和状态已经可获得。   3 LOADING 下载中； responseText 属性已经包含部分数据。   4 DONE 下载操作已完成。     因此，xhr.</description>
@@ -757,10 +757,10 @@ CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置C
     
     <item>
       <title>Ajax基础及Express框架基本使用</title>
-      <link>https://www.fintinger.site/post/2020/08/06/</link>
+      <link>https://www.fintinger.site/posts/2020/08/06/</link>
       <pubDate>Thu, 06 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/08/06/</guid>
+      <guid>https://www.fintinger.site/posts/2020/08/06/</guid>
       <description>Baike  Ajax 即“AsynchronousJavascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式、快速动态网页应用的网页开发技术，无需重新加载整个网页的情况下，能够更新部分网页的技术。
 通过在后台与服务器进行少量数据交换，Ajax 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。&amp;mdash;百度百科
  请求报文 格式以及参数如下
@@ -770,10 +770,10 @@ CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置C
     
     <item>
       <title>vue.js学习心得</title>
-      <link>https://www.fintinger.site/post/2020/07/18/</link>
+      <link>https://www.fintinger.site/posts/2020/07/18/</link>
       <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/07/18/</guid>
+      <guid>https://www.fintinger.site/posts/2020/07/18/</guid>
       <description>1. 关于元素显示与隐藏  # v-show=&amp;quot;name&amp;quot;  说明： 如果data中name为true就显示，否则该元素display:none   # v-if=&amp;quot;name&amp;quot;  说明： 如果data中name为true就显示，否则该元素变成一段注释&amp;lt;!----&amp;gt;，就被删掉了!   v-if 是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。
 v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。
 相比之下，v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。
@@ -787,10 +787,10 @@ v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做
     
     <item>
       <title>获取文件扩展名</title>
-      <link>https://www.fintinger.site/post/2020/07/09/</link>
+      <link>https://www.fintinger.site/posts/2020/07/09/</link>
       <pubDate>Thu, 09 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/07/09/</guid>
+      <guid>https://www.fintinger.site/posts/2020/07/09/</guid>
       <description>该怎么去获得文件名字符串中的文件扩展名呢？
 一种较为强大的解决方法是利用String的slice、lastIndexOf方法：
 function getFileExtension(filename) { return filename.slice((filename.lastIndexOf(&amp;#34;.&amp;#34;) - 1 &amp;gt;&amp;gt;&amp;gt; 0) + 2); } console.log(getFileExtension3(&amp;#39;&amp;#39;)); // &amp;#39;&amp;#39; console.log(getFileExtension3(&amp;#39;filename&amp;#39;)); // &amp;#39;&amp;#39; console.log(getFileExtension3(&amp;#39;filename.txt&amp;#39;)); // &amp;#39;txt&amp;#39; console.log(getFileExtension3(&amp;#39;.hiddenfile&amp;#39;)); // &amp;#39;&amp;#39; console.log(getFileExtension3(&amp;#39;hiddenfile.&amp;#39;)); // &amp;#39;&amp;#39; console.log(getFileExtension3(&amp;#39;filename.with.many.dots.ext&amp;#39;)); // &amp;#39;ext&amp;#39; 说明 filename.slice((filename.lastIndexOf(&amp;quot;.&amp;quot;) - 1 &amp;gt;&amp;gt;&amp;gt; 0) + 2)
@@ -803,30 +803,30 @@ function getFileExtension(filename) { return filename.slice((filename.lastIndexO
     
     <item>
       <title>一组循环数组</title>
-      <link>https://www.fintinger.site/post/2020/07/08/</link>
+      <link>https://www.fintinger.site/posts/2020/07/08/</link>
       <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/07/08/</guid>
+      <guid>https://www.fintinger.site/posts/2020/07/08/</guid>
       <description>做网页轮播图，或者音乐播放列表时经常要用到一组循环的数组，到最后一项返回第一项，第一项返回最后一项
 利用两次判断 function doLoop( arr ){ arr.loop_idx = 0; // 返回当前的元素  arr.current = function(){ if( this.loop_idx &amp;lt; 0 ){// 第一次检查  this.loop_idx = this.length - 1;// 更新 loop_idx  } if( this.loop_idx &amp;gt;= this.length ){// 第二次检查  this.loop_idx = 0;// 更新 loop_idx  } return arr[ this.loop_idx ];//返回元素  }; // 增加 loop_idx 然后返回新的当前元素  arr.next = function(){ this.loop_idx++; return this.current(); }; // 减少 loop_idx 然后返回新的当前元素  arr.prev = function(){ this.</description>
     </item>
     
     <item>
       <title>剪贴板功能实现</title>
-      <link>https://www.fintinger.site/post/2020/07/07/</link>
+      <link>https://www.fintinger.site/posts/2020/07/07/</link>
       <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/07/07/</guid>
+      <guid>https://www.fintinger.site/posts/2020/07/07/</guid>
       <description>经常会用到指定内容的复制粘贴问题，用到document的execCommand 方法,为此，我将这个功能封装为一个简单的函数:
 function doCopy($el, {deepCopy = false, copyTips = true, language = &amp;#34;Chinese&amp;#34;, bgColor = &amp;#34;#ff6666&amp;#34;, fontColor = &amp;#34;#fff&amp;#34;} = {}) { let tempEl = $(&amp;#34;&amp;lt;input id=&amp;#39;selectEl&amp;#39; type=&amp;#39;text&amp;#39; value=&amp;#39;&amp;#39;&amp;gt;&amp;#34;).val($el.text()) if (deepCopy) { tempEl.val($el.html()) } tempEl.appendTo($(&amp;#34;body&amp;#34;)) document.querySelector(&amp;#39;#selectEl&amp;#39;).select(); document.execCommand(&amp;#39;copy&amp;#39;); tempEl.remove() if (copyTips) { let tipEl = $(&amp;#34;&amp;lt;div class=&amp;#39;copyTips&amp;#39; &amp;gt;成功复制到剪切板&amp;lt;/div&amp;gt;&amp;#34;) tipEl.css({fontFamily: &amp;#34;&amp;#39;Microsoft YaHei&amp;#39;, sans-serif&amp;#34;,fontSize: &amp;#34;1.2rem&amp;#34;,position: &amp;#34;fixed&amp;#34;,top: &amp;#34;1rem&amp;#34;,textAlign: &amp;#34;center&amp;#34;, left: &amp;#34;50%&amp;#34;,fontWeight: &amp;#34;bolder&amp;#34;, borderRadius: &amp;#34;.5rem&amp;#34;,marginLeft: &amp;#34;-8rem&amp;#34;,width: &amp;#34;16rem&amp;#34;,height: &amp;#34;3rem&amp;#34;, lineHeight:&amp;#34;3rem&amp;#34;, background: bgColor,boxShadow: &amp;#34;0 6px 10px -8px #000&amp;#34;,color: fontColor, letterSpacing: &amp;#34;4px&amp;#34;,boxSizing: &amp;#34;border-box&amp;#34;,padding: &amp;#34;0 10px 0 10px&amp;#34;, display: &amp;#34;none&amp;#34;}) if (language === &amp;#34;English&amp;#34;) { tipEl.</description>
     </item>
     
     <item>
       <title>ES6中新增关于Array的方法</title>
-      <link>https://www.fintinger.site/post/2020/07/04/</link>
+      <link>https://www.fintinger.site/posts/2020/07/04/</link>
       <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/07/04/</guid>
+      <guid>https://www.fintinger.site/posts/2020/07/04/</guid>
       <description>在javascript中，Array()经常用到，利用ES6中的一些新特性会让数组的处理更加方便快捷
 1.迭代空数组 直接创建一个数组
 const arr=new Array(4); //Output:[undefined，undefined，undefined，undefined] 利用map方法，转化成新的数组，企图得到 [0,1,2,3] 数组
@@ -841,10 +841,10 @@ const arr=new Array(4); arr.map((ele,index) =&amp;gt; index); //Output:[undefine
     
     <item>
       <title>避免多条件并列</title>
-      <link>https://www.fintinger.site/post/2020/07/06/</link>
+      <link>https://www.fintinger.site/posts/2020/07/06/</link>
       <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/07/06/</guid>
+      <guid>https://www.fintinger.site/posts/2020/07/06/</guid>
       <description>开发中有时会遇到多个条件，执行相同的语句，也就是多个||这种：
 if (status === &amp;#39;process&amp;#39; || status === &amp;#39;wait&amp;#39; || status === &amp;#39;fail&amp;#39;) { doSomething() } 这种写法语义性、可读性都不太好。可以通过switch case或includes这种进行改造。
 switch case switch(status) { case &amp;#39;process&amp;#39;: case &amp;#39;wait&amp;#39;: case &amp;#39;fail&amp;#39;: doSomething() } includes const enum = [&amp;#39;process&amp;#39;, &amp;#39;wait&amp;#39;, &amp;#39;fail&amp;#39;] if (enum.includes(status)) { doSomething() </description>
@@ -852,10 +852,10 @@ switch case switch(status) { case &amp;#39;process&amp;#39;: case &amp;#39;wait&
     
     <item>
       <title>JavaScript生成图片文件路径json</title>
-      <link>https://www.fintinger.site/post/2020/07/05/</link>
+      <link>https://www.fintinger.site/posts/2020/07/05/</link>
       <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/07/05/</guid>
+      <guid>https://www.fintinger.site/posts/2020/07/05/</guid>
       <description>在写小demo的过程中，经常需要把某个文件夹的图片文件的路径给引入，除非全部重命名成有序的数字，不然不好处理，这就用到了node中的fs和path模块，还没学&amp;hellip;
 const path=require(&amp;#34;path&amp;#34;); const fs = require(&amp;#39;fs&amp;#39;); fs.stat(&amp;#39;../images&amp;#39;,(err)=&amp;gt;{//图片文件所在目录  if (err)return; var result=&amp;#39;{&amp;#39; fs.readdir(&amp;#34;../images&amp;#34;,(err,data)=&amp;gt;{//图片文件所在目录  for(var i=0;i&amp;lt;Object.keys(data).length;i++){ let ImgPath=&amp;#34;\&amp;#34;images/&amp;#34;+data[i]+&amp;#34;\&amp;#34;&amp;#34;; result+=&amp;#34;\&amp;#34;&amp;#34;+i+&amp;#34;\&amp;#34;:&amp;#34;+ImgPath+&amp;#34;,&amp;#34;; } result=result.substring(0,result.length-1); let length=&amp;#34;\&amp;#34;&amp;#34;+&amp;#34;length&amp;#34;+&amp;#34;\&amp;#34;&amp;#34;+&amp;#34;:&amp;#34;+&amp;#34;\&amp;#34;&amp;#34;+Object.keys(data).length+&amp;#34;\&amp;#34;&amp;#34;//文件数量  result+=&amp;#34;,&amp;#34;+length+&amp;#39;}&amp;#39; fs.writeFile(&amp;#34;../data/imgPath.json&amp;#34;,result,(err)=&amp;gt;{ if(err)return; console.log(&amp;#34;写入文件成功，一共&amp;#34;+Object.keys(data).length+&amp;#34;个文件&amp;#34;); }); }); }); 生成的文件大概就是这样的一个json数据
 {&amp;#34;0&amp;#34;:&amp;#34;images/1.jpg&amp;#34;,&amp;#34;1&amp;#34;:&amp;#34;images/10.jpg&amp;#34;,&amp;#34;2&amp;#34;:&amp;#34;images/100.jpg&amp;#34;,&amp;#34;3&amp;#34;:&amp;#34;images/101.jpg&amp;#34;,&amp;#34;4&amp;#34;:&amp;#34;images/102.jpg&amp;#34;,&amp;#34;5&amp;#34;:&amp;#34;images/103.jpg&amp;#34;,&amp;#34;6&amp;#34;:&amp;#34;images/104.jpg&amp;#34;,&amp;#34;7&amp;#34;:&amp;#34;images/105.jpg&amp;#34;,&amp;#34;8&amp;#34;:&amp;#34;images/106.jpg&amp;#34;,&amp;#34;9&amp;#34;:&amp;#34;images/107.jpg&amp;#34;,&amp;#34;10&amp;#34;:&amp;#34;images/108.jpg&amp;#34;,&amp;#34;length&amp;#34;:&amp;#34;109&amp;#34;} </description>
@@ -863,10 +863,10 @@ const path=require(&amp;#34;path&amp;#34;); const fs = require(&amp;#39;fs&amp;#
     
     <item>
       <title>JavaScript瀑布流布局</title>
-      <link>https://www.fintinger.site/post/2020/07/01/</link>
+      <link>https://www.fintinger.site/posts/2020/07/01/</link>
       <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/07/01/</guid>
+      <guid>https://www.fintinger.site/posts/2020/07/01/</guid>
       <description>什么是瀑布流？ 一种图片在网页的布局方式，具体要求为：从页面第二行开始，后续图片跟在页面中最矮的那张图片后面
 用JavaScript怎么实现？ 为此我将整个过程封装为一个函数。
 /*HTML部分*/ &amp;lt;head&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;main.css&amp;#34;&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;div id=&amp;#34;box&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;//container和img由js动态加入 &amp;lt;script src=&amp;#34;jquery.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;loadFile.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;main.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; /*CSS部分*/ /*首先清空默认样式*/ #box{ position: relative; } .container{ float: left; } .container&amp;gt;.pic{ width: 200px; } .container&amp;gt;.pic&amp;gt;img{ width: 100%; } /*JS部分*/ /*loadFile.js(在window.onload之前执行，加载DOM树)*/	$(function () { function addImg(imgNum,eleID) { let container for (let i = 1; i &amp;lt; imgNum; i++) { container=$(&amp;#34;&amp;lt;div class=&amp;#39;container&amp;#39;&amp;gt;&amp;lt;div class=&amp;#39;pic&amp;#39;&amp;gt;&amp;lt;img src=&amp;#39;images/&amp;#34;+i+&amp;#34;.jpg&amp;#39; alt=&amp;#39;&amp;#39;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;#34;) $(eleID).append(container) } } addImg(109,&amp;#34;#box&amp;#34;); }) /*******************************************/ /*main.js(在$(function(){})之前执行，DOM树加载完毕 )*/ window.onload=function () { let waterFall=function (eleID) { let boxWidth = 0, colo = 0, $egEle = $(eleID).</description>
@@ -874,10 +874,10 @@ const path=require(&amp;#34;path&amp;#34;); const fs = require(&amp;#39;fs&amp;#
     
     <item>
       <title>python中关于文件的种种问题</title>
-      <link>https://www.fintinger.site/post/2020/06/26/</link>
+      <link>https://www.fintinger.site/posts/2020/06/26/</link>
       <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/06/26/</guid>
+      <guid>https://www.fintinger.site/posts/2020/06/26/</guid>
       <description> 在python中，我们可以将那些在运行时可能会出现状况的代码放在try代码块中，在try代码块的后面可以跟上一个或多个except来捕获可能出现的异常状况。
   FileNotFoundError，文件找不到 LookupError指定了未知的编码 UnicodeDecodeError读取文件时无法按指定方式解码  def main():f = Nonetry:f = open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;utf-8&#39;)print(f.read())except FileNotFoundError:print(&#39;无法打开指定的文件!&#39;)except LookupError:print(&#39;指定了未知的编码!&#39;)except UnicodeDecodeError:print(&#39;读取文件时解码错误!&#39;)finally:if f:f.close()if __name__ == &#39;__main__&#39;:main() finally块的代码不论程序正常还是异常都会执行到（甚至是调用了sys模块的exit函数退出Python环境，finally块都会被执行，因为exit函数实质上是引发了SystemExit异常），因此我们通常把finally块称为“总是执行代码块”，它最适合用来做释放外部资源的操作。
  或者， with关键字指定文件对象的上下文环境并在离开上下文环境时自动释放文件资源
@@ -886,10 +886,10 @@ def main():try:with open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;u
     
     <item>
       <title>统计学期末知识总结</title>
-      <link>https://www.fintinger.site/post/2020/06/17/</link>
+      <link>https://www.fintinger.site/posts/2020/06/17/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/06/17/</guid>
+      <guid>https://www.fintinger.site/posts/2020/06/17/</guid>
       <description>第一章 导 论 1.什么是统计学  统计学是收集、处理、分析、解释数据并从数据中得出结论的科学 数据分析所用的方法可分为描述统计方法和推断统计方法  2.参数和统计量   参数：总体特征，所关心的参数通常是总体平均数、总体标准差、总体比例等
  由于总体数据通常是不知道的，所以参数是一个未知的常量-
    统计量：个体特征，所关心的参数通常是样本平均数、样本标准差、样本比例等
@@ -902,10 +902,10 @@ def main():try:with open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;u
     
     <item>
       <title>关于Javascript模块化</title>
-      <link>https://www.fintinger.site/post/2020/05/29/</link>
+      <link>https://www.fintinger.site/posts/2020/05/29/</link>
       <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/05/29/</guid>
+      <guid>https://www.fintinger.site/posts/2020/05/29/</guid>
       <description>模块功能主要由两个命令构成：export和import。export命令用于规定模块的对外接口，import命令用于输入其他模块提供的功能。
 //profile.jsexport var firstName = &#39;Michael&#39;;export var lastName = &#39;Jackson&#39;;export function sayName () {return firstName + lastName;}export default function () {console.log(&#39;foo&#39;);}// main.jsimport { firstName, lastName , sayName} from &#39;./profile.js&#39;; 注意：在index.html中引入的时候需要给script加type=&amp;ldquo;module&amp;rdquo;,即
  &amp;lt;script type=&amp;quot;module&amp;quot; src=&amp;quot;./profiles.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script type=&amp;quot;module&amp;quot; src=&amp;quot;./main.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; </description>
@@ -913,10 +913,10 @@ def main():try:with open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;u
     
     <item>
       <title>常用的一些html小问题</title>
-      <link>https://www.fintinger.site/post/2020/05/24/</link>
+      <link>https://www.fintinger.site/posts/2020/05/24/</link>
       <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/05/24/</guid>
+      <guid>https://www.fintinger.site/posts/2020/05/24/</guid>
       <description>1. 网页出现横向滚动条？ &amp;lt;body style=`overflow:-Scroll;overflow-y:hidden &amp;gt; &amp;lt;/body&amp;gt;让横条没有：
  &amp;lt;body style=`overflow:-Scroll;overflow-x:hidden&amp;gt; &amp;lt;/body&amp;gt;两个都去掉？更简单了
 &amp;lt;body scroll=&amp;quot;no&amp;quot; &amp;gt; &amp;lt;/body&amp;gt;火狐底部滚动条不显示：
@@ -929,10 +929,10 @@ def main():try:with open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;u
     
     <item>
       <title>Jquery一些操作</title>
-      <link>https://www.fintinger.site/post/2020/04/23/</link>
+      <link>https://www.fintinger.site/posts/2020/04/23/</link>
       <pubDate>Thu, 23 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/04/23/</guid>
+      <guid>https://www.fintinger.site/posts/2020/04/23/</guid>
       <description>Jquery属性操作 1.属性 attr(attrName [,attrValue]) 操作所有属性（自定义和内置的）
 prop(attrName [,attrValue)) 操作HTML元素内置属性
 removeAttr(attrNam)删除属性
@@ -969,19 +969,19 @@ contents()返回所有子节点的集合</description>
     
     <item>
       <title>Javascript一些操作</title>
-      <link>https://www.fintinger.site/post/2020/04/02/</link>
+      <link>https://www.fintinger.site/posts/2020/04/02/</link>
       <pubDate>Thu, 02 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/04/02/</guid>
+      <guid>https://www.fintinger.site/posts/2020/04/02/</guid>
       <description>1.通过id获取元素 function $(id) { return typeof id === &amp;#39;string&amp;#39; ? document.getElementById(id): null; } 2.日期格式化 function formatDate(cDate) { //1.判断  if (!cDate instanceof Date){ return; } //2.转化  var year=cDate.getFullYear(); var month=cDate.getMonth(); var date=cDate.getDate(); var hour=cDate.getHours(); var minute=cDate.getMinutes(); var second=cDate.getSeconds(); //2.1 补0  month=month&amp;lt;10? &amp;#39;0&amp;#39;+month:month; date=date&amp;lt;10? &amp;#39;0&amp;#39;+date: date; minute=minute&amp;lt;10? &amp;#39;0&amp;#39;+minute:minute; second=second&amp;lt;10? &amp;#39;0&amp;#39;+second:second; return year + &amp;#39;-&amp;#39; + month + &amp;#39;-&amp;#39; + date + &amp;#39; &amp;#39; +hour+&amp;#39;:&amp;#39;+minute+&amp;#34;:&amp;#34;+second; } console.log(formatDate(new Date())); 3.匀速运动封装 /** * 设置一个盒子右边距匀速变化 * @param{string} btnId * @param{string} boxId * @param{number} step * @param{number}target */ function linearAnimation(btnId, boxId, step, target) { // 1.</description>
     </item>
     
     <item>
       <title>常用的一些html代码</title>
-      <link>https://www.fintinger.site/post/2020/03/21/</link>
+      <link>https://www.fintinger.site/posts/2020/03/21/</link>
       <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/03/21/</guid>
+      <guid>https://www.fintinger.site/posts/2020/03/21/</guid>
       <description>1. 获取网页logo 京东 : www.jd.com
  后面加 &amp;ldquo;/favicon.ico&amp;quot;即可
  京东logo : www.jd.com/favicon.ico
@@ -1001,10 +1001,10 @@ margin:0 auto
     
     <item>
       <title>CSS揭秘一书中的知识</title>
-      <link>https://www.fintinger.site/post/2019/12/23/</link>
+      <link>https://www.fintinger.site/posts/2019/12/23/</link>
       <pubDate>Mon, 23 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2019/12/23/</guid>
+      <guid>https://www.fintinger.site/posts/2019/12/23/</guid>
       <description>1.backgrouond简写  在background简写属性中指定background-sizing时，需要提供一个background-position值，而且要使用/作为分隔。  background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [ background-size] [background-origin] [background-clip]; &amp;mdash;&amp;ndash;P13&amp;mdash;&amp;ndash;
 2.background-clip 规定背景的绘制区域：得到一个白色背景并且有白色边框的盒子：
 border:10px solid hsla(0,0,100%,.5); background:white; background-clip:padding-box 若不设置background-clip，背景会延伸至边框，边框的透明无法显示
@@ -1015,16 +1015,18 @@ border:10px solid hsla(0,0,100%,.5); background:white; background-clip:padding-b
     
     <item>
       <title>扁平设计和拟物设计</title>
-      <link>https://www.fintinger.site/post/2019/11/12/</link>
+      <link>https://www.fintinger.site/posts/2019/11/12/</link>
       <pubDate>Tue, 12 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2019/11/12/</guid>
+      <guid>https://www.fintinger.site/posts/2019/11/12/</guid>
       <description>什么扁平和拟物设计？ 扁平化设计(Flat design) 完全属于二次元，这个概念最核心的地方就是放弃一切装饰效果，诸如阴影，透视，纹理，渐变等等能做出3D效果的元素一概不用。所有的元素的边界都干净利落，没有任何羽化，渐变，或者阴影。
 拟物设计(Skeuomorph) 正好相反，他需要加入各种元素的效果，通过不同的效果组合达到模拟要呈现物件外观的目的，以使新的外观让人感觉熟悉和亲切。
 扁平化与拟物化的优缺点:
  扁平化设计单独设计起来更容易，突出内容主题，减弱各种渐变、阴影、高光等视觉效果对用户视线的干扰，让用户更加专注于内容本身，并且容易统一设计风格，调整设计方案更加方便。而现在手机平板电脑&amp;quot;横行&amp;quot;的今天，扁平化设计更能支持手势交互，而且它占用系统空间相对较少。 拟物化设计更适合初级人员了来做，这并不表示拟物化设计简单，而正是因为它的复杂所以更适合初级人员来做，可以让设计人员短时间内熟悉各种效果的实现，更好掌握色彩搭配等。并且拟物化设计认知和学习成本低，更能直接的表现出想表现的事物。   相对于它们的优点多多，它们的缺点却是一目了然。拟物化设计更倾向于视觉效果，功能实现很少。扁平化所能承载的信息量太少，会提高用户的学习成本。
  </description>
     </item>
+    
+    
     
     
     

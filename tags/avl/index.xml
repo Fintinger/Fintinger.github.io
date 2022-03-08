@@ -12,10 +12,10 @@
     <lastBuildDate>Sun, 23 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/avl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AVL树</title>
-      <link>https://www.fintinger.site/post/2021/05/23/avl/</link>
+      <link>https://www.fintinger.site/posts/2021/05/23/avl/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/05/23/avl/</guid>
+      <guid>https://www.fintinger.site/posts/2021/05/23/avl/</guid>
       <description>平衡二叉树是Adelson-Velsky和 Landis发明，故命名为AVL树。也称平衡二叉查找树。
  ✨特点： ①左子树&amp;lt;根&amp;lt;右子树； ②任一节点，左右子树高度之差不超过1.
 平衡因子 $平衡因子=左子树高-右子树高$

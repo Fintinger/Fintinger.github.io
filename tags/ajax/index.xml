@@ -12,10 +12,10 @@
     <lastBuildDate>Thu, 13 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/ajax/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ajax重复请求</title>
-      <link>https://www.fintinger.site/post/2020/08/13/</link>
+      <link>https://www.fintinger.site/posts/2020/08/13/</link>
       <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/08/13/</guid>
+      <guid>https://www.fintinger.site/posts/2020/08/13/</guid>
       <description>在发送某一次请求时，如果不对请求做去重处理那么，同一个请求有可能会发送很多次，一个个慢慢响应，这会很大程度影响性能以及页面的使用体验
  全局变量
 /** * baseURL 是每次请求的地址 * x 表示XMLHttpRequest实例，初始为null * isSending 是用来判断请求是否处于发送状态的标识 */ const baseURL = &amp;#34;http://127.0.0.1:8000/delay&amp;#34; let x = null, isSending = false 原生请求 if (isSending) x.abort() x = new XMLHttpRequest() //正处于发送状态，修改标识 isSending = true x.open(&amp;#34;GET&amp;#34;, baseURL) x.send() x.onreadystatechange = function () { if (x.readyState === 4) {//当readyState=4,表示已经发送完毕，修改标识，是否成功返回则无需关心  isSending = false if (x.status &amp;gt;= 200 &amp;amp;&amp;amp; x.status &amp;lt; 300) { console.log(x.response); } } } jQuery 请求  jQuery做ajax请求时，可以仅针对一次请求，也可以利用jQuery全局事件对所有请求加以限制</description>
@@ -23,10 +23,10 @@
     
     <item>
       <title>跨域及CORS官方跨域</title>
-      <link>https://www.fintinger.site/post/2020/08/11/</link>
+      <link>https://www.fintinger.site/posts/2020/08/11/</link>
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/08/11/</guid>
+      <guid>https://www.fintinger.site/posts/2020/08/11/</guid>
       <description>JSONP  jsonp跨域的实现仅限于GET请求，不可用于POST
  说明：实现的基本思路是利用html中script标签本身可跨域的特性，在发送请求时，在页面中创建script标签，追加到页面中。这实际上就像利用script标签引入外部资源
 /*main.js*/ //申明handle函数 function handle(data) { //do something.... } ele.onclick = function () { //1.创建script标签  const script = document.createElement(&amp;#34;script&amp;#34;) //2.修改script的src属性  script.src = &amp;#34;http://127.0.0.1:8000/jsonP&amp;#34; script.id=&amp;#34;tempScript&amp;#34;//添加id方便移除  //3.追加到页面中  document.body.appendChild(script) } /*server.js*/ app.get(&amp;#39;/jsonP&amp;#39;, (request, response) =&amp;gt; { const data = { exist:1, msg:&amp;#34;用户名已经存在!&amp;#34; } let str = JSON.stringify(data) response.send(` handle(${str}); document.body.removeChild(document.querySelector(&amp;#34;#tempScript&amp;#34;)) `) }) 注意：response.send()/response.end()中利用ES6语法规范中的模板字符串直接返回一段js代码，script标签会自动解析并作用到页面上
@@ -36,10 +36,10 @@ CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置C
     
     <item>
       <title>Ajax学习小结</title>
-      <link>https://www.fintinger.site/post/2020/08/10/</link>
+      <link>https://www.fintinger.site/posts/2020/08/10/</link>
       <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/08/10/</guid>
+      <guid>https://www.fintinger.site/posts/2020/08/10/</guid>
       <description>学习地址:https://www.bilibili.com/video/BV1WC4y1b78y，主要通过express的简单功能来搭建本地的服务，进而更好地学习Ajax
  发送Ajax请求的方式 原生Ajax //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(&amp;#34;GET&amp;#34;,&amp;#34;https://www.x.com&amp;#34;) //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status &amp;gt;= 200 &amp;amp;&amp;amp; xhr.status &amp;lt; 300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } } 说明：
  readyState: 返回一个 XMLHttpRequest 代理当前所处的状态     值 状态 描述     0 UNSENT 代理被创建，但尚未调用 open() 方法。   1 OPENED open() 方法已经被调用。   2 HEADERS_RECEIVED send() 方法已经被调用，并且头部和状态已经可获得。   3 LOADING 下载中； responseText 属性已经包含部分数据。   4 DONE 下载操作已完成。     因此，xhr.</description>
@@ -47,10 +47,10 @@ CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置C
     
     <item>
       <title>Ajax基础及Express框架基本使用</title>
-      <link>https://www.fintinger.site/post/2020/08/06/</link>
+      <link>https://www.fintinger.site/posts/2020/08/06/</link>
       <pubDate>Thu, 06 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/08/06/</guid>
+      <guid>https://www.fintinger.site/posts/2020/08/06/</guid>
       <description>Baike  Ajax 即“AsynchronousJavascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式、快速动态网页应用的网页开发技术，无需重新加载整个网页的情况下，能够更新部分网页的技术。
 通过在后台与服务器进行少量数据交换，Ajax 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。&amp;mdash;百度百科
  请求报文 格式以及参数如下

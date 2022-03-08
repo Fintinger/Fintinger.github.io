@@ -12,10 +12,10 @@
     <lastBuildDate>Sun, 06 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>查找算法相关</title>
-      <link>https://www.fintinger.site/post/2021/06/06/search/</link>
+      <link>https://www.fintinger.site/posts/2021/06/06/search/</link>
       <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2021/06/06/search/</guid>
+      <guid>https://www.fintinger.site/posts/2021/06/06/search/</guid>
       <description>顺序查找 typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数组基址  int TableLen;//查找表长度 }SSTable; int Seq_Search(SSTable ST,int key){ ST.elem[0]=key; int i; for (i = ST.TableLen;ST.elem[i]!=key ; i--) {}//从后往前查找，最终返回下标i  return i;//返回0说明没找到 } 效率分析 对于长度为n的顺序表，如果查找成功$$ ASL={\frac{1+2+&amp;hellip;+n}{n}}=\frac{n+1}{2} $$ 若果查找失败，则 $ASL=n+1$
 总体上，该算法时间复杂度为 $O(n)$
 优化思路 1.如果使得表中的元素有序存放……，可以构造出一棵查找判定树

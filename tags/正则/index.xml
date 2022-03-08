@@ -12,10 +12,10 @@
     <lastBuildDate>Sun, 20 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/%E6%AD%A3%E5%88%99/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Javascript正则表达式</title>
-      <link>https://www.fintinger.site/post/2020/09/20/</link>
+      <link>https://www.fintinger.site/posts/2020/09/20/</link>
       <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/post/2020/09/20/</guid>
+      <guid>https://www.fintinger.site/posts/2020/09/20/</guid>
       <description>关于正则表达式的创建，就不做过多的赘述
  ::: tip
 由于不知名原因，span标签报错，因此全部替换为[sp]
