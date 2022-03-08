@@ -13,7 +13,7 @@ new Promise((resolve, reject) => { resolve('success') //reject('rejected') }).th
  Promise错误处理  Promise()中的错误处理有两种方式,.then()和.catch()
  .then()  特点： &ldquo;一一对应&rdquo;，即一个then()对应处理上一个Promise 用法：  new Promise((resolve, reject) => { // 12+p  // throw new Error('fail')  reject('失败') }).">
 <meta name=author content="Archai">
-<link rel=canonical href=https://examplesite.com/post/2020/08/18/>
+<link rel=canonical href=https://www.fintinger.site/post/2020/08/18/>
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
@@ -21,10 +21,10 @@ new Promise((resolve, reject) => { resolve('success') //reject('rejected') }).th
 <link rel=preload href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico as=image>
 <script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=icon type=image/png sizes=32x32 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=apple-touch-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=mask-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=16x16 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=32x32 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=apple-touch-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=mask-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <noscript>
@@ -39,7 +39,7 @@ new Promise((resolve, reject) => { resolve('success') //reject('rejected') }).th
  Promise错误处理  Promise()中的错误处理有两种方式,.then()和.catch()
  .then()  特点： &ldquo;一一对应&rdquo;，即一个then()对应处理上一个Promise 用法：  new Promise((resolve, reject) => { // 12+p  // throw new Error('fail')  reject('失败') }).">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://examplesite.com/post/2020/08/18/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
+<meta property="og:url" content="https://www.fintinger.site/post/2020/08/18/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
 <meta property="article:published_time" content="2020-08-18T00:00:00+00:00">
 <meta property="article:modified_time" content="2020-08-18T00:00:00+00:00"><meta property="og:site_name" content="Archai's home">
 <meta name=twitter:card content="summary_large_image">
@@ -52,15 +52,15 @@ new Promise((resolve, reject) => { resolve('success') //reject('rejected') }).th
 如果前一个Promsie()中没有改变状态，即没有resolve()/reject()方法，后面的.then就不会针对这个Promsie()处理
  Promise错误处理  Promise()中的错误处理有两种方式,.then()和.catch()
  .then()  特点： &ldquo;一一对应&rdquo;，即一个then()对应处理上一个Promise 用法：  new Promise((resolve, reject) => { // 12+p  // throw new Error('fail')  reject('失败') }).">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://examplesite.com/post/"},{"@type":"ListItem","position":2,"name":"ES6之Promise用法小结","item":"https://examplesite.com/post/2020/08/18/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"ES6之Promise用法小结","name":"ES6之Promise用法小结","description":"Promise 对象用于表示一个异步操作的最终完成 (或失败), 及其结果值。其目的主要是解决以往回调中嵌套回调的\u0026quot;嵌套地狱\u0026quot;问题，使代码可读性更好，更美观!\n基本用法 对于一个标准的Prommise，其基本写法为:\nnew Promise(function (resolve, reject) { //do something...  //success  resolve(\u0026#39;success\u0026#39;) //fail \u0026amp; reject  // reject(\u0026#39;rejected\u0026#39;) *resolve和reject只能出现一个 }).then( function (value) { //if succeed,do something...  }, function (reason) { //if fail \u0026amp; reject,do something...  } ) 如果采用ES6的箭头函数写法，则为:\nnew Promise((resolve, reject) =\u0026gt; { resolve(\u0026#39;success\u0026#39;) //reject(\u0026#39;rejected\u0026#39;) }).then( value =\u0026gt; {}, reason =\u0026gt; {} )  始终牢记，前一个Promise()必须是在后面一个.then()中处理，\n如果前一个Promsie()中没有改变状态，即没有resolve()/reject()方法，后面的.then就不会针对这个Promsie()处理\n Promise错误处理  Promise()中的错误处理有两种方式,.then()和.catch()\n .then()  特点： \u0026ldquo;一一对应\u0026rdquo;，即一个then()对应处理上一个Promise 用法：  new Promise((resolve, reject) =\u0026gt; { // 12+p  // throw new Error(\u0026#39;fail\u0026#39;)  reject(\u0026#39;失败\u0026#39;) }).","keywords":["ES6","Javascript"],"articleBody":"Promise 对象用于表示一个异步操作的最终完成 (或失败), 及其结果值。其目的主要是解决以往回调中嵌套回调的\"嵌套地狱\"问题，使代码可读性更好，更美观!\n基本用法 对于一个标准的Prommise，其基本写法为:\nnew Promise(function (resolve, reject) { //do something...  //success  resolve('success') //fail \u0026 reject  // reject('rejected') *resolve和reject只能出现一个 }).then( function (value) { //if succeed,do something...  }, function (reason) { //if fail \u0026 reject,do something...  } ) 如果采用ES6的箭头函数写法，则为:\nnew Promise((resolve, reject) = { resolve('success') //reject('rejected') }).then( value = {}, reason = {} )  始终牢记，前一个Promise()必须是在后面一个.then()中处理，\n如果前一个Promsie()中没有改变状态，即没有resolve()/reject()方法，后面的.then就不会针对这个Promsie()处理\n Promise错误处理  Promise()中的错误处理有两种方式,.then()和.catch()\n .then()  特点： “一一对应”，即一个then()对应处理上一个Promise 用法：  new Promise((resolve, reject) = { // 12+p  // throw new Error('fail')  reject('失败') }).then(null, reason = { // console.log(reason.message);  console.log(reason); }) /*output: p is not defined fail 失败 */  因为是reject()或者失败状态，因此,.then()中的value没有意义，直接把value = {}用null代替\n .catch()  特点： “总览全局,全包”，及最后调用.catch()的位置以上所有的Promise中的错误都由.catch()捕获 用法：  new Promise((resolve, reject) = { resolve('success') }).then(v = { console.log(v); return new Promise((resolve, reject) = { 1 + b resolve('success-2') }) } ).then(v = console.log(v)) .catch(error = console.log(error.message)) /*output: success b is not defined */\t 在.then()中返回一个Promise，后面的.then()就是对这个Promise的处理，因为返回的Promise中发生了b is not defined的错误，因此被.catch()捕获，后面的resolve()不再执行。\n finally()  无论resolve还是reject，.finally()最后都会执行\n new Promise((resolve, reject) = { //resolve('请求成功')  reject('请求失败') }).then( value = { console.log(value); }, reason = { console.log(reason); } ).finally(() = { //do something.... }) all()  所有的Promise都会执行的部分可以写到.all()中，用一个Promise集合promises(自定义)调用\n const promises = ['fin', 'jqf'].map(name = { return ajax('http://127.0.0.1:3000/users/' + name) }) console.log(promises);//(2) [Promise, Promise] Promise.all(promises).then(user=console.log(user))//(2) [{…}, {…}] 使用： 可以用来批量获取数据，利用map数组方法\n/** * 提供一个username数组，就会依次返回需要的数据 * @param{Array}names * @returns {Promise} */ function search(names) { const promises = names.map(name = { return ajax('http://127.0.0.1:3000/users?username=' + name) }) return Promise.all(promises) } /*******使用*******/ search(names).then(res = { //...do something }) race()  与all()类似，接收一个可迭代的参数——Promise集合等，哪个先返回状态(resolve\u0026reject)就执行哪个，其他的不予执行。\n const p1 = new Promise(function (resolve, reject) { setTimeout(resolve, 300, 'p1 done') }); const p2 = new Promise(function (resolve, reject) { setTimeout(resolve, 50, 'p2 done'); }); const p3 = new Promise(function (resolve, reject) { setTimeout(reject, 100, 'p3 rejected'); }); Promise.race([p1, p2, p3]).then(function(data) { // 显然p2更快，所以状态变成了fulfilled  // 如果p3更快，那么状态就会变成rejected  console.log(data); // p2 doned }).catch(function(err) { console.log(err); // 不执行 }); 使用Promise封装一些函数  使用Promise封装一些常用的方法，更加扁平，完美！\n 原生Ajax封装 function ajax(url) { return new Promise((reslove, reject) = { let x = new XMLHttpRequest() x.open(\"GET\", url) x.send() x.onreadystatechange = function () { if (x.readyState === 4) { if (x.status = 200 \u0026\u0026 x.status  300) { reslove(JSON.parse(x.response)) }else { reject(\"加载失败\") } } } x.onerror=function (){ reject(\"其它错误\") } }) } 使用：\najax(url).then(res = { //...do something }) Promise队列  利用Promise可以实现前一个任务完成之后再完成后一个任务这样的任务队列顺序\n 基本用法 let promise = Promise.resolve(\"1\") promise.then(v = { //返回一个新的Promise，  // 后面的.then就是针对这个Promise的  // 因此会等1s第一个.then()执行完毕后再执行后面的.then()  return new Promise(resolve = { setTimeout(() = { console.log(v); resolve(\"2\") }, 1000) }) }).then(v = { setTimeout(() = { console.log(v); }, 1000) })  Promise.resolve()直接返回一个成功状态的Promise，同理，Promise.reject()则返回一个拒绝状态的Promise.。\n 利用map()方法  map() 方法返回一个新数组，数组中的元素为原始数组元素调用函数处理后的值。map() 方法按照原始数组元素顺序依次处理元素。GO\n function queue(arr) { //定义一个初始完成状态的Promise  let promise = Promise.resolve() arr.map(v = { //不断更新promise的值  //使之永远是上一次执行的Promise  promise = promise.then(value = { return new Promise(resolve = { setTimeout(() = { // console.log(v);  v() resolve() }, 1000) }) }) }) } 说明：\n v代表arr数组中的value，可以使函数组成arr 关键是利用promise接收上一个执行的Promise()，不断更新就能做到循环期间不断循环  使用：\nfunction f1(){ console.log('my name is jqf,'); } function f3(){ console.log('ohhhhhhhh.'); } function f2(){ console.log(\"i'm 19.\"); } queue([f1,f2,f3]) //my name is jqf,i'm 19. ohhhhhhhh. 利用reduce()方法  reduce()是数组的方法，作用是首先有一个最后的返回值，这个值给定初始值，然后利用数组遍历的当前值，索引最终返回这个最后的返回值，GO\n //reduce()为数组中的方法 //\"_\"是占位的，因为这里的参数没有意义，用\"_\"占位即可 function queue(arr) { arr.reduce((promise, num) = { return promise.then(_ = { return new Promise(resolve = { setTimeout(_ = { console.log(num); resolve() }, 1000) }) }) }, Promise.resolve()) } 说明：\n reduce的参数  array.reduce(function(total, currentValue, currentIndex, arr), initialValue) ","wordCount":"481","inLanguage":"en","datePublished":"2020-08-18T00:00:00Z","dateModified":"2020-08-18T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://examplesite.com/post/2020/08/18/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://www.fintinger.site/post/"},{"@type":"ListItem","position":3,"name":"ES6之Promise用法小结","item":"https://www.fintinger.site/post/2020/08/18/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"ES6之Promise用法小结","name":"ES6之Promise用法小结","description":"Promise 对象用于表示一个异步操作的最终完成 (或失败), 及其结果值。其目的主要是解决以往回调中嵌套回调的\u0026quot;嵌套地狱\u0026quot;问题，使代码可读性更好，更美观!\n基本用法 对于一个标准的Prommise，其基本写法为:\nnew Promise(function (resolve, reject) { //do something...  //success  resolve(\u0026#39;success\u0026#39;) //fail \u0026amp; reject  // reject(\u0026#39;rejected\u0026#39;) *resolve和reject只能出现一个 }).then( function (value) { //if succeed,do something...  }, function (reason) { //if fail \u0026amp; reject,do something...  } ) 如果采用ES6的箭头函数写法，则为:\nnew Promise((resolve, reject) =\u0026gt; { resolve(\u0026#39;success\u0026#39;) //reject(\u0026#39;rejected\u0026#39;) }).then( value =\u0026gt; {}, reason =\u0026gt; {} )  始终牢记，前一个Promise()必须是在后面一个.then()中处理，\n如果前一个Promsie()中没有改变状态，即没有resolve()/reject()方法，后面的.then就不会针对这个Promsie()处理\n Promise错误处理  Promise()中的错误处理有两种方式,.then()和.catch()\n .then()  特点： \u0026ldquo;一一对应\u0026rdquo;，即一个then()对应处理上一个Promise 用法：  new Promise((resolve, reject) =\u0026gt; { // 12+p  // throw new Error(\u0026#39;fail\u0026#39;)  reject(\u0026#39;失败\u0026#39;) }).","keywords":["ES6","Javascript"],"articleBody":"Promise 对象用于表示一个异步操作的最终完成 (或失败), 及其结果值。其目的主要是解决以往回调中嵌套回调的\"嵌套地狱\"问题，使代码可读性更好，更美观!\n基本用法 对于一个标准的Prommise，其基本写法为:\nnew Promise(function (resolve, reject) { //do something...  //success  resolve('success') //fail \u0026 reject  // reject('rejected') *resolve和reject只能出现一个 }).then( function (value) { //if succeed,do something...  }, function (reason) { //if fail \u0026 reject,do something...  } ) 如果采用ES6的箭头函数写法，则为:\nnew Promise((resolve, reject) = { resolve('success') //reject('rejected') }).then( value = {}, reason = {} )  始终牢记，前一个Promise()必须是在后面一个.then()中处理，\n如果前一个Promsie()中没有改变状态，即没有resolve()/reject()方法，后面的.then就不会针对这个Promsie()处理\n Promise错误处理  Promise()中的错误处理有两种方式,.then()和.catch()\n .then()  特点： “一一对应”，即一个then()对应处理上一个Promise 用法：  new Promise((resolve, reject) = { // 12+p  // throw new Error('fail')  reject('失败') }).then(null, reason = { // console.log(reason.message);  console.log(reason); }) /*output: p is not defined fail 失败 */  因为是reject()或者失败状态，因此,.then()中的value没有意义，直接把value = {}用null代替\n .catch()  特点： “总览全局,全包”，及最后调用.catch()的位置以上所有的Promise中的错误都由.catch()捕获 用法：  new Promise((resolve, reject) = { resolve('success') }).then(v = { console.log(v); return new Promise((resolve, reject) = { 1 + b resolve('success-2') }) } ).then(v = console.log(v)) .catch(error = console.log(error.message)) /*output: success b is not defined */\t 在.then()中返回一个Promise，后面的.then()就是对这个Promise的处理，因为返回的Promise中发生了b is not defined的错误，因此被.catch()捕获，后面的resolve()不再执行。\n finally()  无论resolve还是reject，.finally()最后都会执行\n new Promise((resolve, reject) = { //resolve('请求成功')  reject('请求失败') }).then( value = { console.log(value); }, reason = { console.log(reason); } ).finally(() = { //do something.... }) all()  所有的Promise都会执行的部分可以写到.all()中，用一个Promise集合promises(自定义)调用\n const promises = ['fin', 'jqf'].map(name = { return ajax('http://127.0.0.1:3000/users/' + name) }) console.log(promises);//(2) [Promise, Promise] Promise.all(promises).then(user=console.log(user))//(2) [{…}, {…}] 使用： 可以用来批量获取数据，利用map数组方法\n/** * 提供一个username数组，就会依次返回需要的数据 * @param{Array}names * @returns {Promise} */ function search(names) { const promises = names.map(name = { return ajax('http://127.0.0.1:3000/users?username=' + name) }) return Promise.all(promises) } /*******使用*******/ search(names).then(res = { //...do something }) race()  与all()类似，接收一个可迭代的参数——Promise集合等，哪个先返回状态(resolve\u0026reject)就执行哪个，其他的不予执行。\n const p1 = new Promise(function (resolve, reject) { setTimeout(resolve, 300, 'p1 done') }); const p2 = new Promise(function (resolve, reject) { setTimeout(resolve, 50, 'p2 done'); }); const p3 = new Promise(function (resolve, reject) { setTimeout(reject, 100, 'p3 rejected'); }); Promise.race([p1, p2, p3]).then(function(data) { // 显然p2更快，所以状态变成了fulfilled  // 如果p3更快，那么状态就会变成rejected  console.log(data); // p2 doned }).catch(function(err) { console.log(err); // 不执行 }); 使用Promise封装一些函数  使用Promise封装一些常用的方法，更加扁平，完美！\n 原生Ajax封装 function ajax(url) { return new Promise((reslove, reject) = { let x = new XMLHttpRequest() x.open(\"GET\", url) x.send() x.onreadystatechange = function () { if (x.readyState === 4) { if (x.status = 200 \u0026\u0026 x.status  300) { reslove(JSON.parse(x.response)) }else { reject(\"加载失败\") } } } x.onerror=function (){ reject(\"其它错误\") } }) } 使用：\najax(url).then(res = { //...do something }) Promise队列  利用Promise可以实现前一个任务完成之后再完成后一个任务这样的任务队列顺序\n 基本用法 let promise = Promise.resolve(\"1\") promise.then(v = { //返回一个新的Promise，  // 后面的.then就是针对这个Promise的  // 因此会等1s第一个.then()执行完毕后再执行后面的.then()  return new Promise(resolve = { setTimeout(() = { console.log(v); resolve(\"2\") }, 1000) }) }).then(v = { setTimeout(() = { console.log(v); }, 1000) })  Promise.resolve()直接返回一个成功状态的Promise，同理，Promise.reject()则返回一个拒绝状态的Promise.。\n 利用map()方法  map() 方法返回一个新数组，数组中的元素为原始数组元素调用函数处理后的值。map() 方法按照原始数组元素顺序依次处理元素。GO\n function queue(arr) { //定义一个初始完成状态的Promise  let promise = Promise.resolve() arr.map(v = { //不断更新promise的值  //使之永远是上一次执行的Promise  promise = promise.then(value = { return new Promise(resolve = { setTimeout(() = { // console.log(v);  v() resolve() }, 1000) }) }) }) } 说明：\n v代表arr数组中的value，可以使函数组成arr 关键是利用promise接收上一个执行的Promise()，不断更新就能做到循环期间不断循环  使用：\nfunction f1(){ console.log('my name is jqf,'); } function f3(){ console.log('ohhhhhhhh.'); } function f2(){ console.log(\"i'm 19.\"); } queue([f1,f2,f3]) //my name is jqf,i'm 19. ohhhhhhhh. 利用reduce()方法  reduce()是数组的方法，作用是首先有一个最后的返回值，这个值给定初始值，然后利用数组遍历的当前值，索引最终返回这个最后的返回值，GO\n //reduce()为数组中的方法 //\"_\"是占位的，因为这里的参数没有意义，用\"_\"占位即可 function queue(arr) { arr.reduce((promise, num) = { return promise.then(_ = { return new Promise(resolve = { setTimeout(_ = { console.log(num); resolve() }, 1000) }) }) }, Promise.resolve()) } 说明：\n reduce的参数  array.reduce(function(total, currentValue, currentIndex, arr), initialValue) ","wordCount":"481","inLanguage":"en","datePublished":"2020-08-18T00:00:00Z","dateModified":"2020-08-18T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.fintinger.site/post/2020/08/18/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
-<a href=https://examplesite.com/ accesskey=h title="Home (Alt + H)">
+<a href=https://www.fintinger.site accesskey=h title="Home (Alt + H)">
 <img src=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico alt=logo aria-label=logo height=35>Home</a>
 <span class=logo-switches>
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -69,22 +69,22 @@ new Promise((resolve, reject) => { resolve('success') //reject('rejected') }).th
 </div>
 <ul id=menu>
 <li>
-<a href=https://examplesite.com/categories/ title=Categories>
+<a href=https://www.fintinger.site/categories/ title=Categories>
 <span>Categories</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/tags/ title=Tags>
+<a href=https://www.fintinger.site/tags/ title=Tags>
 <span>Tags</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/search/ title="Search (Alt + /)" accesskey=/>
+<a href=https://www.fintinger.site/search/ title="Search (Alt + /)" accesskey=/>
 <span>Search</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/archives/ title=Archives>
+<a href=https://www.fintinger.site/archives/ title=Archives>
 <span>Archives</span>
 </a>
 </li>
@@ -94,7 +94,7 @@ new Promise((resolve, reject) => { resolve('success') //reject('rejected') }).th
 <main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://examplesite.com/>Home</a>&nbsp;»&nbsp;<a href=https://examplesite.com/post/>Posts</a></div>
+<div class=breadcrumbs><a href=https://www.fintinger.site>Home</a>&nbsp;»&nbsp;<a href=https://www.fintinger.site/post/>Posts</a></div>
 <h1 class=post-title>
 ES6之Promise用法小结
 </h1>
@@ -407,16 +407,16 @@ Promise.<span style=color:#a6e22e>race</span>([<span style=color:#a6e22e>p1</spa
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://examplesite.com/tags/es6/>ES6</a></li>
-<li><a href=https://examplesite.com/tags/javascript/>Javascript</a></li>
+<li><a href=https://www.fintinger.site/tags/es6/>ES6</a></li>
+<li><a href=https://www.fintinger.site/tags/javascript/>Javascript</a></li>
 </ul>
 <nav class=paginav>
-<a class=prev href=https://examplesite.com/post/2020/08/22/>
+<a class=prev href=https://www.fintinger.site/post/2020/08/22/>
 <span class=title>« Prev Page</span>
 <br>
 <span>JavaScript基础之运算符</span>
 </a>
-<a class=next href=https://examplesite.com/post/2020/08/15/>
+<a class=next href=https://www.fintinger.site/post/2020/08/15/>
 <span class=title>Next Page »</span>
 <br>
 <span>红警常见问题(收录中……)</span>
@@ -426,7 +426,7 @@ Promise.<span style=color:#a6e22e>race</span>([<span style=color:#a6e22e>p1</spa
 </article>
 </main>
 <footer class=footer>
-<span>&copy; 2022 <a href=https://examplesite.com/>Archai's home</a></span>
+<span>&copy; 2022 <a href=https://www.fintinger.site>Archai's home</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

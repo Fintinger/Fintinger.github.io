@@ -20,7 +20,7 @@ ThreadNode *pre=NULL;  前驱指针还可以定义在局部，这里为了方便
  🍔开始定义处理函数
 void CreatInThread(ThreadTree T){ pre=NULL; if(T!=NULL){ InThread(T); if(pre->rchild==NULL){ pre->rtag=1; } } }  注意：最后一个节点单独处理">
 <meta name=author content="Archai">
-<link rel=canonical href=https://examplesite.com/post/2021/05/15/>
+<link rel=canonical href=https://www.fintinger.site/post/2021/05/15/>
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
@@ -28,10 +28,10 @@ void CreatInThread(ThreadTree T){ pre=NULL; if(T!=NULL){ InThread(T); if(pre->rc
 <link rel=preload href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico as=image>
 <script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=icon type=image/png sizes=32x32 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=apple-touch-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=mask-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=16x16 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=32x32 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=apple-touch-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=mask-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <noscript>
@@ -53,7 +53,7 @@ ThreadNode *pre=NULL;  前驱指针还可以定义在局部，这里为了方便
  🍔开始定义处理函数
 void CreatInThread(ThreadTree T){ pre=NULL; if(T!=NULL){ InThread(T); if(pre->rchild==NULL){ pre->rtag=1; } } }  注意：最后一个节点单独处理">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://examplesite.com/post/2021/05/15/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
+<meta property="og:url" content="https://www.fintinger.site/post/2021/05/15/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
 <meta property="article:published_time" content="2021-05-15T00:00:00+00:00">
 <meta property="article:modified_time" content="2021-05-15T00:00:00+00:00"><meta property="og:site_name" content="Archai's home">
 <meta name=twitter:card content="summary_large_image">
@@ -73,15 +73,15 @@ typedef struct ThreadNode{ ElemType data; struct ThreadNode *lchild,*rchild; int
 ThreadNode *pre=NULL;  前驱指针还可以定义在局部，这里为了方便起见，将pre定义为全局。
  🍔开始定义处理函数
 void CreatInThread(ThreadTree T){ pre=NULL; if(T!=NULL){ InThread(T); if(pre->rchild==NULL){ pre->rtag=1; } } }  注意：最后一个节点单独处理">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://examplesite.com/post/"},{"@type":"ListItem","position":2,"name":"线索二叉树","item":"https://examplesite.com/post/2021/05/15/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"线索二叉树","name":"线索二叉树","description":"线索二叉树 WHY  方便从任一个结点出发，找到其前驱、后继；方便遍历\n 普通二叉树中，对任意一个结点，若想找到其前驱/后继结点，只能再进行一次相应的前/中/后序遍历才行，复杂度太高。\n为此，我们引入前驱线索，后继线索的概念。其中，前驱线索由左孩子指针充当，后继线索由右孩子指针充当。\ntypedef struct BiTNode{ ElemType data; struct BiTNode *lchild,*rchild; }BiTNode,*BiTree; 构建出如下图所示的结构：\n但是，\n*lchild(*rchild)有可能指向存在的结点，为此我们引入线索标志。当线索标志为1时，表示孩子指针指向前驱后继，线索标志为0时，表示孩子指针指向左右孩子。此时\ntypedef struct ThreadNode{ ElemType data; struct ThreadNode *lchild,*rchild; int ltag,rtag;//左右线索标志 }ThreadNode,*ThreadTree; 这样，每一个线索链表中的结点就可以图示为:\nHOW  如何分别用代码实现前中后序遍历下的线索链表\n 1.中序线索化  其实中序线索化的过程就是再进行一遍中序遍历，为每个节点添加额外的信息(lchild, rcild, ltag, rtag).\n 🍔初始定义结构体\ntypedef struct ThreadNode{ ElemType data; struct ThreadNode *lchild,*rchild; int ltag,rtag; }ThreadNode,*ThreadTree; 🍔定义前驱指针\nThreadNode *pre=NULL;  前驱指针还可以定义在局部，这里为了方便起见，将pre定义为全局。\n 🍔开始定义处理函数\nvoid CreatInThread(ThreadTree T){ pre=NULL; if(T!=NULL){ InThread(T); if(pre-\u0026gt;rchild==NULL){ pre-\u0026gt;rtag=1; } } }  注意：最后一个节点单独处理","keywords":["数据结构"],"articleBody":"线索二叉树 WHY  方便从任一个结点出发，找到其前驱、后继；方便遍历\n 普通二叉树中，对任意一个结点，若想找到其前驱/后继结点，只能再进行一次相应的前/中/后序遍历才行，复杂度太高。\n为此，我们引入前驱线索，后继线索的概念。其中，前驱线索由左孩子指针充当，后继线索由右孩子指针充当。\ntypedef struct BiTNode{ ElemType data; struct BiTNode *lchild,*rchild; }BiTNode,*BiTree; 构建出如下图所示的结构：\n但是，\n*lchild(*rchild)有可能指向存在的结点，为此我们引入线索标志。当线索标志为1时，表示孩子指针指向前驱后继，线索标志为0时，表示孩子指针指向左右孩子。此时\ntypedef struct ThreadNode{ ElemType data; struct ThreadNode *lchild,*rchild; int ltag,rtag;//左右线索标志 }ThreadNode,*ThreadTree; 这样，每一个线索链表中的结点就可以图示为:\nHOW  如何分别用代码实现前中后序遍历下的线索链表\n 1.中序线索化  其实中序线索化的过程就是再进行一遍中序遍历，为每个节点添加额外的信息(lchild, rcild, ltag, rtag).\n 🍔初始定义结构体\ntypedef struct ThreadNode{ ElemType data; struct ThreadNode *lchild,*rchild; int ltag,rtag; }ThreadNode,*ThreadTree; 🍔定义前驱指针\nThreadNode *pre=NULL;  前驱指针还可以定义在局部，这里为了方便起见，将pre定义为全局。\n 🍔开始定义处理函数\nvoid CreatInThread(ThreadTree T){ pre=NULL; if(T!=NULL){ InThread(T); if(pre-rchild==NULL){ pre-rtag=1; } } }  注意：最后一个节点单独处理\n 🍔中序遍历二叉树，顺便线索化\nvoid InThead(ThreadTree T){ if(T!=NULL){ //左根右  InThead(T-lchild); visit(T); InThead(T-rchild); } } 🍔访问节点时加上线索信息\nvoid visit(ThreadNode q){ if(q-lchild==NULL){ q-lchild=pre; q-ltag=1; } if(pre!=NULL \u0026\u0026 pre-rchild==NULL){ pre-rchild=p; pre-rtag=1; } pre=q; } 此外，合并之后：\nvoid InThread(ThreadTree p,Thread \u0026pre){ if(p!=NULL){ //左  InThread(p-lchild,pre); //根  if(p-lchild==NULL){ p-lchild=pre; p-ltag=1; } if(pre!=NULL \u0026\u0026 pre-rchild==NULL){ pre-rchild=p; pre-rtag=1; } pre=p; //右  InThread(p-rchild,pre); } } void CreatInThread(ThreadTree T){ ThreadTree pre=NULL; if(T!=NULL){ InThread(T,pre); //处理最后一个节点  pre-rchild==NULL pre-rtag=1; } }  注意在CreatInThread并不需要判断pre-rchild是否为NULL\n因为，按照中序遍历的顺序“左根右”，最后退出循环之后pre不可能有rchild，否则还会按照“根右”的顺序继续执行InThread,所以退出循环的pre必然为中序遍历下的最后一个结点。\n 2.先序线索化  代码参考中序线索化\n void PreThead(ThreadTree T){ if(T!=NULL){ //根左右  visit(T); PreThead(T-lchild); PreThead(T-rchild); } } 由于先进行根节点的vist操作，如图，在vist(4)完成之后，根据规则，④的lchild指针指向②，因此就会陷入无限循环的困境……\n为此，只需在进行PreThead(T-lchild)前加一句判断即可，具体如下：\nvoid InThead(ThreadTree T){ if(T!=NULL){ //根左右  visit(T); if(T-ltag==0){//lchild不是前驱线索时才访问lchild  PreThead(T-lchild); } PreThead(T-rchild); } } 其余参考中序线索化即可。\n3.后续线索化 void PreThead(ThreadTree T){ if(T!=NULL){ //左右根  PreThead(T-lchild); PreThead(T-rchild); visit(T); } } 其余参考中序线索化即可。\nWHERE  如何使用线索二叉树实现前中后序遍历下的查找前驱后继的问题\n 1.中序线索二叉树 对于一颗中序线索化后的二叉树\n🍖当某结点ltag==1时，前驱后继分别为lchild,rchild\n🍖当某结点ltag==0时，根据中序遍历“左根右”的顺序：\n 前驱为lchild在中序遍历下最后被访问的那个结点 后继为rchild在中序遍历下最先被访问的那个结点  2.先序线索二叉树 🍖对于后继，参考中序线索二叉树即可。\n🍖对于前驱，由于先序遍历“根左右”的遍历顺序，该节点无法找到前驱😰\n  解决办法一：从头至尾进行一次先序遍历，找到其前驱。\n  解决办法二：引入三叉树，为每个节点存储parent指针，即指向父节点，此时前驱为：\n  3.后序线索二叉树  参考先序线索二叉树\n 4. 另外 🧐中序遍历下最后被访问的那个结点如何通过代码找到？\n根据中序遍历 左根右 的顺序，即为最“右下”的结点，但不一定是叶节点哦\nThreadNode *Lastnode(ThreadNode *p){ while(p-rtag==0) p=p-rchild return p; } ","wordCount":"198","inLanguage":"en","datePublished":"2021-05-15T00:00:00Z","dateModified":"2021-05-15T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://examplesite.com/post/2021/05/15/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://www.fintinger.site/post/"},{"@type":"ListItem","position":3,"name":"线索二叉树","item":"https://www.fintinger.site/post/2021/05/15/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"线索二叉树","name":"线索二叉树","description":"线索二叉树 WHY  方便从任一个结点出发，找到其前驱、后继；方便遍历\n 普通二叉树中，对任意一个结点，若想找到其前驱/后继结点，只能再进行一次相应的前/中/后序遍历才行，复杂度太高。\n为此，我们引入前驱线索，后继线索的概念。其中，前驱线索由左孩子指针充当，后继线索由右孩子指针充当。\ntypedef struct BiTNode{ ElemType data; struct BiTNode *lchild,*rchild; }BiTNode,*BiTree; 构建出如下图所示的结构：\n但是，\n*lchild(*rchild)有可能指向存在的结点，为此我们引入线索标志。当线索标志为1时，表示孩子指针指向前驱后继，线索标志为0时，表示孩子指针指向左右孩子。此时\ntypedef struct ThreadNode{ ElemType data; struct ThreadNode *lchild,*rchild; int ltag,rtag;//左右线索标志 }ThreadNode,*ThreadTree; 这样，每一个线索链表中的结点就可以图示为:\nHOW  如何分别用代码实现前中后序遍历下的线索链表\n 1.中序线索化  其实中序线索化的过程就是再进行一遍中序遍历，为每个节点添加额外的信息(lchild, rcild, ltag, rtag).\n 🍔初始定义结构体\ntypedef struct ThreadNode{ ElemType data; struct ThreadNode *lchild,*rchild; int ltag,rtag; }ThreadNode,*ThreadTree; 🍔定义前驱指针\nThreadNode *pre=NULL;  前驱指针还可以定义在局部，这里为了方便起见，将pre定义为全局。\n 🍔开始定义处理函数\nvoid CreatInThread(ThreadTree T){ pre=NULL; if(T!=NULL){ InThread(T); if(pre-\u0026gt;rchild==NULL){ pre-\u0026gt;rtag=1; } } }  注意：最后一个节点单独处理","keywords":["数据结构"],"articleBody":"线索二叉树 WHY  方便从任一个结点出发，找到其前驱、后继；方便遍历\n 普通二叉树中，对任意一个结点，若想找到其前驱/后继结点，只能再进行一次相应的前/中/后序遍历才行，复杂度太高。\n为此，我们引入前驱线索，后继线索的概念。其中，前驱线索由左孩子指针充当，后继线索由右孩子指针充当。\ntypedef struct BiTNode{ ElemType data; struct BiTNode *lchild,*rchild; }BiTNode,*BiTree; 构建出如下图所示的结构：\n但是，\n*lchild(*rchild)有可能指向存在的结点，为此我们引入线索标志。当线索标志为1时，表示孩子指针指向前驱后继，线索标志为0时，表示孩子指针指向左右孩子。此时\ntypedef struct ThreadNode{ ElemType data; struct ThreadNode *lchild,*rchild; int ltag,rtag;//左右线索标志 }ThreadNode,*ThreadTree; 这样，每一个线索链表中的结点就可以图示为:\nHOW  如何分别用代码实现前中后序遍历下的线索链表\n 1.中序线索化  其实中序线索化的过程就是再进行一遍中序遍历，为每个节点添加额外的信息(lchild, rcild, ltag, rtag).\n 🍔初始定义结构体\ntypedef struct ThreadNode{ ElemType data; struct ThreadNode *lchild,*rchild; int ltag,rtag; }ThreadNode,*ThreadTree; 🍔定义前驱指针\nThreadNode *pre=NULL;  前驱指针还可以定义在局部，这里为了方便起见，将pre定义为全局。\n 🍔开始定义处理函数\nvoid CreatInThread(ThreadTree T){ pre=NULL; if(T!=NULL){ InThread(T); if(pre-rchild==NULL){ pre-rtag=1; } } }  注意：最后一个节点单独处理\n 🍔中序遍历二叉树，顺便线索化\nvoid InThead(ThreadTree T){ if(T!=NULL){ //左根右  InThead(T-lchild); visit(T); InThead(T-rchild); } } 🍔访问节点时加上线索信息\nvoid visit(ThreadNode q){ if(q-lchild==NULL){ q-lchild=pre; q-ltag=1; } if(pre!=NULL \u0026\u0026 pre-rchild==NULL){ pre-rchild=p; pre-rtag=1; } pre=q; } 此外，合并之后：\nvoid InThread(ThreadTree p,Thread \u0026pre){ if(p!=NULL){ //左  InThread(p-lchild,pre); //根  if(p-lchild==NULL){ p-lchild=pre; p-ltag=1; } if(pre!=NULL \u0026\u0026 pre-rchild==NULL){ pre-rchild=p; pre-rtag=1; } pre=p; //右  InThread(p-rchild,pre); } } void CreatInThread(ThreadTree T){ ThreadTree pre=NULL; if(T!=NULL){ InThread(T,pre); //处理最后一个节点  pre-rchild==NULL pre-rtag=1; } }  注意在CreatInThread并不需要判断pre-rchild是否为NULL\n因为，按照中序遍历的顺序“左根右”，最后退出循环之后pre不可能有rchild，否则还会按照“根右”的顺序继续执行InThread,所以退出循环的pre必然为中序遍历下的最后一个结点。\n 2.先序线索化  代码参考中序线索化\n void PreThead(ThreadTree T){ if(T!=NULL){ //根左右  visit(T); PreThead(T-lchild); PreThead(T-rchild); } } 由于先进行根节点的vist操作，如图，在vist(4)完成之后，根据规则，④的lchild指针指向②，因此就会陷入无限循环的困境……\n为此，只需在进行PreThead(T-lchild)前加一句判断即可，具体如下：\nvoid InThead(ThreadTree T){ if(T!=NULL){ //根左右  visit(T); if(T-ltag==0){//lchild不是前驱线索时才访问lchild  PreThead(T-lchild); } PreThead(T-rchild); } } 其余参考中序线索化即可。\n3.后续线索化 void PreThead(ThreadTree T){ if(T!=NULL){ //左右根  PreThead(T-lchild); PreThead(T-rchild); visit(T); } } 其余参考中序线索化即可。\nWHERE  如何使用线索二叉树实现前中后序遍历下的查找前驱后继的问题\n 1.中序线索二叉树 对于一颗中序线索化后的二叉树\n🍖当某结点ltag==1时，前驱后继分别为lchild,rchild\n🍖当某结点ltag==0时，根据中序遍历“左根右”的顺序：\n 前驱为lchild在中序遍历下最后被访问的那个结点 后继为rchild在中序遍历下最先被访问的那个结点  2.先序线索二叉树 🍖对于后继，参考中序线索二叉树即可。\n🍖对于前驱，由于先序遍历“根左右”的遍历顺序，该节点无法找到前驱😰\n  解决办法一：从头至尾进行一次先序遍历，找到其前驱。\n  解决办法二：引入三叉树，为每个节点存储parent指针，即指向父节点，此时前驱为：\n  3.后序线索二叉树  参考先序线索二叉树\n 4. 另外 🧐中序遍历下最后被访问的那个结点如何通过代码找到？\n根据中序遍历 左根右 的顺序，即为最“右下”的结点，但不一定是叶节点哦\nThreadNode *Lastnode(ThreadNode *p){ while(p-rtag==0) p=p-rchild return p; } ","wordCount":"198","inLanguage":"en","datePublished":"2021-05-15T00:00:00Z","dateModified":"2021-05-15T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.fintinger.site/post/2021/05/15/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
-<a href=https://examplesite.com/ accesskey=h title="Home (Alt + H)">
+<a href=https://www.fintinger.site accesskey=h title="Home (Alt + H)">
 <img src=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico alt=logo aria-label=logo height=35>Home</a>
 <span class=logo-switches>
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -90,22 +90,22 @@ void CreatInThread(ThreadTree T){ pre=NULL; if(T!=NULL){ InThread(T); if(pre->rc
 </div>
 <ul id=menu>
 <li>
-<a href=https://examplesite.com/categories/ title=Categories>
+<a href=https://www.fintinger.site/categories/ title=Categories>
 <span>Categories</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/tags/ title=Tags>
+<a href=https://www.fintinger.site/tags/ title=Tags>
 <span>Tags</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/search/ title="Search (Alt + /)" accesskey=/>
+<a href=https://www.fintinger.site/search/ title="Search (Alt + /)" accesskey=/>
 <span>Search</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/archives/ title=Archives>
+<a href=https://www.fintinger.site/archives/ title=Archives>
 <span>Archives</span>
 </a>
 </li>
@@ -115,7 +115,7 @@ void CreatInThread(ThreadTree T){ pre=NULL; if(T!=NULL){ InThread(T); if(pre->rc
 <main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://examplesite.com/>Home</a>&nbsp;»&nbsp;<a href=https://examplesite.com/post/>Posts</a></div>
+<div class=breadcrumbs><a href=https://www.fintinger.site>Home</a>&nbsp;»&nbsp;<a href=https://www.fintinger.site/post/>Posts</a></div>
 <h1 class=post-title>
 线索二叉树
 </h1>
@@ -349,15 +349,15 @@ void CreatInThread(ThreadTree T){ pre=NULL; if(T!=NULL){ InThread(T); if(pre->rc
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://examplesite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/>数据结构</a></li>
+<li><a href=https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/>数据结构</a></li>
 </ul>
 <nav class=paginav>
-<a class=prev href=https://examplesite.com/post/2021/05/22/>
+<a class=prev href=https://www.fintinger.site/post/2021/05/22/>
 <span class=title>« Prev Page</span>
 <br>
 <span>树</span>
 </a>
-<a class=next href=https://examplesite.com/post/2021/05/09/>
+<a class=next href=https://www.fintinger.site/post/2021/05/09/>
 <span class=title>Next Page »</span>
 <br>
 <span>由遍历序列构造出二叉树</span>
@@ -367,7 +367,7 @@ void CreatInThread(ThreadTree T){ pre=NULL; if(T!=NULL){ InThread(T); if(pre->rc
 </article>
 </main>
 <footer class=footer>
-<span>&copy; 2022 <a href=https://examplesite.com/>Archai's home</a></span>
+<span>&copy; 2022 <a href=https://www.fintinger.site>Archai's home</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

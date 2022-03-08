@@ -2,47 +2,47 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>后端 on Archai&#39;s home</title>
-    <link>https://examplesite.com/categories/%E5%90%8E%E7%AB%AF/</link>
+    <link>https://www.fintinger.site/categories/%E5%90%8E%E7%AB%AF/</link>
     <description>Recent content in 后端 on Archai&#39;s home</description>
     <image>
       <url>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</url>
       <link>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 22 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://examplesite.com/categories/%E5%90%8E%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/categories/%E5%90%8E%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>寻址方式与存储模式</title>
-      <link>https://examplesite.com/post/2021/07/22/</link>
+      <link>https://www.fintinger.site/post/2021/07/22/</link>
       <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2021/07/22/</guid>
+      <guid>https://www.fintinger.site/post/2021/07/22/</guid>
       <description>寻址方式    基本寻址方式 特 征 优 点 缺 点 备 注     隐含寻址 操作数的存放地由操作码决定      立即寻址 操作数直接在指令中 加快执行速度 增加指令长度，不方便修改操作数 适用提供常数，设定初始值   寄存器寻址 操作数在指令指定的寄存器中 方便修改，访问寄存器加快指令执行，缩短指令长度，编程更灵活     直接寻址 操作数地址在指令中，操作数在主存单元中  指令字较长，不方便地址修改    间接寻址 操作数地址的地址在指令中，操作数在主存中 方便修改指针，编程更灵活 访问两次主存获取操作数，降低执行速度 形式地址，有效地址EA(=操作数地址)   寄存器间接寻址 操作数地址在指令指定的寄存器中，操作数在主存单元中 压缩指令长度，修改寄存器内容就可以修改主存地址指针  方便编写循环程序   相对寻址 操作数地址由PC和指令提供的地址偏移量决定,操作数在主存单元中   EA=PC+D，适用与地址无关的程序设计   基址寻址 操作数地址由基址寄存器(RB)和指令提供的地址偏移量决定，操作数在主存单元中 缩短指令长度，扩大寻址空间  大型计算机，用户的逻辑地址→主存的物理地址，EA=(RB)+D   变址寻址 操作数地址由变址寄存器(RI)和指令提供的地址偏移量决定，操作数在主存单元中   寻址到操作数RI内容(地址)自动修改，EA=(RI)+D   堆栈寻址 寻址方式由指令操作码决定   适用涉及堆栈操作的指令，EA=(SP)    存储模式 “按字节编址” 主存将一个存储单元定为8位，即一个字节，这称为按字节编址的存储器</description>
     </item>
     
     <item>
       <title>外部排序相关</title>
-      <link>https://examplesite.com/post/2021/06/10/externalsort/</link>
+      <link>https://www.fintinger.site/post/2021/06/10/externalsort/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2021/06/10/externalsort/</guid>
+      <guid>https://www.fintinger.site/post/2021/06/10/externalsort/</guid>
       <description>由于数据元素太多，无法一次全部读入内存进行内部排序，这是就要通过外部排序来解决...</description>
     </item>
     
     <item>
       <title>排序算法相关</title>
-      <link>https://examplesite.com/post/2021/06/10/sort/</link>
+      <link>https://www.fintinger.site/post/2021/06/10/sort/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2021/06/10/sort/</guid>
+      <guid>https://www.fintinger.site/post/2021/06/10/sort/</guid>
       <description>排序算法 平均时间复杂度 空间复杂度 稳定性 适用情况     插入排序 $O(n^2)$ O(1) 稳定 n较小，初始序列基本有序   希尔排序 $O(n^{1.3})$ O(1) 不稳定    冒泡排序 $O(n^2)$ O(1) 稳定 n较小，初始序列基本有序   快速排序 $O(n\log_2n)$ $O(nlog_2n)$ 不稳定 初始序列无序   简单选择排序 $O(n^2)$ O(1) 不稳定 n较小   堆排序 $O(n\log_2n)$ O(1) 不稳定 n较大或只排前几位   2-路归并排序 $O(n\log_2n)$ O(n) 稳定 n很大   链式基数排序 $O(d(n+rd))$ $O(rd)$ 稳定 n大，关键字值小    相关概念 1.</description>
     </item>
     
     <item>
       <title>查找算法相关</title>
-      <link>https://examplesite.com/post/2021/06/06/search/</link>
+      <link>https://www.fintinger.site/post/2021/06/06/search/</link>
       <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2021/06/06/search/</guid>
+      <guid>https://www.fintinger.site/post/2021/06/06/search/</guid>
       <description>顺序查找 typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数组基址  int TableLen;//查找表长度 }SSTable; int Seq_Search(SSTable ST,int key){ ST.elem[0]=key; int i; for (i = ST.TableLen;ST.elem[i]!=key ; i--) {}//从后往前查找，最终返回下标i  return i;//返回0说明没找到 } 效率分析 对于长度为n的顺序表，如果查找成功$$ ASL={\frac{1+2+&amp;hellip;+n}{n}}=\frac{n+1}{2} $$ 若果查找失败，则 $ASL=n+1$
 总体上，该算法时间复杂度为 $O(n)$
 优化思路 1.如果使得表中的元素有序存放……，可以构造出一棵查找判定树
@@ -55,10 +55,10 @@ typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数�
     
     <item>
       <title>图的应用</title>
-      <link>https://examplesite.com/post/2021/06/02/02_application/</link>
+      <link>https://www.fintinger.site/post/2021/06/02/02_application/</link>
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2021/06/02/02_application/</guid>
+      <guid>https://www.fintinger.site/post/2021/06/02/02_application/</guid>
       <description>一、最小生成树 📌什么是生成树？ 连通图的生成树是包含图中所有顶点的一个极小连通子图，通俗地讲，就是“边尽可能少，但需保持连通”。规律： 对于一个顶点数|V|=n的树，其生成树的边数|E|=n-1。如果将|E|+1，必然会形成回路；如果将|E|-1，则会成为非连通图。
 📌什么是最小生成树？  最小生成树，也称最小代价树(Minimum Spanning Tree，MST)
  是带权连通无向图的生成树中边的权值之和最小的一棵树，联系实际问题不难理解其中“最小代价”的意味。Prim（普利姆算法），Kruskal（克鲁斯卡尔算法）就是寻找最小生成树的常用算法。
@@ -69,10 +69,10 @@ typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数�
     
     <item>
       <title>图的遍历</title>
-      <link>https://examplesite.com/post/2021/06/02/01_traverse/</link>
+      <link>https://www.fintinger.site/post/2021/06/02/01_traverse/</link>
       <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2021/06/02/01_traverse/</guid>
+      <guid>https://www.fintinger.site/post/2021/06/02/01_traverse/</guid>
       <description>广度优先遍历（BFS）  BFS(Breadth-First-Search)，参考对树的层序遍历
  对上面的图从①出发进行BFS得到序列：
 ①②⑤ ⑥ ③⑦ ④⑧
@@ -83,10 +83,10 @@ BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历
     
     <item>
       <title>图的存储</title>
-      <link>https://examplesite.com/post/2021/06/02/00_storage/</link>
+      <link>https://www.fintinger.site/post/2021/06/02/00_storage/</link>
       <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2021/06/02/00_storage/</guid>
+      <guid>https://www.fintinger.site/post/2021/06/02/00_storage/</guid>
       <description>邻接矩阵  Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.
  代码实现 #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph; 即找度 根据邻接矩阵计算结点的度TD
     无向图 有向图     $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数$OD(V_i)$: i列非零元素个数TD=ID+OD    对于带权图（网） #define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph; 复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|+|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。</description>
@@ -94,10 +94,10 @@ BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历
     
     <item>
       <title>AVL树</title>
-      <link>https://examplesite.com/post/2021/05/23/avl/</link>
+      <link>https://www.fintinger.site/post/2021/05/23/avl/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2021/05/23/avl/</guid>
+      <guid>https://www.fintinger.site/post/2021/05/23/avl/</guid>
       <description>平衡二叉树是Adelson-Velsky和 Landis发明，故命名为AVL树。也称平衡二叉查找树。
  ✨特点： ①左子树&amp;lt;根&amp;lt;右子树； ②任一节点，左右子树高度之差不超过1.
 平衡因子 $平衡因子=左子树高-右子树高$
@@ -125,10 +125,10 @@ $n_0=0$,$n_1=1$,$n_2=2$&amp;hellip;存在递归关系 $n_h=n_{h-1}+n_{h-2}+1$,�
     
     <item>
       <title>哈夫曼树</title>
-      <link>https://examplesite.com/post/2021/05/23/huffmantree/</link>
+      <link>https://www.fintinger.site/post/2021/05/23/huffmantree/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2021/05/23/huffmantree/</guid>
+      <guid>https://www.fintinger.site/post/2021/05/23/huffmantree/</guid>
       <description>基本概念 1.结点的权
 每个结点带有的具有某种现实意义的数值(比如代表重要性等)
 2.结点的带权路径长度
@@ -163,10 +163,10 @@ $v=\frac{WPL_{min}}{WPL}$</description>
     
     <item>
       <title>树</title>
-      <link>https://examplesite.com/post/2021/05/22/</link>
+      <link>https://www.fintinger.site/post/2021/05/22/</link>
       <pubDate>Sat, 22 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2021/05/22/</guid>
+      <guid>https://www.fintinger.site/post/2021/05/22/</guid>
       <description>普通树 对于一棵普通类型的树形结构，可将其转化为二叉树之后再参考二叉树的方法进行相关操作。
 孩子兄弟表示法（链式结构） 通过此方法可将普通树转化为二叉树
 //孩子兄弟即Child, Sibling typedef struct CSNode{ Elemtype data; struct CSNode *firstchild,*nextsibling;//第一个孩子和右兄弟指针,等价于*lchild,*rchild }CSNode,*CSTree 图示如下
@@ -187,10 +187,10 @@ B	C	D	A
     
     <item>
       <title>线索二叉树</title>
-      <link>https://examplesite.com/post/2021/05/15/</link>
+      <link>https://www.fintinger.site/post/2021/05/15/</link>
       <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2021/05/15/</guid>
+      <guid>https://www.fintinger.site/post/2021/05/15/</guid>
       <description>线索二叉树 WHY  方便从任一个结点出发，找到其前驱、后继；方便遍历
  普通二叉树中，对任意一个结点，若想找到其前驱/后继结点，只能再进行一次相应的前/中/后序遍历才行，复杂度太高。
 为此，我们引入前驱线索，后继线索的概念。其中，前驱线索由左孩子指针充当，后继线索由右孩子指针充当。
@@ -209,10 +209,10 @@ void CreatInThread(ThreadTree T){ pre=NULL; if(T!=NULL){ InThread(T); if(pre-&am
     
     <item>
       <title>由遍历序列构造出二叉树</title>
-      <link>https://examplesite.com/post/2021/05/09/</link>
+      <link>https://www.fintinger.site/post/2021/05/09/</link>
       <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2021/05/09/</guid>
+      <guid>https://www.fintinger.site/post/2021/05/09/</guid>
       <description>由遍历序列构造出二叉树 仅知道一种遍历序列是无法确定唯一的二叉树的，以中序遍历为例，对于一个中序遍历序列“BDCAE”，其对应的树形结构可能有下面三种：
 因此，至少需要两种遍历序列才可以推知树形结构。
 1.前序+中序遍历序列 🎈基本步骤 由前序遍历的特性得知，前序遍历中第一个节点必然为根节点，因此根据中序遍历特性，根节点左边为左子树下的所有节点，右边为右子树下的所有节点，然后分别在左子树序列右子树序列中重复进行即可。
@@ -233,10 +233,10 @@ void CreatInThread(ThreadTree T){ pre=NULL; if(T!=NULL){ InThread(T); if(pre-&am
     
     <item>
       <title>PHP语法小结</title>
-      <link>https://examplesite.com/post/2020/10/14/</link>
+      <link>https://www.fintinger.site/post/2020/10/14/</link>
       <pubDate>Tue, 13 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/10/14/</guid>
+      <guid>https://www.fintinger.site/post/2020/10/14/</guid>
       <description>基本语法 输出语句    语句 功能     echo 输出字符串类型   print_r 输出引用类型(对象,数组等)   var_dunp 检测变量类型    ::: tip echo语句可用于给前端返回响应体。比如前端通过ajax请求，可以在xhr.response中直接得到echo的内容 :::
 变量&amp;amp;常量 👉🏼 变量
    语句 功能 返回值     isset() 检测变量是否存在 boolean   unset() 删除某个变量 none    👉🏼 常量
@@ -252,10 +252,10 @@ const不能在条件语句中使用，必出错
     
     <item>
       <title>JavaScript生成图片文件路径json</title>
-      <link>https://examplesite.com/post/2020/07/05/</link>
+      <link>https://www.fintinger.site/post/2020/07/05/</link>
       <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/07/05/</guid>
+      <guid>https://www.fintinger.site/post/2020/07/05/</guid>
       <description>在写小demo的过程中，经常需要把某个文件夹的图片文件的路径给引入，除非全部重命名成有序的数字，不然不好处理，这就用到了node中的fs和path模块，还没学&amp;hellip;
 const path=require(&amp;#34;path&amp;#34;); const fs = require(&amp;#39;fs&amp;#39;); fs.stat(&amp;#39;../images&amp;#39;,(err)=&amp;gt;{//图片文件所在目录  if (err)return; var result=&amp;#39;{&amp;#39; fs.readdir(&amp;#34;../images&amp;#34;,(err,data)=&amp;gt;{//图片文件所在目录  for(var i=0;i&amp;lt;Object.keys(data).length;i++){ let ImgPath=&amp;#34;\&amp;#34;images/&amp;#34;+data[i]+&amp;#34;\&amp;#34;&amp;#34;; result+=&amp;#34;\&amp;#34;&amp;#34;+i+&amp;#34;\&amp;#34;:&amp;#34;+ImgPath+&amp;#34;,&amp;#34;; } result=result.substring(0,result.length-1); let length=&amp;#34;\&amp;#34;&amp;#34;+&amp;#34;length&amp;#34;+&amp;#34;\&amp;#34;&amp;#34;+&amp;#34;:&amp;#34;+&amp;#34;\&amp;#34;&amp;#34;+Object.keys(data).length+&amp;#34;\&amp;#34;&amp;#34;//文件数量  result+=&amp;#34;,&amp;#34;+length+&amp;#39;}&amp;#39; fs.writeFile(&amp;#34;../data/imgPath.json&amp;#34;,result,(err)=&amp;gt;{ if(err)return; console.log(&amp;#34;写入文件成功，一共&amp;#34;+Object.keys(data).length+&amp;#34;个文件&amp;#34;); }); }); }); 生成的文件大概就是这样的一个json数据
 {&amp;#34;0&amp;#34;:&amp;#34;images/1.jpg&amp;#34;,&amp;#34;1&amp;#34;:&amp;#34;images/10.jpg&amp;#34;,&amp;#34;2&amp;#34;:&amp;#34;images/100.jpg&amp;#34;,&amp;#34;3&amp;#34;:&amp;#34;images/101.jpg&amp;#34;,&amp;#34;4&amp;#34;:&amp;#34;images/102.jpg&amp;#34;,&amp;#34;5&amp;#34;:&amp;#34;images/103.jpg&amp;#34;,&amp;#34;6&amp;#34;:&amp;#34;images/104.jpg&amp;#34;,&amp;#34;7&amp;#34;:&amp;#34;images/105.jpg&amp;#34;,&amp;#34;8&amp;#34;:&amp;#34;images/106.jpg&amp;#34;,&amp;#34;9&amp;#34;:&amp;#34;images/107.jpg&amp;#34;,&amp;#34;10&amp;#34;:&amp;#34;images/108.jpg&amp;#34;,&amp;#34;length&amp;#34;:&amp;#34;109&amp;#34;} </description>
@@ -263,10 +263,10 @@ const path=require(&amp;#34;path&amp;#34;); const fs = require(&amp;#39;fs&amp;#
     
     <item>
       <title>python中关于文件的种种问题</title>
-      <link>https://examplesite.com/post/2020/06/26/</link>
+      <link>https://www.fintinger.site/post/2020/06/26/</link>
       <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/06/26/</guid>
+      <guid>https://www.fintinger.site/post/2020/06/26/</guid>
       <description> 在python中，我们可以将那些在运行时可能会出现状况的代码放在try代码块中，在try代码块的后面可以跟上一个或多个except来捕获可能出现的异常状况。
   FileNotFoundError，文件找不到 LookupError指定了未知的编码 UnicodeDecodeError读取文件时无法按指定方式解码  def main():f = Nonetry:f = open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;utf-8&#39;)print(f.read())except FileNotFoundError:print(&#39;无法打开指定的文件!&#39;)except LookupError:print(&#39;指定了未知的编码!&#39;)except UnicodeDecodeError:print(&#39;读取文件时解码错误!&#39;)finally:if f:f.close()if __name__ == &#39;__main__&#39;:main() finally块的代码不论程序正常还是异常都会执行到（甚至是调用了sys模块的exit函数退出Python环境，finally块都会被执行，因为exit函数实质上是引发了SystemExit异常），因此我们通常把finally块称为“总是执行代码块”，它最适合用来做释放外部资源的操作。
  或者， with关键字指定文件对象的上下文环境并在离开上下文环境时自动释放文件资源

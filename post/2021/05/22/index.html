@@ -22,7 +22,7 @@ B	C	D	A
 (E	B) (F	C) (G	D) A
 (H	E	B) (F	C) (GD) A">
 <meta name=author content="Archai">
-<link rel=canonical href=https://examplesite.com/post/2021/05/22/>
+<link rel=canonical href=https://www.fintinger.site/post/2021/05/22/>
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
@@ -30,10 +30,10 @@ B	C	D	A
 <link rel=preload href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico as=image>
 <script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=icon type=image/png sizes=32x32 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=apple-touch-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=mask-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=16x16 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=32x32 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=apple-touch-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=mask-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <noscript>
@@ -57,7 +57,7 @@ B	C	D	A
 (E	B) (F	C) (G	D) A
 (H	E	B) (F	C) (GD) A">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://examplesite.com/post/2021/05/22/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
+<meta property="og:url" content="https://www.fintinger.site/post/2021/05/22/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
 <meta property="article:published_time" content="2021-05-22T00:00:00+00:00">
 <meta property="article:modified_time" content="2021-05-22T00:00:00+00:00"><meta property="og:site_name" content="Archai's home">
 <meta name=twitter:card content="summary_large_image">
@@ -79,15 +79,15 @@ A	(BEH) (CF)	(DG)
 B	C	D	A
 (E	B) (F	C) (G	D) A
 (H	E	B) (F	C) (GD) A">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://examplesite.com/post/"},{"@type":"ListItem","position":2,"name":"树","item":"https://examplesite.com/post/2021/05/22/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"树","name":"树","description":"普通树 对于一棵普通类型的树形结构，可将其转化为二叉树之后再参考二叉树的方法进行相关操作。\n孩子兄弟表示法（链式结构） 通过此方法可将普通树转化为二叉树\n//孩子兄弟即Child, Sibling typedef struct CSNode{ Elemtype data; struct CSNode *firstchild,*nextsibling;//第一个孩子和右兄弟指针,等价于*lchild,*rchild }CSNode,*CSTree 图示如下\n树的遍历 1.深度优先遍历（先根遍历\u0026amp;后根遍历）\n 先根遍历   若树非空，先访问根结点，再依次对每棵子树进行先根遍历(递归)。\n 对如上图所示的树进行先根遍历：\nA B C D\nA\t(BE )\t(CF)\t(DG)\nA\t(BEH) (CF)\t(DG)\n即先根遍历序列为A B E H C F D G\n发现与通过“孩子兄弟法”将树转为二叉树后的先序遍历序列相同\n 后根遍历   若树非空，先依次对每棵子树进行后根遍历，最后再访问根结点。\n 对如上图所示的树进行后根遍历：\nB\tC\tD\tA\n(E\tB) (F\tC) (G\tD) A\n(H\tE\tB) (F\tC) (GD) A","keywords":["数据结构"],"articleBody":"普通树 对于一棵普通类型的树形结构，可将其转化为二叉树之后再参考二叉树的方法进行相关操作。\n孩子兄弟表示法（链式结构） 通过此方法可将普通树转化为二叉树\n//孩子兄弟即Child, Sibling typedef struct CSNode{ Elemtype data; struct CSNode *firstchild,*nextsibling;//第一个孩子和右兄弟指针,等价于*lchild,*rchild }CSNode,*CSTree 图示如下\n树的遍历 1.深度优先遍历（先根遍历\u0026后根遍历）\n 先根遍历   若树非空，先访问根结点，再依次对每棵子树进行先根遍历(递归)。\n 对如上图所示的树进行先根遍历：\nA B C D\nA\t(BE )\t(CF)\t(DG)\nA\t(BEH) (CF)\t(DG)\n即先根遍历序列为A B E H C F D G\n发现与通过“孩子兄弟法”将树转为二叉树后的先序遍历序列相同\n 后根遍历   若树非空，先依次对每棵子树进行后根遍历，最后再访问根结点。\n 对如上图所示的树进行后根遍历：\nB\tC\tD\tA\n(E\tB) (F\tC) (G\tD) A\n(H\tE\tB) (F\tC) (GD) A\n即后根遍历序列为H E B F C G D A\n发现与通过“孩子兄弟法”将树转为二叉树后的中序遍历序列相同\n2.广度优先遍历（层序遍历）\n利用队列实现（参考二叉树层序遍历）\n对于上图所示的树进行层序遍历：\nA B C D E F G H\n 😯不难看出深度优先和广度优先分别表示遍历时的路径走向。前者是先往深处走，故为深度优先遍历；后者是先往宽了走，即为广度优先遍历。\n 森林 对于森林，也可以将其转化为二叉树之后进行操作\n同样的，我们采用孩子兄弟法将树转化为二叉树，具体操作为将森林中各个树的根节点视为兄弟关系。如下图所示：\n###　1.先序遍历\n若森林为非空，则按如下规则进行遍历：\n访问森林中第一棵树的根结点。\n先序遍历第一棵树中根结点的子树森林。\n先序遍历除去第一棵树之后剩余的树构成的森林。\nB\n(B E)\n(B E K L)\n(B E K L F)\n(B E K L F) C\n(B E K L F) (C G)\n(B E K L F) (C G) D\n(B E K L F) (C G) (D H)\n(B E K L F) (C G) (D H M)\n(B E K L F) (C G) (D H M I J)\n最终，对森林的先序遍历序列为 B E K L F C G D H M I J(也可以对各个树先根遍历得到)\n发现与通过“孩子兄弟法”将树转为二叉树后的先序遍历序列相同\n2.中序遍历 若森林为非空，则按如下规则进行遍历：\n中序遍历森林中第一棵树的根结点的子树森林。\n访问第一棵树的根结点。\n中序遍历除去第一棵树之后剩余的树构成的森林。\nK L\nK L E\nK L E F\n(K L E F B)\n(K L E F B) (G C)\n(K L E F B) (G C) (M)\n(K L E F B) (G C) (M H I J)\n(K L E F B) (G C) (M H I J D)\n最终，对森林的先序遍历序列为 K L E F B G C M H I J D(也可以对各个树后根遍历得到)\n发现与通过“孩子兄弟法”将树转为二叉树后的中序遍历序列相同\n总结 对于树或者森林进行遍历操作，与转化为二叉树之后的操作对应关系如下：\n   树 森林 二叉树     先根遍历 先序遍历 先序遍历   后根遍历 中序遍历 中序遍历    ","wordCount":"254","inLanguage":"en","datePublished":"2021-05-22T00:00:00Z","dateModified":"2021-05-22T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://examplesite.com/post/2021/05/22/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://www.fintinger.site/post/"},{"@type":"ListItem","position":3,"name":"树","item":"https://www.fintinger.site/post/2021/05/22/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"树","name":"树","description":"普通树 对于一棵普通类型的树形结构，可将其转化为二叉树之后再参考二叉树的方法进行相关操作。\n孩子兄弟表示法（链式结构） 通过此方法可将普通树转化为二叉树\n//孩子兄弟即Child, Sibling typedef struct CSNode{ Elemtype data; struct CSNode *firstchild,*nextsibling;//第一个孩子和右兄弟指针,等价于*lchild,*rchild }CSNode,*CSTree 图示如下\n树的遍历 1.深度优先遍历（先根遍历\u0026amp;后根遍历）\n 先根遍历   若树非空，先访问根结点，再依次对每棵子树进行先根遍历(递归)。\n 对如上图所示的树进行先根遍历：\nA B C D\nA\t(BE )\t(CF)\t(DG)\nA\t(BEH) (CF)\t(DG)\n即先根遍历序列为A B E H C F D G\n发现与通过“孩子兄弟法”将树转为二叉树后的先序遍历序列相同\n 后根遍历   若树非空，先依次对每棵子树进行后根遍历，最后再访问根结点。\n 对如上图所示的树进行后根遍历：\nB\tC\tD\tA\n(E\tB) (F\tC) (G\tD) A\n(H\tE\tB) (F\tC) (GD) A","keywords":["数据结构"],"articleBody":"普通树 对于一棵普通类型的树形结构，可将其转化为二叉树之后再参考二叉树的方法进行相关操作。\n孩子兄弟表示法（链式结构） 通过此方法可将普通树转化为二叉树\n//孩子兄弟即Child, Sibling typedef struct CSNode{ Elemtype data; struct CSNode *firstchild,*nextsibling;//第一个孩子和右兄弟指针,等价于*lchild,*rchild }CSNode,*CSTree 图示如下\n树的遍历 1.深度优先遍历（先根遍历\u0026后根遍历）\n 先根遍历   若树非空，先访问根结点，再依次对每棵子树进行先根遍历(递归)。\n 对如上图所示的树进行先根遍历：\nA B C D\nA\t(BE )\t(CF)\t(DG)\nA\t(BEH) (CF)\t(DG)\n即先根遍历序列为A B E H C F D G\n发现与通过“孩子兄弟法”将树转为二叉树后的先序遍历序列相同\n 后根遍历   若树非空，先依次对每棵子树进行后根遍历，最后再访问根结点。\n 对如上图所示的树进行后根遍历：\nB\tC\tD\tA\n(E\tB) (F\tC) (G\tD) A\n(H\tE\tB) (F\tC) (GD) A\n即后根遍历序列为H E B F C G D A\n发现与通过“孩子兄弟法”将树转为二叉树后的中序遍历序列相同\n2.广度优先遍历（层序遍历）\n利用队列实现（参考二叉树层序遍历）\n对于上图所示的树进行层序遍历：\nA B C D E F G H\n 😯不难看出深度优先和广度优先分别表示遍历时的路径走向。前者是先往深处走，故为深度优先遍历；后者是先往宽了走，即为广度优先遍历。\n 森林 对于森林，也可以将其转化为二叉树之后进行操作\n同样的，我们采用孩子兄弟法将树转化为二叉树，具体操作为将森林中各个树的根节点视为兄弟关系。如下图所示：\n###　1.先序遍历\n若森林为非空，则按如下规则进行遍历：\n访问森林中第一棵树的根结点。\n先序遍历第一棵树中根结点的子树森林。\n先序遍历除去第一棵树之后剩余的树构成的森林。\nB\n(B E)\n(B E K L)\n(B E K L F)\n(B E K L F) C\n(B E K L F) (C G)\n(B E K L F) (C G) D\n(B E K L F) (C G) (D H)\n(B E K L F) (C G) (D H M)\n(B E K L F) (C G) (D H M I J)\n最终，对森林的先序遍历序列为 B E K L F C G D H M I J(也可以对各个树先根遍历得到)\n发现与通过“孩子兄弟法”将树转为二叉树后的先序遍历序列相同\n2.中序遍历 若森林为非空，则按如下规则进行遍历：\n中序遍历森林中第一棵树的根结点的子树森林。\n访问第一棵树的根结点。\n中序遍历除去第一棵树之后剩余的树构成的森林。\nK L\nK L E\nK L E F\n(K L E F B)\n(K L E F B) (G C)\n(K L E F B) (G C) (M)\n(K L E F B) (G C) (M H I J)\n(K L E F B) (G C) (M H I J D)\n最终，对森林的先序遍历序列为 K L E F B G C M H I J D(也可以对各个树后根遍历得到)\n发现与通过“孩子兄弟法”将树转为二叉树后的中序遍历序列相同\n总结 对于树或者森林进行遍历操作，与转化为二叉树之后的操作对应关系如下：\n   树 森林 二叉树     先根遍历 先序遍历 先序遍历   后根遍历 中序遍历 中序遍历    ","wordCount":"254","inLanguage":"en","datePublished":"2021-05-22T00:00:00Z","dateModified":"2021-05-22T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.fintinger.site/post/2021/05/22/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
-<a href=https://examplesite.com/ accesskey=h title="Home (Alt + H)">
+<a href=https://www.fintinger.site accesskey=h title="Home (Alt + H)">
 <img src=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico alt=logo aria-label=logo height=35>Home</a>
 <span class=logo-switches>
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -96,22 +96,22 @@ B	C	D	A
 </div>
 <ul id=menu>
 <li>
-<a href=https://examplesite.com/categories/ title=Categories>
+<a href=https://www.fintinger.site/categories/ title=Categories>
 <span>Categories</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/tags/ title=Tags>
+<a href=https://www.fintinger.site/tags/ title=Tags>
 <span>Tags</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/search/ title="Search (Alt + /)" accesskey=/>
+<a href=https://www.fintinger.site/search/ title="Search (Alt + /)" accesskey=/>
 <span>Search</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/archives/ title=Archives>
+<a href=https://www.fintinger.site/archives/ title=Archives>
 <span>Archives</span>
 </a>
 </li>
@@ -121,7 +121,7 @@ B	C	D	A
 <main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://examplesite.com/>Home</a>&nbsp;»&nbsp;<a href=https://examplesite.com/post/>Posts</a></div>
+<div class=breadcrumbs><a href=https://www.fintinger.site>Home</a>&nbsp;»&nbsp;<a href=https://www.fintinger.site/post/>Posts</a></div>
 <h1 class=post-title>
 树
 </h1>
@@ -260,15 +260,15 @@ B	C	D	A
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://examplesite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/>数据结构</a></li>
+<li><a href=https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/>数据结构</a></li>
 </ul>
 <nav class=paginav>
-<a class=prev href=https://examplesite.com/post/2021/05/23/huffmantree/>
+<a class=prev href=https://www.fintinger.site/post/2021/05/23/huffmantree/>
 <span class=title>« Prev Page</span>
 <br>
 <span>哈夫曼树</span>
 </a>
-<a class=next href=https://examplesite.com/post/2021/05/15/>
+<a class=next href=https://www.fintinger.site/post/2021/05/15/>
 <span class=title>Next Page »</span>
 <br>
 <span>线索二叉树</span>
@@ -278,7 +278,7 @@ B	C	D	A
 </article>
 </main>
 <footer class=footer>
-<span>&copy; 2022 <a href=https://examplesite.com/>Archai's home</a></span>
+<span>&copy; 2022 <a href=https://www.fintinger.site>Archai's home</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

@@ -7,7 +7,7 @@
 <meta name=keywords content="数据结构,外部排序,败者树,置换选择排序,最佳归并树">
 <meta name=description content="由于数据元素太多，无法一次全部读入内存进行内部排序，这是就要通过外部排序来解决...">
 <meta name=author content="Archai">
-<link rel=canonical href=https://examplesite.com/post/2021/06/10/externalsort/>
+<link rel=canonical href=https://www.fintinger.site/post/2021/06/10/externalsort/>
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
@@ -15,10 +15,10 @@
 <link rel=preload href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico as=image>
 <script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=icon type=image/png sizes=32x32 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=apple-touch-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=mask-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=16x16 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=32x32 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=apple-touch-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=mask-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <noscript>
@@ -27,22 +27,22 @@
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-123-45','auto'),ga('send','pageview'))</script><meta property="og:title" content="外部排序相关">
 <meta property="og:description" content="由于数据元素太多，无法一次全部读入内存进行内部排序，这是就要通过外部排序来解决...">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://examplesite.com/post/2021/06/10/externalsort/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
+<meta property="og:url" content="https://www.fintinger.site/post/2021/06/10/externalsort/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
 <meta property="article:published_time" content="2021-06-10T00:00:00+00:00">
 <meta property="article:modified_time" content="2021-06-10T00:00:00+00:00"><meta property="og:site_name" content="Archai's home">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg">
 <meta name=twitter:title content="外部排序相关">
 <meta name=twitter:description content="由于数据元素太多，无法一次全部读入内存进行内部排序，这是就要通过外部排序来解决...">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://examplesite.com/post/"},{"@type":"ListItem","position":2,"name":"外部排序相关","item":"https://examplesite.com/post/2021/06/10/externalsort/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"外部排序相关","name":"外部排序相关","description":"由于数据元素太多，无法一次全部读入内存进行内部排序，这是就要通过外部排序来解决...","keywords":["数据结构","外部排序","败者树","置换选择排序","最佳归并树"],"articleBody":"外部排序  由于数据元素太多，无法一次全部读入内存进行内部排序，这是就要通过外部排序来解决\n 1.外排原理 (拿二路归并举例)\n如图，对于在磁盘中分块存放的数据，每块存入三个元素，共16块\n在内存中建立三个缓冲区输出缓冲区、输入缓冲区1以及输入缓冲区2\n1.1构造初始归并段 首先，依次地读入前两块数据，分别存入内存中的 缓冲区1、缓冲区2\n将输入缓冲区1以及输入缓冲区2中存放的数据经过 内存中的二路归并排序(内排)后，将生成的有序的块经 输出缓冲区 写入磁盘 得到一个有序的归并段同样的，对剩余块进行同样的操作可以得到\n1.2以归并段为单位进行归并 分别选取归并段1和2中较小的一块，依次读入至缓冲区1,2\n内排之后，写入内存，注意，输入缓冲区1(或2)空缺后要立即在归并段1(或2)中读入新的块到其中进行归并排序（以保证输出缓冲区始终输出归并段中较小的元素）\n最终，完成所有归并段的第一趟归并之后，会有\n之后，4块成一个归并段，两两归并\n……\n最终。经过3趟归并，整体会变得有序！\n2.优化思路 2.1时间开销分析 在整个排序过程中，时间开销分析如下\n可以看到，\n外部排序时间开销=读写外存的时间+内部排序所需时间+内部归并所需时间而读写外存时间是关键的时间开销，因此优化应该针对怎么减少读写外存的次数展开\n而文件总块数无法优化，只能针对归并的趟数优化为此，我们需要采用多路归并来解决\n2.3结论 2.4 优化思路一：采用多路归并 对上面的例子，如果采用四路归并\n只需96次读写即可！！\n2.5 优化思路二：减少初始归并段数量r 败者树 1.算法思想 构造 如图所示的树结构，叶节点对应（脑补）各归并段（假设共有8个归并段），分支结点记录败者来自哪个归并段，最后根节点记录冠军来自哪个归并段，并且将冠军输出，为这8个归并段中的最小值。\n下轮选择冠军记录的那个归并段（归并段3）中的元素6，代替1的位置，如图，并依次向上的与各败者结点对比，胜则往上，败则留下，最终输出冠军\n接下来，循环这个过程\n2.效率分析 对于k路归并，第一次构造败者树需要对比关键字k-1次 有了败者树，选出最小元素，只需对比关键字次$\\left \\lceil \\log_2k \\right \\rceil$\n置换选择排序 1.算法思想 设初始待排文件为F，初始归并段输出文件为FO，内存工作区为WA,FO和WA的初始状态为空，WA可容纳w个记录。置换选择算法的步骤如下： 1）从F输入个记录到工作区WA。 2）从WA中选出其中关键字取最小值的记录，记为 MINIMAX记录3）将MINIMAX记录输出到FO中去。 4）若F不空，则从F输入下一个记录到WA中。 5）从w中所有关MINIMAX键字比记录的关键字大的记录中选出最小关键字记录，作为新的MINIMAX记录。 6）重复3）~5），直至在A中选不 MININ出新的记录为止，由此得到一个初始归并段，输出一个归并段的结束标志到FO中去。 7）重复2）~6），直至WA为空。由此得到全部初始归并段。\n最佳归并树  利用置换选择排序构造初始归并段，归并段长短不一\n 对于一个归并树，如图数字表示该归并段占多少个磁盘块。\n每个初始归并段看作⼀个叶⼦结点，归并段的⻓度作为结点权值，则 上⾯👆这棵归并树的带权路径⻓度 WPL = 2*1 + (5+1+6+2) * 3 = 44\n重要结论：归并过程中的磁盘I/O次数 = 归并树的WPL * 2 16 = 读磁盘的次数 = 写磁盘的次数因此\n我们可以构造出一棵带权路径最小的归并树——哈夫曼树！\n注意：\n对于k叉归并，若初始归并段的数量⽆法构成严格的 k 叉归并树， 则需要补充⼏个⻓度为 0 的“虚段”，再进⾏ k 叉哈夫曼树的构造 ①若（初始归并段数量 -1）% （k-1）= 0，说明刚好可以构成严格k叉树，此时不需要添加虚段\n②若（初始归并段数量 -1）% （k-1）= u ≠ 0，则需要补充 (k-1) - u 个虚段\n ","wordCount":"106","inLanguage":"en","datePublished":"2021-06-10T00:00:00Z","dateModified":"2021-06-10T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://examplesite.com/post/2021/06/10/externalsort/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://www.fintinger.site/post/"},{"@type":"ListItem","position":3,"name":"外部排序相关","item":"https://www.fintinger.site/post/2021/06/10/externalsort/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"外部排序相关","name":"外部排序相关","description":"由于数据元素太多，无法一次全部读入内存进行内部排序，这是就要通过外部排序来解决...","keywords":["数据结构","外部排序","败者树","置换选择排序","最佳归并树"],"articleBody":"外部排序  由于数据元素太多，无法一次全部读入内存进行内部排序，这是就要通过外部排序来解决\n 1.外排原理 (拿二路归并举例)\n如图，对于在磁盘中分块存放的数据，每块存入三个元素，共16块\n在内存中建立三个缓冲区输出缓冲区、输入缓冲区1以及输入缓冲区2\n1.1构造初始归并段 首先，依次地读入前两块数据，分别存入内存中的 缓冲区1、缓冲区2\n将输入缓冲区1以及输入缓冲区2中存放的数据经过 内存中的二路归并排序(内排)后，将生成的有序的块经 输出缓冲区 写入磁盘 得到一个有序的归并段同样的，对剩余块进行同样的操作可以得到\n1.2以归并段为单位进行归并 分别选取归并段1和2中较小的一块，依次读入至缓冲区1,2\n内排之后，写入内存，注意，输入缓冲区1(或2)空缺后要立即在归并段1(或2)中读入新的块到其中进行归并排序（以保证输出缓冲区始终输出归并段中较小的元素）\n最终，完成所有归并段的第一趟归并之后，会有\n之后，4块成一个归并段，两两归并\n……\n最终。经过3趟归并，整体会变得有序！\n2.优化思路 2.1时间开销分析 在整个排序过程中，时间开销分析如下\n可以看到，\n外部排序时间开销=读写外存的时间+内部排序所需时间+内部归并所需时间而读写外存时间是关键的时间开销，因此优化应该针对怎么减少读写外存的次数展开\n而文件总块数无法优化，只能针对归并的趟数优化为此，我们需要采用多路归并来解决\n2.3结论 2.4 优化思路一：采用多路归并 对上面的例子，如果采用四路归并\n只需96次读写即可！！\n2.5 优化思路二：减少初始归并段数量r 败者树 1.算法思想 构造 如图所示的树结构，叶节点对应（脑补）各归并段（假设共有8个归并段），分支结点记录败者来自哪个归并段，最后根节点记录冠军来自哪个归并段，并且将冠军输出，为这8个归并段中的最小值。\n下轮选择冠军记录的那个归并段（归并段3）中的元素6，代替1的位置，如图，并依次向上的与各败者结点对比，胜则往上，败则留下，最终输出冠军\n接下来，循环这个过程\n2.效率分析 对于k路归并，第一次构造败者树需要对比关键字k-1次 有了败者树，选出最小元素，只需对比关键字次$\\left \\lceil \\log_2k \\right \\rceil$\n置换选择排序 1.算法思想 设初始待排文件为F，初始归并段输出文件为FO，内存工作区为WA,FO和WA的初始状态为空，WA可容纳w个记录。置换选择算法的步骤如下： 1）从F输入个记录到工作区WA。 2）从WA中选出其中关键字取最小值的记录，记为 MINIMAX记录3）将MINIMAX记录输出到FO中去。 4）若F不空，则从F输入下一个记录到WA中。 5）从w中所有关MINIMAX键字比记录的关键字大的记录中选出最小关键字记录，作为新的MINIMAX记录。 6）重复3）~5），直至在A中选不 MININ出新的记录为止，由此得到一个初始归并段，输出一个归并段的结束标志到FO中去。 7）重复2）~6），直至WA为空。由此得到全部初始归并段。\n最佳归并树  利用置换选择排序构造初始归并段，归并段长短不一\n 对于一个归并树，如图数字表示该归并段占多少个磁盘块。\n每个初始归并段看作⼀个叶⼦结点，归并段的⻓度作为结点权值，则 上⾯👆这棵归并树的带权路径⻓度 WPL = 2*1 + (5+1+6+2) * 3 = 44\n重要结论：归并过程中的磁盘I/O次数 = 归并树的WPL * 2 16 = 读磁盘的次数 = 写磁盘的次数因此\n我们可以构造出一棵带权路径最小的归并树——哈夫曼树！\n注意：\n对于k叉归并，若初始归并段的数量⽆法构成严格的 k 叉归并树， 则需要补充⼏个⻓度为 0 的“虚段”，再进⾏ k 叉哈夫曼树的构造 ①若（初始归并段数量 -1）% （k-1）= 0，说明刚好可以构成严格k叉树，此时不需要添加虚段\n②若（初始归并段数量 -1）% （k-1）= u ≠ 0，则需要补充 (k-1) - u 个虚段\n ","wordCount":"106","inLanguage":"en","datePublished":"2021-06-10T00:00:00Z","dateModified":"2021-06-10T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.fintinger.site/post/2021/06/10/externalsort/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
-<a href=https://examplesite.com/ accesskey=h title="Home (Alt + H)">
+<a href=https://www.fintinger.site accesskey=h title="Home (Alt + H)">
 <img src=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico alt=logo aria-label=logo height=35>Home</a>
 <span class=logo-switches>
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -51,22 +51,22 @@
 </div>
 <ul id=menu>
 <li>
-<a href=https://examplesite.com/categories/ title=Categories>
+<a href=https://www.fintinger.site/categories/ title=Categories>
 <span>Categories</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/tags/ title=Tags>
+<a href=https://www.fintinger.site/tags/ title=Tags>
 <span>Tags</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/search/ title="Search (Alt + /)" accesskey=/>
+<a href=https://www.fintinger.site/search/ title="Search (Alt + /)" accesskey=/>
 <span>Search</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/archives/ title=Archives>
+<a href=https://www.fintinger.site/archives/ title=Archives>
 <span>Archives</span>
 </a>
 </li>
@@ -76,7 +76,7 @@
 <main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://examplesite.com/>Home</a>&nbsp;»&nbsp;<a href=https://examplesite.com/post/>Posts</a></div>
+<div class=breadcrumbs><a href=https://www.fintinger.site>Home</a>&nbsp;»&nbsp;<a href=https://www.fintinger.site/post/>Posts</a></div>
 <h1 class=post-title>
 外部排序相关
 </h1>
@@ -237,19 +237,19 @@
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://examplesite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/>数据结构</a></li>
-<li><a href=https://examplesite.com/tags/%E5%A4%96%E9%83%A8%E6%8E%92%E5%BA%8F/>外部排序</a></li>
-<li><a href=https://examplesite.com/tags/%E8%B4%A5%E8%80%85%E6%A0%91/>败者树</a></li>
-<li><a href=https://examplesite.com/tags/%E7%BD%AE%E6%8D%A2%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/>置换选择排序</a></li>
-<li><a href=https://examplesite.com/tags/%E6%9C%80%E4%BD%B3%E5%BD%92%E5%B9%B6%E6%A0%91/>最佳归并树</a></li>
+<li><a href=https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/>数据结构</a></li>
+<li><a href=https://www.fintinger.site/tags/%E5%A4%96%E9%83%A8%E6%8E%92%E5%BA%8F/>外部排序</a></li>
+<li><a href=https://www.fintinger.site/tags/%E8%B4%A5%E8%80%85%E6%A0%91/>败者树</a></li>
+<li><a href=https://www.fintinger.site/tags/%E7%BD%AE%E6%8D%A2%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/>置换选择排序</a></li>
+<li><a href=https://www.fintinger.site/tags/%E6%9C%80%E4%BD%B3%E5%BD%92%E5%B9%B6%E6%A0%91/>最佳归并树</a></li>
 </ul>
 <nav class=paginav>
-<a class=prev href=https://examplesite.com/post/2021/07/22/>
+<a class=prev href=https://www.fintinger.site/post/2021/07/22/>
 <span class=title>« Prev Page</span>
 <br>
 <span>寻址方式与存储模式</span>
 </a>
-<a class=next href=https://examplesite.com/post/2021/06/10/sort/>
+<a class=next href=https://www.fintinger.site/post/2021/06/10/sort/>
 <span class=title>Next Page »</span>
 <br>
 <span>排序算法相关</span>
@@ -259,7 +259,7 @@
 </article>
 </main>
 <footer class=footer>
-<span>&copy; 2022 <a href=https://examplesite.com/>Archai's home</a></span>
+<span>&copy; 2022 <a href=https://www.fintinger.site>Archai's home</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

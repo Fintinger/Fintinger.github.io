@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>拓扑排序 on Archai&#39;s home</title>
-    <link>https://examplesite.com/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/</link>
+    <link>https://www.fintinger.site/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/</link>
     <description>Recent content in 拓扑排序 on Archai&#39;s home</description>
     <image>
       <url>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</url>
       <link>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 04 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://examplesite.com/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>图的应用</title>
-      <link>https://examplesite.com/post/2021/06/02/02_application/</link>
+      <link>https://www.fintinger.site/post/2021/06/02/02_application/</link>
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2021/06/02/02_application/</guid>
+      <guid>https://www.fintinger.site/post/2021/06/02/02_application/</guid>
       <description>一、最小生成树 📌什么是生成树？ 连通图的生成树是包含图中所有顶点的一个极小连通子图，通俗地讲，就是“边尽可能少，但需保持连通”。规律： 对于一个顶点数|V|=n的树，其生成树的边数|E|=n-1。如果将|E|+1，必然会形成回路；如果将|E|-1，则会成为非连通图。
 📌什么是最小生成树？  最小生成树，也称最小代价树(Minimum Spanning Tree，MST)
  是带权连通无向图的生成树中边的权值之和最小的一棵树，联系实际问题不难理解其中“最小代价”的意味。Prim（普利姆算法），Kruskal（克鲁斯卡尔算法）就是寻找最小生成树的常用算法。

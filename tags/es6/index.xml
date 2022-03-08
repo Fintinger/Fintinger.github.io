@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>ES6 on Archai&#39;s home</title>
-    <link>https://examplesite.com/tags/es6/</link>
+    <link>https://www.fintinger.site/tags/es6/</link>
     <description>Recent content in ES6 on Archai&#39;s home</description>
     <image>
       <url>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</url>
       <link>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://examplesite.com/tags/es6/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/es6/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Es6中的class类</title>
-      <link>https://examplesite.com/post/2020/09/09/</link>
+      <link>https://www.fintinger.site/post/2020/09/09/</link>
       <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/09/09/</guid>
+      <guid>https://www.fintinger.site/post/2020/09/09/</guid>
       <description>class实质上是对js中继承的封装组合，用一种“语法糖”的形式实现原型链的继承
  静态属性/方法  静态方法/属性是指，函数作为对象时，定义在其原型(__proto__)上的方法，而需要实例化继承的动态方法是定义在其原型对象(prototype) 中的，静态方法中的参数都是固定的，直接通过整个构造函数调用，实例化对象并不会继承；而动态方法中的参数会因为实例化对象的不同而产生改变，实例化对象默认是继承的。
  function User(){} User.__proto__.show=function(){} console.dir(User) //这里的show()方法就属于静态方法 在class中，利用static定义静态属性/方法
@@ -25,10 +25,10 @@ class Admin{ static show(){}//__proto__中  show(){}//prototype中 } console.dir
     
     <item>
       <title>ES6之Promise用法小结</title>
-      <link>https://examplesite.com/post/2020/08/18/</link>
+      <link>https://www.fintinger.site/post/2020/08/18/</link>
       <pubDate>Tue, 18 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/08/18/</guid>
+      <guid>https://www.fintinger.site/post/2020/08/18/</guid>
       <description>Promise 对象用于表示一个异步操作的最终完成 (或失败), 及其结果值。其目的主要是解决以往回调中嵌套回调的&amp;quot;嵌套地狱&amp;quot;问题，使代码可读性更好，更美观!
 基本用法 对于一个标准的Prommise，其基本写法为:
 new Promise(function (resolve, reject) { //do something...  //success  resolve(&amp;#39;success&amp;#39;) //fail &amp;amp; reject  // reject(&amp;#39;rejected&amp;#39;) *resolve和reject只能出现一个 }).then( function (value) { //if succeed,do something...  }, function (reason) { //if fail &amp;amp; reject,do something...  } ) 如果采用ES6的箭头函数写法，则为:
@@ -40,10 +40,10 @@ new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //r
     
     <item>
       <title>ES6中新增关于Array的方法</title>
-      <link>https://examplesite.com/post/2020/07/04/</link>
+      <link>https://www.fintinger.site/post/2020/07/04/</link>
       <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/07/04/</guid>
+      <guid>https://www.fintinger.site/post/2020/07/04/</guid>
       <description>在javascript中，Array()经常用到，利用ES6中的一些新特性会让数组的处理更加方便快捷
 1.迭代空数组 直接创建一个数组
 const arr=new Array(4); //Output:[undefined，undefined，undefined，undefined] 利用map方法，转化成新的数组，企图得到 [0,1,2,3] 数组

@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>语法糖 on Archai&#39;s home</title>
-    <link>https://examplesite.com/tags/%E8%AF%AD%E6%B3%95%E7%B3%96/</link>
+    <link>https://www.fintinger.site/tags/%E8%AF%AD%E6%B3%95%E7%B3%96/</link>
     <description>Recent content in 语法糖 on Archai&#39;s home</description>
     <image>
       <url>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</url>
       <link>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 06 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://examplesite.com/tags/%E8%AF%AD%E6%B3%95%E7%B3%96/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/%E8%AF%AD%E6%B3%95%E7%B3%96/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>避免多条件并列</title>
-      <link>https://examplesite.com/post/2020/07/06/</link>
+      <link>https://www.fintinger.site/post/2020/07/06/</link>
       <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/07/06/</guid>
+      <guid>https://www.fintinger.site/post/2020/07/06/</guid>
       <description>开发中有时会遇到多个条件，执行相同的语句，也就是多个||这种：
 if (status === &amp;#39;process&amp;#39; || status === &amp;#39;wait&amp;#39; || status === &amp;#39;fail&amp;#39;) { doSomething() } 这种写法语义性、可读性都不太好。可以通过switch case或includes这种进行改造。
 switch case switch(status) { case &amp;#39;process&amp;#39;: case &amp;#39;wait&amp;#39;: case &amp;#39;fail&amp;#39;: doSomething() } includes const enum = [&amp;#39;process&amp;#39;, &amp;#39;wait&amp;#39;, &amp;#39;fail&amp;#39;] if (enum.includes(status)) { doSomething() </description>

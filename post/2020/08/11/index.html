@@ -11,7 +11,7 @@
 CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置CORS响应头实现跨域，这种跨域GET或POST请求均有效
 //服务端设置响应头 app.all('/data', (request, response) => { response.setHeader('Access-Control-Allow-Origin', '*')//允许来自所有域的请求  response.setHeader('Access-Control-Allow-Headers', '*')//请求中允许携带的首部字段(可以携带自定义请求头)  response.">
 <meta name=author content="Archai">
-<link rel=canonical href=https://examplesite.com/post/2020/08/11/>
+<link rel=canonical href=https://www.fintinger.site/post/2020/08/11/>
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
@@ -19,10 +19,10 @@ CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置C
 <link rel=preload href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico as=image>
 <script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=icon type=image/png sizes=32x32 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=apple-touch-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=mask-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=16x16 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=32x32 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=apple-touch-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=mask-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <noscript>
@@ -35,7 +35,7 @@ CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置C
 CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置CORS响应头实现跨域，这种跨域GET或POST请求均有效
 //服务端设置响应头 app.all('/data', (request, response) => { response.setHeader('Access-Control-Allow-Origin', '*')//允许来自所有域的请求  response.setHeader('Access-Control-Allow-Headers', '*')//请求中允许携带的首部字段(可以携带自定义请求头)  response.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://examplesite.com/post/2020/08/11/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
+<meta property="og:url" content="https://www.fintinger.site/post/2020/08/11/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
 <meta property="article:published_time" content="2020-08-11T00:00:00+00:00">
 <meta property="article:modified_time" content="2020-08-11T00:00:00+00:00"><meta property="og:site_name" content="Archai's home">
 <meta name=twitter:card content="summary_large_image">
@@ -46,15 +46,15 @@ CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置C
 /*main.js*/ //申明handle函数 function handle(data) { //do something.... } ele.onclick = function () { //1.创建script标签  const script = document.createElement(&#34;script&#34;) //2.修改script的src属性  script.src = &#34;http://127.0.0.1:8000/jsonP&#34; script.id=&#34;tempScript&#34;//添加id方便移除  //3.追加到页面中  document.body.appendChild(script) } /*server.js*/ app.get('/jsonP', (request, response) => { const data = { exist:1, msg:&#34;用户名已经存在!&#34; } let str = JSON.stringify(data) response.send(` handle(${str}); document.body.removeChild(document.querySelector(&#34;#tempScript&#34;)) `) }) 注意：response.send()/response.end()中利用ES6语法规范中的模板字符串直接返回一段js代码，script标签会自动解析并作用到页面上
 CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置CORS响应头实现跨域，这种跨域GET或POST请求均有效
 //服务端设置响应头 app.all('/data', (request, response) => { response.setHeader('Access-Control-Allow-Origin', '*')//允许来自所有域的请求  response.setHeader('Access-Control-Allow-Headers', '*')//请求中允许携带的首部字段(可以携带自定义请求头)  response.">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://examplesite.com/post/"},{"@type":"ListItem","position":2,"name":"跨域及CORS官方跨域","item":"https://examplesite.com/post/2020/08/11/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"跨域及CORS官方跨域","name":"跨域及CORS官方跨域","description":"JSONP  jsonp跨域的实现仅限于GET请求，不可用于POST\n 说明：实现的基本思路是利用html中script标签本身可跨域的特性，在发送请求时，在页面中创建script标签，追加到页面中。这实际上就像利用script标签引入外部资源\n/*main.js*/ //申明handle函数 function handle(data) { //do something.... } ele.onclick = function () { //1.创建script标签  const script = document.createElement(\u0026#34;script\u0026#34;) //2.修改script的src属性  script.src = \u0026#34;http://127.0.0.1:8000/jsonP\u0026#34; script.id=\u0026#34;tempScript\u0026#34;//添加id方便移除  //3.追加到页面中  document.body.appendChild(script) } /*server.js*/ app.get(\u0026#39;/jsonP\u0026#39;, (request, response) =\u0026gt; { const data = { exist:1, msg:\u0026#34;用户名已经存在!\u0026#34; } let str = JSON.stringify(data) response.send(` handle(${str}); document.body.removeChild(document.querySelector(\u0026#34;#tempScript\u0026#34;)) `) }) 注意：response.send()/response.end()中利用ES6语法规范中的模板字符串直接返回一段js代码，script标签会自动解析并作用到页面上\nCORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置CORS响应头实现跨域，这种跨域GET或POST请求均有效\n//服务端设置响应头 app.all(\u0026#39;/data\u0026#39;, (request, response) =\u0026gt; { response.setHeader(\u0026#39;Access-Control-Allow-Origin\u0026#39;, \u0026#39;*\u0026#39;)//允许来自所有域的请求  response.setHeader(\u0026#39;Access-Control-Allow-Headers\u0026#39;, \u0026#39;*\u0026#39;)//请求中允许携带的首部字段(可以携带自定义请求头)  response.","keywords":["Jsonp","Ajax","Jquery"],"articleBody":"JSONP  jsonp跨域的实现仅限于GET请求，不可用于POST\n 说明：实现的基本思路是利用html中script标签本身可跨域的特性，在发送请求时，在页面中创建script标签，追加到页面中。这实际上就像利用script标签引入外部资源\n/*main.js*/ //申明handle函数 function handle(data) { //do something.... } ele.onclick = function () { //1.创建script标签  const script = document.createElement(\"script\") //2.修改script的src属性  script.src = \"http://127.0.0.1:8000/jsonP\" script.id=\"tempScript\"//添加id方便移除  //3.追加到页面中  document.body.appendChild(script) } /*server.js*/ app.get('/jsonP', (request, response) = { const data = { exist:1, msg:\"用户名已经存在!\" } let str = JSON.stringify(data) response.send(` handle(${str}); document.body.removeChild(document.querySelector(\"#tempScript\")) `) }) 注意：response.send()/response.end()中利用ES6语法规范中的模板字符串直接返回一段js代码，script标签会自动解析并作用到页面上\nCORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置CORS响应头实现跨域，这种跨域GET或POST请求均有效\n//服务端设置响应头 app.all('/data', (request, response) = { response.setHeader('Access-Control-Allow-Origin', '*')//允许来自所有域的请求  response.setHeader('Access-Control-Allow-Headers', '*')//请求中允许携带的首部字段(可以携带自定义请求头)  response.setHeader('Access-Control-Allow-Methods', '*')//允许使用的所有请求方法 }) Jquery跨域 /*main.js*/ $.getJSON('http://127.0.0.1:8000/jqueryJsonp?callback=?', function (data) { //do something.... }) //或者,  $.ajax({ url:\"http://127.0.0.1:8000/jqueryJsonp\", type:\"GET\", dataType:\"jsonp\", success:function(data){ //do something....  } }) 注意： url后的callback=?必须加上，jQuery 将自动替换?为正确的函数名，以执行回调函数。 此行以后的代码将在这个回调函数执行前执行。\napp.all('/jqueryJsonp', (request, response) = { const data = { name: \"jqf\", age: \"19\" } let str = JSON.stringify(data) let cb = request.query.callback response.send(`${cb}(${str})`) }) 注意： 这里的cb = request.query.callback是上面main.js中的回调函数，jQuery会自动注册一个新的函数，用来代替mian.js中$.getJSON()后的回调函数，对比上面jsonp原理剖析即可理解，在response.send()中返回的js代码中的函数必须是已经声明过的！而在这里，这个已经申明过的函数就是mian.js中$.getJSON()后的回调函数！\nskr~~\n","wordCount":"119","inLanguage":"en","datePublished":"2020-08-11T00:00:00Z","dateModified":"2020-08-11T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://examplesite.com/post/2020/08/11/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://www.fintinger.site/post/"},{"@type":"ListItem","position":3,"name":"跨域及CORS官方跨域","item":"https://www.fintinger.site/post/2020/08/11/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"跨域及CORS官方跨域","name":"跨域及CORS官方跨域","description":"JSONP  jsonp跨域的实现仅限于GET请求，不可用于POST\n 说明：实现的基本思路是利用html中script标签本身可跨域的特性，在发送请求时，在页面中创建script标签，追加到页面中。这实际上就像利用script标签引入外部资源\n/*main.js*/ //申明handle函数 function handle(data) { //do something.... } ele.onclick = function () { //1.创建script标签  const script = document.createElement(\u0026#34;script\u0026#34;) //2.修改script的src属性  script.src = \u0026#34;http://127.0.0.1:8000/jsonP\u0026#34; script.id=\u0026#34;tempScript\u0026#34;//添加id方便移除  //3.追加到页面中  document.body.appendChild(script) } /*server.js*/ app.get(\u0026#39;/jsonP\u0026#39;, (request, response) =\u0026gt; { const data = { exist:1, msg:\u0026#34;用户名已经存在!\u0026#34; } let str = JSON.stringify(data) response.send(` handle(${str}); document.body.removeChild(document.querySelector(\u0026#34;#tempScript\u0026#34;)) `) }) 注意：response.send()/response.end()中利用ES6语法规范中的模板字符串直接返回一段js代码，script标签会自动解析并作用到页面上\nCORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置CORS响应头实现跨域，这种跨域GET或POST请求均有效\n//服务端设置响应头 app.all(\u0026#39;/data\u0026#39;, (request, response) =\u0026gt; { response.setHeader(\u0026#39;Access-Control-Allow-Origin\u0026#39;, \u0026#39;*\u0026#39;)//允许来自所有域的请求  response.setHeader(\u0026#39;Access-Control-Allow-Headers\u0026#39;, \u0026#39;*\u0026#39;)//请求中允许携带的首部字段(可以携带自定义请求头)  response.","keywords":["Jsonp","Ajax","Jquery"],"articleBody":"JSONP  jsonp跨域的实现仅限于GET请求，不可用于POST\n 说明：实现的基本思路是利用html中script标签本身可跨域的特性，在发送请求时，在页面中创建script标签，追加到页面中。这实际上就像利用script标签引入外部资源\n/*main.js*/ //申明handle函数 function handle(data) { //do something.... } ele.onclick = function () { //1.创建script标签  const script = document.createElement(\"script\") //2.修改script的src属性  script.src = \"http://127.0.0.1:8000/jsonP\" script.id=\"tempScript\"//添加id方便移除  //3.追加到页面中  document.body.appendChild(script) } /*server.js*/ app.get('/jsonP', (request, response) = { const data = { exist:1, msg:\"用户名已经存在!\" } let str = JSON.stringify(data) response.send(` handle(${str}); document.body.removeChild(document.querySelector(\"#tempScript\")) `) }) 注意：response.send()/response.end()中利用ES6语法规范中的模板字符串直接返回一段js代码，script标签会自动解析并作用到页面上\nCORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置CORS响应头实现跨域，这种跨域GET或POST请求均有效\n//服务端设置响应头 app.all('/data', (request, response) = { response.setHeader('Access-Control-Allow-Origin', '*')//允许来自所有域的请求  response.setHeader('Access-Control-Allow-Headers', '*')//请求中允许携带的首部字段(可以携带自定义请求头)  response.setHeader('Access-Control-Allow-Methods', '*')//允许使用的所有请求方法 }) Jquery跨域 /*main.js*/ $.getJSON('http://127.0.0.1:8000/jqueryJsonp?callback=?', function (data) { //do something.... }) //或者,  $.ajax({ url:\"http://127.0.0.1:8000/jqueryJsonp\", type:\"GET\", dataType:\"jsonp\", success:function(data){ //do something....  } }) 注意： url后的callback=?必须加上，jQuery 将自动替换?为正确的函数名，以执行回调函数。 此行以后的代码将在这个回调函数执行前执行。\napp.all('/jqueryJsonp', (request, response) = { const data = { name: \"jqf\", age: \"19\" } let str = JSON.stringify(data) let cb = request.query.callback response.send(`${cb}(${str})`) }) 注意： 这里的cb = request.query.callback是上面main.js中的回调函数，jQuery会自动注册一个新的函数，用来代替mian.js中$.getJSON()后的回调函数，对比上面jsonp原理剖析即可理解，在response.send()中返回的js代码中的函数必须是已经声明过的！而在这里，这个已经申明过的函数就是mian.js中$.getJSON()后的回调函数！\nskr~~\n","wordCount":"119","inLanguage":"en","datePublished":"2020-08-11T00:00:00Z","dateModified":"2020-08-11T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.fintinger.site/post/2020/08/11/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
-<a href=https://examplesite.com/ accesskey=h title="Home (Alt + H)">
+<a href=https://www.fintinger.site accesskey=h title="Home (Alt + H)">
 <img src=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico alt=logo aria-label=logo height=35>Home</a>
 <span class=logo-switches>
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -63,22 +63,22 @@ CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置C
 </div>
 <ul id=menu>
 <li>
-<a href=https://examplesite.com/categories/ title=Categories>
+<a href=https://www.fintinger.site/categories/ title=Categories>
 <span>Categories</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/tags/ title=Tags>
+<a href=https://www.fintinger.site/tags/ title=Tags>
 <span>Tags</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/search/ title="Search (Alt + /)" accesskey=/>
+<a href=https://www.fintinger.site/search/ title="Search (Alt + /)" accesskey=/>
 <span>Search</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/archives/ title=Archives>
+<a href=https://www.fintinger.site/archives/ title=Archives>
 <span>Archives</span>
 </a>
 </li>
@@ -88,7 +88,7 @@ CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置C
 <main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://examplesite.com/>Home</a>&nbsp;»&nbsp;<a href=https://examplesite.com/post/>Posts</a></div>
+<div class=breadcrumbs><a href=https://www.fintinger.site>Home</a>&nbsp;»&nbsp;<a href=https://www.fintinger.site/post/>Posts</a></div>
 <h1 class=post-title>
 跨域及CORS官方跨域
 </h1>
@@ -190,17 +190,17 @@ CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置C
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://examplesite.com/tags/jsonp/>Jsonp</a></li>
-<li><a href=https://examplesite.com/tags/ajax/>Ajax</a></li>
-<li><a href=https://examplesite.com/tags/jquery/>Jquery</a></li>
+<li><a href=https://www.fintinger.site/tags/jsonp/>Jsonp</a></li>
+<li><a href=https://www.fintinger.site/tags/ajax/>Ajax</a></li>
+<li><a href=https://www.fintinger.site/tags/jquery/>Jquery</a></li>
 </ul>
 <nav class=paginav>
-<a class=prev href=https://examplesite.com/post/2020/08/13/>
+<a class=prev href=https://www.fintinger.site/post/2020/08/13/>
 <span class=title>« Prev Page</span>
 <br>
 <span>Ajax重复请求</span>
 </a>
-<a class=next href=https://examplesite.com/post/2020/08/10/>
+<a class=next href=https://www.fintinger.site/post/2020/08/10/>
 <span class=title>Next Page »</span>
 <br>
 <span>Ajax学习小结</span>
@@ -210,7 +210,7 @@ CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置C
 </article>
 </main>
 <footer class=footer>
-<span>&copy; 2022 <a href=https://examplesite.com/>Archai's home</a></span>
+<span>&copy; 2022 <a href=https://www.fintinger.site>Archai's home</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

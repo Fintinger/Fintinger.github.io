@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Huffman on Archai&#39;s home</title>
-    <link>https://examplesite.com/tags/huffman/</link>
+    <link>https://www.fintinger.site/tags/huffman/</link>
     <description>Recent content in Huffman on Archai&#39;s home</description>
     <image>
       <url>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</url>
       <link>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 23 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://examplesite.com/tags/huffman/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/huffman/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>哈夫曼树</title>
-      <link>https://examplesite.com/post/2021/05/23/huffmantree/</link>
+      <link>https://www.fintinger.site/post/2021/05/23/huffmantree/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2021/05/23/huffmantree/</guid>
+      <guid>https://www.fintinger.site/post/2021/05/23/huffmantree/</guid>
       <description>基本概念 1.结点的权
 每个结点带有的具有某种现实意义的数值(比如代表重要性等)
 2.结点的带权路径长度

@@ -9,7 +9,7 @@
 const path=require(&#34;path&#34;); const fs = require('fs'); fs.stat('../images',(err)=>{//图片文件所在目录  if (err)return; var result='{' fs.readdir(&#34;../images&#34;,(err,data)=>{//图片文件所在目录  for(var i=0;i<Object.keys(data).length;i++){ let ImgPath=&#34;\&#34;images/&#34;+data[i]+&#34;\&#34;&#34;; result+=&#34;\&#34;&#34;+i+&#34;\&#34;:&#34;+ImgPath+&#34;,&#34;; } result=result.substring(0,result.length-1); let length=&#34;\&#34;&#34;+&#34;length&#34;+&#34;\&#34;&#34;+&#34;:&#34;+&#34;\&#34;&#34;+Object.keys(data).length+&#34;\&#34;&#34;//文件数量  result+=&#34;,&#34;+length+'}' fs.writeFile(&#34;../data/imgPath.json&#34;,result,(err)=>{ if(err)return; console.log(&#34;写入文件成功，一共&#34;+Object.keys(data).length+&#34;个文件&#34;); }); }); }); 生成的文件大概就是这样的一个json数据
 {&#34;0&#34;:&#34;images/1.jpg&#34;,&#34;1&#34;:&#34;images/10.jpg&#34;,&#34;2&#34;:&#34;images/100.jpg&#34;,&#34;3&#34;:&#34;images/101.jpg&#34;,&#34;4&#34;:&#34;images/102.jpg&#34;,&#34;5&#34;:&#34;images/103.jpg&#34;,&#34;6&#34;:&#34;images/104.jpg&#34;,&#34;7&#34;:&#34;images/105.jpg&#34;,&#34;8&#34;:&#34;images/106.jpg&#34;,&#34;9&#34;:&#34;images/107.jpg&#34;,&#34;10&#34;:&#34;images/108.jpg&#34;,&#34;length&#34;:&#34;109&#34;} ">
 <meta name=author content="Archai">
-<link rel=canonical href=https://examplesite.com/post/2020/07/05/>
+<link rel=canonical href=https://www.fintinger.site/post/2020/07/05/>
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
@@ -17,10 +17,10 @@ const path=require(&#34;path&#34;); const fs = require('fs'); fs.stat('../images
 <link rel=preload href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico as=image>
 <script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=icon type=image/png sizes=32x32 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=apple-touch-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=mask-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=16x16 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=32x32 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=apple-touch-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=mask-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <noscript>
@@ -31,7 +31,7 @@ const path=require(&#34;path&#34;); const fs = require('fs'); fs.stat('../images
 const path=require(&#34;path&#34;); const fs = require('fs'); fs.stat('../images',(err)=>{//图片文件所在目录  if (err)return; var result='{' fs.readdir(&#34;../images&#34;,(err,data)=>{//图片文件所在目录  for(var i=0;i<Object.keys(data).length;i++){ let ImgPath=&#34;\&#34;images/&#34;+data[i]+&#34;\&#34;&#34;; result+=&#34;\&#34;&#34;+i+&#34;\&#34;:&#34;+ImgPath+&#34;,&#34;; } result=result.substring(0,result.length-1); let length=&#34;\&#34;&#34;+&#34;length&#34;+&#34;\&#34;&#34;+&#34;:&#34;+&#34;\&#34;&#34;+Object.keys(data).length+&#34;\&#34;&#34;//文件数量  result+=&#34;,&#34;+length+'}' fs.writeFile(&#34;../data/imgPath.json&#34;,result,(err)=>{ if(err)return; console.log(&#34;写入文件成功，一共&#34;+Object.keys(data).length+&#34;个文件&#34;); }); }); }); 生成的文件大概就是这样的一个json数据
 {&#34;0&#34;:&#34;images/1.jpg&#34;,&#34;1&#34;:&#34;images/10.jpg&#34;,&#34;2&#34;:&#34;images/100.jpg&#34;,&#34;3&#34;:&#34;images/101.jpg&#34;,&#34;4&#34;:&#34;images/102.jpg&#34;,&#34;5&#34;:&#34;images/103.jpg&#34;,&#34;6&#34;:&#34;images/104.jpg&#34;,&#34;7&#34;:&#34;images/105.jpg&#34;,&#34;8&#34;:&#34;images/106.jpg&#34;,&#34;9&#34;:&#34;images/107.jpg&#34;,&#34;10&#34;:&#34;images/108.jpg&#34;,&#34;length&#34;:&#34;109&#34;} ">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://examplesite.com/post/2020/07/05/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
+<meta property="og:url" content="https://www.fintinger.site/post/2020/07/05/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
 <meta property="article:published_time" content="2020-07-05T00:00:00+00:00">
 <meta property="article:modified_time" content="2020-07-05T00:00:00+00:00"><meta property="og:site_name" content="Archai's home">
 <meta name=twitter:card content="summary_large_image">
@@ -40,15 +40,15 @@ const path=require(&#34;path&#34;); const fs = require('fs'); fs.stat('../images
 <meta name=twitter:description content="在写小demo的过程中，经常需要把某个文件夹的图片文件的路径给引入，除非全部重命名成有序的数字，不然不好处理，这就用到了node中的fs和path模块，还没学&mldr;
 const path=require(&#34;path&#34;); const fs = require('fs'); fs.stat('../images',(err)=>{//图片文件所在目录  if (err)return; var result='{' fs.readdir(&#34;../images&#34;,(err,data)=>{//图片文件所在目录  for(var i=0;i<Object.keys(data).length;i++){ let ImgPath=&#34;\&#34;images/&#34;+data[i]+&#34;\&#34;&#34;; result+=&#34;\&#34;&#34;+i+&#34;\&#34;:&#34;+ImgPath+&#34;,&#34;; } result=result.substring(0,result.length-1); let length=&#34;\&#34;&#34;+&#34;length&#34;+&#34;\&#34;&#34;+&#34;:&#34;+&#34;\&#34;&#34;+Object.keys(data).length+&#34;\&#34;&#34;//文件数量  result+=&#34;,&#34;+length+'}' fs.writeFile(&#34;../data/imgPath.json&#34;,result,(err)=>{ if(err)return; console.log(&#34;写入文件成功，一共&#34;+Object.keys(data).length+&#34;个文件&#34;); }); }); }); 生成的文件大概就是这样的一个json数据
 {&#34;0&#34;:&#34;images/1.jpg&#34;,&#34;1&#34;:&#34;images/10.jpg&#34;,&#34;2&#34;:&#34;images/100.jpg&#34;,&#34;3&#34;:&#34;images/101.jpg&#34;,&#34;4&#34;:&#34;images/102.jpg&#34;,&#34;5&#34;:&#34;images/103.jpg&#34;,&#34;6&#34;:&#34;images/104.jpg&#34;,&#34;7&#34;:&#34;images/105.jpg&#34;,&#34;8&#34;:&#34;images/106.jpg&#34;,&#34;9&#34;:&#34;images/107.jpg&#34;,&#34;10&#34;:&#34;images/108.jpg&#34;,&#34;length&#34;:&#34;109&#34;} ">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://examplesite.com/post/"},{"@type":"ListItem","position":2,"name":"JavaScript生成图片文件路径json","item":"https://examplesite.com/post/2020/07/05/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"JavaScript生成图片文件路径json","name":"JavaScript生成图片文件路径json","description":"在写小demo的过程中，经常需要把某个文件夹的图片文件的路径给引入，除非全部重命名成有序的数字，不然不好处理，这就用到了node中的fs和path模块，还没学\u0026hellip;\nconst path=require(\u0026#34;path\u0026#34;); const fs = require(\u0026#39;fs\u0026#39;); fs.stat(\u0026#39;../images\u0026#39;,(err)=\u0026gt;{//图片文件所在目录  if (err)return; var result=\u0026#39;{\u0026#39; fs.readdir(\u0026#34;../images\u0026#34;,(err,data)=\u0026gt;{//图片文件所在目录  for(var i=0;i\u0026lt;Object.keys(data).length;i++){ let ImgPath=\u0026#34;\\\u0026#34;images/\u0026#34;+data[i]+\u0026#34;\\\u0026#34;\u0026#34;; result+=\u0026#34;\\\u0026#34;\u0026#34;+i+\u0026#34;\\\u0026#34;:\u0026#34;+ImgPath+\u0026#34;,\u0026#34;; } result=result.substring(0,result.length-1); let length=\u0026#34;\\\u0026#34;\u0026#34;+\u0026#34;length\u0026#34;+\u0026#34;\\\u0026#34;\u0026#34;+\u0026#34;:\u0026#34;+\u0026#34;\\\u0026#34;\u0026#34;+Object.keys(data).length+\u0026#34;\\\u0026#34;\u0026#34;//文件数量  result+=\u0026#34;,\u0026#34;+length+\u0026#39;}\u0026#39; fs.writeFile(\u0026#34;../data/imgPath.json\u0026#34;,result,(err)=\u0026gt;{ if(err)return; console.log(\u0026#34;写入文件成功，一共\u0026#34;+Object.keys(data).length+\u0026#34;个文件\u0026#34;); }); }); }); 生成的文件大概就是这样的一个json数据\n{\u0026#34;0\u0026#34;:\u0026#34;images/1.jpg\u0026#34;,\u0026#34;1\u0026#34;:\u0026#34;images/10.jpg\u0026#34;,\u0026#34;2\u0026#34;:\u0026#34;images/100.jpg\u0026#34;,\u0026#34;3\u0026#34;:\u0026#34;images/101.jpg\u0026#34;,\u0026#34;4\u0026#34;:\u0026#34;images/102.jpg\u0026#34;,\u0026#34;5\u0026#34;:\u0026#34;images/103.jpg\u0026#34;,\u0026#34;6\u0026#34;:\u0026#34;images/104.jpg\u0026#34;,\u0026#34;7\u0026#34;:\u0026#34;images/105.jpg\u0026#34;,\u0026#34;8\u0026#34;:\u0026#34;images/106.jpg\u0026#34;,\u0026#34;9\u0026#34;:\u0026#34;images/107.jpg\u0026#34;,\u0026#34;10\u0026#34;:\u0026#34;images/108.jpg\u0026#34;,\u0026#34;length\u0026#34;:\u0026#34;109\u0026#34;} ","keywords":["Javascript","Node.js"],"articleBody":"在写小demo的过程中，经常需要把某个文件夹的图片文件的路径给引入，除非全部重命名成有序的数字，不然不好处理，这就用到了node中的fs和path模块，还没学…\nconst path=require(\"path\"); const fs = require('fs'); fs.stat('../images',(err)={//图片文件所在目录  if (err)return; var result='{' fs.readdir(\"../images\",(err,data)={//图片文件所在目录  for(var i=0;iObject.keys(data).length;i++){ let ImgPath=\"\\\"images/\"+data[i]+\"\\\"\"; result+=\"\\\"\"+i+\"\\\":\"+ImgPath+\",\"; } result=result.substring(0,result.length-1); let length=\"\\\"\"+\"length\"+\"\\\"\"+\":\"+\"\\\"\"+Object.keys(data).length+\"\\\"\"//文件数量  result+=\",\"+length+'}' fs.writeFile(\"../data/imgPath.json\",result,(err)={ if(err)return; console.log(\"写入文件成功，一共\"+Object.keys(data).length+\"个文件\"); }); }); }); 生成的文件大概就是这样的一个json数据\n{\"0\":\"images/1.jpg\",\"1\":\"images/10.jpg\",\"2\":\"images/100.jpg\",\"3\":\"images/101.jpg\",\"4\":\"images/102.jpg\",\"5\":\"images/103.jpg\",\"6\":\"images/104.jpg\",\"7\":\"images/105.jpg\",\"8\":\"images/106.jpg\",\"9\":\"images/107.jpg\",\"10\":\"images/108.jpg\",\"length\":\"109\"} ","wordCount":"31","inLanguage":"en","datePublished":"2020-07-05T00:00:00Z","dateModified":"2020-07-05T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://examplesite.com/post/2020/07/05/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://www.fintinger.site/post/"},{"@type":"ListItem","position":3,"name":"JavaScript生成图片文件路径json","item":"https://www.fintinger.site/post/2020/07/05/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"JavaScript生成图片文件路径json","name":"JavaScript生成图片文件路径json","description":"在写小demo的过程中，经常需要把某个文件夹的图片文件的路径给引入，除非全部重命名成有序的数字，不然不好处理，这就用到了node中的fs和path模块，还没学\u0026hellip;\nconst path=require(\u0026#34;path\u0026#34;); const fs = require(\u0026#39;fs\u0026#39;); fs.stat(\u0026#39;../images\u0026#39;,(err)=\u0026gt;{//图片文件所在目录  if (err)return; var result=\u0026#39;{\u0026#39; fs.readdir(\u0026#34;../images\u0026#34;,(err,data)=\u0026gt;{//图片文件所在目录  for(var i=0;i\u0026lt;Object.keys(data).length;i++){ let ImgPath=\u0026#34;\\\u0026#34;images/\u0026#34;+data[i]+\u0026#34;\\\u0026#34;\u0026#34;; result+=\u0026#34;\\\u0026#34;\u0026#34;+i+\u0026#34;\\\u0026#34;:\u0026#34;+ImgPath+\u0026#34;,\u0026#34;; } result=result.substring(0,result.length-1); let length=\u0026#34;\\\u0026#34;\u0026#34;+\u0026#34;length\u0026#34;+\u0026#34;\\\u0026#34;\u0026#34;+\u0026#34;:\u0026#34;+\u0026#34;\\\u0026#34;\u0026#34;+Object.keys(data).length+\u0026#34;\\\u0026#34;\u0026#34;//文件数量  result+=\u0026#34;,\u0026#34;+length+\u0026#39;}\u0026#39; fs.writeFile(\u0026#34;../data/imgPath.json\u0026#34;,result,(err)=\u0026gt;{ if(err)return; console.log(\u0026#34;写入文件成功，一共\u0026#34;+Object.keys(data).length+\u0026#34;个文件\u0026#34;); }); }); }); 生成的文件大概就是这样的一个json数据\n{\u0026#34;0\u0026#34;:\u0026#34;images/1.jpg\u0026#34;,\u0026#34;1\u0026#34;:\u0026#34;images/10.jpg\u0026#34;,\u0026#34;2\u0026#34;:\u0026#34;images/100.jpg\u0026#34;,\u0026#34;3\u0026#34;:\u0026#34;images/101.jpg\u0026#34;,\u0026#34;4\u0026#34;:\u0026#34;images/102.jpg\u0026#34;,\u0026#34;5\u0026#34;:\u0026#34;images/103.jpg\u0026#34;,\u0026#34;6\u0026#34;:\u0026#34;images/104.jpg\u0026#34;,\u0026#34;7\u0026#34;:\u0026#34;images/105.jpg\u0026#34;,\u0026#34;8\u0026#34;:\u0026#34;images/106.jpg\u0026#34;,\u0026#34;9\u0026#34;:\u0026#34;images/107.jpg\u0026#34;,\u0026#34;10\u0026#34;:\u0026#34;images/108.jpg\u0026#34;,\u0026#34;length\u0026#34;:\u0026#34;109\u0026#34;} ","keywords":["Javascript","Node.js"],"articleBody":"在写小demo的过程中，经常需要把某个文件夹的图片文件的路径给引入，除非全部重命名成有序的数字，不然不好处理，这就用到了node中的fs和path模块，还没学…\nconst path=require(\"path\"); const fs = require('fs'); fs.stat('../images',(err)={//图片文件所在目录  if (err)return; var result='{' fs.readdir(\"../images\",(err,data)={//图片文件所在目录  for(var i=0;iObject.keys(data).length;i++){ let ImgPath=\"\\\"images/\"+data[i]+\"\\\"\"; result+=\"\\\"\"+i+\"\\\":\"+ImgPath+\",\"; } result=result.substring(0,result.length-1); let length=\"\\\"\"+\"length\"+\"\\\"\"+\":\"+\"\\\"\"+Object.keys(data).length+\"\\\"\"//文件数量  result+=\",\"+length+'}' fs.writeFile(\"../data/imgPath.json\",result,(err)={ if(err)return; console.log(\"写入文件成功，一共\"+Object.keys(data).length+\"个文件\"); }); }); }); 生成的文件大概就是这样的一个json数据\n{\"0\":\"images/1.jpg\",\"1\":\"images/10.jpg\",\"2\":\"images/100.jpg\",\"3\":\"images/101.jpg\",\"4\":\"images/102.jpg\",\"5\":\"images/103.jpg\",\"6\":\"images/104.jpg\",\"7\":\"images/105.jpg\",\"8\":\"images/106.jpg\",\"9\":\"images/107.jpg\",\"10\":\"images/108.jpg\",\"length\":\"109\"} ","wordCount":"31","inLanguage":"en","datePublished":"2020-07-05T00:00:00Z","dateModified":"2020-07-05T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.fintinger.site/post/2020/07/05/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
-<a href=https://examplesite.com/ accesskey=h title="Home (Alt + H)">
+<a href=https://www.fintinger.site accesskey=h title="Home (Alt + H)">
 <img src=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico alt=logo aria-label=logo height=35>Home</a>
 <span class=logo-switches>
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -57,22 +57,22 @@ const path=require(&#34;path&#34;); const fs = require('fs'); fs.stat('../images
 </div>
 <ul id=menu>
 <li>
-<a href=https://examplesite.com/categories/ title=Categories>
+<a href=https://www.fintinger.site/categories/ title=Categories>
 <span>Categories</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/tags/ title=Tags>
+<a href=https://www.fintinger.site/tags/ title=Tags>
 <span>Tags</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/search/ title="Search (Alt + /)" accesskey=/>
+<a href=https://www.fintinger.site/search/ title="Search (Alt + /)" accesskey=/>
 <span>Search</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/archives/ title=Archives>
+<a href=https://www.fintinger.site/archives/ title=Archives>
 <span>Archives</span>
 </a>
 </li>
@@ -82,7 +82,7 @@ const path=require(&#34;path&#34;); const fs = require('fs'); fs.stat('../images
 <main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://examplesite.com/>Home</a>&nbsp;»&nbsp;<a href=https://examplesite.com/post/>Posts</a></div>
+<div class=breadcrumbs><a href=https://www.fintinger.site>Home</a>&nbsp;»&nbsp;<a href=https://www.fintinger.site/post/>Posts</a></div>
 <h1 class=post-title>
 JavaScript生成图片文件路径json
 </h1>
@@ -116,16 +116,16 @@ JavaScript生成图片文件路径json
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://examplesite.com/tags/javascript/>Javascript</a></li>
-<li><a href=https://examplesite.com/tags/node.js/>Node.js</a></li>
+<li><a href=https://www.fintinger.site/tags/javascript/>Javascript</a></li>
+<li><a href=https://www.fintinger.site/tags/node.js/>Node.js</a></li>
 </ul>
 <nav class=paginav>
-<a class=prev href=https://examplesite.com/post/2020/07/06/>
+<a class=prev href=https://www.fintinger.site/post/2020/07/06/>
 <span class=title>« Prev Page</span>
 <br>
 <span>避免多条件并列</span>
 </a>
-<a class=next href=https://examplesite.com/post/2020/07/01/>
+<a class=next href=https://www.fintinger.site/post/2020/07/01/>
 <span class=title>Next Page »</span>
 <br>
 <span>JavaScript瀑布流布局</span>
@@ -135,7 +135,7 @@ JavaScript生成图片文件路径json
 </article>
 </main>
 <footer class=footer>
-<span>&copy; 2022 <a href=https://examplesite.com/>Archai's home</a></span>
+<span>&copy; 2022 <a href=https://www.fintinger.site>Archai's home</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

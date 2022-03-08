@@ -7,7 +7,7 @@
 <meta name=keywords content="计算机组成原理">
 <meta name=description content="寻址方式    基本寻址方式 特 征 优 点 缺 点 备 注     隐含寻址 操作数的存放地由操作码决定      立即寻址 操作数直接在指令中 加快执行速度 增加指令长度，不方便修改操作数 适用提供常数，设定初始值   寄存器寻址 操作数在指令指定的寄存器中 方便修改，访问寄存器加快指令执行，缩短指令长度，编程更灵活     直接寻址 操作数地址在指令中，操作数在主存单元中  指令字较长，不方便地址修改    间接寻址 操作数地址的地址在指令中，操作数在主存中 方便修改指针，编程更灵活 访问两次主存获取操作数，降低执行速度 形式地址，有效地址EA(=操作数地址)   寄存器间接寻址 操作数地址在指令指定的寄存器中，操作数在主存单元中 压缩指令长度，修改寄存器内容就可以修改主存地址指针  方便编写循环程序   相对寻址 操作数地址由PC和指令提供的地址偏移量决定,操作数在主存单元中   EA=PC+D，适用与地址无关的程序设计   基址寻址 操作数地址由基址寄存器(RB)和指令提供的地址偏移量决定，操作数在主存单元中 缩短指令长度，扩大寻址空间  大型计算机，用户的逻辑地址→主存的物理地址，EA=(RB)+D   变址寻址 操作数地址由变址寄存器(RI)和指令提供的地址偏移量决定，操作数在主存单元中   寻址到操作数RI内容(地址)自动修改，EA=(RI)+D   堆栈寻址 寻址方式由指令操作码决定   适用涉及堆栈操作的指令，EA=(SP)    存储模式 “按字节编址” 主存将一个存储单元定为8位，即一个字节，这称为按字节编址的存储器">
 <meta name=author content="Archai">
-<link rel=canonical href=https://examplesite.com/post/2021/07/22/>
+<link rel=canonical href=https://www.fintinger.site/post/2021/07/22/>
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
@@ -15,10 +15,10 @@
 <link rel=preload href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico as=image>
 <script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=icon type=image/png sizes=32x32 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=apple-touch-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=mask-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=16x16 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=32x32 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=apple-touch-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=mask-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <noscript>
@@ -27,22 +27,22 @@
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-123-45','auto'),ga('send','pageview'))</script><meta property="og:title" content="寻址方式与存储模式">
 <meta property="og:description" content="寻址方式    基本寻址方式 特 征 优 点 缺 点 备 注     隐含寻址 操作数的存放地由操作码决定      立即寻址 操作数直接在指令中 加快执行速度 增加指令长度，不方便修改操作数 适用提供常数，设定初始值   寄存器寻址 操作数在指令指定的寄存器中 方便修改，访问寄存器加快指令执行，缩短指令长度，编程更灵活     直接寻址 操作数地址在指令中，操作数在主存单元中  指令字较长，不方便地址修改    间接寻址 操作数地址的地址在指令中，操作数在主存中 方便修改指针，编程更灵活 访问两次主存获取操作数，降低执行速度 形式地址，有效地址EA(=操作数地址)   寄存器间接寻址 操作数地址在指令指定的寄存器中，操作数在主存单元中 压缩指令长度，修改寄存器内容就可以修改主存地址指针  方便编写循环程序   相对寻址 操作数地址由PC和指令提供的地址偏移量决定,操作数在主存单元中   EA=PC+D，适用与地址无关的程序设计   基址寻址 操作数地址由基址寄存器(RB)和指令提供的地址偏移量决定，操作数在主存单元中 缩短指令长度，扩大寻址空间  大型计算机，用户的逻辑地址→主存的物理地址，EA=(RB)+D   变址寻址 操作数地址由变址寄存器(RI)和指令提供的地址偏移量决定，操作数在主存单元中   寻址到操作数RI内容(地址)自动修改，EA=(RI)+D   堆栈寻址 寻址方式由指令操作码决定   适用涉及堆栈操作的指令，EA=(SP)    存储模式 “按字节编址” 主存将一个存储单元定为8位，即一个字节，这称为按字节编址的存储器">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://examplesite.com/post/2021/07/22/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
+<meta property="og:url" content="https://www.fintinger.site/post/2021/07/22/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
 <meta property="article:published_time" content="2021-07-22T00:00:00+00:00">
 <meta property="article:modified_time" content="2021-07-22T00:00:00+00:00"><meta property="og:site_name" content="Archai's home">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg">
 <meta name=twitter:title content="寻址方式与存储模式">
 <meta name=twitter:description content="寻址方式    基本寻址方式 特 征 优 点 缺 点 备 注     隐含寻址 操作数的存放地由操作码决定      立即寻址 操作数直接在指令中 加快执行速度 增加指令长度，不方便修改操作数 适用提供常数，设定初始值   寄存器寻址 操作数在指令指定的寄存器中 方便修改，访问寄存器加快指令执行，缩短指令长度，编程更灵活     直接寻址 操作数地址在指令中，操作数在主存单元中  指令字较长，不方便地址修改    间接寻址 操作数地址的地址在指令中，操作数在主存中 方便修改指针，编程更灵活 访问两次主存获取操作数，降低执行速度 形式地址，有效地址EA(=操作数地址)   寄存器间接寻址 操作数地址在指令指定的寄存器中，操作数在主存单元中 压缩指令长度，修改寄存器内容就可以修改主存地址指针  方便编写循环程序   相对寻址 操作数地址由PC和指令提供的地址偏移量决定,操作数在主存单元中   EA=PC+D，适用与地址无关的程序设计   基址寻址 操作数地址由基址寄存器(RB)和指令提供的地址偏移量决定，操作数在主存单元中 缩短指令长度，扩大寻址空间  大型计算机，用户的逻辑地址→主存的物理地址，EA=(RB)+D   变址寻址 操作数地址由变址寄存器(RI)和指令提供的地址偏移量决定，操作数在主存单元中   寻址到操作数RI内容(地址)自动修改，EA=(RI)+D   堆栈寻址 寻址方式由指令操作码决定   适用涉及堆栈操作的指令，EA=(SP)    存储模式 “按字节编址” 主存将一个存储单元定为8位，即一个字节，这称为按字节编址的存储器">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://examplesite.com/post/"},{"@type":"ListItem","position":2,"name":"寻址方式与存储模式","item":"https://examplesite.com/post/2021/07/22/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"寻址方式与存储模式","name":"寻址方式与存储模式","description":"寻址方式    基本寻址方式 特 征 优 点 缺 点 备 注     隐含寻址 操作数的存放地由操作码决定      立即寻址 操作数直接在指令中 加快执行速度 增加指令长度，不方便修改操作数 适用提供常数，设定初始值   寄存器寻址 操作数在指令指定的寄存器中 方便修改，访问寄存器加快指令执行，缩短指令长度，编程更灵活     直接寻址 操作数地址在指令中，操作数在主存单元中  指令字较长，不方便地址修改    间接寻址 操作数地址的地址在指令中，操作数在主存中 方便修改指针，编程更灵活 访问两次主存获取操作数，降低执行速度 形式地址，有效地址EA(=操作数地址)   寄存器间接寻址 操作数地址在指令指定的寄存器中，操作数在主存单元中 压缩指令长度，修改寄存器内容就可以修改主存地址指针  方便编写循环程序   相对寻址 操作数地址由PC和指令提供的地址偏移量决定,操作数在主存单元中   EA=PC+D，适用与地址无关的程序设计   基址寻址 操作数地址由基址寄存器(RB)和指令提供的地址偏移量决定，操作数在主存单元中 缩短指令长度，扩大寻址空间  大型计算机，用户的逻辑地址→主存的物理地址，EA=(RB)+D   变址寻址 操作数地址由变址寄存器(RI)和指令提供的地址偏移量决定，操作数在主存单元中   寻址到操作数RI内容(地址)自动修改，EA=(RI)+D   堆栈寻址 寻址方式由指令操作码决定   适用涉及堆栈操作的指令，EA=(SP)    存储模式 “按字节编址” 主存将一个存储单元定为8位，即一个字节，这称为按字节编址的存储器","keywords":["计算机组成原理"],"articleBody":"寻址方式    基本寻址方式 特 征 优 点 缺 点 备 注     隐含寻址 操作数的存放地由操作码决定      立即寻址 操作数直接在指令中 加快执行速度 增加指令长度，不方便修改操作数 适用提供常数，设定初始值   寄存器寻址 操作数在指令指定的寄存器中 方便修改，访问寄存器加快指令执行，缩短指令长度，编程更灵活     直接寻址 操作数地址在指令中，操作数在主存单元中  指令字较长，不方便地址修改    间接寻址 操作数地址的地址在指令中，操作数在主存中 方便修改指针，编程更灵活 访问两次主存获取操作数，降低执行速度 形式地址，有效地址EA(=操作数地址)   寄存器间接寻址 操作数地址在指令指定的寄存器中，操作数在主存单元中 压缩指令长度，修改寄存器内容就可以修改主存地址指针  方便编写循环程序   相对寻址 操作数地址由PC和指令提供的地址偏移量决定,操作数在主存单元中   EA=PC+D，适用与地址无关的程序设计   基址寻址 操作数地址由基址寄存器(RB)和指令提供的地址偏移量决定，操作数在主存单元中 缩短指令长度，扩大寻址空间  大型计算机，用户的逻辑地址→主存的物理地址，EA=(RB)+D   变址寻址 操作数地址由变址寄存器(RI)和指令提供的地址偏移量决定，操作数在主存单元中   寻址到操作数RI内容(地址)自动修改，EA=(RI)+D   堆栈寻址 寻址方式由指令操作码决定   适用涉及堆栈操作的指令，EA=(SP)    存储模式 “按字节编址” 主存将一个存储单元定为8位，即一个字节，这称为按字节编址的存储器\n 区分字，字节，位\n  1Byte(字节) = 8bit(位或比特)\n  32位系统 ⇒ 32位为1字 ⇒由4个字节组成 ⇒ 在主存中占用4个连续的字节单元\n  64位系统 ⇒ 64位为1字 ⇒由8个字节组成 ⇒ 在主存中占用8个连续的字节单元\n  一般英文字母数字为1个字节，汉字为2字节(ASCII)\n 1.ASCII码: 一个英文字母(不分大小写)占一个字节的空间,一个中文汉字占两个字节的空间。 2.UTF-8编码: 一个英文字符等于一个字节,一个中文(含繁体)等于三个字节。中文标点占三个字节,英文标点占一个字节 3.Unicode编码: 一个英文等于两个字节,一个中文(含繁体)等于两个字节。中文标点占两个字节,英文标点占两个字节     数据存储顺序 大端存储： 数据的最低有效字节存储在高地址单元\n小端存储： 数据的最低有效字节存储在低地址单元\n对于下面这个数据结构\nstruct{ double i; //0x1112131415161718 } 在主存中的大端存储和小端存储如图所示\n边界对齐 数据存储在地位地址以全0开始的连续存储单元中，若不满足，可填充一至多个空白字节。否则，读写一个完整的数据需要访问两次存储器。\n冯·诺依曼结构和哈佛结构 冯：指令数据混合存放在主存中\n 在cache中采用冯或哈不等价于主存也采用相应的结构\n 哈：主存分成指令地址空间和数据地址空间两部分(多见于RISC)\n","wordCount":"89","inLanguage":"en","datePublished":"2021-07-22T00:00:00Z","dateModified":"2021-07-22T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://examplesite.com/post/2021/07/22/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://www.fintinger.site/post/"},{"@type":"ListItem","position":3,"name":"寻址方式与存储模式","item":"https://www.fintinger.site/post/2021/07/22/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"寻址方式与存储模式","name":"寻址方式与存储模式","description":"寻址方式    基本寻址方式 特 征 优 点 缺 点 备 注     隐含寻址 操作数的存放地由操作码决定      立即寻址 操作数直接在指令中 加快执行速度 增加指令长度，不方便修改操作数 适用提供常数，设定初始值   寄存器寻址 操作数在指令指定的寄存器中 方便修改，访问寄存器加快指令执行，缩短指令长度，编程更灵活     直接寻址 操作数地址在指令中，操作数在主存单元中  指令字较长，不方便地址修改    间接寻址 操作数地址的地址在指令中，操作数在主存中 方便修改指针，编程更灵活 访问两次主存获取操作数，降低执行速度 形式地址，有效地址EA(=操作数地址)   寄存器间接寻址 操作数地址在指令指定的寄存器中，操作数在主存单元中 压缩指令长度，修改寄存器内容就可以修改主存地址指针  方便编写循环程序   相对寻址 操作数地址由PC和指令提供的地址偏移量决定,操作数在主存单元中   EA=PC+D，适用与地址无关的程序设计   基址寻址 操作数地址由基址寄存器(RB)和指令提供的地址偏移量决定，操作数在主存单元中 缩短指令长度，扩大寻址空间  大型计算机，用户的逻辑地址→主存的物理地址，EA=(RB)+D   变址寻址 操作数地址由变址寄存器(RI)和指令提供的地址偏移量决定，操作数在主存单元中   寻址到操作数RI内容(地址)自动修改，EA=(RI)+D   堆栈寻址 寻址方式由指令操作码决定   适用涉及堆栈操作的指令，EA=(SP)    存储模式 “按字节编址” 主存将一个存储单元定为8位，即一个字节，这称为按字节编址的存储器","keywords":["计算机组成原理"],"articleBody":"寻址方式    基本寻址方式 特 征 优 点 缺 点 备 注     隐含寻址 操作数的存放地由操作码决定      立即寻址 操作数直接在指令中 加快执行速度 增加指令长度，不方便修改操作数 适用提供常数，设定初始值   寄存器寻址 操作数在指令指定的寄存器中 方便修改，访问寄存器加快指令执行，缩短指令长度，编程更灵活     直接寻址 操作数地址在指令中，操作数在主存单元中  指令字较长，不方便地址修改    间接寻址 操作数地址的地址在指令中，操作数在主存中 方便修改指针，编程更灵活 访问两次主存获取操作数，降低执行速度 形式地址，有效地址EA(=操作数地址)   寄存器间接寻址 操作数地址在指令指定的寄存器中，操作数在主存单元中 压缩指令长度，修改寄存器内容就可以修改主存地址指针  方便编写循环程序   相对寻址 操作数地址由PC和指令提供的地址偏移量决定,操作数在主存单元中   EA=PC+D，适用与地址无关的程序设计   基址寻址 操作数地址由基址寄存器(RB)和指令提供的地址偏移量决定，操作数在主存单元中 缩短指令长度，扩大寻址空间  大型计算机，用户的逻辑地址→主存的物理地址，EA=(RB)+D   变址寻址 操作数地址由变址寄存器(RI)和指令提供的地址偏移量决定，操作数在主存单元中   寻址到操作数RI内容(地址)自动修改，EA=(RI)+D   堆栈寻址 寻址方式由指令操作码决定   适用涉及堆栈操作的指令，EA=(SP)    存储模式 “按字节编址” 主存将一个存储单元定为8位，即一个字节，这称为按字节编址的存储器\n 区分字，字节，位\n  1Byte(字节) = 8bit(位或比特)\n  32位系统 ⇒ 32位为1字 ⇒由4个字节组成 ⇒ 在主存中占用4个连续的字节单元\n  64位系统 ⇒ 64位为1字 ⇒由8个字节组成 ⇒ 在主存中占用8个连续的字节单元\n  一般英文字母数字为1个字节，汉字为2字节(ASCII)\n 1.ASCII码: 一个英文字母(不分大小写)占一个字节的空间,一个中文汉字占两个字节的空间。 2.UTF-8编码: 一个英文字符等于一个字节,一个中文(含繁体)等于三个字节。中文标点占三个字节,英文标点占一个字节 3.Unicode编码: 一个英文等于两个字节,一个中文(含繁体)等于两个字节。中文标点占两个字节,英文标点占两个字节     数据存储顺序 大端存储： 数据的最低有效字节存储在高地址单元\n小端存储： 数据的最低有效字节存储在低地址单元\n对于下面这个数据结构\nstruct{ double i; //0x1112131415161718 } 在主存中的大端存储和小端存储如图所示\n边界对齐 数据存储在地位地址以全0开始的连续存储单元中，若不满足，可填充一至多个空白字节。否则，读写一个完整的数据需要访问两次存储器。\n冯·诺依曼结构和哈佛结构 冯：指令数据混合存放在主存中\n 在cache中采用冯或哈不等价于主存也采用相应的结构\n 哈：主存分成指令地址空间和数据地址空间两部分(多见于RISC)\n","wordCount":"89","inLanguage":"en","datePublished":"2021-07-22T00:00:00Z","dateModified":"2021-07-22T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.fintinger.site/post/2021/07/22/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
-<a href=https://examplesite.com/ accesskey=h title="Home (Alt + H)">
+<a href=https://www.fintinger.site accesskey=h title="Home (Alt + H)">
 <img src=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico alt=logo aria-label=logo height=35>Home</a>
 <span class=logo-switches>
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -51,22 +51,22 @@
 </div>
 <ul id=menu>
 <li>
-<a href=https://examplesite.com/categories/ title=Categories>
+<a href=https://www.fintinger.site/categories/ title=Categories>
 <span>Categories</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/tags/ title=Tags>
+<a href=https://www.fintinger.site/tags/ title=Tags>
 <span>Tags</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/search/ title="Search (Alt + /)" accesskey=/>
+<a href=https://www.fintinger.site/search/ title="Search (Alt + /)" accesskey=/>
 <span>Search</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/archives/ title=Archives>
+<a href=https://www.fintinger.site/archives/ title=Archives>
 <span>Archives</span>
 </a>
 </li>
@@ -76,7 +76,7 @@
 <main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://examplesite.com/>Home</a>&nbsp;»&nbsp;<a href=https://examplesite.com/post/>Posts</a></div>
+<div class=breadcrumbs><a href=https://www.fintinger.site>Home</a>&nbsp;»&nbsp;<a href=https://www.fintinger.site/post/>Posts</a></div>
 <h1 class=post-title>
 寻址方式与存储模式
 </h1>
@@ -243,15 +243,15 @@
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://examplesite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/>计算机组成原理</a></li>
+<li><a href=https://www.fintinger.site/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/>计算机组成原理</a></li>
 </ul>
 <nav class=paginav>
-<a class=prev href=https://examplesite.com/post/2021/08/10/>
+<a class=prev href=https://www.fintinger.site/post/2021/08/10/>
 <span class=title>« Prev Page</span>
 <br>
 <span>线性代数——行列式</span>
 </a>
-<a class=next href=https://examplesite.com/post/2021/06/10/externalsort/>
+<a class=next href=https://www.fintinger.site/post/2021/06/10/externalsort/>
 <span class=title>Next Page »</span>
 <br>
 <span>外部排序相关</span>
@@ -261,7 +261,7 @@
 </article>
 </main>
 <footer class=footer>
-<span>&copy; 2022 <a href=https://examplesite.com/>Archai's home</a></span>
+<span>&copy; 2022 <a href=https://www.fintinger.site>Archai's home</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

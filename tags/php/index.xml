@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>PHP on Archai&#39;s home</title>
-    <link>https://examplesite.com/tags/php/</link>
+    <link>https://www.fintinger.site/tags/php/</link>
     <description>Recent content in PHP on Archai&#39;s home</description>
     <image>
       <url>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</url>
       <link>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 13 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://examplesite.com/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/php/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PHP语法小结</title>
-      <link>https://examplesite.com/post/2020/10/14/</link>
+      <link>https://www.fintinger.site/post/2020/10/14/</link>
       <pubDate>Tue, 13 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/10/14/</guid>
+      <guid>https://www.fintinger.site/post/2020/10/14/</guid>
       <description>基本语法 输出语句    语句 功能     echo 输出字符串类型   print_r 输出引用类型(对象,数组等)   var_dunp 检测变量类型    ::: tip echo语句可用于给前端返回响应体。比如前端通过ajax请求，可以在xhr.response中直接得到echo的内容 :::
 变量&amp;amp;常量 👉🏼 变量
    语句 功能 返回值     isset() 检测变量是否存在 boolean   unset() 删除某个变量 none    👉🏼 常量
@@ -31,10 +31,10 @@ const不能在条件语句中使用，必出错
     
     <item>
       <title>PHP开发验证码类</title>
-      <link>https://examplesite.com/post/2020/10/03/</link>
+      <link>https://www.fintinger.site/post/2020/10/03/</link>
       <pubDate>Sat, 03 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/10/03/</guid>
+      <guid>https://www.fintinger.site/post/2020/10/03/</guid>
       <description>利用php中的GD库可以完成验证码类的开发。后盾人教程
  PHP创建图像步骤 发送HTTP头信息，声明内容为图像 header(&amp;#39;Content-type:image/gif&amp;#39;); header(&amp;#39;Content-type:image/jpeg&amp;#39;); header(&amp;#39;Content-type:image/png&amp;#39;); 通过设置头信息让浏览器渲染出图像，而不是HTML等其他类型
 创建画布 imageCreateTrueColor(width,height); width &amp;amp; height 画布宽高，即为输出图片的尺寸,返回为source 类型，后续操作都是针对这个资源展开。

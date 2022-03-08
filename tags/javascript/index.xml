@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Javascript on Archai&#39;s home</title>
-    <link>https://examplesite.com/tags/javascript/</link>
+    <link>https://www.fintinger.site/tags/javascript/</link>
     <description>Recent content in Javascript on Archai&#39;s home</description>
     <image>
       <url>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</url>
       <link>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 20 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://examplesite.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Javascript正则表达式</title>
-      <link>https://examplesite.com/post/2020/09/20/</link>
+      <link>https://www.fintinger.site/post/2020/09/20/</link>
       <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/09/20/</guid>
+      <guid>https://www.fintinger.site/post/2020/09/20/</guid>
       <description>关于正则表达式的创建，就不做过多的赘述
  ::: tip
 由于不知名原因，span标签报错，因此全部替换为[sp]
@@ -28,10 +28,10 @@ let str = &amp;#39;fintinger2592030861.com$323e&amp;#39; let reg = new RegExp(&a
     
     <item>
       <title>Es6中的class类</title>
-      <link>https://examplesite.com/post/2020/09/09/</link>
+      <link>https://www.fintinger.site/post/2020/09/09/</link>
       <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/09/09/</guid>
+      <guid>https://www.fintinger.site/post/2020/09/09/</guid>
       <description>class实质上是对js中继承的封装组合，用一种“语法糖”的形式实现原型链的继承
  静态属性/方法  静态方法/属性是指，函数作为对象时，定义在其原型(__proto__)上的方法，而需要实例化继承的动态方法是定义在其原型对象(prototype) 中的，静态方法中的参数都是固定的，直接通过整个构造函数调用，实例化对象并不会继承；而动态方法中的参数会因为实例化对象的不同而产生改变，实例化对象默认是继承的。
  function User(){} User.__proto__.show=function(){} console.dir(User) //这里的show()方法就属于静态方法 在class中，利用static定义静态属性/方法
@@ -41,10 +41,10 @@ class Admin{ static show(){}//__proto__中  show(){}//prototype中 } console.dir
     
     <item>
       <title>JavaScript中的继承与原型链分析</title>
-      <link>https://examplesite.com/post/2020/09/04/</link>
+      <link>https://www.fintinger.site/post/2020/09/04/</link>
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/09/04/</guid>
+      <guid>https://www.fintinger.site/post/2020/09/04/</guid>
       <description>原型链自定义设置  原型链的设置可以通过Object.creative , __proto__, Object.setProperty三种方法
  Object.creative () 说明： 该方法只能设置原型链，而不能获取
 let a1 = {name: &amp;#39;a1&amp;#39;} let b1 = Object.create(a1) b1.name = &amp;#39;b1&amp;#39; console.log(b1);  Object.creative()为创建对象的方法，第一个参数为其原型对象，第二个参数为其默认属性，这些属性默认是不可写，不可遍历，不可修改的
@@ -54,10 +54,10 @@ let a2 = {name: &amp;#39;a2&amp;#39;} let b2 = {name: &amp;#39;b2&amp;#39;} a2._
     
     <item>
       <title>关于JavaScript模块化</title>
-      <link>https://examplesite.com/post/2020/09/02/</link>
+      <link>https://www.fintinger.site/post/2020/09/02/</link>
       <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/09/02/</guid>
+      <guid>https://www.fintinger.site/post/2020/09/02/</guid>
       <description>自定义一个模块引擎 要求： 能够让模块之间产生依赖关系
 代码
 let _module = (function () { let moduleList = {} function define(name, modules, action) { modules.map((n, i) =&amp;gt; { //将传入的只含名称的模块数组 =&amp;gt; 指定名称模块的返回结果  modules[i] = moduleList[n] }) moduleList[name] = action.apply(null, modules) // console.log(moduleList);  } return {define} })(); //定义一个工具库，暴露给外界使用，输出 _module.define(&amp;#39;tools&amp;#39;, [], function () { return { max(arr) { return arr.sort((a, b) =&amp;gt; b - a)[0]//获取最大值挺别致昂  }, min(arr) { return arr.sort((a, b) =&amp;gt; b - a)[arr.length - 1]; } } }); //使用之前定义的工具库，引入 _module.</description>
@@ -65,10 +65,10 @@ let _module = (function () { let moduleList = {} function define(name, modules, 
     
     <item>
       <title>JavaScript基础之对象</title>
-      <link>https://examplesite.com/post/2020/08/31/</link>
+      <link>https://www.fintinger.site/post/2020/08/31/</link>
       <pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/08/31/</guid>
+      <guid>https://www.fintinger.site/post/2020/08/31/</guid>
       <description>对象中参数获取和值的接收 1.对象中利用key获取value. |  [] let obj = {name: &amp;#39;jqf&amp;#39;, age: 19} for (let key in obj) { // console.log(obj.key);//会报undefined  console.log(obj[key]);//jqf,19 } 👉 delete Object.key()
 delete obj.name console.log(obj);//{ age: 19 } 2.参数/配置合并 👉 展开语法
  利用展开语法合并对象，让后面传入的参数覆盖默认参数，完成合并
@@ -79,10 +79,10 @@ delete obj.name console.log(obj);//{ age: 19 } 2.参数/配置合并 👉 展开
     
     <item>
       <title>JavaScript基础之函数相关</title>
-      <link>https://examplesite.com/post/2020/08/28/</link>
+      <link>https://www.fintinger.site/post/2020/08/28/</link>
       <pubDate>Fri, 28 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/08/28/</guid>
+      <guid>https://www.fintinger.site/post/2020/08/28/</guid>
       <description>关于函数传参  当参数数量不确定时，通常用arguments 来统一接收
  function sum() { return [...arguments].reduce((res, i,) =&amp;gt; res + i, 0) } let res = sum(1, 2, 3) console.log(res);//6 可以用展开语法代替arguments接收所有的参数：
 function sum(...args) { return args.reduce((res, i,) =&amp;gt; res + i, 0) } let res = sum(1, 2, 3) console.log(res);//6 注意： 接收参数时展开语法放其他形参后面，做统一接收
@@ -93,10 +93,10 @@ function factorial(num) { return num === 1 ?</description>
     
     <item>
       <title>JavaScript基础之Map与Weakmap类型</title>
-      <link>https://examplesite.com/post/2020/08/26/</link>
+      <link>https://www.fintinger.site/post/2020/08/26/</link>
       <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/08/26/</guid>
+      <guid>https://www.fintinger.site/post/2020/08/26/</guid>
       <description>Map类型 1.属性 👉 set() 设置值
 let map = new Map() let fn = function () {console.log(&amp;#39;this is function&amp;#39;)} let user = {name: &amp;#39;jqf&amp;#39;, age: 18} map.set(&amp;#39;key&amp;#39;, &amp;#39;value&amp;#39;) map.set(fn, &amp;#39;function&amp;#39;) map.set(user, &amp;#39;object&amp;#39;) console.log(map); /*Map(3){&amp;#34;key&amp;#34; =&amp;gt; &amp;#34;value&amp;#34;, ƒ =&amp;gt; &amp;#34;function&amp;#34;, {…} =&amp;gt; &amp;#34;object&amp;#34;}*/ 注意： Map类型，字符串、函数、对象都可以作为key设置
 👉 size Map长度
@@ -108,10 +108,10 @@ console.log(map.has(user));//true 2.遍历 👉forEach(val,key,map)</description
     
     <item>
       <title>JavaScript基础之Set与Weakset</title>
-      <link>https://examplesite.com/post/2020/08/27/</link>
+      <link>https://www.fintinger.site/post/2020/08/27/</link>
       <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/08/27/</guid>
+      <guid>https://www.fintinger.site/post/2020/08/27/</guid>
       <description>Set类型 1.属性 👉 size ：数组长度
 let set = new Set([1, 2, 3]) console.log(set.size);//9 👉 add() ：添加元素
 console.log(set.add(99));//返回修改后的数组Set(4) { 1, 2, 3, 99 } console.log(set);//原数组已经被修改Set(4) { 1, 2, 3, 99 } 👉 delete() ：删除元素
@@ -123,10 +123,10 @@ let set=new Set([&amp;#39;jqf&amp;#39;,&amp;#39;fin&amp;#39;,&amp;#39;zzh&amp;#3
     
     <item>
       <title>JavaScript基础之Symbol类型</title>
-      <link>https://examplesite.com/post/2020/08/24/</link>
+      <link>https://www.fintinger.site/post/2020/08/24/</link>
       <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/08/24/</guid>
+      <guid>https://www.fintinger.site/post/2020/08/24/</guid>
       <description>Symbol() 类型不能当做普通对象(不能加属性值)，只能当做一种永远都不会重复的字符串
  定义 方法： Symbol(desc)、Symbol.for(desc)
 let s1 = Symbol(&amp;#39;d&amp;#39;) let s2 = Symbol.for(&amp;#39;d&amp;#39;) let s3 = Symbol.for(&amp;#39;d&amp;#39;) console.log(s1.description);//d console.log(Symbol.keyFor(s2));//d console.log(s1 === s3);//false console.log(s2 === s3);//true 注意： 利用Symbol() 定义的值永远都不会相等，而Symbol.for() 定义的，如果描述相同，则值相等
@@ -138,10 +138,10 @@ let user1={ name:&amp;#39;李四&amp;#39;, key:Symbol() } let user2={ name:&amp;
     
     <item>
       <title>JavaScript基础之数组深倔</title>
-      <link>https://examplesite.com/post/2020/08/25/</link>
+      <link>https://www.fintinger.site/post/2020/08/25/</link>
       <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/08/25/</guid>
+      <guid>https://www.fintinger.site/post/2020/08/25/</guid>
       <description>数组是经常用到的一种数据结构
  定义方法 let a = new Array(3) let b = [1, 2, 3]  如何定义一个只有一个元素的数组？
  new Array(n)表示有n个空元素的的数组，利用Array.of(n),可以定义一个只有n元素的数组
@@ -156,10 +156,10 @@ let titles = document.querySelectorAll(&amp;#39;h1&amp;#39;); [...titles].map((v
     
     <item>
       <title>JavaScript基础之值类型</title>
-      <link>https://examplesite.com/post/2020/08/23/</link>
+      <link>https://www.fintinger.site/post/2020/08/23/</link>
       <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/08/23/</guid>
+      <guid>https://www.fintinger.site/post/2020/08/23/</guid>
       <description>字符串 1.截取字符串  主要有slice()、substr()、substring() 三种方法
   一个参数[i]  都是从i开始截取，返回n及其后面的全部字符串。
  第二个参数[i,n]  slice(i,n)和substring(i,n)表示从i开始截取到n；substr(i,n)，表示从i开始截取n个
@@ -174,10 +174,10 @@ let w = &amp;#39;fintinger.xyz&amp;#39; let a = w.slice(-4, w.length) let b = w.
     
     <item>
       <title>JavaScript基础之JS黑洞</title>
-      <link>https://examplesite.com/post/2020/08/19/</link>
+      <link>https://www.fintinger.site/post/2020/08/19/</link>
       <pubDate>Sat, 22 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/08/19/</guid>
+      <guid>https://www.fintinger.site/post/2020/08/19/</guid>
       <description>JavaScript中最容易忽视的一些点
  let和var  都用来定义变量，但二者之间有些细微的差别
  区别1: 是否有块作用域 var a = 1 { // var a=2  let a = 2 } console.log(a); //output var:a=2 let:a=1 var i=1 // for (var i = 0; i &amp;lt;3; i++) { for (let i = 0; i &amp;lt;3; i++) { //..do something } console.log(i); //output var:i=3 let:i=1 说明： 可以看出，var并没有作用域的概念，定义在特定作用于内的变量会受到作用域外的影响，let则不会
@@ -186,10 +186,10 @@ let w = &amp;#39;fintinger.xyz&amp;#39; let a = w.slice(-4, w.length) let b = w.
     
     <item>
       <title>JavaScript基础之运算符</title>
-      <link>https://examplesite.com/post/2020/08/22/</link>
+      <link>https://www.fintinger.site/post/2020/08/22/</link>
       <pubDate>Sat, 22 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/08/22/</guid>
+      <guid>https://www.fintinger.site/post/2020/08/22/</guid>
       <description>++的前置与后置 let a1 = 1 let b1 = 2 let c1 = b1 + a1++ console.log(a1, b1, c1);//2,2,3  let a2 = 1 let b2 = 2 let c2 = b2 + ++a2 console.log(a2, b2, c2);//2,2,4 说明：
  后置是先计算再++ 前置是先++再计算  短路运算 let a = 0; let b = 1; let c = a || b; console.log(c);//1 利用这个原理，我们可以简化一些函数
 let sex = prompt(&amp;#39;您的性别?&amp;#39;) if (!sex){ sex=&amp;#34;保密&amp;#34; } console.log(sex); =&amp;gt;
@@ -198,10 +198,10 @@ let sex = prompt(&amp;#39;您的性别?</description>
     
     <item>
       <title>ES6之Promise用法小结</title>
-      <link>https://examplesite.com/post/2020/08/18/</link>
+      <link>https://www.fintinger.site/post/2020/08/18/</link>
       <pubDate>Tue, 18 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/08/18/</guid>
+      <guid>https://www.fintinger.site/post/2020/08/18/</guid>
       <description>Promise 对象用于表示一个异步操作的最终完成 (或失败), 及其结果值。其目的主要是解决以往回调中嵌套回调的&amp;quot;嵌套地狱&amp;quot;问题，使代码可读性更好，更美观!
 基本用法 对于一个标准的Prommise，其基本写法为:
 new Promise(function (resolve, reject) { //do something...  //success  resolve(&amp;#39;success&amp;#39;) //fail &amp;amp; reject  // reject(&amp;#39;rejected&amp;#39;) *resolve和reject只能出现一个 }).then( function (value) { //if succeed,do something...  }, function (reason) { //if fail &amp;amp; reject,do something...  } ) 如果采用ES6的箭头函数写法，则为:
@@ -213,10 +213,10 @@ new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //r
     
     <item>
       <title>获取文件扩展名</title>
-      <link>https://examplesite.com/post/2020/07/09/</link>
+      <link>https://www.fintinger.site/post/2020/07/09/</link>
       <pubDate>Thu, 09 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/07/09/</guid>
+      <guid>https://www.fintinger.site/post/2020/07/09/</guid>
       <description>该怎么去获得文件名字符串中的文件扩展名呢？
 一种较为强大的解决方法是利用String的slice、lastIndexOf方法：
 function getFileExtension(filename) { return filename.slice((filename.lastIndexOf(&amp;#34;.&amp;#34;) - 1 &amp;gt;&amp;gt;&amp;gt; 0) + 2); } console.log(getFileExtension3(&amp;#39;&amp;#39;)); // &amp;#39;&amp;#39; console.log(getFileExtension3(&amp;#39;filename&amp;#39;)); // &amp;#39;&amp;#39; console.log(getFileExtension3(&amp;#39;filename.txt&amp;#39;)); // &amp;#39;txt&amp;#39; console.log(getFileExtension3(&amp;#39;.hiddenfile&amp;#39;)); // &amp;#39;&amp;#39; console.log(getFileExtension3(&amp;#39;hiddenfile.&amp;#39;)); // &amp;#39;&amp;#39; console.log(getFileExtension3(&amp;#39;filename.with.many.dots.ext&amp;#39;)); // &amp;#39;ext&amp;#39; 说明 filename.slice((filename.lastIndexOf(&amp;quot;.&amp;quot;) - 1 &amp;gt;&amp;gt;&amp;gt; 0) + 2)
@@ -229,20 +229,20 @@ function getFileExtension(filename) { return filename.slice((filename.lastIndexO
     
     <item>
       <title>一组循环数组</title>
-      <link>https://examplesite.com/post/2020/07/08/</link>
+      <link>https://www.fintinger.site/post/2020/07/08/</link>
       <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/07/08/</guid>
+      <guid>https://www.fintinger.site/post/2020/07/08/</guid>
       <description>做网页轮播图，或者音乐播放列表时经常要用到一组循环的数组，到最后一项返回第一项，第一项返回最后一项
 利用两次判断 function doLoop( arr ){ arr.loop_idx = 0; // 返回当前的元素  arr.current = function(){ if( this.loop_idx &amp;lt; 0 ){// 第一次检查  this.loop_idx = this.length - 1;// 更新 loop_idx  } if( this.loop_idx &amp;gt;= this.length ){// 第二次检查  this.loop_idx = 0;// 更新 loop_idx  } return arr[ this.loop_idx ];//返回元素  }; // 增加 loop_idx 然后返回新的当前元素  arr.next = function(){ this.loop_idx++; return this.current(); }; // 减少 loop_idx 然后返回新的当前元素  arr.prev = function(){ this.</description>
     </item>
     
     <item>
       <title>ES6中新增关于Array的方法</title>
-      <link>https://examplesite.com/post/2020/07/04/</link>
+      <link>https://www.fintinger.site/post/2020/07/04/</link>
       <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/07/04/</guid>
+      <guid>https://www.fintinger.site/post/2020/07/04/</guid>
       <description>在javascript中，Array()经常用到，利用ES6中的一些新特性会让数组的处理更加方便快捷
 1.迭代空数组 直接创建一个数组
 const arr=new Array(4); //Output:[undefined，undefined，undefined，undefined] 利用map方法，转化成新的数组，企图得到 [0,1,2,3] 数组
@@ -257,10 +257,10 @@ const arr=new Array(4); arr.map((ele,index) =&amp;gt; index); //Output:[undefine
     
     <item>
       <title>避免多条件并列</title>
-      <link>https://examplesite.com/post/2020/07/06/</link>
+      <link>https://www.fintinger.site/post/2020/07/06/</link>
       <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/07/06/</guid>
+      <guid>https://www.fintinger.site/post/2020/07/06/</guid>
       <description>开发中有时会遇到多个条件，执行相同的语句，也就是多个||这种：
 if (status === &amp;#39;process&amp;#39; || status === &amp;#39;wait&amp;#39; || status === &amp;#39;fail&amp;#39;) { doSomething() } 这种写法语义性、可读性都不太好。可以通过switch case或includes这种进行改造。
 switch case switch(status) { case &amp;#39;process&amp;#39;: case &amp;#39;wait&amp;#39;: case &amp;#39;fail&amp;#39;: doSomething() } includes const enum = [&amp;#39;process&amp;#39;, &amp;#39;wait&amp;#39;, &amp;#39;fail&amp;#39;] if (enum.includes(status)) { doSomething() </description>
@@ -268,10 +268,10 @@ switch case switch(status) { case &amp;#39;process&amp;#39;: case &amp;#39;wait&
     
     <item>
       <title>JavaScript生成图片文件路径json</title>
-      <link>https://examplesite.com/post/2020/07/05/</link>
+      <link>https://www.fintinger.site/post/2020/07/05/</link>
       <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/07/05/</guid>
+      <guid>https://www.fintinger.site/post/2020/07/05/</guid>
       <description>在写小demo的过程中，经常需要把某个文件夹的图片文件的路径给引入，除非全部重命名成有序的数字，不然不好处理，这就用到了node中的fs和path模块，还没学&amp;hellip;
 const path=require(&amp;#34;path&amp;#34;); const fs = require(&amp;#39;fs&amp;#39;); fs.stat(&amp;#39;../images&amp;#39;,(err)=&amp;gt;{//图片文件所在目录  if (err)return; var result=&amp;#39;{&amp;#39; fs.readdir(&amp;#34;../images&amp;#34;,(err,data)=&amp;gt;{//图片文件所在目录  for(var i=0;i&amp;lt;Object.keys(data).length;i++){ let ImgPath=&amp;#34;\&amp;#34;images/&amp;#34;+data[i]+&amp;#34;\&amp;#34;&amp;#34;; result+=&amp;#34;\&amp;#34;&amp;#34;+i+&amp;#34;\&amp;#34;:&amp;#34;+ImgPath+&amp;#34;,&amp;#34;; } result=result.substring(0,result.length-1); let length=&amp;#34;\&amp;#34;&amp;#34;+&amp;#34;length&amp;#34;+&amp;#34;\&amp;#34;&amp;#34;+&amp;#34;:&amp;#34;+&amp;#34;\&amp;#34;&amp;#34;+Object.keys(data).length+&amp;#34;\&amp;#34;&amp;#34;//文件数量  result+=&amp;#34;,&amp;#34;+length+&amp;#39;}&amp;#39; fs.writeFile(&amp;#34;../data/imgPath.json&amp;#34;,result,(err)=&amp;gt;{ if(err)return; console.log(&amp;#34;写入文件成功，一共&amp;#34;+Object.keys(data).length+&amp;#34;个文件&amp;#34;); }); }); }); 生成的文件大概就是这样的一个json数据
 {&amp;#34;0&amp;#34;:&amp;#34;images/1.jpg&amp;#34;,&amp;#34;1&amp;#34;:&amp;#34;images/10.jpg&amp;#34;,&amp;#34;2&amp;#34;:&amp;#34;images/100.jpg&amp;#34;,&amp;#34;3&amp;#34;:&amp;#34;images/101.jpg&amp;#34;,&amp;#34;4&amp;#34;:&amp;#34;images/102.jpg&amp;#34;,&amp;#34;5&amp;#34;:&amp;#34;images/103.jpg&amp;#34;,&amp;#34;6&amp;#34;:&amp;#34;images/104.jpg&amp;#34;,&amp;#34;7&amp;#34;:&amp;#34;images/105.jpg&amp;#34;,&amp;#34;8&amp;#34;:&amp;#34;images/106.jpg&amp;#34;,&amp;#34;9&amp;#34;:&amp;#34;images/107.jpg&amp;#34;,&amp;#34;10&amp;#34;:&amp;#34;images/108.jpg&amp;#34;,&amp;#34;length&amp;#34;:&amp;#34;109&amp;#34;} </description>
@@ -279,10 +279,10 @@ const path=require(&amp;#34;path&amp;#34;); const fs = require(&amp;#39;fs&amp;#
     
     <item>
       <title>JavaScript瀑布流布局</title>
-      <link>https://examplesite.com/post/2020/07/01/</link>
+      <link>https://www.fintinger.site/post/2020/07/01/</link>
       <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/07/01/</guid>
+      <guid>https://www.fintinger.site/post/2020/07/01/</guid>
       <description>什么是瀑布流？ 一种图片在网页的布局方式，具体要求为：从页面第二行开始，后续图片跟在页面中最矮的那张图片后面
 用JavaScript怎么实现？ 为此我将整个过程封装为一个函数。
 /*HTML部分*/ &amp;lt;head&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;main.css&amp;#34;&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;div id=&amp;#34;box&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;//container和img由js动态加入 &amp;lt;script src=&amp;#34;jquery.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;loadFile.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;main.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; /*CSS部分*/ /*首先清空默认样式*/ #box{ position: relative; } .container{ float: left; } .container&amp;gt;.pic{ width: 200px; } .container&amp;gt;.pic&amp;gt;img{ width: 100%; } /*JS部分*/ /*loadFile.js(在window.onload之前执行，加载DOM树)*/	$(function () { function addImg(imgNum,eleID) { let container for (let i = 1; i &amp;lt; imgNum; i++) { container=$(&amp;#34;&amp;lt;div class=&amp;#39;container&amp;#39;&amp;gt;&amp;lt;div class=&amp;#39;pic&amp;#39;&amp;gt;&amp;lt;img src=&amp;#39;images/&amp;#34;+i+&amp;#34;.jpg&amp;#39; alt=&amp;#39;&amp;#39;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;#34;) $(eleID).append(container) } } addImg(109,&amp;#34;#box&amp;#34;); }) /*******************************************/ /*main.js(在$(function(){})之前执行，DOM树加载完毕 )*/ window.onload=function () { let waterFall=function (eleID) { let boxWidth = 0, colo = 0, $egEle = $(eleID).</description>
@@ -290,10 +290,10 @@ const path=require(&amp;#34;path&amp;#34;); const fs = require(&amp;#39;fs&amp;#
     
     <item>
       <title>关于Javascript模块化</title>
-      <link>https://examplesite.com/post/2020/05/29/</link>
+      <link>https://www.fintinger.site/post/2020/05/29/</link>
       <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/05/29/</guid>
+      <guid>https://www.fintinger.site/post/2020/05/29/</guid>
       <description>模块功能主要由两个命令构成：export和import。export命令用于规定模块的对外接口，import命令用于输入其他模块提供的功能。
 //profile.jsexport var firstName = &#39;Michael&#39;;export var lastName = &#39;Jackson&#39;;export function sayName () {return firstName + lastName;}export default function () {console.log(&#39;foo&#39;);}// main.jsimport { firstName, lastName , sayName} from &#39;./profile.js&#39;; 注意：在index.html中引入的时候需要给script加type=&amp;ldquo;module&amp;rdquo;,即
  &amp;lt;script type=&amp;quot;module&amp;quot; src=&amp;quot;./profiles.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script type=&amp;quot;module&amp;quot; src=&amp;quot;./main.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; </description>
@@ -301,10 +301,10 @@ const path=require(&amp;#34;path&amp;#34;); const fs = require(&amp;#39;fs&amp;#
     
     <item>
       <title>Javascript一些操作</title>
-      <link>https://examplesite.com/post/2020/04/02/</link>
+      <link>https://www.fintinger.site/post/2020/04/02/</link>
       <pubDate>Thu, 02 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/04/02/</guid>
+      <guid>https://www.fintinger.site/post/2020/04/02/</guid>
       <description>1.通过id获取元素 function $(id) { return typeof id === &amp;#39;string&amp;#39; ? document.getElementById(id): null; } 2.日期格式化 function formatDate(cDate) { //1.判断  if (!cDate instanceof Date){ return; } //2.转化  var year=cDate.getFullYear(); var month=cDate.getMonth(); var date=cDate.getDate(); var hour=cDate.getHours(); var minute=cDate.getMinutes(); var second=cDate.getSeconds(); //2.1 补0  month=month&amp;lt;10? &amp;#39;0&amp;#39;+month:month; date=date&amp;lt;10? &amp;#39;0&amp;#39;+date: date; minute=minute&amp;lt;10? &amp;#39;0&amp;#39;+minute:minute; second=second&amp;lt;10? &amp;#39;0&amp;#39;+second:second; return year + &amp;#39;-&amp;#39; + month + &amp;#39;-&amp;#39; + date + &amp;#39; &amp;#39; +hour+&amp;#39;:&amp;#39;+minute+&amp;#34;:&amp;#34;+second; } console.log(formatDate(new Date())); 3.匀速运动封装 /** * 设置一个盒子右边距匀速变化 * @param{string} btnId * @param{string} boxId * @param{number} step * @param{number}target */ function linearAnimation(btnId, boxId, step, target) { // 1.</description>
     </item>
     

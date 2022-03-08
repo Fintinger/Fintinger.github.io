@@ -9,7 +9,7 @@
  代码实现 #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph; 即找度 根据邻接矩阵计算结点的度TD
     无向图 有向图     $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数$OD(V_i)$: i列非零元素个数TD=ID+OD    对于带权图（网） #define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph; 复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|+|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。">
 <meta name=author content="Archai">
-<link rel=canonical href=https://examplesite.com/post/2021/06/02/00_storage/>
+<link rel=canonical href=https://www.fintinger.site/post/2021/06/02/00_storage/>
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
@@ -17,10 +17,10 @@
 <link rel=preload href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico as=image>
 <script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=icon type=image/png sizes=32x32 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=apple-touch-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=mask-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=16x16 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=32x32 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=apple-touch-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=mask-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <noscript>
@@ -31,7 +31,7 @@
  代码实现 #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph; 即找度 根据邻接矩阵计算结点的度TD
     无向图 有向图     $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数$OD(V_i)$: i列非零元素个数TD=ID+OD    对于带权图（网） #define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph; 复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|+|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://examplesite.com/post/2021/06/02/00_storage/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
+<meta property="og:url" content="https://www.fintinger.site/post/2021/06/02/00_storage/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
 <meta property="article:published_time" content="2021-06-02T00:00:00+00:00">
 <meta property="article:modified_time" content="2021-06-02T00:00:00+00:00"><meta property="og:site_name" content="Archai's home">
 <meta name=twitter:card content="summary_large_image">
@@ -40,15 +40,15 @@
 <meta name=twitter:description content="邻接矩阵  Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.
  代码实现 #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph; 即找度 根据邻接矩阵计算结点的度TD
     无向图 有向图     $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数$OD(V_i)$: i列非零元素个数TD=ID+OD    对于带权图（网） #define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph; 复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|+|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://examplesite.com/post/"},{"@type":"ListItem","position":2,"name":"图的存储","item":"https://examplesite.com/post/2021/06/02/00_storage/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"图的存储","name":"图的存储","description":"邻接矩阵  Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.\n 代码实现 #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph; 即找度 根据邻接矩阵计算结点的度TD\n    无向图 有向图     $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数$OD(V_i)$: i列非零元素个数TD=ID+OD    对于带权图（网） #define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph; 复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|+|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。","keywords":["数据结构","邻接矩阵","邻接表","十字链表","邻接多重表"],"articleBody":"邻接矩阵  Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.\n 代码实现 #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph; 即找度 根据邻接矩阵计算结点的度TD\n    无向图 有向图     $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数$OD(V_i)$: i列非零元素个数TD=ID+OD    对于带权图（网） #define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph; 复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|+|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。\n性质  设图G的邻接矩阵为A（矩阵元素为0/1），则$A^n$的元素$A^n[i][j]$等于由顶点$i$到顶点$j$的长度为$n$的路径的数目。  对于$A^2[1][4]=a_{1,1}a_{1,4}+a_{1,2}a_{2,4}+a_{1,3}a_{3,4}+a_{4,1}a_{4,4}=1$，$a_{1,2}a_{2,4}=1*1$表示，有一条从$Vex[1]→Vex[2]→Vex[4]$的线，总结果$A^2[1][4]=1$表示从A到D路径长为2的路径数目为1，也就是$A→B→$D.对给定的图G，其邻接矩阵是唯一的。  邻接表  adjacency list 邻接表;\n 代码实现 #define MaxVextexNum 100 typedef char VextexType;//顶点  //\"边|弧\" typedef struct ArcNode{ int adjvex;//边|弧指向哪一节点,\"相邻的结点\"  typedef struct ArcNode *next;//指向下一条弧的指针  //Infotype info; //边权值 }ArcNode;//定义边结点  //\"顶点\" typedef struct VNode{ VextexType data;//数据域  ArcNode *first;//第一条边|弧 }VNode,AdjList[MaxVextexNum];//定义顶点结点，AdjList为VNode类型的数组  //\"邻接表\" typedef struct{ AdjList vertices;//定义一个邻接链表  int vexnum,arcnum;//节点数，边|弧数 }ALGraph; 复杂度    无向图 有向图     $O(V+2E)$ $O(V+E)$ [只记出度]    适合稀疏图。\n找度    入度 出度     结点$i$的*first+*next数量 遍历所有节点，找到指向当前节点的所有指针数，之和即为出度（较复杂）    性质  邻接表的表示方式不唯一。 找有向图的入边不太方便。  十字链表（有向图）  十字链表只用于存储有向图\n 复杂度 空间复杂度： $O(|V|+|E|)$，存储了所有顶点和边\n找度    入度 出度     顺着橙色🍍找，直至^ 顺着绿色🥒找，直至^    拿找A结点的出度为例从A绿色🥒出发，箭头指向01，即找到A→B的路径继续从绿色🥒出发，箭头指向02，即找到A→C的路径02绿色🥒处为^即再无出度\n邻接多重表（无向图） 复杂度 空间复杂度： $O(|V|+|E|)$\n找度 从A出发，第一条边为01即AB这条边顺着iLink（即橙色）找到下一条边为01，即AD这条边至此，橙色为^即，无与0（即A）直接相连的边！其他类似\n横向对比 🤩后续研究一般只针对邻接矩阵和邻接表进行\n","wordCount":"135","inLanguage":"en","datePublished":"2021-06-02T00:00:00Z","dateModified":"2021-06-02T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://examplesite.com/post/2021/06/02/00_storage/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://www.fintinger.site/post/"},{"@type":"ListItem","position":3,"name":"图的存储","item":"https://www.fintinger.site/post/2021/06/02/00_storage/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"图的存储","name":"图的存储","description":"邻接矩阵  Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.\n 代码实现 #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph; 即找度 根据邻接矩阵计算结点的度TD\n    无向图 有向图     $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数$OD(V_i)$: i列非零元素个数TD=ID+OD    对于带权图（网） #define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph; 复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|+|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。","keywords":["数据结构","邻接矩阵","邻接表","十字链表","邻接多重表"],"articleBody":"邻接矩阵  Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.\n 代码实现 #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph; 即找度 根据邻接矩阵计算结点的度TD\n    无向图 有向图     $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数$OD(V_i)$: i列非零元素个数TD=ID+OD    对于带权图（网） #define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph; 复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|+|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。\n性质  设图G的邻接矩阵为A（矩阵元素为0/1），则$A^n$的元素$A^n[i][j]$等于由顶点$i$到顶点$j$的长度为$n$的路径的数目。  对于$A^2[1][4]=a_{1,1}a_{1,4}+a_{1,2}a_{2,4}+a_{1,3}a_{3,4}+a_{4,1}a_{4,4}=1$，$a_{1,2}a_{2,4}=1*1$表示，有一条从$Vex[1]→Vex[2]→Vex[4]$的线，总结果$A^2[1][4]=1$表示从A到D路径长为2的路径数目为1，也就是$A→B→$D.对给定的图G，其邻接矩阵是唯一的。  邻接表  adjacency list 邻接表;\n 代码实现 #define MaxVextexNum 100 typedef char VextexType;//顶点  //\"边|弧\" typedef struct ArcNode{ int adjvex;//边|弧指向哪一节点,\"相邻的结点\"  typedef struct ArcNode *next;//指向下一条弧的指针  //Infotype info; //边权值 }ArcNode;//定义边结点  //\"顶点\" typedef struct VNode{ VextexType data;//数据域  ArcNode *first;//第一条边|弧 }VNode,AdjList[MaxVextexNum];//定义顶点结点，AdjList为VNode类型的数组  //\"邻接表\" typedef struct{ AdjList vertices;//定义一个邻接链表  int vexnum,arcnum;//节点数，边|弧数 }ALGraph; 复杂度    无向图 有向图     $O(V+2E)$ $O(V+E)$ [只记出度]    适合稀疏图。\n找度    入度 出度     结点$i$的*first+*next数量 遍历所有节点，找到指向当前节点的所有指针数，之和即为出度（较复杂）    性质  邻接表的表示方式不唯一。 找有向图的入边不太方便。  十字链表（有向图）  十字链表只用于存储有向图\n 复杂度 空间复杂度： $O(|V|+|E|)$，存储了所有顶点和边\n找度    入度 出度     顺着橙色🍍找，直至^ 顺着绿色🥒找，直至^    拿找A结点的出度为例从A绿色🥒出发，箭头指向01，即找到A→B的路径继续从绿色🥒出发，箭头指向02，即找到A→C的路径02绿色🥒处为^即再无出度\n邻接多重表（无向图） 复杂度 空间复杂度： $O(|V|+|E|)$\n找度 从A出发，第一条边为01即AB这条边顺着iLink（即橙色）找到下一条边为01，即AD这条边至此，橙色为^即，无与0（即A）直接相连的边！其他类似\n横向对比 🤩后续研究一般只针对邻接矩阵和邻接表进行\n","wordCount":"135","inLanguage":"en","datePublished":"2021-06-02T00:00:00Z","dateModified":"2021-06-02T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.fintinger.site/post/2021/06/02/00_storage/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
-<a href=https://examplesite.com/ accesskey=h title="Home (Alt + H)">
+<a href=https://www.fintinger.site accesskey=h title="Home (Alt + H)">
 <img src=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico alt=logo aria-label=logo height=35>Home</a>
 <span class=logo-switches>
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -57,22 +57,22 @@
 </div>
 <ul id=menu>
 <li>
-<a href=https://examplesite.com/categories/ title=Categories>
+<a href=https://www.fintinger.site/categories/ title=Categories>
 <span>Categories</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/tags/ title=Tags>
+<a href=https://www.fintinger.site/tags/ title=Tags>
 <span>Tags</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/search/ title="Search (Alt + /)" accesskey=/>
+<a href=https://www.fintinger.site/search/ title="Search (Alt + /)" accesskey=/>
 <span>Search</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/archives/ title=Archives>
+<a href=https://www.fintinger.site/archives/ title=Archives>
 <span>Archives</span>
 </a>
 </li>
@@ -82,7 +82,7 @@
 <main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://examplesite.com/>Home</a>&nbsp;»&nbsp;<a href=https://examplesite.com/post/>Posts</a></div>
+<div class=breadcrumbs><a href=https://www.fintinger.site>Home</a>&nbsp;»&nbsp;<a href=https://www.fintinger.site/post/>Posts</a></div>
 <h1 class=post-title>
 图的存储
 </h1>
@@ -309,19 +309,19 @@ $a_{1,2}a_{2,4}=1*1$表示，有一条从$Vex[1]→Vex[2]→Vex[4]$的线，总�
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://examplesite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/>数据结构</a></li>
-<li><a href=https://examplesite.com/tags/%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5/>邻接矩阵</a></li>
-<li><a href=https://examplesite.com/tags/%E9%82%BB%E6%8E%A5%E8%A1%A8/>邻接表</a></li>
-<li><a href=https://examplesite.com/tags/%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8/>十字链表</a></li>
-<li><a href=https://examplesite.com/tags/%E9%82%BB%E6%8E%A5%E5%A4%9A%E9%87%8D%E8%A1%A8/>邻接多重表</a></li>
+<li><a href=https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/>数据结构</a></li>
+<li><a href=https://www.fintinger.site/tags/%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5/>邻接矩阵</a></li>
+<li><a href=https://www.fintinger.site/tags/%E9%82%BB%E6%8E%A5%E8%A1%A8/>邻接表</a></li>
+<li><a href=https://www.fintinger.site/tags/%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8/>十字链表</a></li>
+<li><a href=https://www.fintinger.site/tags/%E9%82%BB%E6%8E%A5%E5%A4%9A%E9%87%8D%E8%A1%A8/>邻接多重表</a></li>
 </ul>
 <nav class=paginav>
-<a class=prev href=https://examplesite.com/post/2021/06/02/01_traverse/>
+<a class=prev href=https://www.fintinger.site/post/2021/06/02/01_traverse/>
 <span class=title>« Prev Page</span>
 <br>
 <span>图的遍历</span>
 </a>
-<a class=next href=https://examplesite.com/post/2021/05/23/avl/>
+<a class=next href=https://www.fintinger.site/post/2021/05/23/avl/>
 <span class=title>Next Page »</span>
 <br>
 <span>AVL树</span>
@@ -331,7 +331,7 @@ $a_{1,2}a_{2,4}=1*1$表示，有一条从$Vex[1]→Vex[2]→Vex[4]$的线，总�
 </article>
 </main>
 <footer class=footer>
-<span>&copy; 2022 <a href=https://examplesite.com/>Archai's home</a></span>
+<span>&copy; 2022 <a href=https://www.fintinger.site>Archai's home</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

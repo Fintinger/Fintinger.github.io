@@ -36,7 +36,7 @@ $WPL=5×\sum_{i=1}^{n}l_i$=500
 则$WPL_{min}=$
 $v=\frac{WPL_{min}}{WPL}$">
 <meta name=author content="Archai">
-<link rel=canonical href=https://examplesite.com/post/2021/05/23/huffmantree/>
+<link rel=canonical href=https://www.fintinger.site/post/2021/05/23/huffmantree/>
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
@@ -44,10 +44,10 @@ $v=\frac{WPL_{min}}{WPL}$">
 <link rel=preload href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico as=image>
 <script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=icon type=image/png sizes=32x32 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=apple-touch-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=mask-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=16x16 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=32x32 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=apple-touch-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=mask-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <noscript>
@@ -85,7 +85,7 @@ $WPL=5×\sum_{i=1}^{n}l_i$=500
 则$WPL_{min}=$
 $v=\frac{WPL_{min}}{WPL}$">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://examplesite.com/post/2021/05/23/huffmantree/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
+<meta property="og:url" content="https://www.fintinger.site/post/2021/05/23/huffmantree/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
 <meta property="article:published_time" content="2021-05-23T00:00:00+00:00">
 <meta property="article:modified_time" content="2021-05-23T00:00:00+00:00"><meta property="og:site_name" content="Archai's home">
 <meta name=twitter:card content="summary_large_image">
@@ -121,15 +121,15 @@ $WPL=5×\sum_{i=1}^{n}l_i$=500
 若通过构造哈夫曼树进行哈夫曼编码
 则$WPL_{min}=$
 $v=\frac{WPL_{min}}{WPL}$">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://examplesite.com/post/"},{"@type":"ListItem","position":2,"name":"哈夫曼树","item":"https://examplesite.com/post/2021/05/23/huffmantree/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"哈夫曼树","name":"哈夫曼树","description":"基本概念 1.结点的权\n每个结点带有的具有某种现实意义的数值(比如代表重要性等)\n2.结点的带权路径长度\n从树的根到该结点的路径长度（经过的边数）与该结点上权值的乘积\n3.树的带权路径长度\n树中所有叶结点的带权路径长度之和（WPL, Weighted Path Length）\n$WPL=\\sum_{i=1}^{n}w_il_i$\n✨4.哈夫曼树\n在含有n个带权叶结点的二叉树中，其中带权路径长度（WPL）最小的二叉树称为哈夫曼树，也称最优二叉树构造哈夫曼树 给定n个权值分别为 $w_1,w_2,\u0026hellip;,w_n$ 的结点，其构造过程描述如下：\n① 将这n个结点分别作为n棵仅含一个结点的二叉树，构成森林F\n② 构造一个新结点，从F中选取两棵根结点权值最小的树作为新结点的左右子树，并且将新结点的权值置为左、右子树上根结点的权值之和。\n③ 从F中删除刚才选出的两棵树，同时将新得到的树加入F中。\n④ 重复步骤②和③，直至F中只剩下一棵树为止。\n假设给定结点在经过步骤①之后如下\n则其②③④步骤为：\n$WPL_{min}=1*7+2*3+3*2+4*1+4*2=31$\n或者\n$WPL_{min}=1*7+3*(1+2+2+3)=31$\n👇👇👇👇👇👇\n哈夫曼树特点： ① 每个初始结点最终都成为叶结点，且权值越小的结点到根结点的路径长度越大。 ② 哈夫曼树的结点总数为2n-1。 ③ 哈夫曼树中不存在度为1的结点。 ④ 哈夫曼树并不唯一，但WPL必然相同且为最优。\n哈夫曼编码 固定长度编码 如ASCII码\n可变长度编码 前缀编码 没有一个编码是另一个编码的前缀\n哈夫曼编码 由哈夫曼树得到哈夫曼编码——字符集中的每个字符作为一个叶子结点，各个字符出现的频度作为结点的权值，根据之前介绍的方法构造哈夫曼树。\n✨ 应用\n可用于数据压缩\n如图，为英文字母使用频率表，若不进行压缩，第 i 个字母频率用$l_i表示$，路径长至少为5($2^4\u0026lt;26\u0026lt;2^5$)，则\n$WPL=5×\\sum_{i=1}^{n}l_i$=500\n若通过构造哈夫曼树进行哈夫曼编码\n则$WPL_{min}=$\n$v=\\frac{WPL_{min}}{WPL}$","keywords":["数据结构","Huffman"],"articleBody":"基本概念 1.结点的权\n每个结点带有的具有某种现实意义的数值(比如代表重要性等)\n2.结点的带权路径长度\n从树的根到该结点的路径长度（经过的边数）与该结点上权值的乘积\n3.树的带权路径长度\n树中所有叶结点的带权路径长度之和（WPL, Weighted Path Length）\n$WPL=\\sum_{i=1}^{n}w_il_i$\n✨4.哈夫曼树\n在含有n个带权叶结点的二叉树中，其中带权路径长度（WPL）最小的二叉树称为哈夫曼树，也称最优二叉树构造哈夫曼树 给定n个权值分别为 $w_1,w_2,…,w_n$ 的结点，其构造过程描述如下：\n① 将这n个结点分别作为n棵仅含一个结点的二叉树，构成森林F\n② 构造一个新结点，从F中选取两棵根结点权值最小的树作为新结点的左右子树，并且将新结点的权值置为左、右子树上根结点的权值之和。\n③ 从F中删除刚才选出的两棵树，同时将新得到的树加入F中。\n④ 重复步骤②和③，直至F中只剩下一棵树为止。\n假设给定结点在经过步骤①之后如下\n则其②③④步骤为：\n$WPL_{min}=1*7+2*3+3*2+4*1+4*2=31$\n或者\n$WPL_{min}=1*7+3*(1+2+2+3)=31$\n👇👇👇👇👇👇\n哈夫曼树特点： ① 每个初始结点最终都成为叶结点，且权值越小的结点到根结点的路径长度越大。 ② 哈夫曼树的结点总数为2n-1。 ③ 哈夫曼树中不存在度为1的结点。 ④ 哈夫曼树并不唯一，但WPL必然相同且为最优。\n哈夫曼编码 固定长度编码 如ASCII码\n可变长度编码 前缀编码 没有一个编码是另一个编码的前缀\n哈夫曼编码 由哈夫曼树得到哈夫曼编码——字符集中的每个字符作为一个叶子结点，各个字符出现的频度作为结点的权值，根据之前介绍的方法构造哈夫曼树。\n✨ 应用\n可用于数据压缩\n如图，为英文字母使用频率表，若不进行压缩，第 i 个字母频率用$l_i表示$，路径长至少为5($2^4$WPL=5×\\sum_{i=1}^{n}l_i$=500\n若通过构造哈夫曼树进行哈夫曼编码\n则$WPL_{min}=$\n$v=\\frac{WPL_{min}}{WPL}$\n","wordCount":"57","inLanguage":"en","datePublished":"2021-05-23T00:00:00Z","dateModified":"2021-05-23T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://examplesite.com/post/2021/05/23/huffmantree/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://www.fintinger.site/post/"},{"@type":"ListItem","position":3,"name":"哈夫曼树","item":"https://www.fintinger.site/post/2021/05/23/huffmantree/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"哈夫曼树","name":"哈夫曼树","description":"基本概念 1.结点的权\n每个结点带有的具有某种现实意义的数值(比如代表重要性等)\n2.结点的带权路径长度\n从树的根到该结点的路径长度（经过的边数）与该结点上权值的乘积\n3.树的带权路径长度\n树中所有叶结点的带权路径长度之和（WPL, Weighted Path Length）\n$WPL=\\sum_{i=1}^{n}w_il_i$\n✨4.哈夫曼树\n在含有n个带权叶结点的二叉树中，其中带权路径长度（WPL）最小的二叉树称为哈夫曼树，也称最优二叉树构造哈夫曼树 给定n个权值分别为 $w_1,w_2,\u0026hellip;,w_n$ 的结点，其构造过程描述如下：\n① 将这n个结点分别作为n棵仅含一个结点的二叉树，构成森林F\n② 构造一个新结点，从F中选取两棵根结点权值最小的树作为新结点的左右子树，并且将新结点的权值置为左、右子树上根结点的权值之和。\n③ 从F中删除刚才选出的两棵树，同时将新得到的树加入F中。\n④ 重复步骤②和③，直至F中只剩下一棵树为止。\n假设给定结点在经过步骤①之后如下\n则其②③④步骤为：\n$WPL_{min}=1*7+2*3+3*2+4*1+4*2=31$\n或者\n$WPL_{min}=1*7+3*(1+2+2+3)=31$\n👇👇👇👇👇👇\n哈夫曼树特点： ① 每个初始结点最终都成为叶结点，且权值越小的结点到根结点的路径长度越大。 ② 哈夫曼树的结点总数为2n-1。 ③ 哈夫曼树中不存在度为1的结点。 ④ 哈夫曼树并不唯一，但WPL必然相同且为最优。\n哈夫曼编码 固定长度编码 如ASCII码\n可变长度编码 前缀编码 没有一个编码是另一个编码的前缀\n哈夫曼编码 由哈夫曼树得到哈夫曼编码——字符集中的每个字符作为一个叶子结点，各个字符出现的频度作为结点的权值，根据之前介绍的方法构造哈夫曼树。\n✨ 应用\n可用于数据压缩\n如图，为英文字母使用频率表，若不进行压缩，第 i 个字母频率用$l_i表示$，路径长至少为5($2^4\u0026lt;26\u0026lt;2^5$)，则\n$WPL=5×\\sum_{i=1}^{n}l_i$=500\n若通过构造哈夫曼树进行哈夫曼编码\n则$WPL_{min}=$\n$v=\\frac{WPL_{min}}{WPL}$","keywords":["数据结构","Huffman"],"articleBody":"基本概念 1.结点的权\n每个结点带有的具有某种现实意义的数值(比如代表重要性等)\n2.结点的带权路径长度\n从树的根到该结点的路径长度（经过的边数）与该结点上权值的乘积\n3.树的带权路径长度\n树中所有叶结点的带权路径长度之和（WPL, Weighted Path Length）\n$WPL=\\sum_{i=1}^{n}w_il_i$\n✨4.哈夫曼树\n在含有n个带权叶结点的二叉树中，其中带权路径长度（WPL）最小的二叉树称为哈夫曼树，也称最优二叉树构造哈夫曼树 给定n个权值分别为 $w_1,w_2,…,w_n$ 的结点，其构造过程描述如下：\n① 将这n个结点分别作为n棵仅含一个结点的二叉树，构成森林F\n② 构造一个新结点，从F中选取两棵根结点权值最小的树作为新结点的左右子树，并且将新结点的权值置为左、右子树上根结点的权值之和。\n③ 从F中删除刚才选出的两棵树，同时将新得到的树加入F中。\n④ 重复步骤②和③，直至F中只剩下一棵树为止。\n假设给定结点在经过步骤①之后如下\n则其②③④步骤为：\n$WPL_{min}=1*7+2*3+3*2+4*1+4*2=31$\n或者\n$WPL_{min}=1*7+3*(1+2+2+3)=31$\n👇👇👇👇👇👇\n哈夫曼树特点： ① 每个初始结点最终都成为叶结点，且权值越小的结点到根结点的路径长度越大。 ② 哈夫曼树的结点总数为2n-1。 ③ 哈夫曼树中不存在度为1的结点。 ④ 哈夫曼树并不唯一，但WPL必然相同且为最优。\n哈夫曼编码 固定长度编码 如ASCII码\n可变长度编码 前缀编码 没有一个编码是另一个编码的前缀\n哈夫曼编码 由哈夫曼树得到哈夫曼编码——字符集中的每个字符作为一个叶子结点，各个字符出现的频度作为结点的权值，根据之前介绍的方法构造哈夫曼树。\n✨ 应用\n可用于数据压缩\n如图，为英文字母使用频率表，若不进行压缩，第 i 个字母频率用$l_i表示$，路径长至少为5($2^4$WPL=5×\\sum_{i=1}^{n}l_i$=500\n若通过构造哈夫曼树进行哈夫曼编码\n则$WPL_{min}=$\n$v=\\frac{WPL_{min}}{WPL}$\n","wordCount":"57","inLanguage":"en","datePublished":"2021-05-23T00:00:00Z","dateModified":"2021-05-23T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.fintinger.site/post/2021/05/23/huffmantree/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
-<a href=https://examplesite.com/ accesskey=h title="Home (Alt + H)">
+<a href=https://www.fintinger.site accesskey=h title="Home (Alt + H)">
 <img src=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico alt=logo aria-label=logo height=35>Home</a>
 <span class=logo-switches>
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -138,22 +138,22 @@ $v=\frac{WPL_{min}}{WPL}$">
 </div>
 <ul id=menu>
 <li>
-<a href=https://examplesite.com/categories/ title=Categories>
+<a href=https://www.fintinger.site/categories/ title=Categories>
 <span>Categories</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/tags/ title=Tags>
+<a href=https://www.fintinger.site/tags/ title=Tags>
 <span>Tags</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/search/ title="Search (Alt + /)" accesskey=/>
+<a href=https://www.fintinger.site/search/ title="Search (Alt + /)" accesskey=/>
 <span>Search</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/archives/ title=Archives>
+<a href=https://www.fintinger.site/archives/ title=Archives>
 <span>Archives</span>
 </a>
 </li>
@@ -163,7 +163,7 @@ $v=\frac{WPL_{min}}{WPL}$">
 <main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://examplesite.com/>Home</a>&nbsp;»&nbsp;<a href=https://examplesite.com/post/>Posts</a></div>
+<div class=breadcrumbs><a href=https://www.fintinger.site>Home</a>&nbsp;»&nbsp;<a href=https://www.fintinger.site/post/>Posts</a></div>
 <h1 class=post-title>
 哈夫曼树
 </h1>
@@ -253,16 +253,16 @@ $v=\frac{WPL_{min}}{WPL}$">
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://examplesite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/>数据结构</a></li>
-<li><a href=https://examplesite.com/tags/huffman/>Huffman</a></li>
+<li><a href=https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/>数据结构</a></li>
+<li><a href=https://www.fintinger.site/tags/huffman/>Huffman</a></li>
 </ul>
 <nav class=paginav>
-<a class=prev href=https://examplesite.com/post/2021/05/23/avl/>
+<a class=prev href=https://www.fintinger.site/post/2021/05/23/avl/>
 <span class=title>« Prev Page</span>
 <br>
 <span>AVL树</span>
 </a>
-<a class=next href=https://examplesite.com/post/2021/05/22/>
+<a class=next href=https://www.fintinger.site/post/2021/05/22/>
 <span class=title>Next Page »</span>
 <br>
 <span>树</span>
@@ -272,7 +272,7 @@ $v=\frac{WPL_{min}}{WPL}$">
 </article>
 </main>
 <footer class=footer>
-<span>&copy; 2022 <a href=https://examplesite.com/>Archai's home</a></span>
+<span>&copy; 2022 <a href=https://www.fintinger.site>Archai's home</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

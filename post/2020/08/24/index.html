@@ -13,7 +13,7 @@ let user1={ name:'李四' } let user2={ name:'李四' } let grade={ [user1.name]
 利用Symbol() 定义
 let user1={ name:'李四', key:Symbol() } let user2={ name:'李四', key:Symbol() } let grade={ [user1.key]:{C:98,E:60}, [user2.key]:{C:99,E:59} } console.log(grade)//{[Symbol(user1)]: { C: 98, E: 60 },[Symbol(user2)]: { C: 99, E: 59 }} console.">
 <meta name=author content="Archai">
-<link rel=canonical href=https://examplesite.com/post/2020/08/24/>
+<link rel=canonical href=https://www.fintinger.site/post/2020/08/24/>
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
@@ -21,10 +21,10 @@ let user1={ name:'李四', key:Symbol() } let user2={ name:'李四', key:Symbol(
 <link rel=preload href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico as=image>
 <script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=icon type=image/png sizes=32x32 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=apple-touch-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=mask-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=16x16 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=32x32 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=apple-touch-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=mask-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <noscript>
@@ -39,7 +39,7 @@ let user1={ name:'李四' } let user2={ name:'李四' } let grade={ [user1.name]
 利用Symbol() 定义
 let user1={ name:'李四', key:Symbol() } let user2={ name:'李四', key:Symbol() } let grade={ [user1.key]:{C:98,E:60}, [user2.key]:{C:99,E:59} } console.log(grade)//{[Symbol(user1)]: { C: 98, E: 60 },[Symbol(user2)]: { C: 99, E: 59 }} console.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://examplesite.com/post/2020/08/24/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
+<meta property="og:url" content="https://www.fintinger.site/post/2020/08/24/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
 <meta property="article:published_time" content="2020-08-24T00:00:00+00:00">
 <meta property="article:modified_time" content="2020-08-24T00:00:00+00:00"><meta property="og:site_name" content="Archai's home">
 <meta name=twitter:card content="summary_large_image">
@@ -52,15 +52,15 @@ let s1 = Symbol('d') let s2 = Symbol.for('d') let s3 = Symbol.for('d') console.l
 let user1={ name:'李四' } let user2={ name:'李四' } let grade={ [user1.name]:{C:98,E:60}, [user2.name]:{C:99,E:59} } console.log(grade);//{'李四':{C:99,E:59}} 可以看到，后面的覆盖掉了前面的
 利用Symbol() 定义
 let user1={ name:'李四', key:Symbol() } let user2={ name:'李四', key:Symbol() } let grade={ [user1.key]:{C:98,E:60}, [user2.key]:{C:99,E:59} } console.log(grade)//{[Symbol(user1)]: { C: 98, E: 60 },[Symbol(user2)]: { C: 99, E: 59 }} console.">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://examplesite.com/post/"},{"@type":"ListItem","position":2,"name":"JavaScript基础之Symbol类型","item":"https://examplesite.com/post/2020/08/24/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"JavaScript基础之Symbol类型","name":"JavaScript基础之Symbol类型","description":"Symbol() 类型不能当做普通对象(不能加属性值)，只能当做一种永远都不会重复的字符串\n 定义 方法： Symbol(desc)、Symbol.for(desc)\nlet s1 = Symbol(\u0026#39;d\u0026#39;) let s2 = Symbol.for(\u0026#39;d\u0026#39;) let s3 = Symbol.for(\u0026#39;d\u0026#39;) console.log(s1.description);//d console.log(Symbol.keyFor(s2));//d console.log(s1 === s3);//false console.log(s2 === s3);//true 注意： 利用Symbol() 定义的值永远都不会相等，而Symbol.for() 定义的，如果描述相同，则值相等\n定义对象时，key相同会覆盖的问题 普通方式定义：\nlet user1={ name:\u0026#39;李四\u0026#39; } let user2={ name:\u0026#39;李四\u0026#39; } let grade={ [user1.name]:{C:98,E:60}, [user2.name]:{C:99,E:59} } console.log(grade);//{\u0026#39;李四\u0026#39;:{C:99,E:59}} 可以看到，后面的覆盖掉了前面的\n利用Symbol() 定义\nlet user1={ name:\u0026#39;李四\u0026#39;, key:Symbol() } let user2={ name:\u0026#39;李四\u0026#39;, key:Symbol() } let grade={ [user1.key]:{C:98,E:60}, [user2.key]:{C:99,E:59} } console.log(grade)//{[Symbol(user1)]: { C: 98, E: 60 },[Symbol(user2)]: { C: 99, E: 59 }} console.","keywords":["Javascript"],"articleBody":" Symbol() 类型不能当做普通对象(不能加属性值)，只能当做一种永远都不会重复的字符串\n 定义 方法： Symbol(desc)、Symbol.for(desc)\nlet s1 = Symbol('d') let s2 = Symbol.for('d') let s3 = Symbol.for('d') console.log(s1.description);//d console.log(Symbol.keyFor(s2));//d console.log(s1 === s3);//false console.log(s2 === s3);//true 注意： 利用Symbol() 定义的值永远都不会相等，而Symbol.for() 定义的，如果描述相同，则值相等\n定义对象时，key相同会覆盖的问题 普通方式定义：\nlet user1={ name:'李四' } let user2={ name:'李四' } let grade={ [user1.name]:{C:98,E:60}, [user2.name]:{C:99,E:59} } console.log(grade);//{'李四':{C:99,E:59}} 可以看到，后面的覆盖掉了前面的\n利用Symbol() 定义\nlet user1={ name:'李四', key:Symbol() } let user2={ name:'李四', key:Symbol() } let grade={ [user1.key]:{C:98,E:60}, [user2.key]:{C:99,E:59} } console.log(grade)//{[Symbol(user1)]: { C: 98, E: 60 },[Symbol(user2)]: { C: 99, E: 59 }} console.log(grade[user1.key])//{C:98,E:60} 定义在对象中的Symbol无法访问到 let symbol = Symbol('desc') let user = { name: '李四', age: 18, [symbol]: 123 } for (let key in user) { console.log(key);//name,age } 普通方式无法获取Symbol类型的key\nfor (let key of Object.getOwnPropertySymbols(user)) { console.log(key);//Symbol(desc) } console.log(Object.getOwnPropertySymbols(user));//[Symbol(desc)] Object.getOwnPropertySymbols(user) 是只获取Symbol 类型\nfor (let key of Reflect.ownKeys(user)) { console.log(key);//name, age, Symbol(desc) } console.log(Reflect.ownKeys(user));//[ 'name', 'age', Symbol(desc) ] Reflect.ownKeys(user) 能获取到包括Symbol类型的所有的key\n说明： 后面这两种方法都是把key转为数组，然后用for-of 操作，而对象的遍历用for-in\n举个🌰  对象属性保护\n let pwd = Symbol('This is a Symbol') class User { constructor(name, password) { this.name = name this[pwd] = password } getPWD() { return `${this.name}先生/女士您好,您的密码为：${this[pwd]},请务必牢记!` } } let jqf = new User('jqf', 'wrBh8w7ZDDANDyn') console.log(jqf.getPWD());//jqf先生/女士您好,您的密码为：wrBh8w7ZDDANDyn,请务必牢记! for (let jqfKey in jqf) { console.log(jqfKey + ':' + jqf[jqfKey]);//name:jqf,没有获取到this.pwd } 实例化之后，利用简单粗暴的for-in是无法获取this.pwd这个值的，只好通过内置方法getPWD() 获取！\n","wordCount":"183","inLanguage":"en","datePublished":"2020-08-24T00:00:00Z","dateModified":"2020-08-24T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://examplesite.com/post/2020/08/24/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://www.fintinger.site/post/"},{"@type":"ListItem","position":3,"name":"JavaScript基础之Symbol类型","item":"https://www.fintinger.site/post/2020/08/24/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"JavaScript基础之Symbol类型","name":"JavaScript基础之Symbol类型","description":"Symbol() 类型不能当做普通对象(不能加属性值)，只能当做一种永远都不会重复的字符串\n 定义 方法： Symbol(desc)、Symbol.for(desc)\nlet s1 = Symbol(\u0026#39;d\u0026#39;) let s2 = Symbol.for(\u0026#39;d\u0026#39;) let s3 = Symbol.for(\u0026#39;d\u0026#39;) console.log(s1.description);//d console.log(Symbol.keyFor(s2));//d console.log(s1 === s3);//false console.log(s2 === s3);//true 注意： 利用Symbol() 定义的值永远都不会相等，而Symbol.for() 定义的，如果描述相同，则值相等\n定义对象时，key相同会覆盖的问题 普通方式定义：\nlet user1={ name:\u0026#39;李四\u0026#39; } let user2={ name:\u0026#39;李四\u0026#39; } let grade={ [user1.name]:{C:98,E:60}, [user2.name]:{C:99,E:59} } console.log(grade);//{\u0026#39;李四\u0026#39;:{C:99,E:59}} 可以看到，后面的覆盖掉了前面的\n利用Symbol() 定义\nlet user1={ name:\u0026#39;李四\u0026#39;, key:Symbol() } let user2={ name:\u0026#39;李四\u0026#39;, key:Symbol() } let grade={ [user1.key]:{C:98,E:60}, [user2.key]:{C:99,E:59} } console.log(grade)//{[Symbol(user1)]: { C: 98, E: 60 },[Symbol(user2)]: { C: 99, E: 59 }} console.","keywords":["Javascript"],"articleBody":" Symbol() 类型不能当做普通对象(不能加属性值)，只能当做一种永远都不会重复的字符串\n 定义 方法： Symbol(desc)、Symbol.for(desc)\nlet s1 = Symbol('d') let s2 = Symbol.for('d') let s3 = Symbol.for('d') console.log(s1.description);//d console.log(Symbol.keyFor(s2));//d console.log(s1 === s3);//false console.log(s2 === s3);//true 注意： 利用Symbol() 定义的值永远都不会相等，而Symbol.for() 定义的，如果描述相同，则值相等\n定义对象时，key相同会覆盖的问题 普通方式定义：\nlet user1={ name:'李四' } let user2={ name:'李四' } let grade={ [user1.name]:{C:98,E:60}, [user2.name]:{C:99,E:59} } console.log(grade);//{'李四':{C:99,E:59}} 可以看到，后面的覆盖掉了前面的\n利用Symbol() 定义\nlet user1={ name:'李四', key:Symbol() } let user2={ name:'李四', key:Symbol() } let grade={ [user1.key]:{C:98,E:60}, [user2.key]:{C:99,E:59} } console.log(grade)//{[Symbol(user1)]: { C: 98, E: 60 },[Symbol(user2)]: { C: 99, E: 59 }} console.log(grade[user1.key])//{C:98,E:60} 定义在对象中的Symbol无法访问到 let symbol = Symbol('desc') let user = { name: '李四', age: 18, [symbol]: 123 } for (let key in user) { console.log(key);//name,age } 普通方式无法获取Symbol类型的key\nfor (let key of Object.getOwnPropertySymbols(user)) { console.log(key);//Symbol(desc) } console.log(Object.getOwnPropertySymbols(user));//[Symbol(desc)] Object.getOwnPropertySymbols(user) 是只获取Symbol 类型\nfor (let key of Reflect.ownKeys(user)) { console.log(key);//name, age, Symbol(desc) } console.log(Reflect.ownKeys(user));//[ 'name', 'age', Symbol(desc) ] Reflect.ownKeys(user) 能获取到包括Symbol类型的所有的key\n说明： 后面这两种方法都是把key转为数组，然后用for-of 操作，而对象的遍历用for-in\n举个🌰  对象属性保护\n let pwd = Symbol('This is a Symbol') class User { constructor(name, password) { this.name = name this[pwd] = password } getPWD() { return `${this.name}先生/女士您好,您的密码为：${this[pwd]},请务必牢记!` } } let jqf = new User('jqf', 'wrBh8w7ZDDANDyn') console.log(jqf.getPWD());//jqf先生/女士您好,您的密码为：wrBh8w7ZDDANDyn,请务必牢记! for (let jqfKey in jqf) { console.log(jqfKey + ':' + jqf[jqfKey]);//name:jqf,没有获取到this.pwd } 实例化之后，利用简单粗暴的for-in是无法获取this.pwd这个值的，只好通过内置方法getPWD() 获取！\n","wordCount":"183","inLanguage":"en","datePublished":"2020-08-24T00:00:00Z","dateModified":"2020-08-24T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.fintinger.site/post/2020/08/24/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
-<a href=https://examplesite.com/ accesskey=h title="Home (Alt + H)">
+<a href=https://www.fintinger.site accesskey=h title="Home (Alt + H)">
 <img src=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico alt=logo aria-label=logo height=35>Home</a>
 <span class=logo-switches>
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -69,22 +69,22 @@ let user1={ name:'李四', key:Symbol() } let user2={ name:'李四', key:Symbol(
 </div>
 <ul id=menu>
 <li>
-<a href=https://examplesite.com/categories/ title=Categories>
+<a href=https://www.fintinger.site/categories/ title=Categories>
 <span>Categories</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/tags/ title=Tags>
+<a href=https://www.fintinger.site/tags/ title=Tags>
 <span>Tags</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/search/ title="Search (Alt + /)" accesskey=/>
+<a href=https://www.fintinger.site/search/ title="Search (Alt + /)" accesskey=/>
 <span>Search</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/archives/ title=Archives>
+<a href=https://www.fintinger.site/archives/ title=Archives>
 <span>Archives</span>
 </a>
 </li>
@@ -94,7 +94,7 @@ let user1={ name:'李四', key:Symbol() } let user2={ name:'李四', key:Symbol(
 <main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://examplesite.com/>Home</a>&nbsp;»&nbsp;<a href=https://examplesite.com/post/>Posts</a></div>
+<div class=breadcrumbs><a href=https://www.fintinger.site>Home</a>&nbsp;»&nbsp;<a href=https://www.fintinger.site/post/>Posts</a></div>
 <h1 class=post-title>
 JavaScript基础之Symbol类型
 </h1>
@@ -213,15 +213,15 @@ JavaScript基础之Symbol类型
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://examplesite.com/tags/javascript/>Javascript</a></li>
+<li><a href=https://www.fintinger.site/tags/javascript/>Javascript</a></li>
 </ul>
 <nav class=paginav>
-<a class=prev href=https://examplesite.com/post/2020/08/27/>
+<a class=prev href=https://www.fintinger.site/post/2020/08/27/>
 <span class=title>« Prev Page</span>
 <br>
 <span>JavaScript基础之Set与Weakset</span>
 </a>
-<a class=next href=https://examplesite.com/post/2020/08/25/>
+<a class=next href=https://www.fintinger.site/post/2020/08/25/>
 <span class=title>Next Page »</span>
 <br>
 <span>JavaScript基础之数组深倔</span>
@@ -231,7 +231,7 @@ JavaScript基础之Symbol类型
 </article>
 </main>
 <footer class=footer>
-<span>&copy; 2022 <a href=https://examplesite.com/>Archai's home</a></span>
+<span>&copy; 2022 <a href=https://www.fintinger.site>Archai's home</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

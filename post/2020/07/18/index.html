@@ -15,7 +15,7 @@ v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做
 这样做的好处就是不用再写一个<div>将需要隐藏的元素包裹
    # v-show  说明： 条件切换display属性  # v-for  说明： 在data中定义一个数组arr，然后用v-for=&#34;val in arr&#34;访问到  3.">
 <meta name=author content="Archai">
-<link rel=canonical href=https://examplesite.com/post/2020/07/18/>
+<link rel=canonical href=https://www.fintinger.site/post/2020/07/18/>
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
@@ -23,10 +23,10 @@ v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做
 <link rel=preload href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico as=image>
 <script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=icon type=image/png sizes=32x32 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=apple-touch-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=mask-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=16x16 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=32x32 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=apple-touch-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=mask-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <noscript>
@@ -43,7 +43,7 @@ v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做
 这样做的好处就是不用再写一个<div>将需要隐藏的元素包裹
    # v-show  说明： 条件切换display属性  # v-for  说明： 在data中定义一个数组arr，然后用v-for=&#34;val in arr&#34;访问到  3.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://examplesite.com/post/2020/07/18/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
+<meta property="og:url" content="https://www.fintinger.site/post/2020/07/18/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
 <meta property="article:published_time" content="2020-07-18T00:00:00+00:00">
 <meta property="article:modified_time" content="2020-07-18T00:00:00+00:00"><meta property="og:site_name" content="Archai's home">
 <meta name=twitter:card content="summary_large_image">
@@ -58,15 +58,15 @@ v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做
 因为 v-if 是一个指令，所以必须将它添加到一个元素上。但是如果想切换(隐藏或显示)多个元素呢？此时可以把一个<template>元素当做不可见的包裹元素，并在上面使用 v-if。最终的渲染结果将不包含<template>元素。
 这样做的好处就是不用再写一个<div>将需要隐藏的元素包裹
    # v-show  说明： 条件切换display属性  # v-for  说明： 在data中定义一个数组arr，然后用v-for=&#34;val in arr&#34;访问到  3.">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://examplesite.com/post/"},{"@type":"ListItem","position":2,"name":"vue.js学习心得","item":"https://examplesite.com/post/2020/07/18/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"vue.js学习心得","name":"vue.js学习心得","description":"1. 关于元素显示与隐藏  # v-show=\u0026quot;name\u0026quot;  说明： 如果data中name为true就显示，否则该元素display:none   # v-if=\u0026quot;name\u0026quot;  说明： 如果data中name为true就显示，否则该元素变成一段注释\u0026lt;!----\u0026gt;，就被删掉了!   v-if 是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。\nv-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。\n相比之下，v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。\n一般来说，v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。\n 2. 访问data 　# v-model  说明： 与data中的值绑定，会随着data中的值得改变而改变，如果是input则data中的值会随着input中的值的改变而改变  # v-if   **说明：**用于条件性地渲染一块内容\n 在\u0026lt;template\u0026gt;元素上使用 v-if 条件渲染分组\n因为 v-if 是一个指令，所以必须将它添加到一个元素上。但是如果想切换(隐藏或显示)多个元素呢？此时可以把一个\u0026lt;template\u0026gt;元素当做不可见的包裹元素，并在上面使用 v-if。最终的渲染结果将不包含\u0026lt;template\u0026gt;元素。\n这样做的好处就是不用再写一个\u0026lt;div\u0026gt;将需要隐藏的元素包裹\n   # v-show  说明： 条件切换display属性  # v-for  说明： 在data中定义一个数组arr，然后用v-for=\u0026quot;val in arr\u0026quot;访问到  3.","keywords":["Vue.js"],"articleBody":"1. 关于元素显示与隐藏  # v-show=\"name\"  说明： 如果data中name为true就显示，否则该元素display:none   # v-if=\"name\"  说明： 如果data中name为true就显示，否则该元素变成一段注释，就被删掉了!   v-if 是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。\nv-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。\n相比之下，v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。\n一般来说，v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。\n 2. 访问data 　# v-model  说明： 与data中的值绑定，会随着data中的值得改变而改变，如果是input则data中的值会随着input中的值的改变而改变  # v-if   **说明：**用于条件性地渲染一块内容\n 在元素上使用 v-if 条件渲染分组\n因为 v-if 是一个指令，所以必须将它添加到一个元素上。但是如果想切换(隐藏或显示)多个元素呢？此时可以把一个元素当做不可见的包裹元素，并在上面使用 v-if。最终的渲染结果将不包含元素。\n这样做的好处就是不用再写一个将需要隐藏的元素包裹\n   # v-show  说明： 条件切换display属性  # v-for  说明： 在data中定义一个数组arr，然后用v-for=\"val in arr\"访问到  3. v-on  简写：@ 说明： v-on=\"fn()\"  如果函数fn没有参数，直接写fn即可 如果有参数，带括号传参即可 如果需要一次性绑定多个事件，用对象的形式，比如v-on=\"{mouseenter:entereDiv,mouseleave:leaveDiv}\" 这时候就不能简写了    4.全局组件和局部组件 全局组件 Vue.component('my_web', { template: \"Fintinger'blog✍\", }); new Vue({ el: \"#app\", })  注意为component，单数\n 局部组件 let surf_web = { template: \"Fintinger'blog✍\" } new Vue({ el: \"#app\", components: { surf_web: surf_web } })  注意为components，复数\n Vue.extend( options )   参数：\n {Object} options    用法：\n使用基础 Vue 构造器，创建一个“子类”。参数是一个包含组件选项的对象。\n// 创建构造器 var Profile = Vue.extend({ template: '{{firstName}} {{lastName}} aka {{alias}}\n', data: function () { return { firstName: 'Walter', lastName: 'White', alias: 'Heisenberg' } } }) // 创建 Profile 实例，并挂载到一个元素上。 new Profile().$mount('#mount-point') //result: Walter White aka Heisenberg\n   Vue.extend可以利用$mount将构建的组件挂载到任意一个元素上，不一定是#app，但必须先实例化Profile,\n组件中的data要通过function方法返回出来，而且不能使用箭头函数\n 5.驼峰式的一些坑   在定义组件名的时候，不能用\"驼峰式\"，应该用_或者-\n  定义函数名的时候最好也不用驼峰式，我在使用this.$emit(fn,data)时，使用驼峰式出现错误\n  6.组件间的通信 父子通信(自定义属性传参)   **情形：**假设自定义一个eg-el组件，希望通过这种方式传入username的值给到template使用\n  实现：\n div id=\"app\" eg-el username=\"lsd\"eg-el div template id=\"egEl\" a :href=\"'/user/'+username\"@{{username}}a template //javascript let egEl={ template:\"#egEl\", props:['username'],//这里使用到prop } new Vue({ el:\"#app\", components:{ \"eg-el\": egEl } })   子父通信(一个组间中包含另一个组件)   情形： 假定有两个组件和，而中有组件，且子组件事件的触发需要引起父组件中的某些变化！\n  实现：\n div id=\"app\" my-balancemy-balance div  template id=\"show_balance\" button @click=\"myClick\"我的余额button template  template id=\"my_balance\" div show-balance @my_fn=\"toShowMyBalance\"show-balance p v-if=\"ToShow\"您的余额为9800p div template  这里的@my_fn是子组件中通过this.$emit出来的方法\n /*注册父组件*/ Vue.component(\"my-balance\",{ template: \"#my_balance\", methods:{ toShowMyBalance:function (data) { this.ToShow=true console.log(data);//是子组件传入的数据  } }, data:function () { return{ ToShow:false } } }) /*注册子组件*/ Vue.component(\"show-balance\",{ template: \"#show_balance\", methods: { myClick: function () { this.$emit(\"my_fn\", {a: 1, b: 2})//$emit触发当前实例上的事件。附加参数都会传给监听器回调。  } } }) new Vue({ el: \"#app\", })   平行组件通信(任意两个不相干的组件)   情形： 假定有两个平行组件，需要一个组件能随着另一个组件的变化产生相应的变化！\n  实现：[思路]首先定义全局Vue实例let vm=new Vue(),通过vm.$emit把fn和data传入，另一组件在mounted的时候用vm.$on接收，其中数据用回调callback接收（不严谨，后面有解释）！\ndiv id=\"app\" origin-inputorigin-input deal-inputdeal-input div template id=\"originInp\" divh3originInput:h3input type=\"text\" v-model=\"oText\" @keyup=\"o_input\"div template template id=\"dealInp\" div class=\"dealInp\"h3dealInp:h3{{dText}}div template /** *输入，在中也显示出来 */ let vm=new Vue() Vue.component(\"origin-input\",{ template:\"#originInp\", data:function () { return{ oText:\"\" } }, methods:{ o_input:function () { vm.$emit(\"d_input\",this.oText)//类似trigger,出入的数据为this.oText  } } }) Vue.component(\"deal-input\",{ template: \"#dealInp\", data:function () { return{ dText:\"\" } }, mounted:function () { vm.$on(\"d_input\",(data)=this.dText=data)//监听d_input事件的触发  } }) let app=new Vue({ el:\"#app\", })  关于 vm.$on\n vm.$on会监听当前实例上的自定义事件。事件可以由 vm.$emit 触发。回调函数会接收所有传入事件触发函数的额外参数。\n因此本例中的js部分从后往前阅读，则先是用 vm.$on监听自定义事件d_input的触发并提供数据的处理回调，然后在上面用vm.$emit触发并传入数据\n   7.directive自定义指令   说明： 定义v-×××这种指令\n  用法：\nVue.directive(name,callback(el,biding))\r name：指令的名称，并不用指定为v-×××的形式 el：调用的元素 binding：binding.value为v-×××后面赋的值    详细用法： GO\n  8.mixins混合   说明： 是一个类似于封装函数的东西，将组建中的data，methods等封装起来公用\n  用法：\n//定义一个base公用对象，其中的data，methods可以复用，即使不用也无妨，mixins会挑有用的使用 let base={ data:function () { return{ visible:false } }, methods:{ show:function () { this.visible=true }, hide:function () { this.visible=false }, toggle:function () { this.visible=!this.visible } } } Vue.component(\"show-details\",{ template:\"#hove_details\", mixins:[base] }) Vue.component(\"more-details\",{ template:\"#more_details\", mixins:[base] }) new Vue({ el:\"#app\", })   9.slot插槽  说明： 插槽的引入会让同一个组件的内容具有可更改行 用法： 在template中用Title指定插槽，在#app中利用Modified Title 使用插槽，其中slot中的内容为默认值，而div中的为修改值，可以不指定 具体用法： Go   skrskr~\n","wordCount":"390","inLanguage":"en","datePublished":"2020-07-18T00:00:00Z","dateModified":"2020-07-18T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://examplesite.com/post/2020/07/18/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://www.fintinger.site/post/"},{"@type":"ListItem","position":3,"name":"vue.js学习心得","item":"https://www.fintinger.site/post/2020/07/18/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"vue.js学习心得","name":"vue.js学习心得","description":"1. 关于元素显示与隐藏  # v-show=\u0026quot;name\u0026quot;  说明： 如果data中name为true就显示，否则该元素display:none   # v-if=\u0026quot;name\u0026quot;  说明： 如果data中name为true就显示，否则该元素变成一段注释\u0026lt;!----\u0026gt;，就被删掉了!   v-if 是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。\nv-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。\n相比之下，v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。\n一般来说，v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。\n 2. 访问data 　# v-model  说明： 与data中的值绑定，会随着data中的值得改变而改变，如果是input则data中的值会随着input中的值的改变而改变  # v-if   **说明：**用于条件性地渲染一块内容\n 在\u0026lt;template\u0026gt;元素上使用 v-if 条件渲染分组\n因为 v-if 是一个指令，所以必须将它添加到一个元素上。但是如果想切换(隐藏或显示)多个元素呢？此时可以把一个\u0026lt;template\u0026gt;元素当做不可见的包裹元素，并在上面使用 v-if。最终的渲染结果将不包含\u0026lt;template\u0026gt;元素。\n这样做的好处就是不用再写一个\u0026lt;div\u0026gt;将需要隐藏的元素包裹\n   # v-show  说明： 条件切换display属性  # v-for  说明： 在data中定义一个数组arr，然后用v-for=\u0026quot;val in arr\u0026quot;访问到  3.","keywords":["Vue.js"],"articleBody":"1. 关于元素显示与隐藏  # v-show=\"name\"  说明： 如果data中name为true就显示，否则该元素display:none   # v-if=\"name\"  说明： 如果data中name为true就显示，否则该元素变成一段注释，就被删掉了!   v-if 是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。\nv-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。\n相比之下，v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。\n一般来说，v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。\n 2. 访问data 　# v-model  说明： 与data中的值绑定，会随着data中的值得改变而改变，如果是input则data中的值会随着input中的值的改变而改变  # v-if   **说明：**用于条件性地渲染一块内容\n 在元素上使用 v-if 条件渲染分组\n因为 v-if 是一个指令，所以必须将它添加到一个元素上。但是如果想切换(隐藏或显示)多个元素呢？此时可以把一个元素当做不可见的包裹元素，并在上面使用 v-if。最终的渲染结果将不包含元素。\n这样做的好处就是不用再写一个将需要隐藏的元素包裹\n   # v-show  说明： 条件切换display属性  # v-for  说明： 在data中定义一个数组arr，然后用v-for=\"val in arr\"访问到  3. v-on  简写：@ 说明： v-on=\"fn()\"  如果函数fn没有参数，直接写fn即可 如果有参数，带括号传参即可 如果需要一次性绑定多个事件，用对象的形式，比如v-on=\"{mouseenter:entereDiv,mouseleave:leaveDiv}\" 这时候就不能简写了    4.全局组件和局部组件 全局组件 Vue.component('my_web', { template: \"Fintinger'blog✍\", }); new Vue({ el: \"#app\", })  注意为component，单数\n 局部组件 let surf_web = { template: \"Fintinger'blog✍\" } new Vue({ el: \"#app\", components: { surf_web: surf_web } })  注意为components，复数\n Vue.extend( options )   参数：\n {Object} options    用法：\n使用基础 Vue 构造器，创建一个“子类”。参数是一个包含组件选项的对象。\n// 创建构造器 var Profile = Vue.extend({ template: '{{firstName}} {{lastName}} aka {{alias}}\n', data: function () { return { firstName: 'Walter', lastName: 'White', alias: 'Heisenberg' } } }) // 创建 Profile 实例，并挂载到一个元素上。 new Profile().$mount('#mount-point') //result: Walter White aka Heisenberg\n   Vue.extend可以利用$mount将构建的组件挂载到任意一个元素上，不一定是#app，但必须先实例化Profile,\n组件中的data要通过function方法返回出来，而且不能使用箭头函数\n 5.驼峰式的一些坑   在定义组件名的时候，不能用\"驼峰式\"，应该用_或者-\n  定义函数名的时候最好也不用驼峰式，我在使用this.$emit(fn,data)时，使用驼峰式出现错误\n  6.组件间的通信 父子通信(自定义属性传参)   **情形：**假设自定义一个eg-el组件，希望通过这种方式传入username的值给到template使用\n  实现：\n div id=\"app\" eg-el username=\"lsd\"eg-el div template id=\"egEl\" a :href=\"'/user/'+username\"@{{username}}a template //javascript let egEl={ template:\"#egEl\", props:['username'],//这里使用到prop } new Vue({ el:\"#app\", components:{ \"eg-el\": egEl } })   子父通信(一个组间中包含另一个组件)   情形： 假定有两个组件和，而中有组件，且子组件事件的触发需要引起父组件中的某些变化！\n  实现：\n div id=\"app\" my-balancemy-balance div  template id=\"show_balance\" button @click=\"myClick\"我的余额button template  template id=\"my_balance\" div show-balance @my_fn=\"toShowMyBalance\"show-balance p v-if=\"ToShow\"您的余额为9800p div template  这里的@my_fn是子组件中通过this.$emit出来的方法\n /*注册父组件*/ Vue.component(\"my-balance\",{ template: \"#my_balance\", methods:{ toShowMyBalance:function (data) { this.ToShow=true console.log(data);//是子组件传入的数据  } }, data:function () { return{ ToShow:false } } }) /*注册子组件*/ Vue.component(\"show-balance\",{ template: \"#show_balance\", methods: { myClick: function () { this.$emit(\"my_fn\", {a: 1, b: 2})//$emit触发当前实例上的事件。附加参数都会传给监听器回调。  } } }) new Vue({ el: \"#app\", })   平行组件通信(任意两个不相干的组件)   情形： 假定有两个平行组件，需要一个组件能随着另一个组件的变化产生相应的变化！\n  实现：[思路]首先定义全局Vue实例let vm=new Vue(),通过vm.$emit把fn和data传入，另一组件在mounted的时候用vm.$on接收，其中数据用回调callback接收（不严谨，后面有解释）！\ndiv id=\"app\" origin-inputorigin-input deal-inputdeal-input div template id=\"originInp\" divh3originInput:h3input type=\"text\" v-model=\"oText\" @keyup=\"o_input\"div template template id=\"dealInp\" div class=\"dealInp\"h3dealInp:h3{{dText}}div template /** *输入，在中也显示出来 */ let vm=new Vue() Vue.component(\"origin-input\",{ template:\"#originInp\", data:function () { return{ oText:\"\" } }, methods:{ o_input:function () { vm.$emit(\"d_input\",this.oText)//类似trigger,出入的数据为this.oText  } } }) Vue.component(\"deal-input\",{ template: \"#dealInp\", data:function () { return{ dText:\"\" } }, mounted:function () { vm.$on(\"d_input\",(data)=this.dText=data)//监听d_input事件的触发  } }) let app=new Vue({ el:\"#app\", })  关于 vm.$on\n vm.$on会监听当前实例上的自定义事件。事件可以由 vm.$emit 触发。回调函数会接收所有传入事件触发函数的额外参数。\n因此本例中的js部分从后往前阅读，则先是用 vm.$on监听自定义事件d_input的触发并提供数据的处理回调，然后在上面用vm.$emit触发并传入数据\n   7.directive自定义指令   说明： 定义v-×××这种指令\n  用法：\nVue.directive(name,callback(el,biding))\r name：指令的名称，并不用指定为v-×××的形式 el：调用的元素 binding：binding.value为v-×××后面赋的值    详细用法： GO\n  8.mixins混合   说明： 是一个类似于封装函数的东西，将组建中的data，methods等封装起来公用\n  用法：\n//定义一个base公用对象，其中的data，methods可以复用，即使不用也无妨，mixins会挑有用的使用 let base={ data:function () { return{ visible:false } }, methods:{ show:function () { this.visible=true }, hide:function () { this.visible=false }, toggle:function () { this.visible=!this.visible } } } Vue.component(\"show-details\",{ template:\"#hove_details\", mixins:[base] }) Vue.component(\"more-details\",{ template:\"#more_details\", mixins:[base] }) new Vue({ el:\"#app\", })   9.slot插槽  说明： 插槽的引入会让同一个组件的内容具有可更改行 用法： 在template中用Title指定插槽，在#app中利用Modified Title 使用插槽，其中slot中的内容为默认值，而div中的为修改值，可以不指定 具体用法： Go   skrskr~\n","wordCount":"390","inLanguage":"en","datePublished":"2020-07-18T00:00:00Z","dateModified":"2020-07-18T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.fintinger.site/post/2020/07/18/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
-<a href=https://examplesite.com/ accesskey=h title="Home (Alt + H)">
+<a href=https://www.fintinger.site accesskey=h title="Home (Alt + H)">
 <img src=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico alt=logo aria-label=logo height=35>Home</a>
 <span class=logo-switches>
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -75,22 +75,22 @@ v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做
 </div>
 <ul id=menu>
 <li>
-<a href=https://examplesite.com/categories/ title=Categories>
+<a href=https://www.fintinger.site/categories/ title=Categories>
 <span>Categories</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/tags/ title=Tags>
+<a href=https://www.fintinger.site/tags/ title=Tags>
 <span>Tags</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/search/ title="Search (Alt + /)" accesskey=/>
+<a href=https://www.fintinger.site/search/ title="Search (Alt + /)" accesskey=/>
 <span>Search</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/archives/ title=Archives>
+<a href=https://www.fintinger.site/archives/ title=Archives>
 <span>Archives</span>
 </a>
 </li>
@@ -100,7 +100,7 @@ v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做
 <main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://examplesite.com/>Home</a>&nbsp;»&nbsp;<a href=https://examplesite.com/post/>Posts</a></div>
+<div class=breadcrumbs><a href=https://www.fintinger.site>Home</a>&nbsp;»&nbsp;<a href=https://www.fintinger.site/post/>Posts</a></div>
 <h1 class=post-title>
 vue.js学习心得
 </h1>
@@ -483,15 +483,15 @@ vue.js学习心得
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://examplesite.com/tags/vue.js/>Vue.js</a></li>
+<li><a href=https://www.fintinger.site/tags/vue.js/>Vue.js</a></li>
 </ul>
 <nav class=paginav>
-<a class=prev href=https://examplesite.com/post/2020/08/06/>
+<a class=prev href=https://www.fintinger.site/post/2020/08/06/>
 <span class=title>« Prev Page</span>
 <br>
 <span>Ajax基础及Express框架基本使用</span>
 </a>
-<a class=next href=https://examplesite.com/post/2020/07/09/>
+<a class=next href=https://www.fintinger.site/post/2020/07/09/>
 <span class=title>Next Page »</span>
 <br>
 <span>获取文件扩展名</span>
@@ -501,7 +501,7 @@ vue.js学习心得
 </article>
 </main>
 <footer class=footer>
-<span>&copy; 2022 <a href=https://examplesite.com/>Archai's home</a></span>
+<span>&copy; 2022 <a href=https://www.fintinger.site>Archai's home</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>实用教程 on Archai&#39;s home</title>
-    <link>https://examplesite.com/categories/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/</link>
+    <link>https://www.fintinger.site/categories/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/</link>
     <description>Recent content in 实用教程 on Archai&#39;s home</description>
     <image>
       <url>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</url>
       <link>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 19 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://examplesite.com/categories/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/categories/%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>通过U盘安装Windows系统</title>
-      <link>https://examplesite.com/post/2021/09/19/</link>
+      <link>https://www.fintinger.site/post/2021/09/19/</link>
       <pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2021/09/19/</guid>
+      <guid>https://www.fintinger.site/post/2021/09/19/</guid>
       <description>创建U盘介质  有至少 8GB 空间的空白 U 盘，若不是空白创建介质时会自动清空。
  🐾官方工具: https://go.microsoft.com/fwlink/?LinkId=691209
  直接下载按照提示操作就行了，不过仅限win10

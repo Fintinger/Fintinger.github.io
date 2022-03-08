@@ -12,7 +12,7 @@
 BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历过程中会出现重复访问的问题，故可构造visited数组，用来标记已访问过的数组。此外，还应针对非连通图做额外的判断，遍历完一个连通分量（极大连通子图）后，遍历查找visited数组中是否还存在未遍历的，如果有即为另一连通分量，继续调用BFS即可。
  void BFS(Graph G,int v); bool visited[MAX_VERTEX_NUM]; SqQueue Q;//辅助队列 void BFSTraverse(Graph G){ //初始化visited数组  for (int i = 0; i < G.vexnum; ++i) {//使下标从1开始  visited[i]=false; } //对非连通图的处理  for (int v = 0; v < G.vexnum; ++v) { if (!visited[v]) BFS(G,v); } } //从顶点v出发广度优先遍历图G void BFS(Graph G,int v){ visit(v); visited[v]=true; EnQueue(Q,v);//顶点v入队列Q  while(!isEmpty(Q)){ DeQueue(Q,v);//顶点v出队列Q  for (w=FirstNeighbor(G,v);w>=0;w=NextNeighbor(G,v,w))//处理v的所有邻接点  if (!">
 <meta name=author content="Archai">
-<link rel=canonical href=https://examplesite.com/post/2021/06/02/01_traverse/>
+<link rel=canonical href=https://www.fintinger.site/post/2021/06/02/01_traverse/>
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
@@ -20,10 +20,10 @@ BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历
 <link rel=preload href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico as=image>
 <script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=icon type=image/png sizes=32x32 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=apple-touch-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=mask-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=16x16 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=32x32 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=apple-touch-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=mask-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <noscript>
@@ -37,7 +37,7 @@ BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历
 BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历过程中会出现重复访问的问题，故可构造visited数组，用来标记已访问过的数组。此外，还应针对非连通图做额外的判断，遍历完一个连通分量（极大连通子图）后，遍历查找visited数组中是否还存在未遍历的，如果有即为另一连通分量，继续调用BFS即可。
  void BFS(Graph G,int v); bool visited[MAX_VERTEX_NUM]; SqQueue Q;//辅助队列 void BFSTraverse(Graph G){ //初始化visited数组  for (int i = 0; i < G.vexnum; ++i) {//使下标从1开始  visited[i]=false; } //对非连通图的处理  for (int v = 0; v < G.vexnum; ++v) { if (!visited[v]) BFS(G,v); } } //从顶点v出发广度优先遍历图G void BFS(Graph G,int v){ visit(v); visited[v]=true; EnQueue(Q,v);//顶点v入队列Q  while(!isEmpty(Q)){ DeQueue(Q,v);//顶点v出队列Q  for (w=FirstNeighbor(G,v);w>=0;w=NextNeighbor(G,v,w))//处理v的所有邻接点  if (!">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://examplesite.com/post/2021/06/02/01_traverse/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
+<meta property="og:url" content="https://www.fintinger.site/post/2021/06/02/01_traverse/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
 <meta property="article:published_time" content="2021-06-03T00:00:00+00:00">
 <meta property="article:modified_time" content="2021-06-03T00:00:00+00:00"><meta property="og:site_name" content="Archai's home">
 <meta name=twitter:card content="summary_large_image">
@@ -49,15 +49,15 @@ BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历
 若采用不同的储存结构，可能会得到不同的遍历结果（这个差异主要来自寻找邻接点的过程），对于邻接矩阵存储的图，由于邻接矩阵是唯一的，所以BFS序列也是唯一的；同理，邻接表存储的图BFS序列不唯一。
 BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历过程中会出现重复访问的问题，故可构造visited数组，用来标记已访问过的数组。此外，还应针对非连通图做额外的判断，遍历完一个连通分量（极大连通子图）后，遍历查找visited数组中是否还存在未遍历的，如果有即为另一连通分量，继续调用BFS即可。
  void BFS(Graph G,int v); bool visited[MAX_VERTEX_NUM]; SqQueue Q;//辅助队列 void BFSTraverse(Graph G){ //初始化visited数组  for (int i = 0; i < G.vexnum; ++i) {//使下标从1开始  visited[i]=false; } //对非连通图的处理  for (int v = 0; v < G.vexnum; ++v) { if (!visited[v]) BFS(G,v); } } //从顶点v出发广度优先遍历图G void BFS(Graph G,int v){ visit(v); visited[v]=true; EnQueue(Q,v);//顶点v入队列Q  while(!isEmpty(Q)){ DeQueue(Q,v);//顶点v出队列Q  for (w=FirstNeighbor(G,v);w>=0;w=NextNeighbor(G,v,w))//处理v的所有邻接点  if (!">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://examplesite.com/post/"},{"@type":"ListItem","position":2,"name":"图的遍历","item":"https://examplesite.com/post/2021/06/02/01_traverse/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"图的遍历","name":"图的遍历","description":"广度优先遍历（BFS）  BFS(Breadth-First-Search)，参考对树的层序遍历\n 对上面的图从①出发进行BFS得到序列：\n①②⑤ ⑥ ③⑦ ④⑧\n若采用不同的储存结构，可能会得到不同的遍历结果（这个差异主要来自寻找邻接点的过程），对于邻接矩阵存储的图，由于邻接矩阵是唯一的，所以BFS序列也是唯一的；同理，邻接表存储的图BFS序列不唯一。\nBFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历过程中会出现重复访问的问题，故可构造visited数组，用来标记已访问过的数组。此外，还应针对非连通图做额外的判断，遍历完一个连通分量（极大连通子图）后，遍历查找visited数组中是否还存在未遍历的，如果有即为另一连通分量，继续调用BFS即可。\n void BFS(Graph G,int v); bool visited[MAX_VERTEX_NUM]; SqQueue Q;//辅助队列 void BFSTraverse(Graph G){ //初始化visited数组  for (int i = 0; i \u0026lt; G.vexnum; ++i) {//使下标从1开始  visited[i]=false; } //对非连通图的处理  for (int v = 0; v \u0026lt; G.vexnum; ++v) { if (!visited[v]) BFS(G,v); } } //从顶点v出发广度优先遍历图G void BFS(Graph G,int v){ visit(v); visited[v]=true; EnQueue(Q,v);//顶点v入队列Q  while(!isEmpty(Q)){ DeQueue(Q,v);//顶点v出队列Q  for (w=FirstNeighbor(G,v);w\u0026gt;=0;w=NextNeighbor(G,v,w))//处理v的所有邻接点  if (!","keywords":["数据结构","BFS","DFS"],"articleBody":"广度优先遍历（BFS）  BFS(Breadth-First-Search)，参考对树的层序遍历\n 对上面的图从①出发进行BFS得到序列：\n①②⑤ ⑥ ③⑦ ④⑧\n若采用不同的储存结构，可能会得到不同的遍历结果（这个差异主要来自寻找邻接点的过程），对于邻接矩阵存储的图，由于邻接矩阵是唯一的，所以BFS序列也是唯一的；同理，邻接表存储的图BFS序列不唯一。\nBFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历过程中会出现重复访问的问题，故可构造visited数组，用来标记已访问过的数组。此外，还应针对非连通图做额外的判断，遍历完一个连通分量（极大连通子图）后，遍历查找visited数组中是否还存在未遍历的，如果有即为另一连通分量，继续调用BFS即可。\n void BFS(Graph G,int v); bool visited[MAX_VERTEX_NUM]; SqQueue Q;//辅助队列 void BFSTraverse(Graph G){ //初始化visited数组  for (int i = 0; i  G.vexnum; ++i) {//使下标从1开始  visited[i]=false; } //对非连通图的处理  for (int v = 0; v  G.vexnum; ++v) { if (!visited[v]) BFS(G,v); } } //从顶点v出发广度优先遍历图G void BFS(Graph G,int v){ visit(v); visited[v]=true; EnQueue(Q,v);//顶点v入队列Q  while(!isEmpty(Q)){ DeQueue(Q,v);//顶点v出队列Q  for (w=FirstNeighbor(G,v);w=0;w=NextNeighbor(G,v,w))//处理v的所有邻接点  if (!visited[w]) { visit(w); visited[w]=true; EnQueue(Q,w); }//if  }//while } 需要借助辅助队列存储v的所有邻接结点\n复杂度 （一）空间 空间复杂度主要来自辅助队列，在访问v的邻接结点时会入队，因此最坏的情况下\n复杂度为：$O(|V|)$\n（二）时间 对时间复杂度的分析，不必纠结于算法中的具体循环，只需宏观地分析：①访问|V|个结点需要的时间复杂度？②访问各个结点的邻接结点需要的时间？\n    邻接矩阵型 邻接表型     ① $O(V)$ $O(V)$   ② $O(V^2)$ $O(2E)=O(E)$   时间复杂度 $O(V^2)$ $O(V+E)$    时间复杂度=访问各结点所需时间+探索各条边所需时间\n广度优先生成树  简而言之，就是 $\\text{连通图}\\overset{BFS}{\\rightarrow}\\text{树}$\n 即 仅保留每个节点第一次被访问的那条通路\n 此外还有广度优先生产森林，即 $\\text{非连通图}\\overset{BFS}{\\rightarrow}\\text{森林}$\n 深度优先遍历（DFS）  BFS(Depth-First-Search)，参考对树的先序遍历\n 对上面的图从②出发进行DFS得到序列：\n② ① ⑤ ⑥ ③ ④⑦ ⑧ 同样的，邻接矩阵存储得到序列唯一，邻接表则不唯一。\nDFS算法 void DFS(Graph G,int v); bool visited[MAX_VERTEX_NUM]; void DFSTraverse(Graph G){ //初始化visited数组  for (int i = 0; i  G.vexnum; ++i) visited[i]=false; //对非连通图的处理  for (int v = 0; v  G.vexnum; ++v) if (!visited[v]) DFS(G,v); } //从顶点v出发广度优先遍历图G void DFS(Graph G,int v){ visit(v); visited[v]=true; for (w=FirstNeighbor(G,v);w=0;w=FirstNeighbor(G,v))//始终遍历v的第一个邻接点，往“深”处走  if (!visited[w]) { DFS(G,w); }//if } 复杂度 （一）空间 主要来自函数调用栈，因此最坏的情况与最好的情况分别是\n因此，空间复杂度为$O(|V|)$\n（二）时间     邻接矩阵型 邻接表型     ① $O(V)$ $O(V)$   ② $O(V^2)$ $O(E)$   时间复杂度 $O(V^2)$ $O(V+E)$    深度优先生成树 同BFS\n思考：图的遍历与图的连通性 根据上述算法可知，对于无向图，调用BFS/DFS的次数与连通分量的数量有关，即 $\\text{BFS|DFS调用次数}\\propto \\text{连通分量数}$ 对于有向图：\n1.若从①出发，需要调用几次DFS?答：4次。2.若从⑦出发，需要调用几次DFS?答：1次。因此，有\n   图的分类 调用BFS|DFS次数     无向图 连通：1次非连通：连通分量数   有向图 普通有向图：具体分析（与出发点的选择有关）强连通图：1次    🖋\n","wordCount":"189","inLanguage":"en","datePublished":"2021-06-03T00:00:00Z","dateModified":"2021-06-03T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://examplesite.com/post/2021/06/02/01_traverse/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://www.fintinger.site/post/"},{"@type":"ListItem","position":3,"name":"图的遍历","item":"https://www.fintinger.site/post/2021/06/02/01_traverse/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"图的遍历","name":"图的遍历","description":"广度优先遍历（BFS）  BFS(Breadth-First-Search)，参考对树的层序遍历\n 对上面的图从①出发进行BFS得到序列：\n①②⑤ ⑥ ③⑦ ④⑧\n若采用不同的储存结构，可能会得到不同的遍历结果（这个差异主要来自寻找邻接点的过程），对于邻接矩阵存储的图，由于邻接矩阵是唯一的，所以BFS序列也是唯一的；同理，邻接表存储的图BFS序列不唯一。\nBFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历过程中会出现重复访问的问题，故可构造visited数组，用来标记已访问过的数组。此外，还应针对非连通图做额外的判断，遍历完一个连通分量（极大连通子图）后，遍历查找visited数组中是否还存在未遍历的，如果有即为另一连通分量，继续调用BFS即可。\n void BFS(Graph G,int v); bool visited[MAX_VERTEX_NUM]; SqQueue Q;//辅助队列 void BFSTraverse(Graph G){ //初始化visited数组  for (int i = 0; i \u0026lt; G.vexnum; ++i) {//使下标从1开始  visited[i]=false; } //对非连通图的处理  for (int v = 0; v \u0026lt; G.vexnum; ++v) { if (!visited[v]) BFS(G,v); } } //从顶点v出发广度优先遍历图G void BFS(Graph G,int v){ visit(v); visited[v]=true; EnQueue(Q,v);//顶点v入队列Q  while(!isEmpty(Q)){ DeQueue(Q,v);//顶点v出队列Q  for (w=FirstNeighbor(G,v);w\u0026gt;=0;w=NextNeighbor(G,v,w))//处理v的所有邻接点  if (!","keywords":["数据结构","BFS","DFS"],"articleBody":"广度优先遍历（BFS）  BFS(Breadth-First-Search)，参考对树的层序遍历\n 对上面的图从①出发进行BFS得到序列：\n①②⑤ ⑥ ③⑦ ④⑧\n若采用不同的储存结构，可能会得到不同的遍历结果（这个差异主要来自寻找邻接点的过程），对于邻接矩阵存储的图，由于邻接矩阵是唯一的，所以BFS序列也是唯一的；同理，邻接表存储的图BFS序列不唯一。\nBFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历过程中会出现重复访问的问题，故可构造visited数组，用来标记已访问过的数组。此外，还应针对非连通图做额外的判断，遍历完一个连通分量（极大连通子图）后，遍历查找visited数组中是否还存在未遍历的，如果有即为另一连通分量，继续调用BFS即可。\n void BFS(Graph G,int v); bool visited[MAX_VERTEX_NUM]; SqQueue Q;//辅助队列 void BFSTraverse(Graph G){ //初始化visited数组  for (int i = 0; i  G.vexnum; ++i) {//使下标从1开始  visited[i]=false; } //对非连通图的处理  for (int v = 0; v  G.vexnum; ++v) { if (!visited[v]) BFS(G,v); } } //从顶点v出发广度优先遍历图G void BFS(Graph G,int v){ visit(v); visited[v]=true; EnQueue(Q,v);//顶点v入队列Q  while(!isEmpty(Q)){ DeQueue(Q,v);//顶点v出队列Q  for (w=FirstNeighbor(G,v);w=0;w=NextNeighbor(G,v,w))//处理v的所有邻接点  if (!visited[w]) { visit(w); visited[w]=true; EnQueue(Q,w); }//if  }//while } 需要借助辅助队列存储v的所有邻接结点\n复杂度 （一）空间 空间复杂度主要来自辅助队列，在访问v的邻接结点时会入队，因此最坏的情况下\n复杂度为：$O(|V|)$\n（二）时间 对时间复杂度的分析，不必纠结于算法中的具体循环，只需宏观地分析：①访问|V|个结点需要的时间复杂度？②访问各个结点的邻接结点需要的时间？\n    邻接矩阵型 邻接表型     ① $O(V)$ $O(V)$   ② $O(V^2)$ $O(2E)=O(E)$   时间复杂度 $O(V^2)$ $O(V+E)$    时间复杂度=访问各结点所需时间+探索各条边所需时间\n广度优先生成树  简而言之，就是 $\\text{连通图}\\overset{BFS}{\\rightarrow}\\text{树}$\n 即 仅保留每个节点第一次被访问的那条通路\n 此外还有广度优先生产森林，即 $\\text{非连通图}\\overset{BFS}{\\rightarrow}\\text{森林}$\n 深度优先遍历（DFS）  BFS(Depth-First-Search)，参考对树的先序遍历\n 对上面的图从②出发进行DFS得到序列：\n② ① ⑤ ⑥ ③ ④⑦ ⑧ 同样的，邻接矩阵存储得到序列唯一，邻接表则不唯一。\nDFS算法 void DFS(Graph G,int v); bool visited[MAX_VERTEX_NUM]; void DFSTraverse(Graph G){ //初始化visited数组  for (int i = 0; i  G.vexnum; ++i) visited[i]=false; //对非连通图的处理  for (int v = 0; v  G.vexnum; ++v) if (!visited[v]) DFS(G,v); } //从顶点v出发广度优先遍历图G void DFS(Graph G,int v){ visit(v); visited[v]=true; for (w=FirstNeighbor(G,v);w=0;w=FirstNeighbor(G,v))//始终遍历v的第一个邻接点，往“深”处走  if (!visited[w]) { DFS(G,w); }//if } 复杂度 （一）空间 主要来自函数调用栈，因此最坏的情况与最好的情况分别是\n因此，空间复杂度为$O(|V|)$\n（二）时间     邻接矩阵型 邻接表型     ① $O(V)$ $O(V)$   ② $O(V^2)$ $O(E)$   时间复杂度 $O(V^2)$ $O(V+E)$    深度优先生成树 同BFS\n思考：图的遍历与图的连通性 根据上述算法可知，对于无向图，调用BFS/DFS的次数与连通分量的数量有关，即 $\\text{BFS|DFS调用次数}\\propto \\text{连通分量数}$ 对于有向图：\n1.若从①出发，需要调用几次DFS?答：4次。2.若从⑦出发，需要调用几次DFS?答：1次。因此，有\n   图的分类 调用BFS|DFS次数     无向图 连通：1次非连通：连通分量数   有向图 普通有向图：具体分析（与出发点的选择有关）强连通图：1次    🖋\n","wordCount":"189","inLanguage":"en","datePublished":"2021-06-03T00:00:00Z","dateModified":"2021-06-03T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.fintinger.site/post/2021/06/02/01_traverse/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
-<a href=https://examplesite.com/ accesskey=h title="Home (Alt + H)">
+<a href=https://www.fintinger.site accesskey=h title="Home (Alt + H)">
 <img src=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico alt=logo aria-label=logo height=35>Home</a>
 <span class=logo-switches>
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -66,22 +66,22 @@ BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历
 </div>
 <ul id=menu>
 <li>
-<a href=https://examplesite.com/categories/ title=Categories>
+<a href=https://www.fintinger.site/categories/ title=Categories>
 <span>Categories</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/tags/ title=Tags>
+<a href=https://www.fintinger.site/tags/ title=Tags>
 <span>Tags</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/search/ title="Search (Alt + /)" accesskey=/>
+<a href=https://www.fintinger.site/search/ title="Search (Alt + /)" accesskey=/>
 <span>Search</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/archives/ title=Archives>
+<a href=https://www.fintinger.site/archives/ title=Archives>
 <span>Archives</span>
 </a>
 </li>
@@ -91,7 +91,7 @@ BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历
 <main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://examplesite.com/>Home</a>&nbsp;»&nbsp;<a href=https://examplesite.com/post/>Posts</a></div>
+<div class=breadcrumbs><a href=https://www.fintinger.site>Home</a>&nbsp;»&nbsp;<a href=https://www.fintinger.site/post/>Posts</a></div>
 <h1 class=post-title>
 图的遍历
 </h1>
@@ -331,17 +331,17 @@ SqQueue Q;<span style=color:#75715e>//辅助队列
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://examplesite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/>数据结构</a></li>
-<li><a href=https://examplesite.com/tags/bfs/>BFS</a></li>
-<li><a href=https://examplesite.com/tags/dfs/>DFS</a></li>
+<li><a href=https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/>数据结构</a></li>
+<li><a href=https://www.fintinger.site/tags/bfs/>BFS</a></li>
+<li><a href=https://www.fintinger.site/tags/dfs/>DFS</a></li>
 </ul>
 <nav class=paginav>
-<a class=prev href=https://examplesite.com/post/2021/06/02/02_application/>
+<a class=prev href=https://www.fintinger.site/post/2021/06/02/02_application/>
 <span class=title>« Prev Page</span>
 <br>
 <span>图的应用</span>
 </a>
-<a class=next href=https://examplesite.com/post/2021/06/02/00_storage/>
+<a class=next href=https://www.fintinger.site/post/2021/06/02/00_storage/>
 <span class=title>Next Page »</span>
 <br>
 <span>图的存储</span>
@@ -351,7 +351,7 @@ SqQueue Q;<span style=color:#75715e>//辅助队列
 </article>
 </main>
 <footer class=footer>
-<span>&copy; 2022 <a href=https://examplesite.com/>Archai's home</a></span>
+<span>&copy; 2022 <a href=https://www.fintinger.site>Archai's home</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

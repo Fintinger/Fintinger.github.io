@@ -21,7 +21,7 @@ T(n) =O(1) × (n+1) =O(n)
  分而治之(Divide and conquer)  什么是“分而治之”？
 为求解一个大问题，可以将其划分为若干子问题，规模大体相当（可理解为将大问题等分），分别求解子问题，由子问题的解得原问题的解">
 <meta name=author content="Archai">
-<link rel=canonical href=https://examplesite.com/post/2020/11/15/>
+<link rel=canonical href=https://www.fintinger.site/post/2020/11/15/>
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
@@ -29,10 +29,10 @@ T(n) =O(1) × (n+1) =O(n)
 <link rel=preload href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico as=image>
 <script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=icon type=image/png sizes=32x32 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=apple-touch-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
-<link rel=mask-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=16x16 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=32x32 href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=apple-touch-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
+<link rel=mask-icon href=https://www.fintinger.site/%3Clink%20/%20abs%20url%3E>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <noscript>
@@ -55,7 +55,7 @@ T(n) =O(1) × (n+1) =O(n)
  分而治之(Divide and conquer)  什么是“分而治之”？
 为求解一个大问题，可以将其划分为若干子问题，规模大体相当（可理解为将大问题等分），分别求解子问题，由子问题的解得原问题的解">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://examplesite.com/post/2020/11/15/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
+<meta property="og:url" content="https://www.fintinger.site/post/2020/11/15/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
 <meta property="article:published_time" content="2020-11-15T00:00:00+00:00">
 <meta property="article:modified_time" content="2020-11-15T00:00:00+00:00"><meta property="og:site_name" content="Archai's home">
 <meta name=twitter:card content="summary_large_image">
@@ -76,15 +76,15 @@ T(n) =O(1) × (n+1) =O(n)
  可以看到，两种分析方法的出来复杂度都为O(n)
  分而治之(Divide and conquer)  什么是“分而治之”？
 为求解一个大问题，可以将其划分为若干子问题，规模大体相当（可理解为将大问题等分），分别求解子问题，由子问题的解得原问题的解">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://examplesite.com/post/"},{"@type":"ListItem","position":2,"name":"减而治之与分而治之","item":"https://examplesite.com/post/2020/11/15/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"减而治之与分而治之","name":"减而治之与分而治之","description":"减而治之(Decrease and conquer)  什么是“减而治之”？\n为求解一个大规模的问题，可以将其划分为两个问题，其一平凡，另一规模缩减 ，分别求解子问题，由子问题的解得原问题的解\n 比如说，对于一个数组A的求和问题，可以设计如下的算法\nsum( int A[], int n ) { return n \u0026lt; 1? 0 : sum(A, n - 1) + A[n - 1]; } 当规模缩减到一定程度后，抵达递归基，返回0\n复杂度分析 1. 递归跟踪\n 绘出计算过程中出现过的所有递归实例（及其调用关系） ，那么它们各自所需时间之总和，即为整体运行时间\n 上例中，共计n+1个递归实例(分析)，各自只需O(1)时间 故总体运行时间为：\nT(n) =O(1) × (n+1) =O(n)\n2.递推方程\n 对于大规模的问题、复杂的递归算法，递归跟踪不再适用 此时可采用另一抽象的方法\u0026hellip;\n 在本例中，有T(n)=T(n-1) + O(1),T(0)=O(1)\n则，T(n) = T(n-2)+O(2) = T(n-3)+O(3) = T(n-n)+O(n)=O(n)\n 可以看到，两种分析方法的出来复杂度都为O(n)\n 分而治之(Divide and conquer)  什么是“分而治之”？\n为求解一个大问题，可以将其划分为若干子问题，规模大体相当（可理解为将大问题等分），分别求解子问题，由子问题的解得原问题的解","keywords":["数据结构"],"articleBody":"减而治之(Decrease and conquer)  什么是“减而治之”？\n为求解一个大规模的问题，可以将其划分为两个问题，其一平凡，另一规模缩减 ，分别求解子问题，由子问题的解得原问题的解\n 比如说，对于一个数组A的求和问题，可以设计如下的算法\nsum( int A[], int n ) { return n  1? 0 : sum(A, n - 1) + A[n - 1]; } 当规模缩减到一定程度后，抵达递归基，返回0\n复杂度分析 1. 递归跟踪\n 绘出计算过程中出现过的所有递归实例（及其调用关系） ，那么它们各自所需时间之总和，即为整体运行时间\n 上例中，共计n+1个递归实例(分析)，各自只需O(1)时间 故总体运行时间为：\nT(n) =O(1) × (n+1) =O(n)\n2.递推方程\n 对于大规模的问题、复杂的递归算法，递归跟踪不再适用 此时可采用另一抽象的方法…\n 在本例中，有T(n)=T(n-1) + O(1),T(0)=O(1)\n则，T(n) = T(n-2)+O(2) = T(n-3)+O(3) = T(n-n)+O(n)=O(n)\n 可以看到，两种分析方法的出来复杂度都为O(n)\n 分而治之(Divide and conquer)  什么是“分而治之”？\n为求解一个大问题，可以将其划分为若干子问题，规模大体相当（可理解为将大问题等分），分别求解子问题，由子问题的解得原问题的解\n 对于数组A的求和问题，利用分而治之的思想可以设计出下面的算法\nsum( int A[], int lo, int hi ) {//区间范围A[lo, hi)  if ( hi - lo  2 ) return A[lo]; int mi = (lo + hi)  1; return sum( A, lo, mi ) + sum( A, mi, hi ); } //入口形式为sum( A, 0, n ) 复杂度分析 1.递归跟踪\n对于上述算法，分析可知，其复杂度\nT(n)=O(1) × (1+2¹+2²+...+2^㏒n) = O(1) × (2^logn - 1) = O(n)\n更快捷地，作为几何级数，其复杂度与末项同阶，因此由分析图可知，其末项共有n项[(0,0)，(1,1,) … (n,n)]，因此其复杂度为O(n)\n2.递推方程\n为求解sum(A,lo,hi),\n需求解 sum(A, lo, mi) 和 sum(A, mi+1, hi) = T(n/2)\n进而将子问题累加 =O(1)\n递归基sum(A, lo, lo) = O(1)\n递推关系：T(n)=2·T(n/2) + O(1) === T(n) = O(n)\n","wordCount":"151","inLanguage":"en","datePublished":"2020-11-15T00:00:00Z","dateModified":"2020-11-15T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://examplesite.com/post/2020/11/15/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://www.fintinger.site/post/"},{"@type":"ListItem","position":3,"name":"减而治之与分而治之","item":"https://www.fintinger.site/post/2020/11/15/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"减而治之与分而治之","name":"减而治之与分而治之","description":"减而治之(Decrease and conquer)  什么是“减而治之”？\n为求解一个大规模的问题，可以将其划分为两个问题，其一平凡，另一规模缩减 ，分别求解子问题，由子问题的解得原问题的解\n 比如说，对于一个数组A的求和问题，可以设计如下的算法\nsum( int A[], int n ) { return n \u0026lt; 1? 0 : sum(A, n - 1) + A[n - 1]; } 当规模缩减到一定程度后，抵达递归基，返回0\n复杂度分析 1. 递归跟踪\n 绘出计算过程中出现过的所有递归实例（及其调用关系） ，那么它们各自所需时间之总和，即为整体运行时间\n 上例中，共计n+1个递归实例(分析)，各自只需O(1)时间 故总体运行时间为：\nT(n) =O(1) × (n+1) =O(n)\n2.递推方程\n 对于大规模的问题、复杂的递归算法，递归跟踪不再适用 此时可采用另一抽象的方法\u0026hellip;\n 在本例中，有T(n)=T(n-1) + O(1),T(0)=O(1)\n则，T(n) = T(n-2)+O(2) = T(n-3)+O(3) = T(n-n)+O(n)=O(n)\n 可以看到，两种分析方法的出来复杂度都为O(n)\n 分而治之(Divide and conquer)  什么是“分而治之”？\n为求解一个大问题，可以将其划分为若干子问题，规模大体相当（可理解为将大问题等分），分别求解子问题，由子问题的解得原问题的解","keywords":["数据结构"],"articleBody":"减而治之(Decrease and conquer)  什么是“减而治之”？\n为求解一个大规模的问题，可以将其划分为两个问题，其一平凡，另一规模缩减 ，分别求解子问题，由子问题的解得原问题的解\n 比如说，对于一个数组A的求和问题，可以设计如下的算法\nsum( int A[], int n ) { return n  1? 0 : sum(A, n - 1) + A[n - 1]; } 当规模缩减到一定程度后，抵达递归基，返回0\n复杂度分析 1. 递归跟踪\n 绘出计算过程中出现过的所有递归实例（及其调用关系） ，那么它们各自所需时间之总和，即为整体运行时间\n 上例中，共计n+1个递归实例(分析)，各自只需O(1)时间 故总体运行时间为：\nT(n) =O(1) × (n+1) =O(n)\n2.递推方程\n 对于大规模的问题、复杂的递归算法，递归跟踪不再适用 此时可采用另一抽象的方法…\n 在本例中，有T(n)=T(n-1) + O(1),T(0)=O(1)\n则，T(n) = T(n-2)+O(2) = T(n-3)+O(3) = T(n-n)+O(n)=O(n)\n 可以看到，两种分析方法的出来复杂度都为O(n)\n 分而治之(Divide and conquer)  什么是“分而治之”？\n为求解一个大问题，可以将其划分为若干子问题，规模大体相当（可理解为将大问题等分），分别求解子问题，由子问题的解得原问题的解\n 对于数组A的求和问题，利用分而治之的思想可以设计出下面的算法\nsum( int A[], int lo, int hi ) {//区间范围A[lo, hi)  if ( hi - lo  2 ) return A[lo]; int mi = (lo + hi)  1; return sum( A, lo, mi ) + sum( A, mi, hi ); } //入口形式为sum( A, 0, n ) 复杂度分析 1.递归跟踪\n对于上述算法，分析可知，其复杂度\nT(n)=O(1) × (1+2¹+2²+...+2^㏒n) = O(1) × (2^logn - 1) = O(n)\n更快捷地，作为几何级数，其复杂度与末项同阶，因此由分析图可知，其末项共有n项[(0,0)，(1,1,) … (n,n)]，因此其复杂度为O(n)\n2.递推方程\n为求解sum(A,lo,hi),\n需求解 sum(A, lo, mi) 和 sum(A, mi+1, hi) = T(n/2)\n进而将子问题累加 =O(1)\n递归基sum(A, lo, lo) = O(1)\n递推关系：T(n)=2·T(n/2) + O(1) === T(n) = O(n)\n","wordCount":"151","inLanguage":"en","datePublished":"2020-11-15T00:00:00Z","dateModified":"2020-11-15T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.fintinger.site/post/2020/11/15/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
-<a href=https://examplesite.com/ accesskey=h title="Home (Alt + H)">
+<a href=https://www.fintinger.site accesskey=h title="Home (Alt + H)">
 <img src=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico alt=logo aria-label=logo height=35>Home</a>
 <span class=logo-switches>
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -93,22 +93,22 @@ T(n) =O(1) × (n+1) =O(n)
 </div>
 <ul id=menu>
 <li>
-<a href=https://examplesite.com/categories/ title=Categories>
+<a href=https://www.fintinger.site/categories/ title=Categories>
 <span>Categories</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/tags/ title=Tags>
+<a href=https://www.fintinger.site/tags/ title=Tags>
 <span>Tags</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/search/ title="Search (Alt + /)" accesskey=/>
+<a href=https://www.fintinger.site/search/ title="Search (Alt + /)" accesskey=/>
 <span>Search</span>
 </a>
 </li>
 <li>
-<a href=https://examplesite.com/archives/ title=Archives>
+<a href=https://www.fintinger.site/archives/ title=Archives>
 <span>Archives</span>
 </a>
 </li>
@@ -118,7 +118,7 @@ T(n) =O(1) × (n+1) =O(n)
 <main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://examplesite.com/>Home</a>&nbsp;»&nbsp;<a href=https://examplesite.com/post/>Posts</a></div>
+<div class=breadcrumbs><a href=https://www.fintinger.site>Home</a>&nbsp;»&nbsp;<a href=https://www.fintinger.site/post/>Posts</a></div>
 <h1 class=post-title>
 减而治之与分而治之
 </h1>
@@ -203,15 +203,15 @@ T(n) =O(1) × (n+1) =O(n)
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://examplesite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/>数据结构</a></li>
+<li><a href=https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/>数据结构</a></li>
 </ul>
 <nav class=paginav>
-<a class=prev href=https://examplesite.com/post/2020/11/16/>
+<a class=prev href=https://www.fintinger.site/post/2020/11/16/>
 <span class=title>« Prev Page</span>
 <br>
 <span>向量空间管理策略</span>
 </a>
-<a class=next href=https://examplesite.com/post/2020/11/10/>
+<a class=next href=https://www.fintinger.site/post/2020/11/10/>
 <span class=title>Next Page »</span>
 <br>
 <span>DS导论</span>
@@ -221,7 +221,7 @@ T(n) =O(1) × (n+1) =O(n)
 </article>
 </main>
 <footer class=footer>
-<span>&copy; 2022 <a href=https://examplesite.com/>Archai's home</a></span>
+<span>&copy; 2022 <a href=https://www.fintinger.site>Archai's home</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

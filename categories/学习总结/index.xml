@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>学习总结 on Archai&#39;s home</title>
-    <link>https://examplesite.com/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/</link>
+    <link>https://www.fintinger.site/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/</link>
     <description>Recent content in 学习总结 on Archai&#39;s home</description>
     <image>
       <url>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</url>
       <link>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 29 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://examplesite.com/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>线性代数——常用公式定理总结</title>
-      <link>https://examplesite.com/post/2021/08/29/</link>
+      <link>https://www.fintinger.site/post/2021/08/29/</link>
       <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2021/08/29/</guid>
+      <guid>https://www.fintinger.site/post/2021/08/29/</guid>
       <description>公式 定理 附录 YO起来！ </description>
     </item>
     
     <item>
       <title>线性代数——二次型</title>
-      <link>https://examplesite.com/post/2021/08/28/</link>
+      <link>https://www.fintinger.site/post/2021/08/28/</link>
       <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2021/08/28/</guid>
+      <guid>https://www.fintinger.site/post/2021/08/28/</guid>
       <description>性质定理  二次型$x^{T}Ax$经坐标变换$x=Cy$得二次型$y^{T}By$，其中 $B=C^{T}C$，通俗的讲，就是 二次型矩阵经过任意的一次坐标变换得到新的二次型，前后二次型矩阵合同。
   任一二次型都可经坐标变换变成标准型。
   配方法
@@ -45,10 +45,10 @@ $X^T(A^TA)X=(AX)^{T}AX \geq 0$
     
     <item>
       <title>线性代数——特征值特征向量</title>
-      <link>https://examplesite.com/post/2021/08/23/</link>
+      <link>https://www.fintinger.site/post/2021/08/23/</link>
       <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2021/08/23/</guid>
+      <guid>https://www.fintinger.site/post/2021/08/23/</guid>
       <description>特征值与特征向量 性质  1.不同特征值的特征向量线性无关。
 2.ｋ重特征值至多有ｋ个线性无关的特征向量。(※)
  基本运算逻辑    三角矩阵特征值为主对角线元素⭐
@@ -70,10 +70,10 @@ $X^T(A^TA)X=(AX)^{T}AX \geq 0$
     
     <item>
       <title>线性代数——方程组</title>
-      <link>https://examplesite.com/post/2021/08/21/</link>
+      <link>https://www.fintinger.site/post/2021/08/21/</link>
       <pubDate>Sat, 21 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2021/08/21/</guid>
+      <guid>https://www.fintinger.site/post/2021/08/21/</guid>
       <description>Ax=0  重点： n-r(A)，基础解系
   Ax=0有非零解 $\Leftrightarrow $​​ r(A) &amp;lt; n (未知数个数)$\Leftrightarrow $​​​ A的列向量线性相关
 特别地(针对水平型阵和方阵)，※
@@ -93,10 +93,10 @@ Ax=b有解且不唯一，则$r(A) &amp;lt; n$
     
     <item>
       <title>线性代数——向量</title>
-      <link>https://examplesite.com/post/2021/08/15/</link>
+      <link>https://www.fintinger.site/post/2021/08/15/</link>
       <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2021/08/15/</guid>
+      <guid>https://www.fintinger.site/post/2021/08/15/</guid>
       <description>相关、无关    向量组中含零向量必然线性相关
   组中至少存在两个成比例的向量必然线性相关
    相关计算  $A(\alpha_1,\alpha_2,\alpha_3&amp;hellip;\alpha_s)$​ 是否线性相关？
@@ -120,10 +120,10 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
     
     <item>
       <title>线性代数——矩阵</title>
-      <link>https://examplesite.com/post/2021/08/13/</link>
+      <link>https://www.fintinger.site/post/2021/08/13/</link>
       <pubDate>Fri, 13 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2021/08/13/</guid>
+      <guid>https://www.fintinger.site/post/2021/08/13/</guid>
       <description>基本计算  对角矩阵存在交换律，即 $\bigwedge_1 \bigwedge_2=\bigwedge_2 \bigwedge_1$​
   注意交换位置
  对于 AB=C  B &amp;amp; C均按列分块，则$A(\beta_1 \beta_2 \beta_3)=(\gamma_1 \gamma_2 \gamma_3)$，故B的列向量都是$AX=\gamma$ 的解，特别的，当AB=O即C=O时，B的列向量均是 $AX=0$ 的解。 B &amp;amp; C按行分块，则 AB的行向量均可由B的行向量线性表出。 A &amp;amp; C按列分块，则 AB的列向量均可由A的列向量线性表出。[2013]   规律1与解联系起来，尤其是AB=O推出B的列向量是Ax=0的解这一规律，除此之外AB=O也经常用r(A)+r(B)≤ n这个不等式。
@@ -140,10 +140,10 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
     
     <item>
       <title>线性代数——行列式</title>
-      <link>https://examplesite.com/post/2021/08/10/</link>
+      <link>https://www.fintinger.site/post/2021/08/10/</link>
       <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2021/08/10/</guid>
+      <guid>https://www.fintinger.site/post/2021/08/10/</guid>
       <description>计算※ 数字型 题型 注意“存在三条对角线的情况”，通过 逐行相加 的到 “三角型”计算
 经典例题  抽象型 题型  行列式性质恒等变形 矩阵公式、法则恒等变形，E恒等变形 形特征值、相似  经典例题  思路：利用单位矩阵恒等变形
   思路一：利用矩阵相似（$\alpha_1，\alpha_2，\alpha_3$无关，后面出现$A\alpha_1，A\alpha_2，A\alpha_3$想到相似）
@@ -160,10 +160,10 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
     
     <item>
       <title>向量空间管理策略</title>
-      <link>https://examplesite.com/post/2020/11/16/</link>
+      <link>https://www.fintinger.site/post/2020/11/16/</link>
       <pubDate>Mon, 16 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/11/16/</guid>
+      <guid>https://www.fintinger.site/post/2020/11/16/</guid>
       <description>向量的空间管理，有静态和动态两种策略
  静态空间管理策略 开辟内部数组_elem[]并使用一段地址连续的物理空间，_capacity表示总容量 ，_size表示当前的实际规模n，示意图如下：
 若采用静态空间管理策略，容量_capacity固定，则有明显的不足&amp;hellip;
@@ -182,10 +182,10 @@ T* oldElem = _elem; _elem = new T[ _capacity &amp;lt;&amp;lt;= 1 ]; 考虑最坏
     
     <item>
       <title>减而治之与分而治之</title>
-      <link>https://examplesite.com/post/2020/11/15/</link>
+      <link>https://www.fintinger.site/post/2020/11/15/</link>
       <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/11/15/</guid>
+      <guid>https://www.fintinger.site/post/2020/11/15/</guid>
       <description>减而治之(Decrease and conquer)  什么是“减而治之”？
 为求解一个大规模的问题，可以将其划分为两个问题，其一平凡，另一规模缩减 ，分别求解子问题，由子问题的解得原问题的解
  比如说，对于一个数组A的求和问题，可以设计如下的算法
@@ -205,10 +205,10 @@ T(n) =O(1) × (n+1) =O(n)
     
     <item>
       <title>DS导论</title>
-      <link>https://examplesite.com/post/2020/11/10/</link>
+      <link>https://www.fintinger.site/post/2020/11/10/</link>
       <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/11/10/</guid>
+      <guid>https://www.fintinger.site/post/2020/11/10/</guid>
       <description>导论  所谓算法，即特定计算模型下，旨在解决特定问题的指令序列。输入：待处理的信息（问题）输出：经处理的信息（答案）
  正确性 的确可以解决指定的问题
 确定性 任一算法都可以描述为一个由基本操作组成的序列
@@ -223,10 +223,10 @@ T(n) =O(1) × (n+1) =O(n)
     
     <item>
       <title>PHP语法小结</title>
-      <link>https://examplesite.com/post/2020/10/14/</link>
+      <link>https://www.fintinger.site/post/2020/10/14/</link>
       <pubDate>Tue, 13 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/10/14/</guid>
+      <guid>https://www.fintinger.site/post/2020/10/14/</guid>
       <description>基本语法 输出语句    语句 功能     echo 输出字符串类型   print_r 输出引用类型(对象,数组等)   var_dunp 检测变量类型    ::: tip echo语句可用于给前端返回响应体。比如前端通过ajax请求，可以在xhr.response中直接得到echo的内容 :::
 变量&amp;amp;常量 👉🏼 变量
    语句 功能 返回值     isset() 检测变量是否存在 boolean   unset() 删除某个变量 none    👉🏼 常量
@@ -242,10 +242,10 @@ const不能在条件语句中使用，必出错
     
     <item>
       <title>ES6之Promise用法小结</title>
-      <link>https://examplesite.com/post/2020/08/18/</link>
+      <link>https://www.fintinger.site/post/2020/08/18/</link>
       <pubDate>Tue, 18 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/08/18/</guid>
+      <guid>https://www.fintinger.site/post/2020/08/18/</guid>
       <description>Promise 对象用于表示一个异步操作的最终完成 (或失败), 及其结果值。其目的主要是解决以往回调中嵌套回调的&amp;quot;嵌套地狱&amp;quot;问题，使代码可读性更好，更美观!
 基本用法 对于一个标准的Prommise，其基本写法为:
 new Promise(function (resolve, reject) { //do something...  //success  resolve(&amp;#39;success&amp;#39;) //fail &amp;amp; reject  // reject(&amp;#39;rejected&amp;#39;) *resolve和reject只能出现一个 }).then( function (value) { //if succeed,do something...  }, function (reason) { //if fail &amp;amp; reject,do something...  } ) 如果采用ES6的箭头函数写法，则为:
@@ -257,10 +257,10 @@ new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //r
     
     <item>
       <title>Ajax学习小结</title>
-      <link>https://examplesite.com/post/2020/08/10/</link>
+      <link>https://www.fintinger.site/post/2020/08/10/</link>
       <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/08/10/</guid>
+      <guid>https://www.fintinger.site/post/2020/08/10/</guid>
       <description>学习地址:https://www.bilibili.com/video/BV1WC4y1b78y，主要通过express的简单功能来搭建本地的服务，进而更好地学习Ajax
  发送Ajax请求的方式 原生Ajax //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(&amp;#34;GET&amp;#34;,&amp;#34;https://www.x.com&amp;#34;) //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status &amp;gt;= 200 &amp;amp;&amp;amp; xhr.status &amp;lt; 300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } } 说明：
  readyState: 返回一个 XMLHttpRequest 代理当前所处的状态     值 状态 描述     0 UNSENT 代理被创建，但尚未调用 open() 方法。   1 OPENED open() 方法已经被调用。   2 HEADERS_RECEIVED send() 方法已经被调用，并且头部和状态已经可获得。   3 LOADING 下载中； responseText 属性已经包含部分数据。   4 DONE 下载操作已完成。     因此，xhr.</description>
@@ -268,10 +268,10 @@ new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //r
     
     <item>
       <title>统计学期末知识总结</title>
-      <link>https://examplesite.com/post/2020/06/17/</link>
+      <link>https://www.fintinger.site/post/2020/06/17/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2020/06/17/</guid>
+      <guid>https://www.fintinger.site/post/2020/06/17/</guid>
       <description>第一章 导 论 1.什么是统计学  统计学是收集、处理、分析、解释数据并从数据中得出结论的科学 数据分析所用的方法可分为描述统计方法和推断统计方法  2.参数和统计量   参数：总体特征，所关心的参数通常是总体平均数、总体标准差、总体比例等
  由于总体数据通常是不知道的，所以参数是一个未知的常量-
    统计量：个体特征，所关心的参数通常是样本平均数、样本标准差、样本比例等

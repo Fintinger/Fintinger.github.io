@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>BFS on Archai&#39;s home</title>
-    <link>https://examplesite.com/tags/bfs/</link>
+    <link>https://www.fintinger.site/tags/bfs/</link>
     <description>Recent content in BFS on Archai&#39;s home</description>
     <image>
       <url>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</url>
       <link>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 03 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://examplesite.com/tags/bfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/bfs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>图的遍历</title>
-      <link>https://examplesite.com/post/2021/06/02/01_traverse/</link>
+      <link>https://www.fintinger.site/post/2021/06/02/01_traverse/</link>
       <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/post/2021/06/02/01_traverse/</guid>
+      <guid>https://www.fintinger.site/post/2021/06/02/01_traverse/</guid>
       <description>广度优先遍历（BFS）  BFS(Breadth-First-Search)，参考对树的层序遍历
  对上面的图从①出发进行BFS得到序列：
 ①②⑤ ⑥ ③⑦ ④⑧
