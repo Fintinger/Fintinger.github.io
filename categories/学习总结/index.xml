@@ -1,109 +1,102 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>学习总结 on Archai &#39;s blog</title>
-    <link>https://www.fintinger.site/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/</link>
-    <description>Recent content in 学习总结 on Archai &#39;s blog</description>
+    <title>学习总结 on Archai&#39;s home</title>
+    <link>https://examplesite.com/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/</link>
+    <description>Recent content in 学习总结 on Archai&#39;s home</description>
+    <image>
+      <url>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</url>
+      <link>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 29 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://examplesite.com/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>线性代数——常用公式定理总结</title>
-      <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/</link>
+      <link>https://examplesite.com/post/2021/08/29/</link>
       <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/</guid>
-      <description>公式 公式
-定理 定理
-附录 附录(秩)
-YO起来！ </description>
+      <guid>https://examplesite.com/post/2021/08/29/</guid>
+      <description>公式 定理 附录 YO起来！ </description>
     </item>
     
     <item>
       <title>线性代数——二次型</title>
-      <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/</link>
+      <link>https://examplesite.com/post/2021/08/28/</link>
       <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/</guid>
+      <guid>https://examplesite.com/post/2021/08/28/</guid>
       <description>性质定理  二次型$x^{T}Ax$经坐标变换$x=Cy$得二次型$y^{T}By$，其中 $B=C^{T}C$，通俗的讲，就是 二次型矩阵经过任意的一次坐标变换得到新的二次型，前后二次型矩阵合同。
   任一二次型都可经坐标变换变成标准型。
   配方法
 从$x_1$开始先合并再配方，将 f(x)⇒f(y)
   正交变换法
-   例题 
- 说明在正交变换下，A不仅与∧合同，而且A与∧相似
+   例题  说明在正交变换下，A不仅与∧合同，而且A与∧相似
  用正交变换化二次型为标准形  参考用正交矩阵相似对角化
- 
- 若是求正负惯性指数，根据特征值即可得到（特征值是二次型二次项系数✅）
- 标准型到规范型 
-
- 标准型到规范性与系数的大小无关，只与系数的正负相关，即正负惯性系数，注意先排序，依次“大于0，等于0，小于0&amp;hellip;”
- 例题 
- 第一问参数的求解用到标准型化成规范型的规律。
+  若是求正负惯性指数，根据特征值即可得到（特征值是二次型二次项系数✅）
+ 标准型到规范型  标准型到规范性与系数的大小无关，只与系数的正负相关，即正负惯性系数，注意先排序，依次“大于0，等于0，小于0&amp;hellip;”
+ 例题  第一问参数的求解用到标准型化成规范型的规律。
 第二问的求解实际上就是正交矩阵相似对角化
- 正定  
-  注意正定矩阵是二次型，所以正定矩阵必对称，检验正定之前，先检验对称性，即证明$A^{T}=A$
- 正定必要条件  $a_{ii}&amp;gt;0$ |A| &amp;gt; 0  正定充分必要条件  顺序主子式全大于0 特征值大于0 正惯性指数 p=n $A=C^TEC$，其中C可逆 ▲  经典例题 九几年的</description>
+ 正定    注意正定矩阵是二次型，所以正定矩阵必对称，检验正定之前，先检验对称性，即证明$A^{T}=A$
+ 正定必要条件  $a_{ii}&amp;gt;0$ |A| &amp;gt; 0  正定充分必要条件  顺序主子式全大于0 特征值大于0 正惯性指数 p=n $A=C^TEC$，其中C可逆 ▲  经典例题  $(A^{T}A)^{T}=A^TA$，故$A^{T}A$实对称矩阵
+现证$\forall X$，有$X^T(A^TA)X&amp;gt;0$
+$X^T(A^TA)X=(AX)^{T}AX \geq 0$
+现证$(AX)^{T}AX \neq 0$</description>
     </item>
     
     <item>
       <title>线性代数——特征值特征向量</title>
-      <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/</link>
+      <link>https://examplesite.com/post/2021/08/23/</link>
       <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/</guid>
+      <guid>https://examplesite.com/post/2021/08/23/</guid>
       <description>特征值与特征向量 性质  1.不同特征值的特征向量线性无关。
 2.ｋ重特征值至多有ｋ个线性无关的特征向量。(※)
- 基本运算逻辑  
-  三角矩阵特征值为主对角线元素⭐
+ 基本运算逻辑    三角矩阵特征值为主对角线元素⭐
 注意，当$\lambda=1$时😢
   秩为1的矩阵A
  特征值 $\sum_{aii},0,0&amp;hellip;$ $A^n=\sum_{aii}^{n-1} A$​  特征值证明：
   求特征值不能先对A做任何变换，而应该带着λ变换
- 定义法  
-  如果两矩阵相似
-
+ 定义法    如果两矩阵相似
 即 “两矩阵相似则具有相同特征值，特征向量也存在关系”
  真题&amp;amp;例题 常识题？😢
-
 关于AB=0引申出的一题多解
-
 相似  AB相似，则 A+kE ~ B+kE
  行列式相等 俩秩相等 特征值相等 绩相等  利用已知构造方程组求参，进行预处理
   由 $A^n=PB^nP^{-1}$
- 若取B为∧，容易求得$A^n$​的值。(其他方法) 特征值也存在关系。(特征值规律)    用相似的传递性证明两矩阵相似</description>
+ 若取B为∧，容易求得$A^n$​的值。(其他方法) 特征值也存在关系。(特征值规律)    用相似的传递性证明两矩阵相似
+ A~∧ ⭐  A~∧，$A=P∧P^{-1}$则
+ ∧是矩阵A的特征值 P列向量是A的特征向量  （要对应，别错位）</description>
     </item>
     
     <item>
       <title>线性代数——方程组</title>
-      <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/</link>
+      <link>https://examplesite.com/post/2021/08/21/</link>
       <pubDate>Sat, 21 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/</guid>
+      <guid>https://examplesite.com/post/2021/08/21/</guid>
       <description>Ax=0  重点： n-r(A)，基础解系
   Ax=0有非零解 $\Leftrightarrow $​​ r(A) &amp;lt; n (未知数个数)$\Leftrightarrow $​​​ A的列向量线性相关
 特别地(针对水平型阵和方阵)，※
  A-m×n,m&amp;lt;n, Ax=0 必有非零解 A-n×n，Ax=0有非零解 $\Leftrightarrow $​ |A|=0（克拉默法则）    Ax=0有非零解，则其解线性组合必为Ax=0的解，所以Ax=0若有非零解，则必有无穷多解，在这无穷多解中，线性无关的解向量个数为 $t=n-r(A)$​​​​​，这就是基础解系​，基础解系是Ax=0的解向量中的极大线性无关组。此外，根据定理可知，Ax=0的任一解都可以由基础解系线性表出。
   基础解系⭐
- 是解 是线性无关组 个数t=n-r(A)   真题 2004-数三
- 【分析】“基础解系不存在”即为Ax=0没有非零解，根据 t=n-r(A) 知，本题等价转化为求解A的秩，求解秩时，找个大，找个小，通过夹逼，确定秩的值。
+ 是解 是线性无关组 个数t=n-r(A)   真题  【分析】“基础解系不存在”即为Ax=0没有非零解，根据 t=n-r(A) 知，本题等价转化为求解A的秩，求解秩时，找个大，找个小，通过夹逼，确定秩的值。
 【解】$A^{*}\neq0$，则$r(A^{ *})\geq 1$​，则$r(A)\geq n-1$
 Ax=b有解且不唯一，则$r(A) &amp;lt; n$
 联立得，r(A)=n-1
 故t = n-r(A) = 1
  ⭐⭐⭐⭐⭐
-2002-数二、三
  【分析】根据通解的定义可知，若为通解，解必然线性无关，本题转化为证明 $a_1,a_2,a_3,a_4$哪三个线性无关
-
-这里用到了“低维无关，添加向量后的高维必无关”</description>
+这里用到了“低维无关，添加向量后的高维必无关”
+  此外，如果本题为证明计算题（证明基础解系），即 求$A^{*}x=0$​ 的基础解系，则
+ 根据$t=n-r(A^{*})$得基础解系解向量个数。  求解$r(A^{*})$​ (找大找小) ，   根据A不可逆得，$|A|=0, r(A)&amp;lt; n=4$​​ 由 $A_{12} \neq 0$​，则$r(A) \geq n-1=3$​​ 则r(A)=3，则$r(A^{*})$ = 1  t = 4-1=3，即基础解系有三个解向量   证明是解  $A^{*}A=|A| E=0,\text{且}|A|=0$​​ ，有 $A^{ *} (a_1a_2a_3a_4)=0$​​，则向量$a_1,a_2,a_3,a_4$​​ 均为$A^{ *}x=0$​​​ 的解   证明线性无关（上面选择题过程）  🤓</description>
     </item>
     
     <item>
       <title>线性代数——向量</title>
-      <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/</link>
+      <link>https://examplesite.com/post/2021/08/15/</link>
       <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/</guid>
+      <guid>https://examplesite.com/post/2021/08/15/</guid>
       <description>相关、无关    向量组中含零向量必然线性相关
   组中至少存在两个成比例的向量必然线性相关
    相关计算  $A(\alpha_1,\alpha_2,\alpha_3&amp;hellip;\alpha_s)$​ 是否线性相关？
@@ -116,20 +109,21 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
  存在$\alpha_1=k\alpha_2$
  “$\alpha_1,\alpha_2,\alpha_3$​相关”$\Leftrightarrow$​ $\alpha_1,\alpha_2,\alpha_3$​​共面
  证明、选择  这是难点，重点
- 证明线性无关 ​	判定方法
- ⭐特征值不同的特征向量必线性无关。
+ 证明线性无关 ​	 ⭐特征值不同的特征向量必线性无关。
 此外，不同特征值中如果某一特征值存在“一对多”的关系，这些特征向量也线性无关。即若$A \alpha_1=\lambda_1\alpha_1,A \alpha_2=\lambda_1\alpha_2,A \alpha=\lambda\alpha$，那么$\alpha_1,\alpha_2,\alpha_3$​线性无关​
   恒等变形中乘的思路：
  利用已知构造出0使得式子变短 直接两边乘A，得出式子，然后通过两个式子的加加减减化简   真题&amp;amp;经典例题
-2008-数二、三、四</description>
+ 本题第二问“写出和A相似的矩阵”(3分)
+分析：$\alpha_1，\alpha_2，\alpha_3$无关，后面出现$A\alpha_1，A\alpha_2，A\alpha_3$​想到相似
+   本题可以当作结论使用</description>
     </item>
     
     <item>
       <title>线性代数——矩阵</title>
-      <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/</link>
+      <link>https://examplesite.com/post/2021/08/13/</link>
       <pubDate>Fri, 13 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/</guid>
+      <guid>https://examplesite.com/post/2021/08/13/</guid>
       <description>基本计算  对角矩阵存在交换律，即 $\bigwedge_1 \bigwedge_2=\bigwedge_2 \bigwedge_1$​
   注意交换位置
  对于 AB=C  B &amp;amp; C均按列分块，则$A(\beta_1 \beta_2 \beta_3)=(\gamma_1 \gamma_2 \gamma_3)$，故B的列向量都是$AX=\gamma$ 的解，特别的，当AB=O即C=O时，B的列向量均是 $AX=0$ 的解。 B &amp;amp; C按行分块，则 AB的行向量均可由B的行向量线性表出。 A &amp;amp; C按列分块，则 AB的列向量均可由A的列向量线性表出。[2013]   规律1与解联系起来，尤其是AB=O推出B的列向量是Ax=0的解这一规律，除此之外AB=O也经常用r(A)+r(B)≤ n这个不等式。
@@ -146,36 +140,30 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
     
     <item>
       <title>线性代数——行列式</title>
-      <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/</link>
+      <link>https://examplesite.com/post/2021/08/10/</link>
       <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/</guid>
+      <guid>https://examplesite.com/post/2021/08/10/</guid>
       <description>计算※ 数字型 题型 注意“存在三条对角线的情况”，通过 逐行相加 的到 “三角型”计算
-经典例题 
-2008-真题
-抽象型 题型  行列式性质恒等变形 矩阵公式、法则恒等变形，E恒等变形 形特征值、相似  
-经典例题 
- 思路：利用单位矩阵恒等变形
- 
- 思路一：利用矩阵相似（$\alpha_1，\alpha_2，\alpha_3$无关，后面出现$A\alpha_1，A\alpha_2，A\alpha_3$想到相似）
+经典例题  抽象型 题型  行列式性质恒等变形 矩阵公式、法则恒等变形，E恒等变形 形特征值、相似  经典例题  思路：利用单位矩阵恒等变形
+  思路一：利用矩阵相似（$\alpha_1，\alpha_2，\alpha_3$无关，后面出现$A\alpha_1，A\alpha_2，A\alpha_3$想到相似）
 利用乘法公式凑$PAP^{-1}=B$
 思路二：用行列式性质
- 
- 思路：“不可逆”=&amp;gt;“行列式为0”=&amp;gt;观察看到为特征值形式$|\lambda E-A|=0$，利用特征值与行列式的关系求解
+  思路：“不可逆”=&amp;gt;“行列式为0”=&amp;gt;观察看到为特征值形式$|\lambda E-A|=0$，利用特征值与行列式的关系求解
  应用 特征值 思路 “消0且得公因式”
-例题 
-
- 对于特征多项式应两行（或列）加加减减，至多是三行（或列）的加加减减找出 $\lambda-a$ 的公因式，然后再解一个二次方程，就可求出矩阵A的三个特征值
+例题   对于特征多项式应两行（或列）加加减减，至多是三行（或列）的加加减减找出 $\lambda-a$ 的公因式，然后再解一个二次方程，就可求出矩阵A的三个特征值
  克拉默法则 思路  不用来解大的方程组，常用小的证明题，
- 齐次方程AX=0有非零解→ |A|=0 齐次方程AX=0没有非零解→ |A|≠0   经典例题 image-20210811155745415</description>
+ 齐次方程AX=0有非零解→ |A|=0 齐次方程AX=0没有非零解→ |A|≠0   经典例题  &amp;ldquo;AB=O&amp;rdquo; 👉 方程的解(B的列向量是A的解)
+​	👉 秩 r(A)+r(B) ≤ n (n为A的列,B的行)
+ 矩阵秩 注意点  r(A) = r 👉A中有r阶子式不为0,任何r+1阶子式(若还有)必全为0.</description>
     </item>
     
     <item>
       <title>向量空间管理策略</title>
-      <link>https://www.fintinger.site/p/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5/</link>
+      <link>https://examplesite.com/post/2020/11/16/</link>
       <pubDate>Mon, 16 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5/</guid>
+      <guid>https://examplesite.com/post/2020/11/16/</guid>
       <description>向量的空间管理，有静态和动态两种策略
  静态空间管理策略 开辟内部数组_elem[]并使用一段地址连续的物理空间，_capacity表示总容量 ，_size表示当前的实际规模n，示意图如下：
 若采用静态空间管理策略，容量_capacity固定，则有明显的不足&amp;hellip;
@@ -194,10 +182,10 @@ T* oldElem = _elem; _elem = new T[ _capacity &amp;lt;&amp;lt;= 1 ]; 考虑最坏
     
     <item>
       <title>减而治之与分而治之</title>
-      <link>https://www.fintinger.site/p/%E5%87%8F%E8%80%8C%E6%B2%BB%E4%B9%8B%E4%B8%8E%E5%88%86%E8%80%8C%E6%B2%BB%E4%B9%8B/</link>
+      <link>https://examplesite.com/post/2020/11/15/</link>
       <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/%E5%87%8F%E8%80%8C%E6%B2%BB%E4%B9%8B%E4%B8%8E%E5%88%86%E8%80%8C%E6%B2%BB%E4%B9%8B/</guid>
+      <guid>https://examplesite.com/post/2020/11/15/</guid>
       <description>减而治之(Decrease and conquer)  什么是“减而治之”？
 为求解一个大规模的问题，可以将其划分为两个问题，其一平凡，另一规模缩减 ，分别求解子问题，由子问题的解得原问题的解
  比如说，对于一个数组A的求和问题，可以设计如下的算法
@@ -217,10 +205,10 @@ T(n) =O(1) × (n+1) =O(n)
     
     <item>
       <title>DS导论</title>
-      <link>https://www.fintinger.site/p/ds%E5%AF%BC%E8%AE%BA/</link>
+      <link>https://examplesite.com/post/2020/11/10/</link>
       <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/ds%E5%AF%BC%E8%AE%BA/</guid>
+      <guid>https://examplesite.com/post/2020/11/10/</guid>
       <description>导论  所谓算法，即特定计算模型下，旨在解决特定问题的指令序列。输入：待处理的信息（问题）输出：经处理的信息（答案）
  正确性 的确可以解决指定的问题
 确定性 任一算法都可以描述为一个由基本操作组成的序列
@@ -235,10 +223,10 @@ T(n) =O(1) × (n+1) =O(n)
     
     <item>
       <title>PHP语法小结</title>
-      <link>https://www.fintinger.site/p/php%E8%AF%AD%E6%B3%95%E5%B0%8F%E7%BB%93/</link>
+      <link>https://examplesite.com/post/2020/10/14/</link>
       <pubDate>Tue, 13 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/php%E8%AF%AD%E6%B3%95%E5%B0%8F%E7%BB%93/</guid>
+      <guid>https://examplesite.com/post/2020/10/14/</guid>
       <description>基本语法 输出语句    语句 功能     echo 输出字符串类型   print_r 输出引用类型(对象,数组等)   var_dunp 检测变量类型    ::: tip echo语句可用于给前端返回响应体。比如前端通过ajax请求，可以在xhr.response中直接得到echo的内容 :::
 变量&amp;amp;常量 👉🏼 变量
    语句 功能 返回值     isset() 检测变量是否存在 boolean   unset() 删除某个变量 none    👉🏼 常量
@@ -254,10 +242,10 @@ const不能在条件语句中使用，必出错
     
     <item>
       <title>ES6之Promise用法小结</title>
-      <link>https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/</link>
+      <link>https://examplesite.com/post/2020/08/18/</link>
       <pubDate>Tue, 18 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/</guid>
+      <guid>https://examplesite.com/post/2020/08/18/</guid>
       <description>Promise 对象用于表示一个异步操作的最终完成 (或失败), 及其结果值。其目的主要是解决以往回调中嵌套回调的&amp;quot;嵌套地狱&amp;quot;问题，使代码可读性更好，更美观!
 基本用法 对于一个标准的Prommise，其基本写法为:
 new Promise(function (resolve, reject) { //do something...  //success  resolve(&amp;#39;success&amp;#39;) //fail &amp;amp; reject  // reject(&amp;#39;rejected&amp;#39;) *resolve和reject只能出现一个 }).then( function (value) { //if succeed,do something...  }, function (reason) { //if fail &amp;amp; reject,do something...  } ) 如果采用ES6的箭头函数写法，则为:
@@ -269,10 +257,10 @@ new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //r
     
     <item>
       <title>Ajax学习小结</title>
-      <link>https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/</link>
+      <link>https://examplesite.com/post/2020/08/10/</link>
       <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/</guid>
+      <guid>https://examplesite.com/post/2020/08/10/</guid>
       <description>学习地址:https://www.bilibili.com/video/BV1WC4y1b78y，主要通过express的简单功能来搭建本地的服务，进而更好地学习Ajax
  发送Ajax请求的方式 原生Ajax //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(&amp;#34;GET&amp;#34;,&amp;#34;https://www.x.com&amp;#34;) //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status &amp;gt;= 200 &amp;amp;&amp;amp; xhr.status &amp;lt; 300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } } 说明：
  readyState: 返回一个 XMLHttpRequest 代理当前所处的状态     值 状态 描述     0 UNSENT 代理被创建，但尚未调用 open() 方法。   1 OPENED open() 方法已经被调用。   2 HEADERS_RECEIVED send() 方法已经被调用，并且头部和状态已经可获得。   3 LOADING 下载中； responseText 属性已经包含部分数据。   4 DONE 下载操作已完成。     因此，xhr.</description>
@@ -280,10 +268,10 @@ new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //r
     
     <item>
       <title>统计学期末知识总结</title>
-      <link>https://www.fintinger.site/p/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%9C%9F%E6%9C%AB%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</link>
+      <link>https://examplesite.com/post/2020/06/17/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%9C%9F%E6%9C%AB%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://examplesite.com/post/2020/06/17/</guid>
       <description>第一章 导 论 1.什么是统计学  统计学是收集、处理、分析、解释数据并从数据中得出结论的科学 数据分析所用的方法可分为描述统计方法和推断统计方法  2.参数和统计量   参数：总体特征，所关心的参数通常是总体平均数、总体标准差、总体比例等
  由于总体数据通常是不知道的，所以参数是一个未知的常量-
    统计量：个体特征，所关心的参数通常是样本平均数、样本标准差、样本比例等

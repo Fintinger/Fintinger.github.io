@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>关键路径 on Archai &#39;s blog</title>
-    <link>https://www.fintinger.site/tags/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/</link>
-    <description>Recent content in 关键路径 on Archai &#39;s blog</description>
+    <title>关键路径 on Archai&#39;s home</title>
+    <link>https://examplesite.com/tags/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/</link>
+    <description>Recent content in 关键路径 on Archai&#39;s home</description>
+    <image>
+      <url>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</url>
+      <link>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Fri, 04 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://examplesite.com/tags/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>图的应用</title>
-      <link>https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8/</link>
+      <link>https://examplesite.com/post/2021/06/02/02_application/</link>
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
-      <description>一、最小生成树 📌什么是生成树？ 连通图的生成树是包含图中所有顶点的一个极小连通子图，通俗地讲，就是“边尽可能少，但需保持连通”。
-规律： 对于一个顶点数|V|=n的树，其生成树的边数|E|=n-1。如果将|E|+1，必然会形成回路；如果将|E|-1，则会成为非连通图。
+      <guid>https://examplesite.com/post/2021/06/02/02_application/</guid>
+      <description>一、最小生成树 📌什么是生成树？ 连通图的生成树是包含图中所有顶点的一个极小连通子图，通俗地讲，就是“边尽可能少，但需保持连通”。规律： 对于一个顶点数|V|=n的树，其生成树的边数|E|=n-1。如果将|E|+1，必然会形成回路；如果将|E|-1，则会成为非连通图。
 📌什么是最小生成树？  最小生成树，也称最小代价树(Minimum Spanning Tree，MST)
- 是带权连通无向图的生成树中边的权值之和最小的一棵树，联系实际问题不难理解其中“最小代价”的意味。
-Prim（普利姆算法），Kruskal（克鲁斯卡尔算法）就是寻找最小生成树的常用算法。
+ 是带权连通无向图的生成树中边的权值之和最小的一棵树，联系实际问题不难理解其中“最小代价”的意味。Prim（普利姆算法），Kruskal（克鲁斯卡尔算法）就是寻找最小生成树的常用算法。
 1.Prim（普利姆算法）  从某一顶点开始，每次将代价最小的新顶点纳入生成树，直至所有顶点都纳入为止。
  图示 易知，此方法得到的最小生成子树是不唯一的。
 代码实现 void MiniSpanTree_PRIMI(Graph G,int u){ //从顶点u出发找G的最小生成树  for (int i = 0; i &amp;lt;G.vexnum; ++i) {//辅助数组初始化  if(i!=u){ closedge[i]={u,G.arcs[u][i]}; } } closedge[u].lowcost=0; for (int j = 0; j &amp;lt; G.vexnum; j++) { k=minimum(closedge);//求生成树的下一个节点  cout&amp;lt;&amp;lt;cloedge[k].adjvex&amp;lt;&amp;lt;G.vex[k]; closedge[k].lowcost=0; for (int i = 0; i &amp;lt; G.vexnum; i++) { if (G.arc[k][j].adj&amp;lt;closedge[j].lowcost) { closedge[j]={G.vexs[k],G.arcs[k][j].adj}; } } } } 2.</description>

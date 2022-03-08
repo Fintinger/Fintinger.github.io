@@ -1,0 +1,314 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>DS导论 | Archai's home</title>
+<meta name=keywords content="数据结构">
+<meta name=description content="导论  所谓算法，即特定计算模型下，旨在解决特定问题的指令序列。输入：待处理的信息（问题）输出：经处理的信息（答案）
+ 正确性 的确可以解决指定的问题
+确定性 任一算法都可以描述为一个由基本操作组成的序列
+可行性 每一基本操作都可实现，且在常数时间内完成
+有穷性 对于任何输入，经有穷次基本操作，都可以得到输出
+::: tip Algorithms + Data Structures = Programs
+(Algorithms + Data Structures) x Efficiency = Computation
+:::
+如何评判算法的其优劣(计算模型)  实验统计是最直接的方法，但足以准确反映算法的真正效率？不足够！ - 不同的算法，可能更适应于不同规模的输入 - 不同的算法，可能更适应于不同类型的输入 - 同一算法，可能由不同程序员、用不同程序语言、经不同编译器生成 - 同一算法，可能实现并运行于不同的体系结构、操作系统&mldr; 为给出客观的评判，需要抽象出一个理想的平台或模型 - 不再依赖于上述种种具体的因素 - 从而直接而准确地描述、测量并评价算法
+ 1.图灵机模型(TM)    组成 说明     Tape 依次均匀地划分为单元格 各存有某一字符，初始均为'#'   Head 总是对准某一单元格，并可 读取或改写其中的字符。每经过一个节拍，可 转向左侧或右侧的邻格   Alphabet 字符的种类有限   State TM总是处于有限种状态中的某一种 。每经过一个节拍 可按照规则转向另一种状态 。统一约定，&lsquo;h&rsquo; = halt(停止)    2.">
+<meta name=author content="Archai">
+<link rel=canonical href=https://examplesite.com/post/2020/11/10/>
+<meta name=google-site-verification content="XYZabc">
+<meta name=yandex-verification content="XYZabc">
+<meta name=msvalidate.01 content="XYZabc">
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
+<link rel=preload href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico as=image>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=32x32 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<link rel=apple-touch-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<link rel=mask-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+</noscript>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-123-45','auto'),ga('send','pageview'))</script><meta property="og:title" content="DS导论">
+<meta property="og:description" content="导论  所谓算法，即特定计算模型下，旨在解决特定问题的指令序列。输入：待处理的信息（问题）输出：经处理的信息（答案）
+ 正确性 的确可以解决指定的问题
+确定性 任一算法都可以描述为一个由基本操作组成的序列
+可行性 每一基本操作都可实现，且在常数时间内完成
+有穷性 对于任何输入，经有穷次基本操作，都可以得到输出
+::: tip Algorithms + Data Structures = Programs
+(Algorithms + Data Structures) x Efficiency = Computation
+:::
+如何评判算法的其优劣(计算模型)  实验统计是最直接的方法，但足以准确反映算法的真正效率？不足够！ - 不同的算法，可能更适应于不同规模的输入 - 不同的算法，可能更适应于不同类型的输入 - 同一算法，可能由不同程序员、用不同程序语言、经不同编译器生成 - 同一算法，可能实现并运行于不同的体系结构、操作系统&mldr; 为给出客观的评判，需要抽象出一个理想的平台或模型 - 不再依赖于上述种种具体的因素 - 从而直接而准确地描述、测量并评价算法
+ 1.图灵机模型(TM)    组成 说明     Tape 依次均匀地划分为单元格 各存有某一字符，初始均为'#'   Head 总是对准某一单元格，并可 读取或改写其中的字符。每经过一个节拍，可 转向左侧或右侧的邻格   Alphabet 字符的种类有限   State TM总是处于有限种状态中的某一种 。每经过一个节拍 可按照规则转向另一种状态 。统一约定，&lsquo;h&rsquo; = halt(停止)    2.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://examplesite.com/post/2020/11/10/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2020-11-10T00:00:00+00:00">
+<meta property="article:modified_time" content="2020-11-10T00:00:00+00:00"><meta property="og:site_name" content="Archai's home">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg">
+<meta name=twitter:title content="DS导论">
+<meta name=twitter:description content="导论  所谓算法，即特定计算模型下，旨在解决特定问题的指令序列。输入：待处理的信息（问题）输出：经处理的信息（答案）
+ 正确性 的确可以解决指定的问题
+确定性 任一算法都可以描述为一个由基本操作组成的序列
+可行性 每一基本操作都可实现，且在常数时间内完成
+有穷性 对于任何输入，经有穷次基本操作，都可以得到输出
+::: tip Algorithms + Data Structures = Programs
+(Algorithms + Data Structures) x Efficiency = Computation
+:::
+如何评判算法的其优劣(计算模型)  实验统计是最直接的方法，但足以准确反映算法的真正效率？不足够！ - 不同的算法，可能更适应于不同规模的输入 - 不同的算法，可能更适应于不同类型的输入 - 同一算法，可能由不同程序员、用不同程序语言、经不同编译器生成 - 同一算法，可能实现并运行于不同的体系结构、操作系统&mldr; 为给出客观的评判，需要抽象出一个理想的平台或模型 - 不再依赖于上述种种具体的因素 - 从而直接而准确地描述、测量并评价算法
+ 1.图灵机模型(TM)    组成 说明     Tape 依次均匀地划分为单元格 各存有某一字符，初始均为'#'   Head 总是对准某一单元格，并可 读取或改写其中的字符。每经过一个节拍，可 转向左侧或右侧的邻格   Alphabet 字符的种类有限   State TM总是处于有限种状态中的某一种 。每经过一个节拍 可按照规则转向另一种状态 。统一约定，&lsquo;h&rsquo; = halt(停止)    2.">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://examplesite.com/post/"},{"@type":"ListItem","position":2,"name":"DS导论","item":"https://examplesite.com/post/2020/11/10/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"DS导论","name":"DS导论","description":"导论  所谓算法，即特定计算模型下，旨在解决特定问题的指令序列。输入：待处理的信息（问题）输出：经处理的信息（答案）\n 正确性 的确可以解决指定的问题\n确定性 任一算法都可以描述为一个由基本操作组成的序列\n可行性 每一基本操作都可实现，且在常数时间内完成\n有穷性 对于任何输入，经有穷次基本操作，都可以得到输出\n::: tip Algorithms + Data Structures = Programs\n(Algorithms + Data Structures) x Efficiency = Computation\n:::\n如何评判算法的其优劣(计算模型)  实验统计是最直接的方法，但足以准确反映算法的真正效率？不足够！ - 不同的算法，可能更适应于不同规模的输入 - 不同的算法，可能更适应于不同类型的输入 - 同一算法，可能由不同程序员、用不同程序语言、经不同编译器生成 - 同一算法，可能实现并运行于不同的体系结构、操作系统\u0026hellip; 为给出客观的评判，需要抽象出一个理想的平台或模型 - 不再依赖于上述种种具体的因素 - 从而直接而准确地描述、测量并评价算法\n 1.图灵机模型(TM)    组成 说明     Tape 依次均匀地划分为单元格 各存有某一字符，初始均为'#'   Head 总是对准某一单元格，并可 读取或改写其中的字符。每经过一个节拍，可 转向左侧或右侧的邻格   Alphabet 字符的种类有限   State TM总是处于有限种状态中的某一种 。每经过一个节拍 可按照规则转向另一种状态 。统一约定，\u0026lsquo;h\u0026rsquo; = halt(停止)    2.","keywords":["数据结构"],"articleBody":"导论  所谓算法，即特定计算模型下，旨在解决特定问题的指令序列。输入：待处理的信息（问题）输出：经处理的信息（答案）\n 正确性 的确可以解决指定的问题\n确定性 任一算法都可以描述为一个由基本操作组成的序列\n可行性 每一基本操作都可实现，且在常数时间内完成\n有穷性 对于任何输入，经有穷次基本操作，都可以得到输出\n::: tip Algorithms + Data Structures = Programs\n(Algorithms + Data Structures) x Efficiency = Computation\n:::\n如何评判算法的其优劣(计算模型)  实验统计是最直接的方法，但足以准确反映算法的真正效率？不足够！ - 不同的算法，可能更适应于不同规模的输入 - 不同的算法，可能更适应于不同类型的输入 - 同一算法，可能由不同程序员、用不同程序语言、经不同编译器生成 - 同一算法，可能实现并运行于不同的体系结构、操作系统… 为给出客观的评判，需要抽象出一个理想的平台或模型 - 不再依赖于上述种种具体的因素 - 从而直接而准确地描述、测量并评价算法\n 1.图灵机模型(TM)    组成 说明     Tape 依次均匀地划分为单元格 各存有某一字符，初始均为'#'   Head 总是对准某一单元格，并可 读取或改写其中的字符。每经过一个节拍，可 转向左侧或右侧的邻格   Alphabet 字符的种类有限   State TM总是处于有限种状态中的某一种 。每经过一个节拍 可按照规则转向另一种状态 。统一约定，‘h’ = halt(停止)    2.RAM模型(Random Access Machine) 语法：\n 赋值操作 R[i] , R[i] , R[i]  仅加减运算 R[j] + R[k] R[i]  判断语句 IF R[i] = 0 GOTO # keyword STOP, GOTO  总之 在这些理想化模型中，\n✨独立于具体的平台，假定空间是无限的(不考虑空间)，对算法的效率做出可信的比较与评判\n✨算法的运行时间 = 算法需要执行的基本操作次数\n✨T(n) = 算法为求解规模为n的问题，所需执行的基本操作次数\nBig-O notation(大O记号)  Big-O就是T (n)的上限，对一个具体的f(n) 不断放大产生的结果，下图就是Big-O的原理\n 关系式\nT(n) =O(f(n)) iff ∃c0 s.t. T(n)  2\n规则\n✨常系数忽略，即O(f(n)) = O(c*f(n))\n✨低次数项忽略，即O(n^a+n^b) = O(n^a),ab0\n其他记号 Ω记号 :表示T(n)的下界，Ω(f(n))\nT(n) =O(f(n)) iff ∃c0 s.t. T(n)  c.f(n) ∀ n  2\nΘ记号：是O和Ω的结合\nT(n) =O(f(n)) iff ∃c₁c₂0 s.t. c₁·f(n)  T(n)  c₂·f(n) ∀ n  2\n 三者的关系可以用下图表示\n ::: tip\n不含转向(循环，调用，递归等)，必然是顺序执行，即是O(1)的复杂度\n:::\n几个注意点 对数O(logn)\n多项式复杂度\n级数 1.算术级数 T(n)=1+2+3+...+n=n(n+1)/2 = O(n²)\n::: tip\n与末项平方同阶\n:::\n2. 幂方级数 T₂(n)=1²+2²+3²+...+n²=n(n+1)(2n+1)/6 = O(n³)\n…\n::: tip\n比幂次高出一阶\n:::\n3.几何级数(a1) T(n)=1+2+2²+...+2ⁿ=O(2ⁿ)\n::: tip\n与末项同阶\n:::\n4.收敛级数 1/1×2 + 1/2×3 + 1/3×4 +...+ 1/(n-1)·n= 1-1/n = O(1)\n几何分布：(1- λ) · [1+ 2λ + 3λ² + 4λ³ +...]= 1/(1-λ)=O(1), 0\n::: tip\n收敛级数复杂度最终趋于常数，为O(1)\n:::\n5.未必收敛，但长度有限 ","wordCount":"219","inLanguage":"en","datePublished":"2020-11-10T00:00:00Z","dateModified":"2020-11-10T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://examplesite.com/post/2020/11/10/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://examplesite.com/ accesskey=h title="Home (Alt + H)">
+<img src=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico alt=logo aria-label=logo height=35>Home</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://examplesite.com/categories/ title=Categories>
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a href=https://examplesite.com/tags/ title=Tags>
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href=https://examplesite.com/search/ title="Search (Alt + /)" accesskey=/>
+<span>Search</span>
+</a>
+</li>
+<li>
+<a href=https://examplesite.com/archives/ title=Archives>
+<span>Archives</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href=https://examplesite.com/>Home</a>&nbsp;»&nbsp;<a href=https://examplesite.com/post/>Posts</a></div>
+<h1 class=post-title>
+DS导论
+</h1>
+<div class=post-meta><span title="2020-11-10 00:00:00 +0000 UTC">November 10, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai&nbsp;|&nbsp;<a href=https://github.com/%3cpath_to_repo%3e/content/post/2020/11/10/index.md rel="noopener noreferrer" target=_blank>Suggest Changes</a>
+</div>
+</header> <div class=toc>
+<details>
+<summary accesskey=c title="(Alt + C)">
+<span class=details>Table of Contents</span>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#%e5%af%bc%e8%ae%ba aria-label=导论>导论</a><ul>
+<li>
+<a href=#%e5%a6%82%e4%bd%95%e8%af%84%e5%88%a4%e7%ae%97%e6%b3%95%e7%9a%84%e5%85%b6%e4%bc%98%e5%8a%a3%e8%ae%a1%e7%ae%97%e6%a8%a1%e5%9e%8b aria-label=如何评判算法的其优劣(计算模型)>如何评判算法的其优劣(计算模型)</a><ul>
+<li>
+<a href=#1%e5%9b%be%e7%81%b5%e6%9c%ba%e6%a8%a1%e5%9e%8btm aria-label=1.图灵机模型(TM)>1.图灵机模型(TM)</a></li>
+<li>
+<a href=#2ram%e6%a8%a1%e5%9e%8brandom-access-machine aria-label="2.RAM模型(Random Access Machine)">2.RAM模型(Random Access Machine)</a></li>
+<li>
+<a href=#%e6%80%bb%e4%b9%8b aria-label=总之>总之</a></li></ul>
+</li>
+<li>
+<a href=#big-o-notation%e5%a4%a7o%e8%ae%b0%e5%8f%b7 aria-label="Big-O notation(大O记号)">Big-O notation(大O记号)</a><ul>
+<li>
+<a href=#%e5%85%b6%e4%bb%96%e8%ae%b0%e5%8f%b7 aria-label=其他记号>其他记号</a></li>
+<li>
+<a href=#%e5%87%a0%e4%b8%aa%e6%b3%a8%e6%84%8f%e7%82%b9 aria-label=几个注意点>几个注意点</a></li></ul>
+</li>
+<li>
+<a href=#%e7%ba%a7%e6%95%b0 aria-label=级数>级数</a><ul>
+<li>
+<a href=#1%e7%ae%97%e6%9c%af%e7%ba%a7%e6%95%b0 aria-label=1.算术级数>1.算术级数</a></li>
+<li>
+<a href=#2-%e5%b9%82%e6%96%b9%e7%ba%a7%e6%95%b0 aria-label="2. 幂方级数">2. 幂方级数</a></li>
+<li>
+<a href=#3%e5%87%a0%e4%bd%95%e7%ba%a7%e6%95%b0a1 aria-label=3.几何级数(a&amp;gt;1)>3.几何级数(a>1)</a></li>
+<li>
+<a href=#4%e6%94%b6%e6%95%9b%e7%ba%a7%e6%95%b0 aria-label=4.收敛级数>4.收敛级数</a></li>
+<li>
+<a href=#5%e6%9c%aa%e5%bf%85%e6%94%b6%e6%95%9b%e4%bd%86%e9%95%bf%e5%ba%a6%e6%9c%89%e9%99%90 aria-label=5.未必收敛，但长度有限>5.未必收敛，但长度有限</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div class=post-content><h1 id=导论>导论<a hidden class=anchor aria-hidden=true href=#导论>#</a></h1>
+<blockquote>
+<p>所谓算法，即特定计算模型下，旨在解决特定问题的指令序列。输入：待处理的信息（问题）输出：经处理的信息（答案）</p>
+</blockquote>
+<p><strong>正确性</strong> 的确可以解决指定的问题</p>
+<p><strong>确定性</strong> 任一算法都可以描述为一个由基本操作组成的序列</p>
+<p><strong>可行性</strong> 每一基本操作都可实现，且在常数时间内完成</p>
+<p><strong>有穷性</strong> 对于任何输入，经有穷次基本操作，都可以得到输出</p>
+<p>::: tip
+Algorithms + Data Structures = Programs</p>
+<p>(Algorithms + Data Structures) x Efficiency = Computation</p>
+<p>:::</p>
+<h2 id=如何评判算法的其优劣计算模型>如何评判算法的其优劣(计算模型)<a hidden class=anchor aria-hidden=true href=#如何评判算法的其优劣计算模型>#</a></h2>
+<blockquote>
+<p>实验统计是最直接的方法，但足以准确反映算法的真正效率？不足够！ - 不同的算法，可能更适应于不同规模的输入 - 不同的算法，可能更适应于不同类型的输入 - 同一算法，可能由不同程序员、用不同程序语言、经不同编译器生成 - 同一算法，可能实现并运行于不同的体系结构、操作系统&mldr;
+为给出客观的评判，需要抽象出一个理想的平台或模型 - 不再依赖于上述种种具体的因素 - 从而直接而准确地描述、测量并评价算法</p>
+</blockquote>
+<h3 id=1图灵机模型tm>1.图灵机模型(TM)<a hidden class=anchor aria-hidden=true href=#1图灵机模型tm>#</a></h3>
+<p><img loading=lazy src=https://gitee.com/fintinger/figure-bed/raw/master//images/20201110122012.png alt=示意图>
+</p>
+<table>
+<thead>
+<tr>
+<th>组成</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tape</td>
+<td>依次均匀地划分为单元格 各存有某一字符，初始均为'#'</td>
+</tr>
+<tr>
+<td>Head</td>
+<td>总是对准某一单元格，并可 读取或改写其中的字符。每经过一个节拍，可 转向左侧或右侧的邻格</td>
+</tr>
+<tr>
+<td>Alphabet</td>
+<td>字符的种类有限</td>
+</tr>
+<tr>
+<td>State</td>
+<td>TM总是处于有限种状态中的某一种 。每经过一个节拍 可按照规则转向另一种状态 。统一约定，&lsquo;h&rsquo; = halt(停止)</td>
+</tr>
+</tbody>
+</table>
+<h3 id=2ram模型random-access-machine>2.RAM模型(Random Access Machine)<a hidden class=anchor aria-hidden=true href=#2ram模型random-access-machine>#</a></h3>
+<p><img loading=lazy src=https://gitee.com/fintinger/figure-bed/raw/master//images/20201115121515.png alt=PAM模型>
+</p>
+<p><strong>语法：</strong></p>
+<ul>
+<li>赋值操作 <code>R[i] &lt;- C</code> , <code>R[i] &lt;- R[j]</code>, <code>R[i] &lt;-R[R[j]]</code></li>
+<li>仅加减运算 <code>R[j] + R[k]</code> <code>R[i] &lt;- R[j] + R[k]</code></li>
+<li>判断语句 <code>IF R[i] = 0 GOTO #</code></li>
+<li>keyword <code>STOP</code>, <code>GOTO</code></li>
+</ul>
+<h3 id=总之>总之<a hidden class=anchor aria-hidden=true href=#总之>#</a></h3>
+<p>在这些理想化模型中，</p>
+<p>✨独立于具体的平台，假定空间是无限的(不考虑空间)，对算法的效率做出可信的比较与评判</p>
+<p>✨算法的<strong>运行时间</strong> => 算法需要执行的基本<strong>操作次数</strong></p>
+<p>✨T(n) = 算法为求解规模为n的问题，所需执行的基本操作次数</p>
+<h2 id=big-o-notation大o记号>Big-O notation(大O记号)<a hidden class=anchor aria-hidden=true href=#big-o-notation大o记号>#</a></h2>
+<blockquote>
+<p>Big-O就是T (n)的上限，对一个具体的f(n) 不断放大产生的结果，下图就是Big-O的原理</p>
+</blockquote>
+<p><img loading=lazy src=https://gitee.com/fintinger/figure-bed/raw/master//images/20201115123716.png alt=Big-O原理>
+</p>
+<p><strong>关系式</strong></p>
+<p><code>T(n) =O(f(n)) iff ∃c>0 s.t. T(n) &lt; c.f(n) ∀ n >> 2</code></p>
+<p><strong>规则</strong></p>
+<p>✨常系数忽略，即<code>O(f(n)) = O(c*f(n))</code></p>
+<p>✨低次数项忽略，即<code>O(n^a+n^b) = O(n^a),a>b>0</code></p>
+<h3 id=其他记号>其他记号<a hidden class=anchor aria-hidden=true href=#其他记号>#</a></h3>
+<p><strong>Ω记号</strong> :表示T(n)的下界，Ω(f(n))</p>
+<p><code>T(n) =O(f(n)) iff ∃c>0 s.t. T(n) > c.f(n) ∀ n >> 2</code></p>
+<p><strong>Θ记号</strong>：是O和Ω的结合</p>
+<p><code>T(n) =O(f(n)) iff ∃c₁>c₂>0 s.t. c₁·f(n) > T(n) > c₂·f(n) ∀ n >> 2</code></p>
+<blockquote>
+<p>三者的关系可以用下图表示</p>
+</blockquote>
+<p><img loading=lazy src=https://gitee.com/fintinger/figure-bed/raw/master//images/20201115125420.png alt=关系图>
+</p>
+<p>::: tip</p>
+<p>不含转向(循环，调用，递归等)，必然是顺序执行，即是O(1)的复杂度</p>
+<p>:::</p>
+<h3 id=几个注意点>几个注意点<a hidden class=anchor aria-hidden=true href=#几个注意点>#</a></h3>
+<p><strong>对数O(logn)</strong></p>
+<p><img loading=lazy src=https://gitee.com/fintinger/figure-bed/raw/master//images/20201115133553.png alt>
+</p>
+<p><strong>多项式复杂度</strong></p>
+<p><img loading=lazy src=https://gitee.com/fintinger/figure-bed/raw/master//images/20201115133846.png alt>
+</p>
+<h2 id=级数>级数<a hidden class=anchor aria-hidden=true href=#级数>#</a></h2>
+<p><img loading=lazy src=https://gitee.com/fintinger/figure-bed/raw/master//images/20201115130322.png alt=层次级别>
+</p>
+<h3 id=1算术级数>1.算术级数<a hidden class=anchor aria-hidden=true href=#1算术级数>#</a></h3>
+<p><code>T(n)=1+2+3+...+n=n(n+1)/2 = O(n²)</code></p>
+<p>::: tip</p>
+<p><strong>与末项平方同阶</strong></p>
+<p>:::</p>
+<h3 id=2-幂方级数>2. 幂方级数<a hidden class=anchor aria-hidden=true href=#2-幂方级数>#</a></h3>
+<p><code>T₂(n)=1²+2²+3²+...+n²=n(n+1)(2n+1)/6 = O(n³)</code></p>
+<p>&mldr;</p>
+<p><img loading=lazy src=https://gitee.com/fintinger/figure-bed/raw/master//images/20201115130436.png alt>
+</p>
+<p>::: tip</p>
+<p><strong>比幂次高出一阶</strong></p>
+<p>:::</p>
+<h3 id=3几何级数a1>3.几何级数(a>1)<a hidden class=anchor aria-hidden=true href=#3几何级数a1>#</a></h3>
+<p><code>T(n)=1+2+2²+...+2ⁿ=O(2ⁿ)</code></p>
+<p>::: tip</p>
+<p><strong>与末项同阶</strong></p>
+<p>:::</p>
+<h3 id=4收敛级数>4.收敛级数<a hidden class=anchor aria-hidden=true href=#4收敛级数>#</a></h3>
+<p><code>1/1×2 + 1/2×3 + 1/3×4 +...+ 1/(n-1)·n= 1-1/n = O(1)</code></p>
+<p>几何分布：<code>(1- λ) · [1+ 2λ + 3λ² + 4λ³ +...]= 1/(1-λ)=O(1), 0&lt;λ&lt;1</code></p>
+<p>::: tip</p>
+<p>收敛级数复杂度最终趋于常数，为O(1)</p>
+<p>:::</p>
+<h3 id=5未必收敛但长度有限>5.未必收敛，但长度有限<a hidden class=anchor aria-hidden=true href=#5未必收敛但长度有限>#</a></h3>
+<p><img loading=lazy src=https://gitee.com/fintinger/figure-bed/raw/master//images/20201115134527.png alt>
+</p>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://examplesite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/>数据结构</a></li>
+</ul>
+<nav class=paginav>
+<a class=prev href=https://examplesite.com/post/2020/11/15/>
+<span class=title>« Prev Page</span>
+<br>
+<span>减而治之与分而治之</span>
+</a>
+<a class=next href=https://examplesite.com/post/2020/10/14/>
+<span class=title>Next Page »</span>
+<br>
+<span>PHP语法小结</span>
+</a>
+</nav>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2022 <a href=https://examplesite.com/>Archai's home</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+<script>document.querySelectorAll('pre > code').forEach(b=>{const c=b.parentNode.parentNode,a=document.createElement('button');a.classList.add('copy-code'),a.innerText='copy';function d(){a.innerText='copied!',setTimeout(()=>{a.innerText='copy'},2e3)}a.addEventListener('click',e=>{if('clipboard'in navigator){navigator.clipboard.writeText(b.textContent),d();return}const a=document.createRange();a.selectNodeContents(b);const c=window.getSelection();c.removeAllRanges(),c.addRange(a);try{document.execCommand('copy'),d()}catch(a){}c.removeRange(a)}),c.classList.contains("highlight")?c.appendChild(a):c.parentNode.firstChild==c||(b.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?b.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(a):b.parentNode.appendChild(a))})</script>
+</body>
+</html>

@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>折半查找 on Archai &#39;s blog</title>
-    <link>https://www.fintinger.site/tags/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE/</link>
-    <description>Recent content in 折半查找 on Archai &#39;s blog</description>
+    <title>折半查找 on Archai&#39;s home</title>
+    <link>https://examplesite.com/tags/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE/</link>
+    <description>Recent content in 折半查找 on Archai&#39;s home</description>
+    <image>
+      <url>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</url>
+      <link>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 06 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://examplesite.com/tags/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>查找算法相关</title>
-      <link>https://www.fintinger.site/p/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/</link>
+      <link>https://examplesite.com/post/2021/06/06/search/</link>
       <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/</guid>
-      <description>顺序查找 typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数组基址  int TableLen;//查找表长度 }SSTable; int Seq_Search(SSTable ST,int key){ ST.elem[0]=key; int i; for (i = ST.TableLen;ST.elem[i]!=key ; i--) {}//从后往前查找，最终返回下标i  return i;//返回0说明没找到 } 效率分析 对于长度为n的顺序表，如果查找成功 $$ ASL={\frac{1+2+&amp;hellip;+n}{n}}=\frac{n+1}{2} $$ 若果查找失败，则 $ASL=n+1$
+      <guid>https://examplesite.com/post/2021/06/06/search/</guid>
+      <description>顺序查找 typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数组基址  int TableLen;//查找表长度 }SSTable; int Seq_Search(SSTable ST,int key){ ST.elem[0]=key; int i; for (i = ST.TableLen;ST.elem[i]!=key ; i--) {}//从后往前查找，最终返回下标i  return i;//返回0说明没找到 } 效率分析 对于长度为n的顺序表，如果查找成功$$ ASL={\frac{1+2+&amp;hellip;+n}{n}}=\frac{n+1}{2} $$ 若果查找失败，则 $ASL=n+1$
 总体上，该算法时间复杂度为 $O(n)$
 优化思路 1.如果使得表中的元素有序存放……，可以构造出一棵查找判定树
 此时，查找失败时$ASL=\frac{1+2+&amp;hellip;+n+n}{n+1}=\frac{n}{2}+\frac{n}{n+1}$
-优点： 容易查找失败时ASL更小
-2.如果各元素被查找的概率不同……，可以把概率大的靠前
-优点： 容易查找成功时ASL更小
-折半查找  折半查找，又称“二分查找”，仅适用于有序的顺序表。
+优点： 容易查找失败时ASL更小2.如果各元素被查找的概率不同……，可以把概率大的靠前
+优点： 容易查找成功时ASL更小折半查找  折半查找，又称“二分查找”，仅适用于有序的顺序表。
  针对升序排列的顺序表，代码实现如下
-typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数组基址  int TableLen;//查找表长度 }SSTable; int BinarySearch(SSTable L,int key){ int low=0,high=L.TableLen-1,mid; while (low&amp;lt;=high) { mid=(low+high)/2; if (L.</description>
+typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数组基址  int TableLen;//查找表长度 }SSTable; int BinarySearch(SSTable L,int key){ int low=0,high=L.TableLen-1,mid; while (low&amp;lt;=high) { mid=(low+high)/2; if (L.elem[mid]==key) return key; else if(L.</description>
     </item>
     
   </channel>

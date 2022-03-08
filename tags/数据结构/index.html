@@ -1,701 +1,279 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Never knows tomorrow...'><title>Tag: 数据结构 - Archai &#39;s blog</title>
-<link rel='canonical' href='https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/'>
-<link rel="stylesheet" href="/scss/loadingPage.css">
-
-
-<link rel="stylesheet" href="/scss/style.min.css">
-
-<link rel="stylesheet" href="/scss/external/tailwind.min.css">
-
-
-<link rel="stylesheet" href="/scss/mobtoc.min.css">
-
-
-<link rel="stylesheet" href="/scss/welcomepage.min.css"><meta property='og:title' content='Tag: 数据结构 - Archai &#39;s blog'>
-<meta property='og:description' content='Never knows tomorrow...'>
-<meta property='og:url' content='https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/'>
-<meta property='og:site_name' content='Archai &#39;s blog'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2021-09-19T00:00:00&#43;00:00 '/><meta property='og:image' content='https://www.fintinger.site/img/defaultImg.jpg' />
-<meta name="twitter:title" content="Tag: 数据结构 - Archai &#39;s blog">
-<meta name="twitter:description" content="Never knows tomorrow..."><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://www.fintinger.site/img/defaultImg.jpg' /><link rel="alternate" type="application/rss&#43;xml" href="https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml">
-    <link rel="shortcut icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico" />
-
-  </head>
-  <body style="overflow-y: hidden" class="">
-    <div class="welcome_page">
-      
-      <div
-        style="user-select: none"
-        class="
-          infoCard
-          h-max
-          xl:w-max
-          py-10
-          xl:py-32
-          px-32
-          xl:px-96
-          bg-gray-100
-          rounded-2xl
-          shadow-2xl
-          flex flex-col
-          justify-center
-          relative
-          mb-10
-        "
-      >
-        <span
-          class="
-            absolute
-            w-16
-            h-16
-            bg-purple-100 bg-opacity0
-            top-14
-            right-14
-            rounded-full
-            text-center
-            border-2 border-purple-600 border-opacity-10
-            leading-loose
-            text-3xl
-            animate-pulse
-          "
-          >❤️</span
-        >
-        <div class="flex flex-col items-center space-y-8 font-sans">
-          <div
-            style="
-              background: url('https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg')
-                center/cover;
-            "
-            class="w-44 h-44 rounded-full"
-          ></div>
-          <h1 class="text-6xl font-semibold">ARCHAI</h1>
-          <p style="margin-top: 7px" class="text-xl text-gray-500">
-            Undergraduate / Rookie
-          </p>
-          <div class="bg-purple-600 px-5 py-3 rounded-md cursor-pointer">
-            <a href="#main_content" class="text-white hover:text-white"
-              >Read more</a
-            >
-          </div>
-        </div>
-      </div>
-      <footer class="h-1/5 flex flex-col justify-end">
-        <a href="#main_content">
-          <svg
-            class="animate-bounce"
-            t="1629475731927"
-            class="icon"
-            viewBox="0 0 1024 1024"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            p-id="2357"
-            width="80"
-            height="80"
-          >
-            <path
-              d="M896.32 336.992 523.648 709.664c-0.064 0.064-0.16 0.064-0.192 0.128-0.064 0.064-0.064 0.128-0.128 0.192-2.752 2.752-6.304 4.032-9.952 4.32-0.48 0.032-0.896 0.256-1.376 0.256-0.48 0-0.896-0.192-1.376-0.256-3.648-0.288-7.2-1.568-9.952-4.32-0.064-0.064-0.064-0.128-0.128-0.192-0.064-0.064-0.16-0.064-0.192-0.128L127.68 336.992c-6.432-6.432-6.592-16.704-0.32-22.976 6.24-6.24 16.512-6.112 22.976 0.32L512 676.064 873.696 314.368c6.432-6.432 16.704-6.592 22.976-0.32C902.912 320.288 902.752 330.56 896.32 336.992z"
-              p-id="2358"
-              fill="#dbdbdb"
-            ></path>
-          </svg>
-        </a>
-      </footer>
-    </div>
-
-    <div
-      class="
-        loading-page
-        w-full
-        h-full
-        z-50
-        fixed
-        top-0
-        text-purple-900
-        flex
-        justify-center
-        items-center
-      "
-    >
-      <div class="load-3">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-    </div>
-    <div id="main_content" class="main_content">
-    <script>
-        (function() {
-            const colorSchemeKey = 'StackColorScheme';
-            if(!localStorage.getItem(colorSchemeKey)){
-                localStorage.setItem(colorSchemeKey, "light");
-            }
-        })();
-    </script><script>
-    (function() {
-        const colorSchemeKey = 'StackColorScheme';
-        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
-        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
-
-        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
-            
-
-            document.documentElement.dataset.scheme = 'dark';
-        } else {
-            document.documentElement.dataset.scheme = 'light';
-        }
-    })();
-</script>
-<div
-        class="container main-container flex on-phone--column extended"
-      ><aside class="sidebar left-sidebar sticky">
-    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
-        <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-        </span>
-    </button>
-
-    <header class="site-info">
-        
-        
-        <figure class="site-avatar">
-            
-            <img src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
-            
-
-            
-            <span class="emoji">🧐</span>
-            
-        </figure>
-        
-        
-        <h1 class="site-name"><a href="https://www.fintinger.site">Archai &#39;s blog</a></h1>
-        <h2 class="site-description">Never knows tomorrow...</h2>
-    </header>
-
-    <ol class="menu" id="main-menu">
-        
-        
-        
-
-        <li >
-            <a class="w-full" href='/'>
-                
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <polyline points="5 12 3 12 12 3 21 12 19 12" />
-  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
-</svg>
-
-
-
-                
-                <span>Home</span>
-            </a>
-        </li>
-        
-        
-
-        <li >
-            <a class="w-full" href='/about/'>
-                
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="7" r="4" />
-  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-</svg>
-
-
-
-                
-                <span>About</span>
-            </a>
-        </li>
-        
-        
-
-        <li >
-            <a class="w-full" href='/archives/'>
-                
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <rect x="3" y="4" width="18" height="4" rx="2" />
-  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
-  <line x1="10" y1="12" x2="14" y2="12" />
-</svg>
-
-
-
-                
-                <span>C&amp;A</span>
-            </a>
-        </li>
-        
-        
-
-        <li >
-            <a class="w-full" href='/search/'>
-                
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="10" cy="10" r="7" />
-  <line x1="21" y1="21" x2="15" y2="15" />
-</svg>
-
-
-
-                
-                <span>Search</span>
-            </a>
-        </li>
-        
-        
-
-        <li >
-            <a class="w-full" href='/extra/'>
-                
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
-  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
-</svg>
-
-
-
-                
-                <span>Extra</span>
-            </a>
-        </li>
-        
-        <li class="aboutme">
-            <a style="background:#fff;" target="_blank" href="https://github.com/Fintinger/"><svg t="1629601054426" class="icon" viewBox="0 0 1049 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2068" width="20" height="20"><path d="M524.979332 0C234.676191 0 0 234.676191 0 524.979332c0 232.068678 150.366597 428.501342 358.967656 498.035028 26.075132 5.215026 35.636014-11.299224 35.636014-25.205961 0-12.168395-0.869171-53.888607-0.869171-97.347161-146.020741 31.290159-176.441729-62.580318-176.441729-62.580318-23.467619-60.841976-58.234462-76.487055-58.234463-76.487055-47.804409-32.15933 3.476684-32.15933 3.476685-32.15933 53.019436 3.476684 80.83291 53.888607 80.83291 53.888607 46.935238 79.963739 122.553122 57.365291 152.97411 43.458554 4.345855-33.897672 18.252593-57.365291 33.028501-70.402857-116.468925-12.168395-239.022047-57.365291-239.022047-259.012982 0-57.365291 20.860106-104.300529 53.888607-140.805715-5.215026-13.037566-23.467619-66.926173 5.215027-139.067372 0 0 44.327725-13.906737 144.282399 53.888607 41.720212-11.299224 86.917108-17.383422 131.244833-17.383422s89.524621 6.084198 131.244833 17.383422C756.178839 203.386032 800.506564 217.29277 800.506564 217.29277c28.682646 72.1412 10.430053 126.029806 5.215026 139.067372 33.897672 36.505185 53.888607 83.440424 53.888607 140.805715 0 201.64769-122.553122 245.975415-239.891218 259.012982 19.121764 16.514251 35.636014 47.804409 35.636015 97.347161 0 70.402857-0.869171 126.898978-0.869172 144.282399 0 13.906737 9.560882 30.420988 35.636015 25.205961 208.601059-69.533686 358.967656-265.96635 358.967655-498.035028C1049.958663 234.676191 814.413301 0 524.979332 0z" fill="#bababa" p-id="2069"></path><path d="M199.040177 753.571326c-0.869171 2.607513-5.215026 3.476684-8.691711 1.738342s-6.084198-5.215026-4.345855-7.82254c0.869171-2.607513 5.215026-3.476684 8.691711-1.738342s5.215026 5.215026 4.345855 7.82254z m-6.953369-4.345856M219.900283 777.038945c-2.607513 2.607513-7.82254 0.869171-10.430053-2.607514-3.476684-3.476684-4.345855-8.691711-1.738342-11.299224 2.607513-2.607513 6.953369-0.869171 10.430053 2.607514 3.476684 4.345855 4.345855 9.560882 1.738342 11.299224z m-5.215026-5.215027M240.760389 807.459932c-3.476684 2.607513-8.691711 0-11.299224-4.345855-3.476684-4.345855-3.476684-10.430053 0-12.168395 3.476684-2.607513 8.691711 0 11.299224 4.345855 3.476684 4.345855 3.476684 9.560882 0 12.168395z m0 0M269.443034 837.011749c-2.607513 3.476684-8.691711 2.607513-13.906737-1.738342-4.345855-4.345855-6.084198-10.430053-2.607513-13.037566 2.607513-3.476684 8.691711-2.607513 13.906737 1.738342 4.345855 3.476684 5.215026 9.560882 2.607513 13.037566z m0 0M308.555733 853.526c-0.869171 4.345855-6.953369 6.084198-13.037566 4.345855-6.084198-1.738342-9.560882-6.953369-8.691711-10.430053 0.869171-4.345855 6.953369-6.084198 13.037566-4.345855 6.084198 1.738342 9.560882 6.084198 8.691711 10.430053z m0 0M351.145116 857.002684c0 4.345855-5.215026 7.82254-11.299224 7.82254-6.084198 0-11.299224-3.476684-11.299224-7.82254s5.215026-7.82254 11.299224-7.82254c6.084198 0 11.299224 3.476684 11.299224 7.82254z m0 0M391.126986 850.049315c0.869171 4.345855-3.476684 8.691711-9.560882 9.560882-6.084198 0.869171-11.299224-1.738342-12.168395-6.084197-0.869171-4.345855 3.476684-8.691711 9.560881-9.560882 6.084198-0.869171 11.299224 1.738342 12.168396 6.084197z m0 0" fill="#bababa" p-id="2070"></path></svg></a>
-            <a target="_blank" href="https://blog.csdn.net/fintinger"><svg t="1629601338226" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3466" width="16" height="16"><path d="M512 0c282.784 0 512 229.216 512 512s-229.216 512-512 512S0 794.784 0 512 229.216 0 512 0z m189.952 752l11.2-108.224c-31.904 9.536-100.928 16.128-147.712 16.128-134.464 0-205.728-47.296-195.328-146.304 11.584-110.688 113.152-145.696 232.64-145.696 54.784 0 122.432 8.8 151.296 18.336L768 272.704C724.544 262.24 678.272 256 599.584 256c-203.2 0-388.704 94.88-406.4 263.488C178.336 660.96 303.584 768 535.616 768c80.672 0 138.464-6.432 166.336-16z" fill="#bababa" p-id="3467"></path></svg></a>
-            <a style="background: #bababa;" target="_blank" href="https://juejin.cn/user/2629687547017246/posts"><svg t="1629601464502" class="icon" viewBox="0 0 1272 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4419" width="16" height="16"><path d="M729.64116345 165.27693991L634.32650881 90.125l-99.5625 78.52693991-5.17887981 4.16056009 104.74137981 83.50215546 105.09051682-83.50215546-9.77586218-7.53556009z m361.21228445 291.47198236l-456.78879245 360.19396555-456.49784537-359.99030128L110.125 511.12715547l523.93965546 413.11745671 524.23060335-413.35021555-67.44181091-54.14547436z m-456.78879245 29.21120673L385.4784479 290.00646554 318.06573237 344.12284454l315.96982771 249.16810336 316.28987101-249.40086136-67.41271555-54.14547436-248.84806008 196.21551682z" fill="#fff" p-id="4420"></path></svg></a>
-        </li>
-        
-        <li id="dark-mode-toggle">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="8" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="16" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-            <span>Dark Mode</span>
-        </li>
-        
-    </ol>
-</aside>
-<main class="main full-width">
-    <h3 class="section-title">
-        
-            Tags
-        
-    </h3>
-
-    <div class="section-card">
-        <div class="section-details">
-            <h3 class="section-count">14 pages</h3>
-            <h1 class="section-term">数据结构</h1>
-            
-        </div>
-    </div>
-    
-    <section class="article-list--compact">
-        
-            <article>
-    <a href="/p/%E5%A4%96%E9%83%A8%E6%8E%92%E5%BA%8F%E7%9B%B8%E5%85%B3/">
-        <div class="article-details">
-            <h2 class="article-title">外部排序相关</h2>
-            <footer class="article-time">
-                <time datetime='2021-06-10T00:00:00Z'>Jun 10, 2021</time>
-            </footer>
-        </div>
-            <div class="article-image">
-                
-                    <img src="https://picsum.photos/seed/waibupaixu/640/360" loading="lazy" alt="Featured image of post 外部排序相关" />
-                
-            </div>
-        
-    </a>
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>数据结构 | Archai's home</title>
+<meta name=keywords content>
+<meta name=description content>
+<meta name=author content="Archai">
+<link rel=canonical href=https://examplesite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/>
+<meta name=google-site-verification content="XYZabc">
+<meta name=yandex-verification content="XYZabc">
+<meta name=msvalidate.01 content="XYZabc">
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
+<link rel=preload href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico as=image>
+<link rel=icon href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=32x32 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<link rel=apple-touch-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<link rel=mask-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<link rel=alternate type=application/rss+xml href=https://examplesite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml>
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+</noscript>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-123-45','auto'),ga('send','pageview'))</script><meta property="og:title" content="数据结构">
+<meta property="og:description" content>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://examplesite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="og:site_name" content="Archai's home">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg">
+<meta name=twitter:title content="数据结构">
+<meta name=twitter:description content>
+</head>
+<body class=list id=top>
+<script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://examplesite.com/ accesskey=h title="Home (Alt + H)">
+<img src=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico alt=logo aria-label=logo height=35>Home</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://examplesite.com/categories/ title=Categories>
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a href=https://examplesite.com/tags/ title=Tags>
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href=https://examplesite.com/search/ title="Search (Alt + /)" accesskey=/>
+<span>Search</span>
+</a>
+</li>
+<li>
+<a href=https://examplesite.com/archives/ title=Archives>
+<span>Archives</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<header class=page-header><div class=breadcrumbs><a href=https://examplesite.com/>Home</a>&nbsp;»&nbsp;<a href=https://examplesite.com/tags/>Tags</a></div>
+<h1>数据结构</h1>
+</header>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>外部排序相关
+</h2>
+</header>
+<section class=entry-content>
+<p>外部排序 由于数据元素太多，无法一次全部读入内存进行内部排序，这是就要通过外部排序来解决
+1.外排原理 (拿二路归并举例)
+如图，对于在磁盘中分块存放的数据，每块存入三个元素，共16块
+在内存中建立三个缓冲区输出缓冲区、输入缓冲区1以及输入缓冲区2
+1.1构造初始归并段 首先，依次地读入前两块数据，分别存入内存中的 缓冲区1、缓冲区2
+将输入缓冲区1以及输入缓冲区2中存放的数据经过 内存中的二路归并排序(内排)后，将生成的有序的块经 输出缓冲区 写入磁盘 得到一个有序的归并段同样的，对剩余块进行同样的操作可以得到
+1.2以归并段为单位进行归并 分别选取归并段1和2中较小的一块，依次读入至缓冲区1,2
+内排之后，写入内存，注意，输入缓冲区1(或2)空缺后要立即在归并段1(或2)中读入新的块到其中进行归并排序（以保证输出缓冲区始终输出归并段中较小的元素）
+最终，完成所有归并段的第一趟归并之后，会有
+之后，4块成一个归并段，两两归并
+……
+最终。经过3趟归并，整体会变得有序！
+2.优化思路 2.1时间开销分析 在整个排序过程中，时间开销分析如下
+可以看到，
+外部排序时间开销=读写外存的时间+内部排序所需时间+内部归并所需时间而读写外存时间是关键的时间开销，因此优化应该针对怎么减少读写外存的次数展开
+而文件总块数无法优化，只能针对归并的趟数优化为此，我们需要采用多路归并来解决
+2.3结论 2.4 优化思路一：采用多路归并 对上面的例子，如果采用四路归并
+只需96次读写即可！！
+2.5 优化思路二：减少初始归并段数量r 败者树 1.算法思想 构造 如图所示的树结构，叶节点对应（脑补）各归并段（假设共有8个归并段），分支结点记录败者来自哪个归并段，最后根节点记录冠军来自哪个归并段，并且将冠军输出，为这8个归并段中的最小值。
+下轮选择冠军记录的那个归并段（归并段3）中的元素6，代替1的位置，如图，并依次向上的与各败者结点对比，胜则往上，败则留下，最终输出冠军
+接下来，循环这个过程
+2.效率分析 对于k路归并，第一次构造败者树需要对比关键字k-1次 有了败者树，选出最小元素，只需对比关键字次$\left \lceil \log_2k \right \rceil$
+置换选择排序 1.算法思想 设初始待排文件为F，初始归并段输出文件为FO，内存工作区为WA,FO和WA的初始状态为空，WA可容纳w个记录。置换选择算法的步骤如下： 1）从F输入个记录到工作区WA。 2）从WA中选出其中关键字取最小值的记录，记为 MINIMAX记录3）将MINIMAX记录输出到FO中去。 4）若F不空，则从F输入下一个记录到WA中。 5）从w中所有关MINIMAX键字比记录的关键字大的记录中选出最小关键字记录，作为新的MINIMAX记录。 6）重复3）~5），直至在A中选不 MININ出新的记录为止，由此得到一个初始归并段，输出一个归并段的结束标志到FO中去。 7）重复2）~6），直至WA为空。由此得到全部初始归并段。
+最佳归并树 利用置换选择排序构造初始归并段，归并段长短不一
+对于一个归并树，如图数字表示该归并段占多少个磁盘块。
+每个初始归并段看作⼀个叶⼦结点，归并段的⻓度作为结点权值，则 上⾯👆这棵归并树的带权路径⻓度 WPL = 2*1 + (5+1+6+2) * 3 = 44...</p>
+</section>
+<footer class=entry-footer><span title="2021-06-10 00:00:00 +0000 UTC">June 10, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+<a class=entry-link aria-label="post link to 外部排序相关" href=https://examplesite.com/post/2021/06/10/externalsort/></a>
 </article>
-        
-            <article>
-    <a href="/p/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/">
-        <div class="article-details">
-            <h2 class="article-title">排序算法相关</h2>
-            <footer class="article-time">
-                <time datetime='2021-06-10T00:00:00Z'>Jun 10, 2021</time>
-            </footer>
-        </div>
-            <div class="article-image">
-                
-                    <img src="https://picsum.photos/seed/paixu/640/360" loading="lazy" alt="Featured image of post 排序算法相关" />
-                
-            </div>
-        
-    </a>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>排序算法相关
+</h2>
+</header>
+<section class=entry-content>
+<p>排序算法 平均时间复杂度 空间复杂度 稳定性 适用情况 插入排序 $O(n^2)$ O(1) 稳定 n较小，初始序列基本有序 希尔排序 $O(n^{1.3})$ O(1) 不稳定 冒泡排序 $O(n^2)$ O(1) 稳定 n较小，初始序列基本有序 快速排序 $O(n\log_2n)$ $O(nlog_2n)$ 不稳定 初始序列无序 简单选择排序 $O(n^2)$ O(1) 不稳定 n较小 堆排序 $O(n\log_2n)$ O(1) 不稳定 n较大或只排前几位 2-路归并排序 $O(n\log_2n)$ O(n) 稳定 n很大 链式基数排序 $O(d(n+rd))$ $O(rd)$ 稳定 n大，关键字值小 相关概念 1....</p>
+</section>
+<footer class=entry-footer><span title="2021-06-10 00:00:00 +0000 UTC">June 10, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
+<a class=entry-link aria-label="post link to 排序算法相关" href=https://examplesite.com/post/2021/06/10/sort/></a>
 </article>
-        
-            <article>
-    <a href="/p/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/">
-        <div class="article-details">
-            <h2 class="article-title">查找算法相关</h2>
-            <footer class="article-time">
-                <time datetime='2021-06-06T00:00:00Z'>Jun 06, 2021</time>
-            </footer>
-        </div>
-            <div class="article-image">
-                
-                    <img src="https://picsum.photos/seed/Serach/640/360" loading="lazy" alt="Featured image of post 查找算法相关" />
-                
-            </div>
-        
-    </a>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>查找算法相关
+</h2>
+</header>
+<section class=entry-content>
+<p>顺序查找 typedef struct{//查找表的数据结构（顺序表） int *elem;//动态数组基址 int TableLen;//查找表长度 }SSTable; int Seq_Search(SSTable ST,int key){ ST.elem[0]=key; int i; for (i = ST.TableLen;ST.elem[i]!=key ; i--) {}//从后往前查找，最终返回下标i return i;//返回0说明没找到 } 效率分析 对于长度为n的顺序表，如果查找成功$$ ASL={\frac{1+2+…+n}{n}}=\frac{n+1}{2} $$ 若果查找失败，则 $ASL=n+1$
+总体上，该算法时间复杂度为 $O(n)$
+优化思路 1.如果使得表中的元素有序存放……，可以构造出一棵查找判定树
+此时，查找失败时$ASL=\frac{1+2+…+n+n}{n+1}=\frac{n}{2}+\frac{n}{n+1}$
+优点： 容易查找失败时ASL更小2.如果各元素被查找的概率不同……，可以把概率大的靠前
+优点： 容易查找成功时ASL更小折半查找 折半查找，又称“二分查找”，仅适用于有序的顺序表。
+针对升序排列的顺序表，代码实现如下
+typedef struct{//查找表的数据结构（顺序表） int *elem;//动态数组基址 int TableLen;//查找表长度 }SSTable; int BinarySearch(SSTable L,int key){ int low=0,high=L.TableLen-1,mid; while (low&lt;=high) { mid=(low+high)/2; if (L.elem[mid]==key) return key; else if(L....</p>
+</section>
+<footer class=entry-footer><span title="2021-06-06 00:00:00 +0000 UTC">June 6, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+<a class=entry-link aria-label="post link to 查找算法相关" href=https://examplesite.com/post/2021/06/06/search/></a>
 </article>
-        
-            <article>
-    <a href="/p/%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8/">
-        <div class="article-details">
-            <h2 class="article-title">图的应用</h2>
-            <footer class="article-time">
-                <time datetime='2021-06-04T00:00:00Z'>Jun 04, 2021</time>
-            </footer>
-        </div>
-            <div class="article-image">
-                
-                    <img src="https://picsum.photos/seed/graphapply/640/360" loading="lazy" alt="Featured image of post 图的应用" />
-                
-            </div>
-        
-    </a>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>图的应用
+</h2>
+</header>
+<section class=entry-content>
+<p>一、最小生成树 📌什么是生成树？ 连通图的生成树是包含图中所有顶点的一个极小连通子图，通俗地讲，就是“边尽可能少，但需保持连通”。规律： 对于一个顶点数|V|=n的树，其生成树的边数|E|=n-1。如果将|E|+1，必然会形成回路；如果将|E|-1，则会成为非连通图。
+📌什么是最小生成树？ 最小生成树，也称最小代价树(Minimum Spanning Tree，MST)
+是带权连通无向图的生成树中边的权值之和最小的一棵树，联系实际问题不难理解其中“最小代价”的意味。Prim（普利姆算法），Kruskal（克鲁斯卡尔算法）就是寻找最小生成树的常用算法。
+1.Prim（普利姆算法） 从某一顶点开始，每次将代价最小的新顶点纳入生成树，直至所有顶点都纳入为止。
+图示 易知，此方法得到的最小生成子树是不唯一的。
+代码实现 void MiniSpanTree_PRIMI(Graph G,int u){ //从顶点u出发找G的最小生成树 for (int i = 0; i &lt;G.vexnum; ++i) {//辅助数组初始化 if(i!=u){ closedge[i]={u,G.arcs[u][i]}; } } closedge[u].lowcost=0; for (int j = 0; j &lt; G.vexnum; j++) { k=minimum(closedge);//求生成树的下一个节点 cout&lt;&lt;cloedge[k].adjvex&lt;&lt;G.vex[k]; closedge[k].lowcost=0; for (int i = 0; i &lt; G.vexnum; i++) { if (G.arc[k][j].adj&lt;closedge[j].lowcost) { closedge[j]={G.vexs[k],G.arcs[k][j].adj}; } } } } 2....</p>
+</section>
+<footer class=entry-footer><span title="2021-06-04 00:00:00 +0000 UTC">June 4, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
+<a class=entry-link aria-label="post link to 图的应用" href=https://examplesite.com/post/2021/06/02/02_application/></a>
 </article>
-        
-            <article>
-    <a href="/p/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/">
-        <div class="article-details">
-            <h2 class="article-title">图的遍历</h2>
-            <footer class="article-time">
-                <time datetime='2021-06-03T00:00:00Z'>Jun 03, 2021</time>
-            </footer>
-        </div>
-            <div class="article-image">
-                
-                    <img src="https://picsum.photos/seed/graphtraverse/640/360" loading="lazy" alt="Featured image of post 图的遍历" />
-                
-            </div>
-        
-    </a>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>图的遍历
+</h2>
+</header>
+<section class=entry-content>
+<p>广度优先遍历（BFS） BFS(Breadth-First-Search)，参考对树的层序遍历
+对上面的图从①出发进行BFS得到序列：
+①②⑤ ⑥ ③⑦ ④⑧
+若采用不同的储存结构，可能会得到不同的遍历结果（这个差异主要来自寻找邻接点的过程），对于邻接矩阵存储的图，由于邻接矩阵是唯一的，所以BFS序列也是唯一的；同理，邻接表存储的图BFS序列不唯一。
+BFS算法 与树的层序遍历不同的是，由于图中存在回路，遍历过程中会出现重复访问的问题，故可构造visited数组，用来标记已访问过的数组。此外，还应针对非连通图做额外的判断，遍历完一个连通分量（极大连通子图）后，遍历查找visited数组中是否还存在未遍历的，如果有即为另一连通分量，继续调用BFS即可。
+void BFS(Graph G,int v); bool visited[MAX_VERTEX_NUM]; SqQueue Q;//辅助队列 void BFSTraverse(Graph G){ //初始化visited数组 for (int i = 0; i &lt; G.vexnum; ++i) {//使下标从1开始 visited[i]=false; } //对非连通图的处理 for (int v = 0; v &lt; G.vexnum; ++v) { if (!visited[v]) BFS(G,v); } } //从顶点v出发广度优先遍历图G void BFS(Graph G,int v){ visit(v); visited[v]=true; EnQueue(Q,v);//顶点v入队列Q while(!isEmpty(Q)){ DeQueue(Q,v);//顶点v出队列Q for (w=FirstNeighbor(G,v);w>=0;w=NextNeighbor(G,v,w))//处理v的所有邻接点 if (!...</p>
+</section>
+<footer class=entry-footer><span title="2021-06-03 00:00:00 +0000 UTC">June 3, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+<a class=entry-link aria-label="post link to 图的遍历" href=https://examplesite.com/post/2021/06/02/01_traverse/></a>
 </article>
-        
-            <article>
-    <a href="/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/">
-        <div class="article-details">
-            <h2 class="article-title">图的存储</h2>
-            <footer class="article-time">
-                <time datetime='2021-06-02T00:00:00Z'>Jun 02, 2021</time>
-            </footer>
-        </div>
-            <div class="article-image">
-                
-                    <img src="https://picsum.photos/seed/graphstroage/640/360" loading="lazy" alt="Featured image of post 图的存储" />
-                
-            </div>
-        
-    </a>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>图的存储
+</h2>
+</header>
+<section class=entry-content>
+<p>邻接矩阵 Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.
+代码实现 #define MaxVextexNum 100//容许存储的最大顶点数 typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小 bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph; 即找度 根据邻接矩阵计算结点的度TD
+无向图 有向图 $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数$OD(V_i)$: i列非零元素个数TD=ID+OD 对于带权图（网） #define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷 typedef char VextexType;//顶点 typedef int EdgeType;//权值 typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph; 复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|+|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。...</p>
+</section>
+<footer class=entry-footer><span title="2021-06-02 00:00:00 +0000 UTC">June 2, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+<a class=entry-link aria-label="post link to 图的存储" href=https://examplesite.com/post/2021/06/02/00_storage/></a>
 </article>
-        
-            <article>
-    <a href="/p/avl%E6%A0%91/">
-        <div class="article-details">
-            <h2 class="article-title">AVL树</h2>
-            <footer class="article-time">
-                <time datetime='2021-05-23T00:00:00Z'>May 23, 2021</time>
-            </footer>
-        </div>
-            <div class="article-image">
-                
-                    <img src="https://picsum.photos/seed/AVLTREE/640/360" loading="lazy" alt="Featured image of post AVL树" />
-                
-            </div>
-        
-    </a>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>AVL树
+</h2>
+</header>
+<section class=entry-content>
+<p>平衡二叉树是Adelson-Velsky和 Landis发明，故命名为AVL树。也称平衡二叉查找树。
+✨特点： ①左子树&lt;根&lt;右子树； ②任一节点，左右子树高度之差不超过1.
+平衡因子 $平衡因子=左子树高-右子树高$
+AVL树的插入操作 AVL树插入新结点导致不平衡之后，只需将最小不平衡子树平衡，其他祖先结点会随之恢复平衡。
+调整最小不平衡子树 1.LL 即在以A为根节点的树的左孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
+调整过程如下：
+2.RR 即在以A为根节点的树的右孩子B的右子树上插入新结点，导致A成为最小不平衡子树。
+调整过程如下：
+3.LR 即在以A为根节点的树的左孩子B的右子树上插入新结点，导致A成为最小不平衡子树。
+观察得知，所进行的调整就是保证$|平衡因子|&lt;=1$，因此若插入操作使得
+左 - 右 > 1 => 右旋
+右 - 左 > 1 =>左旋
+而当进行了LR插入操作之后，导致以A为根节点的树 左-右>1，理应右旋但是，由上述结果可知，经过右旋之后：
+可以看到，为了保证其左子树&lt;根&lt;右子树的特性，经过调整后，依然存在右-左>1的问题；
+因此，对于LR型不能简单进行右旋调整，应该先将其转化为LL型 (左旋)，再进行右旋；
+为此，我们需要将BR结点展开，之后旋转成为LL型插入
+可以看到，展开后又出现两种插入情况CL&CR，但其实两者处理大同小异：
+CR插入调整过程如下：
+4.RL 即在以A为根节点的树的右孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
+参考LR型，其调整过程如下：
+查找操作效率分析 Assuming that, $n_h$表示深度为h的平衡树中含有的最少结点，则
+$n_0=0$,$n_1=1$,$n_2=2$…存在递归关系 $n_h=n_{h-1}+n_{h-2}+1$,即左右子树结点之和+根节点。
+可以证明(AVL证明)，n个结点的平衡二叉树最大深度数量级为$\log_2n$，则其查找操作的复杂度为$O(\log_2n)$</p>
+</section>
+<footer class=entry-footer><span title="2021-05-23 00:00:00 +0000 UTC">May 23, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+<a class=entry-link aria-label="post link to AVL树" href=https://examplesite.com/post/2021/05/23/avl/></a>
 </article>
-        
-            <article>
-    <a href="/p/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/">
-        <div class="article-details">
-            <h2 class="article-title">哈夫曼树</h2>
-            <footer class="article-time">
-                <time datetime='2021-05-23T00:00:00Z'>May 23, 2021</time>
-            </footer>
-        </div>
-    </a>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>哈夫曼树
+</h2>
+</header>
+<section class=entry-content>
+<p>基本概念 1.结点的权
+每个结点带有的具有某种现实意义的数值(比如代表重要性等)
+2.结点的带权路径长度
+从树的根到该结点的路径长度（经过的边数）与该结点上权值的乘积
+3.树的带权路径长度
+树中所有叶结点的带权路径长度之和（WPL, Weighted Path Length）
+$WPL=\sum_{i=1}^{n}w_il_i$
+✨4.哈夫曼树
+在含有n个带权叶结点的二叉树中，其中带权路径长度（WPL）最小的二叉树称为哈夫曼树，也称最优二叉树构造哈夫曼树 给定n个权值分别为 $w_1,w_2,…,w_n$ 的结点，其构造过程描述如下：
+① 将这n个结点分别作为n棵仅含一个结点的二叉树，构成森林F
+② 构造一个新结点，从F中选取两棵根结点权值最小的树作为新结点的左右子树，并且将新结点的权值置为左、右子树上根结点的权值之和。
+③ 从F中删除刚才选出的两棵树，同时将新得到的树加入F中。
+④ 重复步骤②和③，直至F中只剩下一棵树为止。
+假设给定结点在经过步骤①之后如下
+则其②③④步骤为：
+$WPL_{min}=1*7+2*3+3*2+4*1+4*2=31$
+或者
+$WPL_{min}=1*7+3*(1+2+2+3)=31$
+👇👇👇👇👇👇
+哈夫曼树特点： ① 每个初始结点最终都成为叶结点，且权值越小的结点到根结点的路径长度越大。 ② 哈夫曼树的结点总数为2n-1。 ③ 哈夫曼树中不存在度为1的结点。 ④ 哈夫曼树并不唯一，但WPL必然相同且为最优。
+哈夫曼编码 固定长度编码 如ASCII码
+可变长度编码 前缀编码 没有一个编码是另一个编码的前缀
+哈夫曼编码 由哈夫曼树得到哈夫曼编码——字符集中的每个字符作为一个叶子结点，各个字符出现的频度作为结点的权值，根据之前介绍的方法构造哈夫曼树。
+✨ 应用
+可用于数据压缩
+如图，为英文字母使用频率表，若不进行压缩，第 i 个字母频率用$l_i表示$，路径长至少为5($2^4&lt;26&lt;2^5$)，则
+$WPL=5×\sum_{i=1}^{n}l_i$=500
+若通过构造哈夫曼树进行哈夫曼编码
+则$WPL_{min}=$
+$v=\frac{WPL_{min}}{WPL}$</p>
+</section>
+<footer class=entry-footer><span title="2021-05-23 00:00:00 +0000 UTC">May 23, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+<a class=entry-link aria-label="post link to 哈夫曼树" href=https://examplesite.com/post/2021/05/23/huffmantree/></a>
 </article>
-        
-    </section>
-    <nav class='pagination'>
-        
-        
-
-        
-            
-                <span class='page-link current'>1</span>
-                
-            
-            
-                    <a class='page-link' href='/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/page/2/#main_content'>2</a>
-                
-            
-    </nav>
-
-<footer class="site-footer">
-    <section class="copyright">
-        &copy; 
-        
-            2018 - 
-        
-        2021 Archai &#39;s blog
-    </section>
-    
-    <section class="powerby">
-        
-            Archai <br/>
-        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
-    </section>
+<footer class=page-footer>
+<nav class=pagination>
+<a class=next href=https://examplesite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/page/2/>Next Page »</a>
+</nav>
 </footer>
 </main>
-    
-    
-    <aside class="sidebar right-sidebar sticky">
-        
-            <form action="/search/" class="search-form widget" >
-        <p>
-            <label>Search</label>
-            <input name="keyword" required placeholder="Type something..." />
-        
-            <button title="Search">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="10" cy="10" r="7" />
-  <line x1="21" y1="21" x2="15" y2="15" />
-</svg>
-
-
-
-            </button>
-        </p>
-    </form>
-        
-            <section class="widget archives">
-        <div class="widget-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
-</svg>
-
-
-
-        </div>
-        <h2 class="widget-title section-title">Archives</h2>
-
-        
-        
-        
-        
-        
-        <div class="widget-archive--list">
-            <div class="archives-year">
-                    <a href="/archives/#2021">
-                        
-                            <span class="year">2021</span>
-                            <span class="count">20</span>
-                        
-                    </a> 
-                </div>
-            <div class="archives-year">
-                    <a href="/archives/#2020">
-                        
-                            <span class="year">2020</span>
-                            <span class="count">40</span>
-                        
-                    </a> 
-                </div>
-            <div class="archives-year">
-                    <a href="/archives/#2019">
-                        
-                            <span class="year">2019</span>
-                            <span class="count">2</span>
-                        
-                    </a> 
-                </div>
-            
-        </div>
-    </section>
-        
-            <section class="widget tagCloud">
-    <div class="widget-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
-  <circle cx="9" cy="9" r="2" />
-</svg>
-
-
-
-    </div>
-    <h2 class="widget-title section-title">Tags</h2>
-
-    <div class="tagCloud-tags">
-        
-            <a href="/tags/javascript/" class="font_size_22">
-                Javascript
-            </a>
-        
-            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="font_size_14">
-                数据结构
-            </a>
-        
-            <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="font_size_7">
-                线性代数
-            </a>
-        
-            <a href="/tags/ajax/" class="font_size_4">
-                Ajax
-            </a>
-        
-            <a href="/tags/myfunction/" class="font_size_4">
-                myFunction
-            </a>
-        
-            <a href="/tags/es6/" class="font_size_3">
-                ES6
-            </a>
-        
-            <a href="/tags/jquery/" class="font_size_3">
-                Jquery
-            </a>
-        
-            <a href="/tags/html/" class="font_size_2">
-                HTML
-            </a>
-        
-            <a href="/tags/php/" class="font_size_2">
-                PHP
-            </a>
-        
-            <a href="/tags/avl/" class="font_size_1">
-                AVL
-            </a>
-        
-            <a href="/tags/bfs/" class="font_size_1">
-                BFS
-            </a>
-        
-            <a href="/tags/b%E6%A0%91/" class="font_size_1">
-                B树
-            </a>
-        
-            <a href="/tags/css/" class="font_size_1">
-                CSS
-            </a>
-        
-            <a href="/tags/dfs/" class="font_size_1">
-                DFS
-            </a>
-        
-            <a href="/tags/dijkstra/" class="font_size_1">
-                Dijkstra
-            </a>
-        
-            <a href="/tags/express/" class="font_size_1">
-                Express
-            </a>
-        
-            <a href="/tags/floyd/" class="font_size_1">
-                Floyd
-            </a>
-        
-            <a href="/tags/git/" class="font_size_1">
-                Git
-            </a>
-        
-            <a href="/tags/huffman/" class="font_size_1">
-                Huffman
-            </a>
-        
-            <a href="/tags/jsonp/" class="font_size_1">
-                Jsonp
-            </a>
-        
-    </div>
-</section>
-        
-    </aside>
-
-
-      </div>
-      <script 
-                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
-                defer="false"
-                >
-            </script><script type="text/javascript" src="/ts/main.js" defer></script>
-<script type="text/javascript" src="/js/clipboard/clipbordComplete.js" defer></script>
-<script type="text/javascript" src="/js/loadingPage.js" defer></script>
-<script type="text/javascript" src="/js/welcomePage.js" defer></script>
-<script type="text/javascript" src="/js/mobToc.js" defer></script>
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
-
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-
-        document.head.appendChild(customFont);
-    }());
-</script>
-
-
-      <div class="mobtoc">
-        <ul></ul>
-      </div>
-
-      <div class="fixedEls">
-        <div id="goTop"></div>
-        <div class="show_mobToc">
-          <svg
-            t="1631963864136"
-            class="icon"
-            viewBox="0 0 1024 1024"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            p-id="2699"
-            width="100%"
-            height="100%"
-          >
-            <path
-              d="M918.507 443.947H104.64c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16s-30.72-68.16-68.16-68.16z m-0.32 306.88H104.32c-37.547 0-68.16 30.72-68.16 68.16 0 37.546 30.72 68.16 68.16 68.16h813.867c37.546 0 68.16-30.72 68.16-68.16 0-37.547-30.614-68.16-68.16-68.16z m1.066-610.667H105.387c-37.547 0-68.16 30.72-68.16 68.16 0 37.547 30.72 68.16 68.16 68.16h813.866c37.547 0 68.16-30.72 68.16-68.16 0-37.547-30.72-68.16-68.16-68.16z"
-              fill="#ededed"
-              p-id="2700"
-            ></path>
-          </svg>
-        </div>
-      </div>
-    </div>
-  </body>
+<footer class=footer>
+<span>&copy; 2022 <a href=https://examplesite.com/>Archai's home</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
 </html>

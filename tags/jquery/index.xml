@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Jquery on Archai &#39;s blog</title>
-    <link>https://www.fintinger.site/tags/jquery/</link>
-    <description>Recent content in Jquery on Archai &#39;s blog</description>
+    <title>Jquery on Archai&#39;s home</title>
+    <link>https://examplesite.com/tags/jquery/</link>
+    <description>Recent content in Jquery on Archai&#39;s home</description>
+    <image>
+      <url>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</url>
+      <link>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 11 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/jquery/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://examplesite.com/tags/jquery/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>跨域及CORS官方跨域</title>
-      <link>https://www.fintinger.site/p/%E8%B7%A8%E5%9F%9F%E5%8F%8Acors%E5%AE%98%E6%96%B9%E8%B7%A8%E5%9F%9F/</link>
+      <link>https://examplesite.com/post/2020/08/11/</link>
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/%E8%B7%A8%E5%9F%9F%E5%8F%8Acors%E5%AE%98%E6%96%B9%E8%B7%A8%E5%9F%9F/</guid>
+      <guid>https://examplesite.com/post/2020/08/11/</guid>
       <description>JSONP  jsonp跨域的实现仅限于GET请求，不可用于POST
  说明：实现的基本思路是利用html中script标签本身可跨域的特性，在发送请求时，在页面中创建script标签，追加到页面中。这实际上就像利用script标签引入外部资源
 /*main.js*/ //申明handle函数 function handle(data) { //do something.... } ele.onclick = function () { //1.创建script标签  const script = document.createElement(&amp;#34;script&amp;#34;) //2.修改script的src属性  script.src = &amp;#34;http://127.0.0.1:8000/jsonP&amp;#34; script.id=&amp;#34;tempScript&amp;#34;//添加id方便移除  //3.追加到页面中  document.body.appendChild(script) } /*server.js*/ app.get(&amp;#39;/jsonP&amp;#39;, (request, response) =&amp;gt; { const data = { exist:1, msg:&amp;#34;用户名已经存在!&amp;#34; } let str = JSON.stringify(data) response.send(` handle(${str}); document.body.removeChild(document.querySelector(&amp;#34;#tempScript&amp;#34;)) `) }) 注意：response.send()/response.end()中利用ES6语法规范中的模板字符串直接返回一段js代码，script标签会自动解析并作用到页面上
@@ -22,20 +25,20 @@ CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置C
     
     <item>
       <title>剪贴板功能实现</title>
-      <link>https://www.fintinger.site/p/%E5%89%AA%E8%B4%B4%E6%9D%BF%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/</link>
+      <link>https://examplesite.com/post/2020/07/07/</link>
       <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/%E5%89%AA%E8%B4%B4%E6%9D%BF%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/</guid>
+      <guid>https://examplesite.com/post/2020/07/07/</guid>
       <description>经常会用到指定内容的复制粘贴问题，用到document的execCommand 方法,为此，我将这个功能封装为一个简单的函数:
 function doCopy($el, {deepCopy = false, copyTips = true, language = &amp;#34;Chinese&amp;#34;, bgColor = &amp;#34;#ff6666&amp;#34;, fontColor = &amp;#34;#fff&amp;#34;} = {}) { let tempEl = $(&amp;#34;&amp;lt;input id=&amp;#39;selectEl&amp;#39; type=&amp;#39;text&amp;#39; value=&amp;#39;&amp;#39;&amp;gt;&amp;#34;).val($el.text()) if (deepCopy) { tempEl.val($el.html()) } tempEl.appendTo($(&amp;#34;body&amp;#34;)) document.querySelector(&amp;#39;#selectEl&amp;#39;).select(); document.execCommand(&amp;#39;copy&amp;#39;); tempEl.remove() if (copyTips) { let tipEl = $(&amp;#34;&amp;lt;div class=&amp;#39;copyTips&amp;#39; &amp;gt;成功复制到剪切板&amp;lt;/div&amp;gt;&amp;#34;) tipEl.css({fontFamily: &amp;#34;&amp;#39;Microsoft YaHei&amp;#39;, sans-serif&amp;#34;,fontSize: &amp;#34;1.2rem&amp;#34;,position: &amp;#34;fixed&amp;#34;,top: &amp;#34;1rem&amp;#34;,textAlign: &amp;#34;center&amp;#34;, left: &amp;#34;50%&amp;#34;,fontWeight: &amp;#34;bolder&amp;#34;, borderRadius: &amp;#34;.5rem&amp;#34;,marginLeft: &amp;#34;-8rem&amp;#34;,width: &amp;#34;16rem&amp;#34;,height: &amp;#34;3rem&amp;#34;, lineHeight:&amp;#34;3rem&amp;#34;, background: bgColor,boxShadow: &amp;#34;0 6px 10px -8px #000&amp;#34;,color: fontColor, letterSpacing: &amp;#34;4px&amp;#34;,boxSizing: &amp;#34;border-box&amp;#34;,padding: &amp;#34;0 10px 0 10px&amp;#34;, display: &amp;#34;none&amp;#34;}) if (language === &amp;#34;English&amp;#34;) { tipEl.</description>
     </item>
     
     <item>
       <title>Jquery一些操作</title>
-      <link>https://www.fintinger.site/p/jquery%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/</link>
+      <link>https://examplesite.com/post/2020/04/23/</link>
       <pubDate>Thu, 23 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/jquery%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/</guid>
+      <guid>https://examplesite.com/post/2020/04/23/</guid>
       <description>Jquery属性操作 1.属性 attr(attrName [,attrValue]) 操作所有属性（自定义和内置的）
 prop(attrName [,attrValue)) 操作HTML元素内置属性
 removeAttr(attrNam)删除属性

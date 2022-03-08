@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Git on Archai &#39;s blog</title>
-    <link>https://www.fintinger.site/tags/git/</link>
-    <description>Recent content in Git on Archai &#39;s blog</description>
+    <title>Git on Archai&#39;s home</title>
+    <link>https://examplesite.com/tags/git/</link>
+    <description>Recent content in Git on Archai&#39;s home</description>
+    <image>
+      <url>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</url>
+      <link>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 29 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://examplesite.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git相关</title>
-      <link>https://www.fintinger.site/p/git%E7%9B%B8%E5%85%B3/</link>
+      <link>https://examplesite.com/post/2020/09/29/</link>
       <pubDate>Tue, 29 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/git%E7%9B%B8%E5%85%B3/</guid>
+      <guid>https://examplesite.com/post/2020/09/29/</guid>
       <description>基本命令 git config --global =&amp;gt;全局配置 git config =&amp;gt;当前仓库配置 mkdir =&amp;gt;创建文件夹 ls =&amp;gt;列出当前目录下(文件，文件夹) ls -a =&amp;gt;所有all rm -rf * =&amp;gt;删除当前目录下所有 touch =&amp;gt;新建文件 cat =&amp;gt;查看文件中的内容  不想`git add . 所有？
  配置.gitignore 定义忽略提交的文件，其中
  所有空行或者以注释符号 ＃ 开头的行都会被 Git 忽略。 匹配模式最后跟反斜杠（/）说明要忽略的是目录。 可以使用标准的 glob 模式(php)匹配。  从版本库删除 git rm ... =&amp;gt;从版本库中删除，本地也会删除 git rm --cached ... =&amp;gt;只从版本库删除 从版本库改名 git mv ... ... =&amp;gt;改名 log git log -p =&amp;gt;显示文件变动信息 git log -1 =&amp;gt;最近一次提交 git log --oneline 修改最新一次提交commit描述 git commit --amend =&amp;gt;最近一次提交的描述  也可以把最新的git add .</description>

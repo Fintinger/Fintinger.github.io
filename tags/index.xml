@@ -1,513 +1,516 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Tags on Archai &#39;s blog</title>
-    <link>https://www.fintinger.site/tags/</link>
-    <description>Recent content in Tags on Archai &#39;s blog</description>
+    <title>Tags on Archai&#39;s home</title>
+    <link>https://examplesite.com/tags/</link>
+    <description>Recent content in Tags on Archai&#39;s home</description>
+    <image>
+      <url>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</url>
+      <link>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 19 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://examplesite.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>windows</title>
-      <link>https://www.fintinger.site/tags/windows/</link>
+      <link>https://examplesite.com/tags/windows/</link>
       <pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/windows/</guid>
+      <guid>https://examplesite.com/tags/windows/</guid>
       <description></description>
     </item>
     
     <item>
       <title>线性代数</title>
-      <link>https://www.fintinger.site/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</link>
+      <link>https://examplesite.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</link>
       <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</guid>
+      <guid>https://examplesite.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>计算机组成原理</title>
-      <link>https://www.fintinger.site/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</link>
+      <link>https://examplesite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</link>
       <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</guid>
+      <guid>https://examplesite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</guid>
       <description></description>
     </item>
     
     <item>
       <title>冒泡排序</title>
-      <link>https://www.fintinger.site/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</link>
+      <link>https://examplesite.com/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</guid>
+      <guid>https://examplesite.com/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>堆排序</title>
-      <link>https://www.fintinger.site/tags/%E5%A0%86%E6%8E%92%E5%BA%8F/</link>
+      <link>https://examplesite.com/tags/%E5%A0%86%E6%8E%92%E5%BA%8F/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E5%A0%86%E6%8E%92%E5%BA%8F/</guid>
+      <guid>https://examplesite.com/tags/%E5%A0%86%E6%8E%92%E5%BA%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>外部排序</title>
-      <link>https://www.fintinger.site/tags/%E5%A4%96%E9%83%A8%E6%8E%92%E5%BA%8F/</link>
+      <link>https://examplesite.com/tags/%E5%A4%96%E9%83%A8%E6%8E%92%E5%BA%8F/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E5%A4%96%E9%83%A8%E6%8E%92%E5%BA%8F/</guid>
+      <guid>https://examplesite.com/tags/%E5%A4%96%E9%83%A8%E6%8E%92%E5%BA%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>希尔排序</title>
-      <link>https://www.fintinger.site/tags/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/</link>
+      <link>https://examplesite.com/tags/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/</guid>
+      <guid>https://examplesite.com/tags/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>归并排序</title>
-      <link>https://www.fintinger.site/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/</link>
+      <link>https://examplesite.com/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/</guid>
+      <guid>https://examplesite.com/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>快速排序</title>
-      <link>https://www.fintinger.site/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</link>
+      <link>https://examplesite.com/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</guid>
+      <guid>https://examplesite.com/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>插入排序</title>
-      <link>https://www.fintinger.site/tags/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/</link>
+      <link>https://examplesite.com/tags/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/</guid>
+      <guid>https://examplesite.com/tags/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>数据结构</title>
-      <link>https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <link>https://examplesite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      <guid>https://examplesite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
       <description></description>
     </item>
     
     <item>
       <title>最佳归并树</title>
-      <link>https://www.fintinger.site/tags/%E6%9C%80%E4%BD%B3%E5%BD%92%E5%B9%B6%E6%A0%91/</link>
+      <link>https://examplesite.com/tags/%E6%9C%80%E4%BD%B3%E5%BD%92%E5%B9%B6%E6%A0%91/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E6%9C%80%E4%BD%B3%E5%BD%92%E5%B9%B6%E6%A0%91/</guid>
+      <guid>https://examplesite.com/tags/%E6%9C%80%E4%BD%B3%E5%BD%92%E5%B9%B6%E6%A0%91/</guid>
       <description></description>
     </item>
     
     <item>
       <title>置换选择排序</title>
-      <link>https://www.fintinger.site/tags/%E7%BD%AE%E6%8D%A2%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</link>
+      <link>https://examplesite.com/tags/%E7%BD%AE%E6%8D%A2%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E7%BD%AE%E6%8D%A2%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</guid>
+      <guid>https://examplesite.com/tags/%E7%BD%AE%E6%8D%A2%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>计数排序</title>
-      <link>https://www.fintinger.site/tags/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/</link>
+      <link>https://examplesite.com/tags/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/</guid>
+      <guid>https://examplesite.com/tags/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>败者树</title>
-      <link>https://www.fintinger.site/tags/%E8%B4%A5%E8%80%85%E6%A0%91/</link>
+      <link>https://examplesite.com/tags/%E8%B4%A5%E8%80%85%E6%A0%91/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E8%B4%A5%E8%80%85%E6%A0%91/</guid>
+      <guid>https://examplesite.com/tags/%E8%B4%A5%E8%80%85%E6%A0%91/</guid>
       <description></description>
     </item>
     
     <item>
       <title>选择排序</title>
-      <link>https://www.fintinger.site/tags/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</link>
+      <link>https://examplesite.com/tags/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</guid>
+      <guid>https://examplesite.com/tags/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>B树</title>
-      <link>https://www.fintinger.site/tags/b%E6%A0%91/</link>
+      <link>https://examplesite.com/tags/b%E6%A0%91/</link>
       <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/b%E6%A0%91/</guid>
+      <guid>https://examplesite.com/tags/b%E6%A0%91/</guid>
       <description></description>
     </item>
     
     <item>
       <title>折半查找</title>
-      <link>https://www.fintinger.site/tags/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE/</link>
+      <link>https://examplesite.com/tags/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE/</link>
       <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE/</guid>
+      <guid>https://examplesite.com/tags/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE/</guid>
       <description></description>
     </item>
     
     <item>
       <title>散列查找</title>
-      <link>https://www.fintinger.site/tags/%E6%95%A3%E5%88%97%E6%9F%A5%E6%89%BE/</link>
+      <link>https://examplesite.com/tags/%E6%95%A3%E5%88%97%E6%9F%A5%E6%89%BE/</link>
       <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E6%95%A3%E5%88%97%E6%9F%A5%E6%89%BE/</guid>
+      <guid>https://examplesite.com/tags/%E6%95%A3%E5%88%97%E6%9F%A5%E6%89%BE/</guid>
       <description></description>
     </item>
     
     <item>
       <title>顺序查找</title>
-      <link>https://www.fintinger.site/tags/%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE/</link>
+      <link>https://examplesite.com/tags/%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE/</link>
       <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE/</guid>
+      <guid>https://examplesite.com/tags/%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Dijkstra</title>
-      <link>https://www.fintinger.site/tags/dijkstra/</link>
+      <link>https://examplesite.com/tags/dijkstra/</link>
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/dijkstra/</guid>
+      <guid>https://examplesite.com/tags/dijkstra/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Floyd</title>
-      <link>https://www.fintinger.site/tags/floyd/</link>
+      <link>https://examplesite.com/tags/floyd/</link>
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/floyd/</guid>
+      <guid>https://examplesite.com/tags/floyd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Kruskal</title>
-      <link>https://www.fintinger.site/tags/kruskal/</link>
+      <link>https://examplesite.com/tags/kruskal/</link>
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/kruskal/</guid>
+      <guid>https://examplesite.com/tags/kruskal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Prim</title>
-      <link>https://www.fintinger.site/tags/prim/</link>
+      <link>https://examplesite.com/tags/prim/</link>
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/prim/</guid>
+      <guid>https://examplesite.com/tags/prim/</guid>
       <description></description>
     </item>
     
     <item>
       <title>关键路径</title>
-      <link>https://www.fintinger.site/tags/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/</link>
+      <link>https://examplesite.com/tags/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/</link>
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/</guid>
+      <guid>https://examplesite.com/tags/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/</guid>
       <description></description>
     </item>
     
     <item>
       <title>拓扑排序</title>
-      <link>https://www.fintinger.site/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/</link>
+      <link>https://examplesite.com/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/</link>
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/</guid>
+      <guid>https://examplesite.com/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>最小生成树</title>
-      <link>https://www.fintinger.site/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</link>
+      <link>https://examplesite.com/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</link>
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</guid>
+      <guid>https://examplesite.com/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</guid>
       <description></description>
     </item>
     
     <item>
       <title>最短路径</title>
-      <link>https://www.fintinger.site/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/</link>
+      <link>https://examplesite.com/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/</link>
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/</guid>
+      <guid>https://examplesite.com/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/</guid>
       <description></description>
     </item>
     
     <item>
       <title>BFS</title>
-      <link>https://www.fintinger.site/tags/bfs/</link>
+      <link>https://examplesite.com/tags/bfs/</link>
       <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/bfs/</guid>
+      <guid>https://examplesite.com/tags/bfs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DFS</title>
-      <link>https://www.fintinger.site/tags/dfs/</link>
+      <link>https://examplesite.com/tags/dfs/</link>
       <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/dfs/</guid>
+      <guid>https://examplesite.com/tags/dfs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>十字链表</title>
-      <link>https://www.fintinger.site/tags/%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8/</link>
+      <link>https://examplesite.com/tags/%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8/</link>
       <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8/</guid>
+      <guid>https://examplesite.com/tags/%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8/</guid>
       <description></description>
     </item>
     
     <item>
       <title>邻接多重表</title>
-      <link>https://www.fintinger.site/tags/%E9%82%BB%E6%8E%A5%E5%A4%9A%E9%87%8D%E8%A1%A8/</link>
+      <link>https://examplesite.com/tags/%E9%82%BB%E6%8E%A5%E5%A4%9A%E9%87%8D%E8%A1%A8/</link>
       <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E9%82%BB%E6%8E%A5%E5%A4%9A%E9%87%8D%E8%A1%A8/</guid>
+      <guid>https://examplesite.com/tags/%E9%82%BB%E6%8E%A5%E5%A4%9A%E9%87%8D%E8%A1%A8/</guid>
       <description></description>
     </item>
     
     <item>
       <title>邻接矩阵</title>
-      <link>https://www.fintinger.site/tags/%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5/</link>
+      <link>https://examplesite.com/tags/%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5/</link>
       <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5/</guid>
+      <guid>https://examplesite.com/tags/%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>邻接表</title>
-      <link>https://www.fintinger.site/tags/%E9%82%BB%E6%8E%A5%E8%A1%A8/</link>
+      <link>https://examplesite.com/tags/%E9%82%BB%E6%8E%A5%E8%A1%A8/</link>
       <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E9%82%BB%E6%8E%A5%E8%A1%A8/</guid>
+      <guid>https://examplesite.com/tags/%E9%82%BB%E6%8E%A5%E8%A1%A8/</guid>
       <description></description>
     </item>
     
     <item>
       <title>AVL</title>
-      <link>https://www.fintinger.site/tags/avl/</link>
+      <link>https://examplesite.com/tags/avl/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/avl/</guid>
+      <guid>https://examplesite.com/tags/avl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Huffman</title>
-      <link>https://www.fintinger.site/tags/huffman/</link>
+      <link>https://examplesite.com/tags/huffman/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/huffman/</guid>
+      <guid>https://examplesite.com/tags/huffman/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PHP</title>
-      <link>https://www.fintinger.site/tags/php/</link>
+      <link>https://examplesite.com/tags/php/</link>
       <pubDate>Tue, 13 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/php/</guid>
+      <guid>https://examplesite.com/tags/php/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Git</title>
-      <link>https://www.fintinger.site/tags/git/</link>
+      <link>https://examplesite.com/tags/git/</link>
       <pubDate>Tue, 29 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/git/</guid>
+      <guid>https://examplesite.com/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Javascript</title>
-      <link>https://www.fintinger.site/tags/javascript/</link>
+      <link>https://examplesite.com/tags/javascript/</link>
       <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/javascript/</guid>
+      <guid>https://examplesite.com/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>正则</title>
-      <link>https://www.fintinger.site/tags/%E6%AD%A3%E5%88%99/</link>
+      <link>https://examplesite.com/tags/%E6%AD%A3%E5%88%99/</link>
       <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E6%AD%A3%E5%88%99/</guid>
+      <guid>https://examplesite.com/tags/%E6%AD%A3%E5%88%99/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ES6</title>
-      <link>https://www.fintinger.site/tags/es6/</link>
+      <link>https://examplesite.com/tags/es6/</link>
       <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/es6/</guid>
+      <guid>https://examplesite.com/tags/es6/</guid>
       <description></description>
     </item>
     
     <item>
       <title>红警</title>
-      <link>https://www.fintinger.site/tags/%E7%BA%A2%E8%AD%A6/</link>
+      <link>https://examplesite.com/tags/%E7%BA%A2%E8%AD%A6/</link>
       <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E7%BA%A2%E8%AD%A6/</guid>
+      <guid>https://examplesite.com/tags/%E7%BA%A2%E8%AD%A6/</guid>
       <description></description>
     </item>
     
     <item>
       <title>资源</title>
-      <link>https://www.fintinger.site/tags/%E8%B5%84%E6%BA%90/</link>
+      <link>https://examplesite.com/tags/%E8%B5%84%E6%BA%90/</link>
       <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E8%B5%84%E6%BA%90/</guid>
+      <guid>https://examplesite.com/tags/%E8%B5%84%E6%BA%90/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ajax</title>
-      <link>https://www.fintinger.site/tags/ajax/</link>
+      <link>https://examplesite.com/tags/ajax/</link>
       <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/ajax/</guid>
+      <guid>https://examplesite.com/tags/ajax/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jquery</title>
-      <link>https://www.fintinger.site/tags/jquery/</link>
+      <link>https://examplesite.com/tags/jquery/</link>
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/jquery/</guid>
+      <guid>https://examplesite.com/tags/jquery/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jsonp</title>
-      <link>https://www.fintinger.site/tags/jsonp/</link>
+      <link>https://examplesite.com/tags/jsonp/</link>
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/jsonp/</guid>
+      <guid>https://examplesite.com/tags/jsonp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Express</title>
-      <link>https://www.fintinger.site/tags/express/</link>
+      <link>https://examplesite.com/tags/express/</link>
       <pubDate>Thu, 06 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/express/</guid>
+      <guid>https://examplesite.com/tags/express/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vue.js</title>
-      <link>https://www.fintinger.site/tags/vue.js/</link>
+      <link>https://examplesite.com/tags/vue.js/</link>
       <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/vue.js/</guid>
+      <guid>https://examplesite.com/tags/vue.js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>myFunction</title>
-      <link>https://www.fintinger.site/tags/myfunction/</link>
+      <link>https://examplesite.com/tags/myfunction/</link>
       <pubDate>Thu, 09 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/myfunction/</guid>
+      <guid>https://examplesite.com/tags/myfunction/</guid>
       <description></description>
     </item>
     
     <item>
       <title>语法糖</title>
-      <link>https://www.fintinger.site/tags/%E8%AF%AD%E6%B3%95%E7%B3%96/</link>
+      <link>https://examplesite.com/tags/%E8%AF%AD%E6%B3%95%E7%B3%96/</link>
       <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E8%AF%AD%E6%B3%95%E7%B3%96/</guid>
+      <guid>https://examplesite.com/tags/%E8%AF%AD%E6%B3%95%E7%B3%96/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Node.js</title>
-      <link>https://www.fintinger.site/tags/node.js/</link>
+      <link>https://examplesite.com/tags/node.js/</link>
       <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/node.js/</guid>
+      <guid>https://examplesite.com/tags/node.js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://www.fintinger.site/tags/python/</link>
+      <link>https://examplesite.com/tags/python/</link>
       <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/python/</guid>
+      <guid>https://examplesite.com/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>统计学</title>
-      <link>https://www.fintinger.site/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/</link>
+      <link>https://examplesite.com/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/</guid>
+      <guid>https://examplesite.com/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HTML</title>
-      <link>https://www.fintinger.site/tags/html/</link>
+      <link>https://examplesite.com/tags/html/</link>
       <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/html/</guid>
+      <guid>https://examplesite.com/tags/html/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CSS</title>
-      <link>https://www.fintinger.site/tags/css/</link>
+      <link>https://examplesite.com/tags/css/</link>
       <pubDate>Mon, 23 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/css/</guid>
+      <guid>https://examplesite.com/tags/css/</guid>
       <description></description>
     </item>
     
     <item>
       <title>设计</title>
-      <link>https://www.fintinger.site/tags/%E8%AE%BE%E8%AE%A1/</link>
+      <link>https://examplesite.com/tags/%E8%AE%BE%E8%AE%A1/</link>
       <pubDate>Tue, 12 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/%E8%AE%BE%E8%AE%A1/</guid>
+      <guid>https://examplesite.com/tags/%E8%AE%BE%E8%AE%A1/</guid>
       <description></description>
     </item>
     

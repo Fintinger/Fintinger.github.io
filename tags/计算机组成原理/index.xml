@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>计算机组成原理 on Archai &#39;s blog</title>
-    <link>https://www.fintinger.site/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</link>
-    <description>Recent content in 计算机组成原理 on Archai &#39;s blog</description>
+    <title>计算机组成原理 on Archai&#39;s home</title>
+    <link>https://examplesite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</link>
+    <description>Recent content in 计算机组成原理 on Archai&#39;s home</description>
+    <image>
+      <url>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</url>
+      <link>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Thu, 22 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://examplesite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>寻址方式与存储模式</title>
-      <link>https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://examplesite.com/post/2021/07/22/</link>
       <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F/</guid>
-      <description>寻址方式    基本寻址方式 特 征 优 点 缺 点 备 注     隐含寻址 操作数的存放地由操作码决定      立即寻址 操作数直接在指令中 加快执行速度 增加指令长度，不方便修改操作数 适用提供常数，设定初始值   寄存器寻址 操作数在指令指定的寄存器中 方便修改，访问寄存器加快指令执行，缩短指令长度，编程更灵活     直接寻址 操作数地址在指令中，操作数在主存单元中  指令字较长，不方便地址修改    间接寻址 操作数地址的地址在指令中，操作数在主存中 方便修改指针，编程更灵活 访问两次主存获取操作数，降低执行速度 形式地址，有效地址EA(=操作数地址)   寄存器间接寻址 操作数地址在指令指定的寄存器中，操作数在主存单元中 压缩指令长度，修改寄存器内容就可以修改主存地址指针  方便编写循环程序   相对寻址 操作数地址由PC和指令提供的地址偏移量决定,操作数在主存单元中   EA=PC+D，适用与地址无关的程序设计   基址寻址 操作数地址由基址寄存器(RB)和指令提供的地址偏移量决定，操作数在主存单元中 缩短指令长度，扩大寻址空间  大型计算机，用户的逻辑地址→主存的物理地址，EA=(RB)+D   变址寻址 操作数地址由变址寄存器(RI)和指令提供的地址偏移量决定，操作数在主存单元中   寻址到操作数RI内容(地址)自动修改，EA=(RI)+D   堆栈寻址 寻址方式由指令操作码决定   适用涉及堆栈操作的指令，EA=(SP)    基本寻址方式示意图</description>
+      <guid>https://examplesite.com/post/2021/07/22/</guid>
+      <description>寻址方式    基本寻址方式 特 征 优 点 缺 点 备 注     隐含寻址 操作数的存放地由操作码决定      立即寻址 操作数直接在指令中 加快执行速度 增加指令长度，不方便修改操作数 适用提供常数，设定初始值   寄存器寻址 操作数在指令指定的寄存器中 方便修改，访问寄存器加快指令执行，缩短指令长度，编程更灵活     直接寻址 操作数地址在指令中，操作数在主存单元中  指令字较长，不方便地址修改    间接寻址 操作数地址的地址在指令中，操作数在主存中 方便修改指针，编程更灵活 访问两次主存获取操作数，降低执行速度 形式地址，有效地址EA(=操作数地址)   寄存器间接寻址 操作数地址在指令指定的寄存器中，操作数在主存单元中 压缩指令长度，修改寄存器内容就可以修改主存地址指针  方便编写循环程序   相对寻址 操作数地址由PC和指令提供的地址偏移量决定,操作数在主存单元中   EA=PC+D，适用与地址无关的程序设计   基址寻址 操作数地址由基址寄存器(RB)和指令提供的地址偏移量决定，操作数在主存单元中 缩短指令长度，扩大寻址空间  大型计算机，用户的逻辑地址→主存的物理地址，EA=(RB)+D   变址寻址 操作数地址由变址寄存器(RI)和指令提供的地址偏移量决定，操作数在主存单元中   寻址到操作数RI内容(地址)自动修改，EA=(RI)+D   堆栈寻址 寻址方式由指令操作码决定   适用涉及堆栈操作的指令，EA=(SP)    存储模式 “按字节编址” 主存将一个存储单元定为8位，即一个字节，这称为按字节编址的存储器</description>
     </item>
     
   </channel>

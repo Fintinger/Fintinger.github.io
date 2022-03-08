@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>CSS on Archai &#39;s blog</title>
-    <link>https://www.fintinger.site/tags/css/</link>
-    <description>Recent content in CSS on Archai &#39;s blog</description>
+    <title>CSS on Archai&#39;s home</title>
+    <link>https://examplesite.com/tags/css/</link>
+    <description>Recent content in CSS on Archai&#39;s home</description>
+    <image>
+      <url>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</url>
+      <link>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 23 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://examplesite.com/tags/css/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CSS揭秘一书中的知识</title>
-      <link>https://www.fintinger.site/p/css%E6%8F%AD%E7%A7%98%E4%B8%80%E4%B9%A6%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86/</link>
+      <link>https://examplesite.com/post/2019/12/23/</link>
       <pubDate>Mon, 23 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/css%E6%8F%AD%E7%A7%98%E4%B8%80%E4%B9%A6%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86/</guid>
+      <guid>https://examplesite.com/post/2019/12/23/</guid>
       <description>1.backgrouond简写  在background简写属性中指定background-sizing时，需要提供一个background-position值，而且要使用/作为分隔。  background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [ background-size] [background-origin] [background-clip]; &amp;mdash;&amp;ndash;P13&amp;mdash;&amp;ndash;
 2.background-clip 规定背景的绘制区域：得到一个白色背景并且有白色边框的盒子：
 border:10px solid hsla(0,0,100%,.5); background:white; background-clip:padding-box 若不设置background-clip，背景会延伸至边框，边框的透明无法显示

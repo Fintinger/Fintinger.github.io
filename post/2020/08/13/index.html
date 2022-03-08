@@ -1,0 +1,266 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>Ajax重复请求 | Archai's home</title>
+<meta name=keywords content="Ajax">
+<meta name=description content="在发送某一次请求时，如果不对请求做去重处理那么，同一个请求有可能会发送很多次，一个个慢慢响应，这会很大程度影响性能以及页面的使用体验
+ 全局变量
+/** * baseURL 是每次请求的地址 * x 表示XMLHttpRequest实例，初始为null * isSending 是用来判断请求是否处于发送状态的标识 */ const baseURL = &#34;http://127.0.0.1:8000/delay&#34; let x = null, isSending = false 原生请求 if (isSending) x.abort() x = new XMLHttpRequest() //正处于发送状态，修改标识 isSending = true x.open(&#34;GET&#34;, baseURL) x.send() x.onreadystatechange = function () { if (x.readyState === 4) {//当readyState=4,表示已经发送完毕，修改标识，是否成功返回则无需关心  isSending = false if (x.status >= 200 && x.status < 300) { console.log(x.response); } } } jQuery 请求  jQuery做ajax请求时，可以仅针对一次请求，也可以利用jQuery全局事件对所有请求加以限制">
+<meta name=author content="Archai">
+<link rel=canonical href=https://examplesite.com/post/2020/08/13/>
+<meta name=google-site-verification content="XYZabc">
+<meta name=yandex-verification content="XYZabc">
+<meta name=msvalidate.01 content="XYZabc">
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
+<link rel=preload href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico as=image>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=32x32 href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<link rel=apple-touch-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<link rel=mask-icon href=https://examplesite.com/%3Clink%20/%20abs%20url%3E>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+</noscript>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-123-45','auto'),ga('send','pageview'))</script><meta property="og:title" content="Ajax重复请求">
+<meta property="og:description" content="在发送某一次请求时，如果不对请求做去重处理那么，同一个请求有可能会发送很多次，一个个慢慢响应，这会很大程度影响性能以及页面的使用体验
+ 全局变量
+/** * baseURL 是每次请求的地址 * x 表示XMLHttpRequest实例，初始为null * isSending 是用来判断请求是否处于发送状态的标识 */ const baseURL = &#34;http://127.0.0.1:8000/delay&#34; let x = null, isSending = false 原生请求 if (isSending) x.abort() x = new XMLHttpRequest() //正处于发送状态，修改标识 isSending = true x.open(&#34;GET&#34;, baseURL) x.send() x.onreadystatechange = function () { if (x.readyState === 4) {//当readyState=4,表示已经发送完毕，修改标识，是否成功返回则无需关心  isSending = false if (x.status >= 200 && x.status < 300) { console.log(x.response); } } } jQuery 请求  jQuery做ajax请求时，可以仅针对一次请求，也可以利用jQuery全局事件对所有请求加以限制">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://examplesite.com/post/2020/08/13/"><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2020-08-13T00:00:00+00:00">
+<meta property="article:modified_time" content="2020-08-13T00:00:00+00:00"><meta property="og:site_name" content="Archai's home">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg">
+<meta name=twitter:title content="Ajax重复请求">
+<meta name=twitter:description content="在发送某一次请求时，如果不对请求做去重处理那么，同一个请求有可能会发送很多次，一个个慢慢响应，这会很大程度影响性能以及页面的使用体验
+ 全局变量
+/** * baseURL 是每次请求的地址 * x 表示XMLHttpRequest实例，初始为null * isSending 是用来判断请求是否处于发送状态的标识 */ const baseURL = &#34;http://127.0.0.1:8000/delay&#34; let x = null, isSending = false 原生请求 if (isSending) x.abort() x = new XMLHttpRequest() //正处于发送状态，修改标识 isSending = true x.open(&#34;GET&#34;, baseURL) x.send() x.onreadystatechange = function () { if (x.readyState === 4) {//当readyState=4,表示已经发送完毕，修改标识，是否成功返回则无需关心  isSending = false if (x.status >= 200 && x.status < 300) { console.log(x.response); } } } jQuery 请求  jQuery做ajax请求时，可以仅针对一次请求，也可以利用jQuery全局事件对所有请求加以限制">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://examplesite.com/post/"},{"@type":"ListItem","position":2,"name":"Ajax重复请求","item":"https://examplesite.com/post/2020/08/13/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Ajax重复请求","name":"Ajax重复请求","description":"在发送某一次请求时，如果不对请求做去重处理那么，同一个请求有可能会发送很多次，一个个慢慢响应，这会很大程度影响性能以及页面的使用体验\n 全局变量\n/** * baseURL 是每次请求的地址 * x 表示XMLHttpRequest实例，初始为null * isSending 是用来判断请求是否处于发送状态的标识 */ const baseURL = \u0026#34;http://127.0.0.1:8000/delay\u0026#34; let x = null, isSending = false 原生请求 if (isSending) x.abort() x = new XMLHttpRequest() //正处于发送状态，修改标识 isSending = true x.open(\u0026#34;GET\u0026#34;, baseURL) x.send() x.onreadystatechange = function () { if (x.readyState === 4) {//当readyState=4,表示已经发送完毕，修改标识，是否成功返回则无需关心  isSending = false if (x.status \u0026gt;= 200 \u0026amp;\u0026amp; x.status \u0026lt; 300) { console.log(x.response); } } } jQuery 请求  jQuery做ajax请求时，可以仅针对一次请求，也可以利用jQuery全局事件对所有请求加以限制","keywords":["Ajax"],"articleBody":" 在发送某一次请求时，如果不对请求做去重处理那么，同一个请求有可能会发送很多次，一个个慢慢响应，这会很大程度影响性能以及页面的使用体验\n 全局变量\n/** * baseURL 是每次请求的地址 * x 表示XMLHttpRequest实例，初始为null * isSending 是用来判断请求是否处于发送状态的标识 */ const baseURL = \"http://127.0.0.1:8000/delay\" let x = null, isSending = false 原生请求 if (isSending) x.abort() x = new XMLHttpRequest() //正处于发送状态，修改标识 isSending = true x.open(\"GET\", baseURL) x.send() x.onreadystatechange = function () { if (x.readyState === 4) {//当readyState=4,表示已经发送完毕，修改标识，是否成功返回则无需关心  isSending = false if (x.status = 200 \u0026\u0026 x.status  300) { console.log(x.response); } } } jQuery 请求  jQuery做ajax请求时，可以仅针对一次请求，也可以利用jQuery全局事件对所有请求加以限制\n 仅本次请求 $.ajax({ url: baseURL, type: \"GET\", beforeSend: function (jqxhr, settings) { if (isSending) x.abort() x = jqxhr isSending = true }, success: data = { isSending = false console.log(data) } complete: function () { /*isSending = false*/ }, }) 说明：\n beforeSend中将XMLHttpRequest 对象jqxhr和设置settings作为参数传递给回调函数。 修改isSending = false在complete或者success中j均可。  complete[XHR,TS]参数为XMLHttpRequest对象和说明请求状态的字符串textStatus，有（\"success\"，\"notmodified\"，\"nocontent\"，\"error\"，\"timeout\"，\"abort\"，或\"parsererror\"） success[data, TS, XHR]参数为响应体data，textstatus，和XMLHttpRequest对象 complete在success之前执行    全局请求 $(document).ajaxSend(function (event,jqXHR,ajaxOptions) { if (isSending) x.abort() x = jqXHR isSending = true }).ajaxComplete(function () { isSending = false }); 说明：\n 要作此限制，要求在所有的jQuery请求中设置global = true，当然，这是个默认值，所以不单独设置即为接受全局事件，如果不希望某个请求生效全局事件，设置global = false即可。 全局事件永远不会针对跨域脚本或JSONP请求触发，无论其global值如何。 从jQuery 1.9开始，所有jQuery全局Ajax事件的处理程序都必须附加到document  jQuery Ajax各个事件的执行顺序  来自kelelipeng\n axios请求 const CancelToken = axios.CancelToken; let cancel, isSending = false; //请求拦截，即请求之前do something.... axios.interceptors.request.use(function (config) { if (isSending) cancel(\"Do not submit requests multiple times\") isSending = true return config }) //响应拦截，即请求之后do something.... axios.interceptors.response.use(function (res) { isSending = false return res }) axios.defaults.baseURL = \"http://127.0.0.1:8000\" //开始请求 axios({ url:'/delay', method:\"POST\", cancelToken: new CancelToken(function executor(c) { // executor 函数接收一个 cancel 函数作为参数  cancel = c; }) }).then(res = { //do something.... }).catch(err = { //err.message为前面cancel()携带的提示信息  console.error(err.message); }) 说明：\n 请求拦截时，如果运行到cancel(),后续会被.catch(err)捕获，可在catch(err)中做一些处理，cancel()中携带的提示信息会被catch(err)捕捉，储存在err.message中 这里利用到的cancelToken比较晦涩，具体研读  ","wordCount":"225","inLanguage":"en","datePublished":"2020-08-13T00:00:00Z","dateModified":"2020-08-13T00:00:00Z","author":{"@type":"Person","name":"Archai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://examplesite.com/post/2020/08/13/"},"publisher":{"@type":"Organization","name":"Archai's home","logo":{"@type":"ImageObject","url":"https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://examplesite.com/ accesskey=h title="Home (Alt + H)">
+<img src=https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico alt=logo aria-label=logo height=35>Home</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://examplesite.com/categories/ title=Categories>
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a href=https://examplesite.com/tags/ title=Tags>
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href=https://examplesite.com/search/ title="Search (Alt + /)" accesskey=/>
+<span>Search</span>
+</a>
+</li>
+<li>
+<a href=https://examplesite.com/archives/ title=Archives>
+<span>Archives</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href=https://examplesite.com/>Home</a>&nbsp;»&nbsp;<a href=https://examplesite.com/post/>Posts</a></div>
+<h1 class=post-title>
+Ajax重复请求
+</h1>
+<div class=post-meta><span title="2020-08-13 00:00:00 +0000 UTC">August 13, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai&nbsp;|&nbsp;<a href=https://github.com/%3cpath_to_repo%3e/content/post/2020/08/13/index.md rel="noopener noreferrer" target=_blank>Suggest Changes</a>
+</div>
+</header> <div class=toc>
+<details>
+<summary accesskey=c title="(Alt + C)">
+<span class=details>Table of Contents</span>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#%e5%8e%9f%e7%94%9f%e8%af%b7%e6%b1%82 aria-label=原生请求>原生请求</a></li>
+<li>
+<a href=#jquery-%e8%af%b7%e6%b1%82 aria-label="jQuery 请求">jQuery 请求</a><ul>
+<ul>
+<li>
+<a href=#%e4%bb%85%e6%9c%ac%e6%ac%a1%e8%af%b7%e6%b1%82 aria-label=仅本次请求>仅本次请求</a></li>
+<li>
+<a href=#%e5%85%a8%e5%b1%80%e8%af%b7%e6%b1%82 aria-label=全局请求>全局请求</a></li>
+<li>
+<a href=#jquery-ajax%e5%90%84%e4%b8%aa%e4%ba%8b%e4%bb%b6%e7%9a%84%e6%89%a7%e8%a1%8c%e9%a1%ba%e5%ba%8f aria-label="jQuery Ajax各个事件的执行顺序">jQuery Ajax各个事件的执行顺序</a></li></ul>
+</ul>
+</li>
+<li>
+<a href=#axios%e8%af%b7%e6%b1%82 aria-label=axios请求>axios请求</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div class=post-content><blockquote>
+<p>在发送某一次请求时，如果不对请求做去重处理那么，同一个请求有可能会发送很多次，一个个慢慢响应，这会很大程度影响性能以及页面的使用体验</p>
+</blockquote>
+<p><strong>全局变量</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#75715e>/**
+</span><span style=color:#75715e> * baseURL 是每次请求的地址
+</span><span style=color:#75715e> * x 表示XMLHttpRequest实例，初始为null
+</span><span style=color:#75715e> * isSending 是用来判断请求是否处于发送状态的标识
+</span><span style=color:#75715e> */</span>
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>baseURL</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;http://127.0.0.1:8000/delay&#34;</span>
+<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>x</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>, <span style=color:#a6e22e>isSending</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>
+</code></pre></div><h2 id=原生请求>原生请求<a hidden class=anchor aria-hidden=true href=#原生请求>#</a></h2>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>isSending</span>) <span style=color:#a6e22e>x</span>.<span style=color:#a6e22e>abort</span>()
+<span style=color:#a6e22e>x</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>XMLHttpRequest</span>()
+<span style=color:#75715e>//正处于发送状态，修改标识
+</span><span style=color:#75715e></span><span style=color:#a6e22e>isSending</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>
+<span style=color:#a6e22e>x</span>.<span style=color:#a6e22e>open</span>(<span style=color:#e6db74>&#34;GET&#34;</span>, <span style=color:#a6e22e>baseURL</span>)
+<span style=color:#a6e22e>x</span>.<span style=color:#a6e22e>send</span>()
+<span style=color:#a6e22e>x</span>.<span style=color:#a6e22e>onreadystatechange</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span> () {
+    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>x</span>.<span style=color:#a6e22e>readyState</span> <span style=color:#f92672>===</span> <span style=color:#ae81ff>4</span>) {<span style=color:#75715e>//当readyState=4,表示已经发送完毕，修改标识，是否成功返回则无需关心
+</span><span style=color:#75715e></span>        <span style=color:#a6e22e>isSending</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>
+        <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>x</span>.<span style=color:#a6e22e>status</span> <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>200</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#a6e22e>x</span>.<span style=color:#a6e22e>status</span> <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>300</span>) {
+            <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>x</span>.<span style=color:#a6e22e>response</span>);
+        }
+    }
+}
+</code></pre></div><h2 id=jquery-请求>jQuery 请求<a hidden class=anchor aria-hidden=true href=#jquery-请求>#</a></h2>
+<blockquote>
+<p>jQuery做ajax请求时，可以仅针对一次请求，也可以利用<a href=https://api.jquery.com/category/ajax/global-ajax-event-handlers/>jQuery全局事件</a>对所有请求加以限制</p>
+</blockquote>
+<h4 id=仅本次请求>仅本次请求<a hidden class=anchor aria-hidden=true href=#仅本次请求>#</a></h4>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>$</span>.<span style=color:#a6e22e>ajax</span>({
+    <span style=color:#a6e22e>url</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>baseURL</span>,
+    <span style=color:#a6e22e>type</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;GET&#34;</span>,
+    <span style=color:#a6e22e>beforeSend</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>jqxhr</span>, <span style=color:#a6e22e>settings</span>) {
+        <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>isSending</span>) <span style=color:#a6e22e>x</span>.<span style=color:#a6e22e>abort</span>()
+        <span style=color:#a6e22e>x</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>jqxhr</span>
+        <span style=color:#a6e22e>isSending</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>
+    },
+    <span style=color:#a6e22e>success</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>data</span> =&gt; {
+        <span style=color:#a6e22e>isSending</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>
+        <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>data</span>)
+    }
+    <span style=color:#a6e22e>complete</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>function</span> () {
+        <span style=color:#75715e>/*isSending = false*/</span>
+    },
+})
+</code></pre></div><p><strong>说明：</strong></p>
+<ul>
+<li><code>beforeSend</code>中将XMLHttpRequest 对象<code>jqxhr</code>和设置<code>settings</code>作为参数传递给回调函数。</li>
+<li>修改<code>isSending = false</code>在<code>complete</code>或者<code>success</code>中j均可。
+<ul>
+<li><code>complete[XHR,TS]</code>参数为XMLHttpRequest对象和说明请求状态的字符串textStatus，有（<code>"success"</code>，<code>"notmodified"</code>，<code>"nocontent"</code>，<code>"error"</code>，<code>"timeout"</code>，<code>"abort"</code>，或<code>"parsererror"</code>）</li>
+<li><code>success[data, TS, XHR]</code>参数为响应体data，textstatus，和XMLHttpRequest对象</li>
+<li><code>complete</code>在<code>success</code>之前执行</li>
+</ul>
+</li>
+</ul>
+<h4 id=全局请求>全局请求<a hidden class=anchor aria-hidden=true href=#全局请求>#</a></h4>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>$</span>(document).<span style=color:#a6e22e>ajaxSend</span>(<span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>event</span>,<span style=color:#a6e22e>jqXHR</span>,<span style=color:#a6e22e>ajaxOptions</span>) {
+    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>isSending</span>) <span style=color:#a6e22e>x</span>.<span style=color:#a6e22e>abort</span>()
+    <span style=color:#a6e22e>x</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>jqXHR</span>
+    <span style=color:#a6e22e>isSending</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>
+}).<span style=color:#a6e22e>ajaxComplete</span>(<span style=color:#66d9ef>function</span> () {
+    <span style=color:#a6e22e>isSending</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>
+});
+</code></pre></div><p><strong>说明：</strong></p>
+<ul>
+<li>要作此限制，要求在所有的jQuery请求中设置<code>global = true</code>，当然，这是个默认值，所以不单独设置即为接受全局事件，如果不希望某个请求生效全局事件，设置<code>global = false</code>即可。</li>
+<li>全局事件永远不会针对<strong>跨域脚本</strong>或<strong>JSONP请求</strong>触发，无论其<code>global</code>值如何。</li>
+<li>从jQuery 1.9开始，所有<a href=https://api.jquery.com/category/ajax/global-ajax-event-handlers/>jQuery全局Ajax事件</a>的处理程序都必须附加到<code>document</code></li>
+</ul>
+<h4 id=jquery-ajax各个事件的执行顺序>jQuery Ajax各个事件的执行顺序<a hidden class=anchor aria-hidden=true href=#jquery-ajax各个事件的执行顺序>#</a></h4>
+<blockquote>
+<p>来自<a href=https://www.cnblogs.com/kelelipeng/p/11045888.html>kelelipeng</a></p>
+</blockquote>
+<p><img loading=lazy src=http://r.photo.store.qq.com/psc?/V11ijIHl1yJLHC/45NBuzDIW489QBoVep5mcecChRJ0Yb4.uSLAYRKhcKlwFkyFTp5KW5t8KzMIT9fG0TlcGnNxgzwCeSLozEahFpjCga3kCJYCrBkhV*R5jK8!/r alt="jQuery Ajax各个事件的执行顺序">
+</p>
+<h2 id=axios请求>axios请求<a hidden class=anchor aria-hidden=true href=#axios请求>#</a></h2>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>CancelToken</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>axios</span>.<span style=color:#a6e22e>CancelToken</span>;
+<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>cancel</span>, <span style=color:#a6e22e>isSending</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>;
+
+<span style=color:#75715e>//请求拦截，即请求之前do something....
+</span><span style=color:#75715e></span><span style=color:#a6e22e>axios</span>.<span style=color:#a6e22e>interceptors</span>.<span style=color:#a6e22e>request</span>.<span style=color:#a6e22e>use</span>(<span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>config</span>) {
+    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>isSending</span>) <span style=color:#a6e22e>cancel</span>(<span style=color:#e6db74>&#34;Do not submit requests multiple times&#34;</span>)
+    <span style=color:#a6e22e>isSending</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>
+    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>config</span>
+})
+<span style=color:#75715e>//响应拦截，即请求之后do something....
+</span><span style=color:#75715e></span><span style=color:#a6e22e>axios</span>.<span style=color:#a6e22e>interceptors</span>.<span style=color:#a6e22e>response</span>.<span style=color:#a6e22e>use</span>(<span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>res</span>) {
+    <span style=color:#a6e22e>isSending</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>
+    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>res</span>
+})
+<span style=color:#a6e22e>axios</span>.<span style=color:#a6e22e>defaults</span>.<span style=color:#a6e22e>baseURL</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;http://127.0.0.1:8000&#34;</span>
+
+<span style=color:#75715e>//开始请求
+</span><span style=color:#75715e></span><span style=color:#a6e22e>axios</span>({
+    <span style=color:#a6e22e>url</span><span style=color:#f92672>:</span><span style=color:#e6db74>&#39;/delay&#39;</span>,
+    <span style=color:#a6e22e>method</span><span style=color:#f92672>:</span><span style=color:#e6db74>&#34;POST&#34;</span>,
+    <span style=color:#a6e22e>cancelToken</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>CancelToken</span>(<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>executor</span>(<span style=color:#a6e22e>c</span>) {
+        <span style=color:#75715e>// executor 函数接收一个 cancel 函数作为参数
+</span><span style=color:#75715e></span>        <span style=color:#a6e22e>cancel</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>c</span>;
+    })
+}).<span style=color:#a6e22e>then</span>(<span style=color:#a6e22e>res</span> =&gt; {
+    <span style=color:#75715e>//do something....
+</span><span style=color:#75715e></span>}).<span style=color:#66d9ef>catch</span>(<span style=color:#a6e22e>err</span> =&gt; {
+    <span style=color:#75715e>//err.message为前面cancel()携带的提示信息
+</span><span style=color:#75715e></span>    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#a6e22e>err</span>.<span style=color:#a6e22e>message</span>);
+})
+</code></pre></div><p><strong>说明：</strong></p>
+<ul>
+<li>请求拦截时，如果运行到<code>cancel()</code>,后续会被<code>.catch(err)</code>捕获，可在<code>catch(err)</code>中做一些处理，<code>cancel()</code>中携带的提示信息会被<code>catch(err)</code>捕捉，储存在<code>err.message</code>中</li>
+<li>这里利用到的<code>cancelToken</code>比较晦涩，具体<a href=http://www.axios-js.com/zh-cn/docs/#%E5%8F%96%E6%B6%88>研读</a></li>
+</ul>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://examplesite.com/tags/ajax/>Ajax</a></li>
+</ul>
+<nav class=paginav>
+<a class=prev href=https://examplesite.com/post/2020/08/15/>
+<span class=title>« Prev Page</span>
+<br>
+<span>红警常见问题(收录中……)</span>
+</a>
+<a class=next href=https://examplesite.com/post/2020/08/11/>
+<span class=title>Next Page »</span>
+<br>
+<span>跨域及CORS官方跨域</span>
+</a>
+</nav>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2022 <a href=https://examplesite.com/>Archai's home</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+<script>document.querySelectorAll('pre > code').forEach(b=>{const c=b.parentNode.parentNode,a=document.createElement('button');a.classList.add('copy-code'),a.innerText='copy';function d(){a.innerText='copied!',setTimeout(()=>{a.innerText='copy'},2e3)}a.addEventListener('click',e=>{if('clipboard'in navigator){navigator.clipboard.writeText(b.textContent),d();return}const a=document.createRange();a.selectNodeContents(b);const c=window.getSelection();c.removeAllRanges(),c.addRange(a);try{document.execCommand('copy'),d()}catch(a){}c.removeRange(a)}),c.classList.contains("highlight")?c.appendChild(a):c.parentNode.firstChild==c||(b.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?b.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(a):b.parentNode.appendChild(a))})</script>
+</body>
+</html>

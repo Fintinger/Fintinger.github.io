@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>堆排序 on Archai &#39;s blog</title>
-    <link>https://www.fintinger.site/tags/%E5%A0%86%E6%8E%92%E5%BA%8F/</link>
-    <description>Recent content in 堆排序 on Archai &#39;s blog</description>
+    <title>堆排序 on Archai&#39;s home</title>
+    <link>https://examplesite.com/tags/%E5%A0%86%E6%8E%92%E5%BA%8F/</link>
+    <description>Recent content in 堆排序 on Archai&#39;s home</description>
+    <image>
+      <url>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</url>
+      <link>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Thu, 10 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/%E5%A0%86%E6%8E%92%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://examplesite.com/tags/%E5%A0%86%E6%8E%92%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>排序算法相关</title>
-      <link>https://www.fintinger.site/p/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/</link>
+      <link>https://examplesite.com/post/2021/06/10/sort/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/</guid>
+      <guid>https://examplesite.com/post/2021/06/10/sort/</guid>
       <description>排序算法 平均时间复杂度 空间复杂度 稳定性 适用情况     插入排序 $O(n^2)$ O(1) 稳定 n较小，初始序列基本有序   希尔排序 $O(n^{1.3})$ O(1) 不稳定    冒泡排序 $O(n^2)$ O(1) 稳定 n较小，初始序列基本有序   快速排序 $O(n\log_2n)$ $O(nlog_2n)$ 不稳定 初始序列无序   简单选择排序 $O(n^2)$ O(1) 不稳定 n较小   堆排序 $O(n\log_2n)$ O(1) 不稳定 n较大或只排前几位   2-路归并排序 $O(n\log_2n)$ O(n) 稳定 n很大   链式基数排序 $O(d(n+rd))$ $O(rd)$ 稳定 n大，关键字值小    相关概念 1.</description>
     </item>
     

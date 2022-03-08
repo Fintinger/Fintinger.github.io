@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Huffman on Archai &#39;s blog</title>
-    <link>https://www.fintinger.site/tags/huffman/</link>
-    <description>Recent content in Huffman on Archai &#39;s blog</description>
+    <title>Huffman on Archai&#39;s home</title>
+    <link>https://examplesite.com/tags/huffman/</link>
+    <description>Recent content in Huffman on Archai&#39;s home</description>
+    <image>
+      <url>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</url>
+      <link>https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 23 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/huffman/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://examplesite.com/tags/huffman/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>哈夫曼树</title>
-      <link>https://www.fintinger.site/p/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/</link>
+      <link>https://examplesite.com/post/2021/05/23/huffmantree/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/p/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/</guid>
+      <guid>https://examplesite.com/post/2021/05/23/huffmantree/</guid>
       <description>基本概念 1.结点的权
 每个结点带有的具有某种现实意义的数值(比如代表重要性等)
 2.结点的带权路径长度
@@ -21,8 +24,7 @@
 树中所有叶结点的带权路径长度之和（WPL, Weighted Path Length）
 $WPL=\sum_{i=1}^{n}w_il_i$
 ✨4.哈夫曼树
-在含有n个带权叶结点的二叉树中，其中带权路径长度（WPL）最小的二叉树称为哈夫曼树，也称最优二叉树
-构造哈夫曼树 给定n个权值分别为 $w_1,w_2,&amp;hellip;,w_n$ 的结点，其构造过程描述如下：
+在含有n个带权叶结点的二叉树中，其中带权路径长度（WPL）最小的二叉树称为哈夫曼树，也称最优二叉树构造哈夫曼树 给定n个权值分别为 $w_1,w_2,&amp;hellip;,w_n$ 的结点，其构造过程描述如下：
 ① 将这n个结点分别作为n棵仅含一个结点的二叉树，构成森林F
 ② 构造一个新结点，从F中选取两棵根结点权值最小的树作为新结点的左右子树，并且将新结点的权值置为左、右子树上根结点的权值之和。
 ③ 从F中删除刚才选出的两棵树，同时将新得到的树加入F中。
