@@ -10,10 +10,11 @@
 <meta name="description" content="">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/categories/%E5%89%8D%E7%AB%AF/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.4ee57c4189977dc8f075173100c24a668d6bb09d6b5db74440649223f1221877.css" integrity="sha256-TuV8QYmXfcjwdRcxAMJKZo1rsJ1rXbdEQGSSI/EiGHc=" rel="preload stylesheet" as="style">
+<link rel="stylesheet" href="css/extended/custom.css">
 <link rel="icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
 <link rel="apple-touch-icon" href="https://www.fintinger.site/apple-touch-icon.png">
 <link rel="mask-icon" href="https://www.fintinger.site/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
@@ -46,6 +47,27 @@
         document.body.classList.add('dark');
     }
 
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
 </script>
 
 <header class="header">
@@ -87,11 +109,6 @@
                 </a>
             </li>
             <li>
-                <a href="https://www.fintinger.site/tags/" title="Tags🏷️">
-                    <span>Tags🏷️</span>
-                </a>
-            </li>
-            <li>
                 <a href="https://www.fintinger.site/search/" title="Search🔎 (Alt &#43; /)" accesskey=/>
                     <span>Search🔎</span>
                 </a>
@@ -99,6 +116,11 @@
             <li>
                 <a href="https://www.fintinger.site/archives/" title="Timeline🕰️">
                     <span>Timeline🕰️</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/about/" title="About🥳">
+                    <span>About🥳</span>
                 </a>
             </li>
         </ul>
@@ -125,8 +147,8 @@ v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做
 这样做的好处就是不用再写一个&lt;div&gt;将需要隐藏的元素包裹
    # v-show  说明： 条件切换display属性  # v-for  说明： 在data中定义一个数组arr，然后用v-for=&#34;val in arr&#34;访问到  3....</p>
   </section>
-  <footer class="entry-footer"><span title='2020-07-18 00:00:00 +0000 UTC'>July 18, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to vue.js学习心得" href="https://www.fintinger.site/posts/2020/07/18/"></a>
+  <footer class="entry-footer"><span title='2020-07-18 00:00:00 +0000 UTC'>July 18, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to vue.js学习心得" href="https://www.fintinger.site/p/vue.js%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -137,15 +159,15 @@ v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做
   <section class="entry-content">
     <p>该怎么去获得文件名字符串中的文件扩展名呢？
 一种较为强大的解决方法是利用String的slice、lastIndexOf方法：
-function getFileExtension(filename) { return filename.slice((filename.lastIndexOf(&#34;.&#34;) - 1 &gt;&gt;&gt; 0) &#43; 2); } console.log(getFileExtension3(&#39;&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;filename&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;filename.txt&#39;)); // &#39;txt&#39; console.log(getFileExtension3(&#39;.hiddenfile&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;hiddenfile.&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;filename.with.many.dots.ext&#39;)); // &#39;ext&#39; 说明 filename.slice((filename.lastIndexOf(&#34;.&#34;) - 1 &gt;&gt;&gt; 0) &#43; 2)
+1 2 3 4 5 6 7 8 9  function getFileExtension(filename) { return filename.slice((filename.lastIndexOf(&#34;.&#34;) - 1 &gt;&gt;&gt; 0) &#43; 2); } console.log(getFileExtension3(&#39;&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;filename&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;filename.txt&#39;)); // &#39;txt&#39; console.log(getFileExtension3(&#39;.hiddenfile&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;hiddenfile.&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;filename.with.many.dots.ext&#39;)); // &#39;ext&#39;   说明 filename.slice((filename.lastIndexOf(&#34;.&#34;) - 1 &gt;&gt;&gt; 0) &#43; 2)
  本方法中的&gt;&gt;&gt;运算目的是
 找到最后一个.所在索引，然后索引-1&#43;2，相当于&#43;1，则slice方法返回.后面的后缀名
 .不会再开头，否则索引会是0，因为-1&gt;&gt;&gt;0 =﻿﻿﻿﻿ 4294967295，所不会匹配到
 .出现在末尾，索引会等于length&#43;1，也不会匹配到
- slice(start,end)  说明：start必须指定，负值为从后往前数，若只指定start值，则返回start位置及后面一直到数组结尾所有的元素 **注意：**区别于删除数组中的一段元素的方法 Array.splice()  lastIndexOf(searchvalue,fromindex)  **说明：**如果要检索的字符串值没有出现，则该方法返回 -1，该方法对大小写敏感 使用：  var str=&#34;Hello world!&#34; document.write(str.lastIndexOf(&#34;Hello&#34;) &#43; &#34;&lt;br /&gt;&#34;)//0 document.write(str.lastIndexOf(&#34;World&#34;) &#43; &#34;&lt;br /&gt;&#34;)//-1 document....</p>
+ slice(start,end)  说明：start必须指定，负值为从后往前数，若只指定start值，则返回start位置及后面一直到数组结尾所有的元素 **注意：**区别于删除数组中的一段元素的方法 Array.splice()  lastIndexOf(searchvalue,fromindex)  **说明：**如果要检索的字符串值没有出现，则该方法返回 -1，该方法对大小写敏感 使用：  1 2 3 4  var str=&#34;Hello world!...</p>
   </section>
   <footer class="entry-footer"><span title='2020-07-09 00:00:00 +0000 UTC'>July 9, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 获取文件扩展名" href="https://www.fintinger.site/posts/2020/07/09/"></a>
+  <a class="entry-link" aria-label="post link to 获取文件扩展名" href="https://www.fintinger.site/p/%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -155,10 +177,10 @@ function getFileExtension(filename) { return filename.slice((filename.lastIndexO
   </header>
   <section class="entry-content">
     <p>做网页轮播图，或者音乐播放列表时经常要用到一组循环的数组，到最后一项返回第一项，第一项返回最后一项
-利用两次判断 function doLoop( arr ){ arr.loop_idx = 0; // 返回当前的元素  arr.current = function(){ if( this.loop_idx &lt; 0 ){// 第一次检查  this.loop_idx = this.length - 1;// 更新 loop_idx  } if( this.loop_idx &gt;= this.length ){// 第二次检查  this.loop_idx = 0;// 更新 loop_idx  } return arr[ this.loop_idx ];//返回元素  }; // 增加 loop_idx 然后返回新的当前元素  arr.next = function(){ this.loop_idx&#43;&#43;; return this.current(); }; // 减少 loop_idx 然后返回新的当前元素  arr.prev = function(){ this....</p>
+利用两次判断 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29  function doLoop( arr ){ arr.loop_idx = 0; // 返回当前的元素  arr.current = function(){ if( this.loop_idx &lt; 0 ){// 第一次检查  this.loop_idx = this.length - 1;// 更新 loop_idx  } if( this.loop_idx &gt;= this.length ){// 第二次检查  this.loop_idx = 0;// 更新 loop_idx  } return arr[ this....</p>
   </section>
   <footer class="entry-footer"><span title='2020-07-08 00:00:00 +0000 UTC'>July 8, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 一组循环数组" href="https://www.fintinger.site/posts/2020/07/08/"></a>
+  <a class="entry-link" aria-label="post link to 一组循环数组" href="https://www.fintinger.site/p/%E4%B8%80%E7%BB%84%E5%BE%AA%E7%8E%AF%E6%95%B0%E7%BB%84/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -168,10 +190,10 @@ function getFileExtension(filename) { return filename.slice((filename.lastIndexO
   </header>
   <section class="entry-content">
     <p>经常会用到指定内容的复制粘贴问题，用到document的execCommand 方法,为此，我将这个功能封装为一个简单的函数:
-function doCopy($el, {deepCopy = false, copyTips = true, language = &#34;Chinese&#34;, bgColor = &#34;#ff6666&#34;, fontColor = &#34;#fff&#34;} = {}) { let tempEl = $(&#34;&lt;input id=&#39;selectEl&#39; type=&#39;text&#39; value=&#39;&#39;&gt;&#34;).val($el.text()) if (deepCopy) { tempEl.val($el.html()) } tempEl.appendTo($(&#34;body&#34;)) document.querySelector(&#39;#selectEl&#39;).select(); document.execCommand(&#39;copy&#39;); tempEl.remove() if (copyTips) { let tipEl = $(&#34;&lt;div class=&#39;copyTips&#39; &gt;成功复制到剪切板&lt;/div&gt;&#34;) tipEl.css({fontFamily: &#34;&#39;Microsoft YaHei&#39;, sans-serif&#34;,fontSize: &#34;1.2rem&#34;,position: &#34;fixed&#34;,top: &#34;1rem&#34;,textAlign: &#34;center&#34;, left: &#34;50%&#34;,fontWeight: &#34;bolder&#34;, borderRadius: &#34;.5rem&#34;,marginLeft: &#34;-8rem&#34;,width: &#34;16rem&#34;,height: &#34;3rem&#34;, lineHeight:&#34;3rem&#34;, background: bgColor,boxShadow: &#34;0 6px 10px -8px #000&#34;,color: fontColor, letterSpacing: &#34;4px&#34;,boxSizing: &#34;border-box&#34;,padding: &#34;0 10px 0 10px&#34;, display: &#34;none&#34;}) if (language === &#34;English&#34;) { tipEl....</p>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22  function doCopy($el, {deepCopy = false, copyTips = true, language = &#34;Chinese&#34;, bgColor = &#34;#ff6666&#34;, fontColor = &#34;#fff&#34;} = {}) { let tempEl = $(&#34;&lt;input id=&#39;selectEl&#39; type=&#39;text&#39; value=&#39;&#39;&gt;&#34;).val($el.text()) if (deepCopy) { tempEl.val($el.html()) } tempEl.appendTo($(&#34;body&#34;)) document.querySelector(&#39;#selectEl&#39;).select(); document.execCommand(&#39;copy&#39;); tempEl.remove() if (copyTips) { let tipEl = $(&#34;&lt;div class=&#39;copyTips&#39; &gt;成功复制到剪切板&lt;/div&gt;&#34;) tipEl....</p>
   </section>
   <footer class="entry-footer"><span title='2020-07-07 00:00:00 +0000 UTC'>July 7, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 剪贴板功能实现" href="https://www.fintinger.site/posts/2020/07/07/"></a>
+  <a class="entry-link" aria-label="post link to 剪贴板功能实现" href="https://www.fintinger.site/p/%E5%89%AA%E8%B4%B4%E6%9D%BF%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -182,17 +204,17 @@ function doCopy($el, {deepCopy = false, copyTips = true, language = &#34;Chinese
   <section class="entry-content">
     <p>在javascript中，Array()经常用到，利用ES6中的一些新特性会让数组的处理更加方便快捷
 1.迭代空数组 直接创建一个数组
-const arr=new Array(4); //Output:[undefined，undefined，undefined，undefined] 利用map方法，转化成新的数组，企图得到 [0,1,2,3] 数组
-const arr=new Array(4); arr.map((ele,index) =&gt; index); //Output:[undefined，undefined，undefined，undefined] 解决这个问题可以在创建数组时用到Array.apply
+1 2  const arr=new Array(4); //Output:[undefined，undefined，undefined，undefined]   利用map方法，转化成新的数组，企图得到 [0,1,2,3] 数组
+1 2 3  const arr=new Array(4); arr.map((ele,index) =&gt; index); //Output:[undefined，undefined，undefined，undefined]   解决这个问题可以在创建数组时用到Array.apply
  apply与call类似，都是用来继承父类的方法的，不同之处是：
   call() 方法分别接受参数。person.fullName.apply(person1, [&#34;Oslo&#34;, &#34;Norway&#34;]);
   apply() 方法接受数组形式的参数.	person.fullName.call(person1, &#34;Oslo&#34;, &#34;Norway&#34;);
   如果要使用数组而不是参数列表，则 apply() 方法非常方便。
- const arr = Array.apply(null, new Array(4)); arr.map((ele,index) =&gt; index); //Output:[0,1,2,3] 由此，我们可以创建一个指定最大值、最小值、或者长度生成指定数列的方法
-/** * 生成自定义的连续数列 * @param{Number}min * @param{Number}max * @param{Number}len */ function newArr({min = null, max = null, len = null} = {}) { let newArray=[], skip = min if (len == null) {len = max - min &#43; 1} if (min == null) {skip = -max} const arr = Array....</p>
+ 1 2 3  const arr = Array.apply(null, new Array(4)); arr.map((ele,index) =&gt; index); //Output:[0,1,2,3]   由此，我们可以创建一个指定最大值、最小值、或者长度生成指定数列的方法
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  /** * 生成自定义的连续数列 * @param{Number}min * @param{Number}max * @param{Number}len */ function newArr({min = null, max = null, len = null} = {}) { let newArray=[], skip = min if (len == null) {len = max - min &#43; 1} if (min == null) {skip = -max} const arr = Array....</p>
   </section>
   <footer class="entry-footer"><span title='2020-07-06 00:00:00 +0000 UTC'>July 6, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to ES6中新增关于Array的方法" href="https://www.fintinger.site/posts/2020/07/04/"></a>
+  <a class="entry-link" aria-label="post link to ES6中新增关于Array的方法" href="https://www.fintinger.site/p/es6%E4%B8%AD%E6%96%B0%E5%A2%9E%E5%85%B3%E4%BA%8Earray%E7%9A%84%E6%96%B9%E6%B3%95/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>哈夫曼树 | Archai&#39;s home</title>
+<meta name="keywords" content="数据结构, Huffman" />
+<meta name="description" content="基本概念 1.结点的权
+每个结点带有的具有某种现实意义的数值(比如代表重要性等)
+2.结点的带权路径长度
+从树的根到该结点的路径长度（经过的边数）与该结点上权值的乘积
+3.树的带权路径长度
+树中所有叶结点的带权路径长度之和（WPL, Weighted Path Length）
+$WPL=\sum_{i=1}^{n}w_il_i$
+✨4.哈夫曼树
+在含有n个带权叶结点的二叉树中，其中带权路径长度（WPL）最小的二叉树称为哈夫曼树，也称最优二叉树
+构造哈夫曼树 给定n个权值分别为 $w_1,w_2,&hellip;,w_n$ 的结点，其构造过程描述如下：
+① 将这n个结点分别作为n棵仅含一个结点的二叉树，构成森林F
+② 构造一个新结点，从F中选取两棵根结点权值最小的树作为新结点的左右子树，并且将新结点的权值置为左、右子树上根结点的权值之和。
+③ 从F中删除刚才选出的两棵树，同时将新得到的树加入F中。
+④ 重复步骤②和③，直至F中只剩下一棵树为止。
+假设给定结点在经过步骤①之后如下
+则其②③④步骤为：
+$WPL_{min}=1*7&#43;2*3&#43;3*2&#43;4*1&#43;4*2=31$
+或者
+$WPL_{min}=1*7&#43;3*(1&#43;2&#43;2&#43;3)=31$
+👇👇👇👇👇👇
+哈夫曼树特点： ① 每个初始结点最终都成为叶结点，且权值越小的结点到根结点的路径长度越大。 ② 哈夫曼树的结点总数为2n-1。 ③ 哈夫曼树中不存在度为1的结点。 ④ 哈夫曼树并不唯一，但WPL必然相同且为最优。
+哈夫曼编码 固定长度编码 如ASCII码
+可变长度编码 前缀编码 没有一个编码是另一个编码的前缀
+哈夫曼编码 由哈夫曼树得到哈夫曼编码——字符集中的每个字符作为一个叶子结点，各个字符出现的频度作为结点的权值，根据之前介绍的方法构造哈夫曼树。
+✨ 应用
+可用于数据压缩
+如图，为英文字母使用频率表，若不进行压缩，第 i 个字母频率用$l_i表示$，路径长至少为5($2^4&lt;26&lt;2^5$)，则
+$WPL=5×\sum_{i=1}^{n}l_i$=500
+若通过构造哈夫曼树进行哈夫曼编码
+则$WPL_{min}=$
+$v=\frac{WPL_{min}}{WPL}$">
+<meta name="author" content="Archai">
+<link rel="canonical" href="https://www.fintinger.site/p/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.4ee57c4189977dc8f075173100c24a668d6bb09d6b5db74440649223f1221877.css" integrity="sha256-TuV8QYmXfcjwdRcxAMJKZo1rsJ1rXbdEQGSSI/EiGHc=" rel="preload stylesheet" as="style">
+<link rel="stylesheet" href="css/extended/custom.css">
+<link rel="icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="apple-touch-icon" href="https://www.fintinger.site/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.fintinger.site/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:title" content="哈夫曼树" />
+<meta property="og:description" content="基本概念 1.结点的权
+每个结点带有的具有某种现实意义的数值(比如代表重要性等)
+2.结点的带权路径长度
+从树的根到该结点的路径长度（经过的边数）与该结点上权值的乘积
+3.树的带权路径长度
+树中所有叶结点的带权路径长度之和（WPL, Weighted Path Length）
+$WPL=\sum_{i=1}^{n}w_il_i$
+✨4.哈夫曼树
+在含有n个带权叶结点的二叉树中，其中带权路径长度（WPL）最小的二叉树称为哈夫曼树，也称最优二叉树
+构造哈夫曼树 给定n个权值分别为 $w_1,w_2,&hellip;,w_n$ 的结点，其构造过程描述如下：
+① 将这n个结点分别作为n棵仅含一个结点的二叉树，构成森林F
+② 构造一个新结点，从F中选取两棵根结点权值最小的树作为新结点的左右子树，并且将新结点的权值置为左、右子树上根结点的权值之和。
+③ 从F中删除刚才选出的两棵树，同时将新得到的树加入F中。
+④ 重复步骤②和③，直至F中只剩下一棵树为止。
+假设给定结点在经过步骤①之后如下
+则其②③④步骤为：
+$WPL_{min}=1*7&#43;2*3&#43;3*2&#43;4*1&#43;4*2=31$
+或者
+$WPL_{min}=1*7&#43;3*(1&#43;2&#43;2&#43;3)=31$
+👇👇👇👇👇👇
+哈夫曼树特点： ① 每个初始结点最终都成为叶结点，且权值越小的结点到根结点的路径长度越大。 ② 哈夫曼树的结点总数为2n-1。 ③ 哈夫曼树中不存在度为1的结点。 ④ 哈夫曼树并不唯一，但WPL必然相同且为最优。
+哈夫曼编码 固定长度编码 如ASCII码
+可变长度编码 前缀编码 没有一个编码是另一个编码的前缀
+哈夫曼编码 由哈夫曼树得到哈夫曼编码——字符集中的每个字符作为一个叶子结点，各个字符出现的频度作为结点的权值，根据之前介绍的方法构造哈夫曼树。
+✨ 应用
+可用于数据压缩
+如图，为英文字母使用频率表，若不进行压缩，第 i 个字母频率用$l_i表示$，路径长至少为5($2^4&lt;26&lt;2^5$)，则
+$WPL=5×\sum_{i=1}^{n}l_i$=500
+若通过构造哈夫曼树进行哈夫曼编码
+则$WPL_{min}=$
+$v=\frac{WPL_{min}}{WPL}$" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.fintinger.site/p/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/" /><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-05-23T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-05-23T00:00:00&#43;00:00" /><meta property="og:site_name" content="Archai&#39;s home" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/>
+
+<meta name="twitter:title" content="哈夫曼树"/>
+<meta name="twitter:description" content="基本概念 1.结点的权
+每个结点带有的具有某种现实意义的数值(比如代表重要性等)
+2.结点的带权路径长度
+从树的根到该结点的路径长度（经过的边数）与该结点上权值的乘积
+3.树的带权路径长度
+树中所有叶结点的带权路径长度之和（WPL, Weighted Path Length）
+$WPL=\sum_{i=1}^{n}w_il_i$
+✨4.哈夫曼树
+在含有n个带权叶结点的二叉树中，其中带权路径长度（WPL）最小的二叉树称为哈夫曼树，也称最优二叉树
+构造哈夫曼树 给定n个权值分别为 $w_1,w_2,&hellip;,w_n$ 的结点，其构造过程描述如下：
+① 将这n个结点分别作为n棵仅含一个结点的二叉树，构成森林F
+② 构造一个新结点，从F中选取两棵根结点权值最小的树作为新结点的左右子树，并且将新结点的权值置为左、右子树上根结点的权值之和。
+③ 从F中删除刚才选出的两棵树，同时将新得到的树加入F中。
+④ 重复步骤②和③，直至F中只剩下一棵树为止。
+假设给定结点在经过步骤①之后如下
+则其②③④步骤为：
+$WPL_{min}=1*7&#43;2*3&#43;3*2&#43;4*1&#43;4*2=31$
+或者
+$WPL_{min}=1*7&#43;3*(1&#43;2&#43;2&#43;3)=31$
+👇👇👇👇👇👇
+哈夫曼树特点： ① 每个初始结点最终都成为叶结点，且权值越小的结点到根结点的路径长度越大。 ② 哈夫曼树的结点总数为2n-1。 ③ 哈夫曼树中不存在度为1的结点。 ④ 哈夫曼树并不唯一，但WPL必然相同且为最优。
+哈夫曼编码 固定长度编码 如ASCII码
+可变长度编码 前缀编码 没有一个编码是另一个编码的前缀
+哈夫曼编码 由哈夫曼树得到哈夫曼编码——字符集中的每个字符作为一个叶子结点，各个字符出现的频度作为结点的权值，根据之前介绍的方法构造哈夫曼树。
+✨ 应用
+可用于数据压缩
+如图，为英文字母使用频率表，若不进行压缩，第 i 个字母频率用$l_i表示$，路径长至少为5($2^4&lt;26&lt;2^5$)，则
+$WPL=5×\sum_{i=1}^{n}l_i$=500
+若通过构造哈夫曼树进行哈夫曼编码
+则$WPL_{min}=$
+$v=\frac{WPL_{min}}{WPL}$"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://www.fintinger.site/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "哈夫曼树",
+      "item": "https://www.fintinger.site/p/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "哈夫曼树",
+  "name": "哈夫曼树",
+  "description": "基本概念 1.结点的权\n每个结点带有的具有某种现实意义的数值(比如代表重要性等)\n2.结点的带权路径长度\n从树的根到该结点的路径长度（经过的边数）与该结点上权值的乘积\n3.树的带权路径长度\n树中所有叶结点的带权路径长度之和（WPL, Weighted Path Length）\n$WPL=\\sum_{i=1}^{n}w_il_i$\n✨4.哈夫曼树\n在含有n个带权叶结点的二叉树中，其中带权路径长度（WPL）最小的二叉树称为哈夫曼树，也称最优二叉树\n构造哈夫曼树 给定n个权值分别为 $w_1,w_2,\u0026hellip;,w_n$ 的结点，其构造过程描述如下：\n① 将这n个结点分别作为n棵仅含一个结点的二叉树，构成森林F\n② 构造一个新结点，从F中选取两棵根结点权值最小的树作为新结点的左右子树，并且将新结点的权值置为左、右子树上根结点的权值之和。\n③ 从F中删除刚才选出的两棵树，同时将新得到的树加入F中。\n④ 重复步骤②和③，直至F中只剩下一棵树为止。\n假设给定结点在经过步骤①之后如下\n则其②③④步骤为：\n$WPL_{min}=1*7+2*3+3*2+4*1+4*2=31$\n或者\n$WPL_{min}=1*7+3*(1+2+2+3)=31$\n👇👇👇👇👇👇\n哈夫曼树特点： ① 每个初始结点最终都成为叶结点，且权值越小的结点到根结点的路径长度越大。 ② 哈夫曼树的结点总数为2n-1。 ③ 哈夫曼树中不存在度为1的结点。 ④ 哈夫曼树并不唯一，但WPL必然相同且为最优。\n哈夫曼编码 固定长度编码 如ASCII码\n可变长度编码 前缀编码 没有一个编码是另一个编码的前缀\n哈夫曼编码 由哈夫曼树得到哈夫曼编码——字符集中的每个字符作为一个叶子结点，各个字符出现的频度作为结点的权值，根据之前介绍的方法构造哈夫曼树。\n✨ 应用\n可用于数据压缩\n如图，为英文字母使用频率表，若不进行压缩，第 i 个字母频率用$l_i表示$，路径长至少为5($2^4\u0026lt;26\u0026lt;2^5$)，则\n$WPL=5×\\sum_{i=1}^{n}l_i$=500\n若通过构造哈夫曼树进行哈夫曼编码\n则$WPL_{min}=$\n$v=\\frac{WPL_{min}}{WPL}$",
+  "keywords": [
+    "数据结构", "Huffman"
+  ],
+  "articleBody": "基本概念 1.结点的权\n每个结点带有的具有某种现实意义的数值(比如代表重要性等)\n2.结点的带权路径长度\n从树的根到该结点的路径长度（经过的边数）与该结点上权值的乘积\n3.树的带权路径长度\n树中所有叶结点的带权路径长度之和（WPL, Weighted Path Length）\n$WPL=\\sum_{i=1}^{n}w_il_i$\n✨4.哈夫曼树\n在含有n个带权叶结点的二叉树中，其中带权路径长度（WPL）最小的二叉树称为哈夫曼树，也称最优二叉树\n构造哈夫曼树 给定n个权值分别为 $w_1,w_2,…,w_n$ 的结点，其构造过程描述如下：\n① 将这n个结点分别作为n棵仅含一个结点的二叉树，构成森林F\n② 构造一个新结点，从F中选取两棵根结点权值最小的树作为新结点的左右子树，并且将新结点的权值置为左、右子树上根结点的权值之和。\n③ 从F中删除刚才选出的两棵树，同时将新得到的树加入F中。\n④ 重复步骤②和③，直至F中只剩下一棵树为止。\n假设给定结点在经过步骤①之后如下\n则其②③④步骤为：\n$WPL_{min}=1*7+2*3+3*2+4*1+4*2=31$\n或者\n$WPL_{min}=1*7+3*(1+2+2+3)=31$\n👇👇👇👇👇👇\n哈夫曼树特点： ① 每个初始结点最终都成为叶结点，且权值越小的结点到根结点的路径长度越大。 ② 哈夫曼树的结点总数为2n-1。 ③ 哈夫曼树中不存在度为1的结点。 ④ 哈夫曼树并不唯一，但WPL必然相同且为最优。\n哈夫曼编码 固定长度编码 如ASCII码\n可变长度编码 前缀编码 没有一个编码是另一个编码的前缀\n哈夫曼编码 由哈夫曼树得到哈夫曼编码——字符集中的每个字符作为一个叶子结点，各个字符出现的频度作为结点的权值，根据之前介绍的方法构造哈夫曼树。\n✨ 应用\n可用于数据压缩\n如图，为英文字母使用频率表，若不进行压缩，第 i 个字母频率用$l_i表示$，路径长至少为5($2^4$WPL=5×\\sum_{i=1}^{n}l_i$=500\n若通过构造哈夫曼树进行哈夫曼编码\n则$WPL_{min}=$\n$v=\\frac{WPL_{min}}{WPL}$\n",
+  "wordCount" : "58",
+  "inLanguage": "en",
+  "datePublished": "2021-05-23T00:00:00Z",
+  "dateModified": "2021-05-23T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Archai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.fintinger.site/p/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Archai's home",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.fintinger.site/posts/" title="Posts📑">
+                    <span>Posts📑</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/categories/" title="Categories🛒">
+                    <span>Categories🛒</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/search/" title="Search🔎 (Alt &#43; /)" accesskey=/>
+                    <span>Search🔎</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/archives/" title="Timeline🕰️">
+                    <span>Timeline🕰️</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/about/" title="About🥳">
+                    <span>About🥳</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://www.fintinger.site">Home</a>&nbsp;»&nbsp;<a href="https://www.fintinger.site/posts/">Posts</a></div>
+    <h1 class="post-title">
+      哈夫曼树
+    </h1>
+    <div class="post-meta"><span title='2021-05-23 00:00:00 +0000 UTC'>May 23, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5" aria-label="基本概念">基本概念</a></li>
+                <li>
+                    <a href="#%e6%9e%84%e9%80%a0%e5%93%88%e5%a4%ab%e6%9b%bc%e6%a0%91" aria-label="构造哈夫曼树">构造哈夫曼树</a></li>
+                <li>
+                    <a href="#%e5%93%88%e5%a4%ab%e6%9b%bc%e6%a0%91%e7%89%b9%e7%82%b9" aria-label="哈夫曼树特点：">哈夫曼树特点：</a></li>
+                <li>
+                    <a href="#%e5%93%88%e5%a4%ab%e6%9b%bc%e7%bc%96%e7%a0%81" aria-label="哈夫曼编码">哈夫曼编码</a><ul>
+                        
+                <li>
+                    <a href="#%e5%9b%ba%e5%ae%9a%e9%95%bf%e5%ba%a6%e7%bc%96%e7%a0%81" aria-label="固定长度编码">固定长度编码</a></li>
+                <li>
+                    <a href="#%e5%8f%af%e5%8f%98%e9%95%bf%e5%ba%a6%e7%bc%96%e7%a0%81" aria-label="可变长度编码">可变长度编码</a></li>
+                <li>
+                    <a href="#%e5%89%8d%e7%bc%80%e7%bc%96%e7%a0%81" aria-label="前缀编码">前缀编码</a></li>
+                <li>
+                    <a href="#%e5%93%88%e5%a4%ab%e6%9b%bc%e7%bc%96%e7%a0%81-1" aria-label="哈夫曼编码">哈夫曼编码</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="基本概念">基本概念<a hidden class="anchor" aria-hidden="true" href="#基本概念">#</a></h2>
+<p><strong>1.结点的权</strong></p>
+<p>每个结点带有的具有某种现实意义的数值(比如代表重要性等)</p>
+<p><strong>2.<u>结点</u>的带权路径长度</strong></p>
+<p>从树的根到该结点的路径长度（经过的边数）与该结点上权值的乘积</p>
+<p><strong>3.<u>树</u>的带权路径长度</strong></p>
+<p>树中所有<strong>叶结点</strong>的带权路径长度之和（WPL, Weighted Path Length）</p>
+<p>$WPL=\sum_{i=1}^{n}w_il_i$</p>
+<p>✨<strong>4.哈夫曼树</strong></p>
+<p>在含有n个带权叶结点的二叉树中，其中带权路径长度（WPL）最小的二叉树称为哈夫曼树，也称<u>最优二叉树</u></p>
+<h2 id="构造哈夫曼树">构造哈夫曼树<a hidden class="anchor" aria-hidden="true" href="#构造哈夫曼树">#</a></h2>
+<p>给定n个权值分别为 $w_1,w_2,&hellip;,w_n$ 的结点，其构造过程描述如下：</p>
+<p>① 将这n个结点分别作为n棵仅含一个结点的二叉树，构成森林F</p>
+<p>② 构造一个新结点，从F中选取两棵根结点权值最小的树作为新结点的左右子树，并且将新结点的权值置为左、右子树上根结点的权值之和。</p>
+<p>③ 从F中删除刚才选出的两棵树，同时将新得到的树加入F中。</p>
+<p>④ 重复步骤②和③，直至F中只剩下一棵树为止。</p>
+<p>假设给定结点在经过步骤①之后如下</p>
+<p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210523113230.png" alt=""  />
+</p>
+<p>则其②③④步骤为：</p>
+<p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210523113424.png" alt=""  />
+</p>
+<p>$WPL_{min}=1*7+2*3+3*2+4*1+4*2=31$</p>
+<p>或者</p>
+<p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210523113536.png" alt=""  />
+</p>
+<p>$WPL_{min}=1*7+3*(1+2+2+3)=31$</p>
+<p>👇👇👇👇👇👇</p>
+<h2 id="哈夫曼树特点">哈夫曼树特点：<a hidden class="anchor" aria-hidden="true" href="#哈夫曼树特点">#</a></h2>
+<p>① 每个初始结点最终都成为叶结点，且权值越小的结点到根结点的路径长度越大。
+② 哈夫曼树的结点总数为2n-1。
+③ 哈夫曼树中不存在度为1的结点。
+④ 哈夫曼树并不唯一，但WPL必然相同且为最优。</p>
+<h2 id="哈夫曼编码">哈夫曼编码<a hidden class="anchor" aria-hidden="true" href="#哈夫曼编码">#</a></h2>
+<h3 id="固定长度编码">固定长度编码<a hidden class="anchor" aria-hidden="true" href="#固定长度编码">#</a></h3>
+<p>如ASCII码</p>
+<h3 id="可变长度编码">可变长度编码<a hidden class="anchor" aria-hidden="true" href="#可变长度编码">#</a></h3>
+<h3 id="前缀编码">前缀编码<a hidden class="anchor" aria-hidden="true" href="#前缀编码">#</a></h3>
+<p><strong>没有一个编码是另一个编码的前缀</strong></p>
+<p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210523114643.png" alt=""  />
+</p>
+<h3 id="哈夫曼编码-1">哈夫曼编码<a hidden class="anchor" aria-hidden="true" href="#哈夫曼编码-1">#</a></h3>
+<p>由哈夫曼树得到哈夫曼编码——字符集中的每个字符作为一个叶子结点，各个<u>字符出现的频度作为结点的权值</u>，根据之前介绍的方法构造哈夫曼树。</p>
+<p>✨ <strong>应用</strong></p>
+<p>可用于数据压缩</p>
+<p>如图，为英文字母使用频率表，若不进行压缩，第 i 个字母频率用$l_i表示$，路径长至少为5($2^4&lt;26&lt;2^5$)，则</p>
+<p>$WPL=5×\sum_{i=1}^{n}l_i$=500</p>
+<p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210523115443.png" alt=""  />
+</p>
+<p>若通过构造哈夫曼树进行哈夫曼编码</p>
+<p>则$WPL_{min}=$</p>
+<p>$v=\frac{WPL_{min}}{WPL}$</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li>
+      <li><a href="https://www.fintinger.site/tags/huffman/">Huffman</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://www.fintinger.site/p/avl%E6%A0%91/">
+    <span class="title">« Prev Page</span>
+    <br>
+    <span>AVL树</span>
+  </a>
+  <a class="next" href="https://www.fintinger.site/p/%E6%A0%91/">
+    <span class="title">Next Page »</span>
+    <br>
+    <span>树</span>
+  </a>
+</nav>
+
+  </footer><script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://waline-q3l7of5hj-fintinger.vercel.app/","visitor":true});
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://www.fintinger.site">Archai&#39;s home</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

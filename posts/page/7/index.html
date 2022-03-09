@@ -10,10 +10,11 @@
 <meta name="description" content="Posts - Archai&#39;s home">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/posts/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.4ee57c4189977dc8f075173100c24a668d6bb09d6b5db74440649223f1221877.css" integrity="sha256-TuV8QYmXfcjwdRcxAMJKZo1rsJ1rXbdEQGSSI/EiGHc=" rel="preload stylesheet" as="style">
+<link rel="stylesheet" href="css/extended/custom.css">
 <link rel="icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
 <link rel="apple-touch-icon" href="https://www.fintinger.site/apple-touch-icon.png">
 <link rel="mask-icon" href="https://www.fintinger.site/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
@@ -63,6 +64,27 @@
 
 </script>
 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+
 <header class="header">
     <nav class="nav">
         <div class="logo">
@@ -102,11 +124,6 @@
                 </a>
             </li>
             <li>
-                <a href="https://www.fintinger.site/tags/" title="Tags🏷️">
-                    <span>Tags🏷️</span>
-                </a>
-            </li>
-            <li>
                 <a href="https://www.fintinger.site/search/" title="Search🔎 (Alt &#43; /)" accesskey=/>
                     <span>Search🔎</span>
                 </a>
@@ -114,6 +131,11 @@
             <li>
                 <a href="https://www.fintinger.site/archives/" title="Timeline🕰️">
                     <span>Timeline🕰️</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/about/" title="About🥳">
+                    <span>About🥳</span>
                 </a>
             </li>
         </ul>
@@ -126,19 +148,46 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>JavaScript中的继承与原型链分析
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>原型链自定义设置  原型链的设置可以通过Object.creative , __proto__, Object.setProperty三种方法
+ Object.creative () 说明： 该方法只能设置原型链，而不能获取
+1 2 3 4  let a1 = {name: &#39;a1&#39;} let b1 = Object.create(a1) b1.name = &#39;b1&#39; console.log(b1);    Object.creative()为创建对象的方法，第一个参数为其原型对象，第二个参数为其默认属性，这些属性默认是不可写，不可遍历，不可修改的
+ 1 2 3 4 5 6 7  let b=Object.create(null,{ a:{value:&#39;ohh&#39;, enumerable:true}, b:{value:&#39;jqf&#39;}, }) console.log(Object.getOwnPropertyDescriptors(b)); //a: {value: &#34;ohh&#34;, writable: false, enumerable: true, configurable: false} //b: {value: &#34;jqf&#34;, writable: false, enumerable: false, configurable: false}   __proto__ 说明： 能设置，能获取，实质上是setter，getter...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-09-04 00:00:00 +0000 UTC'>September 4, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript中的继承与原型链分析" href="https://www.fintinger.site/p/javascript%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%88%86%E6%9E%90/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>关于JavaScript模块化
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>自定义一个模块引擎 要求： 能够让模块之间产生依赖关系
+代码
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30  let _module = (function () { let moduleList = {} function define(name, modules, action) { modules.map((n, i) =&gt; { //将传入的只含名称的模块数组 =&gt; 指定名称模块的返回结果  modules[i] = moduleList[n] }) moduleList[name] = action.apply(null, modules) // console.log(moduleList);  } return {define} })(); //定义一个工具库，暴露给外界使用，输出 _module....</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-09-02 00:00:00 +0000 UTC'>September 2, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 关于JavaScript模块化" href="https://www.fintinger.site/p/%E5%85%B3%E4%BA%8Ejavascript%E6%A8%A1%E5%9D%97%E5%8C%96/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>JavaScript基础之对象
     </h2>
   </header>
   <section class="entry-content">
-    <p>对象中参数获取和值的接收 1.对象中利用key获取value. |  [] let obj = {name: &#39;jqf&#39;, age: 19} for (let key in obj) { // console.log(obj.key);//会报undefined  console.log(obj[key]);//jqf,19 } 👉 delete Object.key()
-delete obj.name console.log(obj);//{ age: 19 } 2.参数/配置合并 👉 展开语法
+    <p>对象中参数获取和值的接收 1.对象中利用key获取value. |  [] 1 2 3 4 5  let obj = {name: &#39;jqf&#39;, age: 19} for (let key in obj) { // console.log(obj.key);//会报undefined  console.log(obj[key]);//jqf,19 }   👉 delete Object.key()
+1 2  delete obj.name console.log(obj);//{ age: 19 }   2.参数/配置合并 👉 展开语法
  利用展开语法合并对象，让后面传入的参数覆盖默认参数，完成合并
- function upload(params) { let config = { url: &#39;/images&#39;, type: &#39;*.jpg,*.png&#39; } config = {...config, ...params} //do something...  console.log(config); } upload({type:&#39;*.webp&#39;})//{ url: &#39;/images&#39;, type: &#39;*.webp&#39; } 👉 解构赋值
- 解构赋值会把相同key的进行合并，后面覆盖掉前面的
- function upload(params = {}) { let {url = &#39;/images&#39;, type = &#39;*....</p>
+ 1 2 3 4 5 6 7 8 9 10 11 12  function upload(params) { let config = { url: &#39;/images&#39;, type: &#39;*....</p>
   </section>
-  <footer class="entry-footer"><span title='2020-08-31 00:00:00 +0000 UTC'>August 31, 2020</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之对象" href="https://www.fintinger.site/posts/2020/08/31/"></a>
+  <footer class="entry-footer"><span title='2020-08-31 00:00:00 +0000 UTC'>August 31, 2020</span>&nbsp;·&nbsp;6 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript基础之对象" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%AF%B9%E8%B1%A1/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -148,14 +197,13 @@ delete obj.name console.log(obj);//{ age: 19 } 2.参数/配置合并 👉 展开
   </header>
   <section class="entry-content">
     <p>关于函数传参  当参数数量不确定时，通常用arguments 来统一接收
- function sum() { return [...arguments].reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6 可以用展开语法代替arguments接收所有的参数：
-function sum(...args) { return args.reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6 注意： 接收参数时展开语法放其他形参后面，做统一接收
+ 1 2 3 4 5 6  function sum() { return [...arguments].reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6   可以用展开语法代替arguments接收所有的参数：
+1 2 3 4 5 6  function sum(...args) { return args.reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6   注意： 接收参数时展开语法放其他形参后面，做统一接收
 递归函数  递归函数有两个关键点，一是要有退出执行的条件，二是要不断执行自身并返回
- 递归思想实现阶乘函数 function factorial(num) { if (num === 1) { return num } return num * factorial(--num) } 如果用到箭头函数，可以简写为：
-function factorial(num) { return num === 1 ?...</p>
+ 递归思想实现阶乘函数 1 2 3 4 5 6  function factorial(num) { if (num === 1) { return num } return num * factorial(--num) }   如果用到箭头函数，可以简写为：...</p>
   </section>
   <footer class="entry-footer"><span title='2020-08-28 00:00:00 +0000 UTC'>August 28, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之函数相关" href="https://www.fintinger.site/posts/2020/08/28/"></a>
+  <a class="entry-link" aria-label="post link to JavaScript基础之函数相关" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -165,51 +213,13 @@ function factorial(num) { return num === 1 ?...</p>
   </header>
   <section class="entry-content">
     <p>Map类型 1.属性 👉 set() 设置值
-let map = new Map() let fn = function () {console.log(&#39;this is function&#39;)} let user = {name: &#39;jqf&#39;, age: 18} map.set(&#39;key&#39;, &#39;value&#39;) map.set(fn, &#39;function&#39;) map.set(user, &#39;object&#39;) console.log(map); /*Map(3){&#34;key&#34; =&gt; &#34;value&#34;, ƒ =&gt; &#34;function&#34;, {…} =&gt; &#34;object&#34;}*/ 注意： Map类型，字符串、函数、对象都可以作为key设置
+1 2 3 4 5 6 7 8 9 10  let map = new Map() let fn = function () {console.log(&#39;this is function&#39;)} let user = {name: &#39;jqf&#39;, age: 18} map.set(&#39;key&#39;, &#39;value&#39;) map.set(fn, &#39;function&#39;) map.set(user, &#39;object&#39;) console.log(map); /*Map(3){&#34;key&#34; =&gt; &#34;value&#34;, ƒ =&gt; &#34;function&#34;, {…} =&gt; &#34;object&#34;}*/   注意： Map类型，字符串、函数、对象都可以作为key设置
 👉 size Map长度
-console.log(map.size);//3 👉get() 获取值
-console.log(map.get(fn));//function  //通过key获取value 👉 delete() / clear() 删除某个，清空Map
-console.log(map.delete(fn));//true console.log(map); /*Map(3){&#34;key&#34; =&gt; &#34;value&#34;, {…} =&gt; &#34;object&#34;}*/ 👉 has() 是否有某个key
-console.log(map.has(user));//true 2.遍历 👉forEach(val,key,map)...</p>
+1  console.log(map.size);//3   👉get() 获取值
+1 2 3  console....</p>
   </section>
   <footer class="entry-footer"><span title='2020-08-26 00:00:00 +0000 UTC'>August 26, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之Map与Weakmap类型" href="https://www.fintinger.site/posts/2020/08/26/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>JavaScript基础之Set与Weakset
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>Set类型 1.属性 👉 size ：数组长度
-let set = new Set([1, 2, 3]) console.log(set.size);//9 👉 add() ：添加元素
-console.log(set.add(99));//返回修改后的数组Set(4) { 1, 2, 3, 99 } console.log(set);//原数组已经被修改Set(4) { 1, 2, 3, 99 } 👉 delete() ：删除元素
-console.log(set.delete(99));//true console.log(set);//Set(3) { 1, 2, 3 } 👉 has() ：有某个元素
-console.log(set.has(3)); //true 👉 clear()：清空数组
-set.clear()//返回undefined console.log(set);//Set(0) {} 2.遍历Set 👉 forEach() 方法
-let set=new Set([&#39;jqf&#39;,&#39;fin&#39;,&#39;zzh&#39;]) set.forEach((value, samevalue, set) =&gt; { console.log(value);//jqf,fin,zzh  console.log(samevalue);//jqf,fin,zzh  console.log(set);//Set(3) { &#39;jqf&#39;, &#39;fin&#39;, &#39;zzh&#39; } }) //这里回调中的参数，前两个都是一样的值， //第三个参数为遍历的Set 👉 [....</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-08-26 00:00:00 +0000 UTC'>August 26, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之Set与Weakset" href="https://www.fintinger.site/posts/2020/08/27/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>JavaScript基础之Symbol类型
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>Symbol() 类型不能当做普通对象(不能加属性值)，只能当做一种永远都不会重复的字符串
- 定义 方法： Symbol(desc)、Symbol.for(desc)
-let s1 = Symbol(&#39;d&#39;) let s2 = Symbol.for(&#39;d&#39;) let s3 = Symbol.for(&#39;d&#39;) console.log(s1.description);//d console.log(Symbol.keyFor(s2));//d console.log(s1 === s3);//false console.log(s2 === s3);//true 注意： 利用Symbol() 定义的值永远都不会相等，而Symbol.for() 定义的，如果描述相同，则值相等
-定义对象时，key相同会覆盖的问题 普通方式定义：
-let user1={ name:&#39;李四&#39; } let user2={ name:&#39;李四&#39; } let grade={ [user1.name]:{C:98,E:60}, [user2.name]:{C:99,E:59} } console.log(grade);//{&#39;李四&#39;:{C:99,E:59}} 可以看到，后面的覆盖掉了前面的
-利用Symbol() 定义
-let user1={ name:&#39;李四&#39;, key:Symbol() } let user2={ name:&#39;李四&#39;, key:Symbol() } let grade={ [user1.key]:{C:98,E:60}, [user2.key]:{C:99,E:59} } console.log(grade)//{[Symbol(user1)]: { C: 98, E: 60 },[Symbol(user2)]: { C: 99, E: 59 }} console....</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-08-24 00:00:00 +0000 UTC'>August 24, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之Symbol类型" href="https://www.fintinger.site/posts/2020/08/24/"></a>
+  <a class="entry-link" aria-label="post link to JavaScript基础之Map与Weakmap类型" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bmap%E4%B8%8Eweakmap%E7%B1%BB%E5%9E%8B/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

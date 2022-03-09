@@ -10,10 +10,11 @@
 <meta name="description" content="">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/tags/avl/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.4ee57c4189977dc8f075173100c24a668d6bb09d6b5db74440649223f1221877.css" integrity="sha256-TuV8QYmXfcjwdRcxAMJKZo1rsJ1rXbdEQGSSI/EiGHc=" rel="preload stylesheet" as="style">
+<link rel="stylesheet" href="css/extended/custom.css">
 <link rel="icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
 <link rel="apple-touch-icon" href="https://www.fintinger.site/apple-touch-icon.png">
 <link rel="mask-icon" href="https://www.fintinger.site/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
@@ -46,6 +47,27 @@
         document.body.classList.add('dark');
     }
 
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
 </script>
 
 <header class="header">
@@ -87,11 +109,6 @@
                 </a>
             </li>
             <li>
-                <a href="https://www.fintinger.site/tags/" title="Tags🏷️">
-                    <span>Tags🏷️</span>
-                </a>
-            </li>
-            <li>
                 <a href="https://www.fintinger.site/search/" title="Search🔎 (Alt &#43; /)" accesskey=/>
                     <span>Search🔎</span>
                 </a>
@@ -99,6 +116,11 @@
             <li>
                 <a href="https://www.fintinger.site/archives/" title="Timeline🕰️">
                     <span>Timeline🕰️</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/about/" title="About🥳">
+                    <span>About🥳</span>
                 </a>
             </li>
         </ul>
@@ -119,7 +141,7 @@
  ✨特点： ①左子树&lt;根&lt;右子树； ②任一节点，左右子树高度之差不超过1.
 平衡因子 $平衡因子=左子树高-右子树高$
 AVL树的插入操作 AVL树插入新结点导致不平衡之后，只需将最小不平衡子树平衡，其他祖先结点会随之恢复平衡。
-调整最小不平衡子树 1.LL  即在以A为根节点的树的左孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
+调整最小不平衡子树 注意：调整过后必须保证其BST的特性，即“左子树1.LL  即在以A为根节点的树的左孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
  调整过程如下：
 2.RR  即在以A为根节点的树的右孩子B的右子树上插入新结点，导致A成为最小不平衡子树。
  调整过程如下：
@@ -140,7 +162,7 @@ $n_0=0$,$n_1=1$,$n_2=2$…存在递归关系 $n_h=n_{h-1}&#43;n_{h-2}&#43;1$,即
 可以证明(AVL证明)，n个结点的平衡二叉树最大深度数量级为$\log_2n$，则其查找操作的复杂度为$O(\log_2n)$</p>
   </section>
   <footer class="entry-footer"><span title='2021-05-23 00:00:00 +0000 UTC'>May 23, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to AVL树" href="https://www.fintinger.site/posts/2021/05/23/avl/"></a>
+  <a class="entry-link" aria-label="post link to AVL树" href="https://www.fintinger.site/p/avl%E6%A0%91/"></a>
 </article>
     </main>
     

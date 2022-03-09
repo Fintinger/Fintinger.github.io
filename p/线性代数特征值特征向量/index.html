@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>线性代数——特征值特征向量 | Archai&#39;s home</title>
+<meta name="keywords" content="线性代数" />
+<meta name="description" content="特征值与特征向量 性质  1.不同特征值的特征向量线性无关。
+2.ｋ重特征值至多有ｋ个线性无关的特征向量。(※)
+ 基本运算逻辑    三角矩阵特征值为主对角线元素⭐
+注意，当$\lambda=1$时😢
+  秩为1的矩阵A
+ 特征值 $\sum_{aii},0,0&hellip;$ $A^n=\sum_{aii}^{n-1} A$​  特征值证明：
+  求特征值不能先对A做任何变换，而应该带着λ变换
+ 定义法    如果两矩阵相似
+即 “两矩阵相似则具有相同特征值，特征向量也存在关系”
+ 真题&amp;例题 常识题？😢
+关于AB=0引申出的一题多解
+相似  AB相似，则 A&#43;kE ~ B&#43;kE
+ 行列式相等 俩秩相等 特征值相等 绩相等  利用已知构造方程组求参，进行预处理
+  由 $A^n=PB^nP^{-1}$
+ 若取B为∧，容易求得$A^n$​的值。(其他方法) 特征值也存在关系。(特征值规律)    用相似的传递性证明两矩阵相似
+ A~∧ ⭐  A~∧，$A=P∧P^{-1}$则
+ ∧是矩阵A的特征值 P列向量是A的特征向量  （要对应，别错位）">
+<meta name="author" content="Archai">
+<link rel="canonical" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.4ee57c4189977dc8f075173100c24a668d6bb09d6b5db74440649223f1221877.css" integrity="sha256-TuV8QYmXfcjwdRcxAMJKZo1rsJ1rXbdEQGSSI/EiGHc=" rel="preload stylesheet" as="style">
+<link rel="stylesheet" href="css/extended/custom.css">
+<link rel="icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="apple-touch-icon" href="https://www.fintinger.site/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.fintinger.site/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:title" content="线性代数——特征值特征向量" />
+<meta property="og:description" content="特征值与特征向量 性质  1.不同特征值的特征向量线性无关。
+2.ｋ重特征值至多有ｋ个线性无关的特征向量。(※)
+ 基本运算逻辑    三角矩阵特征值为主对角线元素⭐
+注意，当$\lambda=1$时😢
+  秩为1的矩阵A
+ 特征值 $\sum_{aii},0,0&hellip;$ $A^n=\sum_{aii}^{n-1} A$​  特征值证明：
+  求特征值不能先对A做任何变换，而应该带着λ变换
+ 定义法    如果两矩阵相似
+即 “两矩阵相似则具有相同特征值，特征向量也存在关系”
+ 真题&amp;例题 常识题？😢
+关于AB=0引申出的一题多解
+相似  AB相似，则 A&#43;kE ~ B&#43;kE
+ 行列式相等 俩秩相等 特征值相等 绩相等  利用已知构造方程组求参，进行预处理
+  由 $A^n=PB^nP^{-1}$
+ 若取B为∧，容易求得$A^n$​的值。(其他方法) 特征值也存在关系。(特征值规律)    用相似的传递性证明两矩阵相似
+ A~∧ ⭐  A~∧，$A=P∧P^{-1}$则
+ ∧是矩阵A的特征值 P列向量是A的特征向量  （要对应，别错位）" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/" /><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-23T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-08-23T00:00:00&#43;00:00" /><meta property="og:site_name" content="Archai&#39;s home" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/>
+
+<meta name="twitter:title" content="线性代数——特征值特征向量"/>
+<meta name="twitter:description" content="特征值与特征向量 性质  1.不同特征值的特征向量线性无关。
+2.ｋ重特征值至多有ｋ个线性无关的特征向量。(※)
+ 基本运算逻辑    三角矩阵特征值为主对角线元素⭐
+注意，当$\lambda=1$时😢
+  秩为1的矩阵A
+ 特征值 $\sum_{aii},0,0&hellip;$ $A^n=\sum_{aii}^{n-1} A$​  特征值证明：
+  求特征值不能先对A做任何变换，而应该带着λ变换
+ 定义法    如果两矩阵相似
+即 “两矩阵相似则具有相同特征值，特征向量也存在关系”
+ 真题&amp;例题 常识题？😢
+关于AB=0引申出的一题多解
+相似  AB相似，则 A&#43;kE ~ B&#43;kE
+ 行列式相等 俩秩相等 特征值相等 绩相等  利用已知构造方程组求参，进行预处理
+  由 $A^n=PB^nP^{-1}$
+ 若取B为∧，容易求得$A^n$​的值。(其他方法) 特征值也存在关系。(特征值规律)    用相似的传递性证明两矩阵相似
+ A~∧ ⭐  A~∧，$A=P∧P^{-1}$则
+ ∧是矩阵A的特征值 P列向量是A的特征向量  （要对应，别错位）"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://www.fintinger.site/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "线性代数——特征值特征向量",
+      "item": "https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "线性代数——特征值特征向量",
+  "name": "线性代数——特征值特征向量",
+  "description": "特征值与特征向量 性质  1.不同特征值的特征向量线性无关。\n2.ｋ重特征值至多有ｋ个线性无关的特征向量。(※)\n 基本运算逻辑    三角矩阵特征值为主对角线元素⭐\n注意，当$\\lambda=1$时😢\n  秩为1的矩阵A\n 特征值 $\\sum_{aii},0,0\u0026hellip;$ $A^n=\\sum_{aii}^{n-1} A$​  特征值证明：\n  求特征值不能先对A做任何变换，而应该带着λ变换\n 定义法    如果两矩阵相似\n即 “两矩阵相似则具有相同特征值，特征向量也存在关系”\n 真题\u0026amp;例题 常识题？😢\n关于AB=0引申出的一题多解\n相似  AB相似，则 A+kE ~ B+kE\n 行列式相等 俩秩相等 特征值相等 绩相等  利用已知构造方程组求参，进行预处理\n  由 $A^n=PB^nP^{-1}$\n 若取B为∧，容易求得$A^n$​的值。(其他方法) 特征值也存在关系。(特征值规律)    用相似的传递性证明两矩阵相似\n A~∧ ⭐  A~∧，$A=P∧P^{-1}$则\n ∧是矩阵A的特征值 P列向量是A的特征向量  （要对应，别错位）",
+  "keywords": [
+    "线性代数"
+  ],
+  "articleBody": "特征值与特征向量 性质  1.不同特征值的特征向量线性无关。\n2.ｋ重特征值至多有ｋ个线性无关的特征向量。(※)\n 基本运算逻辑    三角矩阵特征值为主对角线元素⭐\n注意，当$\\lambda=1$时😢\n  秩为1的矩阵A\n 特征值 $\\sum_{aii},0,0…$ $A^n=\\sum_{aii}^{n-1} A$​  特征值证明：\n  求特征值不能先对A做任何变换，而应该带着λ变换\n 定义法    如果两矩阵相似\n即 “两矩阵相似则具有相同特征值，特征向量也存在关系”\n 真题\u0026例题 常识题？😢\n关于AB=0引申出的一题多解\n相似  AB相似，则 A+kE ~ B+kE\n 行列式相等 俩秩相等 特征值相等 绩相等  利用已知构造方程组求参，进行预处理\n  由 $A^n=PB^nP^{-1}$\n 若取B为∧，容易求得$A^n$​的值。(其他方法) 特征值也存在关系。(特征值规律)    用相似的传递性证明两矩阵相似\n A~∧ ⭐  A~∧，$A=P∧P^{-1}$则\n ∧是矩阵A的特征值 P列向量是A的特征向量  （要对应，别错位）\n A~∧ ⇔ 矩阵A有n个线性无关的特征向量。 （注意是充要条件）    要求解A~∧(相似对角化) ，注意下面图解\n 检查是否和对称矩阵相似 检查是否有n个特征值 检查k重特征值是否有k个无关的特征向量(n-r(λE-A))   例题  一正一负必能相似对角化\n  第(1)问这一思路一定要熟练把握$A\\alpha$出现求特征值，想到用定义！！\n第（2）问两种思路，\n 已知特征值、特征向量反求A矩阵\n实对称 性质    实对称矩阵必与对角矩阵相似；\n  实对称矩阵特征值不同特征向量相互正交；\n 内积为0 ⇒ 齐次方程组 ⇒ 求得特征值\n   实对称矩阵可用正交矩阵相似对角化\n $Q^{-1}AQ=Q^{T}AQ$\n   实对称矩阵特征值必为实数\n   例题 用正交矩阵相似对角化  对比相似矩阵对角化\n这里需要用到正交化↧\n Schmidt正交化  ||β|| 是向量的长度\n分子为内积\n分母为平方和\n ",
+  "wordCount" : "77",
+  "inLanguage": "en",
+  "datePublished": "2021-08-23T00:00:00Z",
+  "dateModified": "2021-08-23T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Archai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Archai's home",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.fintinger.site/posts/" title="Posts📑">
+                    <span>Posts📑</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/categories/" title="Categories🛒">
+                    <span>Categories🛒</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/search/" title="Search🔎 (Alt &#43; /)" accesskey=/>
+                    <span>Search🔎</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/archives/" title="Timeline🕰️">
+                    <span>Timeline🕰️</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/about/" title="About🥳">
+                    <span>About🥳</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://www.fintinger.site">Home</a>&nbsp;»&nbsp;<a href="https://www.fintinger.site/posts/">Posts</a></div>
+    <h1 class="post-title">
+      线性代数——特征值特征向量
+    </h1>
+    <div class="post-meta"><span title='2021-08-23 00:00:00 +0000 UTC'>August 23, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e7%89%b9%e5%be%81%e5%80%bc%e4%b8%8e%e7%89%b9%e5%be%81%e5%90%91%e9%87%8f" aria-label="特征值与特征向量">特征值与特征向量</a><ul>
+                        
+                <li>
+                    <a href="#%e6%80%a7%e8%b4%a8" aria-label="性质">性质</a></li>
+                <li>
+                    <a href="#%e5%9f%ba%e6%9c%ac%e8%bf%90%e7%ae%97%e9%80%bb%e8%be%91" aria-label="基本运算逻辑">基本运算逻辑</a></li>
+                <li>
+                    <a href="#%e5%ae%9a%e4%b9%89%e6%b3%95" aria-label="定义法">定义法</a><ul>
+                        
+                <li>
+                    <a href="#%e7%9c%9f%e9%a2%98%e4%be%8b%e9%a2%98" aria-label="真题&amp;amp;例题">真题&amp;例题</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#%e7%9b%b8%e4%bc%bc" aria-label="相似">相似</a><ul>
+                        
+                <li>
+                    <a href="#a-" aria-label="A~∧ ⭐">A~∧ ⭐</a><ul>
+                        
+                <li>
+                    <a href="#%e4%be%8b%e9%a2%98" aria-label="例题">例题</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%ae%9e%e5%af%b9%e7%a7%b0" aria-label="实对称">实对称</a><ul>
+                        
+                <li>
+                    <a href="#%e6%80%a7%e8%b4%a8-1" aria-label="性质">性质</a></li>
+                <li>
+                    <a href="#%e4%be%8b%e9%a2%98-1" aria-label="例题">例题</a></li>
+                <li>
+                    <a href="#%e7%94%a8%e6%ad%a3%e4%ba%a4%e7%9f%a9%e9%98%b5%e7%9b%b8%e4%bc%bc%e5%af%b9%e8%a7%92%e5%8c%96" aria-label="用正交矩阵相似对角化">用正交矩阵相似对角化</a></li>
+                <li>
+                    <a href="#schmidt%e6%ad%a3%e4%ba%a4%e5%8c%96" aria-label="Schmidt正交化">Schmidt正交化</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="特征值与特征向量">特征值与特征向量<a hidden class="anchor" aria-hidden="true" href="#特征值与特征向量">#</a></h2>
+<h3 id="性质">性质<a hidden class="anchor" aria-hidden="true" href="#性质">#</a></h3>
+<blockquote>
+<p>1.不同特征值的特征向量线性无关。</p>
+<p>2.ｋ重特征值至多有ｋ个线性无关的特征向量。(※)</p>
+</blockquote>
+<h3 id="基本运算逻辑">基本运算逻辑<a hidden class="anchor" aria-hidden="true" href="#基本运算逻辑">#</a></h3>
+<blockquote>
+<p><img loading="lazy" src="index.assets/image-20210823161157458.png" alt=""  />
+</p>
+</blockquote>
+<blockquote>
+<p><strong>三角矩阵特征值为主对角线元素⭐</strong></p>
+<p><img src="index.assets/image-20210823162054364.png" style="zoom:80%;" /></p>
+<p>注意，当$\lambda=1$时😢</p>
+<p><img src="index.assets/image-20210823162232681.png" style="zoom:98%;" /></p>
+</blockquote>
+<blockquote>
+<p><strong>秩为1的矩阵A</strong></p>
+<ul>
+<li>特征值 $\sum_{aii},0,0&hellip;$</li>
+<li>$A^n=\sum_{aii}^{n-1} A$​</li>
+</ul>
+<p>特征值证明：</p>
+<p><img src="index.assets/image-20210823163039209.png" style="zoom:80%;" /></p>
+</blockquote>
+<blockquote>
+<p><strong>求特征值不能先对A做任何变换，而应该带着λ变换</strong></p>
+</blockquote>
+<h3 id="定义法">定义法<a hidden class="anchor" aria-hidden="true" href="#定义法">#</a></h3>
+<blockquote>
+<p><img loading="lazy" src="index.assets/image-20210823163524579.png" alt=""  />
+</p>
+</blockquote>
+<blockquote>
+<p><strong>如果两矩阵相似</strong></p>
+<p><img loading="lazy" src="index.assets/image-20210823165733234.png" alt=""  />
+</p>
+<p>即 <strong>“两矩阵相似则具有相同特征值，特征向量也存在关系”</strong></p>
+</blockquote>
+<h4 id="真题例题">真题&amp;例题<a hidden class="anchor" aria-hidden="true" href="#真题例题">#</a></h4>
+<p>常识题？😢</p>
+<p><img loading="lazy" src="index.assets/image-20210823163744984.png" alt=""  />
+</p>
+<p>关于<strong>AB=0</strong>引申出的一题多解</p>
+<p><img loading="lazy" src="index.assets/image-20210823165301880.png" alt=""  />
+</p>
+<h2 id="相似">相似<a hidden class="anchor" aria-hidden="true" href="#相似">#</a></h2>
+<blockquote>
+<p>AB相似，则 <strong>A+kE ~ B+kE</strong></p>
+<ul>
+<li>行列式相等</li>
+<li>俩秩相等</li>
+<li>特征值相等</li>
+<li>绩相等</li>
+</ul>
+<p><strong>利用已知构造方程组求参，进行预处理</strong></p>
+</blockquote>
+<blockquote>
+<p>由 $A^n=PB^nP^{-1}$</p>
+<ul>
+<li>若取<strong>B为∧</strong>，容易求得$A^n$​的值。<a href="../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/#an">(其他方法)</a></li>
+<li>特征值也存在关系。(<a href="./#%E5%AE%9A%E4%B9%89%E6%B3%95">特征值规律</a>)</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>用相似的传递性证明两矩阵相似</strong></p>
+</blockquote>
+<h3 id="a-">A~∧ ⭐<a hidden class="anchor" aria-hidden="true" href="#a-">#</a></h3>
+<blockquote>
+<p>A~∧，$A=P∧P^{-1}$则</p>
+<ul>
+<li>∧是矩阵A的特征值</li>
+<li>P列向量是A的特征向量</li>
+</ul>
+<p>（<strong>要对应，别错位</strong>）</p>
+<ul>
+<li><strong>A~∧  ⇔   矩阵A有n个线性无关的特征向量。</strong> （注意是充要条件）</li>
+</ul>
+<p><img loading="lazy" src="index.assets/image-20210826162913554.png" alt=""  />
+</p>
+</blockquote>
+<blockquote>
+<p>要<strong>求解A~∧(相似对角化)</strong> ，注意下面图解</p>
+<ol>
+<li>检查是否和对称矩阵相似</li>
+<li>检查是否有n个特征值</li>
+<li>检查k重特征值是否有k个无关的特征向量(n-r(λE-A))</li>
+</ol>
+<p><img loading="lazy" src="index.assets/image-20210826164534300.png" alt="⇳"  />
+</p>
+<p><img loading="lazy" src="index.assets/image-20210826164634618.png" alt=""  />
+</p>
+</blockquote>
+<h4 id="例题">例题<a hidden class="anchor" aria-hidden="true" href="#例题">#</a></h4>
+<p><img loading="lazy" src="index.assets/image-20210826170449802.png" alt=""  />
+</p>
+<blockquote>
+<p>一正一负必能相似对角化</p>
+</blockquote>
+<p><img loading="lazy" src="index.assets/image-20210827163729532.png" alt=""  />
+</p>
+<blockquote>
+<p>第(1)问这一思路一定要熟练把握$A\alpha$出现求特征值，想到用定义！！</p>
+<p>第（2）问两种思路，</p>
+</blockquote>
+<p><strong>已知特征值、特征向量反求A矩阵</strong></p>
+<p><img loading="lazy" src="index.assets/image-20210827165258198.png" alt="image-20210827165258198"  />
+</p>
+<h2 id="实对称">实对称<a hidden class="anchor" aria-hidden="true" href="#实对称">#</a></h2>
+<h3 id="性质-1">性质<a hidden class="anchor" aria-hidden="true" href="#性质-1">#</a></h3>
+<blockquote>
+<ol>
+<li>
+<p>实对称矩阵必与对角矩阵相似；</p>
+</li>
+<li>
+<p>实对称矩阵特征值不同特征向量<strong>相互正交</strong>；</p>
+<blockquote>
+<p>内积为0 ⇒ 齐次方程组 ⇒ 求得特征值</p>
+</blockquote>
+</li>
+<li>
+<p>实对称矩阵可用正交矩阵相似对角化</p>
+<blockquote>
+<p>$Q^{-1}AQ=Q^{T}AQ$</p>
+</blockquote>
+</li>
+<li>
+<p>实对称矩阵特征值必为实数</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="例题-1">例题<a hidden class="anchor" aria-hidden="true" href="#例题-1">#</a></h3>
+<p><img loading="lazy" src="index.assets/image-20210827170742051.png" alt=""  />
+</p>
+<h3 id="用正交矩阵相似对角化">用正交矩阵相似对角化<a hidden class="anchor" aria-hidden="true" href="#用正交矩阵相似对角化">#</a></h3>
+<p><img loading="lazy" src="index.assets/image-20210827171630484.png" alt=""  />
+</p>
+<blockquote>
+<p>对比<a href="./#a-">相似矩阵对角化</a></p>
+<p>这里需要用到正交化↧</p>
+</blockquote>
+<h3 id="schmidt正交化">Schmidt正交化<a hidden class="anchor" aria-hidden="true" href="#schmidt正交化">#</a></h3>
+<p><img loading="lazy" src="index.assets/image-20210827174206234.png" alt=""  />
+</p>
+<blockquote>
+<p>||β|| 是向量的长度</p>
+<p>分子为内积</p>
+<p>分母为平方和</p>
+</blockquote>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.fintinger.site/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/">
+    <span class="title">« Prev Page</span>
+    <br>
+    <span>线性代数——二次型</span>
+  </a>
+  <a class="next" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/">
+    <span class="title">Next Page »</span>
+    <br>
+    <span>线性代数——方程组</span>
+  </a>
+</nav>
+
+  </footer><script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://waline-q3l7of5hj-fintinger.vercel.app/","visitor":true});
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://www.fintinger.site">Archai&#39;s home</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

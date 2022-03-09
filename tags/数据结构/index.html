@@ -10,10 +10,11 @@
 <meta name="description" content="">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.4ee57c4189977dc8f075173100c24a668d6bb09d6b5db74440649223f1221877.css" integrity="sha256-TuV8QYmXfcjwdRcxAMJKZo1rsJ1rXbdEQGSSI/EiGHc=" rel="preload stylesheet" as="style">
+<link rel="stylesheet" href="css/extended/custom.css">
 <link rel="icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
 <link rel="apple-touch-icon" href="https://www.fintinger.site/apple-touch-icon.png">
 <link rel="mask-icon" href="https://www.fintinger.site/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
@@ -46,6 +47,27 @@
         document.body.classList.add('dark');
     }
 
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
 </script>
 
 <header class="header">
@@ -87,11 +109,6 @@
                 </a>
             </li>
             <li>
-                <a href="https://www.fintinger.site/tags/" title="Tags🏷️">
-                    <span>Tags🏷️</span>
-                </a>
-            </li>
-            <li>
                 <a href="https://www.fintinger.site/search/" title="Search🔎 (Alt &#43; /)" accesskey=/>
                     <span>Search🔎</span>
                 </a>
@@ -99,6 +116,11 @@
             <li>
                 <a href="https://www.fintinger.site/archives/" title="Timeline🕰️">
                     <span>Timeline🕰️</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/about/" title="About🥳">
+                    <span>About🥳</span>
                 </a>
             </li>
         </ul>
@@ -116,34 +138,38 @@
   </header>
   <section class="entry-content">
     <p>外部排序  由于数据元素太多，无法一次全部读入内存进行内部排序，这是就要通过外部排序来解决
- 1.外排原理 (拿二路归并举例)
+ 1.外排原理 目的：通过内存的读写操作(每次读写操作都是成块的进行，比如每次1KB)，将存放于磁盘中的大量数据变得有序。
+(拿二路归并举例)
 如图，对于在磁盘中分块存放的数据，每块存入三个元素，共16块
 在内存中建立三个缓冲区输出缓冲区、输入缓冲区1以及输入缓冲区2
 1.1构造初始归并段 首先，依次地读入前两块数据，分别存入内存中的 缓冲区1、缓冲区2
-将输入缓冲区1以及输入缓冲区2中存放的数据经过 内存中的二路归并排序(内排)后，将生成的有序的块经 输出缓冲区 写入磁盘 得到一个有序的归并段同样的，对剩余块进行同样的操作可以得到
+将输入缓冲区1以及输入缓冲区2中存放的数据经过 内存中的二路归并排序(内排)后，将生成的有序的块经 输出缓冲区 写入磁盘 得到一个有序的归并段
+同样的，对剩余块进行同样的操作可以得到
 1.2以归并段为单位进行归并 分别选取归并段1和2中较小的一块，依次读入至缓冲区1,2
-内排之后，写入内存，注意，输入缓冲区1(或2)空缺后要立即在归并段1(或2)中读入新的块到其中进行归并排序（以保证输出缓冲区始终输出归并段中较小的元素）
+内排之后，写入内存，注意，输入缓冲区1(或2)空缺后要立即在归并段1(或2)中读入新的块到其中进行归并排序
+（以保证输出缓冲区始终输出归并段中较小的元素）
 最终，完成所有归并段的第一趟归并之后，会有
 之后，4块成一个归并段，两两归并
 ……
 最终。经过3趟归并，整体会变得有序！
 2.优化思路 2.1时间开销分析 在整个排序过程中，时间开销分析如下
 可以看到，
-外部排序时间开销=读写外存的时间&#43;内部排序所需时间&#43;内部归并所需时间而读写外存时间是关键的时间开销，因此优化应该针对怎么减少读写外存的次数展开
-而文件总块数无法优化，只能针对归并的趟数优化为此，我们需要采用多路归并来解决
+外部排序时间开销=读写外存的时间&#43;内部排序所需时间&#43;内部归并所需时间
+而读写外存时间是关键的时间开销，因此优化应该针对怎么减少读写外存的次数展开
+而文件总块数无法优化，只能针对归并的趟数优化
+为此，我们需要采用多路归并来解决
 2.3结论 2.4 优化思路一：采用多路归并 对上面的例子，如果采用四路归并
 只需96次读写即可！！
-2.5 优化思路二：减少初始归并段数量r 败者树 1.算法思想 构造 如图所示的树结构，叶节点对应（脑补）各归并段（假设共有8个归并段），分支结点记录败者来自哪个归并段，最后根节点记录冠军来自哪个归并段，并且将冠军输出，为这8个归并段中的最小值。
+2.5 优化思路二：减少初始归并段数量r 败者树 归并段数增加之后，内存中缓冲区数目增加，从中对比得出最小关键字的对比次数也会随之增多……
+1.算法思想 构造 如图所示的树结构，叶节点对应（脑补）各归并段（假设共有8个归并段），分支结点记录败者来自哪个归并段，最后根节点记录冠军来自哪个归并段，并且将冠军输出，为这8个归并段中的最小值。
 下轮选择冠军记录的那个归并段（归并段3）中的元素6，代替1的位置，如图，并依次向上的与各败者结点对比，胜则往上，败则留下，最终输出冠军
 接下来，循环这个过程
 2.效率分析 对于k路归并，第一次构造败者树需要对比关键字k-1次 有了败者树，选出最小元素，只需对比关键字次$\left \lceil \log_2k \right \rceil$
-置换选择排序 1.算法思想 设初始待排文件为F，初始归并段输出文件为FO，内存工作区为WA,FO和WA的初始状态为空，WA可容纳w个记录。置换选择算法的步骤如下： 1）从F输入个记录到工作区WA。 2）从WA中选出其中关键字取最小值的记录，记为 MINIMAX记录3）将MINIMAX记录输出到FO中去。 4）若F不空，则从F输入下一个记录到WA中。 5）从w中所有关MINIMAX键字比记录的关键字大的记录中选出最小关键字记录，作为新的MINIMAX记录。 6）重复3）~5），直至在A中选不 MININ出新的记录为止，由此得到一个初始归并段，输出一个归并段的结束标志到FO中去。 7）重复2）~6），直至WA为空。由此得到全部初始归并段。
-最佳归并树  利用置换选择排序构造初始归并段，归并段长短不一
- 对于一个归并树，如图数字表示该归并段占多少个磁盘块。
-每个初始归并段看作⼀个叶⼦结点，归并段的⻓度作为结点权值，则 上⾯👆这棵归并树的带权路径⻓度 WPL = 2*1 &#43; (5&#43;1&#43;6&#43;2) * 3 = 44...</p>
+置换选择排序 ⽤于内部排序的内存⼯作区WA可容纳l个记录，则每个初始归并段也只能包含l个记录，若⽂件共有n个记录，则初始归并段的数量r=n/l,这是之前的做法1.算法思想 设初始待排文件为F，初始归并段输出文件为FO，内存工作区为WA,FO和WA的初始状态为空，WA可容纳w个记录。置换选择算法的步骤如下： 1）从F输入个记录到工作区WA。 2）从WA中选出其中关键字取最小值的记录，记为 MINIMAX记录3）将MINIMAX记录输出到FO中去。 4）若F不空，则从F输入下一个记录到WA中。 5）从w中所有关MINIMAX键字比记录的关键字大的记录中选出最小关键字记录，作为新的MINIMAX记录。 6）重复3）~5），直至在A中选不 MININ出新的记录为止，由此得到一个初始归并段，输出一个归并段的结束标志到FO中去。 7）重复2）~6），直至WA为空。由此得到全部初始归并段。
+最佳归并树  利用置换选择排序构造初始归并段，归并段长短不一...</p>
   </section>
   <footer class="entry-footer"><span title='2021-06-10 00:00:00 +0000 UTC'>June 10, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 外部排序相关" href="https://www.fintinger.site/posts/2021/06/10/externalsort/"></a>
+  <a class="entry-link" aria-label="post link to 外部排序相关" href="https://www.fintinger.site/p/%E5%A4%96%E9%83%A8%E6%8E%92%E5%BA%8F%E7%9B%B8%E5%85%B3/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -154,8 +180,8 @@
   <section class="entry-content">
     <p>排序算法 平均时间复杂度 空间复杂度 稳定性 适用情况     插入排序 $O(n^2)$ O(1) 稳定 n较小，初始序列基本有序   希尔排序 $O(n^{1.3})$ O(1) 不稳定    冒泡排序 $O(n^2)$ O(1) 稳定 n较小，初始序列基本有序   快速排序 $O(n\log_2n)$ $O(nlog_2n)$ 不稳定 初始序列无序   简单选择排序 $O(n^2)$ O(1) 不稳定 n较小   堆排序 $O(n\log_2n)$ O(1) 不稳定 n较大或只排前几位   2-路归并排序 $O(n\log_2n)$ O(n) 稳定 n很大   链式基数排序 $O(d(n&#43;rd))$ $O(rd)$ 稳定 n大，关键字值小    相关概念 1....</p>
   </section>
-  <footer class="entry-footer"><span title='2021-06-10 00:00:00 +0000 UTC'>June 10, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 排序算法相关" href="https://www.fintinger.site/posts/2021/06/10/sort/"></a>
+  <footer class="entry-footer"><span title='2021-06-10 00:00:00 +0000 UTC'>June 10, 2021</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 排序算法相关" href="https://www.fintinger.site/p/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -164,17 +190,19 @@
     </h2>
   </header>
   <section class="entry-content">
-    <p>顺序查找 typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数组基址  int TableLen;//查找表长度 }SSTable; int Seq_Search(SSTable ST,int key){ ST.elem[0]=key; int i; for (i = ST.TableLen;ST.elem[i]!=key ; i--) {}//从后往前查找，最终返回下标i  return i;//返回0说明没找到 } 效率分析 对于长度为n的顺序表，如果查找成功$$ ASL={\frac{1&#43;2&#43;…&#43;n}{n}}=\frac{n&#43;1}{2} $$ 若果查找失败，则 $ASL=n&#43;1$
+    <p>顺序查找 1 2 3 4 5 6 7 8 9 10 11  typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数组基址  int TableLen;//查找表长度 }SSTable; int Seq_Search(SSTable ST,int key){ ST.elem[0]=key; int i; for (i = ST.TableLen;ST.elem[i]!=key ; i--) {}//从后往前查找，最终返回下标i  return i;//返回0说明没找到 }   效率分析 对于长度为n的顺序表，如果查找成功 $$ ASL={\frac{1&#43;2&#43;…&#43;n}{n}}=\frac{n&#43;1}{2} $$ 若果查找失败，则 $ASL=n&#43;1$
 总体上，该算法时间复杂度为 $O(n)$
 优化思路 1.如果使得表中的元素有序存放……，可以构造出一棵查找判定树
 此时，查找失败时$ASL=\frac{1&#43;2&#43;…&#43;n&#43;n}{n&#43;1}=\frac{n}{2}&#43;\frac{n}{n&#43;1}$
-优点： 容易查找失败时ASL更小2.如果各元素被查找的概率不同……，可以把概率大的靠前
-优点： 容易查找成功时ASL更小折半查找  折半查找，又称“二分查找”，仅适用于有序的顺序表。
+优点： 容易查找失败时ASL更小
+2.如果各元素被查找的概率不同……，可以把概率大的靠前
+优点： 容易查找成功时ASL更小
+折半查找  折半查找，又称“二分查找”，仅适用于有序的顺序表。
  针对升序排列的顺序表，代码实现如下
-typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数组基址  int TableLen;//查找表长度 }SSTable; int BinarySearch(SSTable L,int key){ int low=0,high=L.TableLen-1,mid; while (low&lt;=high) { mid=(low&#43;high)/2; if (L.elem[mid]==key) return key; else if(L....</p>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数组基址  int TableLen;//查找表长度 }SSTable; int BinarySearch(SSTable L,int key){ int low=0,high=L....</p>
   </section>
   <footer class="entry-footer"><span title='2021-06-06 00:00:00 +0000 UTC'>June 6, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 查找算法相关" href="https://www.fintinger.site/posts/2021/06/06/search/"></a>
+  <a class="entry-link" aria-label="post link to 查找算法相关" href="https://www.fintinger.site/p/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -183,15 +211,17 @@ typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数�
     </h2>
   </header>
   <section class="entry-content">
-    <p>一、最小生成树 📌什么是生成树？ 连通图的生成树是包含图中所有顶点的一个极小连通子图，通俗地讲，就是“边尽可能少，但需保持连通”。规律： 对于一个顶点数|V|=n的树，其生成树的边数|E|=n-1。如果将|E|&#43;1，必然会形成回路；如果将|E|-1，则会成为非连通图。
+    <p>一、最小生成树 📌什么是生成树？ 连通图的生成树是包含图中所有顶点的一个极小连通子图，通俗地讲，就是“边尽可能少，但需保持连通”。
+规律： 对于一个顶点数|V|=n的树，其生成树的边数|E|=n-1。如果将|E|&#43;1，必然会形成回路；如果将|E|-1，则会成为非连通图。
 📌什么是最小生成树？  最小生成树，也称最小代价树(Minimum Spanning Tree，MST)
- 是带权连通无向图的生成树中边的权值之和最小的一棵树，联系实际问题不难理解其中“最小代价”的意味。Prim（普利姆算法），Kruskal（克鲁斯卡尔算法）就是寻找最小生成树的常用算法。
+ 是带权连通无向图的生成树中边的权值之和最小的一棵树，联系实际问题不难理解其中“最小代价”的意味。
+Prim（普利姆算法），Kruskal（克鲁斯卡尔算法）就是寻找最小生成树的常用算法。
 1.Prim（普利姆算法）  从某一顶点开始，每次将代价最小的新顶点纳入生成树，直至所有顶点都纳入为止。
  图示 易知，此方法得到的最小生成子树是不唯一的。
-代码实现 void MiniSpanTree_PRIMI(Graph G,int u){ //从顶点u出发找G的最小生成树  for (int i = 0; i &lt;G.vexnum; &#43;&#43;i) {//辅助数组初始化  if(i!=u){ closedge[i]={u,G.arcs[u][i]}; } } closedge[u].lowcost=0; for (int j = 0; j &lt; G.vexnum; j&#43;&#43;) { k=minimum(closedge);//求生成树的下一个节点  cout&lt;&lt;cloedge[k].adjvex&lt;&lt;G.vex[k]; closedge[k].lowcost=0; for (int i = 0; i &lt; G.vexnum; i&#43;&#43;) { if (G.arc[k][j].adj&lt;closedge[j].lowcost) { closedge[j]={G.vexs[k],G.arcs[k][j].adj}; } } } } 2....</p>
+代码实现 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  void MiniSpanTree_PRIMI(Graph G,int u){ //从顶点u出发找G的最小生成树  for (int i = 0; i &lt;G.vexnum; &#43;&#43;i) {//辅助数组初始化  if(i!=u){ closedge[i]={u,G.arcs[u][i]}; } } closedge[u].lowcost=0; for (int j = 0; j &lt; G.vexnum; j&#43;&#43;) { k=minimum(closedge);//求生成树的下一个节点  cout&lt;&lt;cloedge[k]....</p>
   </section>
-  <footer class="entry-footer"><span title='2021-06-04 00:00:00 +0000 UTC'>June 4, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 图的应用" href="https://www.fintinger.site/posts/2021/06/02/02_application/"></a>
+  <footer class="entry-footer"><span title='2021-06-04 00:00:00 +0000 UTC'>June 4, 2021</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 图的应用" href="https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -204,11 +234,12 @@ typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数�
  对上面的图从①出发进行BFS得到序列：
 ①②⑤ ⑥ ③⑦ ④⑧
 若采用不同的储存结构，可能会得到不同的遍历结果（这个差异主要来自寻找邻接点的过程），对于邻接矩阵存储的图，由于邻接矩阵是唯一的，所以BFS序列也是唯一的；同理，邻接表存储的图BFS序列不唯一。
-BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历过程中会出现重复访问的问题，故可构造visited数组，用来标记已访问过的数组。此外，还应针对非连通图做额外的判断，遍历完一个连通分量（极大连通子图）后，遍历查找visited数组中是否还存在未遍历的，如果有即为另一连通分量，继续调用BFS即可。
- void BFS(Graph G,int v); bool visited[MAX_VERTEX_NUM]; SqQueue Q;//辅助队列 void BFSTraverse(Graph G){ //初始化visited数组  for (int i = 0; i &lt; G.vexnum; &#43;&#43;i) {//使下标从1开始  visited[i]=false; } //对非连通图的处理  for (int v = 0; v &lt; G.vexnum; &#43;&#43;v) { if (!visited[v]) BFS(G,v); } } //从顶点v出发广度优先遍历图G void BFS(Graph G,int v){ visit(v); visited[v]=true; EnQueue(Q,v);//顶点v入队列Q  while(!isEmpty(Q)){ DeQueue(Q,v);//顶点v出队列Q  for (w=FirstNeighbor(G,v);w&gt;=0;w=NextNeighbor(G,v,w))//处理v的所有邻接点  if (!...</p>
+BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历过程中会出现重复访问的问题，故可构造visited数组，用来标记已访问过的数组。
+此外，还应针对非连通图做额外的判断，遍历完一个连通分量（极大连通子图）后，遍历查找visited数组中是否还存在未遍历的，如果有即为另一连通分量，继续调用BFS即可。
+ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32  void BFS(Graph G,int v); bool visited[MAX_VERTEX_NUM]; SqQueue Q;//辅助队列 void BFSTraverse(Graph G){ //初始化visited数组  for (int i = 0; i &lt; G.vexnum; &#43;&#43;i) {//使下标从1开始  visited[i]=false; } //对非连通图的处理  for (int v = 0; v &lt; G....</p>
   </section>
-  <footer class="entry-footer"><span title='2021-06-03 00:00:00 +0000 UTC'>June 3, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 图的遍历" href="https://www.fintinger.site/posts/2021/06/02/01_traverse/"></a>
+  <footer class="entry-footer"><span title='2021-06-03 00:00:00 +0000 UTC'>June 3, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 图的遍历" href="https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

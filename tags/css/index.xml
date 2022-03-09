@@ -12,16 +12,15 @@
     <lastBuildDate>Mon, 23 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/css/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CSS揭秘一书中的知识</title>
-      <link>https://www.fintinger.site/posts/2019/12/23/</link>
+      <link>https://www.fintinger.site/p/css%E6%8F%AD%E7%A7%98%E4%B8%80%E4%B9%A6%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86/</link>
       <pubDate>Mon, 23 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/posts/2019/12/23/</guid>
-      <description>1.backgrouond简写  在background简写属性中指定background-sizing时，需要提供一个background-position值，而且要使用/作为分隔。  background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [ background-size] [background-origin] [background-clip]; &amp;mdash;&amp;ndash;P13&amp;mdash;&amp;ndash;
+      <guid>https://www.fintinger.site/p/css%E6%8F%AD%E7%A7%98%E4%B8%80%E4%B9%A6%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86/</guid>
+      <description>1.backgrouond简写  在background简写属性中指定background-sizing时，需要提供一个background-position值，而且要使用/作为分隔。  1  background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [ background-size] [background-origin] [background-clip];   &amp;mdash;&amp;ndash;P13&amp;mdash;&amp;ndash;
 2.background-clip 规定背景的绘制区域：得到一个白色背景并且有白色边框的盒子：
-border:10px solid hsla(0,0,100%,.5); background:white; background-clip:padding-box 若不设置background-clip，背景会延伸至边框，边框的透明无法显示
+1 2 3  border:10px solid hsla(0,0,100%,.5); background:white; background-clip:padding-box   若不设置background-clip，背景会延伸至边框，边框的透明无法显示
 &amp;mdash;&amp;mdash;P18&amp;mdash;&amp;mdash;-
-3.双重边框  box-shadow   background:orange;box-shadow:0 0 010px #655 , 0 0 0 15px deeppink; /*可以加任意层数边框*/ outline  width:180px; height:90px; margin:30px auto; text-align:center; padding:10px; background:##655; outline: ##fff dashed 1px; outline-offset: -15px; /*设置outline向内缩进*/ border-radius:8px; 注意： outline可能会产生不贴合border-radius圆角的情况 &amp;mdash;-P20&amp;mdash;-
-4.box-shadow  只给下方设置阴影，（扩张半径为负的模糊半径）:  box-shadow: 0 5px 4px -4px black;  临边投影，(扩张半径为负的模糊半径的一半):  box-shadow: 3px 3px 6px -3px black; &amp;mdash;-P88&amp;mdash;-</description>
+3.双重边框  box-shadow   background:orange;box-shadow:0 0 010px #655 , 0 0 0 15px deeppink; /*可以加任意层数边框*/ outline  1 2 3 4 5 6 7 8 9  width:180px; height:90px; margin:30px auto; text-align:center; padding:10px; background:##655; outline: ##fff dashed 1px; outline-offset: -15px; /*设置outline向内缩进*/ border-radius:8px;   注意： outline可能会产生不贴合border-radius圆角的情况 &amp;mdash;-P20&amp;mdash;-</description>
     </item>
     
   </channel>

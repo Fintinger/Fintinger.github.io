@@ -12,10 +12,10 @@
     <lastBuildDate>Sun, 24 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/html/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>常用的一些html小问题</title>
-      <link>https://www.fintinger.site/posts/2020/05/24/</link>
+      <link>https://www.fintinger.site/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E5%B0%8F%E9%97%AE%E9%A2%98/</link>
       <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/posts/2020/05/24/</guid>
+      <guid>https://www.fintinger.site/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E5%B0%8F%E9%97%AE%E9%A2%98/</guid>
       <description>1. 网页出现横向滚动条？ &amp;lt;body style=`overflow:-Scroll;overflow-y:hidden &amp;gt; &amp;lt;/body&amp;gt;让横条没有：
  &amp;lt;body style=`overflow:-Scroll;overflow-x:hidden&amp;gt; &amp;lt;/body&amp;gt;两个都去掉？更简单了
 &amp;lt;body scroll=&amp;quot;no&amp;quot; &amp;gt; &amp;lt;/body&amp;gt;火狐底部滚动条不显示：
@@ -28,10 +28,10 @@
     
     <item>
       <title>常用的一些html代码</title>
-      <link>https://www.fintinger.site/posts/2020/03/21/</link>
+      <link>https://www.fintinger.site/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E4%BB%A3%E7%A0%81/</link>
       <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/posts/2020/03/21/</guid>
+      <guid>https://www.fintinger.site/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E4%BB%A3%E7%A0%81/</guid>
       <description>1. 获取网页logo 京东 : www.jd.com
  后面加 &amp;ldquo;/favicon.ico&amp;quot;即可
  京东logo : www.jd.com/favicon.ico

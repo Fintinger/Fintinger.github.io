@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>JavaScript基础之对象 | Archai&#39;s home</title>
+<meta name="keywords" content="Javascript" />
+<meta name="description" content="对象中参数获取和值的接收 1.对象中利用key获取value. |  [] 1 2 3 4 5  let obj = {name: &#39;jqf&#39;, age: 19} for (let key in obj) { // console.log(obj.key);//会报undefined  console.log(obj[key]);//jqf,19 }   👉 delete Object.key()
+1 2  delete obj.name console.log(obj);//{ age: 19 }   2.参数/配置合并 👉 展开语法
+ 利用展开语法合并对象，让后面传入的参数覆盖默认参数，完成合并
+ 1 2 3 4 5 6 7 8 9 10 11 12  function upload(params) { let config = { url: &#39;/images&#39;, type: &#39;*.">
+<meta name="author" content="Archai">
+<link rel="canonical" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%AF%B9%E8%B1%A1/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.4ee57c4189977dc8f075173100c24a668d6bb09d6b5db74440649223f1221877.css" integrity="sha256-TuV8QYmXfcjwdRcxAMJKZo1rsJ1rXbdEQGSSI/EiGHc=" rel="preload stylesheet" as="style">
+<link rel="stylesheet" href="css/extended/custom.css">
+<link rel="icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="apple-touch-icon" href="https://www.fintinger.site/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.fintinger.site/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:title" content="JavaScript基础之对象" />
+<meta property="og:description" content="对象中参数获取和值的接收 1.对象中利用key获取value. |  [] 1 2 3 4 5  let obj = {name: &#39;jqf&#39;, age: 19} for (let key in obj) { // console.log(obj.key);//会报undefined  console.log(obj[key]);//jqf,19 }   👉 delete Object.key()
+1 2  delete obj.name console.log(obj);//{ age: 19 }   2.参数/配置合并 👉 展开语法
+ 利用展开语法合并对象，让后面传入的参数覆盖默认参数，完成合并
+ 1 2 3 4 5 6 7 8 9 10 11 12  function upload(params) { let config = { url: &#39;/images&#39;, type: &#39;*." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%AF%B9%E8%B1%A1/" /><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-08-31T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-08-31T00:00:00&#43;00:00" /><meta property="og:site_name" content="Archai&#39;s home" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/>
+
+<meta name="twitter:title" content="JavaScript基础之对象"/>
+<meta name="twitter:description" content="对象中参数获取和值的接收 1.对象中利用key获取value. |  [] 1 2 3 4 5  let obj = {name: &#39;jqf&#39;, age: 19} for (let key in obj) { // console.log(obj.key);//会报undefined  console.log(obj[key]);//jqf,19 }   👉 delete Object.key()
+1 2  delete obj.name console.log(obj);//{ age: 19 }   2.参数/配置合并 👉 展开语法
+ 利用展开语法合并对象，让后面传入的参数覆盖默认参数，完成合并
+ 1 2 3 4 5 6 7 8 9 10 11 12  function upload(params) { let config = { url: &#39;/images&#39;, type: &#39;*."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://www.fintinger.site/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "JavaScript基础之对象",
+      "item": "https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%AF%B9%E8%B1%A1/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "JavaScript基础之对象",
+  "name": "JavaScript基础之对象",
+  "description": "对象中参数获取和值的接收 1.对象中利用key获取value. |  [] 1 2 3 4 5  let obj = {name: \u0026#39;jqf\u0026#39;, age: 19} for (let key in obj) { // console.log(obj.key);//会报undefined  console.log(obj[key]);//jqf,19 }   👉 delete Object.key()\n1 2  delete obj.name console.log(obj);//{ age: 19 }   2.参数/配置合并 👉 展开语法\n 利用展开语法合并对象，让后面传入的参数覆盖默认参数，完成合并\n 1 2 3 4 5 6 7 8 9 10 11 12  function upload(params) { let config = { url: \u0026#39;/images\u0026#39;, type: \u0026#39;*.",
+  "keywords": [
+    "Javascript"
+  ],
+  "articleBody": "对象中参数获取和值的接收 1.对象中利用key获取value. |  [] 1 2 3 4 5  let obj = {name: 'jqf', age: 19} for (let key in obj) { // console.log(obj.key);//会报undefined  console.log(obj[key]);//jqf,19 }   👉 delete Object.key()\n1 2  delete obj.name console.log(obj);//{ age: 19 }   2.参数/配置合并 👉 展开语法\n 利用展开语法合并对象，让后面传入的参数覆盖默认参数，完成合并\n 1 2 3 4 5 6 7 8 9 10 11 12  function upload(params) { let config = { url: '/images', type: '*.jpg,*.png' } config = {...config, ...params} //do something...  console.log(config); } upload({type:'*.webp'})//{ url: '/images', type: '*.webp' }   👉 解构赋值\n 解构赋值会把相同key的进行合并，后面覆盖掉前面的\n 1 2 3 4 5 6 7 8  function upload(params = {}) { let {url = '/images', type = '*.jpg,*.png'} = params //do something...  console.log(url, type); } upload({type: '*.webp'})///images *.webp   关于解构赋值？\n1 2 3  let user = {name: 'jqf', age: 18} let {name: n, age: a} = user console.log(n, a);   注意： 等号左边是源数据，右边是要赋值的变量，二者相同时可省略\n3.hasOwnProperty() 自身属性中是否具有指定的属性  与in 运算符不同，该方法会忽略掉那些从原型链上继承到的属性\n 1 2 3 4 5 6 7 8  let obj={ name:'jqf', age:19 } console.log(obj.hasOwnProperty('name'));//true console.log('name' in obj);///true console.log(obj.hasOwnProperty('hasOwnProperty'));//false console.log('hasOwnProperty' in obj);//true   4.Object.assign() 对象合并 👉 参数：Object.assign(target, ...sources)\ntarget 表示目标对象\nsources 表示源对象\n👉 返回值： 目标对象\n1 2 3 4 5 6 7 8 9 10  let params={ url:'/image', type:'*.jpg' } let config={ type: '*.png' } let returnObj=Object.assign(config,params) console.log(config);//{ type: '*.jpg', url: '/image' } console.log(returnObj);//{ type: '*.jpg', url: '/image' }   5.用for-of遍历对象？  对象可以直接用for-in遍历，for-of专门用于遍历可迭代对象\n 1 2 3 4 5 6 7  let user={ name:'jqf', age:18 } for (let [key,value] of Object.entries(user)) { console.log(key,value); }   说明： Object.entries(obj) 返回一个数组，是Object.keys() 和 Object.values() 的合并\n对象的拷贝 1.浅拷贝 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22  let a = { name: 'jqf', age: 18 } //#1 解构赋值 let b = {name: a.name, age: a.age} console.log(b); //#2 for-in循环赋值 let c = {} for (let aKey in a) { let key = aKey c[key] = a[key] } console.log(c); //#3 对象合并 let d={} // Object.assign(d,a) d={...a} console.log(d);   问题： 浅拷贝之后，对于多层次的对象，赋值之后会修改掉原来的对象！\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  let user={ name:'jqf', lessons:{ title:'EN', score:29 } } let b={...user} b.name='fin' b.lessons.score=18 console.log(b);//{ name: 'fin', lessons: { title: 'EN', score: 18 } } console.log(user);//{ name: 'jqf', lessons: { title: 'EN', score: 18 } } /** *目的是只修改b中的score，原来user中的却也被修改 */   2.深拷贝  深拷贝利用递归的方式，深层次拷贝整个对象\n 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  function deepCopy(obj) { let res = {}; for (let objKey in obj) { res[objKey] = typeof obj[objKey] === 'object' ? deepCopy(obj[objKey]) : obj[objKey] } return res } let user = {name: 'jqf', lessons: {title: 'EN', score: 29}} let b = deepCopy(user) console.log(b);//{ name: 'jqf', lessons: { title: 'EN', score: 29 } }  b.lessons.score = 0 console.log(user);//{ name: 'jqf', lessons: { title: 'EN', score: 29 } } console.log(b);//{ name: 'jqf', lessons: { title: 'EN', score: 0 } }   这样原对象中的value就不会被修改了！\n弊端： 如果user对象中含有数组类型的数据，该方法会出现问题！\n递归深拷贝方法的改进：\n instanceof() 可以检测是不是属于Array等\nObject.entries() 可以将数组分解为索引+值的形式储存起来\n 优化：\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  function deepCopy(obj) { let res = obj instanceof Array ? [] : {} for (const [k, v] of Object.entries(obj)) { res[k] = typeof v == \"object\" ? deepCopy(v) : v } return res } let user = { name: 'jqf', lessons: {title: 'EN', score: 29}, skills: ['CSS', 'JS', 'H5'] } let b = deepCopy(user) console.log(b);//{name: 'jqf',lessons: { title: 'EN', score: 29 },skills: [ 'CSS', 'JS', 'H5' ]}   构造函数创建对象 1 2 3 4 5 6 7 8 9  function User(name) { this.name = name; this.show = function () { console.log(`My name is ${this.name}`) } } let jqf = new User('jqf') jqf.show()//My name is jqf    javascript中的很多类型都是由构造函数定义的，定义其方法属性等等…可以通过new 的方式实例化，比如new Array、new Boolean()、new String()、new Function()...\n 对象的属性描述 获取属性描述符 方法： Object.getOwnPropertyDescriptor(obj, PropertyKey)\n作用： 返回指定对象上一个自有属性对应的属性描述符。（自有属性指的是直接赋予该对象的属性，不需要从原型链上进行查找的属性\n1 2 3 4 5 6  let obj={ name:'jqf', age:18 } console.log(Object.getOwnPropertyDescriptor(obj, 'name')); //{value: \"jqf\", writable: true, enumerable: true, configurable: true}   属性描述符 👉value\n该属性的值(仅针对数据属性描述符有效)\n👉 writable 可写 (可修改的)\n当且仅当属性的值可以被改变时为true。(仅针对数据属性描述有效）\n👉enumerable 可枚举\n当且仅当指定对象的属性可以被枚举出时，为 true。\n 设置为false，entries(),keys(),values(),for-in等都无法使用\n 👉configurable 可配置\n当且仅当指定对象的属性描述可以被改变或者属性可被删除时，为true。\n 设置为false，delete删除key,不可用。Object.defineProperty() 都无法使用\n 👉set\n获取该属性的设置器函数（setter）。 如果没有设置器， 该值为undefined。(仅针对包含访问器或设置器的属性描述有效)\n👉get\n获取该属性的访问器函数（getter）。如果没有访问器， 该值为undefined。(仅针对包含访问器或设置器的属性描述有效)\n控制属性描述符 方法： Object.defineProperty()\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  let obj={ name:'jqf', age:18 } //单个修改 Object.defineProperty(obj,'name',{ writable:false }); Object.defineProperty(obj,'age',{ writable:false }) //批量修改 Object.defineProperties(obj,{ name:{enumerable:false}, age:{enumerable:false} }) console.log(Object.getOwnPropertyDescriptors(obj));   其他一些方法 👉 Object.preventExtensions(obj)\n作用： 阻止往对象中添加属性/方法\n判断： Object.isExtensible() 判断是否可以添加属性\n1 2 3 4 5 6 7 8 9  let obj={ name:'jqf', age:18 } Object.preventExtensions(obj) obj.info='ohhhhh' console.log(Object.isExtensible(obj));//false console.log(obj);//...   👉 Object.seal(obj) 封闭对象\n作用： 阻止往对象中添加属性/方法(但可以修改)，属性描述符configurable和enumerable不可被修改，writable可单向修改为false，但不可以由false改为true；\n判断： Object.isSealed(obj)\n1 2 3 4 5 6 7 8 9  let obj={ name:'jqf', age:18 } Object.seal(obj) obj.name='fin' console.log(Object.isSealed(obj));//true console.log(Object.getOwnPropertyDescriptors(obj));//configurable: false,name:'fin'   👉 Object.freeze(obj)\n作用： 阻止往对象添加属性/方法， 也阻止修改属性/方法，属性描述符不可修改\n判断： Object.isFrozen(obj)\n1 2 3 4 5 6 7 8  let obj={ name:'jqf', age:18 } Object.freeze(obj) console.log(Object.isFrozen(obj));//true console.log(Object.getOwnPropertyDescriptors(obj));//configurable: false    Object.seal(obj)\u0026 Object.freeze(obj)区别:\nObject.freeze(obj)“冰冻”对象本身以及一切现有的属性值(value)以及属性的特性(property descriptor).在函数Object.seal()中也许还可以修改属性值以及修改 属性的特性writable(true–false)，但是在Object.freeze ()中，这些都干不了\n 访问器  ECMAScript 5 (2009) 引入了 Getter 和 Setter。Getter 和 Setter 允许您定义对象访问器（被计算的属性）。\n 基本用法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  let user = { data: {name: 'jqf', age: 19}, get age() { return `${this.data.name}现在${this.data.age}岁` }, set age(v) { if (typeof v !== 'number' || v  10 || v  100) { throw new Error('年龄不合法') } this.data.age = v } } console.log(Object.getOwnPropertyDescriptors(user,'age'))//get:f set:f console.log(user.age);//jqf现在18岁 console.log(user.age = 10);//Uncaught Error: 年龄不合法   应用 👉 伪造属性\n1 2 3 4 5 6 7 8 9 10 11  let cart = { lists: [ {name: 'Macbook', price: 8988}, {name: 'shirt', price: 59}, {name: 'office table', price: 11900}, ], get total(){ return this.lists.reduce((t,i)= t+i.price,0) } } console.log(cart.total);//20947   👉 访问器实现批量设置对象属性\n1 2 3 4 5 6 7 8  let user = { data: {name: 'jqf', age: 19}, set config(cfg) { [this.data.name, this.data.age] = cfg.split(\",\") } } user.config = 'fin,18' console.log(user);   👉 token()的读写处理\n localStorage 和 sessionStorage 属性允许在浏览器中存储 key/value 对的数据。localStorage 用于长久保存整个网站的数据，保存的数据没有过期时间，直到手动去删除。localStorage 属性是只读的。如果你只想将数据保存在当前会话中，可以使用 sessionStorage 属性， 该数据对象临时保存同一窗口(或标签页)的数据，在关闭窗口或标签页之后将会删除这些数据。具体GO\n 1 2 3 4 5 6 7 8 9 10 11  let Request = { set token(v) { localStorage.setItem('token', v) }, get token() { let token = localStorage.getItem('token') return token } } // Request.token='EF3%F^323D' console.log(Request.token);   优先级  定义在set或get中的属性优先级高于普通定义的\n 1 2 3 4 5 6 7  let user = { name: 'jqf', get name() { return 'get-name' } } console.log(user.name);//get-name   Proxy代理拦截  Proxy 对象用于定义基本操作的自定义行为（如属性查找、赋值、枚举、函数调用等）。\n 方法 👉handler.getPrototypeOf()\nObject.getPrototypeOf 方法的捕捉器。\n👉handler.setPrototypeOf()\nObject.setPrototypeOf 方法的捕捉器。\n👉handler.isExtensible()\nObject.isExtensible 方法的捕捉器。\n👉handler.preventExtensions()\nObject.preventExtensions 方法的捕捉器。\n👉handler.getOwnPropertyDescriptor()\nObject.getOwnPropertyDescriptor 方法的捕捉器。\n👉handler.defineProperty()\nObject.defineProperty方法的捕捉器。\n👉handler.has()\nin 操作符的捕捉器。\n👉handler.get()\n属性读取操作的捕捉器。\n👉handler.set()\n属性设置操作的捕捉器。\n👉handler.deleteProperty()\ndelete 操作符的捕捉器。\n👉handler.ownKeys()\nObject.getOwnPropertyNames 方法和 Object.getOwnPropertySymbols 方法的捕捉器。\n👉handler.apply()\n函数调用操作的捕捉器。\n👉handler.construct()\nnew 操作符的捕捉器。\n使用案例 👉 使用代理查看函数执行时间：\n1 2 3 4 5 6 7 8 9 10 11 12 13  function factorial(num) { return num === 1 ? num : num * factorial(num - 1) } let p = new Proxy(factorial, { apply(target, thisArg, argArray) { console.time('run') factorial.apply(null, argArray)//argArray为原函数传入的参数  console.timeEnd('run') } }) p(6)//run: 0.159ms   👉 使用代理对数组过滤拦截：\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  let lessons = [ {title: 'Javascript进阶教程', click: 9800}, {title: 'web全栈', click: 8000}, {title: 'CSS属性深度剖析', click: 9900} ] let proxy = new Proxy(lessons, { get(target, p, value, receiver) { const len = 5 const tarTitle=target[p].title target[p].title = tarTitle.length  len ? tarTitle.substr(0, len) + '.'.repeat(3) : tarTitle return target[p] } }) console.log(proxy[2]); console.log(proxy);   👉 使用代理实现vue.js数据双向绑定：\n1 2 3 4   input type=\"text\" v-model=\"title\" input type=\"text\" v-model=\"title\" h3 v-bind=\"title\"这里的数据也会改变h3   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22  //JS部分 function Vue() { let proxy = new Proxy({}, { set(target, p, value, receiver) { document.querySelectorAll(`[v-model=${p}]`).forEach(i = { i.value = value }) document.querySelectorAll(`[v-bind=${p}]`).forEach(i = { i.innerHTML = value }) }, get(target, p, receiver) {} }) this.init = function () { document.querySelectorAll('[v-model]').forEach(i = { i.addEventListener('keyup', function () { proxy[i.getAttribute('v-model')] = i.value }) }) } } new Vue().init()   ",
+  "wordCount" : "1241",
+  "inLanguage": "en",
+  "datePublished": "2020-08-31T00:00:00Z",
+  "dateModified": "2020-08-31T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Archai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%AF%B9%E8%B1%A1/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Archai's home",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.fintinger.site/posts/" title="Posts📑">
+                    <span>Posts📑</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/categories/" title="Categories🛒">
+                    <span>Categories🛒</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/search/" title="Search🔎 (Alt &#43; /)" accesskey=/>
+                    <span>Search🔎</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/archives/" title="Timeline🕰️">
+                    <span>Timeline🕰️</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/about/" title="About🥳">
+                    <span>About🥳</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://www.fintinger.site">Home</a>&nbsp;»&nbsp;<a href="https://www.fintinger.site/posts/">Posts</a></div>
+    <h1 class="post-title">
+      JavaScript基础之对象
+    </h1>
+    <div class="post-meta"><span title='2020-08-31 00:00:00 +0000 UTC'>August 31, 2020</span>&nbsp;·&nbsp;6 min&nbsp;·&nbsp;Archai
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e5%af%b9%e8%b1%a1%e4%b8%ad%e5%8f%82%e6%95%b0%e8%8e%b7%e5%8f%96%e5%92%8c%e5%80%bc%e7%9a%84%e6%8e%a5%e6%94%b6" aria-label="对象中参数获取和值的接收">对象中参数获取和值的接收</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#1%e5%af%b9%e8%b1%a1%e4%b8%ad%e5%88%a9%e7%94%a8key%e8%8e%b7%e5%8f%96value---" aria-label="1.对象中利用key获取value. |  []">1.对象中利用key获取value<code>.</code> | <code> []</code></a></li>
+                <li>
+                    <a href="#2%e5%8f%82%e6%95%b0%e9%85%8d%e7%bd%ae%e5%90%88%e5%b9%b6" aria-label="2.参数/配置合并">2.参数/配置合并</a></li>
+                <li>
+                    <a href="#3hasownproperty-%e8%87%aa%e8%ba%ab%e5%b1%9e%e6%80%a7%e4%b8%ad%e6%98%af%e5%90%a6%e5%85%b7%e6%9c%89%e6%8c%87%e5%ae%9a%e7%9a%84%e5%b1%9e%e6%80%a7" aria-label="3.hasOwnProperty() 自身属性中是否具有指定的属性">3.hasOwnProperty() 自身属性中是否具有指定的属性</a></li>
+                <li>
+                    <a href="#4objectassign-%e5%af%b9%e8%b1%a1%e5%90%88%e5%b9%b6" aria-label="4.Object.assign() 对象合并">4.Object.assign() 对象合并</a></li>
+                <li>
+                    <a href="#5%e7%94%a8for-of%e9%81%8d%e5%8e%86%e5%af%b9%e8%b1%a1" aria-label="5.用for-of遍历对象？">5.用for-of遍历对象？</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#%e5%af%b9%e8%b1%a1%e7%9a%84%e6%8b%b7%e8%b4%9d" aria-label="对象的拷贝">对象的拷贝</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#1%e6%b5%85%e6%8b%b7%e8%b4%9d" aria-label="1.浅拷贝">1.浅拷贝</a></li>
+                <li>
+                    <a href="#2%e6%b7%b1%e6%8b%b7%e8%b4%9d" aria-label="2.深拷贝">2.深拷贝</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#%e6%9e%84%e9%80%a0%e5%87%bd%e6%95%b0%e5%88%9b%e5%bb%ba%e5%af%b9%e8%b1%a1" aria-label="构造函数创建对象">构造函数创建对象</a></li>
+                <li>
+                    <a href="#%e5%af%b9%e8%b1%a1%e7%9a%84%e5%b1%9e%e6%80%a7%e6%8f%8f%e8%bf%b0" aria-label="对象的属性描述">对象的属性描述</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#%e8%8e%b7%e5%8f%96%e5%b1%9e%e6%80%a7%e6%8f%8f%e8%bf%b0%e7%ac%a6" aria-label="获取属性描述符">获取属性描述符</a></li>
+                <li>
+                    <a href="#%e5%b1%9e%e6%80%a7%e6%8f%8f%e8%bf%b0%e7%ac%a6" aria-label="属性描述符">属性描述符</a></li>
+                <li>
+                    <a href="#%e6%8e%a7%e5%88%b6%e5%b1%9e%e6%80%a7%e6%8f%8f%e8%bf%b0%e7%ac%a6" aria-label="控制属性描述符">控制属性描述符</a></li>
+                <li>
+                    <a href="#%e5%85%b6%e4%bb%96%e4%b8%80%e4%ba%9b%e6%96%b9%e6%b3%95" aria-label="其他一些方法">其他一些方法</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#%e8%ae%bf%e9%97%ae%e5%99%a8" aria-label="访问器">访问器</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95" aria-label="基本用法">基本用法</a></li>
+                <li>
+                    <a href="#%e5%ba%94%e7%94%a8" aria-label="应用">应用</a></li>
+                <li>
+                    <a href="#%e4%bc%98%e5%85%88%e7%ba%a7" aria-label="优先级">优先级</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#proxy%e4%bb%a3%e7%90%86%e6%8b%a6%e6%88%aa" aria-label="Proxy代理拦截">Proxy代理拦截</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#%e6%96%b9%e6%b3%95" aria-label="方法">方法</a></li>
+                <li>
+                    <a href="#%e4%bd%bf%e7%94%a8%e6%a1%88%e4%be%8b" aria-label="使用案例">使用案例</a>
+                </li>
+            </ul>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="对象中参数获取和值的接收">对象中参数获取和值的接收<a hidden class="anchor" aria-hidden="true" href="#对象中参数获取和值的接收">#</a></h2>
+<h4 id="1对象中利用key获取value---">1.对象中利用key获取value<code>.</code> | <code> []</code><a hidden class="anchor" aria-hidden="true" href="#1对象中利用key获取value---">#</a></h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jqf&#39;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">19</span>}
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">obj</span>) {
+    <span style="color:#75715e">// console.log(obj.key);//会报undefined
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">key</span>]);<span style="color:#75715e">//jqf,19
+</span><span style="color:#75715e"></span>}
+</code></pre></td></tr></table>
+</div>
+</div><p>👉 <code>delete Object.key()</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">name</span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">obj</span>);<span style="color:#75715e">//{ age: 19 }
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="2参数配置合并">2.参数/配置合并<a hidden class="anchor" aria-hidden="true" href="#2参数配置合并">#</a></h4>
+<p>👉 <strong>展开语法</strong></p>
+<blockquote>
+<p>利用展开语法合并对象，让后面传入的参数覆盖默认参数，完成合并</p>
+</blockquote>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">upload</span>(<span style="color:#a6e22e">params</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">config</span> <span style="color:#f92672">=</span> {
+        <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/images&#39;</span>,
+        <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;*.jpg,*.png&#39;</span>
+    }
+    <span style="color:#a6e22e">config</span> <span style="color:#f92672">=</span> {...<span style="color:#a6e22e">config</span>, ...<span style="color:#a6e22e">params</span>}
+
+    <span style="color:#75715e">//do something...
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">config</span>);
+}
+
+<span style="color:#a6e22e">upload</span>({<span style="color:#a6e22e">type</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;*.webp&#39;</span>})<span style="color:#75715e">//{ url: &#39;/images&#39;, type: &#39;*.webp&#39; }
+</span></code></pre></td></tr></table>
+</div>
+</div><p>👉 <strong>解构赋值</strong></p>
+<blockquote>
+<p>解构赋值会把相同key的进行合并，后面覆盖掉前面的</p>
+</blockquote>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">upload</span>(<span style="color:#a6e22e">params</span> <span style="color:#f92672">=</span> {}) {
+    <span style="color:#66d9ef">let</span> {<span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/images&#39;</span>, <span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;*.jpg,*.png&#39;</span>} <span style="color:#f92672">=</span> <span style="color:#a6e22e">params</span>
+
+    <span style="color:#75715e">//do something...
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">type</span>);
+}
+
+<span style="color:#a6e22e">upload</span>({<span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;*.webp&#39;</span>})<span style="color:#75715e">///images *.webp
+</span></code></pre></td></tr></table>
+</div>
+</div><p><strong>关于解构赋值？</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jqf&#39;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">18</span>}
+<span style="color:#66d9ef">let</span> {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">n</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">a</span>} <span style="color:#f92672">=</span> <span style="color:#a6e22e">user</span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">n</span>, <span style="color:#a6e22e">a</span>);
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>注意：</strong> 等号左边是源数据，右边是要赋值的变量，二者相同时可省略</p>
+<h4 id="3hasownproperty-自身属性中是否具有指定的属性">3.hasOwnProperty() 自身属性中是否具有指定的属性<a hidden class="anchor" aria-hidden="true" href="#3hasownproperty-自身属性中是否具有指定的属性">#</a></h4>
+<blockquote>
+<p>与<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/in"><code>in</code></a> 运算符不同，该方法会忽略掉那些从原型链上继承到的属性</p>
+</blockquote>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span><span style="color:#f92672">=</span>{
+    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;jqf&#39;</span>,
+    <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span><span style="color:#ae81ff">19</span>
+}
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#e6db74">&#39;name&#39;</span>));<span style="color:#75715e">//true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;name&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">obj</span>);<span style="color:#75715e">///true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#e6db74">&#39;hasOwnProperty&#39;</span>));<span style="color:#75715e">//false
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;hasOwnProperty&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">obj</span>);<span style="color:#75715e">//true
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="4objectassign-对象合并">4.Object.assign() 对象合并<a hidden class="anchor" aria-hidden="true" href="#4objectassign-对象合并">#</a></h4>
+<p>👉 <strong>参数：</strong><code>Object.assign(target, ...sources)</code></p>
+<p><code>target</code> 表示目标对象</p>
+<p><code>sources</code> 表示源对象</p>
+<p>👉 <strong>返回值：</strong> 目标对象</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">params</span><span style="color:#f92672">=</span>{
+    <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;/image&#39;</span>,
+    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;*.jpg&#39;</span>
+}
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">config</span><span style="color:#f92672">=</span>{
+    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;*.png&#39;</span>
+}
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">returnObj</span><span style="color:#f92672">=</span>Object.<span style="color:#a6e22e">assign</span>(<span style="color:#a6e22e">config</span>,<span style="color:#a6e22e">params</span>)
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">config</span>);<span style="color:#75715e">//{ type: &#39;*.jpg&#39;, url: &#39;/image&#39; }
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">returnObj</span>);<span style="color:#75715e">//{ type: &#39;*.jpg&#39;, url: &#39;/image&#39; }
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="5用for-of遍历对象">5.用for-of遍历对象？<a hidden class="anchor" aria-hidden="true" href="#5用for-of遍历对象">#</a></h4>
+<blockquote>
+<p>对象可以直接用for-in遍历，for-of专门用于遍历可迭代对象</p>
+</blockquote>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">user</span><span style="color:#f92672">=</span>{
+    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;jqf&#39;</span>,
+    <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span><span style="color:#ae81ff">18</span>
+}
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> [<span style="color:#a6e22e">key</span>,<span style="color:#a6e22e">value</span>] <span style="color:#66d9ef">of</span> Object.<span style="color:#a6e22e">entries</span>(<span style="color:#a6e22e">user</span>)) {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">key</span>,<span style="color:#a6e22e">value</span>);
+}
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>说明：</strong> <code>Object.entries(obj)</code>  返回一个数组，是<code>Object.keys()</code> 和 <code>Object.values()</code> 的合并</p>
+<h2 id="对象的拷贝">对象的拷贝<a hidden class="anchor" aria-hidden="true" href="#对象的拷贝">#</a></h2>
+<h4 id="1浅拷贝">1.浅拷贝<a hidden class="anchor" aria-hidden="true" href="#1浅拷贝">#</a></h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jqf&#39;</span>,
+    <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">18</span>
+}
+
+<span style="color:#75715e">//#1 解构赋值
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">age</span>}
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>);
+
+<span style="color:#75715e">//#2 for-in循环赋值
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> {}
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">aKey</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">a</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">aKey</span>
+    <span style="color:#a6e22e">c</span>[<span style="color:#a6e22e">key</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">key</span>]
+}
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">c</span>);
+
+<span style="color:#75715e">//#3 对象合并
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span>{}
+<span style="color:#75715e">// Object.assign(d,a)
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">d</span><span style="color:#f92672">=</span>{...<span style="color:#a6e22e">a</span>}
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">d</span>);
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>问题：</strong> 浅拷贝之后，对于多层次的对象，赋值之后会修改掉原来的对象！</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">user</span><span style="color:#f92672">=</span>{
+    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;jqf&#39;</span>,
+    <span style="color:#a6e22e">lessons</span><span style="color:#f92672">:</span>{
+        <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;EN&#39;</span>,
+        <span style="color:#a6e22e">score</span><span style="color:#f92672">:</span><span style="color:#ae81ff">29</span>
+    }
+}
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span><span style="color:#f92672">=</span>{...<span style="color:#a6e22e">user</span>}
+<span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;fin&#39;</span>
+<span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">lessons</span>.<span style="color:#a6e22e">score</span><span style="color:#f92672">=</span><span style="color:#ae81ff">18</span>
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>);<span style="color:#75715e">//{ name: &#39;fin&#39;, lessons: { title: &#39;EN&#39;, score: 18 } }
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">user</span>);<span style="color:#75715e">//{ name: &#39;jqf&#39;, lessons: { title: &#39;EN&#39;, score: 18 } }
+</span><span style="color:#75715e"></span><span style="color:#75715e">/**
+</span><span style="color:#75715e">*目的是只修改b中的score，原来user中的却也被修改
+</span><span style="color:#75715e">*/</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="2深拷贝">2.深拷贝<a hidden class="anchor" aria-hidden="true" href="#2深拷贝">#</a></h4>
+<blockquote>
+<p>深拷贝利用递归的方式，深层次拷贝整个对象</p>
+</blockquote>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">deepCopy</span>(<span style="color:#a6e22e">obj</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> {};
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">objKey</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">obj</span>) {
+        <span style="color:#a6e22e">res</span>[<span style="color:#a6e22e">objKey</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">objKey</span>] <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;object&#39;</span>
+            <span style="color:#f92672">?</span> <span style="color:#a6e22e">deepCopy</span>(<span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">objKey</span>])
+            <span style="color:#f92672">:</span> <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">objKey</span>]
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
+}
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jqf&#39;</span>, <span style="color:#a6e22e">lessons</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;EN&#39;</span>, <span style="color:#a6e22e">score</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">29</span>}}
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">deepCopy</span>(<span style="color:#a6e22e">user</span>)
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>);<span style="color:#75715e">//{ name: &#39;jqf&#39;, lessons: { title: &#39;EN&#39;, score: 29 } }
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">lessons</span>.<span style="color:#a6e22e">score</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">user</span>);<span style="color:#75715e">//{ name: &#39;jqf&#39;, lessons: { title: &#39;EN&#39;, score: 29 } }
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>);<span style="color:#75715e">//{ name: &#39;jqf&#39;, lessons: { title: &#39;EN&#39;, score: 0 } }
+</span></code></pre></td></tr></table>
+</div>
+</div><p>这样原对象中的value就不会被修改了！</p>
+<p><strong>弊端：</strong> 如果user对象中含有数组类型的数据，该方法会出现问题！</p>
+<p><strong>递归深拷贝方法的改进：</strong></p>
+<blockquote>
+<p><code>instanceof()</code> 可以检测是不是属于Array等</p>
+<p><code>Object.entries()</code>  可以将数组分解为索引+值的形式储存起来</p>
+</blockquote>
+<p>优化：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">deepCopy</span>(<span style="color:#a6e22e">obj</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span> <span style="color:#66d9ef">instanceof</span> Array <span style="color:#f92672">?</span> [] <span style="color:#f92672">:</span> {}
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">k</span>, <span style="color:#a6e22e">v</span>] <span style="color:#66d9ef">of</span> Object.<span style="color:#a6e22e">entries</span>(<span style="color:#a6e22e">obj</span>)) {
+        <span style="color:#a6e22e">res</span>[<span style="color:#a6e22e">k</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">v</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;object&#34;</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">deepCopy</span>(<span style="color:#a6e22e">v</span>) <span style="color:#f92672">:</span> <span style="color:#a6e22e">v</span>
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
+}
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jqf&#39;</span>,
+    <span style="color:#a6e22e">lessons</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;EN&#39;</span>, <span style="color:#a6e22e">score</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">29</span>},
+    <span style="color:#a6e22e">skills</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;CSS&#39;</span>, <span style="color:#e6db74">&#39;JS&#39;</span>, <span style="color:#e6db74">&#39;H5&#39;</span>]
+}
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">deepCopy</span>(<span style="color:#a6e22e">user</span>)
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>);<span style="color:#75715e">//{name: &#39;jqf&#39;,lessons: { title: &#39;EN&#39;, score: 29 },skills: [ &#39;CSS&#39;, &#39;JS&#39;, &#39;H5&#39; ]}
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="构造函数创建对象">构造函数创建对象<a hidden class="anchor" aria-hidden="true" href="#构造函数创建对象">#</a></h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">User</span>(<span style="color:#a6e22e">name</span>) {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">name</span>;
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">show</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`My name is </span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+    }
+}
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">jqf</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">User</span>(<span style="color:#e6db74">&#39;jqf&#39;</span>)
+<span style="color:#a6e22e">jqf</span>.<span style="color:#a6e22e">show</span>()<span style="color:#75715e">//My name is jqf
+</span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>javascript中的很多类型都是由构造函数定义的，定义其方法属性等等&hellip;可以通过new 的方式实例化，比如<code>new Array、new Boolean()、new String()、new Function()...</code></p>
+</blockquote>
+<h2 id="对象的属性描述">对象的属性描述<a hidden class="anchor" aria-hidden="true" href="#对象的属性描述">#</a></h2>
+<h4 id="获取属性描述符">获取属性描述符<a hidden class="anchor" aria-hidden="true" href="#获取属性描述符">#</a></h4>
+<p><strong>方法：</strong> <code>Object.getOwnPropertyDescriptor(obj, PropertyKey)</code></p>
+<p><strong>作用：</strong> 返回指定对象上一个自有属性对应的属性描述符。（自有属性指的是直接赋予该对象的属性，不需要从原型链上进行查找的属性</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span><span style="color:#f92672">=</span>{
+    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;jqf&#39;</span>,
+    <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span><span style="color:#ae81ff">18</span>
+}
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Object.<span style="color:#a6e22e">getOwnPropertyDescriptor</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#e6db74">&#39;name&#39;</span>));
+<span style="color:#75715e">//{value: &#34;jqf&#34;, writable: true, enumerable: true, configurable: true}
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="属性描述符">属性描述符<a hidden class="anchor" aria-hidden="true" href="#属性描述符">#</a></h4>
+<p>👉<code>value</code></p>
+<p>该属性的值(仅针对数据属性描述符有效)</p>
+<p>👉 <code>writable</code> <strong>可写 (可修改的)</strong></p>
+<p>当且仅当属性的值可以被改变时为true。(仅针对数据属性描述有效）</p>
+<p>👉<code>enumerable</code> <strong>可枚举</strong></p>
+<p>当且仅当指定对象的属性可以被枚举出时，为 <code>true</code>。</p>
+<blockquote>
+<p>设置为false，<code>entries()</code>,<code>keys()</code>,<code>values()</code>,<code>for-in</code>等都无法使用</p>
+</blockquote>
+<p>👉<code>configurable</code> <strong>可配置</strong></p>
+<p>当且仅当指定对象的属性描述可以被改变或者属性可被删除时，为true。</p>
+<blockquote>
+<p>设置为false，<code>delete</code>删除key,不可用。<code>Object.defineProperty()</code> 都无法使用</p>
+</blockquote>
+<p>👉<code>set</code></p>
+<p>获取该属性的设置器函数（setter）。 如果没有设置器， 该值为undefined。(仅针对包含访问器或设置器的属性描述有效)</p>
+<p>👉<code>get</code></p>
+<p>获取该属性的访问器函数（getter）。如果没有访问器， 该值为undefined。(仅针对包含访问器或设置器的属性描述有效)</p>
+<h4 id="控制属性描述符">控制属性描述符<a hidden class="anchor" aria-hidden="true" href="#控制属性描述符">#</a></h4>
+<p><strong>方法：</strong> <code>Object.defineProperty()</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span><span style="color:#f92672">=</span>{
+    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;jqf&#39;</span>,
+    <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span><span style="color:#ae81ff">18</span>
+}
+<span style="color:#75715e">//单个修改
+</span><span style="color:#75715e"></span>Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e22e">obj</span>,<span style="color:#e6db74">&#39;name&#39;</span>,{
+    <span style="color:#a6e22e">writable</span><span style="color:#f92672">:</span><span style="color:#66d9ef">false</span>
+});
+Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e22e">obj</span>,<span style="color:#e6db74">&#39;age&#39;</span>,{
+    <span style="color:#a6e22e">writable</span><span style="color:#f92672">:</span><span style="color:#66d9ef">false</span>
+})
+<span style="color:#75715e">//批量修改
+</span><span style="color:#75715e"></span>Object.<span style="color:#a6e22e">defineProperties</span>(<span style="color:#a6e22e">obj</span>,{
+    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">enumerable</span><span style="color:#f92672">:</span><span style="color:#66d9ef">false</span>},
+    <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">enumerable</span><span style="color:#f92672">:</span><span style="color:#66d9ef">false</span>}
+})
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Object.<span style="color:#a6e22e">getOwnPropertyDescriptors</span>(<span style="color:#a6e22e">obj</span>));
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="其他一些方法">其他一些方法<a hidden class="anchor" aria-hidden="true" href="#其他一些方法">#</a></h4>
+<p>👉 <code>Object.preventExtensions(obj)</code></p>
+<p><strong>作用：</strong> 阻止往对象中添加属性/方法</p>
+<p><strong>判断：</strong> <code>Object.isExtensible()</code> 判断是否可以添加属性</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span><span style="color:#f92672">=</span>{
+    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;jqf&#39;</span>,
+    <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span><span style="color:#ae81ff">18</span>
+}
+Object.<span style="color:#a6e22e">preventExtensions</span>(<span style="color:#a6e22e">obj</span>)
+<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">info</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ohhhhh&#39;</span>
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Object.<span style="color:#a6e22e">isExtensible</span>(<span style="color:#a6e22e">obj</span>));<span style="color:#75715e">//false
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">obj</span>);<span style="color:#75715e">//...
+</span></code></pre></td></tr></table>
+</div>
+</div><p>👉 <code>Object.seal(obj)</code> 封闭对象</p>
+<p><strong>作用：</strong> 阻止往对象中添加属性/方法(但可以修改)，属性描述符configurable和enumerable不可被修改，writable可单向修改为false，但不可以由false改为true；</p>
+<p><strong>判断：</strong> <code>Object.isSealed(obj)</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span><span style="color:#f92672">=</span>{
+    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;jqf&#39;</span>,
+    <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span><span style="color:#ae81ff">18</span>
+}
+Object.<span style="color:#a6e22e">seal</span>(<span style="color:#a6e22e">obj</span>)
+<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;fin&#39;</span>
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Object.<span style="color:#a6e22e">isSealed</span>(<span style="color:#a6e22e">obj</span>));<span style="color:#75715e">//true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Object.<span style="color:#a6e22e">getOwnPropertyDescriptors</span>(<span style="color:#a6e22e">obj</span>));<span style="color:#75715e">//configurable: false,name:&#39;fin&#39;
+</span></code></pre></td></tr></table>
+</div>
+</div><p>👉 <code>Object.freeze(obj)</code></p>
+<p><strong>作用：</strong> 阻止往对象添加属性/方法， 也阻止修改属性/方法，属性描述符不可修改</p>
+<p><strong>判断：</strong> <code>Object.isFrozen(obj)</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span><span style="color:#f92672">=</span>{
+    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;jqf&#39;</span>,
+    <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span><span style="color:#ae81ff">18</span>
+}
+Object.<span style="color:#a6e22e">freeze</span>(<span style="color:#a6e22e">obj</span>)
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Object.<span style="color:#a6e22e">isFrozen</span>(<span style="color:#a6e22e">obj</span>));<span style="color:#75715e">//true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Object.<span style="color:#a6e22e">getOwnPropertyDescriptors</span>(<span style="color:#a6e22e">obj</span>));<span style="color:#75715e">//configurable: false
+</span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><code>Object.seal(obj)</code>&amp; <code>Object.freeze(obj)</code>区别:</p>
+<p><code>Object.freeze(obj)</code>“冰冻”对象本身以及一切现有的属性值(value)以及属性的特性(property descriptor).在函数Object.seal()中也许还可以修改属性值以及修改 属性的特性writable(true&ndash;&gt;false)，但是在Object.freeze ()中，这些都干不了</p>
+</blockquote>
+<h2 id="访问器">访问器<a hidden class="anchor" aria-hidden="true" href="#访问器">#</a></h2>
+<blockquote>
+<p>ECMAScript 5 (2009) 引入了 Getter 和 Setter。Getter 和 Setter 允许您定义对象访问器（被计算的属性）。</p>
+</blockquote>
+<h4 id="基本用法">基本用法<a hidden class="anchor" aria-hidden="true" href="#基本用法">#</a></h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jqf&#39;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">19</span>},
+    <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">age</span>() {
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">现在</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">age</span><span style="color:#e6db74">}</span><span style="color:#e6db74">岁`</span>
+    },
+    <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">age</span>(<span style="color:#a6e22e">v</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">v</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;number&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">v</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">v</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">100</span>) {
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#39;年龄不合法&#39;</span>)
+        }
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">v</span>
+    }
+}
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Object.<span style="color:#a6e22e">getOwnPropertyDescriptors</span>(<span style="color:#a6e22e">user</span>,<span style="color:#e6db74">&#39;age&#39;</span>))<span style="color:#75715e">//get:f set:f
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">age</span>);<span style="color:#75715e">//jqf现在18岁
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>);<span style="color:#75715e">//Uncaught Error: 年龄不合法
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="应用">应用<a hidden class="anchor" aria-hidden="true" href="#应用">#</a></h4>
+<p>👉 <strong>伪造属性</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">cart</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">lists</span><span style="color:#f92672">:</span> [
+        {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Macbook&#39;</span>, <span style="color:#a6e22e">price</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">8988</span>},
+        {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;shirt&#39;</span>, <span style="color:#a6e22e">price</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">59</span>},
+        {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;office table&#39;</span>, <span style="color:#a6e22e">price</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">11900</span>},
+    ],
+    <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">total</span>(){
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">lists</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">t</span>,<span style="color:#a6e22e">i</span>)=&gt; <span style="color:#a6e22e">t</span><span style="color:#f92672">+</span><span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">price</span>,<span style="color:#ae81ff">0</span>)
+    }
+}
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">cart</span>.<span style="color:#a6e22e">total</span>);<span style="color:#75715e">//20947
+</span></code></pre></td></tr></table>
+</div>
+</div><p>👉 <strong>访问器实现批量设置对象属性</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jqf&#39;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">19</span>},
+    <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">config</span>(<span style="color:#a6e22e">cfg</span>) {
+        [<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">name</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">age</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">cfg</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;,&#34;</span>)
+    }
+}
+<span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">config</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;fin,18&#39;</span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">user</span>);
+</code></pre></td></tr></table>
+</div>
+</div><p>👉 <code>token()</code><strong>的读写处理</strong></p>
+<blockquote>
+<p>localStorage 和 sessionStorage 属性允许在浏览器中存储 key/value 对的数据。localStorage 用于长久保存整个网站的数据，保存的数据没有过期时间，直到手动去删除。localStorage 属性是只读的。如果你只想将数据保存在当前会话中，可以使用 <a href="https://www.runoob.com/jsref/prop-win-sessionstorage.html">sessionStorage</a> 属性， 该数据对象临时保存同一窗口(或标签页)的数据，在关闭窗口或标签页之后将会删除这些数据。具体<a href="https://www.runoob.com/jsref/prop-win-localstorage.html">GO</a></p>
+</blockquote>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">Request</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">token</span>(<span style="color:#a6e22e">v</span>) {
+        <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#39;token&#39;</span>, <span style="color:#a6e22e">v</span>)
+    },
+    <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">token</span>() {
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">token</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#39;token&#39;</span>)
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">token</span>
+    }
+}
+<span style="color:#75715e">// Request.token=&#39;EF3%F^323D&#39;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">Request</span>.<span style="color:#a6e22e">token</span>);
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="优先级">优先级<a hidden class="anchor" aria-hidden="true" href="#优先级">#</a></h4>
+<blockquote>
+<p>定义在set或get中的属性优先级高于普通定义的</p>
+</blockquote>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jqf&#39;</span>,
+    <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">name</span>() {
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;get-name&#39;</span>
+    }
+}
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">name</span>);<span style="color:#75715e">//get-name
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="proxy代理拦截">Proxy代理拦截<a hidden class="anchor" aria-hidden="true" href="#proxy代理拦截">#</a></h2>
+<blockquote>
+<p>Proxy 对象用于定义基本操作的自定义行为（如属性查找、赋值、枚举、函数调用等）。</p>
+</blockquote>
+<h4 id="方法">方法<a hidden class="anchor" aria-hidden="true" href="#方法">#</a></h4>
+<p>👉<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/getPrototypeOf"><code>handler.getPrototypeOf()</code></a></p>
+<p><code>Object.getPrototypeOf</code> 方法的捕捉器。</p>
+<p>👉<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/setPrototypeOf"><code>handler.setPrototypeOf()</code></a></p>
+<p><code>Object.setPrototypeOf</code> 方法的捕捉器。</p>
+<p>👉<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/isExtensible"><code>handler.isExtensible()</code></a></p>
+<p><code>Object.isExtensible</code> 方法的捕捉器。</p>
+<p>👉<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/preventExtensions"><code>handler.preventExtensions()</code></a></p>
+<p><code>Object.preventExtensions</code> 方法的捕捉器。</p>
+<p>👉<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/getOwnPropertyDescriptor"><code>handler.getOwnPropertyDescriptor()</code></a></p>
+<p><code>Object.getOwnPropertyDescriptor</code> 方法的捕捉器。</p>
+<p>👉<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/defineProperty"><code>handler.defineProperty()</code></a></p>
+<p><code>Object.defineProperty</code>方法的捕捉器。</p>
+<p>👉<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/has"><code>handler.has()</code></a></p>
+<p><code>in</code> 操作符的捕捉器。</p>
+<p>👉<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/get"><code>handler.get()</code></a></p>
+<p>属性读取操作的捕捉器。</p>
+<p>👉<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/set"><code>handler.set()</code></a></p>
+<p>属性设置操作的捕捉器。</p>
+<p>👉<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/deleteProperty"><code>handler.deleteProperty()</code></a></p>
+<p><code>delete</code> 操作符的捕捉器。</p>
+<p>👉<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/ownKeys"><code>handler.ownKeys()</code></a></p>
+<p><code>Object.getOwnPropertyNames</code> 方法和 <code>Object.getOwnPropertySymbols</code> 方法的捕捉器。</p>
+<p>👉<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/apply"><code>handler.apply()</code></a></p>
+<p>函数调用操作的捕捉器。</p>
+<p>👉<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/construct"><code>handler.construct()</code></a></p>
+<p><code>new</code> 操作符的捕捉器。</p>
+<h4 id="使用案例">使用案例<a hidden class="anchor" aria-hidden="true" href="#使用案例">#</a></h4>
+<p>👉 <strong>使用代理查看函数执行时间：</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">factorial</span>(<span style="color:#a6e22e">num</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">factorial</span>(<span style="color:#a6e22e">num</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
+}
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Proxy(<span style="color:#a6e22e">factorial</span>, {
+    <span style="color:#a6e22e">apply</span>(<span style="color:#a6e22e">target</span>, <span style="color:#a6e22e">thisArg</span>, <span style="color:#a6e22e">argArray</span>) {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">time</span>(<span style="color:#e6db74">&#39;run&#39;</span>)
+        <span style="color:#a6e22e">factorial</span>.<span style="color:#a6e22e">apply</span>(<span style="color:#66d9ef">null</span>, <span style="color:#a6e22e">argArray</span>)<span style="color:#75715e">//argArray为原函数传入的参数
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">timeEnd</span>(<span style="color:#e6db74">&#39;run&#39;</span>)
+    }
+})
+
+<span style="color:#a6e22e">p</span>(<span style="color:#ae81ff">6</span>)<span style="color:#75715e">//run: 0.159ms
+</span></code></pre></td></tr></table>
+</div>
+</div><p>👉 <strong>使用代理对数组过滤拦截：</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">lessons</span> <span style="color:#f92672">=</span> [
+    {<span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Javascript进阶教程&#39;</span>, <span style="color:#a6e22e">click</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">9800</span>},
+    {<span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;web全栈&#39;</span>, <span style="color:#a6e22e">click</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">8000</span>},
+    {<span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;CSS属性深度剖析&#39;</span>, <span style="color:#a6e22e">click</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">9900</span>}
+]
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">proxy</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Proxy(<span style="color:#a6e22e">lessons</span>, {
+    <span style="color:#a6e22e">get</span>(<span style="color:#a6e22e">target</span>, <span style="color:#a6e22e">p</span>, <span style="color:#a6e22e">value</span>, <span style="color:#a6e22e">receiver</span>) {
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">len</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">tarTitle</span><span style="color:#f92672">=</span><span style="color:#a6e22e">target</span>[<span style="color:#a6e22e">p</span>].<span style="color:#a6e22e">title</span>
+        <span style="color:#a6e22e">target</span>[<span style="color:#a6e22e">p</span>].<span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span>
+            <span style="color:#a6e22e">tarTitle</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">len</span>
+                <span style="color:#f92672">?</span> <span style="color:#a6e22e">tarTitle</span>.<span style="color:#a6e22e">substr</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">len</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;.&#39;</span>.<span style="color:#a6e22e">repeat</span>(<span style="color:#ae81ff">3</span>)
+                <span style="color:#f92672">:</span> <span style="color:#a6e22e">tarTitle</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">target</span>[<span style="color:#a6e22e">p</span>]
+    }
+})
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">proxy</span>[<span style="color:#ae81ff">2</span>]);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">proxy</span>);
+</code></pre></td></tr></table>
+</div>
+</div><p>👉 <strong>使用代理实现vue.js数据双向绑定：</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!--HTML部分--&gt;</span>
+&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">v-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
+&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">v-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
+&lt;<span style="color:#f92672">h3</span> <span style="color:#a6e22e">v-bind</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;这里的数据也会改变&lt;/<span style="color:#f92672">h3</span>&gt;
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//JS部分
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Vue</span>() {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">proxy</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Proxy({}, {
+        <span style="color:#a6e22e">set</span>(<span style="color:#a6e22e">target</span>, <span style="color:#a6e22e">p</span>, <span style="color:#a6e22e">value</span>, <span style="color:#a6e22e">receiver</span>) {
+            document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">`[v-model=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">p</span><span style="color:#e6db74">}</span><span style="color:#e6db74">]`</span>).<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">i</span> =&gt; {
+                <span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>
+            })
+            document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">`[v-bind=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">p</span><span style="color:#e6db74">}</span><span style="color:#e6db74">]`</span>).<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">i</span> =&gt; {
+                <span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>
+            })
+        },
+        <span style="color:#a6e22e">get</span>(<span style="color:#a6e22e">target</span>, <span style="color:#a6e22e">p</span>, <span style="color:#a6e22e">receiver</span>) {}
+    })
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">init</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+        document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;[v-model]&#39;</span>).<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">i</span> =&gt; {
+            <span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;keyup&#39;</span>, <span style="color:#66d9ef">function</span> () {
+                <span style="color:#a6e22e">proxy</span>[<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;v-model&#39;</span>)] <span style="color:#f92672">=</span> <span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">value</span>
+            })
+        })
+    }
+}
+<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vue</span>().<span style="color:#a6e22e">init</span>()
+</code></pre></td></tr></table>
+</div>
+</div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.fintinger.site/tags/javascript/">Javascript</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://www.fintinger.site/p/%E5%85%B3%E4%BA%8Ejavascript%E6%A8%A1%E5%9D%97%E5%8C%96/">
+    <span class="title">« Prev Page</span>
+    <br>
+    <span>关于JavaScript模块化</span>
+  </a>
+  <a class="next" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3/">
+    <span class="title">Next Page »</span>
+    <br>
+    <span>JavaScript基础之函数相关</span>
+  </a>
+</nav>
+
+  </footer><script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://waline-q3l7of5hj-fintinger.vercel.app/","visitor":true});
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://www.fintinger.site">Archai&#39;s home</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

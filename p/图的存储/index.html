@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>图的存储 | Archai&#39;s home</title>
+<meta name="keywords" content="数据结构, 邻接矩阵, 邻接表, 十字链表, 邻接多重表" />
+<meta name="description" content="邻接矩阵  Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.
+ 代码实现 1 2 3 4 5 6 7 8  #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph;   即找度 根据邻接矩阵计算结点的度TD
+    无向图 有向图     $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数
+$OD(V_i)$: i列非零元素个数
+TD=ID&#43;OD    对于带权图（网） 1 2 3 4 5 6 7 8 9 10 11  #define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph;   复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|&#43;|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。">
+<meta name="author" content="Archai">
+<link rel="canonical" href="https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.4ee57c4189977dc8f075173100c24a668d6bb09d6b5db74440649223f1221877.css" integrity="sha256-TuV8QYmXfcjwdRcxAMJKZo1rsJ1rXbdEQGSSI/EiGHc=" rel="preload stylesheet" as="style">
+<link rel="stylesheet" href="css/extended/custom.css">
+<link rel="icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="apple-touch-icon" href="https://www.fintinger.site/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.fintinger.site/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:title" content="图的存储" />
+<meta property="og:description" content="邻接矩阵  Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.
+ 代码实现 1 2 3 4 5 6 7 8  #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph;   即找度 根据邻接矩阵计算结点的度TD
+    无向图 有向图     $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数
+$OD(V_i)$: i列非零元素个数
+TD=ID&#43;OD    对于带权图（网） 1 2 3 4 5 6 7 8 9 10 11  #define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph;   复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|&#43;|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/" /><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-06-02T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-06-02T00:00:00&#43;00:00" /><meta property="og:site_name" content="Archai&#39;s home" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/>
+
+<meta name="twitter:title" content="图的存储"/>
+<meta name="twitter:description" content="邻接矩阵  Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.
+ 代码实现 1 2 3 4 5 6 7 8  #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph;   即找度 根据邻接矩阵计算结点的度TD
+    无向图 有向图     $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数
+$OD(V_i)$: i列非零元素个数
+TD=ID&#43;OD    对于带权图（网） 1 2 3 4 5 6 7 8 9 10 11  #define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph;   复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|&#43;|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://www.fintinger.site/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "图的存储",
+      "item": "https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "图的存储",
+  "name": "图的存储",
+  "description": "邻接矩阵  Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.\n 代码实现 1 2 3 4 5 6 7 8  #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph;   即找度 根据邻接矩阵计算结点的度TD\n    无向图 有向图     $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数\n$OD(V_i)$: i列非零元素个数\nTD=ID+OD    对于带权图（网） 1 2 3 4 5 6 7 8 9 10 11  #define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph;   复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|+|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。",
+  "keywords": [
+    "数据结构", "邻接矩阵", "邻接表", "十字链表", "邻接多重表"
+  ],
+  "articleBody": "邻接矩阵  Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.\n 代码实现 1 2 3 4 5 6 7 8  #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph;   即找度 根据邻接矩阵计算结点的度TD\n    无向图 有向图     $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数\n$OD(V_i)$: i列非零元素个数\nTD=ID+OD    对于带权图（网） 1 2 3 4 5 6 7 8 9 10 11  #define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph;   复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|+|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。\n性质  设图G的邻接矩阵为A（矩阵元素为0/1），则$A^n$的元素$A^n[i][j]$等于由顶点$i$到顶点$j$的长度为$n$的路径的数目。  对于$A^2[1][4]=a_{1,1}a_{1,4}+a_{1,2}a_{2,4}+a_{1,3}a_{3,4}+a_{4,1}a_{4,4}=1$， $a_{1,2}a_{2,4}=1*1$表示，有一条从$Vex[1]→Vex[2]→Vex[4]$的线，总结果$A^2[1][4]=1$表示从A到D路径长为2的路径数目为1，也就是$A→B→$D.\n对给定的图G，其邻接矩阵是唯一的。  邻接表  adjacency list 邻接表;\n 代码实现 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  #define MaxVextexNum 100 typedef char VextexType;//顶点  //\"边|弧\" typedef struct ArcNode{ int adjvex;//边|弧指向哪一节点,\"相邻的结点\"  typedef struct ArcNode *next;//指向下一条弧的指针  //Infotype info; //边权值 }ArcNode;//定义边结点  //\"顶点\" typedef struct VNode{ VextexType data;//数据域  ArcNode *first;//第一条边|弧 }VNode,AdjList[MaxVextexNum];//定义顶点结点，AdjList为VNode类型的数组  //\"邻接表\" typedef struct{ AdjList vertices;//定义一个邻接链表  int vexnum,arcnum;//节点数，边|弧数 }ALGraph;   复杂度    无向图 有向图     $O(V+2E)$ $O(V+E)$ [只记出度]    适合稀疏图。\n找度    入度 出度     结点$i$的*first+*next数量 遍历所有节点，找到指向当前节点的所有指针数，之和即为出度（较复杂）    性质  邻接表的表示方式不唯一。 找有向图的入边不太方便。  十字链表（有向图）  十字链表只用于存储有向图\n 复杂度 空间复杂度： $O(|V|+|E|)$，存储了所有顶点和边\n找度    入度 出度     顺着橙色🍍找，直至^ 顺着绿色🥒找，直至^    拿找A结点的出度为例\n从A绿色🥒出发，箭头指向01，即找到A→B的路径\n继续从绿色🥒出发，箭头指向02，即找到A→C的路径\n02绿色🥒处为^即再无出度\n邻接多重表（无向图） 复杂度 空间复杂度： $O(|V|+|E|)$\n找度 从A出发，第一条边为01即AB这条边\n顺着iLink（即橙色）找到下一条边为01，即AD这条边\n至此，橙色为^即，无与0（即A）直接相连的边！\n其他类似\n横向对比 🤩后续研究一般只针对邻接矩阵和邻接表进行\n",
+  "wordCount" : "185",
+  "inLanguage": "en",
+  "datePublished": "2021-06-02T00:00:00Z",
+  "dateModified": "2021-06-02T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Archai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Archai's home",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.fintinger.site/posts/" title="Posts📑">
+                    <span>Posts📑</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/categories/" title="Categories🛒">
+                    <span>Categories🛒</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/search/" title="Search🔎 (Alt &#43; /)" accesskey=/>
+                    <span>Search🔎</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/archives/" title="Timeline🕰️">
+                    <span>Timeline🕰️</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/about/" title="About🥳">
+                    <span>About🥳</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://www.fintinger.site">Home</a>&nbsp;»&nbsp;<a href="https://www.fintinger.site/posts/">Posts</a></div>
+    <h1 class="post-title">
+      图的存储
+    </h1>
+    <div class="post-meta"><span title='2021-06-02 00:00:00 +0000 UTC'>June 2, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e9%82%bb%e6%8e%a5%e7%9f%a9%e9%98%b5" aria-label="邻接矩阵">邻接矩阵</a><ul>
+                        
+                <li>
+                    <a href="#%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0" aria-label="代码实现">代码实现</a></li>
+                <li>
+                    <a href="#%e6%89%be%e5%ba%a6" aria-label="找度">找度</a></li>
+                <li>
+                    <a href="#%e5%af%b9%e4%ba%8e%e5%b8%a6%e6%9d%83%e5%9b%be%e7%bd%91" aria-label="对于带权图（网）">对于带权图（网）</a></li>
+                <li>
+                    <a href="#%e5%a4%8d%e6%9d%82%e5%ba%a6" aria-label="复杂度">复杂度</a></li>
+                <li>
+                    <a href="#%e6%80%a7%e8%b4%a8" aria-label="性质">性质</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e9%82%bb%e6%8e%a5%e8%a1%a8" aria-label="邻接表">邻接表</a><ul>
+                        
+                <li>
+                    <a href="#%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0-1" aria-label="代码实现">代码实现</a></li>
+                <li>
+                    <a href="#%e5%a4%8d%e6%9d%82%e5%ba%a6-1" aria-label="复杂度">复杂度</a></li>
+                <li>
+                    <a href="#%e6%89%be%e5%ba%a6-1" aria-label="找度">找度</a></li>
+                <li>
+                    <a href="#%e6%80%a7%e8%b4%a8-1" aria-label="性质">性质</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%8d%81%e5%ad%97%e9%93%be%e8%a1%a8%e6%9c%89%e5%90%91%e5%9b%be" aria-label="十字链表（有向图）">十字链表（有向图）</a><ul>
+                        
+                <li>
+                    <a href="#%e5%a4%8d%e6%9d%82%e5%ba%a6-2" aria-label="复杂度">复杂度</a></li>
+                <li>
+                    <a href="#%e6%89%be%e5%ba%a6-2" aria-label="找度">找度</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e9%82%bb%e6%8e%a5%e5%a4%9a%e9%87%8d%e8%a1%a8%e6%97%a0%e5%90%91%e5%9b%be" aria-label="邻接多重表（无向图）">邻接多重表（无向图）</a><ul>
+                        
+                <li>
+                    <a href="#%e5%a4%8d%e6%9d%82%e5%ba%a6-3" aria-label="复杂度">复杂度</a></li>
+                <li>
+                    <a href="#%e6%89%be%e5%ba%a6-3" aria-label="找度">找度</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e6%a8%aa%e5%90%91%e5%af%b9%e6%af%94" aria-label="横向对比">横向对比</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="邻接矩阵">邻接矩阵<a hidden class="anchor" aria-hidden="true" href="#邻接矩阵">#</a></h2>
+<blockquote>
+<p>Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.</p>
+</blockquote>
+<p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210526095923.png" alt=""  />
+</p>
+<h3 id="代码实现">代码实现<a hidden class="anchor" aria-hidden="true" href="#代码实现">#</a></h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#define MaxVextexNum 100</span><span style="color:#75715e">//容许存储的最大顶点数
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span>{
+    <span style="color:#66d9ef">char</span> Vex[MaxVextexNum];
+    <span style="color:#75715e">//可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">bool</span> Edge[MaxVextexNum][MaxVextexNum];
+    <span style="color:#66d9ef">int</span> vexnum,arcnum;<span style="color:#75715e">//顶点数和弧|边数
+</span><span style="color:#75715e"></span>}MGraph;
+</code></pre></td></tr></table>
+</div>
+</div><p>即<img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210526102019.png" alt=""  />
+</p>
+<h3 id="找度">找度<a hidden class="anchor" aria-hidden="true" href="#找度">#</a></h3>
+<p><strong>根据邻接矩阵计算结点的度TD</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>无向图</th>
+<th>有向图</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$TD(V_i)$</td>
+<td>第i行（或i列）中非零元素的个数</td>
+<td>$ID(V_i)$ : i行非零元素个数<br />$OD(V_i)$: i列非零元素个数<br />TD=ID+OD</td>
+</tr>
+</tbody>
+</table>
+<h3 id="对于带权图网">对于带权图（网）<a hidden class="anchor" aria-hidden="true" href="#对于带权图网">#</a></h3>
+<p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210526104343.png" alt=""  />
+</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#define MaxVextexNum 100</span><span style="color:#75715e">//容许存储的最大顶点数
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define INIFINITY </span><span style="color:#75715e">//宏定义，表示无穷
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">char</span> VextexType;<span style="color:#75715e">//顶点
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">int</span> EdgeType;<span style="color:#75715e">//权值
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span>{
+    VextexType Vex[MaxVextexNum];
+    EdgeType Edge[MaxVextexNum][MaxVextexNum];
+    <span style="color:#66d9ef">int</span> vexnum,arcnum;
+}MGraph;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="复杂度">复杂度<a hidden class="anchor" aria-hidden="true" href="#复杂度">#</a></h3>
+<p>空间复杂度来自数组<code>Vex[]</code>跟<code>Edge[]</code>，故空间复杂度为$|V|+|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更<strong>适合存储稠密图</strong>，不然有较多浪费。</p>
+<h3 id="性质">性质<a hidden class="anchor" aria-hidden="true" href="#性质">#</a></h3>
+<ol>
+<li>设图G的邻接矩阵为A（矩阵元素为0/1），则<span style="background:#ffa502;">$A^n$的元素$A^n[i][j]$等于由顶点$i$到顶点$j$的长度为$n$的路径的数目。</span></li>
+</ol>
+<p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210526105313.png" alt=""  />
+</p>
+<p>对于$A^2[1][4]=a_{1,1}a_{1,4}+a_{1,2}a_{2,4}+a_{1,3}a_{3,4}+a_{4,1}a_{4,4}=1$，</br>
+<span style="background:#ffa502;">$a_{1,2}a_{2,4}=1*1$表示，有一条从$Vex[1]→Vex[2]→Vex[4]$的线，总结果$A^2[1][4]=1$表示从A到D路径长为2的路径数目为1，也就是$A→B→$D.</span></p>
+<ol start="2">
+<li>对给定的图G，其邻接矩阵是唯一的。</li>
+</ol>
+<h2 id="邻接表">邻接表<a hidden class="anchor" aria-hidden="true" href="#邻接表">#</a></h2>
+<blockquote>
+<p>adjacency list 邻接表;</p>
+</blockquote>
+<p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210526110617.png" alt=""  />
+</p>
+<h3 id="代码实现-1">代码实现<a hidden class="anchor" aria-hidden="true" href="#代码实现-1">#</a></h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#define MaxVextexNum 100
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">char</span> VextexType;<span style="color:#75715e">//顶点
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">//&#34;边|弧&#34;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ArcNode</span>{
+    <span style="color:#66d9ef">int</span> adjvex;<span style="color:#75715e">//边|弧指向哪一节点,&#34;相邻的结点&#34;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ArcNode</span> <span style="color:#f92672">*</span>next;<span style="color:#75715e">//指向下一条弧的指针
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//Infotype info; //边权值
+</span><span style="color:#75715e"></span>}ArcNode;<span style="color:#75715e">//定义边结点
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">//&#34;顶点&#34;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">VNode</span>{
+    VextexType data;<span style="color:#75715e">//数据域
+</span><span style="color:#75715e"></span>    ArcNode <span style="color:#f92672">*</span>first;<span style="color:#75715e">//第一条边|弧
+</span><span style="color:#75715e"></span>}VNode,AdjList[MaxVextexNum];<span style="color:#75715e">//定义顶点结点，AdjList为VNode类型的数组
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">//&#34;邻接表&#34;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span>{
+    AdjList vertices;<span style="color:#75715e">//定义一个邻接链表
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> vexnum,arcnum;<span style="color:#75715e">//节点数，边|弧数
+</span><span style="color:#75715e"></span>}ALGraph;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="复杂度-1">复杂度<a hidden class="anchor" aria-hidden="true" href="#复杂度-1">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>无向图</th>
+<th>有向图</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$O(V+2E)$</td>
+<td>$O(V+E)$ [只记出度]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>适合稀疏图</strong>。</p>
+<h3 id="找度-1">找度<a hidden class="anchor" aria-hidden="true" href="#找度-1">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>入度</th>
+<th>出度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结点$i$的<code>*first</code>+<code>*next</code>数量</td>
+<td>遍历所有节点，找到指向当前节点的所有指针数，之和即为出度（较复杂）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="性质-1">性质<a hidden class="anchor" aria-hidden="true" href="#性质-1">#</a></h3>
+<ol>
+<li>邻接表的表示方式不唯一。</li>
+<li>找有向图的入边不太方便。</li>
+</ol>
+<h2 id="十字链表有向图">十字链表（有向图）<a hidden class="anchor" aria-hidden="true" href="#十字链表有向图">#</a></h2>
+<blockquote>
+<p>十字链表只用于存储有向图</p>
+</blockquote>
+<p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210526155808.png" alt=""  />
+</p>
+<h3 id="复杂度-2">复杂度<a hidden class="anchor" aria-hidden="true" href="#复杂度-2">#</a></h3>
+<p><strong>空间复杂度：</strong>  $O(|V|+|E|)$，存储了所有顶点和边</p>
+<h3 id="找度-2">找度<a hidden class="anchor" aria-hidden="true" href="#找度-2">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>入度</th>
+<th>出度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>顺着橙色🍍找，直至^</td>
+<td>顺着绿色🥒找，直至^</td>
+</tr>
+</tbody>
+</table>
+<p>拿找A结点的出度为例</br></p>
+<p>从A绿色🥒出发，箭头指向01，即找到A→B的路径</br></p>
+<p>继续从绿色🥒出发，箭头指向02，即找到A→C的路径</br></p>
+<p>02绿色🥒处为^即再无出度</p>
+<h2 id="邻接多重表无向图">邻接多重表（无向图）<a hidden class="anchor" aria-hidden="true" href="#邻接多重表无向图">#</a></h2>
+<p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210526161505.png" alt=""  />
+</p>
+<h3 id="复杂度-3">复杂度<a hidden class="anchor" aria-hidden="true" href="#复杂度-3">#</a></h3>
+<p><strong>空间复杂度：</strong> $O(|V|+|E|)$</p>
+<h3 id="找度-3">找度<a hidden class="anchor" aria-hidden="true" href="#找度-3">#</a></h3>
+<p>从A出发，第一条边为01即AB这条边</br></p>
+<p>顺着iLink（即橙色）找到下一条边为01，即AD这条边</br></p>
+<p>至此，橙色为^即，无与0（即A）直接相连的边！</br></p>
+<p>其他类似</p>
+<h2 id="横向对比">横向对比<a hidden class="anchor" aria-hidden="true" href="#横向对比">#</a></h2>
+<p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210526165434.png" alt=""  />
+</p>
+<p>🤩后续研究一般只针对<strong>邻接矩阵</strong>和<strong>邻接表</strong>进行</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li>
+      <li><a href="https://www.fintinger.site/tags/%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5/">邻接矩阵</a></li>
+      <li><a href="https://www.fintinger.site/tags/%E9%82%BB%E6%8E%A5%E8%A1%A8/">邻接表</a></li>
+      <li><a href="https://www.fintinger.site/tags/%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8/">十字链表</a></li>
+      <li><a href="https://www.fintinger.site/tags/%E9%82%BB%E6%8E%A5%E5%A4%9A%E9%87%8D%E8%A1%A8/">邻接多重表</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/">
+    <span class="title">« Prev Page</span>
+    <br>
+    <span>图的遍历</span>
+  </a>
+  <a class="next" href="https://www.fintinger.site/p/avl%E6%A0%91/">
+    <span class="title">Next Page »</span>
+    <br>
+    <span>AVL树</span>
+  </a>
+</nav>
+
+  </footer><script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://waline-q3l7of5hj-fintinger.vercel.app/","visitor":true});
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://www.fintinger.site">Archai&#39;s home</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

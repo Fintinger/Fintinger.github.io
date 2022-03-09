@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>统计学期末知识总结 | Archai&#39;s home</title>
+<meta name="keywords" content="统计学" />
+<meta name="description" content="第一章 导 论 1.什么是统计学  统计学是收集、处理、分析、解释数据并从数据中得出结论的科学 数据分析所用的方法可分为描述统计方法和推断统计方法  2.参数和统计量   参数：总体特征，所关心的参数通常是总体平均数、总体标准差、总体比例等
+ 由于总体数据通常是不知道的，所以参数是一个未知的常量-
+   统计量：个体特征，所关心的参数通常是样本平均数、样本标准差、样本比例等
+ 由于样本是已经抽出来的，所以统计量总是知道的
+   第二章 数据的搜集 1.数据的来源  **间接来源（二手数据）**与研究内容有关的原信息已经存在，我们只是重新加工、整理，使之成为分析可用的数据，这称为间接来源的数据 **直接来源（一手数据）**通过调查方法获得的为调查数据，实验得到为实验数据，都是直接来源的数据  2.数据误差  抽样误差：由抽样的随机性引起的样本结果与总体真值之间的差异 非抽样误差：抽样框误差、回答误差、无回答误差、调查员误差、测量误差  第三章 数据的图表展示 1.数据预处理  原始数据：完整性、准确性 二手数据：适用性、时效性  2.分类数据图示 ​  1&gt; 组数 5≤ K ≤15
+2&gt; 组距 组距=(Max-Min)/K
+3&gt; 为解决不重的问题，统计分组习惯上规定“上组限不在内”，即当相邻两组的上下限重叠时，恰好等于某一组上限的变量值不算在本组内，而计算在下一组内。即a≤ x &lt;b
+ 第四章 数据的概括性度量 1.集中趋势的度量   众数不受极端值影响，具有不唯一性 中位数不受极端值影响，数据分布偏斜程度较大时 平均数易受极端值影响   2.离散程度的度量    标准分数：也称标准化值或z分数（将数据平均值变为0，标准差为1） $$ z_i=\frac{x_i-\overline{x}}{s} $$">
+<meta name="author" content="Archai">
+<link rel="canonical" href="https://www.fintinger.site/p/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%9C%9F%E6%9C%AB%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.4ee57c4189977dc8f075173100c24a668d6bb09d6b5db74440649223f1221877.css" integrity="sha256-TuV8QYmXfcjwdRcxAMJKZo1rsJ1rXbdEQGSSI/EiGHc=" rel="preload stylesheet" as="style">
+<link rel="stylesheet" href="css/extended/custom.css">
+<link rel="icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="apple-touch-icon" href="https://www.fintinger.site/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.fintinger.site/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:title" content="统计学期末知识总结" />
+<meta property="og:description" content="第一章 导 论 1.什么是统计学  统计学是收集、处理、分析、解释数据并从数据中得出结论的科学 数据分析所用的方法可分为描述统计方法和推断统计方法  2.参数和统计量   参数：总体特征，所关心的参数通常是总体平均数、总体标准差、总体比例等
+ 由于总体数据通常是不知道的，所以参数是一个未知的常量-
+   统计量：个体特征，所关心的参数通常是样本平均数、样本标准差、样本比例等
+ 由于样本是已经抽出来的，所以统计量总是知道的
+   第二章 数据的搜集 1.数据的来源  **间接来源（二手数据）**与研究内容有关的原信息已经存在，我们只是重新加工、整理，使之成为分析可用的数据，这称为间接来源的数据 **直接来源（一手数据）**通过调查方法获得的为调查数据，实验得到为实验数据，都是直接来源的数据  2.数据误差  抽样误差：由抽样的随机性引起的样本结果与总体真值之间的差异 非抽样误差：抽样框误差、回答误差、无回答误差、调查员误差、测量误差  第三章 数据的图表展示 1.数据预处理  原始数据：完整性、准确性 二手数据：适用性、时效性  2.分类数据图示 ​  1&gt; 组数 5≤ K ≤15
+2&gt; 组距 组距=(Max-Min)/K
+3&gt; 为解决不重的问题，统计分组习惯上规定“上组限不在内”，即当相邻两组的上下限重叠时，恰好等于某一组上限的变量值不算在本组内，而计算在下一组内。即a≤ x &lt;b
+ 第四章 数据的概括性度量 1.集中趋势的度量   众数不受极端值影响，具有不唯一性 中位数不受极端值影响，数据分布偏斜程度较大时 平均数易受极端值影响   2.离散程度的度量    标准分数：也称标准化值或z分数（将数据平均值变为0，标准差为1） $$ z_i=\frac{x_i-\overline{x}}{s} $$" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.fintinger.site/p/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%9C%9F%E6%9C%AB%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" /><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-06-17T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-06-17T00:00:00&#43;00:00" /><meta property="og:site_name" content="Archai&#39;s home" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/>
+
+<meta name="twitter:title" content="统计学期末知识总结"/>
+<meta name="twitter:description" content="第一章 导 论 1.什么是统计学  统计学是收集、处理、分析、解释数据并从数据中得出结论的科学 数据分析所用的方法可分为描述统计方法和推断统计方法  2.参数和统计量   参数：总体特征，所关心的参数通常是总体平均数、总体标准差、总体比例等
+ 由于总体数据通常是不知道的，所以参数是一个未知的常量-
+   统计量：个体特征，所关心的参数通常是样本平均数、样本标准差、样本比例等
+ 由于样本是已经抽出来的，所以统计量总是知道的
+   第二章 数据的搜集 1.数据的来源  **间接来源（二手数据）**与研究内容有关的原信息已经存在，我们只是重新加工、整理，使之成为分析可用的数据，这称为间接来源的数据 **直接来源（一手数据）**通过调查方法获得的为调查数据，实验得到为实验数据，都是直接来源的数据  2.数据误差  抽样误差：由抽样的随机性引起的样本结果与总体真值之间的差异 非抽样误差：抽样框误差、回答误差、无回答误差、调查员误差、测量误差  第三章 数据的图表展示 1.数据预处理  原始数据：完整性、准确性 二手数据：适用性、时效性  2.分类数据图示 ​  1&gt; 组数 5≤ K ≤15
+2&gt; 组距 组距=(Max-Min)/K
+3&gt; 为解决不重的问题，统计分组习惯上规定“上组限不在内”，即当相邻两组的上下限重叠时，恰好等于某一组上限的变量值不算在本组内，而计算在下一组内。即a≤ x &lt;b
+ 第四章 数据的概括性度量 1.集中趋势的度量   众数不受极端值影响，具有不唯一性 中位数不受极端值影响，数据分布偏斜程度较大时 平均数易受极端值影响   2.离散程度的度量    标准分数：也称标准化值或z分数（将数据平均值变为0，标准差为1） $$ z_i=\frac{x_i-\overline{x}}{s} $$"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://www.fintinger.site/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "统计学期末知识总结",
+      "item": "https://www.fintinger.site/p/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%9C%9F%E6%9C%AB%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "统计学期末知识总结",
+  "name": "统计学期末知识总结",
+  "description": "第一章 导 论 1.什么是统计学  统计学是收集、处理、分析、解释数据并从数据中得出结论的科学 数据分析所用的方法可分为描述统计方法和推断统计方法  2.参数和统计量   参数：总体特征，所关心的参数通常是总体平均数、总体标准差、总体比例等\n 由于总体数据通常是不知道的，所以参数是一个未知的常量-\n   统计量：个体特征，所关心的参数通常是样本平均数、样本标准差、样本比例等\n 由于样本是已经抽出来的，所以统计量总是知道的\n   第二章 数据的搜集 1.数据的来源  **间接来源（二手数据）**与研究内容有关的原信息已经存在，我们只是重新加工、整理，使之成为分析可用的数据，这称为间接来源的数据 **直接来源（一手数据）**通过调查方法获得的为调查数据，实验得到为实验数据，都是直接来源的数据  2.数据误差  抽样误差：由抽样的随机性引起的样本结果与总体真值之间的差异 非抽样误差：抽样框误差、回答误差、无回答误差、调查员误差、测量误差  第三章 数据的图表展示 1.数据预处理  原始数据：完整性、准确性 二手数据：适用性、时效性  2.分类数据图示 ​  1\u0026gt; 组数 5≤ K ≤15\n2\u0026gt; 组距 组距=(Max-Min)/K\n3\u0026gt; 为解决不重的问题，统计分组习惯上规定“上组限不在内”，即当相邻两组的上下限重叠时，恰好等于某一组上限的变量值不算在本组内，而计算在下一组内。即a≤ x \u0026lt;b\n 第四章 数据的概括性度量 1.集中趋势的度量   众数不受极端值影响，具有不唯一性 中位数不受极端值影响，数据分布偏斜程度较大时 平均数易受极端值影响   2.离散程度的度量    标准分数：也称标准化值或z分数（将数据平均值变为0，标准差为1） $$ z_i=\\frac{x_i-\\overline{x}}{s} $$",
+  "keywords": [
+    "统计学"
+  ],
+  "articleBody": "第一章 导 论 1.什么是统计学  统计学是收集、处理、分析、解释数据并从数据中得出结论的科学 数据分析所用的方法可分为描述统计方法和推断统计方法  2.参数和统计量   参数：总体特征，所关心的参数通常是总体平均数、总体标准差、总体比例等\n 由于总体数据通常是不知道的，所以参数是一个未知的常量-\n   统计量：个体特征，所关心的参数通常是样本平均数、样本标准差、样本比例等\n 由于样本是已经抽出来的，所以统计量总是知道的\n   第二章 数据的搜集 1.数据的来源  **间接来源（二手数据）**与研究内容有关的原信息已经存在，我们只是重新加工、整理，使之成为分析可用的数据，这称为间接来源的数据 **直接来源（一手数据）**通过调查方法获得的为调查数据，实验得到为实验数据，都是直接来源的数据  2.数据误差  抽样误差：由抽样的随机性引起的样本结果与总体真值之间的差异 非抽样误差：抽样框误差、回答误差、无回答误差、调查员误差、测量误差  第三章 数据的图表展示 1.数据预处理  原始数据：完整性、准确性 二手数据：适用性、时效性  2.分类数据图示 ​  1 组数 5≤ K ≤15\n2 组距 组距=(Max-Min)/K\n3 为解决不重的问题，统计分组习惯上规定“上组限不在内”，即当相邻两组的上下限重叠时，恰好等于某一组上限的变量值不算在本组内，而计算在下一组内。即a≤ x \n 第四章 数据的概括性度量 1.集中趋势的度量   众数不受极端值影响，具有不唯一性 中位数不受极端值影响，数据分布偏斜程度较大时 平均数易受极端值影响   2.离散程度的度量    标准分数：也称标准化值或z分数（将数据平均值变为0，标准差为1） $$ z_i=\\frac{x_i-\\overline{x}}{s} $$\n  经验法则：对称分布\n  切比雪夫不等式：不是对称分布\n   离散系数 $$ v_s=\\frac{s}{\\overline{x}} $$\n 离散系数越大，数据离散程度越大\n 3.偏态与峰态   偏态 SK：数据对称性测度\n SK = 0 分布对称\nSK  0 右偏\nSK SK  1或者SK SK在0.5~1或-1~-0.5 之间，中等偏态分布\nSK越接近0，偏斜程度越小\n   峰态 K：数据分布平峰或尖峰程度的测量\n K  0 尖峰分布，数据分布更集中\nK   第五章 概率与概率分布 1.正态分布 X服从正态分布，记作X~N($\\mu,\\sigma^2$)\n $\\mu决定图形中心位置，\\sigma决定曲线陡峭程度$\n 2. 标准正态分布 当$\\mu=0，\\sigma=1$时 ，X~N(0,1)，即X服从标准正态分布\n第六章 统计量及其抽样分布 1.由正态分布导出的几个重要分布   卡方分布\n   E(Y) = n ,D(Y) = 2n\n   t分布\n   小样本方法\nn≥2，E(t) = 0\nn ≥ 3, D(t) = $v_s=\\frac{n}{n-2}$\n   F分布\n   　方差分析，回归方程的显著性检验\nn2，$E(X)=\\frac{n}{n-2}$\nn4，$D(X)=\\frac{2n^2(m+n-2)}{m(n-2)(n-4)}$\n  如果随机变量X服从t(n)分布，则$X^2$服从F(1,n)的F分布=回归分析回归系数显著性检验\n 2.中心极限定理 定义：设从均值为$\\mu$、方差为$\\sigma^2$(有限)的任意一个总体中抽取样本量为n的样本，当n充分大时(n≥30)，样本均值$\\overline{x}$的抽样分布近似服从从均值为$\\mu$,方差为$\\frac{\\sigma^2}{n}$的正态分布\n第七章 参数估计 1.参数估计基本原理 置信区间：在区间估计中，由样本统计量所构造的总体参数的估计区间称为置信区间\n置信水平：如果将构造置信区间的步骤重复多次，置信区间中包含总体参数真值的次数所占的比例称为置信水平(置信度或置信系数)\n  如果用某种方法构造的所有区间中有95%的区间包含总体参数的真值，5%的区间不包含，那么，用该方法构造的区间称为置信水平为95%的置信区间\n  总体参数的真值是固定的、未知的，而样本构造的区间则是不固定的。因此，置信区间是一个随机区间，因样本的不同而不同\n  实际问题中，进行估计时往往只抽取一个样本。只是一个特定区间而不再是随机区间，所以无法知道这个样本所产生的区间是否包含总体参数的真值。\n比如，用95%的置信水平得到某班学生考试成绩的置信区间为60~80分，我们不能说60~80分这个区间以95%的概率包含全班学生平均考试成绩的真值，或者说全班学生的平均考试成绩以95%的概率落在60~80分之间，这类表述是错误的，因为总体均值p是一个常数，而不是一个随机变量。p要么落在这个范围内，要么不在这个范围内，这里并不涉及概率。我们只是知道在多次抽样中有95%的样本得到的区间包含全班学生平均考试成绩的真值。它的真正意义是如果做了100次抽样，大概有95次找到的区间包含真值，有5次找到的区间不包含真值。假定全班考试成绩平均数的真值为70分，60~80分这个区间一定包含真值，如果全班考试成绩平均数的真值为50分，那么区间60~80分就绝对不包含真值，无论做多少次试验。因此，这个概率不是用来描述某个特定的区间包含总体参数真值的可能性，而是针对随机区间而言的。一个特定的区间\"总是包含\"或\"绝对不包含\"参数的真值，不存在\"以多大的概率包含总体参数\"的问题。但是，用概率可以知道在多次抽样得到的区间中大概有多少个区间包含参数的真值。\n评价估计量的标准：无偏性、有效性、一致性\n  2.一个总体参数的区间估计   总体均值的区间估计\n“正态总体、方差已知或非正态总体、大样本”\n总体均值μ在1- α 置信水平下的置信区间为： $$ \\overline{x}±z_{α/2}\\frac{σ}{\\sqrt n} $$\n 置信水平1- α = 95%，$z_{α/2}$=1.96\n 例题：  总体比例的区间估计 $$ p±z_{α/2}\\sqrt {\\frac {p(1-p)}{n}} $$\n p是样本比例\nα 是显著性水平\n$z_{α/2}$ 是标准正态分布右侧面积为α/2是的z值\n$z_{α/2}\\sqrt {\\frac {p(1-p)}{n}}$是估计总体比例时的估计误差\n   例题：第八章 假设检验 1.假设检验的基本问题   原假设，备择假设：原假设与备择假设互斥\n  两类错误\n 第 Ⅰ类错误是原假设$H_0$为真却被拒绝，犯这种错误的概率用α 表示，也称α 错误或弃真错误 第Ⅱ类错误是原假设为伪却没有拒绝，犯这种错误的概率用 β表示也称β错误或取伪错误    假设检验流程\n  σ已知，大样本\n|z||z||$z_α/2$|，拒绝$H0$\n  利用P值(事先给定α=0.05)\n 双侧检验：P0.025不拒绝原假设，P单侧检验：P0.05不拒绝原假设，P     单侧检验\n一些情况下，我们关心的假设问题带有方向性\n 数值越大越好，使用寿命等，左单侧检验 数值越小越好，不合格率等，右单侧检验     正确选择双侧检验和单侧检验\n 2.一个总体参数的检验   总体均值的检验\n  样本量大\n|z| 与 |$z_α$|\n  小样本，σ已知\n|z| 与 |$z_α$| 或者 P值\n  小样本，σ未知\nt 与 $t_α/2$\n    总体比例的检验\n当α=0.05时，$z_α/2$=±1.96，比较|z| 与 |$z_{α/2}$|\n  第九章 分类数据分析 1.拟合优度检验 根据总体的分布状况，计算出分类变量中各类别的期望频数，与分布的观察频数进行对比，判断期望频数与观察频数是否有显著差异，从而达到对分类变量进行分析的目的。\n在泰坦尼克号的例子中，我们关注在这次海难中幸存者的性别是否有显著差异，当时船上共有2208人，其中男性1738人，女性470人。海难发生后，幸存者共718人，其中男性374人，女性344人。海难后存活比率为 718/2 208=0.325.如果是否活下来与性别没有关系，那么按照这个比率，在1738位男性中应该存活1738×0.325=565人，在470位女性中应该存活 470×0.325=153人。565和153就是期望频数，而实际存活结果就是观察频数。通过期望频数和观察频数的比较，能够从统计角度做出存活与性别是否有关的判断。\n 原假设：一致\n 2.独立性检验 独立性检验就是分析列联表中的行变量和列变量是否相互独立，是否存在依赖关系\n 原假设：不存在依赖关系\n 第十章 方差分析 1.单因素方差分析 方差分析(ANOVA)：通过检验各总体的均值是否相等来判断分类型自变量对数值型因变量是否有显著影响\n因素(因子)：方差分析中所要检验的对象\n水平(处理)：因素的不同表现\n单因素方差分析：只有一个因素的方差分析\n 例如，行业为因素，零售业、旅游业、家电制造业等属于水平\n 总平方和 SST(sum of squares for total)：全部观测值与总均值的误差平方和。\n组间平方和 SSA(sun of squares for factor A)：各组均值与总均值的误差平方和，反映个样本均值之间的差异程度，因此又称为因素平方和。\n组内平方和 SSE(sum of squares for error)：每个水平或组的各样本数据与其总均值的误差平方和，反映每个样本各观测值的离散状况，因此又称误差平方和。 $$ SST = SSA + SSE $$\n方差分析表\n   误差来源 平方和SS 自由度df 均方MS F值 P值 F临界值     组间（因素影响） SSA k-1 MSA MSA/MSE     组内（误差） SSE n-k MSE      总 和 SST n-1         n为全部观测值个数 ；k为因素水平(总体)的个数；MS=SS / df\n 2.双因素方差分析 第十一章 一元线性回归 相关系数：根据样本数据计算的度量两个变量之间线性关系强度的统计量\nρ：总体相关系数，根据总体全部数据计算的\nr：样本相关系数，根据样本数据计算的\n [-1,0) == 负线性相关\n(0,1] == 正线性相关\nr = -1==完全负线性相关关系\nr=1 ==完全正线性相关关系\n相关程度： 第十三章 时间序列分析和预测 1.时间序列及其分解 时间序列：同一现象在不同时间的相继观察值排列而成的序列，分为平稳序列和非平稳序列\n趋势：时间序列在长期内呈现出来的某种持续上升或持续下降的变动\n季节性（季节变动）：时间序列在一年内重复出现的周期性波动。\n2.增长率分析   增长率：也称增长速度，是时间序列中报告期观察值与基期观察值之比减1后的结果，用%表示\n 环比增长率：报告期观察值与前一时期观察值之比减1的结果，说明现象逐期增长变化的程度 $$ G_i=\\frac{Y_i-Y_{i-1}}{Y_{i-1}}=\\frac{Y_i}{Y_{i-1}}-1，i=1,2,…,n $$    定基增长率：报告期观察值与某一固定时期观察值之比减1的结果，说明现象在整个观察期内总的增长变化程度 $$ G_i=\\frac{Y_i-Y_0}{Y_0}=\\frac{Y_i}{Y_0}-1，i=1,2,…,n $$\n  平均增长率：也称平均增长速度，时间序列中逐期环比值（也称环比发展速度）的几何平均数减1后的结果 $$ \\overline{G}=\\sqrt[n]{\\frac{Y_n}{Y_0}-1} $$\n $\\overline{G}$表示平均增长率；n表示环比值的个数\n   第十四章 指数 1.简单指数 简单综合指数：将报告期的指数总和与基期的指标总和相对比的指数 $$ I_p=\\frac{\\sum p_1}{\\sum p_0} $$ $$ I_q=\\frac{\\sum q_1}{\\sum q_0} $$\n ｐ——质量指标   ｑ——数量指标   $I_p$——质量指标指数   $I_q$——数量指标指数   下标1——报告期   下标0——基期\n 简单平均指数： $$ I_p=\\frac{\\sum \\frac{p_1}{p_0}}{n} $$ $$ I_q=\\frac{\\sum \\frac{q_1}{q_0}}{n} $$\n2.加权指数 加权综合指数\n  拉氏指数：将作为权数的同度量因素固定在基期 $$ I_q=\\frac{\\sum q_1p_0}{\\sum q_0p_0} $$ $$ I_p=\\frac{\\sum q_0p_1}{\\sum q_0p_0} $$\n  帕氏指数：将作为权数的同度量因素固定在报告期 $$ I_q=\\frac{\\sum q_1p_1}{\\sum q_0p_1} $$\n$$ I_q=\\frac{\\sum q_1p_1}{\\sum q_1p_0} $$\n 大多数的看法是，计算数量指数（如生产量指数）时，权数（价格）应该定在基期，这样才能剔除价格变动的影响，准确反映生产量的变化，按不变价计算产量指数就是出于这个原因。计算质量指数（如价格指数）时，不同时期的权数含义不同：若权数定在基期，反映的是在基期商品（产品）结构下价格的整体变动，更能揭示价格变动的内容；若权数定在报告期，反映的是在现实商品（产品）结构下价格的整体变动，商品（产品）结构变化的影响会融入价格指数，更能揭示价格变动的实际影响。编制指数的目的不同，权数确定的时期就可以不同。\n   加权平均指数\n。。。\n指数计算 采用加权平均的方法 $$ I_p=\\frac{\\sum iW}{\\sum W} $$\n i为代表规格品个数指数或各层的类指数；\nW为相应的消费支出比重\n ",
+  "wordCount" : "396",
+  "inLanguage": "en",
+  "datePublished": "2020-06-17T00:00:00Z",
+  "dateModified": "2020-06-17T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Archai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.fintinger.site/p/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%9C%9F%E6%9C%AB%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Archai's home",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.fintinger.site/posts/" title="Posts📑">
+                    <span>Posts📑</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/categories/" title="Categories🛒">
+                    <span>Categories🛒</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/search/" title="Search🔎 (Alt &#43; /)" accesskey=/>
+                    <span>Search🔎</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/archives/" title="Timeline🕰️">
+                    <span>Timeline🕰️</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/about/" title="About🥳">
+                    <span>About🥳</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://www.fintinger.site">Home</a>&nbsp;»&nbsp;<a href="https://www.fintinger.site/posts/">Posts</a></div>
+    <h1 class="post-title">
+      统计学期末知识总结
+    </h1>
+    <div class="post-meta"><span title='2020-06-17 00:00:00 +0000 UTC'>June 17, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e7%ac%ac%e4%b8%80%e7%ab%a0---%e5%af%bc-%e8%ae%ba" aria-label="第一章   导 论">第一章   导 论</a><ul>
+                        
+                <li>
+                    <a href="#1%e4%bb%80%e4%b9%88%e6%98%af%e7%bb%9f%e8%ae%a1%e5%ad%a6" aria-label="1.什么是统计学">1.什么是统计学</a></li>
+                <li>
+                    <a href="#2%e5%8f%82%e6%95%b0%e5%92%8c%e7%bb%9f%e8%ae%a1%e9%87%8f" aria-label="2.参数和统计量">2.参数和统计量</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e7%ac%ac%e4%ba%8c%e7%ab%a0--%e6%95%b0%e6%8d%ae%e7%9a%84%e6%90%9c%e9%9b%86" aria-label="第二章  数据的搜集">第二章  数据的搜集</a><ul>
+                        
+                <li>
+                    <a href="#1%e6%95%b0%e6%8d%ae%e7%9a%84%e6%9d%a5%e6%ba%90" aria-label="1.数据的来源">1.数据的来源</a></li>
+                <li>
+                    <a href="#2%e6%95%b0%e6%8d%ae%e8%af%af%e5%b7%ae" aria-label="2.数据误差">2.数据误差</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e7%ac%ac%e4%b8%89%e7%ab%a0--%e6%95%b0%e6%8d%ae%e7%9a%84%e5%9b%be%e8%a1%a8%e5%b1%95%e7%a4%ba" aria-label="第三章  数据的图表展示">第三章  数据的图表展示</a><ul>
+                        
+                <li>
+                    <a href="#1%e6%95%b0%e6%8d%ae%e9%a2%84%e5%a4%84%e7%90%86" aria-label="1.数据预处理"><strong>1.数据预处理</strong></a></li>
+                <li>
+                    <a href="#2%e5%88%86%e7%b1%bb%e6%95%b0%e6%8d%ae%e5%9b%be%e7%a4%ba" aria-label="2.分类数据图示">2.分类数据图示</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e7%ac%ac%e5%9b%9b%e7%ab%a0-%e6%95%b0%e6%8d%ae%e7%9a%84%e6%a6%82%e6%8b%ac%e6%80%a7%e5%ba%a6%e9%87%8f" aria-label="第四章 数据的概括性度量">第四章 数据的概括性度量</a><ul>
+                        
+                <li>
+                    <a href="#1%e9%9b%86%e4%b8%ad%e8%b6%8b%e5%8a%bf%e7%9a%84%e5%ba%a6%e9%87%8f" aria-label="1.集中趋势的度量">1.集中趋势的度量</a></li>
+                <li>
+                    <a href="#2%e7%a6%bb%e6%95%a3%e7%a8%8b%e5%ba%a6%e7%9a%84%e5%ba%a6%e9%87%8f" aria-label="2.离散程度的度量">2.离散程度的度量</a></li>
+                <li>
+                    <a href="#3%e5%81%8f%e6%80%81%e4%b8%8e%e5%b3%b0%e6%80%81" aria-label="3.偏态与峰态">3.偏态与峰态</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e7%ac%ac%e4%ba%94%e7%ab%a0-%e6%a6%82%e7%8e%87%e4%b8%8e%e6%a6%82%e7%8e%87%e5%88%86%e5%b8%83" aria-label="第五章 概率与概率分布">第五章 概率与概率分布</a><ul>
+                        
+                <li>
+                    <a href="#1%e6%ad%a3%e6%80%81%e5%88%86%e5%b8%83" aria-label="1.正态分布">1.正态分布</a></li>
+                <li>
+                    <a href="#2-%e6%a0%87%e5%87%86%e6%ad%a3%e6%80%81%e5%88%86%e5%b8%83" aria-label="2. 标准正态分布">2. 标准正态分布</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e7%ac%ac%e5%85%ad%e7%ab%a0-%e7%bb%9f%e8%ae%a1%e9%87%8f%e5%8f%8a%e5%85%b6%e6%8a%bd%e6%a0%b7%e5%88%86%e5%b8%83" aria-label="第六章 统计量及其抽样分布">第六章 统计量及其抽样分布</a><ul>
+                        
+                <li>
+                    <a href="#1%e7%94%b1%e6%ad%a3%e6%80%81%e5%88%86%e5%b8%83%e5%af%bc%e5%87%ba%e7%9a%84%e5%87%a0%e4%b8%aa%e9%87%8d%e8%a6%81%e5%88%86%e5%b8%83" aria-label="1.由正态分布导出的几个重要分布">1.由正态分布导出的几个重要分布</a></li>
+                <li>
+                    <a href="#2%e4%b8%ad%e5%bf%83%e6%9e%81%e9%99%90%e5%ae%9a%e7%90%86" aria-label="2.中心极限定理">2.中心极限定理</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e7%ac%ac%e4%b8%83%e7%ab%a0-%e5%8f%82%e6%95%b0%e4%bc%b0%e8%ae%a1" aria-label="第七章 参数估计">第七章 参数估计</a><ul>
+                        
+                <li>
+                    <a href="#1%e5%8f%82%e6%95%b0%e4%bc%b0%e8%ae%a1%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86" aria-label="1.参数估计基本原理">1.参数估计基本原理</a></li>
+                <li>
+                    <a href="#2%e4%b8%80%e4%b8%aa%e6%80%bb%e4%bd%93%e5%8f%82%e6%95%b0%e7%9a%84%e5%8c%ba%e9%97%b4%e4%bc%b0%e8%ae%a1" aria-label="2.一个总体参数的区间估计">2.一个总体参数的区间估计</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e7%ac%ac%e5%85%ab%e7%ab%a0-%e5%81%87%e8%ae%be%e6%a3%80%e9%aa%8c" aria-label="第八章 假设检验">第八章 假设检验</a><ul>
+                        
+                <li>
+                    <a href="#1%e5%81%87%e8%ae%be%e6%a3%80%e9%aa%8c%e7%9a%84%e5%9f%ba%e6%9c%ac%e9%97%ae%e9%a2%98" aria-label="1.假设检验的基本问题">1.假设检验的基本问题</a></li>
+                <li>
+                    <a href="#2%e4%b8%80%e4%b8%aa%e6%80%bb%e4%bd%93%e5%8f%82%e6%95%b0%e7%9a%84%e6%a3%80%e9%aa%8c" aria-label="2.一个总体参数的检验">2.一个总体参数的检验</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e7%ac%ac%e4%b9%9d%e7%ab%a0-%e5%88%86%e7%b1%bb%e6%95%b0%e6%8d%ae%e5%88%86%e6%9e%90" aria-label="第九章 分类数据分析">第九章 分类数据分析</a><ul>
+                        
+                <li>
+                    <a href="#1%e6%8b%9f%e5%90%88%e4%bc%98%e5%ba%a6%e6%a3%80%e9%aa%8c" aria-label="1.拟合优度检验">1.拟合优度检验</a></li>
+                <li>
+                    <a href="#2%e7%8b%ac%e7%ab%8b%e6%80%a7%e6%a3%80%e9%aa%8c" aria-label="2.独立性检验">2.独立性检验</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e7%ac%ac%e5%8d%81%e7%ab%a0-%e6%96%b9%e5%b7%ae%e5%88%86%e6%9e%90" aria-label="第十章 方差分析">第十章 方差分析</a><ul>
+                        
+                <li>
+                    <a href="#1%e5%8d%95%e5%9b%a0%e7%b4%a0%e6%96%b9%e5%b7%ae%e5%88%86%e6%9e%90" aria-label="1.单因素方差分析">1.单因素方差分析</a></li>
+                <li>
+                    <a href="#2%e5%8f%8c%e5%9b%a0%e7%b4%a0%e6%96%b9%e5%b7%ae%e5%88%86%e6%9e%90" aria-label="2.双因素方差分析">2.双因素方差分析</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e7%ac%ac%e5%8d%81%e4%b8%80%e7%ab%a0-%e4%b8%80%e5%85%83%e7%ba%bf%e6%80%a7%e5%9b%9e%e5%bd%92" aria-label="第十一章 一元线性回归">第十一章 一元线性回归</a></li>
+                <li>
+                    <a href="#%e7%ac%ac%e5%8d%81%e4%b8%89%e7%ab%a0-%e6%97%b6%e9%97%b4%e5%ba%8f%e5%88%97%e5%88%86%e6%9e%90%e5%92%8c%e9%a2%84%e6%b5%8b" aria-label="第十三章 时间序列分析和预测">第十三章 时间序列分析和预测</a><ul>
+                        
+                <li>
+                    <a href="#1%e6%97%b6%e9%97%b4%e5%ba%8f%e5%88%97%e5%8f%8a%e5%85%b6%e5%88%86%e8%a7%a3" aria-label="1.时间序列及其分解">1.时间序列及其分解</a></li>
+                <li>
+                    <a href="#2%e5%a2%9e%e9%95%bf%e7%8e%87%e5%88%86%e6%9e%90" aria-label="2.增长率分析">2.增长率分析</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e7%ac%ac%e5%8d%81%e5%9b%9b%e7%ab%a0-%e6%8c%87%e6%95%b0" aria-label="第十四章 指数">第十四章 指数</a><ul>
+                        
+                <li>
+                    <a href="#1%e7%ae%80%e5%8d%95%e6%8c%87%e6%95%b0" aria-label="1.简单指数">1.简单指数</a></li>
+                <li>
+                    <a href="#2%e5%8a%a0%e6%9d%83%e6%8c%87%e6%95%b0" aria-label="2.加权指数">2.加权指数</a></li>
+                <li>
+                    <a href="#%e6%8c%87%e6%95%b0%e8%ae%a1%e7%ae%97" aria-label="指数计算">指数计算</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="第一章---导-论">第一章   导 论<a hidden class="anchor" aria-hidden="true" href="#第一章---导-论">#</a></h2>
+<h3 id="1什么是统计学">1.什么是统计学<a hidden class="anchor" aria-hidden="true" href="#1什么是统计学">#</a></h3>
+<ul>
+<li><strong>统计学</strong>是收集、处理、分析、解释数据并从数据中得出结论的科学</li>
+<li>数据分析所用的方法可分为<strong>描述统计方法</strong>和<strong>推断统计方法</strong></li>
+</ul>
+<h3 id="2参数和统计量">2.参数和统计量<a hidden class="anchor" aria-hidden="true" href="#2参数和统计量">#</a></h3>
+<ul>
+<li>
+<p><strong>参数</strong>：总体特征，所关心的参数通常是总体平均数、总体标准差、总体比例等</p>
+<blockquote>
+<p>由于总体数据通常是不知道的，所以参数是一个未知的常量-</p>
+</blockquote>
+</li>
+<li>
+<p><strong>统计量</strong>：个体特征，所关心的参数通常是样本平均数、样本标准差、样本比例等</p>
+<blockquote>
+<p>由于样本是已经抽出来的，所以统计量总是知道的</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="第二章--数据的搜集">第二章  数据的搜集<a hidden class="anchor" aria-hidden="true" href="#第二章--数据的搜集">#</a></h2>
+<h3 id="1数据的来源">1.数据的来源<a hidden class="anchor" aria-hidden="true" href="#1数据的来源">#</a></h3>
+<ul>
+<li>**间接来源（二手数据）**与研究内容有关的原信息已经存在，我们只是重新加工、整理，使之成为分析可用的数据，这称为间接来源的数据</li>
+<li>**直接来源（一手数据）**通过调查方法获得的为调查数据，实验得到为实验数据，都是直接来源的数据</li>
+</ul>
+<h3 id="2数据误差">2.数据误差<a hidden class="anchor" aria-hidden="true" href="#2数据误差">#</a></h3>
+<ul>
+<li><strong>抽样误差</strong>：由抽样的随机性引起的样本结果与总体真值之间的差异</li>
+<li><strong>非抽样误差</strong>：抽样框误差、回答误差、无回答误差、调查员误差、测量误差</li>
+</ul>
+<h2 id="第三章--数据的图表展示">第三章  数据的图表展示<a hidden class="anchor" aria-hidden="true" href="#第三章--数据的图表展示">#</a></h2>
+<h3 id="1数据预处理"><strong>1.数据预处理</strong><a hidden class="anchor" aria-hidden="true" href="#1数据预处理">#</a></h3>
+<ul>
+<li>原始数据：完整性、准确性</li>
+<li>二手数据：适用性、时效性</li>
+</ul>
+<h3 id="2分类数据图示">2.分类数据图示<a hidden class="anchor" aria-hidden="true" href="#2分类数据图示">#</a></h3>
+<p><img src="http://r.photo.store.qq.com/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYk6JgQbc9EIUbdKqYdaSBCKCKwr2T2I1.j0JpdEvaILMH*eiwmgLIf70bxPVvuKJnR5EqtM*wX0fEtlWrMuN2PAA!/r" alt="数据的类型与主要图示方法" style="zoom: 25%;" /></p>
+<p>​        <img src="http://r.photo.store.qq.com/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYk.OY2Z4UOlJ5omlG3W7QUadOU61zXSRRFvc67Z0ddYk0Cx1N9mFrDYSR61VRNvbizdy885uV1jvfQcrL17jVQN0!/r"  alt="帕累托图" style="zoom:10%;" />                                               <img src="http://r.photo.store.qq.com/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYk7JyzVhGdP1hH2YP9hCjew1p7gvv*9Hffwdx.9s71ru1ORcPSWB1qLucffLFYOXqtDrHquxZU04Q9NDAsnunTpI!/r"  alt="环形图" style="zoom:10%;" /></p>
+<blockquote>
+<p>1&gt;  <strong>组数</strong>  5≤ K ≤15</p>
+<p>2&gt; <strong>组距</strong> 组距=(Max-Min)/K</p>
+<p>3&gt; 为解决不重的问题，统计分组习惯上规定“上组限不在内”，即当相邻两组的上下限重叠时，恰好等于某一组上限的变量值不算在本组内，而计算在下一组内。即<strong>a≤ x &lt;b</strong></p>
+</blockquote>
+<h2 id="第四章-数据的概括性度量">第四章 数据的概括性度量<a hidden class="anchor" aria-hidden="true" href="#第四章-数据的概括性度量">#</a></h2>
+<h3 id="1集中趋势的度量">1.集中趋势的度量<a hidden class="anchor" aria-hidden="true" href="#1集中趋势的度量">#</a></h3>
+<p><img loading="lazy" src="http://r.photo.store.qq.com/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYk7R4ue2PE0m2y5nHba08JvEZhxeKHTfjNGIvOhY6tg8R4CCepmu.ScYXbG0PfDjP8sA*jgayvB2a3STcI5ih7Mg!/r" alt="不同分布的众数、中位数和平均数 $M_e表示中位数$"  />
+</p>
+<blockquote>
+<ul>
+<li>众数不受极端值影响，具有不唯一性</li>
+<li>中位数不受极端值影响，数据分布偏斜程度较大时</li>
+<li>平均数易受极端值影响</li>
+</ul>
+</blockquote>
+<h3 id="2离散程度的度量">2.离散程度的度量<a hidden class="anchor" aria-hidden="true" href="#2离散程度的度量">#</a></h3>
+<p><img loading="lazy" src="http://r.photo.store.qq.com/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYk72ElClFmlxoCUPKHwyDvX4*UqPziMpjytQyFrkilom5M90XBncCQ2z7yQmXET8P3lTlJrjkF*VSSfHgCrUpac4!/r" alt="离散程度度量"  />
+</p>
+<blockquote>
+<ul>
+<li>
+<p><strong>标准分数</strong>：也称标准化值或z分数（将数据平均值变为0，标准差为1）
+$$
+z_i=\frac{x_i-\overline{x}}{s}
+$$</p>
+</li>
+<li>
+<p><strong>经验法则</strong>：对称分布</p>
+</li>
+<li>
+<p><strong>切比雪夫不等式</strong>：不是对称分布</p>
+</li>
+</ul>
+</blockquote>
+<p><strong>离散系数</strong>
+$$
+v_s=\frac{s}{\overline{x}}
+$$</p>
+<blockquote>
+<p>离散系数越大，数据离散程度越大</p>
+</blockquote>
+<h3 id="3偏态与峰态">3.偏态与峰态<a hidden class="anchor" aria-hidden="true" href="#3偏态与峰态">#</a></h3>
+<ul>
+<li>
+<p><strong>偏态 SK</strong>：数据对称性测度</p>
+<blockquote>
+<p>SK = 0 分布对称</p>
+<p>SK &gt; 0 右偏</p>
+<p>SK &lt; 0 左偏</p>
+<p>SK &gt; 1或者SK &lt; -1 高度偏态分布</p>
+<p>SK在0.5~1或-1~-0.5 之间，中等偏态分布</p>
+<p>SK越接近0，偏斜程度越小</p>
+</blockquote>
+</li>
+<li>
+<p><strong>峰态 K</strong>：数据分布平峰或尖峰程度的测量</p>
+<blockquote>
+<p>K &gt; 0 尖峰分布，数据分布更集中</p>
+<p>K &lt; 0 扁平分布，数据分布越分散</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="http://r.photo.store.qq.com/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYk7cxkim6GAx2st4TTndC0CYOGIXV0FWiVTG5SX3UOliRRhAlwrQQYqVFVG0SLTNEvtIeLvtk2OCz9m3PhiWDZAY!/r" style="zoom: 25%;" /></p>
+<h2 id="第五章-概率与概率分布">第五章 概率与概率分布<a hidden class="anchor" aria-hidden="true" href="#第五章-概率与概率分布">#</a></h2>
+<h3 id="1正态分布">1.正态分布<a hidden class="anchor" aria-hidden="true" href="#1正态分布">#</a></h3>
+<p>X服从正态分布，记作X~N($\mu,\sigma^2$)</p>
+<p><img loading="lazy" src="http://r.photo.store.qq.com/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYk.8kfyXnsqiR.MoMpZ.DbMRhXOX92C2CGh5.zjY4xu4xeirEFfjem8s0hT5Q2sNZ9hAVRbhxsp9IQtO8bnrPoMk!/r" alt="参数$\mu和\sigma$对曲线位置形状影响"  />
+</p>
+<blockquote>
+<p>$\mu决定图形中心位置，\sigma决定曲线陡峭程度$</p>
+</blockquote>
+<h3 id="2-标准正态分布">2. 标准正态分布<a hidden class="anchor" aria-hidden="true" href="#2-标准正态分布">#</a></h3>
+<p>当$\mu=0，\sigma=1$时 ，X~N(0,1)，即X服从<strong>标准正态分布</strong></p>
+<h2 id="第六章-统计量及其抽样分布">第六章 统计量及其抽样分布<a hidden class="anchor" aria-hidden="true" href="#第六章-统计量及其抽样分布">#</a></h2>
+<h3 id="1由正态分布导出的几个重要分布">1.由正态分布导出的几个重要分布<a hidden class="anchor" aria-hidden="true" href="#1由正态分布导出的几个重要分布">#</a></h3>
+<ul>
+<li>
+<p><strong>卡方分布</strong></p>
+<p><img loading="lazy" src="http://r.photo.store.qq.com/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYk6Fh.GVveaYD1xuawVQythP0uAm4GlPR*SDQOHtBlSZfFKaZnnWSDN7dnkzUzvgahVSRuzeXoXG1z9*9AIpCMGM!/r" alt=""  />
+</p>
+</li>
+</ul>
+<blockquote>
+<p>E(Y) = n ,D(Y) = 2n</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>t分布</strong></p>
+<p><img loading="lazy" src="http://r.photo.store.qq.com/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYk6xqM8heC.J1WjTzuMVJs7Jow6Z90dxj25yUL5yhLj3yujogsdzoZS6d6RiT4GxldR4IrEsgyDNMm7U10hMdYU8!/r" alt=""  />
+</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>小样本</strong>方法</p>
+<p>n≥2，E(t) = 0</p>
+<p>n ≥ 3, D(t) = $v_s=\frac{n}{n-2}$</p>
+</blockquote>
+<ul>
+<li>
+<p>F分布</p>
+<p><img loading="lazy" src="http://r.photo.store.qq.com/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYk.ynVx5Nf*nc4BD5zvT2zgzrJzjvlWXWKok8zop75r8fMbeNNzv3ZsZYScxQbpOc.pYvcTDwtYv0OY69fqkOilg!/r" alt=""  />
+</p>
+</li>
+</ul>
+<blockquote>
+<p>　方差分析，回归方程的显著性检验</p>
+<p>n&gt;2，$E(X)=\frac{n}{n-2}$</p>
+<p>n&gt;4，$D(X)=\frac{2n^2(m+n-2)}{m(n-2)(n-4)}$</p>
+</blockquote>
+<blockquote>
+<p><strong>如果随机变量X服从t(n)分布，则$X^2$服从F(1,n)的F分布</strong>=&gt;<code>回归分析回归系数显著性检验</code></p>
+</blockquote>
+<h3 id="2中心极限定理">2.中心极限定理<a hidden class="anchor" aria-hidden="true" href="#2中心极限定理">#</a></h3>
+<p><strong>定义</strong>：设从均值为$\mu$、方差为$\sigma^2$(有限)的任意一个总体中抽取样本量为n的样本，当n充分大时(n≥30)，样本均值$\overline{x}$的抽样分布近似服从从均值为$\mu$,方差为$\frac{\sigma^2}{n}$的正态分布</p>
+<h2 id="第七章-参数估计">第七章 参数估计<a hidden class="anchor" aria-hidden="true" href="#第七章-参数估计">#</a></h2>
+<h3 id="1参数估计基本原理">1.参数估计基本原理<a hidden class="anchor" aria-hidden="true" href="#1参数估计基本原理">#</a></h3>
+<p><strong>置信区间</strong>：在区间估计中，由样本统计量所构造的总体参数的估计区间称为置信区间</p>
+<p><strong>置信水平</strong>：如果将构造置信区间的步骤重复多次，置信区间中包含总体参数真值的次数所占的比例称为置信水平(置信度或置信系数)</p>
+<ul>
+<li>
+<p>如果用某种方法构造的所有区间中有95%的区间包含总体参数的真值，5%的区间不包含，那么，用该方法构造的区间称为<strong>置信水平为95%的置信区间</strong></p>
+</li>
+<li>
+<p>总体参数的真值是固定的、未知的，而样本构造的区间则是不固定的。因此，<strong>置信区间是一个随机区间，因样本的不同而不同</strong></p>
+</li>
+<li>
+<p>实际问题中，进行估计时往往只抽取一个样本。只是一个特定区间而不再是随机区间，所以无法知道这个样本所产生的区间是否包含总体参数的真值。</p>
+<p>比如，用95%的置信水平得到某班学生考试成绩的置信区间为60~80分，我们不能说60~80分这个区间以95%的概率包含全班学生平均考试成绩的真值，或者说全班学生的平均考试成绩以95%的概率落在60~80分之间，这类表述是错误的，因为总体均值p是一个常数，而不是一个随机变量。p要么落在这个范围内，要么不在这个范围内，这里并不涉及概率。我们只是知道在多次抽样中有95%的样本得到的区间包含全班学生平均考试成绩的真值。它的真正意义是如果做了100次抽样，大概有95次找到的区间包含真值，有5次找到的区间不包含真值。假定全班考试成绩平均数的真值为70分，60~80分这个区间一定包含真值，如果全班考试成绩平均数的真值为50分，那么区间60~80分就绝对不包含真值，无论做多少次试验。因此，这个概率不是用来描述某个特定的区间包含总体参数真值的可能性，而是针对随机区间而言的。一个特定的区间&quot;总是包含&quot;或&quot;绝对不包含&quot;参数的真值，不存在&quot;以多大的概率包含总体参数&quot;的问题。但是，用概率可以知道在多次抽样得到的区间中大概有多少个区间包含参数的真值。</p>
+<p><strong>评价估计量的标准</strong>：无偏性、有效性、一致性</p>
+</li>
+</ul>
+<h3 id="2一个总体参数的区间估计">2.一个总体参数的区间估计<a hidden class="anchor" aria-hidden="true" href="#2一个总体参数的区间估计">#</a></h3>
+<ul>
+<li>
+<p><strong>总体均值的区间估计</strong></p>
+<p><strong>“正态总体、方差已知或非正态总体、大样本”</strong></p>
+<p>总体均值μ在1- α 置信水平下的置信区间为：
+$$
+\overline{x}±z_{α/2}\frac{σ}{\sqrt n}
+$$</p>
+<blockquote>
+<p>置信水平1- α = 95%，$z_{α/2}$=1.96</p>
+</blockquote>
+<p>例题：<img loading="lazy" src="http://r.photo.store.qq.com/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYkxBVPCFf2WN3pqqtUJXXo1M0KAnufv5EQpn1uPhQURdtEiA2R9SqX2R0uGIECZiBnLPA4mtrrjM*BrEx1XDB7F8!/r" alt=""  />
+</p>
+<p><img loading="lazy" src="http://r.photo.store.qq.com/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYkyQrxNaR3Ugi9onjFiL44GkKkseTLjtzLPtYP3PjCMG7U.bLlpb8No3XuFx6ZntOpwE*.hmARdhzt*4lzjTG0kQ!/r" alt="不同情况下总体均值的区间估计"  />
+</p>
+</li>
+<li>
+<p><strong>总体比例的区间估计</strong>
+$$
+p±z_{α/2}\sqrt {\frac {p(1-p)}{n}}
+$$</p>
+<blockquote>
+<p>p是样本比例</p>
+<p>α 是显著性水平</p>
+<p>$z_{α/2}$ 是标准正态分布右侧面积为α/2是的z值</p>
+<p>$z_{α/2}\sqrt {\frac {p(1-p)}{n}}$是估计总体比例时的估计误差</p>
+</blockquote>
+</li>
+</ul>
+<p>例题：<img loading="lazy" src="http://r.photo.store.qq.com/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYkwTQokdOST16jF0AP3qm*QwrrvTrOkNzA664LL8aUZW3mh8UkwkUJdVUKV23NB4tV2xFFJkSa.ySz68E53qmDvI!/r" alt=""  />
+</p>
+<h2 id="第八章-假设检验">第八章 假设检验<a hidden class="anchor" aria-hidden="true" href="#第八章-假设检验">#</a></h2>
+<h3 id="1假设检验的基本问题">1.假设检验的基本问题<a hidden class="anchor" aria-hidden="true" href="#1假设检验的基本问题">#</a></h3>
+<ul>
+<li>
+<p><strong>原假设，备择假设</strong>：原假设与备择假设互斥</p>
+</li>
+<li>
+<p>两类错误</p>
+<ul>
+<li>第 Ⅰ类错误是原假设$H_0$为真却被拒绝，犯这种错误的概率用α 表示，也称<strong>α 错误</strong>或弃真错误</li>
+<li>第Ⅱ类错误是原假设为伪却没有拒绝，犯这种错误的概率用 β表示也称<strong>β错误</strong>或取伪错误</li>
+</ul>
+</li>
+<li>
+<p>假设检验流程</p>
+<ul>
+<li>
+<p><strong>σ已知，大样本</strong></p>
+<p>|z|&lt;|$z_α/2$|，不拒绝$H0$</p>
+<p>|z|&gt;|$z_α/2$|，拒绝$H0$</p>
+</li>
+<li>
+<p><strong>利用P值(事先给定α=0.05)</strong></p>
+<ul>
+<li>双侧检验：P&gt;0.025不拒绝原假设，P&lt; 0.025拒绝原假设</li>
+<li>单侧检验：P&gt;0.05不拒绝原假设，P&lt; 0.05拒绝原假设</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>单侧检验</p>
+<p>一些情况下，我们关心的假设问题带有方向性</p>
+<ul>
+<li>数值越大越好，使用寿命等，左单侧检验</li>
+<li>数值越小越好，不合格率等，右单侧检验</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://wenku.baidu.com/view/8c6494260722192e4536f670.html">正确选择双侧检验和单侧检验</a></p>
+</blockquote>
+<h3 id="2一个总体参数的检验">2.一个总体参数的检验<a hidden class="anchor" aria-hidden="true" href="#2一个总体参数的检验">#</a></h3>
+<ul>
+<li>
+<p><strong>总体均值的检验</strong></p>
+<ul>
+<li>
+<p>样本量大</p>
+<p>|z| 与 |$z_α$|</p>
+</li>
+<li>
+<p>小样本，σ已知</p>
+<p>|z| 与 |$z_α$|  或者 P值</p>
+</li>
+<li>
+<p>小样本，σ未知</p>
+<p>t 与 $t_α/2$</p>
+</li>
+</ul>
+</li>
+<li>
+<p>总体比例的检验</p>
+<p>当α=0.05时，$z_α/2$=±1.96，比较|z| 与 |$z_{α/2}$|</p>
+</li>
+</ul>
+<h2 id="第九章-分类数据分析">第九章 分类数据分析<a hidden class="anchor" aria-hidden="true" href="#第九章-分类数据分析">#</a></h2>
+<h3 id="1拟合优度检验">1.拟合优度检验<a hidden class="anchor" aria-hidden="true" href="#1拟合优度检验">#</a></h3>
+<p>根据总体的分布状况，计算出分类变量中各类别的期望频数，与分布的观察频数进行对比，判断<strong>期望频数</strong>与<strong>观察频数</strong>是否有显著差异，从而达到对分类变量进行分析的目的。</p>
+<p>在泰坦尼克号的例子中，我们关注在这次海难中幸存者的性别是否有显著差异，当时船上共有2208人，其中男性1738人，女性470人。海难发生后，幸存者共718人，其中男性374人，女性344人。海难后存活比率为 718/2 208=0.325.如果是否活下来与性别没有关系，那么按照这个比率，在1738位男性中应该存活1738×0.325=565人，在470位女性中应该存活 470×0.325=153人。565和153就是期望频数，而实际存活结果就是观察频数。通过期望频数和观察频数的比较，能够从统计角度做出存活与性别是否有关的判断。</p>
+<blockquote>
+<p>原假设：一致</p>
+</blockquote>
+<h3 id="2独立性检验">2.独立性检验<a hidden class="anchor" aria-hidden="true" href="#2独立性检验">#</a></h3>
+<p>独立性检验就是分析列联表中的行变量和列变量是否相互独立，是否存在依赖关系</p>
+<blockquote>
+<p>原假设：不存在依赖关系</p>
+</blockquote>
+<h2 id="第十章-方差分析">第十章 方差分析<a hidden class="anchor" aria-hidden="true" href="#第十章-方差分析">#</a></h2>
+<h3 id="1单因素方差分析">1.单因素方差分析<a hidden class="anchor" aria-hidden="true" href="#1单因素方差分析">#</a></h3>
+<p><strong>方差分析(ANOVA)</strong>：通过检验各总体的均值是否相等来判断<strong>分类型自变量</strong>对<strong>数值型因变量</strong>是否有显著影响</p>
+<p><strong>因素(因子)</strong>：方差分析中所要检验的对象</p>
+<p><strong>水平(处理)</strong>：因素的不同表现</p>
+<p><strong>单因素方差分析</strong>：只有一个因素的方差分析</p>
+<blockquote>
+<p>例如，行业为因素，零售业、旅游业、家电制造业等属于水平</p>
+</blockquote>
+<p><strong>总平方和 SST</strong>(sum of squares for total)：全部观测值与总均值的误差平方和。</p>
+<p><strong>组间平方和 SSA</strong>(sun of squares for factor A)：各组均值与总均值的误差平方和，反映个样本均值之间的差异程度，因此又称为因素平方和。</p>
+<p><strong>组内平方和 SSE</strong>(sum of squares for error)：每个水平或组的各样本数据与其总均值的误差平方和，反映每个样本各观测值的离散状况，因此又称误差平方和。
+$$
+SST = SSA + SSE
+$$</p>
+<p><strong>方差分析表</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">误差来源</th>
+<th align="center">平方和SS</th>
+<th align="center">自由度df</th>
+<th align="center">均方MS</th>
+<th>F值</th>
+<th>P值</th>
+<th>F临界值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">组间（因素影响）</td>
+<td align="center">SSA</td>
+<td align="center">k-1</td>
+<td align="center">MSA</td>
+<td>MSA/MSE</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">组内（误差）</td>
+<td align="center">SSE</td>
+<td align="center">n-k</td>
+<td align="center">MSE</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">总     和</td>
+<td align="center">SST</td>
+<td align="center">n-1</td>
+<td align="center"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>n为全部观测值个数 ；k为因素水平(总体)的个数；MS=SS / df</p>
+</blockquote>
+<h3 id="2双因素方差分析">2.双因素方差分析<a hidden class="anchor" aria-hidden="true" href="#2双因素方差分析">#</a></h3>
+<h2 id="第十一章-一元线性回归">第十一章 一元线性回归<a hidden class="anchor" aria-hidden="true" href="#第十一章-一元线性回归">#</a></h2>
+<p><strong>相关系数</strong>：根据样本数据计算的度量两个变量之间线性关系强度的统计量</p>
+<p><strong>ρ</strong>：总体相关系数，根据总体全部数据计算的</p>
+<p><strong>r</strong>：样本相关系数，根据样本数据计算的</p>
+<blockquote>
+<p>[-1,0) ==&gt; 负线性相关</p>
+<p>(0,1] ==&gt; 正线性相关</p>
+<p>r = -1==&gt;完全负线性相关关系</p>
+<p>r=1   ==&gt;完全正线性相关关系</p>
+<p>相关程度：<img loading="lazy" src="http://r.photo.store.qq.com/psc?/V11ijIHl1yJLHC/1nSAZ*B78DPTEG5idIpYkwG9QV9sRGJf.BcO2cBNVoDE8HV.c4bk7aidEzyi48caGz8kWlq1gnSqkhaOg7y0EPOHFeS9u.6rEln7pt3Ie2Y!/r" alt=""  />
+</p>
+</blockquote>
+<h2 id="第十三章-时间序列分析和预测">第十三章 时间序列分析和预测<a hidden class="anchor" aria-hidden="true" href="#第十三章-时间序列分析和预测">#</a></h2>
+<h3 id="1时间序列及其分解">1.时间序列及其分解<a hidden class="anchor" aria-hidden="true" href="#1时间序列及其分解">#</a></h3>
+<p><strong>时间序列</strong>：同一现象在不同时间的相继观察值排列而成的序列，分为<strong>平稳序列</strong>和<strong>非平稳序列</strong></p>
+<p><strong>趋势</strong>：时间序列在长期内呈现出来的某种持续上升或持续下降的变动</p>
+<p><strong>季节性（季节变动）</strong>：时间序列在一年内重复出现的周期性波动。</p>
+<h3 id="2增长率分析">2.增长率分析<a hidden class="anchor" aria-hidden="true" href="#2增长率分析">#</a></h3>
+<ul>
+<li>
+<p><strong>增长率</strong>：也称增长速度，是时间序列中报告期观察值与基期观察值之比减1后的结果，用%表示</p>
+<ul>
+<li><strong>环比增长率</strong>：报告期观察值与前一时期观察值之比减1的结果，说明现象逐期增长变化的程度
+$$
+G_i=\frac{Y_i-Y_{i-1}}{Y_{i-1}}=\frac{Y_i}{Y_{i-1}}-1，i=1,2,&hellip;,n
+$$</li>
+</ul>
+</li>
+<li>
+<p><strong>定基增长率</strong>：报告期观察值与某一固定时期观察值之比减1的结果，说明现象在整个观察期内总的增长变化程度
+$$
+G_i=\frac{Y_i-Y_0}{Y_0}=\frac{Y_i}{Y_0}-1，i=1,2,&hellip;,n
+$$</p>
+</li>
+<li>
+<p><strong>平均增长率</strong>：也称平均增长速度，时间序列中逐期环比值（也称环比发展速度）的几何平均数减1后的结果
+$$
+\overline{G}=\sqrt[n]{\frac{Y_n}{Y_0}-1}
+$$</p>
+<blockquote>
+<p>$\overline{G}$表示平均增长率；n表示环比值的个数</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="第十四章-指数">第十四章 指数<a hidden class="anchor" aria-hidden="true" href="#第十四章-指数">#</a></h2>
+<h3 id="1简单指数">1.简单指数<a hidden class="anchor" aria-hidden="true" href="#1简单指数">#</a></h3>
+<p><strong>简单综合指数</strong>：将报告期的指数总和与基期的指标总和相对比的指数
+$$
+I_p=\frac{\sum p_1}{\sum p_0}
+$$
+$$
+I_q=\frac{\sum q_1}{\sum q_0}
+$$</p>
+<blockquote>
+<p>ｐ——质量指标
+&gt;
+&gt; ｑ——数量指标
+&gt;
+&gt; $I_p$——质量指标指数
+&gt;
+&gt; $I_q$——数量指标指数
+&gt;
+&gt; 下标1——报告期
+&gt; 
+&gt; 下标0——基期</p>
+</blockquote>
+<p><strong>简单平均指数</strong>：
+$$
+I_p=\frac{\sum \frac{p_1}{p_0}}{n}
+$$
+$$
+I_q=\frac{\sum \frac{q_1}{q_0}}{n}
+$$</p>
+<h3 id="2加权指数">2.加权指数<a hidden class="anchor" aria-hidden="true" href="#2加权指数">#</a></h3>
+<p><strong>加权综合指数</strong></p>
+<ul>
+<li>
+<p><strong>拉氏指数</strong>：将作为权数的同度量因素固定在<strong>基期</strong>
+$$
+I_q=\frac{\sum q_1p_0}{\sum q_0p_0}
+$$
+$$
+I_p=\frac{\sum q_0p_1}{\sum q_0p_0}
+$$</p>
+</li>
+<li>
+<p><strong>帕氏指数</strong>：将作为权数的同度量因素固定在<strong>报告期</strong>
+$$
+I_q=\frac{\sum q_1p_1}{\sum q_0p_1}
+$$</p>
+<p>$$
+I_q=\frac{\sum q_1p_1}{\sum q_1p_0}
+$$</p>
+<blockquote>
+<p>大多数的看法是，<strong>计算数量指数（如生产量指数）时，权数（价格）应该定在基期</strong>，这样才能剔除价格变动的影响，准确反映生产量的变化，按不变价计算产量指数就是出于这个原因。计算质量指数（如价格指数）时，不同时期的权数含义不同：若权数定在基期，反映的是在基期商品（产品）结构下价格的整体变动，更能揭示价格变动的内容；若权数定在报告期，反映的是在现实商品（产品）结构下价格的整体变动，商品（产品）结构变化的影响会融入价格指数，更能揭示价格变动的实际影响。编制指数的目的不同，权数确定的时期就可以不同。</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>加权平均指数</strong></p>
+<p>。。。</p>
+<h3 id="指数计算">指数计算<a hidden class="anchor" aria-hidden="true" href="#指数计算">#</a></h3>
+<p>采用加权平均的方法
+$$
+I_p=\frac{\sum iW}{\sum W}
+$$</p>
+<blockquote>
+<p>i为代表规格品个数指数或各层的类指数；</p>
+<p>W为相应的消费支出比重</p>
+</blockquote>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.fintinger.site/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/">统计学</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://www.fintinger.site/p/python%E4%B8%AD%E5%85%B3%E4%BA%8E%E6%96%87%E4%BB%B6%E7%9A%84%E7%A7%8D%E7%A7%8D%E9%97%AE%E9%A2%98/">
+    <span class="title">« Prev Page</span>
+    <br>
+    <span>python中关于文件的种种问题</span>
+  </a>
+  <a class="next" href="https://www.fintinger.site/p/%E5%85%B3%E4%BA%8Ejavascript%E6%A8%A1%E5%9D%97%E5%8C%96/">
+    <span class="title">Next Page »</span>
+    <br>
+    <span>关于Javascript模块化</span>
+  </a>
+</nav>
+
+  </footer><script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://waline-q3l7of5hj-fintinger.vercel.app/","visitor":true});
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://www.fintinger.site">Archai&#39;s home</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

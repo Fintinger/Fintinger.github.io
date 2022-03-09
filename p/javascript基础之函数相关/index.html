@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>JavaScript基础之函数相关 | Archai&#39;s home</title>
+<meta name="keywords" content="Javascript" />
+<meta name="description" content="关于函数传参  当参数数量不确定时，通常用arguments 来统一接收
+ 1 2 3 4 5 6  function sum() { return [...arguments].reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6   可以用展开语法代替arguments接收所有的参数：
+1 2 3 4 5 6  function sum(...args) { return args.reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6   注意： 接收参数时展开语法放其他形参后面，做统一接收
+递归函数  递归函数有两个关键点，一是要有退出执行的条件，二是要不断执行自身并返回
+ 递归思想实现阶乘函数 1 2 3 4 5 6  function factorial(num) { if (num === 1) { return num } return num * factorial(--num) }   如果用到箭头函数，可以简写为：">
+<meta name="author" content="Archai">
+<link rel="canonical" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.4ee57c4189977dc8f075173100c24a668d6bb09d6b5db74440649223f1221877.css" integrity="sha256-TuV8QYmXfcjwdRcxAMJKZo1rsJ1rXbdEQGSSI/EiGHc=" rel="preload stylesheet" as="style">
+<link rel="stylesheet" href="css/extended/custom.css">
+<link rel="icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="apple-touch-icon" href="https://www.fintinger.site/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.fintinger.site/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:title" content="JavaScript基础之函数相关" />
+<meta property="og:description" content="关于函数传参  当参数数量不确定时，通常用arguments 来统一接收
+ 1 2 3 4 5 6  function sum() { return [...arguments].reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6   可以用展开语法代替arguments接收所有的参数：
+1 2 3 4 5 6  function sum(...args) { return args.reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6   注意： 接收参数时展开语法放其他形参后面，做统一接收
+递归函数  递归函数有两个关键点，一是要有退出执行的条件，二是要不断执行自身并返回
+ 递归思想实现阶乘函数 1 2 3 4 5 6  function factorial(num) { if (num === 1) { return num } return num * factorial(--num) }   如果用到箭头函数，可以简写为：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3/" /><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-08-28T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-08-28T00:00:00&#43;00:00" /><meta property="og:site_name" content="Archai&#39;s home" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/>
+
+<meta name="twitter:title" content="JavaScript基础之函数相关"/>
+<meta name="twitter:description" content="关于函数传参  当参数数量不确定时，通常用arguments 来统一接收
+ 1 2 3 4 5 6  function sum() { return [...arguments].reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6   可以用展开语法代替arguments接收所有的参数：
+1 2 3 4 5 6  function sum(...args) { return args.reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6   注意： 接收参数时展开语法放其他形参后面，做统一接收
+递归函数  递归函数有两个关键点，一是要有退出执行的条件，二是要不断执行自身并返回
+ 递归思想实现阶乘函数 1 2 3 4 5 6  function factorial(num) { if (num === 1) { return num } return num * factorial(--num) }   如果用到箭头函数，可以简写为："/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://www.fintinger.site/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "JavaScript基础之函数相关",
+      "item": "https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "JavaScript基础之函数相关",
+  "name": "JavaScript基础之函数相关",
+  "description": "关于函数传参  当参数数量不确定时，通常用arguments 来统一接收\n 1 2 3 4 5 6  function sum() { return [...arguments].reduce((res, i,) =\u0026gt; res + i, 0) } let res = sum(1, 2, 3) console.log(res);//6   可以用展开语法代替arguments接收所有的参数：\n1 2 3 4 5 6  function sum(...args) { return args.reduce((res, i,) =\u0026gt; res + i, 0) } let res = sum(1, 2, 3) console.log(res);//6   注意： 接收参数时展开语法放其他形参后面，做统一接收\n递归函数  递归函数有两个关键点，一是要有退出执行的条件，二是要不断执行自身并返回\n 递归思想实现阶乘函数 1 2 3 4 5 6  function factorial(num) { if (num === 1) { return num } return num * factorial(--num) }   如果用到箭头函数，可以简写为：",
+  "keywords": [
+    "Javascript"
+  ],
+  "articleBody": "关于函数传参  当参数数量不确定时，通常用arguments 来统一接收\n 1 2 3 4 5 6  function sum() { return [...arguments].reduce((res, i,) = res + i, 0) } let res = sum(1, 2, 3) console.log(res);//6   可以用展开语法代替arguments接收所有的参数：\n1 2 3 4 5 6  function sum(...args) { return args.reduce((res, i,) = res + i, 0) } let res = sum(1, 2, 3) console.log(res);//6   注意： 接收参数时展开语法放其他形参后面，做统一接收\n递归函数  递归函数有两个关键点，一是要有退出执行的条件，二是要不断执行自身并返回\n 递归思想实现阶乘函数 1 2 3 4 5 6  function factorial(num) { if (num === 1) { return num } return num * factorial(--num) }   如果用到箭头函数，可以简写为：\n1 2 3 4 5  function factorial(num) { return num === 1 ? num : num * factorial(--num) } console.log(factorial(3));//6   call\u0026apply  call 或者 apply都是用来改变函数内部this指向，并且传递参数的\n 基本用法：\n1 2 3 4 5 6 7 8 9 10 11  let a = {name: 'jqf'} let b = {name: 'fin'} function getName(age, gender) { return `${this.name}今年${age}岁，性别${gender}` } let call = getName.call(a, 18, '男') let apply = getName.apply(b, [19, '男']) console.log(call);//jqf今年18岁，性别男 console.log(apply);//fin今年19岁，性别男   说明：\n call()和apply() 传递参数的方式不一样，call 接收普通传参，apply()则接收数组形式的参数 可以用来调用公用的一些方法，避免代码的重复  bind  与call(),apply() 不同的是，bind() 改变this指向后，并不会执行函数，只用于绑定this指向，也可以像call() 那样传递参数，bind()` 调用之后会返回新的函数\n 1 2 3 4 5 6 7 8 9 10 11  function ChangeColor(target) { this.tar = target this.colorArr = [\"#eccc68\", \"#ff4757\", \"#2ed573\", \"#3742fa\"] this.run=function (){ setInterval(function (){ let i=Math.floor(Math.random()*this.colorArr.length) this.tar.style.backgroundColor=this.colorArr[i] }.bind(this)//只用来改变this指向  ,1000) } }   ",
+  "wordCount" : "194",
+  "inLanguage": "en",
+  "datePublished": "2020-08-28T00:00:00Z",
+  "dateModified": "2020-08-28T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Archai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Archai's home",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.fintinger.site/posts/" title="Posts📑">
+                    <span>Posts📑</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/categories/" title="Categories🛒">
+                    <span>Categories🛒</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/search/" title="Search🔎 (Alt &#43; /)" accesskey=/>
+                    <span>Search🔎</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/archives/" title="Timeline🕰️">
+                    <span>Timeline🕰️</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/about/" title="About🥳">
+                    <span>About🥳</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://www.fintinger.site">Home</a>&nbsp;»&nbsp;<a href="https://www.fintinger.site/posts/">Posts</a></div>
+    <h1 class="post-title">
+      JavaScript基础之函数相关
+    </h1>
+    <div class="post-meta"><span title='2020-08-28 00:00:00 +0000 UTC'>August 28, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e5%85%b3%e4%ba%8e%e5%87%bd%e6%95%b0%e4%bc%a0%e5%8f%82" aria-label="关于函数传参">关于函数传参</a></li>
+                <li>
+                    <a href="#%e9%80%92%e5%bd%92%e5%87%bd%e6%95%b0" aria-label="递归函数">递归函数</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#%e9%80%92%e5%bd%92%e6%80%9d%e6%83%b3%e5%ae%9e%e7%8e%b0%e9%98%b6%e4%b9%98%e5%87%bd%e6%95%b0" aria-label="递归思想实现阶乘函数">递归思想实现阶乘函数</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#callapply" aria-label="call&amp;amp;apply">call&amp;apply</a></li>
+                <li>
+                    <a href="#bind" aria-label="bind">bind</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="关于函数传参">关于函数传参<a hidden class="anchor" aria-hidden="true" href="#关于函数传参">#</a></h2>
+<blockquote>
+<p>当参数数量不确定时，通常用<code>arguments</code> 来统一接收</p>
+</blockquote>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sum</span>() {
+    <span style="color:#66d9ef">return</span> [...<span style="color:#a6e22e">arguments</span>].<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">i</span>,) =&gt; <span style="color:#a6e22e">res</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">i</span>, <span style="color:#ae81ff">0</span>)
+}
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sum</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>)
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">res</span>);<span style="color:#75715e">//6
+</span></code></pre></td></tr></table>
+</div>
+</div><p><strong>可以用展开语法代替arguments接收所有的参数：</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sum</span>(...<span style="color:#a6e22e">args</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">args</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">i</span>,) =&gt; <span style="color:#a6e22e">res</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">i</span>, <span style="color:#ae81ff">0</span>)
+}
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sum</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>)
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">res</span>);<span style="color:#75715e">//6
+</span></code></pre></td></tr></table>
+</div>
+</div><p><strong>注意：</strong> 接收参数时展开语法放其他形参后面，做统一接收</p>
+<h2 id="递归函数">递归函数<a hidden class="anchor" aria-hidden="true" href="#递归函数">#</a></h2>
+<blockquote>
+<p>递归函数有两个关键点，一是要有退出执行的条件，二是要不断执行自身并返回</p>
+</blockquote>
+<h4 id="递归思想实现阶乘函数">递归思想实现阶乘函数<a hidden class="anchor" aria-hidden="true" href="#递归思想实现阶乘函数">#</a></h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">factorial</span>(<span style="color:#a6e22e">num</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">num</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>) {
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">num</span>
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">factorial</span>(<span style="color:#f92672">--</span><span style="color:#a6e22e">num</span>)
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>如果用到箭头函数，可以简写为：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">factorial</span>(<span style="color:#a6e22e">num</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">factorial</span>(<span style="color:#f92672">--</span><span style="color:#a6e22e">num</span>)
+}
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">factorial</span>(<span style="color:#ae81ff">3</span>));<span style="color:#75715e">//6
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="callapply">call&amp;apply<a hidden class="anchor" aria-hidden="true" href="#callapply">#</a></h2>
+<blockquote>
+<p>call 或者 apply都是用来改变函数内部this指向，并且传递参数的</p>
+</blockquote>
+<p><strong>基本用法：</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;jqf&#39;</span>}
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;fin&#39;</span>}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getName</span>(<span style="color:#a6e22e">age</span>, <span style="color:#a6e22e">gender</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">今年</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">age</span><span style="color:#e6db74">}</span><span style="color:#e6db74">岁，性别</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">gender</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>
+}
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">call</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getName</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">a</span>, <span style="color:#ae81ff">18</span>, <span style="color:#e6db74">&#39;男&#39;</span>)
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">apply</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getName</span>.<span style="color:#a6e22e">apply</span>(<span style="color:#a6e22e">b</span>, [<span style="color:#ae81ff">19</span>, <span style="color:#e6db74">&#39;男&#39;</span>])
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">call</span>);<span style="color:#75715e">//jqf今年18岁，性别男
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">apply</span>);<span style="color:#75715e">//fin今年19岁，性别男
+</span></code></pre></td></tr></table>
+</div>
+</div><p><strong>说明：</strong></p>
+<ul>
+<li><code>call()</code>和<code>apply()</code> 传递参数的方式不一样，<code>call</code> 接收普通传参，<code>apply()</code>则接收数组形式的参数</li>
+<li>可以用来调用公用的一些方法，避免代码的重复</li>
+</ul>
+<h2 id="bind">bind<a hidden class="anchor" aria-hidden="true" href="#bind">#</a></h2>
+<blockquote>
+<p>与<code>call(),apply()</code> 不同的是，<code>bind()</code> 改变this指向后，并不会执行函数，只用于绑定this指向，也可以像<code>call()</code> 那样传递参数，bind()` 调用之后会返回新的函数</p>
+</blockquote>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">ChangeColor</span>(<span style="color:#a6e22e">target</span>) {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">tar</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">target</span>
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">colorArr</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;#eccc68&#34;</span>, <span style="color:#e6db74">&#34;#ff4757&#34;</span>, <span style="color:#e6db74">&#34;#2ed573&#34;</span>, <span style="color:#e6db74">&#34;#3742fa&#34;</span>]
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">run</span><span style="color:#f92672">=</span><span style="color:#66d9ef">function</span> (){
+        <span style="color:#a6e22e">setInterval</span>(<span style="color:#66d9ef">function</span> (){
+            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">=</span>Math.<span style="color:#a6e22e">floor</span>(Math.<span style="color:#a6e22e">random</span>()<span style="color:#f92672">*</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">colorArr</span>.<span style="color:#a6e22e">length</span>)
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">tar</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">backgroundColor</span><span style="color:#f92672">=</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">colorArr</span>[<span style="color:#a6e22e">i</span>]
+        }.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>)<span style="color:#75715e">//只用来改变this指向
+</span><span style="color:#75715e"></span>        ,<span style="color:#ae81ff">1000</span>)
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.fintinger.site/tags/javascript/">Javascript</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%AF%B9%E8%B1%A1/">
+    <span class="title">« Prev Page</span>
+    <br>
+    <span>JavaScript基础之对象</span>
+  </a>
+  <a class="next" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bmap%E4%B8%8Eweakmap%E7%B1%BB%E5%9E%8B/">
+    <span class="title">Next Page »</span>
+    <br>
+    <span>JavaScript基础之Map与Weakmap类型</span>
+  </a>
+</nav>
+
+  </footer><script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://waline-q3l7of5hj-fintinger.vercel.app/","visitor":true});
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://www.fintinger.site">Archai&#39;s home</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Jquery一些操作 | Archai&#39;s home</title>
+<meta name="keywords" content="Jquery" />
+<meta name="description" content="Jquery属性操作 1.属性 attr(attrName [,attrValue]) 操作所有属性（自定义和内置的）
+prop(attrName [,attrValue)) 操作HTML元素内置属性
+removeAttr(attrNam)删除属性
+removeProp(attrName) 并不能删除HMTL元素上的属性
+2.CSS类 addclass()添加一个class值
+removeClass()删除一个class值
+toggleClass()切换一个class值(有则删掉该class，没有则加上，其他class不动)
+hasClasss() 判断是否有指定class
+3.HTML代码/文本/值 html([html]) 相当于innerHTML
+text([text)相当于innerText
+val([value]) 设置/获取表单控件的值
+Jquery样式操作 1.CSS操作 css(atr,[value])设置/获取CSS值
+ 参数可以是一个对象的形式css({atr: value,})
+ 2.位置 offset()[.left/.top]元素在页面中的坐标
+ 设置只需要传一个对象即可 {&quot;left:num,top:num&quot;}
+ position()[.left/.top] 元素在第一个定位的祖先元素内的坐标 (只读！)
+scollTop &hellip;
+scollLeft &hellip;
+3.尺寸 width()/height()内容尺寸
+innerwidth()/ innerHeight()内容尺寸&#43; padding
+outerWidth()/ outerHeight() 盒子的尺寸
+Jquery筛选操作 1. 过滤操作 first ()
+last() 
+eq()
+not() 
+filter()
+slice ()
+has()
+3.串联 add()把选中的元素加入当前集合
+addBack()把调用该方法的元素加入当前集合
+end()返回最后一次破坏性操作之前的DOM
+contents()返回所有子节点的集合">
+<meta name="author" content="Archai">
+<link rel="canonical" href="https://www.fintinger.site/p/jquery%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.4ee57c4189977dc8f075173100c24a668d6bb09d6b5db74440649223f1221877.css" integrity="sha256-TuV8QYmXfcjwdRcxAMJKZo1rsJ1rXbdEQGSSI/EiGHc=" rel="preload stylesheet" as="style">
+<link rel="stylesheet" href="css/extended/custom.css">
+<link rel="icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="apple-touch-icon" href="https://www.fintinger.site/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.fintinger.site/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Jquery一些操作" />
+<meta property="og:description" content="Jquery属性操作 1.属性 attr(attrName [,attrValue]) 操作所有属性（自定义和内置的）
+prop(attrName [,attrValue)) 操作HTML元素内置属性
+removeAttr(attrNam)删除属性
+removeProp(attrName) 并不能删除HMTL元素上的属性
+2.CSS类 addclass()添加一个class值
+removeClass()删除一个class值
+toggleClass()切换一个class值(有则删掉该class，没有则加上，其他class不动)
+hasClasss() 判断是否有指定class
+3.HTML代码/文本/值 html([html]) 相当于innerHTML
+text([text)相当于innerText
+val([value]) 设置/获取表单控件的值
+Jquery样式操作 1.CSS操作 css(atr,[value])设置/获取CSS值
+ 参数可以是一个对象的形式css({atr: value,})
+ 2.位置 offset()[.left/.top]元素在页面中的坐标
+ 设置只需要传一个对象即可 {&quot;left:num,top:num&quot;}
+ position()[.left/.top] 元素在第一个定位的祖先元素内的坐标 (只读！)
+scollTop &hellip;
+scollLeft &hellip;
+3.尺寸 width()/height()内容尺寸
+innerwidth()/ innerHeight()内容尺寸&#43; padding
+outerWidth()/ outerHeight() 盒子的尺寸
+Jquery筛选操作 1. 过滤操作 first ()
+last() 
+eq()
+not() 
+filter()
+slice ()
+has()
+3.串联 add()把选中的元素加入当前集合
+addBack()把调用该方法的元素加入当前集合
+end()返回最后一次破坏性操作之前的DOM
+contents()返回所有子节点的集合" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.fintinger.site/p/jquery%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/" /><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-04-23T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-04-23T00:00:00&#43;00:00" /><meta property="og:site_name" content="Archai&#39;s home" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/>
+
+<meta name="twitter:title" content="Jquery一些操作"/>
+<meta name="twitter:description" content="Jquery属性操作 1.属性 attr(attrName [,attrValue]) 操作所有属性（自定义和内置的）
+prop(attrName [,attrValue)) 操作HTML元素内置属性
+removeAttr(attrNam)删除属性
+removeProp(attrName) 并不能删除HMTL元素上的属性
+2.CSS类 addclass()添加一个class值
+removeClass()删除一个class值
+toggleClass()切换一个class值(有则删掉该class，没有则加上，其他class不动)
+hasClasss() 判断是否有指定class
+3.HTML代码/文本/值 html([html]) 相当于innerHTML
+text([text)相当于innerText
+val([value]) 设置/获取表单控件的值
+Jquery样式操作 1.CSS操作 css(atr,[value])设置/获取CSS值
+ 参数可以是一个对象的形式css({atr: value,})
+ 2.位置 offset()[.left/.top]元素在页面中的坐标
+ 设置只需要传一个对象即可 {&quot;left:num,top:num&quot;}
+ position()[.left/.top] 元素在第一个定位的祖先元素内的坐标 (只读！)
+scollTop &hellip;
+scollLeft &hellip;
+3.尺寸 width()/height()内容尺寸
+innerwidth()/ innerHeight()内容尺寸&#43; padding
+outerWidth()/ outerHeight() 盒子的尺寸
+Jquery筛选操作 1. 过滤操作 first ()
+last() 
+eq()
+not() 
+filter()
+slice ()
+has()
+3.串联 add()把选中的元素加入当前集合
+addBack()把调用该方法的元素加入当前集合
+end()返回最后一次破坏性操作之前的DOM
+contents()返回所有子节点的集合"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://www.fintinger.site/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Jquery一些操作",
+      "item": "https://www.fintinger.site/p/jquery%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Jquery一些操作",
+  "name": "Jquery一些操作",
+  "description": "Jquery属性操作 1.属性 attr(attrName [,attrValue]) 操作所有属性（自定义和内置的）\nprop(attrName [,attrValue)) 操作HTML元素内置属性\nremoveAttr(attrNam)删除属性\nremoveProp(attrName) 并不能删除HMTL元素上的属性\n2.CSS类 addclass()添加一个class值\nremoveClass()删除一个class值\ntoggleClass()切换一个class值(有则删掉该class，没有则加上，其他class不动)\nhasClasss() 判断是否有指定class\n3.HTML代码/文本/值 html([html]) 相当于innerHTML\ntext([text)相当于innerText\nval([value]) 设置/获取表单控件的值\nJquery样式操作 1.CSS操作 css(atr,[value])设置/获取CSS值\n 参数可以是一个对象的形式css({atr: value,})\n 2.位置 offset()[.left/.top]元素在页面中的坐标\n 设置只需要传一个对象即可 {\u0026quot;left:num,top:num\u0026quot;}\n position()[.left/.top] 元素在第一个定位的祖先元素内的坐标 (只读！)\nscollTop \u0026hellip;\nscollLeft \u0026hellip;\n3.尺寸 width()/height()内容尺寸\ninnerwidth()/ innerHeight()内容尺寸+ padding\nouterWidth()/ outerHeight() 盒子的尺寸\nJquery筛选操作 1. 过滤操作 first ()\nlast() \neq()\nnot() \nfilter()\nslice ()\nhas()\n3.串联 add()把选中的元素加入当前集合\naddBack()把调用该方法的元素加入当前集合\nend()返回最后一次破坏性操作之前的DOM\ncontents()返回所有子节点的集合",
+  "keywords": [
+    "Jquery"
+  ],
+  "articleBody": "Jquery属性操作 1.属性 attr(attrName [,attrValue]) 操作所有属性（自定义和内置的）\nprop(attrName [,attrValue)) 操作HTML元素内置属性\nremoveAttr(attrNam)删除属性\nremoveProp(attrName) 并不能删除HMTL元素上的属性\n2.CSS类 addclass()添加一个class值\nremoveClass()删除一个class值\ntoggleClass()切换一个class值(有则删掉该class，没有则加上，其他class不动)\nhasClasss() 判断是否有指定class\n3.HTML代码/文本/值 html([html]) 相当于innerHTML\ntext([text)相当于innerText\nval([value]) 设置/获取表单控件的值\nJquery样式操作 1.CSS操作 css(atr,[value])设置/获取CSS值\n 参数可以是一个对象的形式css({atr: value,})\n 2.位置 offset()[.left/.top]元素在页面中的坐标\n 设置只需要传一个对象即可 {\"left:num,top:num\"}\n position()[.left/.top] 元素在第一个定位的祖先元素内的坐标 (只读！)\nscollTop …\nscollLeft …\n3.尺寸 width()/height()内容尺寸\ninnerwidth()/ innerHeight()内容尺寸+ padding\nouterWidth()/ outerHeight() 盒子的尺寸\nJquery筛选操作 1. 过滤操作 first ()\nlast() \neq()\nnot() \nfilter()\nslice ()\nhas()\n3.串联 add()把选中的元素加入当前集合\naddBack()把调用该方法的元素加入当前集合\nend()返回最后一次破坏性操作之前的DOM\ncontents()返回所有子节点的集合\n4 jQuery DOM对象操作 each()遍历\nmap()返回新的集合\nlength集合中元素的数量index（返回该元素在父元素中的索引位置）\nget([index])返回集合指定索引的dom对象，还可以把jquerydom集合转为纯数组没参数\n文档处理 1.内部插入 append(content|fn)\nappendTo(content)\nprepend(content|fn)\nprependTo(content)\n2.外部插入 after(content|fn)\nbefore(content|fn)\ninsertAfter(content)\ninsertBefore(content\n3.包裹 wrap(html|ele|fn)\nunwrap()\nwrapAll(html|ele)\nwrapInner(html|ele|fn)\n4.替换 replaceWith(content|fn)\nreplaceAll(selector)\n5.删除 empty()\nremove([expr])\ndetach([expr])\n6.复制 clone([Even[,deepEven]])\njQuery事件 1.事件绑定 on(event,fn) 标准的事件绑定方式\n on({}) 可以同时绑定多个事件\n one(event,fn) 只能绑定一次事件\n 把事件名作为对象\n 2.解除事件绑定 off([\"event\"]) 可以去除所有，也可以解除指定事件\n3.事件委派 on(event,selector,fn) 给父元素添加事件\n 给新添加的元素绑定与之前存在的元素相同的方法（利用冒泡）\n 4. 控制事件触发 trigger()\ntriggerHandler()\n ① trigger返回的是 jqDOM可以连贯操作 ② trigger可以触发元素自带的事件( input自带的事件，focus，submit…) ③ trigger会触发集合中所有元素的事件；trigger值触发集合中第一个元素的事件\n 5.事件列表（新增） ready 页面中DOM加载完毕（不同于onload）\nfocusin 获取焦点，绑定给输入框的父元素\nfocusout 失去焦点 ，绑定给输入框的父元素\nmouseenter 代替mouseover\nmoouseleave 代替mouseout\nhover moouseleave和mouseenter集合\n6.事件对象 pageX 鼠标x坐标\npageY 鼠标y坐标\ntarget 当前触发事件的元素\nwhich 键盘按键的ASCII码\ntype 事件类型（事件名称）\npreventDefault阻止默认操作（例如a标签跳转，致使页面刷新） Jquery动画 基本效果 hide([time,fn]) 隐藏\nshow([time,fn]) 显示\ntoggle([time,fn])\n 基本效果的CSS属性变化：透明度变化，元素大小相关的样式 padding, border width/height外边距\n  fn() 表示动画结束执行的函数\n 滑动效果 slidedown 显示\nslideup 隐藏\nslidetoggle \n 垂直方向的变化\n 淡入淡出效果 fadeOut() 隐藏\nfadeIn() 显示\nfadeToggle()\nfadeTo(time,opicity,fn)\n自定义动画  animate({},time,fn)   {}中为需要变化的值。 取值可以是toggle，可变化可恢复原样\n stop() 暂停动画\nfinish() 结束动画（提前完成）\ndelay(time) 延迟动画（动画连续调用时加在中间，会等time时间执行后面的）\n动画设置 jQuery. fx. off 清除所有动画，恢复为默认效果\njQuery. fx interval 动画帧数\n动画队列  所有的动画操作会加入到队列中，依次执行 其他操作不会加入动画队列  jQuery动画与CSS3动画  兼容性，CS53的动画和过渡需要E9+， jQuery可以使用版本的 CSS3的动画或者过渡必须给元素指定具体的CSS属性值  jQuery工具方法 1.数组对象方法 $.each（Aray,fn）遍历数组或类数组对象\n$.grep（Array, fn）过滤数组\n$.map（ Array, fn）从数组取出信息，返回新的数组\n$.makeArray(likeArray) 把类数组对象转化为纯数组\n$inArray(val，Array) 判断元素在数组中的位置，不存在返回-1\n$.merge() 合并数组\ntoArray() jQuery DOM方法，把jQueryDOM直接转化为纯数组\n2.函数方法 $.proxy() 改变函数中this指向\n3.类型判断  $.type()判断类型\n $.isFunction()判断是否是函数/方法\n $.isEmptyobject()判断是否是空的对象\n $.Plainobject()判断是否是纯的对象（构造函数是obeject)\n $.window()判断是否是 window对象\n $.isNumeric()判断是否是数字(NaN虽然是number类型，但这个是false)\n4.字符串 $.trim()取出两边的空格 $.param() 把对象序列化成字符串\n {name:\"lili\",age:18} —-name=lili\u0026age=18\n 5. 版本 $.fn.jquery\njQuery Ajax 1.快速请求方法   get\n$.get(url,callback,[,datatype])\n  post\n$.post(url,[,data],callback,[,datatype])`\n  2.ajax方法   ajax()\n$.ajax{\rurl:,//地址\rtype:\"get\"\"post\", //请求方式\rasync:,//是否异步\rdata:,//发送的数据 对象或字符串(序列化)\rdataType:,//响应的内容格式\rsuccess://成功回调\rerror://失败回调\r}\r  3.表单方法 serialize() 把表单中含有name属性的表单控件的值拼接成字符串(序列化表单)\njQuery插件 1. select2 下拉框搜索插件   官网 http://select.org/\n  Github http://github.com/select2/select2\n  用法\n$(dom).select2()\r$(dom).select2({\rwidth:,\rdata:,\rajax:,\r...\r})\r  2.datetimepicker 时间日期插件   github https://github.com/xdan/datetimepicker\n  用法\n//设置语言\r$.datetimepicker.setLocal(\"zh\");\r//调用插件\r$(dom).datetimepicker({\rdatepicker:,\rtimepicker:,//false||true\rformat:\"Y-m-d H:i\"//H表示24小时制，h表示12小时制\rvalue:,\r...\r})\r  3.全屏滚动插件   官网 https://alvarotrigo.com/fullPage/zh/\n  Github说明 https://github.com/alvarotrigo/fullPage.js/tree/master/lang/chinese#fullpagejs\n  用法\n\r\r\r\r\r\r\r\r\r\r\r$(\"#fullPage\").fullpage({\rnavigation:true,\rsectionsColor:[]\r...\r})\r\r  4.lazeload 图片懒加载   官网 https://appelsiini.net/projects/lazyload/\n  Github https://github.com/tuupola/lazyload/tree/2.x\n  用法：\n   $(\"#lazyWrapper img\").lazyload()\r5.layer弹窗插件   官网 http://layer.layui.com/?alone\n  用法\nlayer.alert()\rlayer.confirm()\rlayer.msg()\rlayer.load()\rlayer.tips()\rlayer.colse()\rlayer.open({\rtype:,\rtitle:,\rcontent:\r...\r})\r...\r  6.nice validator 表单验证   官网 https://validator.niceue.com/\n  使用\n$(\"form\").validator\r  7.jQuery-easing   官网 http://gsgd.co.uk/sandbox/jquery/easing/\n  用法\n1  $(dom).hide(speed,easing,fn)     自定义插件   jQuery.fn.extend() 给jQuery扩展方法\n1 2 3 4 5  $.fn.extend({ 方法名:function(){} }) //或者 $.fn.方法名=function(){}     jQuery.extend() 给jQuery对象本身扩展方法\n1 2 3  $.extend({ 方法名:function(){} })     jQuery官网 jQuery UI 官网 https://jqueryui.com/\njQuery Mobile 官网 https://jquerymobile.com/\n教程 http://www.runoob.com/jquerymobile/jquerymobile-tutorial.html\nSizzle 官网 https://sizzlejs.com/\nZepto 官网 http://zeptojs.com\njquery区别：https://www.zhihu.com/question/25379207\n",
+  "wordCount" : "405",
+  "inLanguage": "en",
+  "datePublished": "2020-04-23T00:00:00Z",
+  "dateModified": "2020-04-23T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Archai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.fintinger.site/p/jquery%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Archai's home",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.fintinger.site/posts/" title="Posts📑">
+                    <span>Posts📑</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/categories/" title="Categories🛒">
+                    <span>Categories🛒</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/search/" title="Search🔎 (Alt &#43; /)" accesskey=/>
+                    <span>Search🔎</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/archives/" title="Timeline🕰️">
+                    <span>Timeline🕰️</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/about/" title="About🥳">
+                    <span>About🥳</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://www.fintinger.site">Home</a>&nbsp;»&nbsp;<a href="https://www.fintinger.site/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Jquery一些操作
+    </h1>
+    <div class="post-meta"><span title='2020-04-23 00:00:00 +0000 UTC'>April 23, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#jquery%e5%b1%9e%e6%80%a7%e6%93%8d%e4%bd%9c" aria-label="Jquery属性操作">Jquery属性操作</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#1%e5%b1%9e%e6%80%a7" aria-label="1.属性">1.属性</a></li>
+                <li>
+                    <a href="#2css%e7%b1%bb" aria-label="2.CSS类">2.CSS类</a></li>
+                <li>
+                    <a href="#3html%e4%bb%a3%e7%a0%81%e6%96%87%e6%9c%ac%e5%80%bc" aria-label="3.HTML代码/文本/值">3.HTML代码/文本/值</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#jquery%e6%a0%b7%e5%bc%8f%e6%93%8d%e4%bd%9c" aria-label="Jquery样式操作">Jquery样式操作</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#1css%e6%93%8d%e4%bd%9c" aria-label="1.CSS操作">1.CSS操作</a></li>
+                <li>
+                    <a href="#2%e4%bd%8d%e7%bd%ae" aria-label="2.位置">2.位置</a></li>
+                <li>
+                    <a href="#3%e5%b0%ba%e5%af%b8" aria-label="3.尺寸">3.尺寸</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#jquery%e7%ad%9b%e9%80%89%e6%93%8d%e4%bd%9c" aria-label="Jquery筛选操作">Jquery筛选操作</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#1-%e8%bf%87%e6%bb%a4%e6%93%8d%e4%bd%9c" aria-label="1. 过滤操作">1. 过滤操作</a></li>
+                <li>
+                    <a href="#3%e4%b8%b2%e8%81%94" aria-label="3.串联">3.串联</a></li>
+                <li>
+                    <a href="#4-jquery-dom%e5%af%b9%e8%b1%a1%e6%93%8d%e4%bd%9c" aria-label="4 jQuery DOM对象操作">4 jQuery DOM对象操作</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#%e6%96%87%e6%a1%a3%e5%a4%84%e7%90%86" aria-label="文档处理">文档处理</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#1%e5%86%85%e9%83%a8%e6%8f%92%e5%85%a5" aria-label="1.内部插入">1.内部插入</a></li>
+                <li>
+                    <a href="#2%e5%a4%96%e9%83%a8%e6%8f%92%e5%85%a5" aria-label="2.外部插入">2.外部插入</a></li>
+                <li>
+                    <a href="#3%e5%8c%85%e8%a3%b9" aria-label="3.包裹">3.包裹</a></li>
+                <li>
+                    <a href="#4%e6%9b%bf%e6%8d%a2" aria-label="4.替换">4.替换</a></li>
+                <li>
+                    <a href="#5%e5%88%a0%e9%99%a4" aria-label="5.删除">5.删除</a></li>
+                <li>
+                    <a href="#6%e5%a4%8d%e5%88%b6" aria-label="6.复制">6.复制</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#jquery%e4%ba%8b%e4%bb%b6" aria-label="jQuery事件">jQuery事件</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#1%e4%ba%8b%e4%bb%b6%e7%bb%91%e5%ae%9a" aria-label="1.事件绑定">1.事件绑定</a></li>
+                <li>
+                    <a href="#2%e8%a7%a3%e9%99%a4%e4%ba%8b%e4%bb%b6%e7%bb%91%e5%ae%9a" aria-label="2.解除事件绑定">2.解除事件绑定</a></li>
+                <li>
+                    <a href="#3%e4%ba%8b%e4%bb%b6%e5%a7%94%e6%b4%be" aria-label="3.事件委派">3.事件委派</a></li>
+                <li>
+                    <a href="#4-%e6%8e%a7%e5%88%b6%e4%ba%8b%e4%bb%b6%e8%a7%a6%e5%8f%91" aria-label="4. 控制事件触发">4. 控制事件触发</a></li>
+                <li>
+                    <a href="#5%e4%ba%8b%e4%bb%b6%e5%88%97%e8%a1%a8%e6%96%b0%e5%a2%9e" aria-label="5.事件列表（新增）">5.事件列表（新增）</a></li>
+                <li>
+                    <a href="#6%e4%ba%8b%e4%bb%b6%e5%af%b9%e8%b1%a1" aria-label="6.事件对象">6.事件对象</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#jquery%e5%8a%a8%e7%94%bb" aria-label="Jquery动画">Jquery动画</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#%e5%9f%ba%e6%9c%ac%e6%95%88%e6%9e%9c" aria-label="基本效果">基本效果</a></li>
+                <li>
+                    <a href="#%e6%bb%91%e5%8a%a8%e6%95%88%e6%9e%9c" aria-label="滑动效果">滑动效果</a></li>
+                <li>
+                    <a href="#%e6%b7%a1%e5%85%a5%e6%b7%a1%e5%87%ba%e6%95%88%e6%9e%9c" aria-label="淡入淡出效果">淡入淡出效果</a></li>
+                <li>
+                    <a href="#%e8%87%aa%e5%ae%9a%e4%b9%89%e5%8a%a8%e7%94%bb" aria-label="自定义动画">自定义动画</a></li>
+                <li>
+                    <a href="#%e5%8a%a8%e7%94%bb%e8%ae%be%e7%bd%ae" aria-label="动画设置">动画设置</a></li>
+                <li>
+                    <a href="#%e5%8a%a8%e7%94%bb%e9%98%9f%e5%88%97" aria-label="动画队列">动画队列</a></li>
+                <li>
+                    <a href="#jquery%e5%8a%a8%e7%94%bb%e4%b8%8ecss3%e5%8a%a8%e7%94%bb" aria-label="jQuery动画与CSS3动画">jQuery动画与CSS3动画</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#jquery%e5%b7%a5%e5%85%b7%e6%96%b9%e6%b3%95" aria-label="jQuery工具方法">jQuery工具方法</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#1%e6%95%b0%e7%bb%84%e5%af%b9%e8%b1%a1%e6%96%b9%e6%b3%95" aria-label="1.数组对象方法">1.数组对象方法</a></li>
+                <li>
+                    <a href="#2%e5%87%bd%e6%95%b0%e6%96%b9%e6%b3%95" aria-label="2.函数方法">2.函数方法</a></li>
+                <li>
+                    <a href="#3%e7%b1%bb%e5%9e%8b%e5%88%a4%e6%96%ad" aria-label="3.类型判断">3.类型判断</a></li>
+                <li>
+                    <a href="#4%e5%ad%97%e7%ac%a6%e4%b8%b2" aria-label="4.字符串">4.字符串</a></li>
+                <li>
+                    <a href="#5-%e7%89%88%e6%9c%ac" aria-label="5. 版本">5. 版本</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#jquery-ajax" aria-label="jQuery Ajax">jQuery Ajax</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#1%e5%bf%ab%e9%80%9f%e8%af%b7%e6%b1%82%e6%96%b9%e6%b3%95" aria-label="1.快速请求方法">1.快速请求方法</a></li>
+                <li>
+                    <a href="#2ajax%e6%96%b9%e6%b3%95" aria-label="2.ajax方法">2.ajax方法</a></li>
+                <li>
+                    <a href="#3%e8%a1%a8%e5%8d%95%e6%96%b9%e6%b3%95" aria-label="3.表单方法">3.表单方法</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#jquery%e6%8f%92%e4%bb%b6" aria-label="jQuery插件">jQuery插件</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#1-select2-%e4%b8%8b%e6%8b%89%e6%a1%86%e6%90%9c%e7%b4%a2%e6%8f%92%e4%bb%b6" aria-label="1. select2 下拉框搜索插件">1. select2 下拉框搜索插件</a></li>
+                <li>
+                    <a href="#2datetimepicker-%e6%97%b6%e9%97%b4%e6%97%a5%e6%9c%9f%e6%8f%92%e4%bb%b6" aria-label="2.datetimepicker 时间日期插件">2.datetimepicker 时间日期插件</a></li>
+                <li>
+                    <a href="#3%e5%85%a8%e5%b1%8f%e6%bb%9a%e5%8a%a8%e6%8f%92%e4%bb%b6" aria-label="3.全屏滚动插件">3.全屏滚动插件</a></li>
+                <li>
+                    <a href="#4lazeload-%e5%9b%be%e7%89%87%e6%87%92%e5%8a%a0%e8%bd%bd" aria-label="4.lazeload 图片懒加载">4.lazeload 图片懒加载</a></li>
+                <li>
+                    <a href="#5layer%e5%bc%b9%e7%aa%97%e6%8f%92%e4%bb%b6" aria-label="5.layer弹窗插件">5.layer弹窗插件</a></li>
+                <li>
+                    <a href="#6nice-validator-%e8%a1%a8%e5%8d%95%e9%aa%8c%e8%af%81" aria-label="6.nice validator 表单验证">6.nice validator 表单验证</a></li>
+                <li>
+                    <a href="#7jquery-easing" aria-label="7.jQuery-easing">7.jQuery-easing</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#%e8%87%aa%e5%ae%9a%e4%b9%89%e6%8f%92%e4%bb%b6" aria-label="自定义插件">自定义插件</a></li>
+                <li>
+                    <a href="#jquery%e5%ae%98%e7%bd%91" aria-label="jQuery官网">jQuery官网</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#jquery-ui" aria-label="jQuery UI">jQuery UI</a></li>
+                <li>
+                    <a href="#jquery-mobile" aria-label="jQuery Mobile">jQuery Mobile</a></li>
+                <li>
+                    <a href="#sizzle" aria-label="Sizzle">Sizzle</a></li>
+                <li>
+                    <a href="#zepto" aria-label="Zepto">Zepto</a>
+                </li>
+            </ul>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="jquery属性操作">Jquery属性操作<a hidden class="anchor" aria-hidden="true" href="#jquery属性操作">#</a></h2>
+<h4 id="1属性">1.属性<a hidden class="anchor" aria-hidden="true" href="#1属性">#</a></h4>
+<p><code>attr(attrName [,attrValue])</code> 操作所有属性（自定义和内置的）</p>
+<p><code>prop(attrName [,attrValue)) </code>操作HTML元素内置属性</p>
+<p><code>removeAttr(attrNam)</code>删除属性</p>
+<p><code>removeProp(attrName) </code>并不能删除HMTL元素上的属性</p>
+<h4 id="2css类">2.CSS类<a hidden class="anchor" aria-hidden="true" href="#2css类">#</a></h4>
+<p><code>addclass()</code>添加一个class值</p>
+<p><code>removeClass()</code>删除一个class值</p>
+<p><code>toggleClass()</code>切换一个class值(有则删掉该class，没有则加上，其他class不动)</p>
+<p><code>hasClasss()  </code>判断是否有指定class</p>
+<h4 id="3html代码文本值">3.HTML代码/文本/值<a hidden class="anchor" aria-hidden="true" href="#3html代码文本值">#</a></h4>
+<p><code>html([html])</code> 相当于innerHTML</p>
+<p><code>text([text)</code>相当于innerText</p>
+<p><code>val([value])</code> 设置/获取表单控件的值</p>
+<h2 id="jquery样式操作">Jquery样式操作<a hidden class="anchor" aria-hidden="true" href="#jquery样式操作">#</a></h2>
+<h4 id="1css操作">1.CSS操作<a hidden class="anchor" aria-hidden="true" href="#1css操作">#</a></h4>
+<p><code>css(atr,[value])</code>设置/获取CSS值</p>
+<blockquote>
+<p>参数可以是一个对象的形式<code>css({atr: value,})</code></p>
+</blockquote>
+<h4 id="2位置">2.位置<a hidden class="anchor" aria-hidden="true" href="#2位置">#</a></h4>
+<p><code>offset()[.left/.top]</code>元素在页面中的坐标</p>
+<blockquote>
+<p>设置只需要传一个对象即可 <code>{&quot;left:num,top:num&quot;}</code></p>
+</blockquote>
+<p><code>position()[.left/.top] </code>元素在第一个定位的祖先元素内的坐标 (只读！)</p>
+<p><code>scollTop</code> &hellip;</p>
+<p><code>scollLeft</code> &hellip;</p>
+<h4 id="3尺寸">3.尺寸<a hidden class="anchor" aria-hidden="true" href="#3尺寸">#</a></h4>
+<p><code>width()/height()</code>内容尺寸</p>
+<p><code>innerwidth()/ innerHeight()</code>内容尺寸+ padding</p>
+<p><code>outerWidth()/ outerHeight()</code> 盒子的尺寸</p>
+<p><img loading="lazy" src="http://r.photo.store.qq.com/psc?/V11ijIHl1yJLHC/45NBuzDIW489QBoVep5mcd1Qilcb0uoWtG8pZG8gvqoalE8EE5LfqvMcq1g.AzAqSg0VAtan4UUfKlogjEH1QBBMY6Zi2Y9A4T0MhaQ1MJg!/r" alt=""  />
+</p>
+<h2 id="jquery筛选操作">Jquery筛选操作<a hidden class="anchor" aria-hidden="true" href="#jquery筛选操作">#</a></h2>
+<h4 id="1-过滤操作">1. 过滤操作<a hidden class="anchor" aria-hidden="true" href="#1-过滤操作">#</a></h4>
+<p><code>first ()</code></p>
+<p><code>last() </code></p>
+<p><code>eq()</code></p>
+<p><code>not() </code></p>
+<p><code>filter()</code></p>
+<p><code>slice ()</code></p>
+<p><code>has()</code></p>
+<h4 id="3串联">3.串联<a hidden class="anchor" aria-hidden="true" href="#3串联">#</a></h4>
+<p><code>add()</code>把选中的元素加入当前集合</p>
+<p><code>addBack()</code>把调用该方法的元素加入当前集合</p>
+<p><code>end()</code>返回最后一次破坏性操作之前的DOM</p>
+<p><code>contents()</code>返回所有子节点的集合</p>
+<h4 id="4-jquery-dom对象操作">4 jQuery DOM对象操作<a hidden class="anchor" aria-hidden="true" href="#4-jquery-dom对象操作">#</a></h4>
+<p><code>each()</code>遍历</p>
+<p><code>map()</code>返回新的集合</p>
+<p><code>length</code>集合中元素的数量index（返回该元素在父元素中的索引位置）</p>
+<p><code>get([index])</code>返回集合指定索引的dom对象，还可以把jquerydom集合转为纯数组没参数</p>
+<h2 id="文档处理">文档处理<a hidden class="anchor" aria-hidden="true" href="#文档处理">#</a></h2>
+<h4 id="1内部插入">1.内部插入<a hidden class="anchor" aria-hidden="true" href="#1内部插入">#</a></h4>
+<p><code>append(content|fn)</code></p>
+<p><code>appendTo(content)</code></p>
+<p><code>prepend(content|fn)</code></p>
+<p><code>prependTo(content)</code></p>
+<h4 id="2外部插入">2.外部插入<a hidden class="anchor" aria-hidden="true" href="#2外部插入">#</a></h4>
+<p><code>after(content|fn)</code></p>
+<p><code>before(content|fn)</code></p>
+<p><code>insertAfter(content)</code></p>
+<p><code>insertBefore(content</code></p>
+<h4 id="3包裹">3.包裹<a hidden class="anchor" aria-hidden="true" href="#3包裹">#</a></h4>
+<p><code>wrap(html|ele|fn)</code></p>
+<p><code>unwrap()</code></p>
+<p><code>wrapAll(html|ele)</code></p>
+<p><code>wrapInner(html|ele|fn)</code></p>
+<h4 id="4替换">4.替换<a hidden class="anchor" aria-hidden="true" href="#4替换">#</a></h4>
+<p><code>replaceWith(content|fn)</code></p>
+<p><code>replaceAll(selector)</code></p>
+<h4 id="5删除">5.删除<a hidden class="anchor" aria-hidden="true" href="#5删除">#</a></h4>
+<p><code>empty()</code></p>
+<p><code>remove([expr])</code></p>
+<p><code>detach([expr])</code></p>
+<h4 id="6复制">6.复制<a hidden class="anchor" aria-hidden="true" href="#6复制">#</a></h4>
+<p><code>clone([Even[,deepEven]])</code></p>
+<h2 id="jquery事件">jQuery事件<a hidden class="anchor" aria-hidden="true" href="#jquery事件">#</a></h2>
+<h4 id="1事件绑定">1.事件绑定<a hidden class="anchor" aria-hidden="true" href="#1事件绑定">#</a></h4>
+<p><code>on(event,fn)</code>  标准的事件绑定方式</p>
+<blockquote>
+<p>on({}) 可以同时绑定多个事件</p>
+</blockquote>
+<p><code>one(event,fn)</code> 只能绑定一次事件</p>
+<blockquote>
+<p>把事件名作为对象</p>
+</blockquote>
+<h4 id="2解除事件绑定">2.解除事件绑定<a hidden class="anchor" aria-hidden="true" href="#2解除事件绑定">#</a></h4>
+<p><code>off([&quot;event&quot;])</code> 可以去除所有，也可以解除指定事件</p>
+<h4 id="3事件委派">3.事件委派<a hidden class="anchor" aria-hidden="true" href="#3事件委派">#</a></h4>
+<p><code>on(event,selector,fn)</code> 给父元素添加事件</p>
+<blockquote>
+<p>给新添加的元素绑定与之前存在的元素相同的方法（利用冒泡）</p>
+</blockquote>
+<h4 id="4-控制事件触发">4. 控制事件触发<a hidden class="anchor" aria-hidden="true" href="#4-控制事件触发">#</a></h4>
+<p><code>trigger()</code></p>
+<p><code>triggerHandler()</code></p>
+<blockquote>
+<p>① trigger返回的是 jqDOM可以连贯操作
+② trigger可以触发元素自带的事件( input自带的事件，focus，submit&hellip;)
+③ trigger会触发集合中所有元素的事件；trigger值触发集合中第一个元素的事件</p>
+</blockquote>
+<h4 id="5事件列表新增">5.事件列表（新增）<a hidden class="anchor" aria-hidden="true" href="#5事件列表新增">#</a></h4>
+<p><code>ready</code> 页面中DOM加载完毕（不同于onload）</p>
+<p><code>focusin</code> 获取焦点，绑定给输入框的父元素</p>
+<p><code>focusout</code> 失去焦点 ，绑定给输入框的父元素</p>
+<p><code>mouseenter</code> 代替<code>mouseover</code></p>
+<p><code>moouseleave</code> 代替<code>mouseout</code></p>
+<p><code>hover moouseleave</code>和<code>mouseenter</code>集合</p>
+<h4 id="6事件对象">6.事件对象<a hidden class="anchor" aria-hidden="true" href="#6事件对象">#</a></h4>
+<p><code>pageX</code> 鼠标x坐标</p>
+<p><code>pageY</code> 鼠标y坐标</p>
+<p><code>target</code> 当前触发事件的元素</p>
+<p><code>which</code> 键盘按键的ASCII码</p>
+<p><code>type</code> 事件类型（事件名称）</p>
+<p><code>preventDefault</code>阻止默认操作（例如a标签跳转，致使页面刷新）
+<img loading="lazy" src="http://r.photo.store.qq.com/psc?/V11ijIHl1yJLHC/45NBuzDIW489QBoVep5mcd1Qilcb0uoWtG8pZG8gvqr9EVMXjbGX.dXZ1zIqWtXwnu.NY6rIk*sVrbcZ2IXtr01UczMhf6cXK.06k8eFn9k!/r" alt="建议分开写"  />
+</p>
+<h2 id="jquery动画">Jquery动画<a hidden class="anchor" aria-hidden="true" href="#jquery动画">#</a></h2>
+<h4 id="基本效果">基本效果<a hidden class="anchor" aria-hidden="true" href="#基本效果">#</a></h4>
+<p><code>hide([time,fn])</code> 隐藏</p>
+<p><code>show([time,fn])</code> 显示</p>
+<p><code>toggle([time,fn])</code></p>
+<blockquote>
+<p>基本效果的CSS属性变化：透明度变化，元素大小相关的样式 padding, border width/height外边距</p>
+</blockquote>
+<blockquote>
+<p><code>fn() </code>表示动画结束执行的函数</p>
+</blockquote>
+<h4 id="滑动效果">滑动效果<a hidden class="anchor" aria-hidden="true" href="#滑动效果">#</a></h4>
+<p><code>slidedown</code> 显示</p>
+<p><code>slideup</code> 隐藏</p>
+<p><code>slidetoggle </code></p>
+<blockquote>
+<p>垂直方向的变化</p>
+</blockquote>
+<h4 id="淡入淡出效果">淡入淡出效果<a hidden class="anchor" aria-hidden="true" href="#淡入淡出效果">#</a></h4>
+<p><code>fadeOut()</code> 隐藏</p>
+<p><code>fadeIn()</code> 显示</p>
+<p><code>fadeToggle()</code></p>
+<p><code>fadeTo(time,opicity,fn)</code></p>
+<h4 id="自定义动画">自定义动画<a hidden class="anchor" aria-hidden="true" href="#自定义动画">#</a></h4>
+<ul>
+<li>animate({},time,fn)</li>
+</ul>
+<blockquote>
+<p><code>{}</code>中为需要变化的值。
+取值可以是toggle，可变化可恢复原样</p>
+</blockquote>
+<p><code>stop()</code> 暂停动画</p>
+<p><code>finish()</code> 结束动画（提前完成）</p>
+<p><code>delay(time)</code> 延迟动画（动画连续调用时加在中间，会等time时间执行后面的）</p>
+<h4 id="动画设置">动画设置<a hidden class="anchor" aria-hidden="true" href="#动画设置">#</a></h4>
+<p><code>jQuery. fx. off</code> 清除所有动画，恢复为默认效果</p>
+<p><code>jQuery. fx interval</code> 动画帧数</p>
+<h4 id="动画队列">动画队列<a hidden class="anchor" aria-hidden="true" href="#动画队列">#</a></h4>
+<ul>
+<li>所有的动画操作会加入到队列中，依次执行</li>
+<li>其他操作不会加入动画队列</li>
+</ul>
+<h4 id="jquery动画与css3动画">jQuery动画与CSS3动画<a hidden class="anchor" aria-hidden="true" href="#jquery动画与css3动画">#</a></h4>
+<ul>
+<li>兼容性，CS53的动画和过渡需要E9+， jQuery可以使用版本的</li>
+<li>CSS3的动画或者过渡必须给元素指定具体的CSS属性值</li>
+</ul>
+<h2 id="jquery工具方法">jQuery工具方法<a hidden class="anchor" aria-hidden="true" href="#jquery工具方法">#</a></h2>
+<h4 id="1数组对象方法">1.数组对象方法<a hidden class="anchor" aria-hidden="true" href="#1数组对象方法">#</a></h4>
+<p><code>$.each（Aray,fn）</code>遍历数组或类数组对象</p>
+<p><code>$.grep（Array, fn）</code>过滤数组</p>
+<p><code>$.map（ Array, fn）</code>从数组取出信息，返回新的数组</p>
+<p><code>$.makeArray(likeArray)</code> 把类数组对象转化为纯数组</p>
+<p><code>$inArray(val，Array)</code> 判断元素在数组中的位置，不存在返回-1</p>
+<p><code>$.merge()</code> 合并数组</p>
+<p><code>toArray()</code> jQuery DOM方法，把jQueryDOM直接转化为纯数组</p>
+<h4 id="2函数方法">2.函数方法<a hidden class="anchor" aria-hidden="true" href="#2函数方法">#</a></h4>
+<p><code>$.proxy()</code> 改变函数中this指向</p>
+<h4 id="3类型判断">3.类型判断<a hidden class="anchor" aria-hidden="true" href="#3类型判断">#</a></h4>
+<p><code> $.type()</code>判断类型</p>
+<p><code> $.isFunction()</code>判断是否是函数/方法</p>
+<p><code> $.isEmptyobject()</code>判断是否是空的对象</p>
+<p><code> $.Plainobject()</code>判断是否是纯的对象（构造函数是obeject)</p>
+<p><code> $.window()</code>判断是否是 window对象</p>
+<p><code> $.isNumeric()</code>判断是否是数字(NaN虽然是number类型，但这个是false)</p>
+<h4 id="4字符串">4.字符串<a hidden class="anchor" aria-hidden="true" href="#4字符串">#</a></h4>
+<p><code>$.trim()</code>取出两边的空格
+<code>$.param()</code> 把对象序列化成字符串</p>
+<blockquote>
+<p><code>{name:&quot;lili&quot;,age:18}</code> &mdash;-&gt;<code>name=lili&amp;age=18</code></p>
+</blockquote>
+<h4 id="5-版本">5. 版本<a hidden class="anchor" aria-hidden="true" href="#5-版本">#</a></h4>
+<p><code>$.fn.jquery</code></p>
+<h2 id="jquery-ajax">jQuery Ajax<a hidden class="anchor" aria-hidden="true" href="#jquery-ajax">#</a></h2>
+<h4 id="1快速请求方法">1.快速请求方法<a hidden class="anchor" aria-hidden="true" href="#1快速请求方法">#</a></h4>
+<ul>
+<li>
+<p>get</p>
+<p><code>$.get(url,callback,[,datatype])</code></p>
+</li>
+<li>
+<p>post</p>
+<p>$.post(url,[,data],callback,[,datatype])`</p>
+</li>
+</ul>
+<h4 id="2ajax方法">2.ajax方法<a hidden class="anchor" aria-hidden="true" href="#2ajax方法">#</a></h4>
+<ul>
+<li>
+<p>ajax()</p>
+<pre tabindex="0"><code>$.ajax{
+	url:,//地址
+	type:&quot;get&quot;&quot;post&quot;, //请求方式
+    async:,//是否异步
+    data:,//发送的数据 对象或字符串(序列化)
+    dataType:,//响应的内容格式
+    success://成功回调
+    error://失败回调
+}
+</code></pre></li>
+</ul>
+<h4 id="3表单方法">3.表单方法<a hidden class="anchor" aria-hidden="true" href="#3表单方法">#</a></h4>
+<p><code>serialize()</code> 把表单中含有name属性的表单控件的值拼接成字符串(序列化表单)</p>
+<h2 id="jquery插件">jQuery插件<a hidden class="anchor" aria-hidden="true" href="#jquery插件">#</a></h2>
+<h4 id="1-select2-下拉框搜索插件">1. select2 下拉框搜索插件<a hidden class="anchor" aria-hidden="true" href="#1-select2-下拉框搜索插件">#</a></h4>
+<ul>
+<li>
+<p>官网 <a href="http://select.org/">http://select.org/</a></p>
+</li>
+<li>
+<p>Github <a href="http://github.com/select2/select2">http://github.com/select2/select2</a></p>
+</li>
+<li>
+<p>用法</p>
+<pre tabindex="0"><code>$(dom).select2()
+$(dom).select2({
+	width:,
+	data:,
+	ajax:,
+	...
+})
+</code></pre></li>
+</ul>
+<h4 id="2datetimepicker-时间日期插件">2.datetimepicker 时间日期插件<a hidden class="anchor" aria-hidden="true" href="#2datetimepicker-时间日期插件">#</a></h4>
+<ul>
+<li>
+<p>github <a href="https://github.com/xdan/datetimepicker">https://github.com/xdan/datetimepicker</a></p>
+</li>
+<li>
+<p>用法</p>
+<pre tabindex="0"><code>//设置语言
+$.datetimepicker.setLocal(&quot;zh&quot;);
+//调用插件
+$(dom).datetimepicker({
+	datepicker:,
+	timepicker:,//false||true
+	format:&quot;Y-m-d H:i&quot;//H表示24小时制，h表示12小时制
+	value:,
+	...
+})
+</code></pre></li>
+</ul>
+<h4 id="3全屏滚动插件">3.全屏滚动插件<a hidden class="anchor" aria-hidden="true" href="#3全屏滚动插件">#</a></h4>
+<ul>
+<li>
+<p>官网  <a href="https://alvarotrigo.com/fullPage/zh/">https://alvarotrigo.com/fullPage/zh/</a></p>
+</li>
+<li>
+<p>Github说明  <a href="https://github.com/alvarotrigo/fullPage.js/tree/master/lang/chinese#fullpagejs">https://github.com/alvarotrigo/fullPage.js/tree/master/lang/chinese#fullpagejs</a></p>
+</li>
+<li>
+<p>用法</p>
+<pre tabindex="0"><code>&lt;!--HTML部分--&gt;
+&lt;div id=&quot;fulPage&quot;&gt;
+	&lt;div class=&quot;section&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;section&quot;&gt;
+      &lt;div class=&quot;slide&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;slide&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;slide&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;section&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!--自定义的导航，写在包裹元素的外面--&gt;
+
+&lt;!--JS部分--&gt;
+&lt;script&gt;
+	$(&quot;#fullPage&quot;).fullpage({
+      navigation:true,
+      sectionsColor:[]
+      ...
+	})
+&lt;/script&gt;
+</code></pre></li>
+</ul>
+<h4 id="4lazeload-图片懒加载">4.lazeload 图片懒加载<a hidden class="anchor" aria-hidden="true" href="#4lazeload-图片懒加载">#</a></h4>
+<ul>
+<li>
+<p>官网 <a href="https://appelsiini.net/projects/lazyload/">https://appelsiini.net/projects/lazyload/</a></p>
+</li>
+<li>
+<p>Github  <a href="https://github.com/tuupola/lazyload/tree/2.x">https://github.com/tuupola/lazyload/tree/2.x</a></p>
+</li>
+<li>
+<p>用法：</p>
+</li>
+</ul>
+<pre tabindex="0"><code>  $(&quot;#lazyWrapper img&quot;).lazyload()
+</code></pre><h4 id="5layer弹窗插件">5.layer弹窗插件<a hidden class="anchor" aria-hidden="true" href="#5layer弹窗插件">#</a></h4>
+<ul>
+<li>
+<p>官网 <a href="http://layer.layui.com/?alone">http://layer.layui.com/?alone</a></p>
+</li>
+<li>
+<p>用法</p>
+<pre tabindex="0"><code>layer.alert()
+layer.confirm()
+layer.msg()
+layer.load()
+layer.tips()
+layer.colse()
+layer.open({
+	type:,
+	title:,
+	content:
+	...
+})
+...
+</code></pre></li>
+</ul>
+<h4 id="6nice-validator-表单验证">6.nice validator 表单验证<a hidden class="anchor" aria-hidden="true" href="#6nice-validator-表单验证">#</a></h4>
+<ul>
+<li>
+<p>官网 <a href="https://validator.niceue.com/">https://validator.niceue.com/</a></p>
+</li>
+<li>
+<p>使用</p>
+<pre tabindex="0"><code>$(&quot;form&quot;).validator
+</code></pre></li>
+</ul>
+<h4 id="7jquery-easing">7.jQuery-easing<a hidden class="anchor" aria-hidden="true" href="#7jquery-easing">#</a></h4>
+<ul>
+<li>
+<p>官网 <a href="http://gsgd.co.uk/sandbox/jquery/easing/">http://gsgd.co.uk/sandbox/jquery/easing/</a></p>
+</li>
+<li>
+<p>用法</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">$</span>(<span style="color:#a6e22e">dom</span>).<span style="color:#a6e22e">hide</span>(<span style="color:#a6e22e">speed</span>,<span style="color:#a6e22e">easing</span>,<span style="color:#a6e22e">fn</span>)
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="自定义插件">自定义插件<a hidden class="anchor" aria-hidden="true" href="#自定义插件">#</a></h2>
+<ul>
+<li>
+<p>jQuery.fn.extend() 给jQuery扩展方法</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">fn</span>.<span style="color:#a6e22e">extend</span>({
+	<span style="color:#a6e22e">方法名</span><span style="color:#f92672">:</span><span style="color:#66d9ef">function</span>(){}
+})
+<span style="color:#75715e">//或者
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">fn</span>.<span style="color:#a6e22e">方法名</span><span style="color:#f92672">=</span><span style="color:#66d9ef">function</span>(){}
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>jQuery.extend()  给jQuery对象本身扩展方法</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">extend</span>({
+	<span style="color:#a6e22e">方法名</span><span style="color:#f92672">:</span><span style="color:#66d9ef">function</span>(){}
+})
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="jquery官网">jQuery官网<a hidden class="anchor" aria-hidden="true" href="#jquery官网">#</a></h2>
+<h4 id="jquery-ui">jQuery UI<a hidden class="anchor" aria-hidden="true" href="#jquery-ui">#</a></h4>
+<p>官网 <a href="https://jqueryui.com/">https://jqueryui.com/</a></p>
+<h4 id="jquery-mobile">jQuery Mobile<a hidden class="anchor" aria-hidden="true" href="#jquery-mobile">#</a></h4>
+<p>官网 <a href="https://jquerymobile.com/">https://jquerymobile.com/</a></p>
+<p>教程 <a href="http://www.runoob.com/jquerymobile/jquerymobile-tutorial.html">http://www.runoob.com/jquerymobile/jquerymobile-tutorial.html</a></p>
+<h4 id="sizzle">Sizzle<a hidden class="anchor" aria-hidden="true" href="#sizzle">#</a></h4>
+<p>官网 <a href="https://sizzlejs.com/">https://sizzlejs.com/</a></p>
+<h4 id="zepto">Zepto<a hidden class="anchor" aria-hidden="true" href="#zepto">#</a></h4>
+<p>官网 <a href="http://zeptojs.com">http://zeptojs.com</a></p>
+<p>jquery区别：https://www.zhihu.com/question/25379207</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.fintinger.site/tags/jquery/">Jquery</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://www.fintinger.site/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E5%B0%8F%E9%97%AE%E9%A2%98/">
+    <span class="title">« Prev Page</span>
+    <br>
+    <span>常用的一些html小问题</span>
+  </a>
+  <a class="next" href="https://www.fintinger.site/p/javascript%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/">
+    <span class="title">Next Page »</span>
+    <br>
+    <span>Javascript一些操作</span>
+  </a>
+</nav>
+
+  </footer><script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://waline-q3l7of5hj-fintinger.vercel.app/","visitor":true});
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://www.fintinger.site">Archai&#39;s home</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

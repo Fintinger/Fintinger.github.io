@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>JavaScript基础之值类型 | Archai&#39;s home</title>
+<meta name="keywords" content="Javascript" />
+<meta name="description" content="字符串 1.截取字符串  主要有slice()、substr()、substring() 三种方法
+  一个参数[i]  都是从i开始截取，返回n及其后面的全部字符串。
+ 第二个参数[i,n]  slice(i,n)和substring(i,n)表示从i开始截取到n；substr(i,n)，表示从i开始截取n个
+ 负参数  slice()和substr()将最后一位记为-1，然后依次编号；substring()则会将任何负参数变为0，然后查找
+1 2 3 4 5 6  let w = &#39;fintinger.xyz&#39; let a = w.slice(-4, w.length) let b = w.substring(-1, 2) let c = w.substr(-4, 4) console.log(a, b, c);//.xyz fi .xyz   2.查找字符串  主要有indexof()、includes()、lastIndexof() 三种方法
+ 共同点：
+ 两个参数[searchString,position]，第一个为要检索的字符串，第二个为开始检索位置； 若position &lt; 0，则position = 0 position可以省略  不同之处：
+ lastIndexof()为从右往左找，找到第一个立即返回索引！其他两个都是从左往右 indexof(),lastIndexof()找不到则返回-1，includes()找不到返回false position 省略之后，includes(),indexof()默认值为0，lastIndexof()则为str.">
+<meta name="author" content="Archai">
+<link rel="canonical" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%80%BC%E7%B1%BB%E5%9E%8B/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.4ee57c4189977dc8f075173100c24a668d6bb09d6b5db74440649223f1221877.css" integrity="sha256-TuV8QYmXfcjwdRcxAMJKZo1rsJ1rXbdEQGSSI/EiGHc=" rel="preload stylesheet" as="style">
+<link rel="stylesheet" href="css/extended/custom.css">
+<link rel="icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="apple-touch-icon" href="https://www.fintinger.site/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.fintinger.site/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:title" content="JavaScript基础之值类型" />
+<meta property="og:description" content="字符串 1.截取字符串  主要有slice()、substr()、substring() 三种方法
+  一个参数[i]  都是从i开始截取，返回n及其后面的全部字符串。
+ 第二个参数[i,n]  slice(i,n)和substring(i,n)表示从i开始截取到n；substr(i,n)，表示从i开始截取n个
+ 负参数  slice()和substr()将最后一位记为-1，然后依次编号；substring()则会将任何负参数变为0，然后查找
+1 2 3 4 5 6  let w = &#39;fintinger.xyz&#39; let a = w.slice(-4, w.length) let b = w.substring(-1, 2) let c = w.substr(-4, 4) console.log(a, b, c);//.xyz fi .xyz   2.查找字符串  主要有indexof()、includes()、lastIndexof() 三种方法
+ 共同点：
+ 两个参数[searchString,position]，第一个为要检索的字符串，第二个为开始检索位置； 若position &lt; 0，则position = 0 position可以省略  不同之处：
+ lastIndexof()为从右往左找，找到第一个立即返回索引！其他两个都是从左往右 indexof(),lastIndexof()找不到则返回-1，includes()找不到返回false position 省略之后，includes(),indexof()默认值为0，lastIndexof()则为str." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%80%BC%E7%B1%BB%E5%9E%8B/" /><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-08-23T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-08-23T00:00:00&#43;00:00" /><meta property="og:site_name" content="Archai&#39;s home" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/>
+
+<meta name="twitter:title" content="JavaScript基础之值类型"/>
+<meta name="twitter:description" content="字符串 1.截取字符串  主要有slice()、substr()、substring() 三种方法
+  一个参数[i]  都是从i开始截取，返回n及其后面的全部字符串。
+ 第二个参数[i,n]  slice(i,n)和substring(i,n)表示从i开始截取到n；substr(i,n)，表示从i开始截取n个
+ 负参数  slice()和substr()将最后一位记为-1，然后依次编号；substring()则会将任何负参数变为0，然后查找
+1 2 3 4 5 6  let w = &#39;fintinger.xyz&#39; let a = w.slice(-4, w.length) let b = w.substring(-1, 2) let c = w.substr(-4, 4) console.log(a, b, c);//.xyz fi .xyz   2.查找字符串  主要有indexof()、includes()、lastIndexof() 三种方法
+ 共同点：
+ 两个参数[searchString,position]，第一个为要检索的字符串，第二个为开始检索位置； 若position &lt; 0，则position = 0 position可以省略  不同之处：
+ lastIndexof()为从右往左找，找到第一个立即返回索引！其他两个都是从左往右 indexof(),lastIndexof()找不到则返回-1，includes()找不到返回false position 省略之后，includes(),indexof()默认值为0，lastIndexof()则为str."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://www.fintinger.site/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "JavaScript基础之值类型",
+      "item": "https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%80%BC%E7%B1%BB%E5%9E%8B/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "JavaScript基础之值类型",
+  "name": "JavaScript基础之值类型",
+  "description": "字符串 1.截取字符串  主要有slice()、substr()、substring() 三种方法\n  一个参数[i]  都是从i开始截取，返回n及其后面的全部字符串。\n 第二个参数[i,n]  slice(i,n)和substring(i,n)表示从i开始截取到n；substr(i,n)，表示从i开始截取n个\n 负参数  slice()和substr()将最后一位记为-1，然后依次编号；substring()则会将任何负参数变为0，然后查找\n1 2 3 4 5 6  let w = \u0026#39;fintinger.xyz\u0026#39; let a = w.slice(-4, w.length) let b = w.substring(-1, 2) let c = w.substr(-4, 4) console.log(a, b, c);//.xyz fi .xyz   2.查找字符串  主要有indexof()、includes()、lastIndexof() 三种方法\n 共同点：\n 两个参数[searchString,position]，第一个为要检索的字符串，第二个为开始检索位置； 若position \u0026lt; 0，则position = 0 position可以省略  不同之处：\n lastIndexof()为从右往左找，找到第一个立即返回索引！其他两个都是从左往右 indexof(),lastIndexof()找不到则返回-1，includes()找不到返回false position 省略之后，includes(),indexof()默认值为0，lastIndexof()则为str.",
+  "keywords": [
+    "Javascript"
+  ],
+  "articleBody": "字符串 1.截取字符串  主要有slice()、substr()、substring() 三种方法\n  一个参数[i]  都是从i开始截取，返回n及其后面的全部字符串。\n 第二个参数[i,n]  slice(i,n)和substring(i,n)表示从i开始截取到n；substr(i,n)，表示从i开始截取n个\n 负参数  slice()和substr()将最后一位记为-1，然后依次编号；substring()则会将任何负参数变为0，然后查找\n1 2 3 4 5 6  let w = 'fintinger.xyz' let a = w.slice(-4, w.length) let b = w.substring(-1, 2) let c = w.substr(-4, 4) console.log(a, b, c);//.xyz fi .xyz   2.查找字符串  主要有indexof()、includes()、lastIndexof() 三种方法\n 共同点：\n 两个参数[searchString,position]，第一个为要检索的字符串，第二个为开始检索位置； 若position ，则position = 0 position可以省略  不同之处：\n lastIndexof()为从右往左找，找到第一个立即返回索引！其他两个都是从左往右 indexof(),lastIndexof()找不到则返回-1，includes()找不到返回false position 省略之后，includes(),indexof()默认值为0，lastIndexof()则为str.length  3.重复函数 repeat() 作用： 复制粘贴指定字符串指定次数\n案例：\n1 2 3 4 5 6 7 8 9 10 11 12 13  /** * 电话号码模糊处理 * @param{String|Number}number * @param{Number}len * @returns {Error|string} * @constructor */ function Phone(number, len = 4) { number = String(number) return number.length  len ? new Error('参数错误') : number.slice(0, -len) + '*'.repeat(len) } Phone(6995498, 4);//699****   4.去空格函数trim() 作用： trim()方法用于删除字符串的头尾空格。trim() 方法不会改变原始字符串。\n案例： 输入密码时限制输入空格\n1 2 3 4 5 6 7 8 9 10  let inp = document.querySelector('input') let tip = document.querySelector('#tip') inp.addEventListener('keyup', function () { tip.innerHTML = '' this.value = this.value.trim()//无法输入空格，动态监听！！  if (this.value.length  6 || this.value.length  12) { tip.innerHTML = '密码长度为6-11位' } })   5.获取字符串某个位置的值函数 charAt() 或 索引 1 2 3  let w = 'fintinger' console.log(w.charAt(3));//t console.log(w[3]);//t   区别： 如果找不到，charAt()返回空字符串，索引则返回undefined\n布尔类型  对于其他类型，分以下两种：\nundefined,null,0  都相当于false\n=1的数值,字符串等  都相当于true\n 注意： 凡是1的数都为true，但≠true，true=1\n1  console.log(true == 1);//true   类型转换： 利用!!可以转为布尔类型\n1 2  console.log(!!1);//true console.log(!!0);//false   数值类型 1.判断是否为整数函数 isTnteger() 使用：\n1  Number.isInteger(2.1)//fasle    也可以利用parseInt()判断\n let num=2\rconsole.log(Number.isInteger(num));//true\rconsole.log(parseInt(num) === num);//true\r2.Math()对象  Math为内置对象，包含数学上的多种方法\n 取最大/最小值 max()/min()：\n1 2 3 4 5 6 7 8  /*依次传入形式*/ let b = Math.max(1, 2, 4, 6) console.log(b);//6  /*数组形式*/ let c = [1, 2, 4, 6] b = Math.max.apply(null, c) console.log(b);//6   说明： 利用apply 传递数组参数，call 不能传递数组参数。另外，利用展开语法(Spread syntax)\n1 2  b=Math.max(...c) console.log(b)//6   3.随机数  利用Math.random()可以取到 [0,1) 之间的随机数\n 注意： 假设取 0~3 之间的随机数，利用Math.round(Math.random()*3) 取到的数：\n   范 围 取 到 的 值 概 率     [ 0, 0.5 ) 0 1 / 6   [ 0.5, 1.5 ) 1 1 / 3   [ 1.5, 2.5 ) 2 1 / 3   [ 2.5, 3 ) 3 1 / 6    用到Math.floor() 向下取整，Math.floor(Math.random * (3+1) )：\n   范 围 取 到 的 值 概 率     [ 0, 1) 0 1 / 4   [ 1, 2 ) 1 1 / 4   [ 2, 3 ) 2 1 / 4   [ 3, 4 ) 3 1 / 4    因此总结出一般规律：\n取 0~n 之间的随机整数：\n1  Math.floor(Math.random() * (n + 1))   取 m~n 之间的随机整数：\n1  Math.floor(m + Math.random() * (n - m + 1))   4.时间  Date() 为内置对象，处理与时间相关的问题\n 1.类型转换 标准时间 = 时间戳：\n1 2 3 4 5  const date = new Date('2001-04-02 12:43:56') console.log(date * 1); //986186636000 console.log(Number(date)); //986186636000 console.log(date.valueOf()); //986186636000 console.log(date.getTime()); //986186636000   时间戳 = 标准时间：\n1 2  let timeStamp = 986186636000 console.log(new Date(timeStamp));//2001-04-02T04:43:56.000Z   2.格式化时间 利用内置属性，可以封装一个简单的时间格式化函数\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25  /** * 格式化时间，时间戳 * @param{Date|Number}date * @param{String}format * @returns {string} */ function dateFormat(date, format = \"YYYY-MM-DD HH:mm:SS\") { date = new Date(date) const config = { YYYY: date.getFullYear(), MM: date.getMonth() + 1, DD: date.getDate(), HH: date.getHours(), mm: date.getMinutes(), SS: date.getSeconds(), } for (let key in config) { //补 \"0\" 操作  config[key] = String(config[key]).length  2 ? '0' + config[key] : config[key] format = format.replace(key, config[key]) } return format } dateFormat(Date.now());//2020-08-23 13:05:03   注意：\n getMonth()返回的月份是从0开始的，需要+1 获取日期是getDate(),而不是getDay()   另外，可以利用第三方库达到需要的效果，比如Moment.js\n skr skr~~~\n",
+  "wordCount" : "507",
+  "inLanguage": "en",
+  "datePublished": "2020-08-23T00:00:00Z",
+  "dateModified": "2020-08-23T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Archai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%80%BC%E7%B1%BB%E5%9E%8B/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Archai's home",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.fintinger.site/posts/" title="Posts📑">
+                    <span>Posts📑</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/categories/" title="Categories🛒">
+                    <span>Categories🛒</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/search/" title="Search🔎 (Alt &#43; /)" accesskey=/>
+                    <span>Search🔎</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/archives/" title="Timeline🕰️">
+                    <span>Timeline🕰️</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/about/" title="About🥳">
+                    <span>About🥳</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://www.fintinger.site">Home</a>&nbsp;»&nbsp;<a href="https://www.fintinger.site/posts/">Posts</a></div>
+    <h1 class="post-title">
+      JavaScript基础之值类型
+    </h1>
+    <div class="post-meta"><span title='2020-08-23 00:00:00 +0000 UTC'>August 23, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e5%ad%97%e7%ac%a6%e4%b8%b2" aria-label="字符串">字符串</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#1%e6%88%aa%e5%8f%96%e5%ad%97%e7%ac%a6%e4%b8%b2" aria-label="1.截取字符串">1.截取字符串</a></li>
+                <li>
+                    <a href="#2%e6%9f%a5%e6%89%be%e5%ad%97%e7%ac%a6%e4%b8%b2" aria-label="2.查找字符串">2.查找字符串</a></li>
+                <li>
+                    <a href="#3%e9%87%8d%e5%a4%8d%e5%87%bd%e6%95%b0-repeat" aria-label="3.重复函数 repeat()">3.重复函数 repeat()</a></li>
+                <li>
+                    <a href="#4%e5%8e%bb%e7%a9%ba%e6%a0%bc%e5%87%bd%e6%95%b0trim" aria-label="4.去空格函数trim()">4.去空格函数trim()</a></li>
+                <li>
+                    <a href="#5%e8%8e%b7%e5%8f%96%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%9f%90%e4%b8%aa%e4%bd%8d%e7%bd%ae%e7%9a%84%e5%80%bc%e5%87%bd%e6%95%b0-charat-%e6%88%96-%e7%b4%a2%e5%bc%95" aria-label="5.获取字符串某个位置的值函数 charAt() 或 索引">5.获取字符串某个位置的值函数 charAt() 或 索引</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#%e5%b8%83%e5%b0%94%e7%b1%bb%e5%9e%8b" aria-label="布尔类型">布尔类型</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#%e7%b1%bb%e5%9e%8b%e8%bd%ac%e6%8d%a2" aria-label="类型转换：">类型转换：</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#%e6%95%b0%e5%80%bc%e7%b1%bb%e5%9e%8b" aria-label="数值类型">数值类型</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#1%e5%88%a4%e6%96%ad%e6%98%af%e5%90%a6%e4%b8%ba%e6%95%b4%e6%95%b0%e5%87%bd%e6%95%b0-istnteger" aria-label="1.判断是否为整数函数 isTnteger()">1.判断是否为整数函数 isTnteger()</a></li>
+                <li>
+                    <a href="#2math%e5%af%b9%e8%b1%a1" aria-label="2.Math()对象">2.Math()对象</a></li>
+                <li>
+                    <a href="#3%e9%9a%8f%e6%9c%ba%e6%95%b0" aria-label="3.随机数">3.随机数</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#4%e6%97%b6%e9%97%b4" aria-label="4.时间">4.时间</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#1%e7%b1%bb%e5%9e%8b%e8%bd%ac%e6%8d%a2" aria-label="1.类型转换">1.类型转换</a></li>
+                <li>
+                    <a href="#2%e6%a0%bc%e5%bc%8f%e5%8c%96%e6%97%b6%e9%97%b4" aria-label="2.格式化时间">2.格式化时间</a>
+                </li>
+            </ul>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="字符串">字符串<a hidden class="anchor" aria-hidden="true" href="#字符串">#</a></h2>
+<h4 id="1截取字符串">1.截取字符串<a hidden class="anchor" aria-hidden="true" href="#1截取字符串">#</a></h4>
+<blockquote>
+<p>主要有<code>slice()</code>、<code>substr()</code>、<code>substring()</code> 三种方法</p>
+</blockquote>
+<ul>
+<li><strong>一个参数[i]</strong></li>
+</ul>
+<p>都是从i开始截取，返回n及其后面的全部字符串。</p>
+<ul>
+<li><strong>第二个参数[i,n]</strong></li>
+</ul>
+<p><code>slice(i,n)</code>和<code>substring(i,n)</code>表示从<code>i</code>开始截取到<code>n</code>；<code>substr(i,n)</code>，表示从<code>i</code>开始截取<code>n</code>个</p>
+<ul>
+<li><strong>负参数</strong></li>
+</ul>
+<p><code>slice()</code>和<code>substr()</code>将最后一位记为-1，然后依次编号；<code>substring()</code>则会将任何负参数变为0，然后查找</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">w</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;fintinger.xyz&#39;</span>
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">w</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">4</span>, <span style="color:#a6e22e">w</span>.<span style="color:#a6e22e">length</span>)
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">w</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">w</span>.<span style="color:#a6e22e">substr</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">4</span>)
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>, <span style="color:#a6e22e">c</span>);<span style="color:#75715e">//.xyz fi .xyz
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="2查找字符串">2.查找字符串<a hidden class="anchor" aria-hidden="true" href="#2查找字符串">#</a></h4>
+<blockquote>
+<p>主要有<code>indexof()</code>、<code>includes()</code>、<code>lastIndexof()</code> 三种方法</p>
+</blockquote>
+<p><strong>共同点：</strong></p>
+<ul>
+<li>两个参数<code>[searchString,position]</code>，第一个为要检索的字符串，第二个为开始检索位置；</li>
+<li>若<code>position &lt; 0</code>，则<code>position = 0</code></li>
+<li><code>position</code>可以省略</li>
+</ul>
+<p><strong>不同之处：</strong></p>
+<ul>
+<li><code>lastIndexof()</code>为从右往左找，找到第一个立即返回索引！其他两个都是从左往右</li>
+<li><code>indexof(),lastIndexof()</code>找不到则返回<code>-1</code>，<code>includes()</code>找不到返回<code>false</code></li>
+<li><code>position </code>省略之后，<code>includes(),indexof()</code>默认值为0，<code>lastIndexof()</code>则为<code>str.length</code></li>
+</ul>
+<h4 id="3重复函数-repeat">3.重复函数 repeat()<a hidden class="anchor" aria-hidden="true" href="#3重复函数-repeat">#</a></h4>
+<p><strong>作用：</strong> 复制粘贴指定字符串指定次数</p>
+<p><strong>案例：</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * 电话号码模糊处理
+</span><span style="color:#75715e"> * @param{String|Number}number
+</span><span style="color:#75715e"> * @param{Number}len
+</span><span style="color:#75715e"> * @returns {Error|string}
+</span><span style="color:#75715e"> * @constructor
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Phone</span>(<span style="color:#a6e22e">number</span>, <span style="color:#a6e22e">len</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>) {
+    <span style="color:#a6e22e">number</span> <span style="color:#f92672">=</span> String(<span style="color:#a6e22e">number</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">number</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">len</span> <span style="color:#f92672">?</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#39;参数错误&#39;</span>) <span style="color:#f92672">:</span> <span style="color:#a6e22e">number</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#a6e22e">len</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;*&#39;</span>.<span style="color:#a6e22e">repeat</span>(<span style="color:#a6e22e">len</span>)
+}
+
+<span style="color:#a6e22e">Phone</span>(<span style="color:#ae81ff">6995498</span>, <span style="color:#ae81ff">4</span>);<span style="color:#75715e">//699****
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="4去空格函数trim">4.去空格函数trim()<a hidden class="anchor" aria-hidden="true" href="#4去空格函数trim">#</a></h4>
+<p><strong>作用：</strong> <code>trim()</code>方法用于删除字符串的头尾空格。<code>trim() </code>方法不会改变原始字符串。</p>
+<p><strong>案例：</strong> 输入密码时限制输入空格</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">inp</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;input&#39;</span>)
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tip</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#tip&#39;</span>)
+
+    <span style="color:#a6e22e">inp</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;keyup&#39;</span>, <span style="color:#66d9ef">function</span> () {
+        <span style="color:#a6e22e">tip</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">trim</span>()<span style="color:#75715e">//无法输入空格，动态监听！！
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">12</span>) {
+            <span style="color:#a6e22e">tip</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;密码长度为6-11位&#39;</span>
+        }
+    })
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="5获取字符串某个位置的值函数-charat-或-索引">5.获取字符串某个位置的值函数 charAt() 或 索引<a hidden class="anchor" aria-hidden="true" href="#5获取字符串某个位置的值函数-charat-或-索引">#</a></h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">w</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;fintinger&#39;</span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">w</span>.<span style="color:#a6e22e">charAt</span>(<span style="color:#ae81ff">3</span>));<span style="color:#75715e">//t
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">w</span>[<span style="color:#ae81ff">3</span>]);<span style="color:#75715e">//t
+</span></code></pre></td></tr></table>
+</div>
+</div><p><strong>区别：</strong> 如果找不到，<code>charAt()</code>返回空字符串，索引则返回<code>undefined</code></p>
+<h2 id="布尔类型">布尔类型<a hidden class="anchor" aria-hidden="true" href="#布尔类型">#</a></h2>
+<blockquote>
+<p>对于其他类型，分以下两种：</p>
+<p><code>undefined,null,0 </code>  都相当于<code>false</code></p>
+<p><code>&gt;=1的数值,字符串等 </code>  都相当于<code>true</code></p>
+</blockquote>
+<p><strong>注意：</strong> 凡是&gt;1的数都为<code>true</code>，但<code>≠true</code>，<code>true=1</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">true</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>);<span style="color:#75715e">//true
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="类型转换">类型转换：<a hidden class="anchor" aria-hidden="true" href="#类型转换">#</a></h4>
+<p>利用<code>!!</code>可以转为布尔类型</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#f92672">!!</span><span style="color:#ae81ff">1</span>);<span style="color:#75715e">//true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#f92672">!!</span><span style="color:#ae81ff">0</span>);<span style="color:#75715e">//false
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="数值类型">数值类型<a hidden class="anchor" aria-hidden="true" href="#数值类型">#</a></h2>
+<h4 id="1判断是否为整数函数-istnteger">1.判断是否为整数函数 isTnteger()<a hidden class="anchor" aria-hidden="true" href="#1判断是否为整数函数-istnteger">#</a></h4>
+<p><strong>使用：</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">Number.<span style="color:#a6e22e">isInteger</span>(<span style="color:#ae81ff">2.1</span>)<span style="color:#75715e">//fasle
+</span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>也可以利用<code>parseInt()</code>判断</p>
+</blockquote>
+<pre tabindex="0"><code>let num=2
+
+console.log(Number.isInteger(num));//true
+console.log(parseInt(num) === num);//true
+</code></pre><h4 id="2math对象">2.Math()对象<a hidden class="anchor" aria-hidden="true" href="#2math对象">#</a></h4>
+<blockquote>
+<p>Math为内置对象，包含数学上的多种方法</p>
+</blockquote>
+<p><strong>取最大/最小值 max()/min()：</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">/*依次传入形式*/</span>
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">max</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">6</span>)
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>);<span style="color:#75715e">//6
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">/*数组形式*/</span>
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">6</span>]
+<span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">max</span>.<span style="color:#a6e22e">apply</span>(<span style="color:#66d9ef">null</span>, <span style="color:#a6e22e">c</span>)
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>);<span style="color:#75715e">//6
+</span></code></pre></td></tr></table>
+</div>
+</div><p><strong>说明：</strong> 利用<code>apply</code> 传递数组参数，<code>call</code> 不能传递数组参数。另外，利用<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Spread_syntax">展开语法(Spread syntax)</a></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">b</span><span style="color:#f92672">=</span>Math.<span style="color:#a6e22e">max</span>(...<span style="color:#a6e22e">c</span>)
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>)<span style="color:#75715e">//6
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="3随机数">3.随机数<a hidden class="anchor" aria-hidden="true" href="#3随机数">#</a></h4>
+<blockquote>
+<p>利用<code>Math.random()</code>可以取到 [0,1) 之间的随机数</p>
+</blockquote>
+<p><strong>注意：</strong> 假设取 0~3 之间的随机数，利用<code>Math.round(Math.random()*3)</code> 取到的数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">范         围</th>
+<th align="center">取 到 的 值</th>
+<th align="center">概                率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">[ 0, 0.5 )</td>
+<td align="center">0</td>
+<td align="center">1 / 6</td>
+</tr>
+<tr>
+<td align="center">[ 0.5, 1.5 )</td>
+<td align="center">1</td>
+<td align="center">1 / 3</td>
+</tr>
+<tr>
+<td align="center">[ 1.5, 2.5 )</td>
+<td align="center">2</td>
+<td align="center">1 / 3</td>
+</tr>
+<tr>
+<td align="center">[ 2.5, 3 )</td>
+<td align="center">3</td>
+<td align="center">1 / 6</td>
+</tr>
+</tbody>
+</table>
+<p>用到<code>Math.floor()</code> 向下取整，<code>Math.floor(Math.random * (3+1) )</code>：</p>
+<table>
+<thead>
+<tr>
+<th align="center">范         围</th>
+<th align="center">取 到 的 值</th>
+<th align="center">概                率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">[ 0, 1)</td>
+<td align="center">0</td>
+<td align="center">1 / 4</td>
+</tr>
+<tr>
+<td align="center">[ 1, 2 )</td>
+<td align="center">1</td>
+<td align="center">1 / 4</td>
+</tr>
+<tr>
+<td align="center">[ 2, 3 )</td>
+<td align="center">2</td>
+<td align="center">1 / 4</td>
+</tr>
+<tr>
+<td align="center">[ 3, 4 )</td>
+<td align="center">3</td>
+<td align="center">1 / 4</td>
+</tr>
+</tbody>
+</table>
+<p>因此总结出一般规律：</p>
+<p><strong>取 0~n 之间的随机整数：</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">Math.<span style="color:#a6e22e">floor</span>(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>))
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>取 m~n 之间的随机整数：</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">m</span> <span style="color:#f92672">+</span> Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">m</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>))
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="4时间">4.时间<a hidden class="anchor" aria-hidden="true" href="#4时间">#</a></h2>
+<blockquote>
+<p>Date() 为内置对象，处理与时间相关的问题</p>
+</blockquote>
+<h4 id="1类型转换">1.类型转换<a hidden class="anchor" aria-hidden="true" href="#1类型转换">#</a></h4>
+<p><strong>标准时间 =&gt; 时间戳</strong>：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#e6db74">&#39;2001-04-02 12:43:56&#39;</span>)
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">date</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1</span>); <span style="color:#75715e">//986186636000
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Number(<span style="color:#a6e22e">date</span>)); <span style="color:#75715e">//986186636000
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">valueOf</span>()); <span style="color:#75715e">//986186636000
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getTime</span>()); <span style="color:#75715e">//986186636000
+</span></code></pre></td></tr></table>
+</div>
+</div><p><strong>时间戳 =&gt; 标准时间：</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">timeStamp</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">986186636000</span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">timeStamp</span>));<span style="color:#75715e">//2001-04-02T04:43:56.000Z
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="2格式化时间">2.格式化时间<a hidden class="anchor" aria-hidden="true" href="#2格式化时间">#</a></h4>
+<p>利用内置属性，可以封装一个简单的时间格式化函数</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * 格式化时间，时间戳
+</span><span style="color:#75715e"> * @param{Date|Number}date
+</span><span style="color:#75715e"> * @param{String}format
+</span><span style="color:#75715e"> * @returns {string}
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">dateFormat</span>(<span style="color:#a6e22e">date</span>, <span style="color:#a6e22e">format</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;YYYY-MM-DD HH:mm:SS&#34;</span>) {
+    <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">date</span>)
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">config</span> <span style="color:#f92672">=</span> {
+        <span style="color:#a6e22e">YYYY</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getFullYear</span>(),
+        <span style="color:#a6e22e">MM</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMonth</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>,
+        <span style="color:#a6e22e">DD</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getDate</span>(),
+        <span style="color:#a6e22e">HH</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getHours</span>(),
+        <span style="color:#a6e22e">mm</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMinutes</span>(),
+        <span style="color:#a6e22e">SS</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getSeconds</span>(),
+    }
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">config</span>) {
+        <span style="color:#75715e">//补 &#34;0&#34; 操作
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">config</span>[<span style="color:#a6e22e">key</span>] <span style="color:#f92672">=</span> String(<span style="color:#a6e22e">config</span>[<span style="color:#a6e22e">key</span>]).<span style="color:#a6e22e">length</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">config</span>[<span style="color:#a6e22e">key</span>] <span style="color:#f92672">:</span> <span style="color:#a6e22e">config</span>[<span style="color:#a6e22e">key</span>]
+        <span style="color:#a6e22e">format</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">format</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">config</span>[<span style="color:#a6e22e">key</span>])
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">format</span>
+}
+
+<span style="color:#a6e22e">dateFormat</span>(Date.<span style="color:#a6e22e">now</span>());<span style="color:#75715e">//2020-08-23 13:05:03
+</span></code></pre></td></tr></table>
+</div>
+</div><p><strong>注意：</strong></p>
+<ul>
+<li><code>getMonth()</code>返回的月份是从0开始的，需要<code>+1</code></li>
+<li>获取日期是<code>getDate()</code>,而不是<code>getDay()</code></li>
+</ul>
+<blockquote>
+<p>另外，可以利用第三方库达到需要的效果，比如<a href="http://momentjs.cn/">Moment.js</a></p>
+</blockquote>
+<p>skr skr~~~</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.fintinger.site/tags/javascript/">Javascript</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%95%B0%E7%BB%84%E6%B7%B1%E5%80%94/">
+    <span class="title">« Prev Page</span>
+    <br>
+    <span>JavaScript基础之数组深倔</span>
+  </a>
+  <a class="next" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bjs%E9%BB%91%E6%B4%9E/">
+    <span class="title">Next Page »</span>
+    <br>
+    <span>JavaScript基础之JS黑洞</span>
+  </a>
+</nav>
+
+  </footer><script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://waline-q3l7of5hj-fintinger.vercel.app/","visitor":true});
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://www.fintinger.site">Archai&#39;s home</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

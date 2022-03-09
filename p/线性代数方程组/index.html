@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>线性代数——方程组 | Archai&#39;s home</title>
+<meta name="keywords" content="线性代数" />
+<meta name="description" content="Ax=0  重点： n-r(A)，基础解系
+  Ax=0有非零解 $\Leftrightarrow $​​ r(A) &lt; n (未知数个数)$\Leftrightarrow $​​​ A的列向量线性相关
+特别地(针对水平型阵和方阵)，※
+ A-m×n,m&lt;n, Ax=0 必有非零解 A-n×n，Ax=0有非零解 $\Leftrightarrow $​ |A|=0（克拉默法则）    Ax=0有非零解，则其解线性组合必为Ax=0的解，所以Ax=0若有非零解，则必有无穷多解，在这无穷多解中，线性无关的解向量个数为 $t=n-r(A)$​​​​​，这就是基础解系​，基础解系是Ax=0的解向量中的极大线性无关组。此外，根据定理可知，Ax=0的任一解都可以由基础解系线性表出。
+  基础解系⭐
+ 是解 是线性无关组 个数t=n-r(A)   真题  【分析】“基础解系不存在”即为Ax=0没有非零解，根据 t=n-r(A) 知，本题等价转化为求解A的秩，求解秩时，找个大，找个小，通过夹逼，确定秩的值。
+【解】$A^{*}\neq0$，则$r(A^{ *})\geq 1$​，则$r(A)\geq n-1$
+Ax=b有解且不唯一，则$r(A) &lt; n$
+联立得，r(A)=n-1
+故t = n-r(A) = 1
+ ⭐⭐⭐⭐⭐
+ 【分析】根据通解的定义可知，若为通解，解必然线性无关，本题转化为证明 $a_1,a_2,a_3,a_4$哪三个线性无关
+这里用到了“低维无关，添加向量后的高维必无关”
+  此外，如果本题为证明计算题（证明基础解系），即 求$A^{*}x=0$​ 的基础解系，则
+ 根据$t=n-r(A^{*})$得基础解系解向量个数。  求解$r(A^{*})$​ (找大找小) ，   根据A不可逆得，$|A|=0, r(A)&lt; n=4$​​ 由 $A_{12} \neq 0$​，则$r(A) \geq n-1=3$​​ 则r(A)=3，则$r(A^{*})$ = 1  t = 4-1=3，即基础解系有三个解向量   证明是解  $A^{*}A=|A| E=0,\text{且}|A|=0$​​ ，有 $A^{ *} (a_1a_2a_3a_4)=0$​​，则向量$a_1,a_2,a_3,a_4$​​ 均为$A^{ *}x=0$​​​ 的解   证明线性无关（上面选择题过程）  🤓">
+<meta name="author" content="Archai">
+<link rel="canonical" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.4ee57c4189977dc8f075173100c24a668d6bb09d6b5db74440649223f1221877.css" integrity="sha256-TuV8QYmXfcjwdRcxAMJKZo1rsJ1rXbdEQGSSI/EiGHc=" rel="preload stylesheet" as="style">
+<link rel="stylesheet" href="css/extended/custom.css">
+<link rel="icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="apple-touch-icon" href="https://www.fintinger.site/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.fintinger.site/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:title" content="线性代数——方程组" />
+<meta property="og:description" content="Ax=0  重点： n-r(A)，基础解系
+  Ax=0有非零解 $\Leftrightarrow $​​ r(A) &lt; n (未知数个数)$\Leftrightarrow $​​​ A的列向量线性相关
+特别地(针对水平型阵和方阵)，※
+ A-m×n,m&lt;n, Ax=0 必有非零解 A-n×n，Ax=0有非零解 $\Leftrightarrow $​ |A|=0（克拉默法则）    Ax=0有非零解，则其解线性组合必为Ax=0的解，所以Ax=0若有非零解，则必有无穷多解，在这无穷多解中，线性无关的解向量个数为 $t=n-r(A)$​​​​​，这就是基础解系​，基础解系是Ax=0的解向量中的极大线性无关组。此外，根据定理可知，Ax=0的任一解都可以由基础解系线性表出。
+  基础解系⭐
+ 是解 是线性无关组 个数t=n-r(A)   真题  【分析】“基础解系不存在”即为Ax=0没有非零解，根据 t=n-r(A) 知，本题等价转化为求解A的秩，求解秩时，找个大，找个小，通过夹逼，确定秩的值。
+【解】$A^{*}\neq0$，则$r(A^{ *})\geq 1$​，则$r(A)\geq n-1$
+Ax=b有解且不唯一，则$r(A) &lt; n$
+联立得，r(A)=n-1
+故t = n-r(A) = 1
+ ⭐⭐⭐⭐⭐
+ 【分析】根据通解的定义可知，若为通解，解必然线性无关，本题转化为证明 $a_1,a_2,a_3,a_4$哪三个线性无关
+这里用到了“低维无关，添加向量后的高维必无关”
+  此外，如果本题为证明计算题（证明基础解系），即 求$A^{*}x=0$​ 的基础解系，则
+ 根据$t=n-r(A^{*})$得基础解系解向量个数。  求解$r(A^{*})$​ (找大找小) ，   根据A不可逆得，$|A|=0, r(A)&lt; n=4$​​ 由 $A_{12} \neq 0$​，则$r(A) \geq n-1=3$​​ 则r(A)=3，则$r(A^{*})$ = 1  t = 4-1=3，即基础解系有三个解向量   证明是解  $A^{*}A=|A| E=0,\text{且}|A|=0$​​ ，有 $A^{ *} (a_1a_2a_3a_4)=0$​​，则向量$a_1,a_2,a_3,a_4$​​ 均为$A^{ *}x=0$​​​ 的解   证明线性无关（上面选择题过程）  🤓" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/" /><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-21T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-08-21T00:00:00&#43;00:00" /><meta property="og:site_name" content="Archai&#39;s home" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/>
+
+<meta name="twitter:title" content="线性代数——方程组"/>
+<meta name="twitter:description" content="Ax=0  重点： n-r(A)，基础解系
+  Ax=0有非零解 $\Leftrightarrow $​​ r(A) &lt; n (未知数个数)$\Leftrightarrow $​​​ A的列向量线性相关
+特别地(针对水平型阵和方阵)，※
+ A-m×n,m&lt;n, Ax=0 必有非零解 A-n×n，Ax=0有非零解 $\Leftrightarrow $​ |A|=0（克拉默法则）    Ax=0有非零解，则其解线性组合必为Ax=0的解，所以Ax=0若有非零解，则必有无穷多解，在这无穷多解中，线性无关的解向量个数为 $t=n-r(A)$​​​​​，这就是基础解系​，基础解系是Ax=0的解向量中的极大线性无关组。此外，根据定理可知，Ax=0的任一解都可以由基础解系线性表出。
+  基础解系⭐
+ 是解 是线性无关组 个数t=n-r(A)   真题  【分析】“基础解系不存在”即为Ax=0没有非零解，根据 t=n-r(A) 知，本题等价转化为求解A的秩，求解秩时，找个大，找个小，通过夹逼，确定秩的值。
+【解】$A^{*}\neq0$，则$r(A^{ *})\geq 1$​，则$r(A)\geq n-1$
+Ax=b有解且不唯一，则$r(A) &lt; n$
+联立得，r(A)=n-1
+故t = n-r(A) = 1
+ ⭐⭐⭐⭐⭐
+ 【分析】根据通解的定义可知，若为通解，解必然线性无关，本题转化为证明 $a_1,a_2,a_3,a_4$哪三个线性无关
+这里用到了“低维无关，添加向量后的高维必无关”
+  此外，如果本题为证明计算题（证明基础解系），即 求$A^{*}x=0$​ 的基础解系，则
+ 根据$t=n-r(A^{*})$得基础解系解向量个数。  求解$r(A^{*})$​ (找大找小) ，   根据A不可逆得，$|A|=0, r(A)&lt; n=4$​​ 由 $A_{12} \neq 0$​，则$r(A) \geq n-1=3$​​ 则r(A)=3，则$r(A^{*})$ = 1  t = 4-1=3，即基础解系有三个解向量   证明是解  $A^{*}A=|A| E=0,\text{且}|A|=0$​​ ，有 $A^{ *} (a_1a_2a_3a_4)=0$​​，则向量$a_1,a_2,a_3,a_4$​​ 均为$A^{ *}x=0$​​​ 的解   证明线性无关（上面选择题过程）  🤓"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://www.fintinger.site/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "线性代数——方程组",
+      "item": "https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "线性代数——方程组",
+  "name": "线性代数——方程组",
+  "description": "Ax=0  重点： n-r(A)，基础解系\n  Ax=0有非零解 $\\Leftrightarrow $​​ r(A) \u0026lt; n (未知数个数)$\\Leftrightarrow $​​​ A的列向量线性相关\n特别地(针对水平型阵和方阵)，※\n A-m×n,m\u0026lt;n, Ax=0 必有非零解 A-n×n，Ax=0有非零解 $\\Leftrightarrow $​ |A|=0（克拉默法则）    Ax=0有非零解，则其解线性组合必为Ax=0的解，所以Ax=0若有非零解，则必有无穷多解，在这无穷多解中，线性无关的解向量个数为 $t=n-r(A)$​​​​​，这就是基础解系​，基础解系是Ax=0的解向量中的极大线性无关组。此外，根据定理可知，Ax=0的任一解都可以由基础解系线性表出。\n  基础解系⭐\n 是解 是线性无关组 个数t=n-r(A)   真题  【分析】“基础解系不存在”即为Ax=0没有非零解，根据 t=n-r(A) 知，本题等价转化为求解A的秩，求解秩时，找个大，找个小，通过夹逼，确定秩的值。\n【解】$A^{*}\\neq0$，则$r(A^{ *})\\geq 1$​，则$r(A)\\geq n-1$\nAx=b有解且不唯一，则$r(A) \u0026lt; n$\n联立得，r(A)=n-1\n故t = n-r(A) = 1\n ⭐⭐⭐⭐⭐\n 【分析】根据通解的定义可知，若为通解，解必然线性无关，本题转化为证明 $a_1,a_2,a_3,a_4$哪三个线性无关\n这里用到了“低维无关，添加向量后的高维必无关”\n  此外，如果本题为证明计算题（证明基础解系），即 求$A^{*}x=0$​ 的基础解系，则\n 根据$t=n-r(A^{*})$得基础解系解向量个数。  求解$r(A^{*})$​ (找大找小) ，   根据A不可逆得，$|A|=0, r(A)\u0026lt; n=4$​​ 由 $A_{12} \\neq 0$​，则$r(A) \\geq n-1=3$​​ 则r(A)=3，则$r(A^{*})$ = 1  t = 4-1=3，即基础解系有三个解向量   证明是解  $A^{*}A=|A| E=0,\\text{且}|A|=0$​​ ，有 $A^{ *} (a_1a_2a_3a_4)=0$​​，则向量$a_1,a_2,a_3,a_4$​​ 均为$A^{ *}x=0$​​​ 的解   证明线性无关（上面选择题过程）  🤓",
+  "keywords": [
+    "线性代数"
+  ],
+  "articleBody": "Ax=0  重点： n-r(A)，基础解系\n  Ax=0有非零解 $\\Leftrightarrow $​​ r(A) 特别地(针对水平型阵和方阵)，※\n A-m×n,mA-n×n，Ax=0有非零解 $\\Leftrightarrow $​ |A|=0（克拉默法则）    Ax=0有非零解，则其解线性组合必为Ax=0的解，所以Ax=0若有非零解，则必有无穷多解，在这无穷多解中，线性无关的解向量个数为 $t=n-r(A)$​​​​​，这就是基础解系​，基础解系是Ax=0的解向量中的极大线性无关组。此外，根据定理可知，Ax=0的任一解都可以由基础解系线性表出。\n  基础解系⭐\n 是解 是线性无关组 个数t=n-r(A)   真题  【分析】“基础解系不存在”即为Ax=0没有非零解，根据 t=n-r(A) 知，本题等价转化为求解A的秩，求解秩时，找个大，找个小，通过夹逼，确定秩的值。\n【解】$A^{*}\\neq0$，则$r(A^{ *})\\geq 1$​，则$r(A)\\geq n-1$\nAx=b有解且不唯一，则$r(A) 联立得，r(A)=n-1\n故t = n-r(A) = 1\n ⭐⭐⭐⭐⭐\n 【分析】根据通解的定义可知，若为通解，解必然线性无关，本题转化为证明 $a_1,a_2,a_3,a_4$哪三个线性无关\n这里用到了“低维无关，添加向量后的高维必无关”\n  此外，如果本题为证明计算题（证明基础解系），即 求$A^{*}x=0$​ 的基础解系，则\n 根据$t=n-r(A^{*})$得基础解系解向量个数。  求解$r(A^{*})$​ (找大找小) ，   根据A不可逆得，$|A|=0, r(A)由 $A_{12} \\neq 0$​，则$r(A) \\geq n-1=3$​​ 则r(A)=3，则$r(A^{*})$ = 1  t = 4-1=3，即基础解系有三个解向量   证明是解  $A^{*}A=|A| E=0,\\text{且}|A|=0$​​ ，有 $A^{ *} (a_1a_2a_3a_4)=0$​​，则向量$a_1,a_2,a_3,a_4$​​ 均为$A^{ *}x=0$​​​ 的解   证明线性无关（上面选择题过程）  🤓\n Ax=b  重点：有解判定，解的结构\n  解的性质：\n 非齐的解相减为齐的解 齐的解+非齐解为非齐解    解的结构：非齐特解+齐的基础解系=非齐通解\n 公共解、同解 （一）公共解   两个方程解联立得公共解 已知一个方程的基础解系，求得另一个方程的基础解系，设$\\beta$​为公共解，则$\\beta$​能由两个基础解系分别表出，进而相减得齐次方程组求解。  注意零解一定是公共解。\n （二）同解  对Ax=0，Bx=0，若同解，则\nn-r(A)=n-r(B)\n故必要条件 r(A)-r(B)\n 秩关系的证明 应用  根据已知，假设出C，解方程组拼出C，考察基本功\n 命题：若Ax=0只有零解，那么Ax=b有唯一解 ❌\n  ",
+  "wordCount" : "102",
+  "inLanguage": "en",
+  "datePublished": "2021-08-21T00:00:00Z",
+  "dateModified": "2021-08-21T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Archai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Archai's home",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.fintinger.site/posts/" title="Posts📑">
+                    <span>Posts📑</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/categories/" title="Categories🛒">
+                    <span>Categories🛒</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/search/" title="Search🔎 (Alt &#43; /)" accesskey=/>
+                    <span>Search🔎</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/archives/" title="Timeline🕰️">
+                    <span>Timeline🕰️</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/about/" title="About🥳">
+                    <span>About🥳</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://www.fintinger.site">Home</a>&nbsp;»&nbsp;<a href="https://www.fintinger.site/posts/">Posts</a></div>
+    <h1 class="post-title">
+      线性代数——方程组
+    </h1>
+    <div class="post-meta"><span title='2021-08-21 00:00:00 +0000 UTC'>August 21, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#ax0" aria-label="Ax=0">Ax=0</a><ul>
+                        
+                <li>
+                    <a href="#%e7%9c%9f%e9%a2%98" aria-label="真题">真题</a></li></ul>
+                </li>
+                <li>
+                    <a href="#axb" aria-label="Ax=b">Ax=b</a></li>
+                <li>
+                    <a href="#%e5%85%ac%e5%85%b1%e8%a7%a3%e5%90%8c%e8%a7%a3" aria-label="公共解、同解">公共解、同解</a><ul>
+                        
+                <li>
+                    <a href="#%e4%b8%80%e5%85%ac%e5%85%b1%e8%a7%a3" aria-label="（一）公共解">（一）公共解</a></li>
+                <li>
+                    <a href="#%e4%ba%8c%e5%90%8c%e8%a7%a3" aria-label="（二）同解">（二）同解</a><ul>
+                        
+                <li>
+                    <a href="#%e7%a7%a9%e5%85%b3%e7%b3%bb%e7%9a%84%e8%af%81%e6%98%8e" aria-label="秩关系的证明">秩关系的证明</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%ba%94%e7%94%a8" aria-label="应用">应用</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="ax0">Ax=0<a hidden class="anchor" aria-hidden="true" href="#ax0">#</a></h2>
+<blockquote>
+<p><strong>重点： n-r(A)，基础解系</strong></p>
+</blockquote>
+<blockquote>
+<p>Ax=0有非零解 $\Leftrightarrow $​​ r(A) &lt; n (未知数个数)$\Leftrightarrow $​​​  A的列向量线性相关</p>
+<p>特别地(<strong>针对水平型阵和方阵</strong>)，※</p>
+<ul>
+<li>A-m×n,m&lt;n, Ax=0 必有非零解</li>
+<li>A-n×n，Ax=0有非零解 $\Leftrightarrow $​ |A|=0（<strong>克拉默法则</strong>）</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>Ax=0有非零解，则其解线性组合必为Ax=0的解，所以<strong>Ax=0若有非零解，则必有无穷多解</strong>，在这无穷多解中，<strong>线性无关的解向量个数</strong>为 $t=n-r(A)$​​​​​，这就是基础解系​，<strong>基础解系是Ax=0的解向量中的极大线性无关组</strong>。此外，根据定理可知，<strong>Ax=0的任一解都可以由基础解系线性表出</strong>。</p>
+</blockquote>
+<blockquote>
+<p>基础解系⭐</p>
+<ul>
+<li>是解</li>
+<li>是线性无关组</li>
+<li>个数t=n-r(A)</li>
+</ul>
+</blockquote>
+<h3 id="真题">真题<a hidden class="anchor" aria-hidden="true" href="#真题">#</a></h3>
+<p><img loading="lazy" src="index.assets/image-20210821165916845.png" alt="2004-数三"  />
+</p>
+<blockquote>
+<p>【分析】“基础解系不存在”即为Ax=0没有非零解，根据 t=n-r(A) 知，本题等价转化为求解A的秩，求解秩时，<strong>找个大，找个小，通过夹逼，确定秩的值</strong>。</p>
+<p>【解】$A^{*}\neq0$，则$r(A^{ *})\geq 1$​，则$r(A)\geq n-1$</p>
+<p>Ax=b有解且不唯一，则$r(A) &lt; n$</p>
+<p>联立得，r(A)=n-1</p>
+<p>故t = n-r(A) = 1</p>
+</blockquote>
+<p>⭐⭐⭐⭐⭐</p>
+<p><img loading="lazy" src="index.assets/image-20210821171952638.png" alt="2002-数二、三"  />
+</p>
+<blockquote>
+<p>【分析】根据通解的定义可知，若为通解，解必然线性无关，本题转化为证明 $a_1,a_2,a_3,a_4$哪三个线性无关</p>
+<p><img loading="lazy" src="index.assets/image-20210821172913555.png" alt=""  />
+</p>
+<p>这里用到了“<strong>低维无关，添加向量后的高维必无关</strong>”</p>
+</blockquote>
+<blockquote>
+<p>此外，如果本题为<strong>证明计算题（证明基础解系）</strong>，即 求$A^{*}x=0$​ 的基础解系，则</p>
+<ol>
+<li>根据$t=n-r(A^{*})$得基础解系解向量个数。
+<ol>
+<li>求解$r(A^{*})$​ (<strong>找大找小</strong>)  ，</li>
+</ol>
+<ul>
+<li>根据A不可逆得，$|A|=0, r(A)&lt; n=4$​​</li>
+<li>由 $A_{12} \neq 0$​，则$r(A) \geq n-1=3$​​</li>
+<li>则r(A)=3，则$r(A^{*})$ = 1</li>
+</ul>
+<ol start="2">
+<li>t = 4-1=3，即基础解系有三个解向量</li>
+</ol>
+</li>
+<li>证明是解
+<ol>
+<li>$A^{*}A=|A| E=0,\text{且}|A|=0$​​ ，有 $A^{ *} (a_1a_2a_3a_4)=0$​​，则向量$a_1,a_2,a_3,a_4$​​ 均为$A^{ *}x=0$​​​ 的解</li>
+</ol>
+</li>
+<li>证明线性无关（上面选择题过程）</li>
+</ol>
+<p>🤓</p>
+</blockquote>
+<h2 id="axb">Ax=b<a hidden class="anchor" aria-hidden="true" href="#axb">#</a></h2>
+<blockquote>
+<p><strong>重点：有解判定，解的结构</strong></p>
+</blockquote>
+<blockquote>
+<p>解的性质：</p>
+<ul>
+<li>非齐的解相减为齐的解</li>
+<li>齐的解+非齐解为非齐解</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>解的结构：非齐特解+齐的基础解系=非齐通解</p>
+</blockquote>
+<h2 id="公共解同解">公共解、同解<a hidden class="anchor" aria-hidden="true" href="#公共解同解">#</a></h2>
+<h3 id="一公共解">（一）公共解<a hidden class="anchor" aria-hidden="true" href="#一公共解">#</a></h3>
+<blockquote>
+<ol>
+<li>两个方程解联立得公共解</li>
+<li>已知一个方程的基础解系，求得另一个方程的基础解系，设$\beta$​为公共解，则$\beta$​能由两个基础解系分别表出，进而相减得齐次方程组求解。</li>
+</ol>
+<p><strong>注意零解一定是公共解。</strong></p>
+<p><img loading="lazy" src="index.assets/image-20210822170349234.png" alt=""  />
+</p>
+</blockquote>
+<h3 id="二同解">（二）同解<a hidden class="anchor" aria-hidden="true" href="#二同解">#</a></h3>
+<blockquote>
+<p>对Ax=0，Bx=0，若同解，则</p>
+<p>n-r(A)=n-r(B)</p>
+<p>故必要条件 <strong>r(A)-r(B)</strong></p>
+</blockquote>
+<p><img loading="lazy" src="index.assets/image-20210822171516847.png" alt="2005-数三、四"  />
+</p>
+<h4 id="秩关系的证明">秩关系的证明<a hidden class="anchor" aria-hidden="true" href="#秩关系的证明">#</a></h4>
+<p><img loading="lazy" src="index.assets/image-20210822172251887.png" alt=""  />
+</p>
+<h2 id="应用">应用<a hidden class="anchor" aria-hidden="true" href="#应用">#</a></h2>
+<p><img loading="lazy" src="index.assets/image-20210822172925078.png" alt="2014-数一、二、三"  />
+</p>
+<blockquote>
+<p>根据已知，假设出C，解方程组拼出C，考察基本功</p>
+</blockquote>
+<p><strong>命题：若Ax=0只有零解，那么Ax=b有唯一解</strong>  ❌</p>
+<blockquote>
+<p><img loading="lazy" src="index.assets/image-20210822173810993.png" alt=""  />
+</p>
+</blockquote>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.fintinger.site/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/">
+    <span class="title">« Prev Page</span>
+    <br>
+    <span>线性代数——特征值特征向量</span>
+  </a>
+  <a class="next" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/">
+    <span class="title">Next Page »</span>
+    <br>
+    <span>线性代数——向量</span>
+  </a>
+</nav>
+
+  </footer><script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://waline-q3l7of5hj-fintinger.vercel.app/","visitor":true});
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://www.fintinger.site">Archai&#39;s home</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

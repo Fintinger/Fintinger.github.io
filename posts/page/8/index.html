@@ -10,10 +10,11 @@
 <meta name="description" content="Posts - Archai&#39;s home">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/posts/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.4ee57c4189977dc8f075173100c24a668d6bb09d6b5db74440649223f1221877.css" integrity="sha256-TuV8QYmXfcjwdRcxAMJKZo1rsJ1rXbdEQGSSI/EiGHc=" rel="preload stylesheet" as="style">
+<link rel="stylesheet" href="css/extended/custom.css">
 <link rel="icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
 <link rel="apple-touch-icon" href="https://www.fintinger.site/apple-touch-icon.png">
 <link rel="mask-icon" href="https://www.fintinger.site/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
@@ -63,6 +64,27 @@
 
 </script>
 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+
 <header class="header">
     <nav class="nav">
         <div class="logo">
@@ -102,11 +124,6 @@
                 </a>
             </li>
             <li>
-                <a href="https://www.fintinger.site/tags/" title="Tags🏷️">
-                    <span>Tags🏷️</span>
-                </a>
-            </li>
-            <li>
                 <a href="https://www.fintinger.site/search/" title="Search🔎 (Alt &#43; /)" accesskey=/>
                     <span>Search🔎</span>
                 </a>
@@ -114,6 +131,11 @@
             <li>
                 <a href="https://www.fintinger.site/archives/" title="Timeline🕰️">
                     <span>Timeline🕰️</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/about/" title="About🥳">
+                    <span>About🥳</span>
                 </a>
             </li>
         </ul>
@@ -126,23 +148,54 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>JavaScript基础之Set与Weakset
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>Set类型 1.属性 👉 size ：数组长度
+1 2 3  let set = new Set([1, 2, 3]) console.log(set.size);//9   👉 add() ：添加元素
+1 2  console.log(set.add(99));//返回修改后的数组Set(4) { 1, 2, 3, 99 } console.log(set);//原数组已经被修改Set(4) { 1, 2, 3, 99 }   👉 delete() ：删除元素
+1 2  console.log(set.delete(99));//true console.log(set);//Set(3) { 1, 2, 3 }   👉 has() ：有某个元素
+1  console.log(set.has(3)); //true   👉 clear()：清空数组
+1 2  set....</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-08-26 00:00:00 +0000 UTC'>August 26, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript基础之Set与Weakset" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bset%E4%B8%8Eweakset/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>JavaScript基础之Symbol类型
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>Symbol() 类型不能当做普通对象(不能加属性值)，只能当做一种永远都不会重复的字符串
+ 定义 方法： Symbol(desc)、Symbol.for(desc)
+1 2 3 4 5 6 7 8  let s1 = Symbol(&#39;d&#39;) let s2 = Symbol.for(&#39;d&#39;) let s3 = Symbol.for(&#39;d&#39;) console.log(s1.description);//d console.log(Symbol.keyFor(s2));//d console.log(s1 === s3);//false console.log(s2 === s3);//true   注意： 利用Symbol() 定义的值永远都不会相等，而Symbol.for() 定义的，如果描述相同，则值相等
+定义对象时，key相同会覆盖的问题 普通方式定义：
+1 2 3 4 5 6 7 8 9 10 11  let user1={ name:&#39;李四&#39; } let user2={ name:&#39;李四&#39; } let grade={ [user1.name]:{C:98,E:60}, [user2.name]:{C:99,E:59} } console.log(grade);//{&#39;李四&#39;:{C:99,E:59}}   可以看到，后面的覆盖掉了前面的...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-08-24 00:00:00 +0000 UTC'>August 24, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript基础之Symbol类型" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bsymbol%E7%B1%BB%E5%9E%8B/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>JavaScript基础之数组深倔
     </h2>
   </header>
   <section class="entry-content">
     <p>数组是经常用到的一种数据结构
- 定义方法 let a = new Array(3) let b = [1, 2, 3]  如何定义一个只有一个元素的数组？
+ 定义方法 1 2  let a = new Array(3) let b = [1, 2, 3]    如何定义一个只有一个元素的数组？
  new Array(n)表示有n个空元素的的数组，利用Array.of(n),可以定义一个只有n元素的数组
 类型转换  利用join 可以把数组转成字符串
- let a = [1, 2, 3, 4, 5] let b = a.join(&#39;&#39;) console.log(b); 说明： join 的作用就是将数组中的所有元素用指定的符号连接，成为一个字符串
+ 1 2 3  let a = [1, 2, 3, 4, 5] let b = a.join(&#39;&#39;) console.log(b);   说明： join 的作用就是将数组中的所有元素用指定的符号连接，成为一个字符串
  如何把DOM集合NodeList转换成普通数组形式？
  Nodelist形式无法使用.map(),reduce()等方法(能用forEach())，处理不太方便，因此需要转换成普通数组类型
-let titles = document.querySelectorAll(&#39;h1&#39;); [...titles].map((v, i,titles) =&gt; { console.log(v); }) titles.map()//Uncaught TypeError: titles.map is not a function 注意： 利用展开语法可以把DOM集合转换成普通数组形式
-解构赋值  是一种数组间批量赋值的方法
- let [name, age] = [&#39;fin&#39;, 18] console....</p>
+1 2 3 4 5 6  let titles = document.querySelectorAll(&#39;h1&#39;); [...titles].map((v, i,titles) =&gt; { console....</p>
   </section>
-  <footer class="entry-footer"><span title='2020-08-24 00:00:00 +0000 UTC'>August 24, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之数组深倔" href="https://www.fintinger.site/posts/2020/08/25/"></a>
+  <footer class="entry-footer"><span title='2020-08-24 00:00:00 +0000 UTC'>August 24, 2020</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript基础之数组深倔" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%95%B0%E7%BB%84%E6%B7%B1%E5%80%94/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -155,15 +208,13 @@ let titles = document.querySelectorAll(&#39;h1&#39;); [...titles].map((v, i,titl
   一个参数[i]  都是从i开始截取，返回n及其后面的全部字符串。
  第二个参数[i,n]  slice(i,n)和substring(i,n)表示从i开始截取到n；substr(i,n)，表示从i开始截取n个
  负参数  slice()和substr()将最后一位记为-1，然后依次编号；substring()则会将任何负参数变为0，然后查找
-let w = &#39;fintinger.xyz&#39; let a = w.slice(-4, w.length) let b = w.substring(-1, 2) let c = w.substr(-4, 4) console.log(a, b, c);//.xyz fi .xyz 2.查找字符串  主要有indexof()、includes()、lastIndexof() 三种方法
+1 2 3 4 5 6  let w = &#39;fintinger.xyz&#39; let a = w.slice(-4, w.length) let b = w.substring(-1, 2) let c = w.substr(-4, 4) console.log(a, b, c);//.xyz fi .xyz   2.查找字符串  主要有indexof()、includes()、lastIndexof() 三种方法
  共同点：
  两个参数[searchString,position]，第一个为要检索的字符串，第二个为开始检索位置； 若position &lt; 0，则position = 0 position可以省略  不同之处：
- lastIndexof()为从右往左找，找到第一个立即返回索引！其他两个都是从左往右 indexof(),lastIndexof()找不到则返回-1，includes()找不到返回false position 省略之后，includes(),indexof()默认值为0，lastIndexof()则为str.length  3.重复函数 repeat() 作用： 复制粘贴指定字符串指定次数
-案例：
-/** * 电话号码模糊处理 * @param{String|Number}number * @param{Number}len * @returns {Error|string} * @constructor */ function Phone(number, len = 4) { number = String(number) return number....</p>
+ lastIndexof()为从右往左找，找到第一个立即返回索引！其他两个都是从左往右 indexof(),lastIndexof()找不到则返回-1，includes()找不到返回false position 省略之后，includes(),indexof()默认值为0，lastIndexof()则为str....</p>
   </section>
   <footer class="entry-footer"><span title='2020-08-23 00:00:00 +0000 UTC'>August 23, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之值类型" href="https://www.fintinger.site/posts/2020/08/23/"></a>
+  <a class="entry-link" aria-label="post link to JavaScript基础之值类型" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%80%BC%E7%B1%BB%E5%9E%8B/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -174,44 +225,10 @@ let w = &#39;fintinger.xyz&#39; let a = w.slice(-4, w.length) let b = w.substrin
   <section class="entry-content">
     <p>JavaScript中最容易忽视的一些点
  let和var  都用来定义变量，但二者之间有些细微的差别
- 区别1: 是否有块作用域 var a = 1 { // var a=2  let a = 2 } console.log(a); //output var:a=2 let:a=1 var i=1 // for (var i = 0; i &lt;3; i&#43;&#43;) { for (let i = 0; i &lt;3; i&#43;&#43;) { //..do something } console.log(i); //output var:i=3 let:i=1 说明： 可以看出，var并没有作用域的概念，定义在特定作用于内的变量会受到作用域外的影响，let则不会
-区别2：全局污染问题 console.log(window.screenLeft);//600 // var screenLeft = 1 let screenLeft = 1 console.log(window.screenLeft); //output var:1 let:600 说明： var定义的变量用window对象也可以访问，当定义一些特定的key时，会造成全局的污染!...</p>
+ 区别1: 是否有块作用域 1 2 3 4 5 6 7 8  var a = 1 { // var a=2  let a = 2 } console.log(a); //output var:a=2 let:a=1   1 2 3 4 5 6 7 8  var i=1 // for (var i = 0; i &lt;3; i&#43;&#43;) { for (let i = 0; i &lt;3; i&#43;&#43;) { //..do something } console....</p>
   </section>
-  <footer class="entry-footer"><span title='2020-08-22 00:00:00 +0000 UTC'>August 22, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之JS黑洞" href="https://www.fintinger.site/posts/2020/08/19/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>JavaScript基础之运算符
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>&#43;&#43;的前置与后置 let a1 = 1 let b1 = 2 let c1 = b1 &#43; a1&#43;&#43; console.log(a1, b1, c1);//2,2,3  let a2 = 1 let b2 = 2 let c2 = b2 &#43; &#43;&#43;a2 console.log(a2, b2, c2);//2,2,4 说明：
- 后置是先计算再&#43;&#43; 前置是先&#43;&#43;再计算  短路运算 let a = 0; let b = 1; let c = a || b; console.log(c);//1 利用这个原理，我们可以简化一些函数
-let sex = prompt(&#39;您的性别?&#39;) if (!sex){ sex=&#34;保密&#34; } console.log(sex); =&gt;
-let sex = prompt(&#39;您的性别?...</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-08-22 00:00:00 +0000 UTC'>August 22, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之运算符" href="https://www.fintinger.site/posts/2020/08/22/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>ES6之Promise用法小结
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>Promise 对象用于表示一个异步操作的最终完成 (或失败), 及其结果值。其目的主要是解决以往回调中嵌套回调的&#34;嵌套地狱&#34;问题，使代码可读性更好，更美观!
-基本用法 对于一个标准的Prommise，其基本写法为:
-new Promise(function (resolve, reject) { //do something...  //success  resolve(&#39;success&#39;) //fail &amp; reject  // reject(&#39;rejected&#39;) *resolve和reject只能出现一个 }).then( function (value) { //if succeed,do something...  }, function (reason) { //if fail &amp; reject,do something...  } ) 如果采用ES6的箭头函数写法，则为:
-new Promise((resolve, reject) =&gt; { resolve(&#39;success&#39;) //reject(&#39;rejected&#39;) }).then( value =&gt; {}, reason =&gt; {} )  始终牢记，前一个Promise()必须是在后面一个.then()中处理，
-如果前一个Promsie()中没有改变状态，即没有resolve()/reject()方法，后面的.then就不会针对这个Promsie()处理
- Promise错误处理  Promise()中的错误处理有两种方式,.then()和.catch()
- .then()  特点： “一一对应”，即一个then()对应处理上一个Promise 用法：  new Promise((resolve, reject) =&gt; { // 12&#43;p  // throw new Error(&#39;fail&#39;)  reject(&#39;失败&#39;) })....</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-08-18 00:00:00 +0000 UTC'>August 18, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to ES6之Promise用法小结" href="https://www.fintinger.site/posts/2020/08/18/"></a>
+  <footer class="entry-footer"><span title='2020-08-22 00:00:00 +0000 UTC'>August 22, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript基础之JS黑洞" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bjs%E9%BB%91%E6%B4%9E/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

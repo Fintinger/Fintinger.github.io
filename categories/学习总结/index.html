@@ -10,10 +10,11 @@
 <meta name="description" content="">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.4ee57c4189977dc8f075173100c24a668d6bb09d6b5db74440649223f1221877.css" integrity="sha256-TuV8QYmXfcjwdRcxAMJKZo1rsJ1rXbdEQGSSI/EiGHc=" rel="preload stylesheet" as="style">
+<link rel="stylesheet" href="css/extended/custom.css">
 <link rel="icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
 <link rel="apple-touch-icon" href="https://www.fintinger.site/apple-touch-icon.png">
 <link rel="mask-icon" href="https://www.fintinger.site/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
@@ -46,6 +47,27 @@
         document.body.classList.add('dark');
     }
 
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
 </script>
 
 <header class="header">
@@ -87,11 +109,6 @@
                 </a>
             </li>
             <li>
-                <a href="https://www.fintinger.site/tags/" title="Tags🏷️">
-                    <span>Tags🏷️</span>
-                </a>
-            </li>
-            <li>
                 <a href="https://www.fintinger.site/search/" title="Search🔎 (Alt &#43; /)" accesskey=/>
                     <span>Search🔎</span>
                 </a>
@@ -99,6 +116,11 @@
             <li>
                 <a href="https://www.fintinger.site/archives/" title="Timeline🕰️">
                     <span>Timeline🕰️</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/about/" title="About🥳">
+                    <span>About🥳</span>
                 </a>
             </li>
         </ul>
@@ -111,6 +133,56 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>PHP语法小结
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>基本语法 输出语句    语句 功能     echo 输出字符串类型   print_r 输出引用类型(对象,数组等)   var_dunp 检测变量类型    ::: tip echo语句可用于给前端返回响应体。比如前端通过ajax请求，可以在xhr.response中直接得到echo的内容 :::
+变量&amp;常量 👉🏼 变量
+   语句 功能 返回值     isset() 检测变量是否存在 boolean   unset() 删除某个变量 none    👉🏼 常量
+常量用const 或 define 定义，常量名一般全部大写，不受作用域的限制
+::: tip
+一般是define在类外定义常量，const在类内定义常量，并且const必须通过类名::变量名来进行访问。但是php5.3以上支持类外通过const定义常量。
+:::
+:::danger
+const不能在条件语句中使用，必出错
+:::
+ 参考文章 《PHP中define() 与 const定义常量的区别详解》...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-10-14 00:00:00 +0000 UTC'>October 14, 2020</span>&nbsp;·&nbsp;13 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to PHP语法小结" href="https://www.fintinger.site/p/php%E8%AF%AD%E6%B3%95%E5%B0%8F%E7%BB%93/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>ES6之Promise用法小结
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>Promise 对象用于表示一个异步操作的最终完成 (或失败), 及其结果值。其目的主要是解决以往回调中嵌套回调的&#34;嵌套地狱&#34;问题，使代码可读性更好，更美观!
+基本用法 对于一个标准的Prommise，其基本写法为:
+1 2 3 4 5 6 7 8 9 10 11 12 13  new Promise(function (resolve, reject) { //do something...  //success  resolve(&#39;success&#39;) //fail &amp; reject  // reject(&#39;rejected&#39;) *resolve和reject只能出现一个 }).then( function (value) { //if succeed,do something...  }, function (reason) { //if fail &amp; reject,do something...  } )   如果采用ES6的箭头函数写法，则为:
+1 2 3 4 5 6 7  new Promise((resolve, reject) =&gt; { resolve(&#39;success&#39;) //reject(&#39;rejected&#39;) })....</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-08-18 00:00:00 +0000 UTC'>August 18, 2020</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to ES6之Promise用法小结" href="https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Ajax学习小结
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>学习地址:https://www.bilibili.com/video/BV1WC4y1b78y，主要通过express的简单功能来搭建本地的服务，进而更好地学习Ajax
+ 发送Ajax请求的方式 原生Ajax 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(&#34;GET&#34;,&#34;https://www.x.com&#34;) //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } }   说明：...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-08-10 00:00:00 +0000 UTC'>August 10, 2020</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to Ajax学习小结" href="https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>线性代数——常用公式定理总结
     </h2>
   </header>
@@ -118,7 +190,7 @@
     <p>公式 定理 附录 YO起来！ </p>
   </section>
   <footer class="entry-footer"><span title='2021-08-29 00:00:00 +0000 UTC'>August 29, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 线性代数——常用公式定理总结" href="https://www.fintinger.site/posts/2021/08/29/"></a>
+  <a class="entry-link" aria-label="post link to 线性代数——常用公式定理总结" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -145,91 +217,7 @@ $X^T(A^TA)X=(AX)^{T}AX \geq 0$
 现证$(AX)^{T}AX \neq 0$...</p>
   </section>
   <footer class="entry-footer"><span title='2021-08-28 00:00:00 +0000 UTC'>August 28, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 线性代数——二次型" href="https://www.fintinger.site/posts/2021/08/28/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>线性代数——特征值特征向量
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>特征值与特征向量 性质  1.不同特征值的特征向量线性无关。
-2.ｋ重特征值至多有ｋ个线性无关的特征向量。(※)
- 基本运算逻辑    三角矩阵特征值为主对角线元素⭐
-注意，当$\lambda=1$时😢
-  秩为1的矩阵A
- 特征值 $\sum_{aii},0,0…$ $A^n=\sum_{aii}^{n-1} A$​  特征值证明：
-  求特征值不能先对A做任何变换，而应该带着λ变换
- 定义法    如果两矩阵相似
-即 “两矩阵相似则具有相同特征值，特征向量也存在关系”
- 真题&amp;例题 常识题？😢
-关于AB=0引申出的一题多解
-相似  AB相似，则 A&#43;kE ~ B&#43;kE
- 行列式相等 俩秩相等 特征值相等 绩相等  利用已知构造方程组求参，进行预处理
-  由 $A^n=PB^nP^{-1}$
- 若取B为∧，容易求得$A^n$​的值。(其他方法) 特征值也存在关系。(特征值规律)    用相似的传递性证明两矩阵相似
- A~∧ ⭐  A~∧，$A=P∧P^{-1}$则
- ∧是矩阵A的特征值 P列向量是A的特征向量  （要对应，别错位）...</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-08-23 00:00:00 +0000 UTC'>August 23, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 线性代数——特征值特征向量" href="https://www.fintinger.site/posts/2021/08/23/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>线性代数——方程组
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>Ax=0  重点： n-r(A)，基础解系
-  Ax=0有非零解 $\Leftrightarrow $​​ r(A) &lt; n (未知数个数)$\Leftrightarrow $​​​ A的列向量线性相关
-特别地(针对水平型阵和方阵)，※
- A-m×n,m&lt;n, Ax=0 必有非零解 A-n×n，Ax=0有非零解 $\Leftrightarrow $​ |A|=0（克拉默法则）    Ax=0有非零解，则其解线性组合必为Ax=0的解，所以Ax=0若有非零解，则必有无穷多解，在这无穷多解中，线性无关的解向量个数为 $t=n-r(A)$​​​​​，这就是基础解系​，基础解系是Ax=0的解向量中的极大线性无关组。此外，根据定理可知，Ax=0的任一解都可以由基础解系线性表出。
-  基础解系⭐
- 是解 是线性无关组 个数t=n-r(A)   真题  【分析】“基础解系不存在”即为Ax=0没有非零解，根据 t=n-r(A) 知，本题等价转化为求解A的秩，求解秩时，找个大，找个小，通过夹逼，确定秩的值。
-【解】$A^{*}\neq0$，则$r(A^{ *})\geq 1$​，则$r(A)\geq n-1$
-Ax=b有解且不唯一，则$r(A) &lt; n$
-联立得，r(A)=n-1
-故t = n-r(A) = 1
- ⭐⭐⭐⭐⭐
- 【分析】根据通解的定义可知，若为通解，解必然线性无关，本题转化为证明 $a_1,a_2,a_3,a_4$哪三个线性无关
-这里用到了“低维无关，添加向量后的高维必无关”
-  此外，如果本题为证明计算题（证明基础解系），即 求$A^{*}x=0$​ 的基础解系，则
- 根据$t=n-r(A^{*})$得基础解系解向量个数。  求解$r(A^{*})$​ (找大找小) ，   根据A不可逆得，$|A|=0, r(A)&lt; n=4$​​ 由 $A_{12} \neq 0$​，则$r(A) \geq n-1=3$​​ 则r(A)=3，则$r(A^{*})$ = 1  t = 4-1=3，即基础解系有三个解向量   证明是解  $A^{*}A=|A| E=0,\text{且}|A|=0$​​ ，有 $A^{ *} (a_1a_2a_3a_4)=0$​​，则向量$a_1,a_2,a_3,a_4$​​ 均为$A^{ *}x=0$​​​ 的解   证明线性无关（上面选择题过程）  🤓...</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-08-21 00:00:00 +0000 UTC'>August 21, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 线性代数——方程组" href="https://www.fintinger.site/posts/2021/08/21/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>线性代数——向量
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>相关、无关    向量组中含零向量必然线性相关
-  组中至少存在两个成比例的向量必然线性相关
-   相关计算  $A(\alpha_1,\alpha_2,\alpha_3…\alpha_s)$​ 是否线性相关？
-$\Leftrightarrow$​​​ AX=0是否有非零解？(联系克拉默法则)
-$\Leftrightarrow$​​ r(A) &lt; s
- 特别的，对于n维向量：⭐⭐
-  n个n维向量相关 $\Leftrightarrow$​ 行列式得0，即|A|=0 n&#43;1个n维向量必然线性相关   此外，还有以下几何性质
- “$\alpha$相关”$\Leftrightarrow$ $\alpha=0$
-“$\alpha_1,\alpha_2$相关”$\Leftrightarrow$ $\alpha_1,\alpha_2$​共线
- 存在$\alpha_1=k\alpha_2$
- “$\alpha_1,\alpha_2,\alpha_3$​相关”$\Leftrightarrow$​ $\alpha_1,\alpha_2,\alpha_3$​​共面
- 证明、选择  这是难点，重点
- 证明线性无关 ​	 ⭐特征值不同的特征向量必线性无关。
-此外，不同特征值中如果某一特征值存在“一对多”的关系，这些特征向量也线性无关。即若$A \alpha_1=\lambda_1\alpha_1,A \alpha_2=\lambda_1\alpha_2,A \alpha=\lambda\alpha$，那么$\alpha_1,\alpha_2,\alpha_3$​线性无关​
-  恒等变形中乘的思路：
- 利用已知构造出0使得式子变短 直接两边乘A，得出式子，然后通过两个式子的加加减减化简   真题&amp;经典例题
- 本题第二问“写出和A相似的矩阵”(3分)
-分析：$\alpha_1，\alpha_2，\alpha_3$无关，后面出现$A\alpha_1，A\alpha_2，A\alpha_3$​想到相似
-   本题可以当作结论使用...</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-08-15 00:00:00 +0000 UTC'>August 15, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 线性代数——向量" href="https://www.fintinger.site/posts/2021/08/15/"></a>
+  <a class="entry-link" aria-label="post link to 线性代数——二次型" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

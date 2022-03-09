@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>线性代数——二次型 | Archai&#39;s home</title>
+<meta name="keywords" content="线性代数" />
+<meta name="description" content="性质定理  二次型$x^{T}Ax$经坐标变换$x=Cy$得二次型$y^{T}By$，其中 $B=C^{T}C$，通俗的讲，就是 二次型矩阵经过任意的一次坐标变换得到新的二次型，前后二次型矩阵合同。
+  任一二次型都可经坐标变换变成标准型。
+  配方法
+从$x_1$开始先合并再配方，将 f(x)⇒f(y)
+  正交变换法
+   例题  说明在正交变换下，A不仅与∧合同，而且A与∧相似
+ 用正交变换化二次型为标准形  参考用正交矩阵相似对角化
+  若是求正负惯性指数，根据特征值即可得到（特征值是二次型二次项系数✅）
+ 标准型到规范型  标准型到规范性与系数的大小无关，只与系数的正负相关，即正负惯性系数，注意先排序，依次“大于0，等于0，小于0&hellip;”
+ 例题  第一问参数的求解用到标准型化成规范型的规律。
+第二问的求解实际上就是正交矩阵相似对角化
+ 正定    注意正定矩阵是二次型，所以正定矩阵必对称，检验正定之前，先检验对称性，即证明$A^{T}=A$
+ 正定必要条件  $a_{ii}&gt;0$ |A| &gt; 0  正定充分必要条件  顺序主子式全大于0 特征值大于0 正惯性指数 p=n $A=C^TEC$，其中C可逆 ▲  经典例题  $(A^{T}A)^{T}=A^TA$，故$A^{T}A$实对称矩阵
+现证$\forall X$，有$X^T(A^TA)X&gt;0$
+$X^T(A^TA)X=(AX)^{T}AX \geq 0$
+现证$(AX)^{T}AX \neq 0$">
+<meta name="author" content="Archai">
+<link rel="canonical" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.4ee57c4189977dc8f075173100c24a668d6bb09d6b5db74440649223f1221877.css" integrity="sha256-TuV8QYmXfcjwdRcxAMJKZo1rsJ1rXbdEQGSSI/EiGHc=" rel="preload stylesheet" as="style">
+<link rel="stylesheet" href="css/extended/custom.css">
+<link rel="icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="apple-touch-icon" href="https://www.fintinger.site/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.fintinger.site/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:title" content="线性代数——二次型" />
+<meta property="og:description" content="性质定理  二次型$x^{T}Ax$经坐标变换$x=Cy$得二次型$y^{T}By$，其中 $B=C^{T}C$，通俗的讲，就是 二次型矩阵经过任意的一次坐标变换得到新的二次型，前后二次型矩阵合同。
+  任一二次型都可经坐标变换变成标准型。
+  配方法
+从$x_1$开始先合并再配方，将 f(x)⇒f(y)
+  正交变换法
+   例题  说明在正交变换下，A不仅与∧合同，而且A与∧相似
+ 用正交变换化二次型为标准形  参考用正交矩阵相似对角化
+  若是求正负惯性指数，根据特征值即可得到（特征值是二次型二次项系数✅）
+ 标准型到规范型  标准型到规范性与系数的大小无关，只与系数的正负相关，即正负惯性系数，注意先排序，依次“大于0，等于0，小于0&hellip;”
+ 例题  第一问参数的求解用到标准型化成规范型的规律。
+第二问的求解实际上就是正交矩阵相似对角化
+ 正定    注意正定矩阵是二次型，所以正定矩阵必对称，检验正定之前，先检验对称性，即证明$A^{T}=A$
+ 正定必要条件  $a_{ii}&gt;0$ |A| &gt; 0  正定充分必要条件  顺序主子式全大于0 特征值大于0 正惯性指数 p=n $A=C^TEC$，其中C可逆 ▲  经典例题  $(A^{T}A)^{T}=A^TA$，故$A^{T}A$实对称矩阵
+现证$\forall X$，有$X^T(A^TA)X&gt;0$
+$X^T(A^TA)X=(AX)^{T}AX \geq 0$
+现证$(AX)^{T}AX \neq 0$" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/" /><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-28T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-08-28T00:00:00&#43;00:00" /><meta property="og:site_name" content="Archai&#39;s home" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/>
+
+<meta name="twitter:title" content="线性代数——二次型"/>
+<meta name="twitter:description" content="性质定理  二次型$x^{T}Ax$经坐标变换$x=Cy$得二次型$y^{T}By$，其中 $B=C^{T}C$，通俗的讲，就是 二次型矩阵经过任意的一次坐标变换得到新的二次型，前后二次型矩阵合同。
+  任一二次型都可经坐标变换变成标准型。
+  配方法
+从$x_1$开始先合并再配方，将 f(x)⇒f(y)
+  正交变换法
+   例题  说明在正交变换下，A不仅与∧合同，而且A与∧相似
+ 用正交变换化二次型为标准形  参考用正交矩阵相似对角化
+  若是求正负惯性指数，根据特征值即可得到（特征值是二次型二次项系数✅）
+ 标准型到规范型  标准型到规范性与系数的大小无关，只与系数的正负相关，即正负惯性系数，注意先排序，依次“大于0，等于0，小于0&hellip;”
+ 例题  第一问参数的求解用到标准型化成规范型的规律。
+第二问的求解实际上就是正交矩阵相似对角化
+ 正定    注意正定矩阵是二次型，所以正定矩阵必对称，检验正定之前，先检验对称性，即证明$A^{T}=A$
+ 正定必要条件  $a_{ii}&gt;0$ |A| &gt; 0  正定充分必要条件  顺序主子式全大于0 特征值大于0 正惯性指数 p=n $A=C^TEC$，其中C可逆 ▲  经典例题  $(A^{T}A)^{T}=A^TA$，故$A^{T}A$实对称矩阵
+现证$\forall X$，有$X^T(A^TA)X&gt;0$
+$X^T(A^TA)X=(AX)^{T}AX \geq 0$
+现证$(AX)^{T}AX \neq 0$"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://www.fintinger.site/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "线性代数——二次型",
+      "item": "https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "线性代数——二次型",
+  "name": "线性代数——二次型",
+  "description": "性质定理  二次型$x^{T}Ax$经坐标变换$x=Cy$得二次型$y^{T}By$，其中 $B=C^{T}C$，通俗的讲，就是 二次型矩阵经过任意的一次坐标变换得到新的二次型，前后二次型矩阵合同。\n  任一二次型都可经坐标变换变成标准型。\n  配方法\n从$x_1$开始先合并再配方，将 f(x)⇒f(y)\n  正交变换法\n   例题  说明在正交变换下，A不仅与∧合同，而且A与∧相似\n 用正交变换化二次型为标准形  参考用正交矩阵相似对角化\n  若是求正负惯性指数，根据特征值即可得到（特征值是二次型二次项系数✅）\n 标准型到规范型  标准型到规范性与系数的大小无关，只与系数的正负相关，即正负惯性系数，注意先排序，依次“大于0，等于0，小于0\u0026hellip;”\n 例题  第一问参数的求解用到标准型化成规范型的规律。\n第二问的求解实际上就是正交矩阵相似对角化\n 正定    注意正定矩阵是二次型，所以正定矩阵必对称，检验正定之前，先检验对称性，即证明$A^{T}=A$\n 正定必要条件  $a_{ii}\u0026gt;0$ |A| \u0026gt; 0  正定充分必要条件  顺序主子式全大于0 特征值大于0 正惯性指数 p=n $A=C^TEC$，其中C可逆 ▲  经典例题  $(A^{T}A)^{T}=A^TA$，故$A^{T}A$实对称矩阵\n现证$\\forall X$，有$X^T(A^TA)X\u0026gt;0$\n$X^T(A^TA)X=(AX)^{T}AX \\geq 0$\n现证$(AX)^{T}AX \\neq 0$",
+  "keywords": [
+    "线性代数"
+  ],
+  "articleBody": "性质定理  二次型$x^{T}Ax$经坐标变换$x=Cy$得二次型$y^{T}By$，其中 $B=C^{T}C$，通俗的讲，就是 二次型矩阵经过任意的一次坐标变换得到新的二次型，前后二次型矩阵合同。\n  任一二次型都可经坐标变换变成标准型。\n  配方法\n从$x_1$开始先合并再配方，将 f(x)⇒f(y)\n  正交变换法\n   例题  说明在正交变换下，A不仅与∧合同，而且A与∧相似\n 用正交变换化二次型为标准形  参考用正交矩阵相似对角化\n  若是求正负惯性指数，根据特征值即可得到（特征值是二次型二次项系数✅）\n 标准型到规范型  标准型到规范性与系数的大小无关，只与系数的正负相关，即正负惯性系数，注意先排序，依次“大于0，等于0，小于0…”\n 例题  第一问参数的求解用到标准型化成规范型的规律。\n第二问的求解实际上就是正交矩阵相似对角化\n 正定    注意正定矩阵是二次型，所以正定矩阵必对称，检验正定之前，先检验对称性，即证明$A^{T}=A$\n 正定必要条件  $a_{ii}0$ |A|  0  正定充分必要条件  顺序主子式全大于0 特征值大于0 正惯性指数 p=n $A=C^TEC$，其中C可逆 ▲  经典例题  $(A^{T}A)^{T}=A^TA$，故$A^{T}A$实对称矩阵\n现证$\\forall X$，有$X^T(A^TA)X0$\n$X^T(A^TA)X=(AX)^{T}AX \\geq 0$\n现证$(AX)^{T}AX \\neq 0$\n相当于证 $AX \\neq0$\n由于A-m×n，且r(A)=n\n故 AX=0只有零解\n等价于 $\\forall X\\neq0,AX \\neq0$\n得证\n即$\\forall X, X^T(A^TA)X=(AX)^{T}AX  0$\n故$A^TA$为正定矩阵\n  补充：“反对称矩阵”\n$A^T=-A$\n规律：\n$a_{ii} = 0\\text{；}a_{ij}=-a_{ji}$\n$|A|=|A^T|=|A^{-1}|=(-1)^n|A|$，即奇数项行列式必为0\n 合同  相似\n若不是实对称矩阵，为普通矩阵，则通过∧作为媒介判断，其中∧为特征值组成的🤓\n即 “相似⇒合同，合同⇏相似”\n ",
+  "wordCount" : "72",
+  "inLanguage": "en",
+  "datePublished": "2021-08-28T00:00:00Z",
+  "dateModified": "2021-08-28T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Archai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Archai's home",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.fintinger.site/posts/" title="Posts📑">
+                    <span>Posts📑</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/categories/" title="Categories🛒">
+                    <span>Categories🛒</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/search/" title="Search🔎 (Alt &#43; /)" accesskey=/>
+                    <span>Search🔎</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/archives/" title="Timeline🕰️">
+                    <span>Timeline🕰️</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/about/" title="About🥳">
+                    <span>About🥳</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://www.fintinger.site">Home</a>&nbsp;»&nbsp;<a href="https://www.fintinger.site/posts/">Posts</a></div>
+    <h1 class="post-title">
+      线性代数——二次型
+    </h1>
+    <div class="post-meta"><span title='2021-08-28 00:00:00 +0000 UTC'>August 28, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e6%80%a7%e8%b4%a8%e5%ae%9a%e7%90%86" aria-label="性质定理">性质定理</a><ul>
+                        
+                <li>
+                    <a href="#%e4%be%8b%e9%a2%98" aria-label="例题">例题</a></li>
+                <li>
+                    <a href="#%e7%94%a8%e6%ad%a3%e4%ba%a4%e5%8f%98%e6%8d%a2%e5%8c%96%e4%ba%8c%e6%ac%a1%e5%9e%8b%e4%b8%ba%e6%a0%87%e5%87%86%e5%bd%a2" aria-label="用正交变换化二次型为标准形">用正交变换化二次型为标准形</a></li>
+                <li>
+                    <a href="#%e6%a0%87%e5%87%86%e5%9e%8b%e5%88%b0%e8%a7%84%e8%8c%83%e5%9e%8b" aria-label="标准型到规范型">标准型到规范型</a></li>
+                <li>
+                    <a href="#%e4%be%8b%e9%a2%98-1" aria-label="例题">例题</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e6%ad%a3%e5%ae%9a" aria-label="正定">正定</a><ul>
+                        
+                <li>
+                    <a href="#%e6%ad%a3%e5%ae%9a%e5%bf%85%e8%a6%81%e6%9d%a1%e4%bb%b6" aria-label="正定必要条件">正定必要条件</a></li>
+                <li>
+                    <a href="#%e6%ad%a3%e5%ae%9a%e5%85%85%e5%88%86%e5%bf%85%e8%a6%81%e6%9d%a1%e4%bb%b6" aria-label="正定充分必要条件">正定充分必要条件</a></li>
+                <li>
+                    <a href="#%e7%bb%8f%e5%85%b8%e4%be%8b%e9%a2%98" aria-label="经典例题">经典例题</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%90%88%e5%90%8c" aria-label="合同">合同</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="性质定理">性质定理<a hidden class="anchor" aria-hidden="true" href="#性质定理">#</a></h2>
+<blockquote>
+<p>二次型$x^{T}Ax$经坐标变换$x=Cy$得二次型$y^{T}By$，其中 $B=C^{T}C$，通俗的讲，就是 <strong>二次型矩阵经过任意的一次坐标变换得到新的二次型，前后二次型矩阵合同。</strong></p>
+</blockquote>
+<blockquote>
+<p>任一二次型都可经坐标变换<strong>变成标准型</strong>。</p>
+<ul>
+<li>
+<p>配方法</p>
+<p>从$x_1$开始先合并再配方，将 f(x)⇒f(y)</p>
+</li>
+<li>
+<p>正交变换法</p>
+<p><img src="index.assets/image-20210828165928477.png" style="zoom:100%;" /></p>
+</li>
+</ul>
+</blockquote>
+<h3 id="例题">例题<a hidden class="anchor" aria-hidden="true" href="#例题">#</a></h3>
+<p><img loading="lazy" src="index.assets/image-20210828173057239.png" alt=""  />
+</p>
+<blockquote>
+<p>说明<strong>在正交变换下，A不仅与∧合同，而且A与∧相似</strong></p>
+</blockquote>
+<h3 id="用正交变换化二次型为标准形">用正交变换化二次型为标准形<a hidden class="anchor" aria-hidden="true" href="#用正交变换化二次型为标准形">#</a></h3>
+<blockquote>
+<p>参考<a href="../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F#%E7%94%A8%E6%AD%A3%E4%BA%A4%E7%9F%A9%E9%98%B5%E7%9B%B8%E4%BC%BC%E5%AF%B9%E8%A7%92%E5%8C%96">用正交矩阵相似对角化</a></p>
+</blockquote>
+<p><img loading="lazy" src="index.assets/image-20210828174229211.png" alt=""  />
+</p>
+<blockquote>
+<p>若是求正负惯性指数，根据特征值即可得到（特征值是二次型二次项系数✅）</p>
+</blockquote>
+<h3 id="标准型到规范型">标准型到规范型<a hidden class="anchor" aria-hidden="true" href="#标准型到规范型">#</a></h3>
+<p><img loading="lazy" src="index.assets/image-20210828174554399.png" alt=""  />
+</p>
+<p><img loading="lazy" src="index.assets/image-20210828175033458.png" alt=""  />
+</p>
+<blockquote>
+<p>标准型到规范性与系数的大小无关，只与系数的正负相关，即<strong>正负惯性系数</strong>，注意先排序，依次“大于0，等于0，小于0&hellip;”</p>
+</blockquote>
+<h3 id="例题-1">例题<a hidden class="anchor" aria-hidden="true" href="#例题-1">#</a></h3>
+<p><img loading="lazy" src="index.assets/image-20210828180240337.png" alt=""  />
+</p>
+<blockquote>
+<p>第一问参数的求解用到标准型化成规范型的规律。</p>
+<p>第二问的求解实际上就是<a href="../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F#%E7%94%A8%E6%AD%A3%E4%BA%A4%E7%9F%A9%E9%98%B5%E7%9B%B8%E4%BC%BC%E5%AF%B9%E8%A7%92%E5%8C%96">正交矩阵相似对角化</a></p>
+</blockquote>
+<h2 id="正定">正定<a hidden class="anchor" aria-hidden="true" href="#正定">#</a></h2>
+<blockquote>
+<p><img loading="lazy" src="index.assets/image-20210829155936422.png" alt=""  />
+</p>
+</blockquote>
+<blockquote>
+<p><strong>注意正定矩阵是二次型，所以正定矩阵必对称，检验正定之前，先检验对称性，即证明$A^{T}=A$</strong></p>
+</blockquote>
+<h3 id="正定必要条件">正定必要条件<a hidden class="anchor" aria-hidden="true" href="#正定必要条件">#</a></h3>
+<ul>
+<li>$a_{ii}&gt;0$</li>
+<li>|A| &gt; 0</li>
+</ul>
+<h3 id="正定充分必要条件">正定充分必要条件<a hidden class="anchor" aria-hidden="true" href="#正定充分必要条件">#</a></h3>
+<ul>
+<li>顺序主子式全大于0</li>
+<li>特征值大于0</li>
+<li>正惯性指数 p=n</li>
+<li>$A=C^TEC$，其中C可逆 ▲</li>
+</ul>
+<h3 id="经典例题">经典例题<a hidden class="anchor" aria-hidden="true" href="#经典例题">#</a></h3>
+<p><img loading="lazy" src="index.assets/image-20210829161900861.png" alt="九几年的"  />
+</p>
+<blockquote>
+<p>$(A^{T}A)^{T}=A^TA$，故$A^{T}A$实对称矩阵</p>
+<p>现证$\forall X$，有$X^T(A^TA)X&gt;0$</p>
+<p>$X^T(A^TA)X=(AX)^{T}AX \geq 0$</p>
+<p>现证$(AX)^{T}AX \neq 0$</p>
+<p>相当于证 $AX \neq0$</p>
+<p>由于A-m×n，且r(A)=n</p>
+<p>故 AX=0只有零解</p>
+<p>等价于 $\forall X\neq0,AX \neq0$</p>
+<p>得证</p>
+<p>即$\forall X, X^T(A^TA)X=(AX)^{T}AX &gt; 0$</p>
+<p>故$A^TA$为正定矩阵</p>
+</blockquote>
+<blockquote>
+<p>补充：“<strong>反对称矩阵</strong>”</p>
+<p>$A^T=-A$</p>
+<p>规律：</p>
+<p>$a_{ii} = 0\text{；}a_{ij}=-a_{ji}$</p>
+<p>$|A|=|A^T|=|A^{-1}|=(-1)^n|A|$，即奇数项行列式必为0</p>
+</blockquote>
+<h2 id="合同">合同<a hidden class="anchor" aria-hidden="true" href="#合同">#</a></h2>
+<p><img loading="lazy" src="index.assets/image-20210829164642257.png" alt=""  />
+</p>
+<blockquote>
+<p><strong>相似</strong></p>
+<p>若不是实对称矩阵，为普通矩阵，则通过∧作为媒介判断，其中∧为特征值组成的🤓</p>
+<p><img loading="lazy" src="index.assets/image-20210829171155588.png" alt=""  />
+</p>
+<p>即 “<strong>相似⇒合同，合同⇏相似</strong>”</p>
+</blockquote>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.fintinger.site/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/">
+    <span class="title">« Prev Page</span>
+    <br>
+    <span>线性代数——常用公式定理总结</span>
+  </a>
+  <a class="next" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/">
+    <span class="title">Next Page »</span>
+    <br>
+    <span>线性代数——特征值特征向量</span>
+  </a>
+</nav>
+
+  </footer><script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://waline-q3l7of5hj-fintinger.vercel.app/","visitor":true});
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://www.fintinger.site">Archai&#39;s home</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

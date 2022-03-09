@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Ajax学习小结 | Archai&#39;s home</title>
+<meta name="keywords" content="Ajax" />
+<meta name="description" content="学习地址:https://www.bilibili.com/video/BV1WC4y1b78y，主要通过express的简单功能来搭建本地的服务，进而更好地学习Ajax
+ 发送Ajax请求的方式 原生Ajax 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(&#34;GET&#34;,&#34;https://www.x.com&#34;) //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } }   说明：">
+<meta name="author" content="Archai">
+<link rel="canonical" href="https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.4ee57c4189977dc8f075173100c24a668d6bb09d6b5db74440649223f1221877.css" integrity="sha256-TuV8QYmXfcjwdRcxAMJKZo1rsJ1rXbdEQGSSI/EiGHc=" rel="preload stylesheet" as="style">
+<link rel="stylesheet" href="css/extended/custom.css">
+<link rel="icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="apple-touch-icon" href="https://www.fintinger.site/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.fintinger.site/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Ajax学习小结" />
+<meta property="og:description" content="学习地址:https://www.bilibili.com/video/BV1WC4y1b78y，主要通过express的简单功能来搭建本地的服务，进而更好地学习Ajax
+ 发送Ajax请求的方式 原生Ajax 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(&#34;GET&#34;,&#34;https://www.x.com&#34;) //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } }   说明：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/" /><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-08-10T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-08-10T00:00:00&#43;00:00" /><meta property="og:site_name" content="Archai&#39;s home" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/>
+
+<meta name="twitter:title" content="Ajax学习小结"/>
+<meta name="twitter:description" content="学习地址:https://www.bilibili.com/video/BV1WC4y1b78y，主要通过express的简单功能来搭建本地的服务，进而更好地学习Ajax
+ 发送Ajax请求的方式 原生Ajax 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(&#34;GET&#34;,&#34;https://www.x.com&#34;) //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } }   说明："/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://www.fintinger.site/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Ajax学习小结",
+      "item": "https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Ajax学习小结",
+  "name": "Ajax学习小结",
+  "description": "学习地址:https://www.bilibili.com/video/BV1WC4y1b78y，主要通过express的简单功能来搭建本地的服务，进而更好地学习Ajax\n 发送Ajax请求的方式 原生Ajax 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(\u0026#34;GET\u0026#34;,\u0026#34;https://www.x.com\u0026#34;) //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status \u0026gt;= 200 \u0026amp;\u0026amp; xhr.status \u0026lt; 300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } }   说明：",
+  "keywords": [
+    "Ajax"
+  ],
+  "articleBody": " 学习地址:https://www.bilibili.com/video/BV1WC4y1b78y，主要通过express的简单功能来搭建本地的服务，进而更好地学习Ajax\n 发送Ajax请求的方式 原生Ajax 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(\"GET\",\"https://www.x.com\") //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status = 200 \u0026\u0026 xhr.status  300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } }   说明：\n readyState: 返回一个 XMLHttpRequest 代理当前所处的状态     值 状态 描述     0 UNSENT 代理被创建，但尚未调用 open() 方法。   1 OPENED open() 方法已经被调用。   2 HEADERS_RECEIVED send() 方法已经被调用，并且头部和状态已经可获得。   3 LOADING 下载中； responseText 属性已经包含部分数据。   4 DONE 下载操作已完成。     因此，xhr.readyState === 4表示整个请求过程已经完毕，可以进行后续\n  status: 返回了XMLHttpRequest 响应中的数字状态码  HTTP 响应状态代码指示特定 HTTP 请求是否已成功完成。响应分为五类：\n   响应状态码 响应信息     100-199 信息响应   200-299 成功响应   300-399 重定向   400-499 客户端错误   500-599 服务器错误     状态代码由 section 10 of RFC 2616定义\n  关于获取以及处理json数据   由于在服务端response.send()只接受String类型的数据\n 1 2 3 4 5 6 7 8 9  /*服务端*/ let data={name:\"jqf\",age:18,} JSON.stringify(data)//转为String类型  /*接收时*/ //第一种方式 JSON.parse(data)//重新转为json类型 //第二种方式 xhr.responseType=\"json\"//直接设置    关于超时和网络错误  1 2 3 4 5 6 7 8 9 10  //设置超时时间 xhr.timeout=2000 //超时回调 xhr.ontimeout=function(){ //...do something } //网络错误 xhr.onerror=function(){ //...do something }    取消请求  1  xhr.abort()   Jquery Ajax  $.get() / $.post()  1 2 3 4  //参数(url, [data], [callback], [type]) $.get(\"http://127.0.0.1:8000/jquery\", {a: 1, b: 2}, function (data) { //do something.... }, \"json\")    \"json\"会将响应体response中原来属于json格式的数据直接转化成json格式\n  $.ajax()  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26  //参数 url,[settings] //也可以直接写对象配置url $.ajax({ //路径  url: \"http://127.0.0.1:8000/jquery\", //数据  data: { a: 1, b: 2 }, //请求类型  type: \"GET\", //返回数据类型  dataType: \"json\", //超时设置  timeout: 2000, //请求头设置  headers: { a: 1, w: \"https://www.fintinger.xyz\" }, //成功回调  success: (data) = console.log(data), //失败回调  error: (err) = console.log(\"出错啦!\"), })   Axios  通用默认设置  1  axios.defaults.baseURL = \"[baseurl]\"//默认地址前缀，http://127.0.0.1:8000    axios.get(url[, config])  1 2 3 4 5 6 7 8 9 10 11 12  axios.get(\"/axios\", {//由于已经配置了baseURL，所以路径直接简写  params: {//url参数  t: Date.now(), w: \"get\" }, headers: {//请求头设置  a: 1, b: 2 } }).then(response = {//成功之后的回调  console.log(response) })    axios.post(url[, data[, config]])  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  axios.post(\"/axios\", { username: \"fintinger\", password: \"Asknjska723#$@df\" }, { params: { t: Date.now(), w: \"post\" }, headers: { a: 1, b: 2 } }).then(response = { console.log(response) })    通用型方法  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  axios({ //URL  url: \"/axios\", //方法  method: \"POST\", //数据(GET不会携带数据,写会报错)  data: { u: \"fintinger\", p: \"103dfs@#d\" }, //URL后缀  params: { t: Date.now(), w: \"all\" } })   fetch[URL,config]  具体用法：GO  1 2 3 4 5 6 7 8 9  fetch('http://127.0.0.1:8000/fetch',{ method:\"POST\", headers:{ a:1, b:2 }, body:'u=fintinger\u0026pwd=1cdf@#ds' }).then(response=response.json()) .then(res=console.log(res))    不管是请求还是响应都能够包含 body 对象,Body类定义了以下方法（这些方法都被Request和Response所实现）以获取 body 内容。这些方法都会返回一个被解析后的Promise对象和数据。\n arrayBuffer() blob() json() text() formData()   IE 缓存问题  对于ajax请求，IE浏览器会进行本地缓存，再次发送请求时不会返回服务器的最新数据，而是返回本地的缓存数据\n 解决办法 在路径后面加上t=Date.now()，即加上时间戳，这样再次请求时就会是与之前不同的请求路径，可以解决IE缓存机制带来的异常问题\n1 2 3 4 5 6 7 8 9 10 11 12 13  const xhr = new XMLHttpRequest() xhr.open('GET', 'http://127.0.0.1:8000/server-ie?t=' + Date.now())//加时间戳  xhr.send() xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status = 200 \u0026\u0026 xhr.status  300) { //...do something  } } }   重复请求的问题  用户多次做同一个请求，很大程度影响性能，因此是否可以在用户发送这次请求之前，判断是否与上次请求为同一请求，如果是，则取消掉上一次请求，重新发送这次请求\n  对于原生Ajax  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  //定义一个用于判断是否处于发送状态的标识 let isSending = false let xhr = null //如果同一个请求正在发送，则取消 if (isSending) xhr.abort() xhr = new XMLHttpRequest() xhr.open('GET', url) xhr.send() xhr.onreadystatechange = function () { if (xhr.readyState === 4) { //已经发送完毕，修改标识，是否成功返回则无需关心  isSending = false } }    Jquery 和 axios 发送ajax请求时的重复问题也存在，具体解决办法后续有讲到 ☞GO\n 同源策略  同源策略是浏览器的一种安全策略，同源指的是协议、域名、端口号必须相同，违背同源策略的请求称为跨域请求\n Demo\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  /*描述*/ /* - 创建本地服务，在9000端口的/home路径下打开index.html - 然后在index.html中访问同源的/user路径，体现同源策略 */ const btn = document.querySelector(\"button\") btn.onclick = function () { const xhr = new XMLHttpRequest() //因为请求是同源的，因此URL不用加协议前缀，浏览器会自动补全的  xhr.open(\"POST\", \"/user\") xhr.send() xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status = 200 \u0026\u0026 xhr.status  300) { console.log(xhr.response); } } } }   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  const express = require('express') const app = express() app.get('/home', (request, response) = { response.sendFile(__dirname + '/index.html') }) app.post('/user', (request, response) = { response.send(\"账号:fintinger\" + \"\\n\" + \"密码:fe#5@42\") }) app.listen(9000, () = { console.log(\"服务已经启动,9000端口监听中...\") })   skr~\n",
+  "wordCount" : "654",
+  "inLanguage": "en",
+  "datePublished": "2020-08-10T00:00:00Z",
+  "dateModified": "2020-08-10T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Archai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Archai's home",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.fintinger.site/posts/" title="Posts📑">
+                    <span>Posts📑</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/categories/" title="Categories🛒">
+                    <span>Categories🛒</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/search/" title="Search🔎 (Alt &#43; /)" accesskey=/>
+                    <span>Search🔎</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/archives/" title="Timeline🕰️">
+                    <span>Timeline🕰️</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/about/" title="About🥳">
+                    <span>About🥳</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://www.fintinger.site">Home</a>&nbsp;»&nbsp;<a href="https://www.fintinger.site/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Ajax学习小结
+    </h1>
+    <div class="post-meta"><span title='2020-08-10 00:00:00 +0000 UTC'>August 10, 2020</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Archai
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e5%8f%91%e9%80%81ajax%e8%af%b7%e6%b1%82%e7%9a%84%e6%96%b9%e5%bc%8f" aria-label="发送Ajax请求的方式">发送Ajax请求的方式</a><ul>
+                        
+                <li>
+                    <a href="#%e5%8e%9f%e7%94%9fajax" aria-label="原生Ajax">原生Ajax</a></li>
+                <li>
+                    <a href="#jquery-ajax" aria-label="Jquery Ajax">Jquery Ajax</a></li>
+                <li>
+                    <a href="#axios" aria-label="Axios">Axios</a></li>
+                <li>
+                    <a href="#fetchurlconfig" aria-label="fetch[URL,config]">fetch[URL,config]</a></li></ul>
+                </li>
+                <li>
+                    <a href="#ie-%e7%bc%93%e5%ad%98%e9%97%ae%e9%a2%98" aria-label="IE 缓存问题">IE 缓存问题</a><ul>
+                        
+                <li>
+                    <a href="#%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95" aria-label="解决办法">解决办法</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e9%87%8d%e5%a4%8d%e8%af%b7%e6%b1%82%e7%9a%84%e9%97%ae%e9%a2%98" aria-label="重复请求的问题">重复请求的问题</a></li>
+                <li>
+                    <a href="#%e5%90%8c%e6%ba%90%e7%ad%96%e7%95%a5" aria-label="同源策略">同源策略</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><blockquote>
+<p>学习地址:https://www.bilibili.com/video/BV1WC4y1b78y，主要通过express的简单功能来搭建本地的服务，进而更好地学习Ajax</p>
+</blockquote>
+<h2 id="发送ajax请求的方式">发送Ajax请求的方式<a hidden class="anchor" aria-hidden="true" href="#发送ajax请求的方式">#</a></h2>
+<h3 id="原生ajax">原生Ajax<a hidden class="anchor" aria-hidden="true" href="#原生ajax">#</a></h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//1.创建对象
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">xhr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>()
+<span style="color:#75715e">//2.初始化
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">open</span>([<span style="color:#a6e22e">type</span>], [<span style="color:#a6e22e">url</span>])<span style="color:#75715e">//xhr.open(&#34;GET&#34;,&#34;https://www.x.com&#34;)
+</span><span style="color:#75715e">//3.发送
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">send</span>()
+<span style="color:#75715e">//4.处理返回结果
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">readyState</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">4</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">200</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">300</span>) {
+            <span style="color:#75715e">//...do something
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">status</span>)<span style="color:#75715e">//状态码
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">statusText</span>)<span style="color:#75715e">//状态字符串
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">getAllResponseHeaders</span>)<span style="color:#75715e">//所有请求头信息
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">response</span>)<span style="color:#75715e">//响应体
+</span><span style="color:#75715e"></span>        }
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>说明：</strong></p>
+<ul>
+<li><code>readyState</code>: 返回一个 XMLHttpRequest 代理当前所处的状态</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>状态</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0</code></td>
+<td><code>UNSENT</code></td>
+<td>代理被创建，但尚未调用 open() 方法。</td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td><code>OPENED</code></td>
+<td><code>open()</code> 方法已经被调用。</td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td><code>HEADERS_RECEIVED</code></td>
+<td><code>send()</code> 方法已经被调用，并且头部和状态已经可获得。</td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td><code>LOADING</code></td>
+<td>下载中； <code>responseText</code> 属性已经包含部分数据。</td>
+</tr>
+<tr>
+<td><code>4</code></td>
+<td><code>DONE</code></td>
+<td>下载操作已完成。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>因此，<code>xhr.readyState === 4</code>表示整个请求过程已经完毕，可以进行后续</p>
+</blockquote>
+<ul>
+<li><code>status</code>: 返回了<code>XMLHttpRequest</code> 响应中的数字状态码</li>
+</ul>
+<p>HTTP 响应状态代码指示特定 <a href="https://developer.mozilla.org/zh-cn/HTTP">HTTP</a> 请求是否已成功完成。响应分为五类：</p>
+<table>
+<thead>
+<tr>
+<th>响应状态码</th>
+<th>响应信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100-199</td>
+<td>信息响应</td>
+</tr>
+<tr>
+<td>200-299</td>
+<td>成功响应</td>
+</tr>
+<tr>
+<td>300-399</td>
+<td>重定向</td>
+</tr>
+<tr>
+<td>400-499</td>
+<td>客户端错误</td>
+</tr>
+<tr>
+<td>500-599</td>
+<td>服务器错误</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>状态代码由 <a href="https://tools.ietf.org/html/rfc2616#section-10">section 10 of RFC 2616</a>定义</p>
+</blockquote>
+<ul>
+<li><strong>关于获取以及处理json数据</strong></li>
+</ul>
+<blockquote>
+<p>由于在服务端<code>response.send()</code>只接受<code>String</code>类型的数据</p>
+</blockquote>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">/*服务端*/</span>
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">data</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;jqf&#34;</span>,<span style="color:#a6e22e">age</span><span style="color:#f92672">:</span><span style="color:#ae81ff">18</span>,}
+<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">data</span>)<span style="color:#75715e">//转为String类型
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">/*接收时*/</span>
+<span style="color:#75715e">//第一种方式
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">data</span>)<span style="color:#75715e">//重新转为json类型
+</span><span style="color:#75715e">//第二种方式
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">responseType</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;json&#34;</span><span style="color:#75715e">//直接设置
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>关于超时和网络错误</strong></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//设置超时时间
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">timeout</span><span style="color:#f92672">=</span><span style="color:#ae81ff">2000</span>
+<span style="color:#75715e">//超时回调
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">ontimeout</span><span style="color:#f92672">=</span><span style="color:#66d9ef">function</span>(){
+    <span style="color:#75715e">//...do something
+</span><span style="color:#75715e"></span>}
+<span style="color:#75715e">//网络错误
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#66d9ef">function</span>(){
+    <span style="color:#75715e">//...do something 
+</span><span style="color:#75715e"></span>}
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>取消请求</strong></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">abort</span>()
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="jquery-ajax">Jquery Ajax<a hidden class="anchor" aria-hidden="true" href="#jquery-ajax">#</a></h3>
+<ul>
+<li><strong>$.get() / $.post()</strong></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//参数(url, [data], [callback], [type])
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;http://127.0.0.1:8000/jquery&#34;</span>, {<span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>}, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">data</span>) {
+    <span style="color:#75715e">//do something....
+</span><span style="color:#75715e"></span>}, <span style="color:#e6db74">&#34;json&#34;</span>)
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><code>&quot;json&quot;</code>会将响应体response中原来属于json格式的数据直接转化成json格式</p>
+</blockquote>
+<ul>
+<li><strong>$.ajax()</strong></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//参数 url,[settings]
+</span><span style="color:#75715e">//也可以直接写对象配置url
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">ajax</span>({
+    <span style="color:#75715e">//路径
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;http://127.0.0.1:8000/jquery&#34;</span>,
+    <span style="color:#75715e">//数据
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, 
+        <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>
+    },
+    <span style="color:#75715e">//请求类型
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;GET&#34;</span>,
+    <span style="color:#75715e">//返回数据类型
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">dataType</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;json&#34;</span>,
+    <span style="color:#75715e">//超时设置
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">timeout</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2000</span>,
+    <span style="color:#75715e">//请求头设置
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+        <span style="color:#a6e22e">w</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;https://www.fintinger.xyz&#34;</span>
+    },
+    <span style="color:#75715e">//成功回调
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">success</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">data</span>) =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>),
+    <span style="color:#75715e">//失败回调
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">error</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">err</span>) =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;出错啦!&#34;</span>),
+})
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="axios">Axios<a hidden class="anchor" aria-hidden="true" href="#axios">#</a></h3>
+<ul>
+<li><strong>通用默认设置</strong></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">defaults</span>.<span style="color:#a6e22e">baseURL</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;[baseurl]&#34;</span><span style="color:#75715e">//默认地址前缀，http://127.0.0.1:8000
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>axios.get(url[, config])</strong></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;/axios&#34;</span>, {<span style="color:#75715e">//由于已经配置了baseURL，所以路径直接简写
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">params</span><span style="color:#f92672">:</span> {<span style="color:#75715e">//url参数
+</span><span style="color:#75715e"></span>                <span style="color:#a6e22e">t</span><span style="color:#f92672">:</span> Date.<span style="color:#a6e22e">now</span>(),
+                <span style="color:#a6e22e">w</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;get&#34;</span>
+            },
+            <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {<span style="color:#75715e">//请求头设置
+</span><span style="color:#75715e"></span>                <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+                <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>
+            }
+        }).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {<span style="color:#75715e">//成功之后的回调
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">response</span>)
+        })
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>axios.post(url[, data[, config]])</strong></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#34;/axios&#34;</span>, {
+            <span style="color:#a6e22e">username</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;fintinger&#34;</span>,
+            <span style="color:#a6e22e">password</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Asknjska723#$@df&#34;</span>
+        }, {
+            <span style="color:#a6e22e">params</span><span style="color:#f92672">:</span> {
+                <span style="color:#a6e22e">t</span><span style="color:#f92672">:</span> Date.<span style="color:#a6e22e">now</span>(),
+                <span style="color:#a6e22e">w</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;post&#34;</span>
+            },
+            <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
+                <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+                <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>
+            }
+        }).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">response</span>)
+        })
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>通用型方法</strong></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">axios</span>({
+    <span style="color:#75715e">//URL
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;/axios&#34;</span>,
+    <span style="color:#75715e">//方法
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;POST&#34;</span>,
+    <span style="color:#75715e">//数据(GET不会携带数据,写会报错)
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">u</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;fintinger&#34;</span>,
+        <span style="color:#a6e22e">p</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;103dfs@#d&#34;</span>
+    },
+    <span style="color:#75715e">//URL后缀
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">params</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">t</span><span style="color:#f92672">:</span> Date.<span style="color:#a6e22e">now</span>(),
+        <span style="color:#a6e22e">w</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;all&#34;</span>
+    }
+})
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="fetchurlconfig">fetch[URL,config]<a hidden class="anchor" aria-hidden="true" href="#fetchurlconfig">#</a></h3>
+<ul>
+<li><strong>具体用法：</strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch">GO</a></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;http://127.0.0.1:8000/fetch&#39;</span>,{
+            <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;POST&#34;</span>,
+            <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span>{
+                <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,
+                <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>
+            },
+            <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;u=fintinger&amp;pwd=1cdf@#ds&#39;</span>
+        }).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span>=&gt;<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>())
+            .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span>=&gt;<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">res</span>))
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>不管是请求还是响应都能够包含 body 对象,Body类定义了以下方法（这些方法都被<code>Request</code>和<code>Response</code>所实现）以获取 body 内容。这些方法都会返回一个被解析后的<code>Promise</code>对象和数据。</p>
+<ul>
+<li>arrayBuffer()</li>
+<li>blob()</li>
+<li>json()</li>
+<li>text()</li>
+<li>formData()</li>
+</ul>
+</blockquote>
+<h2 id="ie-缓存问题">IE 缓存问题<a hidden class="anchor" aria-hidden="true" href="#ie-缓存问题">#</a></h2>
+<blockquote>
+<p>对于ajax请求，IE浏览器会进行本地缓存，再次发送请求时不会返回服务器的最新数据，而是返回本地的缓存数据</p>
+</blockquote>
+<h3 id="解决办法">解决办法<a hidden class="anchor" aria-hidden="true" href="#解决办法">#</a></h3>
+<p>在路径后面加上<code>t=Date.now()</code>，即加上时间戳，这样再次请求时就会是与之前不同的请求路径，可以解决IE缓存机制带来的异常问题</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">xhr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>()
+
+<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;GET&#39;</span>, <span style="color:#e6db74">&#39;http://127.0.0.1:8000/server-ie?t=&#39;</span> <span style="color:#f92672">+</span> Date.<span style="color:#a6e22e">now</span>())<span style="color:#75715e">//加时间戳
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">send</span>()
+
+<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">readyState</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">4</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">200</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">300</span>) {
+            <span style="color:#75715e">//...do something
+</span><span style="color:#75715e"></span>        }
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="重复请求的问题">重复请求的问题<a hidden class="anchor" aria-hidden="true" href="#重复请求的问题">#</a></h2>
+<blockquote>
+<p>用户多次做同一个请求，很大程度影响性能，因此是否可以在用户发送这次请求之前，判断是否与上次请求为同一请求，如果是，则取消掉上一次请求，重新发送这次请求</p>
+</blockquote>
+<ul>
+<li><strong>对于原生Ajax</strong></li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//定义一个用于判断是否处于发送状态的标识
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">isSending</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">xhr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>
+
+<span style="color:#75715e">//如果同一个请求正在发送，则取消
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isSending</span>) <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">abort</span>()
+
+<span style="color:#a6e22e">xhr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>()
+
+<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;GET&#39;</span>, <span style="color:#a6e22e">url</span>)
+
+<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">send</span>()
+
+<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">readyState</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">4</span>) {
+        <span style="color:#75715e">//已经发送完毕，修改标识，是否成功返回则无需关心
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">isSending</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>Jquery 和 axios 发送ajax请求时的重复问题也存在，具体解决办法后续有讲到 <a href="https://www.fintinger.xyz/posts/2020/08/13/Ajax%E9%87%8D%E5%A4%8D%E8%AF%B7%E6%B1%82%E9%97%AE%E9%A2%98.html">☞GO</a></p>
+</blockquote>
+<h2 id="同源策略">同源策略<a hidden class="anchor" aria-hidden="true" href="#同源策略">#</a></h2>
+<blockquote>
+<p>同源策略是浏览器的一种安全策略，同源指的是协议、域名、端口号必须相同，违背同源策略的请求称为跨域请求</p>
+</blockquote>
+<p><strong>Demo</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"> <span style="color:#75715e">/*描述*/</span>
+    <span style="color:#75715e">/*
+</span><span style="color:#75715e">    - 创建本地服务，在9000端口的/home路径下打开index.html
+</span><span style="color:#75715e">    - 然后在index.html中访问同源的/user路径，体现同源策略
+</span><span style="color:#75715e">    */</span>
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">btn</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;button&#34;</span>)
+
+    <span style="color:#a6e22e">btn</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">xhr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>()
+        <span style="color:#75715e">//因为请求是同源的，因此URL不用加协议前缀，浏览器会自动补全的
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#34;POST&#34;</span>, <span style="color:#e6db74">&#34;/user&#34;</span>)
+        <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">send</span>()
+        <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">readyState</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">4</span>) {
+                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">200</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">300</span>) {
+                    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">response</span>);
+                }
+            }
+        }
+    }
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>)
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>()
+
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/home&#39;</span>, (<span style="color:#a6e22e">request</span>, <span style="color:#a6e22e">response</span>) =&gt; {
+    <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">sendFile</span>(<span style="color:#ae81ff">__</span><span style="color:#a6e22e">dirname</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/index.html&#39;</span>)
+})
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#39;/user&#39;</span>, (<span style="color:#a6e22e">request</span>, <span style="color:#a6e22e">response</span>) =&gt; {
+    <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#34;账号:fintinger&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;密码:fe#5@42&#34;</span>)
+})
+
+
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">9000</span>, () =&gt; {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;服务已经启动,9000端口监听中...&#34;</span>)
+})
+</code></pre></td></tr></table>
+</div>
+</div><p>skr~</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.fintinger.site/tags/ajax/">Ajax</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/">
+    <span class="title">« Prev Page</span>
+    <br>
+    <span>ES6之Promise用法小结</span>
+  </a>
+  <a class="next" href="https://www.fintinger.site/p/%E9%80%9A%E8%BF%87u%E7%9B%98%E5%AE%89%E8%A3%85windows%E7%B3%BB%E7%BB%9F/">
+    <span class="title">Next Page »</span>
+    <br>
+    <span>通过U盘安装Windows系统</span>
+  </a>
+</nav>
+
+  </footer><script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://waline-q3l7of5hj-fintinger.vercel.app/","visitor":true});
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://www.fintinger.site">Archai&#39;s home</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

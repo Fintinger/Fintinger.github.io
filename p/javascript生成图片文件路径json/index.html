@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>JavaScript生成图片文件路径json | Archai&#39;s home</title>
+<meta name="keywords" content="Javascript, Node.js" />
+<meta name="description" content="在写小demo的过程中，经常需要把某个文件夹的图片文件的路径给引入，除非全部重命名成有序的数字，不然不好处理，这就用到了node中的fs和path模块，还没学&hellip;
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  const path=require(&#34;path&#34;); const fs = require(&#39;fs&#39;); fs.stat(&#39;../images&#39;,(err)=&gt;{//图片文件所在目录  if (err)return; var result=&#39;{&#39; fs.readdir(&#34;../images&#34;,(err,data)=&gt;{//图片文件所在目录  for(var i=0;i&lt;Object.keys(data).length;i&#43;&#43;){ let ImgPath=&#34;\&#34;images/&#34;&#43;data[i]&#43;&#34;\&#34;&#34;; result&#43;=&#34;\&#34;&#34;&#43;i&#43;&#34;\&#34;:&#34;&#43;ImgPath&#43;&#34;,&#34;; } result=result.substring(0,result.length-1); let length=&#34;\&#34;&#34;&#43;&#34;length&#34;&#43;&#34;\&#34;&#34;&#43;&#34;:&#34;&#43;&#34;\&#34;&#34;&#43;Object.keys(data).length&#43;&#34;\&#34;&#34;//文件数量  result&#43;=&#34;,&#34;&#43;length&#43;&#39;}&#39; fs.writeFile(&#34;../data/imgPath.json&#34;,result,(err)=&gt;{ if(err)return; console.log(&#34;写入文件成功，一共&#34;&#43;Object.keys(data).length&#43;&#34;个文件&#34;); }); }); });   生成的文件大概就是这样的一个json数据
+1  {&#34;0&#34;:&#34;images/1.jpg&#34;,&#34;1&#34;:&#34;images/10.jpg&#34;,&#34;2&#34;:&#34;images/100.jpg&#34;,&#34;3&#34;:&#34;images/101.jpg&#34;,&#34;4&#34;:&#34;images/102.jpg&#34;,&#34;5&#34;:&#34;images/103.jpg&#34;,&#34;6&#34;:&#34;images/104.jpg&#34;,&#34;7&#34;:&#34;images/105.jpg&#34;,&#34;8&#34;:&#34;images/106.jpg&#34;,&#34;9&#34;:&#34;images/107.jpg&#34;,&#34;10&#34;:&#34;images/108.jpg&#34;,&#34;length&#34;:&#34;109&#34;}   ">
+<meta name="author" content="Archai">
+<link rel="canonical" href="https://www.fintinger.site/p/javascript%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84json/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.4ee57c4189977dc8f075173100c24a668d6bb09d6b5db74440649223f1221877.css" integrity="sha256-TuV8QYmXfcjwdRcxAMJKZo1rsJ1rXbdEQGSSI/EiGHc=" rel="preload stylesheet" as="style">
+<link rel="stylesheet" href="css/extended/custom.css">
+<link rel="icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="apple-touch-icon" href="https://www.fintinger.site/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.fintinger.site/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:title" content="JavaScript生成图片文件路径json" />
+<meta property="og:description" content="在写小demo的过程中，经常需要把某个文件夹的图片文件的路径给引入，除非全部重命名成有序的数字，不然不好处理，这就用到了node中的fs和path模块，还没学&hellip;
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  const path=require(&#34;path&#34;); const fs = require(&#39;fs&#39;); fs.stat(&#39;../images&#39;,(err)=&gt;{//图片文件所在目录  if (err)return; var result=&#39;{&#39; fs.readdir(&#34;../images&#34;,(err,data)=&gt;{//图片文件所在目录  for(var i=0;i&lt;Object.keys(data).length;i&#43;&#43;){ let ImgPath=&#34;\&#34;images/&#34;&#43;data[i]&#43;&#34;\&#34;&#34;; result&#43;=&#34;\&#34;&#34;&#43;i&#43;&#34;\&#34;:&#34;&#43;ImgPath&#43;&#34;,&#34;; } result=result.substring(0,result.length-1); let length=&#34;\&#34;&#34;&#43;&#34;length&#34;&#43;&#34;\&#34;&#34;&#43;&#34;:&#34;&#43;&#34;\&#34;&#34;&#43;Object.keys(data).length&#43;&#34;\&#34;&#34;//文件数量  result&#43;=&#34;,&#34;&#43;length&#43;&#39;}&#39; fs.writeFile(&#34;../data/imgPath.json&#34;,result,(err)=&gt;{ if(err)return; console.log(&#34;写入文件成功，一共&#34;&#43;Object.keys(data).length&#43;&#34;个文件&#34;); }); }); });   生成的文件大概就是这样的一个json数据
+1  {&#34;0&#34;:&#34;images/1.jpg&#34;,&#34;1&#34;:&#34;images/10.jpg&#34;,&#34;2&#34;:&#34;images/100.jpg&#34;,&#34;3&#34;:&#34;images/101.jpg&#34;,&#34;4&#34;:&#34;images/102.jpg&#34;,&#34;5&#34;:&#34;images/103.jpg&#34;,&#34;6&#34;:&#34;images/104.jpg&#34;,&#34;7&#34;:&#34;images/105.jpg&#34;,&#34;8&#34;:&#34;images/106.jpg&#34;,&#34;9&#34;:&#34;images/107.jpg&#34;,&#34;10&#34;:&#34;images/108.jpg&#34;,&#34;length&#34;:&#34;109&#34;}   " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.fintinger.site/p/javascript%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84json/" /><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-07-05T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-07-05T00:00:00&#43;00:00" /><meta property="og:site_name" content="Archai&#39;s home" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/>
+
+<meta name="twitter:title" content="JavaScript生成图片文件路径json"/>
+<meta name="twitter:description" content="在写小demo的过程中，经常需要把某个文件夹的图片文件的路径给引入，除非全部重命名成有序的数字，不然不好处理，这就用到了node中的fs和path模块，还没学&hellip;
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  const path=require(&#34;path&#34;); const fs = require(&#39;fs&#39;); fs.stat(&#39;../images&#39;,(err)=&gt;{//图片文件所在目录  if (err)return; var result=&#39;{&#39; fs.readdir(&#34;../images&#34;,(err,data)=&gt;{//图片文件所在目录  for(var i=0;i&lt;Object.keys(data).length;i&#43;&#43;){ let ImgPath=&#34;\&#34;images/&#34;&#43;data[i]&#43;&#34;\&#34;&#34;; result&#43;=&#34;\&#34;&#34;&#43;i&#43;&#34;\&#34;:&#34;&#43;ImgPath&#43;&#34;,&#34;; } result=result.substring(0,result.length-1); let length=&#34;\&#34;&#34;&#43;&#34;length&#34;&#43;&#34;\&#34;&#34;&#43;&#34;:&#34;&#43;&#34;\&#34;&#34;&#43;Object.keys(data).length&#43;&#34;\&#34;&#34;//文件数量  result&#43;=&#34;,&#34;&#43;length&#43;&#39;}&#39; fs.writeFile(&#34;../data/imgPath.json&#34;,result,(err)=&gt;{ if(err)return; console.log(&#34;写入文件成功，一共&#34;&#43;Object.keys(data).length&#43;&#34;个文件&#34;); }); }); });   生成的文件大概就是这样的一个json数据
+1  {&#34;0&#34;:&#34;images/1.jpg&#34;,&#34;1&#34;:&#34;images/10.jpg&#34;,&#34;2&#34;:&#34;images/100.jpg&#34;,&#34;3&#34;:&#34;images/101.jpg&#34;,&#34;4&#34;:&#34;images/102.jpg&#34;,&#34;5&#34;:&#34;images/103.jpg&#34;,&#34;6&#34;:&#34;images/104.jpg&#34;,&#34;7&#34;:&#34;images/105.jpg&#34;,&#34;8&#34;:&#34;images/106.jpg&#34;,&#34;9&#34;:&#34;images/107.jpg&#34;,&#34;10&#34;:&#34;images/108.jpg&#34;,&#34;length&#34;:&#34;109&#34;}   "/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://www.fintinger.site/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "JavaScript生成图片文件路径json",
+      "item": "https://www.fintinger.site/p/javascript%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84json/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "JavaScript生成图片文件路径json",
+  "name": "JavaScript生成图片文件路径json",
+  "description": "在写小demo的过程中，经常需要把某个文件夹的图片文件的路径给引入，除非全部重命名成有序的数字，不然不好处理，这就用到了node中的fs和path模块，还没学\u0026hellip;\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  const path=require(\u0026#34;path\u0026#34;); const fs = require(\u0026#39;fs\u0026#39;); fs.stat(\u0026#39;../images\u0026#39;,(err)=\u0026gt;{//图片文件所在目录  if (err)return; var result=\u0026#39;{\u0026#39; fs.readdir(\u0026#34;../images\u0026#34;,(err,data)=\u0026gt;{//图片文件所在目录  for(var i=0;i\u0026lt;Object.keys(data).length;i++){ let ImgPath=\u0026#34;\\\u0026#34;images/\u0026#34;+data[i]+\u0026#34;\\\u0026#34;\u0026#34;; result+=\u0026#34;\\\u0026#34;\u0026#34;+i+\u0026#34;\\\u0026#34;:\u0026#34;+ImgPath+\u0026#34;,\u0026#34;; } result=result.substring(0,result.length-1); let length=\u0026#34;\\\u0026#34;\u0026#34;+\u0026#34;length\u0026#34;+\u0026#34;\\\u0026#34;\u0026#34;+\u0026#34;:\u0026#34;+\u0026#34;\\\u0026#34;\u0026#34;+Object.keys(data).length+\u0026#34;\\\u0026#34;\u0026#34;//文件数量  result+=\u0026#34;,\u0026#34;+length+\u0026#39;}\u0026#39; fs.writeFile(\u0026#34;../data/imgPath.json\u0026#34;,result,(err)=\u0026gt;{ if(err)return; console.log(\u0026#34;写入文件成功，一共\u0026#34;+Object.keys(data).length+\u0026#34;个文件\u0026#34;); }); }); });   生成的文件大概就是这样的一个json数据\n1  {\u0026#34;0\u0026#34;:\u0026#34;images/1.jpg\u0026#34;,\u0026#34;1\u0026#34;:\u0026#34;images/10.jpg\u0026#34;,\u0026#34;2\u0026#34;:\u0026#34;images/100.jpg\u0026#34;,\u0026#34;3\u0026#34;:\u0026#34;images/101.jpg\u0026#34;,\u0026#34;4\u0026#34;:\u0026#34;images/102.jpg\u0026#34;,\u0026#34;5\u0026#34;:\u0026#34;images/103.jpg\u0026#34;,\u0026#34;6\u0026#34;:\u0026#34;images/104.jpg\u0026#34;,\u0026#34;7\u0026#34;:\u0026#34;images/105.jpg\u0026#34;,\u0026#34;8\u0026#34;:\u0026#34;images/106.jpg\u0026#34;,\u0026#34;9\u0026#34;:\u0026#34;images/107.jpg\u0026#34;,\u0026#34;10\u0026#34;:\u0026#34;images/108.jpg\u0026#34;,\u0026#34;length\u0026#34;:\u0026#34;109\u0026#34;}   ",
+  "keywords": [
+    "Javascript", "Node.js"
+  ],
+  "articleBody": "在写小demo的过程中，经常需要把某个文件夹的图片文件的路径给引入，除非全部重命名成有序的数字，不然不好处理，这就用到了node中的fs和path模块，还没学…\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  const path=require(\"path\"); const fs = require('fs'); fs.stat('../images',(err)={//图片文件所在目录  if (err)return; var result='{' fs.readdir(\"../images\",(err,data)={//图片文件所在目录  for(var i=0;iObject.keys(data).length;i++){ let ImgPath=\"\\\"images/\"+data[i]+\"\\\"\"; result+=\"\\\"\"+i+\"\\\":\"+ImgPath+\",\"; } result=result.substring(0,result.length-1); let length=\"\\\"\"+\"length\"+\"\\\"\"+\":\"+\"\\\"\"+Object.keys(data).length+\"\\\"\"//文件数量  result+=\",\"+length+'}' fs.writeFile(\"../data/imgPath.json\",result,(err)={ if(err)return; console.log(\"写入文件成功，一共\"+Object.keys(data).length+\"个文件\"); }); }); });   生成的文件大概就是这样的一个json数据\n1  {\"0\":\"images/1.jpg\",\"1\":\"images/10.jpg\",\"2\":\"images/100.jpg\",\"3\":\"images/101.jpg\",\"4\":\"images/102.jpg\",\"5\":\"images/103.jpg\",\"6\":\"images/104.jpg\",\"7\":\"images/105.jpg\",\"8\":\"images/106.jpg\",\"9\":\"images/107.jpg\",\"10\":\"images/108.jpg\",\"length\":\"109\"}   ",
+  "wordCount" : "52",
+  "inLanguage": "en",
+  "datePublished": "2020-07-05T00:00:00Z",
+  "dateModified": "2020-07-05T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Archai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.fintinger.site/p/javascript%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84json/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Archai's home",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.fintinger.site/posts/" title="Posts📑">
+                    <span>Posts📑</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/categories/" title="Categories🛒">
+                    <span>Categories🛒</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/search/" title="Search🔎 (Alt &#43; /)" accesskey=/>
+                    <span>Search🔎</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/archives/" title="Timeline🕰️">
+                    <span>Timeline🕰️</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/about/" title="About🥳">
+                    <span>About🥳</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://www.fintinger.site">Home</a>&nbsp;»&nbsp;<a href="https://www.fintinger.site/posts/">Posts</a></div>
+    <h1 class="post-title">
+      JavaScript生成图片文件路径json
+    </h1>
+    <div class="post-meta"><span title='2020-07-05 00:00:00 +0000 UTC'>July 5, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai
+
+</div>
+  </header> 
+
+  <div class="post-content"><p>在写小demo的过程中，经常需要把某个文件夹的图片文件的路径给引入，除非全部重命名成有序的数字，不然不好处理，这就用到了node中的fs和path模块，还没学&hellip;</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">path</span><span style="color:#f92672">=</span><span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;path&#34;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;fs&#39;</span>);
+
+<span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">stat</span>(<span style="color:#e6db74">&#39;../images&#39;</span>,(<span style="color:#a6e22e">err</span>)=&gt;{<span style="color:#75715e">//图片文件所在目录
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">err</span>)<span style="color:#66d9ef">return</span>;
+    <span style="color:#66d9ef">var</span>  <span style="color:#a6e22e">result</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{&#39;</span>
+    <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">readdir</span>(<span style="color:#e6db74">&#34;../images&#34;</span>,(<span style="color:#a6e22e">err</span>,<span style="color:#a6e22e">data</span>)=&gt;{<span style="color:#75715e">//图片文件所在目录
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span>Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">data</span>).<span style="color:#a6e22e">length</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>){
+            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ImgPath</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;\&#34;images/&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;\&#34;&#34;</span>;
+            <span style="color:#a6e22e">result</span><span style="color:#f92672">+=</span><span style="color:#e6db74">&#34;\&#34;&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;\&#34;:&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">ImgPath</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;,&#34;</span>;
+        }
+        <span style="color:#a6e22e">result</span><span style="color:#f92672">=</span><span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#ae81ff">0</span>,<span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">length</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+       <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">length</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;\&#34;&#34;</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;length&#34;</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;\&#34;&#34;</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;:&#34;</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;\&#34;&#34;</span><span style="color:#f92672">+</span>Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">data</span>).<span style="color:#a6e22e">length</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;\&#34;&#34;</span><span style="color:#75715e">//文件数量
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">result</span><span style="color:#f92672">+=</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">length</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#39;}&#39;</span>
+        <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">writeFile</span>(<span style="color:#e6db74">&#34;../data/imgPath.json&#34;</span>,<span style="color:#a6e22e">result</span>,(<span style="color:#a6e22e">err</span>)=&gt;{
+            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">err</span>)<span style="color:#66d9ef">return</span>;
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;写入文件成功，一共&#34;</span><span style="color:#f92672">+</span>Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">data</span>).<span style="color:#a6e22e">length</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;个文件&#34;</span>);
+        });
+    });
+});
+</code></pre></td></tr></table>
+</div>
+</div><p>生成的文件大概就是这样的一个json数据</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{<span style="color:#f92672">&#34;0&#34;</span>:<span style="color:#e6db74">&#34;images/1.jpg&#34;</span>,<span style="color:#f92672">&#34;1&#34;</span>:<span style="color:#e6db74">&#34;images/10.jpg&#34;</span>,<span style="color:#f92672">&#34;2&#34;</span>:<span style="color:#e6db74">&#34;images/100.jpg&#34;</span>,<span style="color:#f92672">&#34;3&#34;</span>:<span style="color:#e6db74">&#34;images/101.jpg&#34;</span>,<span style="color:#f92672">&#34;4&#34;</span>:<span style="color:#e6db74">&#34;images/102.jpg&#34;</span>,<span style="color:#f92672">&#34;5&#34;</span>:<span style="color:#e6db74">&#34;images/103.jpg&#34;</span>,<span style="color:#f92672">&#34;6&#34;</span>:<span style="color:#e6db74">&#34;images/104.jpg&#34;</span>,<span style="color:#f92672">&#34;7&#34;</span>:<span style="color:#e6db74">&#34;images/105.jpg&#34;</span>,<span style="color:#f92672">&#34;8&#34;</span>:<span style="color:#e6db74">&#34;images/106.jpg&#34;</span>,<span style="color:#f92672">&#34;9&#34;</span>:<span style="color:#e6db74">&#34;images/107.jpg&#34;</span>,<span style="color:#f92672">&#34;10&#34;</span>:<span style="color:#e6db74">&#34;images/108.jpg&#34;</span>,<span style="color:#f92672">&#34;length&#34;</span>:<span style="color:#e6db74">&#34;109&#34;</span>}
+</code></pre></td></tr></table>
+</div>
+</div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.fintinger.site/tags/javascript/">Javascript</a></li>
+      <li><a href="https://www.fintinger.site/tags/node.js/">Node.js</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://www.fintinger.site/p/%E9%81%BF%E5%85%8D%E5%A4%9A%E6%9D%A1%E4%BB%B6%E5%B9%B6%E5%88%97/">
+    <span class="title">« Prev Page</span>
+    <br>
+    <span>避免多条件并列</span>
+  </a>
+  <a class="next" href="https://www.fintinger.site/p/javascript%E7%80%91%E5%B8%83%E6%B5%81%E5%B8%83%E5%B1%80/">
+    <span class="title">Next Page »</span>
+    <br>
+    <span>JavaScript瀑布流布局</span>
+  </a>
+</nav>
+
+  </footer><script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://waline-q3l7of5hj-fintinger.vercel.app/","visitor":true});
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://www.fintinger.site">Archai&#39;s home</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

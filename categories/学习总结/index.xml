@@ -11,20 +11,61 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 29 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>PHP语法小结</title>
+      <link>https://www.fintinger.site/p/php%E8%AF%AD%E6%B3%95%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/php%E8%AF%AD%E6%B3%95%E5%B0%8F%E7%BB%93/</guid>
+      <description>基本语法 输出语句    语句 功能     echo 输出字符串类型   print_r 输出引用类型(对象,数组等)   var_dunp 检测变量类型    ::: tip echo语句可用于给前端返回响应体。比如前端通过ajax请求，可以在xhr.response中直接得到echo的内容 :::
+变量&amp;amp;常量 👉🏼 变量
+   语句 功能 返回值     isset() 检测变量是否存在 boolean   unset() 删除某个变量 none    👉🏼 常量
+常量用const 或 define 定义，常量名一般全部大写，不受作用域的限制
+::: tip
+一般是define在类外定义常量，const在类内定义常量，并且const必须通过类名::变量名来进行访问。但是php5.3以上支持类外通过const定义常量。
+:::
+:::danger
+const不能在条件语句中使用，必出错
+:::
+ 参考文章 《PHP中define() 与 const定义常量的区别详解》</description>
+    </item>
+    
+    <item>
+      <title>ES6之Promise用法小结</title>
+      <link>https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Tue, 18 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/</guid>
+      <description>Promise 对象用于表示一个异步操作的最终完成 (或失败), 及其结果值。其目的主要是解决以往回调中嵌套回调的&amp;quot;嵌套地狱&amp;quot;问题，使代码可读性更好，更美观!
+基本用法 对于一个标准的Prommise，其基本写法为:
+1 2 3 4 5 6 7 8 9 10 11 12 13  new Promise(function (resolve, reject) { //do something...  //success  resolve(&amp;#39;success&amp;#39;) //fail &amp;amp; reject  // reject(&amp;#39;rejected&amp;#39;) *resolve和reject只能出现一个 }).then( function (value) { //if succeed,do something...  }, function (reason) { //if fail &amp;amp; reject,do something...  } )   如果采用ES6的箭头函数写法，则为:
+1 2 3 4 5 6 7  new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //reject(&amp;#39;rejected&amp;#39;) }).</description>
+    </item>
+    
+    <item>
+      <title>Ajax学习小结</title>
+      <link>https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/</guid>
+      <description>学习地址:https://www.bilibili.com/video/BV1WC4y1b78y，主要通过express的简单功能来搭建本地的服务，进而更好地学习Ajax
+ 发送Ajax请求的方式 原生Ajax 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(&amp;#34;GET&amp;#34;,&amp;#34;https://www.x.com&amp;#34;) //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status &amp;gt;= 200 &amp;amp;&amp;amp; xhr.status &amp;lt; 300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } }   说明：</description>
+    </item>
+    
+    <item>
       <title>线性代数——常用公式定理总结</title>
-      <link>https://www.fintinger.site/posts/2021/08/29/</link>
+      <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/</link>
       <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/posts/2021/08/29/</guid>
+      <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/</guid>
       <description>公式 定理 附录 YO起来！ </description>
     </item>
     
     <item>
       <title>线性代数——二次型</title>
-      <link>https://www.fintinger.site/posts/2021/08/28/</link>
+      <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/</link>
       <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/posts/2021/08/28/</guid>
+      <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/</guid>
       <description>性质定理  二次型$x^{T}Ax$经坐标变换$x=Cy$得二次型$y^{T}By$，其中 $B=C^{T}C$，通俗的讲，就是 二次型矩阵经过任意的一次坐标变换得到新的二次型，前后二次型矩阵合同。
   任一二次型都可经坐标变换变成标准型。
   配方法
@@ -45,10 +86,10 @@ $X^T(A^TA)X=(AX)^{T}AX \geq 0$
     
     <item>
       <title>线性代数——特征值特征向量</title>
-      <link>https://www.fintinger.site/posts/2021/08/23/</link>
+      <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/</link>
       <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/posts/2021/08/23/</guid>
+      <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/</guid>
       <description>特征值与特征向量 性质  1.不同特征值的特征向量线性无关。
 2.ｋ重特征值至多有ｋ个线性无关的特征向量。(※)
  基本运算逻辑    三角矩阵特征值为主对角线元素⭐
@@ -70,10 +111,10 @@ $X^T(A^TA)X=(AX)^{T}AX \geq 0$
     
     <item>
       <title>线性代数——方程组</title>
-      <link>https://www.fintinger.site/posts/2021/08/21/</link>
+      <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/</link>
       <pubDate>Sat, 21 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/posts/2021/08/21/</guid>
+      <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/</guid>
       <description>Ax=0  重点： n-r(A)，基础解系
   Ax=0有非零解 $\Leftrightarrow $​​ r(A) &amp;lt; n (未知数个数)$\Leftrightarrow $​​​ A的列向量线性相关
 特别地(针对水平型阵和方阵)，※
@@ -93,10 +134,10 @@ Ax=b有解且不唯一，则$r(A) &amp;lt; n$
     
     <item>
       <title>线性代数——向量</title>
-      <link>https://www.fintinger.site/posts/2021/08/15/</link>
+      <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/</link>
       <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/posts/2021/08/15/</guid>
+      <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/</guid>
       <description>相关、无关    向量组中含零向量必然线性相关
   组中至少存在两个成比例的向量必然线性相关
    相关计算  $A(\alpha_1,\alpha_2,\alpha_3&amp;hellip;\alpha_s)$​ 是否线性相关？
@@ -115,15 +156,15 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
  利用已知构造出0使得式子变短 直接两边乘A，得出式子，然后通过两个式子的加加减减化简   真题&amp;amp;经典例题
  本题第二问“写出和A相似的矩阵”(3分)
 分析：$\alpha_1，\alpha_2，\alpha_3$无关，后面出现$A\alpha_1，A\alpha_2，A\alpha_3$​想到相似
-   本题可以当作结论使用</description>
+  本题可以当作结论使用</description>
     </item>
     
     <item>
       <title>线性代数——矩阵</title>
-      <link>https://www.fintinger.site/posts/2021/08/13/</link>
+      <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/</link>
       <pubDate>Fri, 13 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/posts/2021/08/13/</guid>
+      <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/</guid>
       <description>基本计算  对角矩阵存在交换律，即 $\bigwedge_1 \bigwedge_2=\bigwedge_2 \bigwedge_1$​
   注意交换位置
  对于 AB=C  B &amp;amp; C均按列分块，则$A(\beta_1 \beta_2 \beta_3)=(\gamma_1 \gamma_2 \gamma_3)$，故B的列向量都是$AX=\gamma$ 的解，特别的，当AB=O即C=O时，B的列向量均是 $AX=0$ 的解。 B &amp;amp; C按行分块，则 AB的行向量均可由B的行向量线性表出。 A &amp;amp; C按列分块，则 AB的列向量均可由A的列向量线性表出。[2013]   规律1与解联系起来，尤其是AB=O推出B的列向量是Ax=0的解这一规律，除此之外AB=O也经常用r(A)+r(B)≤ n这个不等式。
@@ -140,30 +181,31 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
     
     <item>
       <title>线性代数——行列式</title>
-      <link>https://www.fintinger.site/posts/2021/08/10/</link>
+      <link>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/</link>
       <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/posts/2021/08/10/</guid>
+      <guid>https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/</guid>
       <description>计算※ 数字型 题型 注意“存在三条对角线的情况”，通过 逐行相加 的到 “三角型”计算
-经典例题  抽象型 题型  行列式性质恒等变形 矩阵公式、法则恒等变形，E恒等变形 形特征值、相似  经典例题  思路：利用单位矩阵恒等变形
+经典例题 抽象型 题型  行列式性质恒等变形 矩阵公式、法则恒等变形，E恒等变形 形特征值、相似  经典例题  思路：利用单位矩阵恒等变形
   思路一：利用矩阵相似（$\alpha_1，\alpha_2，\alpha_3$无关，后面出现$A\alpha_1，A\alpha_2，A\alpha_3$想到相似）
 利用乘法公式凑$PAP^{-1}=B$
 思路二：用行列式性质
   思路：“不可逆”=&amp;gt;“行列式为0”=&amp;gt;观察看到为特征值形式$|\lambda E-A|=0$，利用特征值与行列式的关系求解
  应用 特征值 思路 “消0且得公因式”
-例题   对于特征多项式应两行（或列）加加减减，至多是三行（或列）的加加减减找出 $\lambda-a$ 的公因式，然后再解一个二次方程，就可求出矩阵A的三个特征值
+例题  对于特征多项式应两行（或列）加加减减，至多是三行（或列）的加加减减找出 $\lambda-a$ 的公因式，然后再解一个二次方程，就可求出矩阵A的三个特征值
  克拉默法则 思路  不用来解大的方程组，常用小的证明题，
  齐次方程AX=0有非零解→ |A|=0 齐次方程AX=0没有非零解→ |A|≠0   经典例题  &amp;ldquo;AB=O&amp;rdquo; 👉 方程的解(B的列向量是A的解)
 ​	👉 秩 r(A)+r(B) ≤ n (n为A的列,B的行)
- 矩阵秩 注意点  r(A) = r 👉A中有r阶子式不为0,任何r+1阶子式(若还有)必全为0.</description>
+ 矩阵秩 注意点  r(A) = r 👉A中有r阶子式不为0,任何r+1阶子式(若还有)必全为0.
+r(A) &amp;lt; r 👉A中每一个r阶子式全为0</description>
     </item>
     
     <item>
       <title>向量空间管理策略</title>
-      <link>https://www.fintinger.site/posts/2020/11/16/</link>
+      <link>https://www.fintinger.site/p/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5/</link>
       <pubDate>Mon, 16 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/posts/2020/11/16/</guid>
+      <guid>https://www.fintinger.site/p/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5/</guid>
       <description>向量的空间管理，有静态和动态两种策略
  静态空间管理策略 开辟内部数组_elem[]并使用一段地址连续的物理空间，_capacity表示总容量 ，_size表示当前的实际规模n，示意图如下：
 若采用静态空间管理策略，容量_capacity固定，则有明显的不足&amp;hellip;
@@ -171,10 +213,10 @@ $\Leftrightarrow$​​ r(A) &amp;lt; s
 下溢/underflow：  _elem[]中的元素寥寥无几，装填因子 λ = _size / _capacity &amp;laquo; 50%
 动态空间管理策略 在即将上溢时，适当扩大内部数组的容量
 递增策略 当需要扩容时，为_capacity追加固定大小的空间，即
-T* oldElem = _elem; _elem = new T[ _capacity += INCREMENT ]; 考虑最坏情况，在初始容量为0的空向量中连续插入n = m*I个元素
+1  T* oldElem = _elem; _elem = new T[ _capacity += INCREMENT ];   考虑最坏情况，在初始容量为0的空向量中连续插入n = m*I个元素
 那么，在第1，I+1，2I+1，3I+1&amp;hellip;次插入元素时都需要扩容，表示为
 倍增策略 当需要扩容时，增加_capacity 为原来的两倍，即
-T* oldElem = _elem; _elem = new T[ _capacity &amp;lt;&amp;lt;= 1 ]; 考虑最坏情况，在初始容量为1的空向量中连续插入n = 2^m个元素
+1  T* oldElem = _elem; _elem = new T[ _capacity &amp;lt;&amp;lt;= 1 ];   考虑最坏情况，在初始容量为1的空向量中连续插入n = 2^m个元素
 那么，在第1，2，4，8&amp;hellip;次插入元素时都需要扩容，表示为
 两种策略的复杂度分析 考虑最坏的情况，两种策略的复杂度分别为
  递增策略： 为算术级数，0+I+2I+&amp;hellip;=O(n ²) 倍增策略： 为几何级数，1+2¹+2²+2³+&amp;hellip;=O(2^m)=O(n)      递增策略 倍增策略     累计时间 O(n ²) O(n)   分摊时间 O(n) O(1)   装填因子 λ ≈100% &amp;gt;50%    可以看出，倍增策略在牺牲空间的基础上，换取时间上的巨大提升，可采取√</description>
@@ -182,14 +224,14 @@ T* oldElem = _elem; _elem = new T[ _capacity &amp;lt;&amp;lt;= 1 ]; 考虑最坏
     
     <item>
       <title>减而治之与分而治之</title>
-      <link>https://www.fintinger.site/posts/2020/11/15/</link>
+      <link>https://www.fintinger.site/p/%E5%87%8F%E8%80%8C%E6%B2%BB%E4%B9%8B%E4%B8%8E%E5%88%86%E8%80%8C%E6%B2%BB%E4%B9%8B/</link>
       <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/posts/2020/11/15/</guid>
+      <guid>https://www.fintinger.site/p/%E5%87%8F%E8%80%8C%E6%B2%BB%E4%B9%8B%E4%B8%8E%E5%88%86%E8%80%8C%E6%B2%BB%E4%B9%8B/</guid>
       <description>减而治之(Decrease and conquer)  什么是“减而治之”？
 为求解一个大规模的问题，可以将其划分为两个问题，其一平凡，另一规模缩减 ，分别求解子问题，由子问题的解得原问题的解
  比如说，对于一个数组A的求和问题，可以设计如下的算法
-sum( int A[], int n ) { return n &amp;lt; 1? 0 : sum(A, n - 1) + A[n - 1]; } 当规模缩减到一定程度后，抵达递归基，返回0
+1 2 3 4 5  sum( int A[], int n ) { return n &amp;lt; 1? 0 : sum(A, n - 1) + A[n - 1]; }   当规模缩减到一定程度后，抵达递归基，返回0
 复杂度分析 1. 递归跟踪
  绘出计算过程中出现过的所有递归实例（及其调用关系） ，那么它们各自所需时间之总和，即为整体运行时间
  上例中，共计n+1个递归实例(分析)，各自只需O(1)时间 故总体运行时间为：
@@ -198,17 +240,15 @@ T(n) =O(1) × (n+1) =O(n)
  对于大规模的问题、复杂的递归算法，递归跟踪不再适用 此时可采用另一抽象的方法&amp;hellip;
  在本例中，有T(n)=T(n-1) + O(1),T(0)=O(1)
 则，T(n) = T(n-2)+O(2) = T(n-3)+O(3) = T(n-n)+O(n)=O(n)
- 可以看到，两种分析方法的出来复杂度都为O(n)
- 分而治之(Divide and conquer)  什么是“分而治之”？
-为求解一个大问题，可以将其划分为若干子问题，规模大体相当（可理解为将大问题等分），分别求解子问题，由子问题的解得原问题的解</description>
+ 可以看到，两种分析方法的出来复杂度都为O(n)</description>
     </item>
     
     <item>
       <title>DS导论</title>
-      <link>https://www.fintinger.site/posts/2020/11/10/</link>
+      <link>https://www.fintinger.site/p/ds%E5%AF%BC%E8%AE%BA/</link>
       <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/posts/2020/11/10/</guid>
+      <guid>https://www.fintinger.site/p/ds%E5%AF%BC%E8%AE%BA/</guid>
       <description>导论  所谓算法，即特定计算模型下，旨在解决特定问题的指令序列。输入：待处理的信息（问题）输出：经处理的信息（答案）
  正确性 的确可以解决指定的问题
 确定性 任一算法都可以描述为一个由基本操作组成的序列
@@ -222,56 +262,11 @@ T(n) =O(1) × (n+1) =O(n)
     </item>
     
     <item>
-      <title>PHP语法小结</title>
-      <link>https://www.fintinger.site/posts/2020/10/14/</link>
-      <pubDate>Tue, 13 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.fintinger.site/posts/2020/10/14/</guid>
-      <description>基本语法 输出语句    语句 功能     echo 输出字符串类型   print_r 输出引用类型(对象,数组等)   var_dunp 检测变量类型    ::: tip echo语句可用于给前端返回响应体。比如前端通过ajax请求，可以在xhr.response中直接得到echo的内容 :::
-变量&amp;amp;常量 👉🏼 变量
-   语句 功能 返回值     isset() 检测变量是否存在 boolean   unset() 删除某个变量 none    👉🏼 常量
-常量用const 或 define 定义，常量名一般全部大写，不受作用域的限制
-::: tip
-一般是define在类外定义常量，const在类内定义常量，并且const必须通过类名::变量名来进行访问。但是php5.3以上支持类外通过const定义常量。
-:::
-:::danger
-const不能在条件语句中使用，必出错
-:::
- 参考文章 《PHP中define() 与 const定义常量的区别详解》</description>
-    </item>
-    
-    <item>
-      <title>ES6之Promise用法小结</title>
-      <link>https://www.fintinger.site/posts/2020/08/18/</link>
-      <pubDate>Tue, 18 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.fintinger.site/posts/2020/08/18/</guid>
-      <description>Promise 对象用于表示一个异步操作的最终完成 (或失败), 及其结果值。其目的主要是解决以往回调中嵌套回调的&amp;quot;嵌套地狱&amp;quot;问题，使代码可读性更好，更美观!
-基本用法 对于一个标准的Prommise，其基本写法为:
-new Promise(function (resolve, reject) { //do something...  //success  resolve(&amp;#39;success&amp;#39;) //fail &amp;amp; reject  // reject(&amp;#39;rejected&amp;#39;) *resolve和reject只能出现一个 }).then( function (value) { //if succeed,do something...  }, function (reason) { //if fail &amp;amp; reject,do something...  } ) 如果采用ES6的箭头函数写法，则为:
-new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //reject(&amp;#39;rejected&amp;#39;) }).then( value =&amp;gt; {}, reason =&amp;gt; {} )  始终牢记，前一个Promise()必须是在后面一个.then()中处理，
-如果前一个Promsie()中没有改变状态，即没有resolve()/reject()方法，后面的.then就不会针对这个Promsie()处理
- Promise错误处理  Promise()中的错误处理有两种方式,.then()和.catch()
- .then()  特点： &amp;ldquo;一一对应&amp;rdquo;，即一个then()对应处理上一个Promise 用法：  new Promise((resolve, reject) =&amp;gt; { // 12+p  // throw new Error(&amp;#39;fail&amp;#39;)  reject(&amp;#39;失败&amp;#39;) }).</description>
-    </item>
-    
-    <item>
-      <title>Ajax学习小结</title>
-      <link>https://www.fintinger.site/posts/2020/08/10/</link>
-      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.fintinger.site/posts/2020/08/10/</guid>
-      <description>学习地址:https://www.bilibili.com/video/BV1WC4y1b78y，主要通过express的简单功能来搭建本地的服务，进而更好地学习Ajax
- 发送Ajax请求的方式 原生Ajax //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(&amp;#34;GET&amp;#34;,&amp;#34;https://www.x.com&amp;#34;) //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status &amp;gt;= 200 &amp;amp;&amp;amp; xhr.status &amp;lt; 300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } } 说明：
- readyState: 返回一个 XMLHttpRequest 代理当前所处的状态     值 状态 描述     0 UNSENT 代理被创建，但尚未调用 open() 方法。   1 OPENED open() 方法已经被调用。   2 HEADERS_RECEIVED send() 方法已经被调用，并且头部和状态已经可获得。   3 LOADING 下载中； responseText 属性已经包含部分数据。   4 DONE 下载操作已完成。     因此，xhr.</description>
-    </item>
-    
-    <item>
       <title>统计学期末知识总结</title>
-      <link>https://www.fintinger.site/posts/2020/06/17/</link>
+      <link>https://www.fintinger.site/p/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%9C%9F%E6%9C%AB%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/posts/2020/06/17/</guid>
+      <guid>https://www.fintinger.site/p/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%9C%9F%E6%9C%AB%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</guid>
       <description>第一章 导 论 1.什么是统计学  统计学是收集、处理、分析、解释数据并从数据中得出结论的科学 数据分析所用的方法可分为描述统计方法和推断统计方法  2.参数和统计量   参数：总体特征，所关心的参数通常是总体平均数、总体标准差、总体比例等
  由于总体数据通常是不知道的，所以参数是一个未知的常量-
    统计量：个体特征，所关心的参数通常是样本平均数、样本标准差、样本比例等

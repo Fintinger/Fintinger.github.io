@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>线性代数——矩阵 | Archai&#39;s home</title>
+<meta name="keywords" content="线性代数" />
+<meta name="description" content="基本计算  对角矩阵存在交换律，即 $\bigwedge_1 \bigwedge_2=\bigwedge_2 \bigwedge_1$​
+  注意交换位置
+ 对于 AB=C  B &amp; C均按列分块，则$A(\beta_1 \beta_2 \beta_3)=(\gamma_1 \gamma_2 \gamma_3)$，故B的列向量都是$AX=\gamma$ 的解，特别的，当AB=O即C=O时，B的列向量均是 $AX=0$ 的解。 B &amp; C按行分块，则 AB的行向量均可由B的行向量线性表出。 A &amp; C按列分块，则 AB的列向量均可由A的列向量线性表出。[2013]   规律1与解联系起来，尤其是AB=O推出B的列向量是Ax=0的解这一规律，除此之外AB=O也经常用r(A)&#43;r(B)≤ n这个不等式。
+&ldquo;AB=O&rdquo; 👉 方程的解(B的列向量是A的解)
+​	👉 秩 r(A)&#43;r(B) ≤ n (n为A的列,B的行)
+  规律2,3与线性表出关联，进而可以跟秩，向量组等价(能互相线性表出则等价)联系起来。
+ 几个特殊符号  $a(a_1,a_2,a_3)^T$
+ 矩阵: $ab^T$ = $(ba^T)^T$
+ $r(ab^T)$​​ ≤ $r(a)$​ ≤ 1
+任何两行成比例
+ $aa^T$: 对称矩阵
+数: $a^Tb = b^Ta$: $ab^T$ 或 $ba^T$​​​的绩(主对角线元素之和)">
+<meta name="author" content="Archai">
+<link rel="canonical" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.4ee57c4189977dc8f075173100c24a668d6bb09d6b5db74440649223f1221877.css" integrity="sha256-TuV8QYmXfcjwdRcxAMJKZo1rsJ1rXbdEQGSSI/EiGHc=" rel="preload stylesheet" as="style">
+<link rel="stylesheet" href="css/extended/custom.css">
+<link rel="icon" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico">
+<link rel="apple-touch-icon" href="https://www.fintinger.site/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.fintinger.site/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:title" content="线性代数——矩阵" />
+<meta property="og:description" content="基本计算  对角矩阵存在交换律，即 $\bigwedge_1 \bigwedge_2=\bigwedge_2 \bigwedge_1$​
+  注意交换位置
+ 对于 AB=C  B &amp; C均按列分块，则$A(\beta_1 \beta_2 \beta_3)=(\gamma_1 \gamma_2 \gamma_3)$，故B的列向量都是$AX=\gamma$ 的解，特别的，当AB=O即C=O时，B的列向量均是 $AX=0$ 的解。 B &amp; C按行分块，则 AB的行向量均可由B的行向量线性表出。 A &amp; C按列分块，则 AB的列向量均可由A的列向量线性表出。[2013]   规律1与解联系起来，尤其是AB=O推出B的列向量是Ax=0的解这一规律，除此之外AB=O也经常用r(A)&#43;r(B)≤ n这个不等式。
+&ldquo;AB=O&rdquo; 👉 方程的解(B的列向量是A的解)
+​	👉 秩 r(A)&#43;r(B) ≤ n (n为A的列,B的行)
+  规律2,3与线性表出关联，进而可以跟秩，向量组等价(能互相线性表出则等价)联系起来。
+ 几个特殊符号  $a(a_1,a_2,a_3)^T$
+ 矩阵: $ab^T$ = $(ba^T)^T$
+ $r(ab^T)$​​ ≤ $r(a)$​ ≤ 1
+任何两行成比例
+ $aa^T$: 对称矩阵
+数: $a^Tb = b^Ta$: $ab^T$ 或 $ba^T$​​​的绩(主对角线元素之和)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/" /><meta property="og:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-13T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-08-13T00:00:00&#43;00:00" /><meta property="og:site_name" content="Archai&#39;s home" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://gitee.com/fintinger/figure-bed/raw/master//images/20210803221048.jpeg"/>
+
+<meta name="twitter:title" content="线性代数——矩阵"/>
+<meta name="twitter:description" content="基本计算  对角矩阵存在交换律，即 $\bigwedge_1 \bigwedge_2=\bigwedge_2 \bigwedge_1$​
+  注意交换位置
+ 对于 AB=C  B &amp; C均按列分块，则$A(\beta_1 \beta_2 \beta_3)=(\gamma_1 \gamma_2 \gamma_3)$，故B的列向量都是$AX=\gamma$ 的解，特别的，当AB=O即C=O时，B的列向量均是 $AX=0$ 的解。 B &amp; C按行分块，则 AB的行向量均可由B的行向量线性表出。 A &amp; C按列分块，则 AB的列向量均可由A的列向量线性表出。[2013]   规律1与解联系起来，尤其是AB=O推出B的列向量是Ax=0的解这一规律，除此之外AB=O也经常用r(A)&#43;r(B)≤ n这个不等式。
+&ldquo;AB=O&rdquo; 👉 方程的解(B的列向量是A的解)
+​	👉 秩 r(A)&#43;r(B) ≤ n (n为A的列,B的行)
+  规律2,3与线性表出关联，进而可以跟秩，向量组等价(能互相线性表出则等价)联系起来。
+ 几个特殊符号  $a(a_1,a_2,a_3)^T$
+ 矩阵: $ab^T$ = $(ba^T)^T$
+ $r(ab^T)$​​ ≤ $r(a)$​ ≤ 1
+任何两行成比例
+ $aa^T$: 对称矩阵
+数: $a^Tb = b^Ta$: $ab^T$ 或 $ba^T$​​​的绩(主对角线元素之和)"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://www.fintinger.site/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "线性代数——矩阵",
+      "item": "https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "线性代数——矩阵",
+  "name": "线性代数——矩阵",
+  "description": "基本计算  对角矩阵存在交换律，即 $\\bigwedge_1 \\bigwedge_2=\\bigwedge_2 \\bigwedge_1$​\n  注意交换位置\n 对于 AB=C  B \u0026amp; C均按列分块，则$A(\\beta_1 \\beta_2 \\beta_3)=(\\gamma_1 \\gamma_2 \\gamma_3)$，故B的列向量都是$AX=\\gamma$ 的解，特别的，当AB=O即C=O时，B的列向量均是 $AX=0$ 的解。 B \u0026amp; C按行分块，则 AB的行向量均可由B的行向量线性表出。 A \u0026amp; C按列分块，则 AB的列向量均可由A的列向量线性表出。[2013]   规律1与解联系起来，尤其是AB=O推出B的列向量是Ax=0的解这一规律，除此之外AB=O也经常用r(A)+r(B)≤ n这个不等式。\n\u0026ldquo;AB=O\u0026rdquo; 👉 方程的解(B的列向量是A的解)\n​\t👉 秩 r(A)+r(B) ≤ n (n为A的列,B的行)\n  规律2,3与线性表出关联，进而可以跟秩，向量组等价(能互相线性表出则等价)联系起来。\n 几个特殊符号  $a(a_1,a_2,a_3)^T$\n 矩阵: $ab^T$ = $(ba^T)^T$\n $r(ab^T)$​​ ≤ $r(a)$​ ≤ 1\n任何两行成比例\n $aa^T$: 对称矩阵\n数: $a^Tb = b^Ta$: $ab^T$ 或 $ba^T$​​​的绩(主对角线元素之和)",
+  "keywords": [
+    "线性代数"
+  ],
+  "articleBody": "基本计算  对角矩阵存在交换律，即 $\\bigwedge_1 \\bigwedge_2=\\bigwedge_2 \\bigwedge_1$​\n  注意交换位置\n 对于 AB=C  B \u0026 C均按列分块，则$A(\\beta_1 \\beta_2 \\beta_3)=(\\gamma_1 \\gamma_2 \\gamma_3)$，故B的列向量都是$AX=\\gamma$ 的解，特别的，当AB=O即C=O时，B的列向量均是 $AX=0$ 的解。 B \u0026 C按行分块，则 AB的行向量均可由B的行向量线性表出。 A \u0026 C按列分块，则 AB的列向量均可由A的列向量线性表出。[2013]   规律1与解联系起来，尤其是AB=O推出B的列向量是Ax=0的解这一规律，除此之外AB=O也经常用r(A)+r(B)≤ n这个不等式。\n“AB=O” 👉 方程的解(B的列向量是A的解)\n​\t👉 秩 r(A)+r(B) ≤ n (n为A的列,B的行)\n  规律2,3与线性表出关联，进而可以跟秩，向量组等价(能互相线性表出则等价)联系起来。\n 几个特殊符号  $a(a_1,a_2,a_3)^T$\n 矩阵: $ab^T$ = $(ba^T)^T$\n $r(ab^T)$​​ ≤ $r(a)$​ ≤ 1\n任何两行成比例\n $aa^T$: 对称矩阵\n数: $a^Tb = b^Ta$: $ab^T$ 或 $ba^T$​​​的绩(主对角线元素之和)\n$a^Ta$: 平方和\n$A^n$​​  主要有三种形式\n 题型一：r(A)=1  若秩r(A)=1,则A可分解为一个列向量与一个行向量的乘积,有A2=A之规律,从而$A^{n}=l^{n-1}A$\n即$A^{n}=(\\sum a_{ii})^{n-1}A$​​\n 题型二：主对角线和一侧全为0  这类对于n阶矩阵A，$A^{n}=0$\n 题型三：相似  $A^{n}=PB^{n}P^{-1}$​​，关键在于选择B矩阵，\n  通常$A ∽ \\wedge$​ ，即选B为与A相似对角矩阵，根据与相似对角化的知识，有$A^n=P \\wedge^{n} P^{-1}$​，P为特征向量组，$\\wedge$​​对角元素为A特征值。\n  解：\n 伴随矩阵，可逆矩阵 （一）伴随矩阵  由基本公式$AA^{}=A^{}A=|A|E$​,可以推导出以下几个公式：\n $A^{-1}= \\frac{1}{|A|}A^{*}$ $(A^{-1})^{ * } =(A^{*})^{-1}=\\frac{1}{|A|}A$​​    设A是n阶矩阵\n证明过程：\n 真题  由 $A^{*}=A^{T}$，可得：\n$A_{ij}=a_{ij},\\forall i,j=1,2,3$\n则 对A按照第一行展开有：\n$A=a_{11}A_{11}+a_{12}A_{12}+a_{13}A_{13}=(a_{11})^2+(a_{12})^2+(a_{13})^2=3(a_{11})^2$​​​​\n又根据 $A^{*}=A^{T}$ 有：\n$|A^{*}|=|A^{T}|$\n即，$|A|^{3-1}=|A|$​​，$|A|(|A|-1)=0$​，易知|A|≠0，\n故 A=1​\n进而 $3(a_{11})^2=1$ ，$a_{11}=\\frac{√3}{2}$\n （二）可逆矩阵  A可逆 $\\Leftrightarrow$ |A| ≠ 0\n​\t$\\Leftrightarrow$​ r(A) = n\n​\t$\\Leftrightarrow$​ A的列(行)向量线性无关\n​\t$\\Leftrightarrow$ 0不是A的特征值\n 真题  单位矩阵与矩阵的转置\n 初等矩阵  用初等矩阵P左（右）乘矩阵A，结果PA（AP）就是对矩阵A作一次相应的初等行（列）变换。\n“左乘行变换，右乘列变换”\n  初等矩阵均可逆，且其逆是同类型的初等矩阵:\n$[\\text{倍加}]^{-1}$​​=[倍数取反]​\n$[\\text{倍乘}]^{-1}$​​​=[取倒数] (对角矩阵也能理解)\n$[\\text{互换}]^{-1}$​=[不变]\n 例题  观察下标得变换规律\n 正交矩阵  内积：\n$(\\alpha,\\beta)=a_1b_1+a_2b_2+…a_nb_n$​\n$\\alpha^T \\beta,\\alpha^T\\alpha \\text{与}\\beta^T\\alpha$​表示内积！！！​\n  若$(\\alpha,\\beta)=0$，称两者正交\n  $AA^T=A^TA=E$​，A为正交矩阵。\n$\\Leftrightarrow$ $A^T=A^{-1}$​ (充要条件)\n$\\Rightarrow |A|=1 \\text{或}-1$​ (必要不充分条件)\n  由$AA^T=A^TA=E$，得其几何意义(判断正交矩阵)：\n 列(行)向量两两正交(正交名称由来) 列(行)向量长度为1   ",
+  "wordCount" : "155",
+  "inLanguage": "en",
+  "datePublished": "2021-08-13T00:00:00Z",
+  "dateModified": "2021-08-13T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Archai"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Archai's home",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gitee.com/fintinger/figure-bed/raw/master//images/20210530080206.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.fintinger.site/posts/" title="Posts📑">
+                    <span>Posts📑</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/categories/" title="Categories🛒">
+                    <span>Categories🛒</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/search/" title="Search🔎 (Alt &#43; /)" accesskey=/>
+                    <span>Search🔎</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/archives/" title="Timeline🕰️">
+                    <span>Timeline🕰️</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintinger.site/about/" title="About🥳">
+                    <span>About🥳</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://www.fintinger.site">Home</a>&nbsp;»&nbsp;<a href="https://www.fintinger.site/posts/">Posts</a></div>
+    <h1 class="post-title">
+      线性代数——矩阵
+    </h1>
+    <div class="post-meta"><span title='2021-08-13 00:00:00 +0000 UTC'>August 13, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e5%9f%ba%e6%9c%ac%e8%ae%a1%e7%ae%97" aria-label="基本计算">基本计算</a><ul>
+                        
+                <li>
+                    <a href="#%e5%af%b9%e4%ba%8e-abc" aria-label="对于 AB=C">对于 AB=C</a></li>
+                <li>
+                    <a href="#%e5%87%a0%e4%b8%aa%e7%89%b9%e6%ae%8a%e7%ac%a6%e5%8f%b7" aria-label="几个特殊符号">几个特殊符号</a><ul>
+                        
+                <li>
+                    <a href="#%e7%9f%a9%e9%98%b5" aria-label="矩阵:">矩阵:</a></li>
+                <li>
+                    <a href="#%e6%95%b0" aria-label="数:">数:</a></li></ul>
+                </li>
+                <li>
+                    <a href="#an" aria-label="$A^n$​​">$A^n$​​</a><ul>
+                        
+                <li>
+                    <a href="#%e9%a2%98%e5%9e%8b%e4%b8%80ra1" aria-label="题型一：r(A)=1">题型一：r(A)=1</a></li>
+                <li>
+                    <a href="#%e9%a2%98%e5%9e%8b%e4%ba%8c%e4%b8%bb%e5%af%b9%e8%a7%92%e7%ba%bf%e5%92%8c%e4%b8%80%e4%be%a7%e5%85%a8%e4%b8%ba0" aria-label="题型二：主对角线和一侧全为0">题型二：主对角线和一侧全为0</a></li>
+                <li>
+                    <a href="#%e9%a2%98%e5%9e%8b%e4%b8%89%e7%9b%b8%e4%bc%bc" aria-label="题型三：相似">题型三：相似</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#%e4%bc%b4%e9%9a%8f%e7%9f%a9%e9%98%b5%e5%8f%af%e9%80%86%e7%9f%a9%e9%98%b5" aria-label="伴随矩阵，可逆矩阵">伴随矩阵，可逆矩阵</a><ul>
+                        
+                <li>
+                    <a href="#%e4%b8%80%e4%bc%b4%e9%9a%8f%e7%9f%a9%e9%98%b5" aria-label="（一）伴随矩阵">（一）伴随矩阵</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#%e7%9c%9f%e9%a2%98" aria-label="真题">真题</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#%e4%ba%8c%e5%8f%af%e9%80%86%e7%9f%a9%e9%98%b5" aria-label="（二）可逆矩阵">（二）可逆矩阵</a><ul>
+                        
+                <li>
+                    <a href="#%e7%9c%9f%e9%a2%98-1" aria-label="真题">真题</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%88%9d%e7%ad%89%e7%9f%a9%e9%98%b5" aria-label="初等矩阵">初等矩阵</a><ul>
+                        
+                <li>
+                    <a href="#%e4%be%8b%e9%a2%98" aria-label="例题">例题</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e6%ad%a3%e4%ba%a4%e7%9f%a9%e9%98%b5" aria-label="正交矩阵">正交矩阵</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="基本计算">基本计算<a hidden class="anchor" aria-hidden="true" href="#基本计算">#</a></h2>
+<blockquote>
+<p>对角矩阵存在交换律，即 $\bigwedge_1 \bigwedge_2=\bigwedge_2 \bigwedge_1$​</p>
+</blockquote>
+<blockquote>
+<p><img src="index.assets/mylatex20210820_174119.png" style="zoom:100%;" /></p>
+<p>注意交换位置</p>
+</blockquote>
+<h3 id="对于-abc">对于 AB=C<a hidden class="anchor" aria-hidden="true" href="#对于-abc">#</a></h3>
+<ol>
+<li>B &amp; C均按列分块，则$A(\beta_1 \beta_2 \beta_3)=(\gamma_1 \gamma_2 \gamma_3)$，故B<strong>的列向量都是$AX=\gamma$  的解</strong>，特别的，当AB=O即C=O时，B的列向量均是 $AX=0$ 的解。</li>
+<li>B &amp; C按行分块，则 <strong>AB的行向量均可由B的行向量线性表出</strong>。</li>
+<li>A &amp; C按列分块，则 <strong>AB的列向量均可由A的列向量线性表出</strong>。[2013]</li>
+</ol>
+<blockquote>
+<p>规律1与解联系起来，尤其是AB=O推出B的列向量是Ax=0的解这一规律，除此之外AB=O也经常用r(A)+r(B)≤ n这个不等式。</p>
+<p>&ldquo;AB=O&rdquo; 👉 方程的解(B的列向量是A的解)</p>
+<p>​			    👉 秩 r(A)+r(B) ≤ n (n为A的列,B的行)</p>
+</blockquote>
+<blockquote>
+<p>规律2,3与线性表出关联，进而可以跟秩，向量组等价(能互相线性表出则等价)联系起来。</p>
+</blockquote>
+<h3 id="几个特殊符号">几个特殊符号<a hidden class="anchor" aria-hidden="true" href="#几个特殊符号">#</a></h3>
+<blockquote>
+<p>$a(a_1,a_2,a_3)^T$</p>
+</blockquote>
+<h4 id="矩阵">矩阵:<a hidden class="anchor" aria-hidden="true" href="#矩阵">#</a></h4>
+<p>$ab^T$ = $(ba^T)^T$</p>
+<blockquote>
+<p>$r(ab^T)$​​ ≤ $r(a)$​ ≤ 1</p>
+<p>任何两行成比例</p>
+</blockquote>
+<p>$aa^T$:  对称矩阵</p>
+<h4 id="数">数:<a hidden class="anchor" aria-hidden="true" href="#数">#</a></h4>
+<p>$a^Tb = b^Ta$:   $ab^T$ 或 $ba^T$​​​的绩(主对角线元素之和)</p>
+<p>$a^Ta$: 平方和</p>
+<h3 id="an">$A^n$​​<a hidden class="anchor" aria-hidden="true" href="#an">#</a></h3>
+<blockquote>
+<p>主要有三种形式</p>
+</blockquote>
+<h4 id="题型一ra1">题型一：r(A)=1<a hidden class="anchor" aria-hidden="true" href="#题型一ra1">#</a></h4>
+<p><img loading="lazy" src="index.assets/image-20210813172022038.png" alt=""  />
+</p>
+<blockquote>
+<p>若秩r(A)=1,则A可分解为一个列向量与一个行向量的乘积,有A2=A之规律,从而$A^{n}=l^{n-1}A$</p>
+<p><img loading="lazy" src="index.assets/png.png" alt="证明过程"  />
+</p>
+<p>即$A^{n}=(\sum a_{ii})^{n-1}A$​​</p>
+</blockquote>
+<h4 id="题型二主对角线和一侧全为0">题型二：主对角线和一侧全为0<a hidden class="anchor" aria-hidden="true" href="#题型二主对角线和一侧全为0">#</a></h4>
+<p><img loading="lazy" src="index.assets/image-20210813173611560.png" alt=""  />
+</p>
+<blockquote>
+<p>这类对于n阶矩阵A，$A^{n}=0$</p>
+</blockquote>
+<p><img loading="lazy" src="index.assets/image-20210813174423804.png" alt=""  />
+</p>
+<h4 id="题型三相似">题型三：相似<a hidden class="anchor" aria-hidden="true" href="#题型三相似">#</a></h4>
+<blockquote>
+<p>$A^{n}=PB^{n}P^{-1}$​​，关键在于选择B矩阵，</p>
+</blockquote>
+<blockquote>
+<p>通常$A ∽ \wedge$​ ，即选B为与A相似对角矩阵，根据与相似对角化的知识，有$A^n=P \wedge^{n} P^{-1}$​，P为特征向量组，$\wedge$​​对角元素为A特征值。</p>
+</blockquote>
+<p><img loading="lazy" src="index.assets/image-20210813175437570.png" alt=""  />
+</p>
+<blockquote>
+<p>解：</p>
+<p><img loading="lazy" src="index.assets/image-20210813175806227.png" alt=""  />
+</p>
+</blockquote>
+<h2 id="伴随矩阵可逆矩阵">伴随矩阵，可逆矩阵<a hidden class="anchor" aria-hidden="true" href="#伴随矩阵可逆矩阵">#</a></h2>
+<h3 id="一伴随矩阵">（一）伴随矩阵<a hidden class="anchor" aria-hidden="true" href="#一伴随矩阵">#</a></h3>
+<blockquote>
+<p>由基本公式$AA^{<em>}=A^{</em>}A=|A|E$​,可以推导出以下几个公式：</p>
+<ul>
+<li>$A^{-1}= \frac{1}{|A|}A^{*}$</li>
+<li>$(A^{-1})^{ * } =(A^{*})^{-1}=\frac{1}{|A|}A$​​</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>设A是n阶矩阵</p>
+<p><img src="index.assets/png12.png" style="zoom:100%;" /></p>
+<p>证明过程：</p>
+<p><img loading="lazy" src="index.assets/image-20210814163731935.png" alt=""  />
+</p>
+</blockquote>
+<h5 id="真题">真题<a hidden class="anchor" aria-hidden="true" href="#真题">#</a></h5>
+<p><img loading="lazy" src="index.assets/image-20210814164511403.png" alt="2005-数三"  />
+</p>
+<blockquote>
+<p>由 $A^{*}=A^{T}$，可得：</p>
+<p>$A_{ij}=a_{ij},\forall i,j=1,2,3$</p>
+<p>则 对A按照第一行展开有：</p>
+<p>$A=a_{11}A_{11}+a_{12}A_{12}+a_{13}A_{13}=(a_{11})^2+(a_{12})^2+(a_{13})^2=3(a_{11})^2$​​​​</p>
+<p>又根据 $A^{*}=A^{T}$ 有：</p>
+<p>$|A^{*}|=|A^{T}|$</p>
+<p>即，$|A|^{3-1}=|A|$​​，$|A|(|A|-1)=0$​，易知|A|≠0，</p>
+<p>故 A=1​</p>
+<p>进而 $3(a_{11})^2=1$ ，$a_{11}=\frac{√3}{2}$</p>
+</blockquote>
+<h3 id="二可逆矩阵">（二）可逆矩阵<a hidden class="anchor" aria-hidden="true" href="#二可逆矩阵">#</a></h3>
+<blockquote>
+<p>A可逆 $\Leftrightarrow$ |A| ≠ 0</p>
+<p>​			$\Leftrightarrow$​ r(A) = n</p>
+<p>​			$\Leftrightarrow$​ A的列(行)向量线性无关</p>
+<p>​			$\Leftrightarrow$ 0不是A的特征值</p>
+</blockquote>
+<h4 id="真题-1">真题<a hidden class="anchor" aria-hidden="true" href="#真题-1">#</a></h4>
+<p><img loading="lazy" src="index.assets/image-20210814171403317.png" alt="2000-数二"  />
+</p>
+<blockquote>
+<p><strong>单位矩阵与矩阵的转置</strong></p>
+<p><img loading="lazy" src="index.assets/image-20210814171542485.png" alt=""  />
+</p>
+</blockquote>
+<h2 id="初等矩阵">初等矩阵<a hidden class="anchor" aria-hidden="true" href="#初等矩阵">#</a></h2>
+<blockquote>
+<p>用初等矩阵P左（右）乘矩阵A，结果PA（AP）就是对矩阵A作一次相应的初等行（列）变换。</p>
+<p>“左乘行变换，右乘列变换”</p>
+</blockquote>
+<blockquote>
+<p>初等矩阵均可逆，且其逆是同类型的初等矩阵:</p>
+<p>$[\text{倍加}]^{-1}$​​=[倍数取反]​</p>
+<p>$[\text{倍乘}]^{-1}$​​​=[取倒数]  (对角矩阵也能理解)</p>
+<p>$[\text{互换}]^{-1}$​=[不变]</p>
+</blockquote>
+<h3 id="例题">例题<a hidden class="anchor" aria-hidden="true" href="#例题">#</a></h3>
+<p><img loading="lazy" src="index.assets/image-20210814173915899.png" alt=""  />
+</p>
+<blockquote>
+<p>观察下标得变换规律</p>
+</blockquote>
+<h2 id="正交矩阵">正交矩阵<a hidden class="anchor" aria-hidden="true" href="#正交矩阵">#</a></h2>
+<blockquote>
+<p>内积：</p>
+<p>$(\alpha,\beta)=a_1b_1+a_2b_2+&hellip;a_nb_n$​</p>
+<p>$\alpha^T \beta,\alpha^T\alpha \text{与}\beta^T\alpha$​表示内积！！！​</p>
+</blockquote>
+<blockquote>
+<p>若$(\alpha,\beta)=0$，称两者正交</p>
+</blockquote>
+<blockquote>
+<p>$AA^T=A^TA=E$​，A为正交矩阵。</p>
+<p>$\Leftrightarrow$ $A^T=A^{-1}$​  (充要条件)</p>
+<p>$\Rightarrow |A|=1 \text{或}-1$​ (必要不充分条件)</p>
+</blockquote>
+<blockquote>
+<p>由$AA^T=A^TA=E$，得其几何意义(判断正交矩阵)：</p>
+<ul>
+<li>列(行)向量两两正交(正交名称由来)</li>
+<li>列(行)向量长度为1</li>
+</ul>
+</blockquote>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.fintinger.site/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/">
+    <span class="title">« Prev Page</span>
+    <br>
+    <span>线性代数——向量</span>
+  </a>
+  <a class="next" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/">
+    <span class="title">Next Page »</span>
+    <br>
+    <span>线性代数——行列式</span>
+  </a>
+</nav>
+
+  </footer><script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    .waline-container .vcount {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://waline-q3l7of5hj-fintinger.vercel.app/","visitor":true});
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://www.fintinger.site">Archai&#39;s home</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
