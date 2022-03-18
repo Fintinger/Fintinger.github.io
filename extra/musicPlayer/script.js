@@ -74,10 +74,9 @@ const cover = document.querySelector(".cover>img")
 const progress = document.querySelector(".progress")
 const progressContainer = document.querySelector(".progress-container")
 const songList = [
-    {name: "hey", src: "music/hey.mp3", cover: "images/hey.jpg"},
-    {name: "summer", src: "music/summer.mp3", cover: "images/summer.jpg"},
-    {name: "ukulele", src: "music/ukulele.mp3", cover: "images/ukulele.jpg"},
-    {name: "陈鸿宇 - 理想三旬", src: "music/陈鸿宇 - 理想三旬.mp3", cover: "images/陈鸿宇 - 理想三旬.jpg"}
+    {name: "稻香", src: "music/稻香.mp3", cover: "images/魔杰座.jpg"},
+    {name: "花海", src: "music/花海.mp3", cover: "images/魔杰座.jpg"},
+    {name: "夜曲", src: "music/夜曲.mp3", cover: "images/夜曲.jpeg"},
 ]
 let p = new Player(audio, songList, songInfo, cover, playBtn, progress)
 
