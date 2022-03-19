@@ -28,11 +28,7 @@
         }
 
     </style>
-</noscript><script>
-    if(window.screen.width<=640&&window.location.pathname=="/"){
-            window.location.pathname="posts"
-    }
-</script><meta property="og:title" content="关于JavaScript模块化" />
+</noscript><meta property="og:title" content="关于JavaScript模块化" />
 <meta property="og:description" content="自定义一个模块引擎 要求： 能够让模块之间产生依赖关系
 代码
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30  let _module = (function () { let moduleList = {} function define(name, modules, action) { modules.map((n, i) =&gt; { //将传入的只含名称的模块数组 =&gt; 指定名称模块的返回结果  modules[i] = moduleList[n] }) moduleList[name] = action.apply(null, modules) // console.log(moduleList);  } return {define} })(); //定义一个工具库，暴露给外界使用，输出 _module." />
@@ -513,7 +509,11 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</a><script>
+    if(window.screen.width<=640&&window.location.pathname=="/"){
+          document.querySelector(".profile_inner").style.opacity=1;
+    }
+</script>
 
 <script>
     let menu = document.getElementById('menu')

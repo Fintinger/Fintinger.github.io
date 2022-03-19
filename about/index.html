@@ -30,11 +30,7 @@
         }
 
     </style>
-</noscript><script>
-    if(window.screen.width<=640&&window.location.pathname=="/"){
-            window.location.pathname="posts"
-    }
-</script><meta property="og:title" content="About" />
+</noscript><meta property="og:title" content="About" />
 <meta property="og:description" content="About me Hello 陌生人，欢迎访问 Archai&rsquo;s blog
 (没什么可说的🤐，看看修狗👇)
 联系我   QQ : 2592030861
@@ -230,7 +226,11 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</a><script>
+    if(window.screen.width<=640&&window.location.pathname=="/"){
+          document.querySelector(".profile_inner").style.opacity=1;
+    }
+</script>
 
 <script>
     let menu = document.getElementById('menu')

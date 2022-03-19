@@ -30,11 +30,7 @@
         }
 
     </style>
-</noscript><script>
-    if(window.screen.width<=640&&window.location.pathname=="/"){
-            window.location.pathname="posts"
-    }
-</script><meta property="og:title" content="扁平设计和拟物设计" />
+</noscript><meta property="og:title" content="扁平设计和拟物设计" />
 <meta property="og:description" content="什么扁平和拟物设计？ 扁平化设计(Flat design) 完全属于二次元，这个概念最核心的地方就是放弃一切装饰效果，诸如阴影，透视，纹理，渐变等等能做出3D效果的元素一概不用。所有的元素的边界都干净利落，没有任何羽化，渐变，或者阴影。
 拟物设计(Skeuomorph) 正好相反，他需要加入各种元素的效果，通过不同的效果组合达到模拟要呈现物件外观的目的，以使新的外观让人感觉熟悉和亲切。
 扁平化与拟物化的优缺点:
@@ -252,7 +248,11 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</a><script>
+    if(window.screen.width<=640&&window.location.pathname=="/"){
+          document.querySelector(".profile_inner").style.opacity=1;
+    }
+</script>
 
 <script>
     let menu = document.getElementById('menu')

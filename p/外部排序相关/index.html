@@ -26,11 +26,7 @@
         }
 
     </style>
-</noscript><script>
-    if(window.screen.width<=640&&window.location.pathname=="/"){
-            window.location.pathname="posts"
-    }
-</script><meta property="og:title" content="外部排序相关" />
+</noscript><meta property="og:title" content="外部排序相关" />
 <meta property="og:description" content="由于数据元素太多，无法一次全部读入内存进行内部排序，这是就要通过外部排序来解决..." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.fintinger.site/p/%E5%A4%96%E9%83%A8%E6%8E%92%E5%BA%8F%E7%9B%B8%E5%85%B3/" /><meta property="article:section" content="posts" />
@@ -386,7 +382,11 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</a><script>
+    if(window.screen.width<=640&&window.location.pathname=="/"){
+          document.querySelector(".profile_inner").style.opacity=1;
+    }
+</script>
 
 <script>
     let menu = document.getElementById('menu')

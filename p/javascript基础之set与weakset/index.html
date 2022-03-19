@@ -31,11 +31,7 @@
         }
 
     </style>
-</noscript><script>
-    if(window.screen.width<=640&&window.location.pathname=="/"){
-            window.location.pathname="posts"
-    }
-</script><meta property="og:title" content="JavaScript基础之Set与Weakset" />
+</noscript><meta property="og:title" content="JavaScript基础之Set与Weakset" />
 <meta property="og:description" content="Set类型 1.属性 👉 size ：数组长度
 1 2 3  let set = new Set([1, 2, 3]) console.log(set.size);//9   👉 add() ：添加元素
 1 2  console.log(set.add(99));//返回修改后的数组Set(4) { 1, 2, 3, 99 } console.log(set);//原数组已经被修改Set(4) { 1, 2, 3, 99 }   👉 delete() ：删除元素
@@ -472,7 +468,11 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</a><script>
+    if(window.screen.width<=640&&window.location.pathname=="/"){
+          document.querySelector(".profile_inner").style.opacity=1;
+    }
+</script>
 
 <script>
     let menu = document.getElementById('menu')

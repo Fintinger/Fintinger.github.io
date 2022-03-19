@@ -28,11 +28,7 @@
         }
 
     </style>
-</noscript><script>
-    if(window.screen.width<=640&&window.location.pathname=="/"){
-            window.location.pathname="posts"
-    }
-</script><meta property="og:title" content="跨域及CORS官方跨域" />
+</noscript><meta property="og:title" content="跨域及CORS官方跨域" />
 <meta property="og:description" content="JSONP  jsonp跨域的实现仅限于GET请求，不可用于POST
  说明：实现的基本思路是利用html中script标签本身可跨域的特性，在发送请求时，在页面中创建script标签，追加到页面中。这实际上就像利用script标签引入外部资源
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  /*main.js*/ //申明handle函数 function handle(data) { //do something.... } ele.onclick = function () { //1.创建script标签  const script = document.createElement(&#34;script&#34;) //2.修改script的src属性  script.src = &#34;http://127.0.0.1:8000/jsonP&#34; script.id=&#34;tempScript&#34;//添加id方便移除  //3.追加到页面中  document.body.appendChild(script) }   1 2 3 4 5 6 7 8 9 10 11 12  /*server.js*/ app.get(&#39;/jsonP&#39;, (request, response) =&gt; { const data = { exist:1, msg:&#34;用户名已经存在!" />
@@ -411,7 +407,11 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</a><script>
+    if(window.screen.width<=640&&window.location.pathname=="/"){
+          document.querySelector(".profile_inner").style.opacity=1;
+    }
+</script>
 
 <script>
     let menu = document.getElementById('menu')

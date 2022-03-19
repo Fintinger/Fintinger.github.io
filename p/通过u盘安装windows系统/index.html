@@ -33,11 +33,7 @@
         }
 
     </style>
-</noscript><script>
-    if(window.screen.width<=640&&window.location.pathname=="/"){
-            window.location.pathname="posts"
-    }
-</script><meta property="og:title" content="通过U盘安装Windows系统" />
+</noscript><meta property="og:title" content="通过U盘安装Windows系统" />
 <meta property="og:description" content="创建U盘介质  有至少 8GB 空间的空白 U 盘，若不是空白创建介质时会自动清空。
  🐾官方工具: https://go.microsoft.com/fwlink/?LinkId=691209
  直接下载按照提示操作就行了，不过仅限win10
@@ -278,7 +274,11 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</a><script>
+    if(window.screen.width<=640&&window.location.pathname=="/"){
+          document.querySelector(".profile_inner").style.opacity=1;
+    }
+</script>
 
 <script>
     let menu = document.getElementById('menu')

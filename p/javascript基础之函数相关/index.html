@@ -30,11 +30,7 @@
         }
 
     </style>
-</noscript><script>
-    if(window.screen.width<=640&&window.location.pathname=="/"){
-            window.location.pathname="posts"
-    }
-</script><meta property="og:title" content="JavaScript基础之函数相关" />
+</noscript><meta property="og:title" content="JavaScript基础之函数相关" />
 <meta property="og:description" content="关于函数传参  当参数数量不确定时，通常用arguments 来统一接收
  1 2 3 4 5 6  function sum() { return [...arguments].reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6   可以用展开语法代替arguments接收所有的参数：
 1 2 3 4 5 6  function sum(...args) { return args.reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6   注意： 接收参数时展开语法放其他形参后面，做统一接收
@@ -410,7 +406,11 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</a><script>
+    if(window.screen.width<=640&&window.location.pathname=="/"){
+          document.querySelector(".profile_inner").style.opacity=1;
+    }
+</script>
 
 <script>
     let menu = document.getElementById('menu')

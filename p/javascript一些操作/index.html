@@ -26,11 +26,7 @@
         }
 
     </style>
-</noscript><script>
-    if(window.screen.width<=640&&window.location.pathname=="/"){
-            window.location.pathname="posts"
-    }
-</script><meta property="og:title" content="Javascript一些操作" />
+</noscript><meta property="og:title" content="Javascript一些操作" />
 <meta property="og:description" content="1.通过id获取元素 1 2 3  function $(id) { return typeof id === &#39;string&#39; ? document.getElementById(id): null; }   2.日期格式化 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  function formatDate(cDate) { //1.判断  if (!cDate instanceof Date){ return; } //2.转化  var year=cDate.getFullYear(); var month=cDate.getMonth(); var date=cDate.getDate(); var hour=cDate.getHours(); var minute=cDate.getMinutes(); var second=cDate.getSeconds(); //2.1 补0  month=month&lt;10? &#39;0&#39;&#43;month:month; date=date&lt;10?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.fintinger.site/p/javascript%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/" /><meta property="article:section" content="posts" />
@@ -422,7 +418,11 @@ stuProto.constructor=Student;
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</a><script>
+    if(window.screen.width<=640&&window.location.pathname=="/"){
+          document.querySelector(".profile_inner").style.opacity=1;
+    }
+</script>
 
 <script>
     let menu = document.getElementById('menu')

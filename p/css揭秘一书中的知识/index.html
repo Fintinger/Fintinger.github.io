@@ -30,11 +30,7 @@
         }
 
     </style>
-</noscript><script>
-    if(window.screen.width<=640&&window.location.pathname=="/"){
-            window.location.pathname="posts"
-    }
-</script><meta property="og:title" content="CSS揭秘一书中的知识" />
+</noscript><meta property="og:title" content="CSS揭秘一书中的知识" />
 <meta property="og:description" content="1.backgrouond简写  在background简写属性中指定background-sizing时，需要提供一个background-position值，而且要使用/作为分隔。  1  background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [ background-size] [background-origin] [background-clip];   &mdash;&ndash;P13&mdash;&ndash;
 2.background-clip 规定背景的绘制区域：得到一个白色背景并且有白色边框的盒子：
 1 2 3  border:10px solid hsla(0,0,100%,.5); background:white; background-clip:padding-box   若不设置background-clip，背景会延伸至边框，边框的透明无法显示
@@ -403,7 +399,11 @@ box-shadow:0 0 010px #655 , 0 0 0 15px deeppink; /*可以加任意层数边框*/
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</a><script>
+    if(window.screen.width<=640&&window.location.pathname=="/"){
+          document.querySelector(".profile_inner").style.opacity=1;
+    }
+</script>
 
 <script>
     let menu = document.getElementById('menu')

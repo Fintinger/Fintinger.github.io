@@ -34,11 +34,7 @@
         }
 
     </style>
-</noscript><script>
-    if(window.screen.width<=640&&window.location.pathname=="/"){
-            window.location.pathname="posts"
-    }
-</script><meta property="og:title" content="PHP开发验证码类" />
+</noscript><meta property="og:title" content="PHP开发验证码类" />
 <meta property="og:description" content="利用php中的GD库可以完成验证码类的开发。后盾人教程
  PHP创建图像步骤 发送HTTP头信息，声明内容为图像 1 2 3  header(&#39;Content-type:image/gif&#39;); header(&#39;Content-type:image/jpeg&#39;); header(&#39;Content-type:image/png&#39;);   通过设置头信息让浏览器渲染出图像，而不是HTML等其他类型
 创建画布 1  imageCreateTrueColor(width,height);   width &amp; height 画布宽高，即为输出图片的尺寸,返回为source 类型，后续操作都是针对这个资源展开。
@@ -838,7 +834,11 @@ $_SESSION[<span style="color:#e6db74">&#34;captcha&#34;</span>]<span style="colo
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</a><script>
+    if(window.screen.width<=640&&window.location.pathname=="/"){
+          document.querySelector(".profile_inner").style.opacity=1;
+    }
+</script>
 
 <script>
     let menu = document.getElementById('menu')

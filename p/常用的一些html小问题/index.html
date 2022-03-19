@@ -33,11 +33,7 @@
         }
 
     </style>
-</noscript><script>
-    if(window.screen.width<=640&&window.location.pathname=="/"){
-            window.location.pathname="posts"
-    }
-</script><meta property="og:title" content="常用的一些html小问题" />
+</noscript><meta property="og:title" content="常用的一些html小问题" />
 <meta property="og:description" content="1. 网页出现横向滚动条？ &lt;body style=`overflow:-Scroll;overflow-y:hidden &gt; &lt;/body&gt;让横条没有：
  &lt;body style=`overflow:-Scroll;overflow-x:hidden&gt; &lt;/body&gt;两个都去掉？更简单了
 &lt;body scroll=&quot;no&quot; &gt; &lt;/body&gt;火狐底部滚动条不显示：
@@ -492,7 +488,11 @@ cursor:pointer;
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</a><script>
+    if(window.screen.width<=640&&window.location.pathname=="/"){
+          document.querySelector(".profile_inner").style.opacity=1;
+    }
+</script>
 
 <script>
     let menu = document.getElementById('menu')

@@ -28,11 +28,7 @@
         }
 
     </style>
-</noscript><script>
-    if(window.screen.width<=640&&window.location.pathname=="/"){
-            window.location.pathname="posts"
-    }
-</script><meta property="og:title" content="JavaScript基础之JS黑洞" />
+</noscript><meta property="og:title" content="JavaScript基础之JS黑洞" />
 <meta property="og:description" content="JavaScript中最容易忽视的一些点
  let和var  都用来定义变量，但二者之间有些细微的差别
  区别1: 是否有块作用域 1 2 3 4 5 6 7 8  var a = 1 { // var a=2  let a = 2 } console.log(a); //output var:a=2 let:a=1   1 2 3 4 5 6 7 8  var i=1 // for (var i = 0; i &lt;3; i&#43;&#43;) { for (let i = 0; i &lt;3; i&#43;&#43;) { //..do something } console." />
@@ -462,7 +458,11 @@ Object.<span style="color:#a6e22e">freeze</span>(<span style="color:#a6e22e">HOS
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</a><script>
+    if(window.screen.width<=640&&window.location.pathname=="/"){
+          document.querySelector(".profile_inner").style.opacity=1;
+    }
+</script>
 
 <script>
     let menu = document.getElementById('menu')

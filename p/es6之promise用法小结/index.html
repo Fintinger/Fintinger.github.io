@@ -29,11 +29,7 @@
         }
 
     </style>
-</noscript><script>
-    if(window.screen.width<=640&&window.location.pathname=="/"){
-            window.location.pathname="posts"
-    }
-</script><meta property="og:title" content="ES6之Promise用法小结" />
+</noscript><meta property="og:title" content="ES6之Promise用法小结" />
 <meta property="og:description" content="Promise 对象用于表示一个异步操作的最终完成 (或失败), 及其结果值。其目的主要是解决以往回调中嵌套回调的&quot;嵌套地狱&quot;问题，使代码可读性更好，更美观!
 基本用法 对于一个标准的Prommise，其基本写法为:
 1 2 3 4 5 6 7 8 9 10 11 12 13  new Promise(function (resolve, reject) { //do something...  //success  resolve(&#39;success&#39;) //fail &amp; reject  // reject(&#39;rejected&#39;) *resolve和reject只能出现一个 }).then( function (value) { //if succeed,do something...  }, function (reason) { //if fail &amp; reject,do something...  } )   如果采用ES6的箭头函数写法，则为:
@@ -809,7 +805,11 @@ Promise.<span style="color:#a6e22e">race</span>([<span style="color:#a6e22e">p1<
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</a><script>
+    if(window.screen.width<=640&&window.location.pathname=="/"){
+          document.querySelector(".profile_inner").style.opacity=1;
+    }
+</script>
 
 <script>
     let menu = document.getElementById('menu')

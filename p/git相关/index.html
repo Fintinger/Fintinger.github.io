@@ -28,11 +28,7 @@
         }
 
     </style>
-</noscript><script>
-    if(window.screen.width<=640&&window.location.pathname=="/"){
-            window.location.pathname="posts"
-    }
-</script><meta property="og:title" content="Git相关" />
+</noscript><meta property="og:title" content="Git相关" />
 <meta property="og:description" content="基本命令 1 2 3 4 5 6 7 8  git config --global =&gt;全局配置 git config =&gt;当前仓库配置 mkdir =&gt;创建文件夹 ls =&gt;列出当前目录下(文件，文件夹) ls -a =&gt;所有all rm -rf * =&gt;删除当前目录下所有 touch =&gt;新建文件 cat =&gt;查看文件中的内容    不想`git add . 所有？
  配置.gitignore 定义忽略提交的文件，其中
  所有空行或者以注释符号 ＃ 开头的行都会被 Git 忽略。 匹配模式最后跟反斜杠（/）说明要忽略的是目录。 可以使用标准的 glob 模式(php)匹配。  从版本库删除 1 2  git rm ... =&gt;从版本库中删除，本地也会删除 git rm --cached ... =&gt;只从版本库删除   从版本库改名 1  git mv ." />
@@ -511,7 +507,11 @@ git tag ...<span style="color:#f92672">=</span>&gt;打标签
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</a><script>
+    if(window.screen.width<=640&&window.location.pathname=="/"){
+          document.querySelector(".profile_inner").style.opacity=1;
+    }
+</script>
 
 <script>
     let menu = document.getElementById('menu')

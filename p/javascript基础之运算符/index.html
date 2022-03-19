@@ -27,11 +27,7 @@
         }
 
     </style>
-</noscript><script>
-    if(window.screen.width<=640&&window.location.pathname=="/"){
-            window.location.pathname="posts"
-    }
-</script><meta property="og:title" content="JavaScript基础之运算符" />
+</noscript><meta property="og:title" content="JavaScript基础之运算符" />
 <meta property="og:description" content="&#43;&#43;的前置与后置 1 2 3 4 5 6 7 8 9  let a1 = 1 let b1 = 2 let c1 = b1 &#43; a1&#43;&#43; console.log(a1, b1, c1);//2,2,3  let a2 = 1 let b2 = 2 let c2 = b2 &#43; &#43;&#43;a2 console.log(a2, b2, c2);//2,2,4   说明：
  后置是先计算再&#43;&#43; 前置是先&#43;&#43;再计算  短路运算 1 2 3 4  let a = 0; let b = 1; let c = a || b; console." />
 <meta property="og:type" content="article" />
@@ -371,7 +367,11 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</a><script>
+    if(window.screen.width<=640&&window.location.pathname=="/"){
+          document.querySelector(".profile_inner").style.opacity=1;
+    }
+</script>
 
 <script>
     let menu = document.getElementById('menu')

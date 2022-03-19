@@ -33,11 +33,7 @@
         }
 
     </style>
-</noscript><script>
-    if(window.screen.width<=640&&window.location.pathname=="/"){
-            window.location.pathname="posts"
-    }
-</script><meta property="og:title" content="Javascript正则表达式" />
+</noscript><meta property="og:title" content="Javascript正则表达式" />
 <meta property="og:description" content="关于正则表达式的创建，就不做过多的赘述
  ::: tip
 由于不知名原因，span标签报错，因此全部替换为[sp]
@@ -775,7 +771,11 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</a><script>
+    if(window.screen.width<=640&&window.location.pathname=="/"){
+          document.querySelector(".profile_inner").style.opacity=1;
+    }
+</script>
 
 <script>
     let menu = document.getElementById('menu')

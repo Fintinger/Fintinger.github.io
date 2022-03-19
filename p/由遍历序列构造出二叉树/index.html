@@ -41,11 +41,7 @@
         }
 
     </style>
-</noscript><script>
-    if(window.screen.width<=640&&window.location.pathname=="/"){
-            window.location.pathname="posts"
-    }
-</script><meta property="og:title" content="由遍历序列构造出二叉树" />
+</noscript><meta property="og:title" content="由遍历序列构造出二叉树" />
 <meta property="og:description" content="由遍历序列构造出二叉树 仅知道一种遍历序列是无法确定唯一的二叉树的，以中序遍历为例，对于一个中序遍历序列“BDCAE”，其对应的树形结构可能有下面三种：
 因此，至少需要两种遍历序列才可以推知树形结构。
 1.前序&#43;中序遍历序列 🎈基本步骤 由前序遍历的特性得知，前序遍历中第一个节点必然为根节点，因此根据中序遍历特性，根节点左边为左子树下的所有节点，右边为右子树下的所有节点，然后分别在左子树序列右子树序列中重复进行即可。
@@ -340,7 +336,11 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</a><script>
+    if(window.screen.width<=640&&window.location.pathname=="/"){
+          document.querySelector(".profile_inner").style.opacity=1;
+    }
+</script>
 
 <script>
     let menu = document.getElementById('menu')

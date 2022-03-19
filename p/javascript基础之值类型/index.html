@@ -33,11 +33,7 @@
         }
 
     </style>
-</noscript><script>
-    if(window.screen.width<=640&&window.location.pathname=="/"){
-            window.location.pathname="posts"
-    }
-</script><meta property="og:title" content="JavaScript基础之值类型" />
+</noscript><meta property="og:title" content="JavaScript基础之值类型" />
 <meta property="og:description" content="字符串 1.截取字符串  主要有slice()、substr()、substring() 三种方法
   一个参数[i]  都是从i开始截取，返回n及其后面的全部字符串。
  第二个参数[i,n]  slice(i,n)和substring(i,n)表示从i开始截取到n；substr(i,n)，表示从i开始截取n个
@@ -699,7 +695,11 @@ console.log(parseInt(num) === num);//true
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</a><script>
+    if(window.screen.width<=640&&window.location.pathname=="/"){
+          document.querySelector(".profile_inner").style.opacity=1;
+    }
+</script>
 
 <script>
     let menu = document.getElementById('menu')

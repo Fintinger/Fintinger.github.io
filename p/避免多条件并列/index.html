@@ -28,11 +28,7 @@
         }
 
     </style>
-</noscript><script>
-    if(window.screen.width<=640&&window.location.pathname=="/"){
-            window.location.pathname="posts"
-    }
-</script><meta property="og:title" content="避免多条件并列" />
+</noscript><meta property="og:title" content="避免多条件并列" />
 <meta property="og:description" content="开发中有时会遇到多个条件，执行相同的语句，也就是多个||这种：
 1 2 3  if (status === &#39;process&#39; || status === &#39;wait&#39; || status === &#39;fail&#39;) { doSomething() }   这种写法语义性、可读性都不太好。可以通过switch case或includes这种进行改造。
 1 2 3 4 5 6 7 8 9 10 11  switch case switch(status) { case &#39;process&#39;: case &#39;wait&#39;: case &#39;fail&#39;: doSomething() } includes const enum = [&#39;process&#39;, &#39;wait&#39;, &#39;fail&#39;] if (enum.includes(status)) { doSomething()   " />
@@ -270,7 +266,11 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a>
+</a><script>
+    if(window.screen.width<=640&&window.location.pathname=="/"){
+          document.querySelector(".profile_inner").style.opacity=1;
+    }
+</script>
 
 <script>
     let menu = document.getElementById('menu')
