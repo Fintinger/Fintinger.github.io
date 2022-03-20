@@ -104,6 +104,49 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>Jquery一些操作
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>Jquery属性操作 1.属性 attr(attrName [,attrValue]) 操作所有属性（自定义和内置的）
+prop(attrName [,attrValue)) 操作HTML元素内置属性
+removeAttr(attrNam)删除属性
+removeProp(attrName) 并不能删除HMTL元素上的属性
+2.CSS类 addclass()添加一个class值
+removeClass()删除一个class值
+toggleClass()切换一个class值(有则删掉该class，没有则加上，其他class不动)
+hasClasss() 判断是否有指定class
+3.HTML代码/文本/值 html([html]) 相当于innerHTML
+text([text)相当于innerText
+val([value]) 设置/获取表单控件的值
+Jquery样式操作 1.CSS操作 css(atr,[value])设置/获取CSS值
+ 参数可以是一个对象的形式css({atr: value,})
+ 2.位置 offset()[.left/.top]元素在页面中的坐标
+ 设置只需要传一个对象即可 {&#34;left:num,top:num&#34;}
+ position()[.left/.top] 元素在第一个定位的祖先元素内的坐标 (只读！)
+scollTop …
+scollLeft …
+3.尺寸 width()/height()内容尺寸
+innerwidth()/ innerHeight()内容尺寸&#43; padding
+outerWidth()/ outerHeight() 盒子的尺寸
+Jquery筛选操作 1. 过滤操作 first ()
+last() 
+eq()
+not() 
+filter()
+slice ()
+has()
+3.串联 add()把选中的元素加入当前集合
+addBack()把调用该方法的元素加入当前集合
+end()返回最后一次破坏性操作之前的DOM
+contents()返回所有子节点的集合...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-04-23 00:00:00 +0000 UTC'>April 23, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to Jquery一些操作" href="https://www.fintinger.site/p/jquery%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>Javascript一些操作
     </h2>
   </header>
@@ -181,14 +224,14 @@ margin:0 auto
 </script>
 
 <script>
-    if (window.location.pathname!="/") {
+    if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
     document.body.addEventListener("dblclick", _ => {
         document.querySelector("canvas").remove();
         randomLine();
     })
-    
+
     function randomLine() {
         function n(n, e, t) {
             return n.getAttribute(e) || t

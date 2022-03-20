@@ -2914,10 +2914,15 @@ $topic <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</spa
       <li><a href="https://www.fintinger.site/tags/php/">PHP</a></li>
     </ul>
 <nav class="paginav">
-  <a class="next" href="https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/">
+  <a class="prev" href="https://www.fintinger.site/p/ds%E5%AF%BC%E8%AE%BA/">
+    <span class="title">« Prev Page</span>
+    <br>
+    <span>DS导论</span>
+  </a>
+  <a class="next" href="https://www.fintinger.site/p/php%E5%BC%80%E5%8F%91%E9%AA%8C%E8%AF%81%E7%A0%81%E7%B1%BB/">
     <span class="title">Next Page »</span>
     <br>
-    <span>ES6之Promise用法小结</span>
+    <span>PHP开发验证码类</span>
   </a>
 </nav>
 
@@ -2959,14 +2964,14 @@ $topic <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</spa
 </script>
 
 <script>
-    if (window.location.pathname!="/") {
+    if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
     document.body.addEventListener("dblclick", _ => {
         document.querySelector("canvas").remove();
         randomLine();
     })
-    
+
     function randomLine() {
         function n(n, e, t) {
             return n.getAttribute(e) || t

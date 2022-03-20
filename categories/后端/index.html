@@ -104,28 +104,6 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2>PHP语法小结
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>基本语法 输出语句    语句 功能     echo 输出字符串类型   print_r 输出引用类型(对象,数组等)   var_dunp 检测变量类型    ::: tip echo语句可用于给前端返回响应体。比如前端通过ajax请求，可以在xhr.response中直接得到echo的内容 :::
-变量&amp;常量 👉🏼 变量
-   语句 功能 返回值     isset() 检测变量是否存在 boolean   unset() 删除某个变量 none    👉🏼 常量
-常量用const 或 define 定义，常量名一般全部大写，不受作用域的限制
-::: tip
-一般是define在类外定义常量，const在类内定义常量，并且const必须通过类名::变量名来进行访问。但是php5.3以上支持类外通过const定义常量。
-:::
-:::danger
-const不能在条件语句中使用，必出错
-:::
- 参考文章 《PHP中define() 与 const定义常量的区别详解》...</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-10-14 00:00:00 +0000 UTC'>October 14, 2020</span>&nbsp;·&nbsp;13 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to PHP语法小结" href="https://www.fintinger.site/p/php%E8%AF%AD%E6%B3%95%E5%B0%8F%E7%BB%93/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
     <h2>寻址方式与存储模式
     </h2>
   </header>
@@ -209,6 +187,25 @@ const不能在条件语句中使用，必出错
   <footer class="entry-footer"><span title='2021-06-06 00:00:00 +0000 UTC'>June 6, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 查找算法相关" href="https://www.fintinger.site/p/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/"></a>
 </article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>图的应用
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>一、最小生成树 📌什么是生成树？ 连通图的生成树是包含图中所有顶点的一个极小连通子图，通俗地讲，就是“边尽可能少，但需保持连通”。
+规律： 对于一个顶点数|V|=n的树，其生成树的边数|E|=n-1。如果将|E|&#43;1，必然会形成回路；如果将|E|-1，则会成为非连通图。
+📌什么是最小生成树？  最小生成树，也称最小代价树(Minimum Spanning Tree，MST)
+ 是带权连通无向图的生成树中边的权值之和最小的一棵树，联系实际问题不难理解其中“最小代价”的意味。
+Prim（普利姆算法），Kruskal（克鲁斯卡尔算法）就是寻找最小生成树的常用算法。
+1.Prim（普利姆算法）  从某一顶点开始，每次将代价最小的新顶点纳入生成树，直至所有顶点都纳入为止。
+ 图示 易知，此方法得到的最小生成子树是不唯一的。
+代码实现 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  void MiniSpanTree_PRIMI(Graph G,int u){ //从顶点u出发找G的最小生成树  for (int i = 0; i &lt;G.vexnum; &#43;&#43;i) {//辅助数组初始化  if(i!=u){ closedge[i]={u,G.arcs[u][i]}; } } closedge[u].lowcost=0; for (int j = 0; j &lt; G.vexnum; j&#43;&#43;) { k=minimum(closedge);//求生成树的下一个节点  cout&lt;&lt;cloedge[k]....</p>
+  </section>
+  <footer class="entry-footer"><span title='2021-06-04 00:00:00 +0000 UTC'>June 4, 2021</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 图的应用" href="https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8/"></a>
+</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="next" href="https://www.fintinger.site/categories/%E5%90%8E%E7%AB%AF/page/2/">Next Page »</a>
@@ -235,14 +232,14 @@ const不能在条件语句中使用，必出错
 </script>
 
 <script>
-    if (window.location.pathname!="/") {
+    if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
     document.body.addEventListener("dblclick", _ => {
         document.querySelector("canvas").remove();
         randomLine();
     })
-    
+
     function randomLine() {
         function n(n, e, t) {
             return n.getAttribute(e) || t

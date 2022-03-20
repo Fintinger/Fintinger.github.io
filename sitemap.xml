@@ -2,9 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.fintinger.site/p/php%E8%AF%AD%E6%B3%95%E5%B0%8F%E7%BB%93/</loc>
-    <lastmod>2020-10-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/</loc>
     <lastmod>2020-08-18T00:00:00+00:00</lastmod>
   </url><url>
@@ -12,16 +9,28 @@
     <lastmod>2020-08-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.fintinger.site/</loc>
-    <lastmod>2021-09-19T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.fintinger.site/tags/canvas/</loc>
+    <lastmod>2022-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.fintinger.site/p/canvas%E7%BB%98%E5%88%B6%E8%B7%9F%E9%9A%8F%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%8A%A8%E7%9A%84%E7%BA%BF%E6%9D%A1/</loc>
+    <lastmod>2022-03-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.fintinger.site/categories/</loc>
-    <lastmod>2021-09-19T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.fintinger.site/tags/css/</loc>
+    <lastmod>2022-03-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.fintinger.site/posts/</loc>
-    <lastmod>2021-09-19T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.fintinger.site/tags/</loc>
-    <lastmod>2021-09-19T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.fintinger.site/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2022-03-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.fintinger.site/tags/windows/</loc>
     <lastmod>2021-09-19T00:00:00+00:00</lastmod>
@@ -212,10 +221,10 @@
     <loc>https://www.fintinger.site/tags/php/</loc>
     <lastmod>2020-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.fintinger.site/p/php%E5%BC%80%E5%8F%91%E9%AA%8C%E8%AF%81%E7%A0%81%E7%B1%BB/</loc>
-    <lastmod>2020-10-03T00:00:00+00:00</lastmod>
+    <loc>https://www.fintinger.site/p/php%E8%AF%AD%E6%B3%95%E5%B0%8F%E7%BB%93/</loc>
+    <lastmod>2020-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.fintinger.site/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <loc>https://www.fintinger.site/p/php%E5%BC%80%E5%8F%91%E9%AA%8C%E8%AF%81%E7%A0%81%E7%B1%BB/</loc>
     <lastmod>2020-10-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.fintinger.site/tags/git/</loc>
@@ -370,9 +379,6 @@
   </url><url>
     <loc>https://www.fintinger.site/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E4%BB%A3%E7%A0%81/</loc>
     <lastmod>2020-03-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.fintinger.site/tags/css/</loc>
-    <lastmod>2019-12-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.fintinger.site/p/css%E6%8F%AD%E7%A7%98%E4%B8%80%E4%B9%A6%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86/</loc>
     <lastmod>2019-12-23T00:00:00+00:00</lastmod>

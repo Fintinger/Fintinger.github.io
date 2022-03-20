@@ -1006,14 +1006,14 @@ A.5    B.6     C.8     D.9 <br/></p>
 </script>
 
 <script>
-    if (window.location.pathname!="/") {
+    if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
     document.body.addEventListener("dblclick", _ => {
         document.querySelector("canvas").remove();
         randomLine();
     })
-    
+
     function randomLine() {
         function n(n, e, t) {
             return n.getAttribute(e) || t

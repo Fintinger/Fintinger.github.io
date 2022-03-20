@@ -7,25 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 29 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>PHP语法小结</title>
-      <link>https://www.fintinger.site/p/php%E8%AF%AD%E6%B3%95%E5%B0%8F%E7%BB%93/</link>
-      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.fintinger.site/p/php%E8%AF%AD%E6%B3%95%E5%B0%8F%E7%BB%93/</guid>
-      <description>基本语法 输出语句    语句 功能     echo 输出字符串类型   print_r 输出引用类型(对象,数组等)   var_dunp 检测变量类型    ::: tip echo语句可用于给前端返回响应体。比如前端通过ajax请求，可以在xhr.response中直接得到echo的内容 :::
-变量&amp;amp;常量 👉🏼 变量
-   语句 功能 返回值     isset() 检测变量是否存在 boolean   unset() 删除某个变量 none    👉🏼 常量
-常量用const 或 define 定义，常量名一般全部大写，不受作用域的限制
-::: tip
-一般是define在类外定义常量，const在类内定义常量，并且const必须通过类名::变量名来进行访问。但是php5.3以上支持类外通过const定义常量。
-:::
-:::danger
-const不能在条件语句中使用，必出错
-:::
- 参考文章 《PHP中define() 与 const定义常量的区别详解》</description>
-    </item>
-    
-    <item>
       <title>ES6之Promise用法小结</title>
       <link>https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/</link>
       <pubDate>Tue, 18 Aug 2020 00:00:00 +0000</pubDate>
@@ -255,6 +236,25 @@ T(n) =O(1) × (n+1) =O(n)
 :::
 如何评判算法的其优劣(计算模型)  实验统计是最直接的方法，但足以准确反映算法的真正效率？不足够！ - 不同的算法，可能更适应于不同规模的输入 - 不同的算法，可能更适应于不同类型的输入 - 同一算法，可能由不同程序员、用不同程序语言、经不同编译器生成 - 同一算法，可能实现并运行于不同的体系结构、操作系统&amp;hellip; 为给出客观的评判，需要抽象出一个理想的平台或模型 - 不再依赖于上述种种具体的因素 - 从而直接而准确地描述、测量并评价算法
  1.图灵机模型(TM)    组成 说明     Tape 依次均匀地划分为单元格 各存有某一字符，初始均为&#39;#&#39;   Head 总是对准某一单元格，并可 读取或改写其中的字符。每经过一个节拍，可 转向左侧或右侧的邻格   Alphabet 字符的种类有限   State TM总是处于有限种状态中的某一种 。每经过一个节拍 可按照规则转向另一种状态 。统一约定，&amp;lsquo;h&amp;rsquo; = halt(停止)    2.</description>
+    </item>
+    
+    <item>
+      <title>PHP语法小结</title>
+      <link>https://www.fintinger.site/p/php%E8%AF%AD%E6%B3%95%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/php%E8%AF%AD%E6%B3%95%E5%B0%8F%E7%BB%93/</guid>
+      <description>基本语法 输出语句    语句 功能     echo 输出字符串类型   print_r 输出引用类型(对象,数组等)   var_dunp 检测变量类型    ::: tip echo语句可用于给前端返回响应体。比如前端通过ajax请求，可以在xhr.response中直接得到echo的内容 :::
+变量&amp;amp;常量 👉🏼 变量
+   语句 功能 返回值     isset() 检测变量是否存在 boolean   unset() 删除某个变量 none    👉🏼 常量
+常量用const 或 define 定义，常量名一般全部大写，不受作用域的限制
+::: tip
+一般是define在类外定义常量，const在类内定义常量，并且const必须通过类名::变量名来进行访问。但是php5.3以上支持类外通过const定义常量。
+:::
+:::danger
+const不能在条件语句中使用，必出错
+:::
+ 参考文章 《PHP中define() 与 const定义常量的区别详解》</description>
     </item>
     
     <item>

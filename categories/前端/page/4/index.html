@@ -104,6 +104,25 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>JavaScript基础之值类型
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>字符串 1.截取字符串  主要有slice()、substr()、substring() 三种方法
+  一个参数[i]  都是从i开始截取，返回n及其后面的全部字符串。
+ 第二个参数[i,n]  slice(i,n)和substring(i,n)表示从i开始截取到n；substr(i,n)，表示从i开始截取n个
+ 负参数  slice()和substr()将最后一位记为-1，然后依次编号；substring()则会将任何负参数变为0，然后查找
+1 2 3 4 5 6  let w = &#39;fintinger.xyz&#39; let a = w.slice(-4, w.length) let b = w.substring(-1, 2) let c = w.substr(-4, 4) console.log(a, b, c);//.xyz fi .xyz   2.查找字符串  主要有indexof()、includes()、lastIndexof() 三种方法
+ 共同点：
+ 两个参数[searchString,position]，第一个为要检索的字符串，第二个为开始检索位置； 若position &lt; 0，则position = 0 position可以省略  不同之处：
+ lastIndexof()为从右往左找，找到第一个立即返回索引！其他两个都是从左往右 indexof(),lastIndexof()找不到则返回-1，includes()找不到返回false position 省略之后，includes(),indexof()默认值为0，lastIndexof()则为str....</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-08-23 00:00:00 +0000 UTC'>August 23, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript基础之值类型" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%80%BC%E7%B1%BB%E5%9E%8B/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>JavaScript基础之JS黑洞
     </h2>
   </header>
@@ -156,22 +175,6 @@
   <footer class="entry-footer"><span title='2020-08-11 00:00:00 +0000 UTC'>August 11, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 跨域及CORS官方跨域" href="https://www.fintinger.site/p/%E8%B7%A8%E5%9F%9F%E5%8F%8Acors%E5%AE%98%E6%96%B9%E8%B7%A8%E5%9F%9F/"></a>
 </article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>Ajax基础及Express框架基本使用
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>Baike  Ajax 即“AsynchronousJavascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式、快速动态网页应用的网页开发技术，无需重新加载整个网页的情况下，能够更新部分网页的技术。
-通过在后台与服务器进行少量数据交换，Ajax 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。—百度百科
- 请求报文 格式以及参数如下
-1 2 3 4 5 6 7 8  行 GET / HTTP/1.1 头 Host: fintinger.xyz Cookie: keyword=xyz Content-type: application/x-www-form-urlencoded User-agent: Chrome 83 空行 (必须有) 体 [GET]:空 [POST]:空/username=admin&amp;password=admin   响应报文 格式以及参数如下
-1 2 3 4 5 6 7 8 9 10 11 12  行 HTTP/1.1 200 Ok 头 Content-Type: text/html; charset=utf-8 Content-Length: 22 Content-encoding: gzip 空行 (必须有) 体 &lt;html&gt; &lt;head&gt; &lt;/head&gt; &lt;body&gt; &lt;h1&gt;Hello!...</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-08-06 00:00:00 +0000 UTC'>August 6, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to Ajax基础及Express框架基本使用" href="https://www.fintinger.site/p/ajax%E5%9F%BA%E7%A1%80%E5%8F%8Aexpress%E6%A1%86%E6%9E%B6%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://www.fintinger.site/categories/%E5%89%8D%E7%AB%AF/page/3/">« Prev Page</a>
@@ -199,14 +202,14 @@
 </script>
 
 <script>
-    if (window.location.pathname!="/") {
+    if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
     document.body.addEventListener("dblclick", _ => {
         document.querySelector("canvas").remove();
         randomLine();
     })
-    
+
     function randomLine() {
         function n(n, e, t) {
             return n.getAttribute(e) || t

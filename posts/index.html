@@ -119,28 +119,6 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>PHP语法小结
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>基本语法 输出语句    语句 功能     echo 输出字符串类型   print_r 输出引用类型(对象,数组等)   var_dunp 检测变量类型    ::: tip echo语句可用于给前端返回响应体。比如前端通过ajax请求，可以在xhr.response中直接得到echo的内容 :::
-变量&amp;常量 👉🏼 变量
-   语句 功能 返回值     isset() 检测变量是否存在 boolean   unset() 删除某个变量 none    👉🏼 常量
-常量用const 或 define 定义，常量名一般全部大写，不受作用域的限制
-::: tip
-一般是define在类外定义常量，const在类内定义常量，并且const必须通过类名::变量名来进行访问。但是php5.3以上支持类外通过const定义常量。
-:::
-:::danger
-const不能在条件语句中使用，必出错
-:::
- 参考文章 《PHP中define() 与 const定义常量的区别详解》...</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-10-14 00:00:00 +0000 UTC'>October 14, 2020</span>&nbsp;·&nbsp;13 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to PHP语法小结" href="https://www.fintinger.site/p/php%E8%AF%AD%E6%B3%95%E5%B0%8F%E7%BB%93/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
     <h2>ES6之Promise用法小结
     </h2>
   </header>
@@ -165,6 +143,20 @@ const不能在条件语句中使用，必出错
   </section>
   <footer class="entry-footer"><span title='2020-08-10 00:00:00 +0000 UTC'>August 10, 2020</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to Ajax学习小结" href="https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>canvas绘制跟随鼠标移动的线条
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>在浏览网页时无意中发现了下面这种背景互动的效果：
+通过一番周折，最终找到以下实现代码
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45  function randomLine() { function n(n, e, t) { return n.getAttribute(e) || t } function e(n) { return document.getElementsByTagName(n) } function t() { var t = e(&#34;script&#34;), o = t....</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-03-20 00:00:00 +0000 UTC'>March 20, 2022</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to canvas绘制跟随鼠标移动的线条" href="https://www.fintinger.site/p/canvas%E7%BB%98%E5%88%B6%E8%B7%9F%E9%9A%8F%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%8A%A8%E7%9A%84%E7%BA%BF%E6%9D%A1/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -223,14 +215,14 @@ const不能在条件语句中使用，必出错
 </script>
 
 <script>
-    if (window.location.pathname!="/") {
+    if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
     document.body.addEventListener("dblclick", _ => {
         document.querySelector("canvas").remove();
         randomLine();
     })
-    
+
     function randomLine() {
         function n(n, e, t) {
             return n.getAttribute(e) || t

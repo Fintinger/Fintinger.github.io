@@ -104,6 +104,22 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>JavaScript基础之函数相关
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>关于函数传参  当参数数量不确定时，通常用arguments 来统一接收
+ 1 2 3 4 5 6  function sum() { return [...arguments].reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6   可以用展开语法代替arguments接收所有的参数：
+1 2 3 4 5 6  function sum(...args) { return args.reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6   注意： 接收参数时展开语法放其他形参后面，做统一接收
+递归函数  递归函数有两个关键点，一是要有退出执行的条件，二是要不断执行自身并返回
+ 递归思想实现阶乘函数 1 2 3 4 5 6  function factorial(num) { if (num === 1) { return num } return num * factorial(--num) }   如果用到箭头函数，可以简写为：...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-08-28 00:00:00 +0000 UTC'>August 28, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript基础之函数相关" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>JavaScript基础之Map与Weakmap类型
     </h2>
   </header>
@@ -169,25 +185,6 @@
   <footer class="entry-footer"><span title='2020-08-24 00:00:00 +0000 UTC'>August 24, 2020</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to JavaScript基础之数组深倔" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%95%B0%E7%BB%84%E6%B7%B1%E5%80%94/"></a>
 </article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>JavaScript基础之值类型
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>字符串 1.截取字符串  主要有slice()、substr()、substring() 三种方法
-  一个参数[i]  都是从i开始截取，返回n及其后面的全部字符串。
- 第二个参数[i,n]  slice(i,n)和substring(i,n)表示从i开始截取到n；substr(i,n)，表示从i开始截取n个
- 负参数  slice()和substr()将最后一位记为-1，然后依次编号；substring()则会将任何负参数变为0，然后查找
-1 2 3 4 5 6  let w = &#39;fintinger.xyz&#39; let a = w.slice(-4, w.length) let b = w.substring(-1, 2) let c = w.substr(-4, 4) console.log(a, b, c);//.xyz fi .xyz   2.查找字符串  主要有indexof()、includes()、lastIndexof() 三种方法
- 共同点：
- 两个参数[searchString,position]，第一个为要检索的字符串，第二个为开始检索位置； 若position &lt; 0，则position = 0 position可以省略  不同之处：
- lastIndexof()为从右往左找，找到第一个立即返回索引！其他两个都是从左往右 indexof(),lastIndexof()找不到则返回-1，includes()找不到返回false position 省略之后，includes(),indexof()默认值为0，lastIndexof()则为str....</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-08-23 00:00:00 +0000 UTC'>August 23, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之值类型" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%80%BC%E7%B1%BB%E5%9E%8B/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://www.fintinger.site/categories/%E5%89%8D%E7%AB%AF/page/2/">« Prev Page</a>
@@ -215,14 +212,14 @@
 </script>
 
 <script>
-    if (window.location.pathname!="/") {
+    if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
     document.body.addEventListener("dblclick", _ => {
         document.querySelector("canvas").remove();
         randomLine();
     })
-    
+
     function randomLine() {
         function n(n, e, t) {
             return n.getAttribute(e) || t

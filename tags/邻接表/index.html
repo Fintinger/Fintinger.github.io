@@ -138,14 +138,14 @@ TD=ID&#43;OD    对于带权图（网） 1 2 3 4 5 6 7 8 9 10 11  #define MaxVex
 </script>
 
 <script>
-    if (window.location.pathname!="/") {
+    if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
     document.body.addEventListener("dblclick", _ => {
         document.querySelector("canvas").remove();
         randomLine();
     })
-    
+
     function randomLine() {
         function n(n, e, t) {
             return n.getAttribute(e) || t

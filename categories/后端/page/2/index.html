@@ -104,25 +104,6 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2>图的应用
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>一、最小生成树 📌什么是生成树？ 连通图的生成树是包含图中所有顶点的一个极小连通子图，通俗地讲，就是“边尽可能少，但需保持连通”。
-规律： 对于一个顶点数|V|=n的树，其生成树的边数|E|=n-1。如果将|E|&#43;1，必然会形成回路；如果将|E|-1，则会成为非连通图。
-📌什么是最小生成树？  最小生成树，也称最小代价树(Minimum Spanning Tree，MST)
- 是带权连通无向图的生成树中边的权值之和最小的一棵树，联系实际问题不难理解其中“最小代价”的意味。
-Prim（普利姆算法），Kruskal（克鲁斯卡尔算法）就是寻找最小生成树的常用算法。
-1.Prim（普利姆算法）  从某一顶点开始，每次将代价最小的新顶点纳入生成树，直至所有顶点都纳入为止。
- 图示 易知，此方法得到的最小生成子树是不唯一的。
-代码实现 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  void MiniSpanTree_PRIMI(Graph G,int u){ //从顶点u出发找G的最小生成树  for (int i = 0; i &lt;G.vexnum; &#43;&#43;i) {//辅助数组初始化  if(i!=u){ closedge[i]={u,G.arcs[u][i]}; } } closedge[u].lowcost=0; for (int j = 0; j &lt; G.vexnum; j&#43;&#43;) { k=minimum(closedge);//求生成树的下一个节点  cout&lt;&lt;cloedge[k]....</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-06-04 00:00:00 +0000 UTC'>June 4, 2021</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 图的应用" href="https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
     <h2>图的遍历
     </h2>
   </header>
@@ -230,6 +211,32 @@ $v=\frac{WPL_{min}}{WPL}$</p>
   <footer class="entry-footer"><span title='2021-05-23 00:00:00 +0000 UTC'>May 23, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 哈夫曼树" href="https://www.fintinger.site/p/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/"></a>
 </article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>树
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>普通树 对于一棵普通类型的树形结构，可将其转化为二叉树之后再参考二叉树的方法进行相关操作。
+孩子兄弟表示法（链式结构） 通过此方法可将普通树转化为二叉树
+1 2 3 4 5  //孩子兄弟即Child, Sibling typedef struct CSNode{ Elemtype data; struct CSNode *firstchild,*nextsibling;//第一个孩子和右兄弟指针,等价于*lchild,*rchild }CSNode,*CSTree   图示如下
+树的遍历 1.深度优先遍历（先根遍历&amp;后根遍历）
+ 先根遍历   若树非空，先访问根结点，再依次对每棵子树进行先根遍历(递归)。
+ 对如上图所示的树进行先根遍历：
+A B C D
+A	(BE )	(CF)	(DG)
+A	(BEH) (CF)	(DG)
+即先根遍历序列为A B E H C F D G
+发现与通过“孩子兄弟法”将树转为二叉树后的先序遍历序列相同
+ 后根遍历   若树非空，先依次对每棵子树进行后根遍历，最后再访问根结点。
+ 对如上图所示的树进行后根遍历：
+B	C	D	A
+(E	B) (F	C) (G	D) A...</p>
+  </section>
+  <footer class="entry-footer"><span title='2021-05-22 00:00:00 +0000 UTC'>May 22, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 树" href="https://www.fintinger.site/p/%E6%A0%91/"></a>
+</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://www.fintinger.site/categories/%E5%90%8E%E7%AB%AF/">« Prev Page</a>
@@ -257,14 +264,14 @@ $v=\frac{WPL_{min}}{WPL}$</p>
 </script>
 
 <script>
-    if (window.location.pathname!="/") {
+    if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
     document.body.addEventListener("dblclick", _ => {
         document.querySelector("canvas").remove();
         randomLine();
     })
-    
+
     function randomLine() {
         function n(n, e, t) {
             return n.getAttribute(e) || t

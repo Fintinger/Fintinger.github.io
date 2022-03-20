@@ -119,6 +119,22 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>JavaScript基础之Map与Weakmap类型
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>Map类型 1.属性 👉 set() 设置值
+1 2 3 4 5 6 7 8 9 10  let map = new Map() let fn = function () {console.log(&#39;this is function&#39;)} let user = {name: &#39;jqf&#39;, age: 18} map.set(&#39;key&#39;, &#39;value&#39;) map.set(fn, &#39;function&#39;) map.set(user, &#39;object&#39;) console.log(map); /*Map(3){&#34;key&#34; =&gt; &#34;value&#34;, ƒ =&gt; &#34;function&#34;, {…} =&gt; &#34;object&#34;}*/   注意： Map类型，字符串、函数、对象都可以作为key设置
+👉 size Map长度
+1  console.log(map.size);//3   👉get() 获取值
+1 2 3  console....</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-08-26 00:00:00 +0000 UTC'>August 26, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript基础之Map与Weakmap类型" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bmap%E4%B8%8Eweakmap%E7%B1%BB%E5%9E%8B/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>JavaScript基础之Set与Weakset
     </h2>
   </header>
@@ -187,20 +203,6 @@
   <footer class="entry-footer"><span title='2020-08-23 00:00:00 +0000 UTC'>August 23, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to JavaScript基础之值类型" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%80%BC%E7%B1%BB%E5%9E%8B/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>JavaScript基础之JS黑洞
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>JavaScript中最容易忽视的一些点
- let和var  都用来定义变量，但二者之间有些细微的差别
- 区别1: 是否有块作用域 1 2 3 4 5 6 7 8  var a = 1 { // var a=2  let a = 2 } console.log(a); //output var:a=2 let:a=1   1 2 3 4 5 6 7 8  var i=1 // for (var i = 0; i &lt;3; i&#43;&#43;) { for (let i = 0; i &lt;3; i&#43;&#43;) { //..do something } console....</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-08-22 00:00:00 +0000 UTC'>August 22, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之JS黑洞" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bjs%E9%BB%91%E6%B4%9E/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://www.fintinger.site/posts/page/7/">« Prev Page</a>
@@ -228,14 +230,14 @@
 </script>
 
 <script>
-    if (window.location.pathname!="/") {
+    if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
     document.body.addEventListener("dblclick", _ => {
         document.querySelector("canvas").remove();
         randomLine();
     })
-    
+
     function randomLine() {
         function n(n, e, t) {
             return n.getAttribute(e) || t

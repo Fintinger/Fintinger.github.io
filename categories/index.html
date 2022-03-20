@@ -107,7 +107,7 @@
         <a href="https://www.fintinger.site/categories/%E5%85%B6%E4%BB%96/">其他 <sup><strong><sup>2</sup></strong></sup> </a>
     </li>
     <li>
-        <a href="https://www.fintinger.site/categories/%E5%89%8D%E7%AB%AF/">前端 <sup><strong><sup>33</sup></strong></sup> </a>
+        <a href="https://www.fintinger.site/categories/%E5%89%8D%E7%AB%AF/">前端 <sup><strong><sup>34</sup></strong></sup> </a>
     </li>
     <li>
         <a href="https://www.fintinger.site/categories/%E5%90%8E%E7%AB%AF/">后端 <sup><strong><sup>15</sup></strong></sup> </a>
@@ -140,14 +140,14 @@
 </script>
 
 <script>
-    if (window.location.pathname!="/") {
+    if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
     document.body.addEventListener("dblclick", _ => {
         document.querySelector("canvas").remove();
         randomLine();
     })
-    
+
     function randomLine() {
         function n(n, e, t) {
             return n.getAttribute(e) || t

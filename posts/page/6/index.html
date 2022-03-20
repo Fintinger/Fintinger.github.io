@@ -140,6 +140,28 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>PHP语法小结
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>基本语法 输出语句    语句 功能     echo 输出字符串类型   print_r 输出引用类型(对象,数组等)   var_dunp 检测变量类型    ::: tip echo语句可用于给前端返回响应体。比如前端通过ajax请求，可以在xhr.response中直接得到echo的内容 :::
+变量&amp;常量 👉🏼 变量
+   语句 功能 返回值     isset() 检测变量是否存在 boolean   unset() 删除某个变量 none    👉🏼 常量
+常量用const 或 define 定义，常量名一般全部大写，不受作用域的限制
+::: tip
+一般是define在类外定义常量，const在类内定义常量，并且const必须通过类名::变量名来进行访问。但是php5.3以上支持类外通过const定义常量。
+:::
+:::danger
+const不能在条件语句中使用，必出错
+:::
+ 参考文章 《PHP中define() 与 const定义常量的区别详解》...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-10-14 00:00:00 +0000 UTC'>October 14, 2020</span>&nbsp;·&nbsp;13 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to PHP语法小结" href="https://www.fintinger.site/p/php%E8%AF%AD%E6%B3%95%E5%B0%8F%E7%BB%93/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>PHP开发验证码类
     </h2>
   </header>
@@ -190,22 +212,6 @@
   <footer class="entry-footer"><span title='2020-09-20 00:00:00 +0000 UTC'>September 20, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to Javascript正则表达式" href="https://www.fintinger.site/p/javascript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Es6中的class类
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>class实质上是对js中继承的封装组合，用一种“语法糖”的形式实现原型链的继承
- 静态属性/方法  静态方法/属性是指，函数作为对象时，定义在其原型(__proto__)上的方法，而需要实例化继承的动态方法是定义在其原型对象(prototype) 中的，静态方法中的参数都是固定的，直接通过整个构造函数调用，实例化对象并不会继承；而动态方法中的参数会因为实例化对象的不同而产生改变，实例化对象默认是继承的。
- 1 2 3 4  function User(){} User.__proto__.show=function(){} console.dir(User) //这里的show()方法就属于静态方法   在class中，利用static定义静态属性/方法
-1 2 3 4 5  class Admin{ static show(){}//__proto__中  show(){}//prototype中 } console.dir(Admin)   关于class一些注意点  class中声明的方法在prototype对象中，由于默认的属性特征设置，这些方法是不可遍历的！  1 2 3 4 5 6 7 8  class Admin{ show(){} } console.log( Object.getOwnPropertyDescriptor( Admin.prototype,&#34;show&#34; )) //enumerable: false   class中声明方法时，方法之间不用,隔开！ class中默认开启严格模式  class中的属性保护  主要可以通过三种途径实现属性保护：Symbol,weakmap,私有属性
- 1.Symbol 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31  /*利用Symbol创建一个受保护的属性的集合对象,无法直接获取，只能通过自定义的get/set方法*/ const protects = Symbol(&#39;受保护的属性&#39;) class User { constructor(name) { this....</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-09-09 00:00:00 +0000 UTC'>September 9, 2020</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to Es6中的class类" href="https://www.fintinger.site/p/es6%E4%B8%AD%E7%9A%84class%E7%B1%BB/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://www.fintinger.site/posts/page/5/">« Prev Page</a>
@@ -233,14 +239,14 @@
 </script>
 
 <script>
-    if (window.location.pathname!="/") {
+    if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
     document.body.addEventListener("dblclick", _ => {
         document.querySelector("canvas").remove();
         randomLine();
     })
-    
+
     function randomLine() {
         function n(n, e, t) {
             return n.getAttribute(e) || t

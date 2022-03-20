@@ -119,6 +119,32 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>常用的一些html代码
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>1. 获取网页logo 京东 : www.jd.com
+ 后面加 “/favicon.ico&#34;即可
+ 京东logo : www.jd.com/favicon.ico
+2. webstorm网页logo简易写法  link:favicon 按Tab键  3.meta标签  为搜索引擎提供的关键字列表( name=“keywords”)：   各关键词间用英文逗号“,”隔开。META的通常用处是指定搜索引擎用来提高搜索质量的关键词。
+ &lt;meta name=&#34;keywords&#34; content=&#34;牙疼怎么办，智齿是什么，拔牙多少钱，矫正多少钱，九院医生，北大口腔，瑞尔口腔，拜耳口腔&#34;&gt;
+ 用来告诉搜索引擎你的网站主要内容(name=“description”)：  &lt;meta name=&#34;description&#34; content=&#34;有牙齿问题,找河马牙医,儿童口腔，全国儿童口腔在线咨询，牙疼怎么办，拔牙多少钱，矫正多少钱，种植牙，有牙齿问题&#34;&gt;
+ 优先以webkit内核渲染页面(“renderer”)：  &lt;meta name=&#34;renderer&#34; content=&#34;webkit&#34; /&gt;
+4.复合选择器 div#main{ color:green}
+ 表示选中div中id为main的元素
+ 5.标签居中  水平居中 行内标签/行内-块级标签: text-align:center  块级标签:
+margin:0 auto
+2)垂直居中
+  行内标签/行内-块级标签:
+ 设置行高为盒子高度line-hight:50px; 图片加文字时:vertical-align:middle;    块级标签:
+   设置“子绝父相” ==&gt; top，left设置为50% ==&gt; margin-left和nargin-top设置为负的盒子对应宽高的一半...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-03-21 00:00:00 +0000 UTC'>March 21, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 常用的一些html代码" href="https://www.fintinger.site/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E4%BB%A3%E7%A0%81/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>CSS揭秘一书中的知识
     </h2>
   </header>
@@ -174,14 +200,14 @@
 </script>
 
 <script>
-    if (window.location.pathname!="/") {
+    if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
     document.body.addEventListener("dblclick", _ => {
         document.querySelector("canvas").remove();
         randomLine();
     })
-    
+
     function randomLine() {
         function n(n, e, t) {
             return n.getAttribute(e) || t

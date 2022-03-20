@@ -104,28 +104,6 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2>PHP语法小结
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>基本语法 输出语句    语句 功能     echo 输出字符串类型   print_r 输出引用类型(对象,数组等)   var_dunp 检测变量类型    ::: tip echo语句可用于给前端返回响应体。比如前端通过ajax请求，可以在xhr.response中直接得到echo的内容 :::
-变量&amp;常量 👉🏼 变量
-   语句 功能 返回值     isset() 检测变量是否存在 boolean   unset() 删除某个变量 none    👉🏼 常量
-常量用const 或 define 定义，常量名一般全部大写，不受作用域的限制
-::: tip
-一般是define在类外定义常量，const在类内定义常量，并且const必须通过类名::变量名来进行访问。但是php5.3以上支持类外通过const定义常量。
-:::
-:::danger
-const不能在条件语句中使用，必出错
-:::
- 参考文章 《PHP中define() 与 const定义常量的区别详解》...</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-10-14 00:00:00 +0000 UTC'>October 14, 2020</span>&nbsp;·&nbsp;13 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to PHP语法小结" href="https://www.fintinger.site/p/php%E8%AF%AD%E6%B3%95%E5%B0%8F%E7%BB%93/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
     <h2>ES6之Promise用法小结
     </h2>
   </header>
@@ -190,6 +168,34 @@ $X^T(A^TA)X=(AX)^{T}AX \geq 0$
   <footer class="entry-footer"><span title='2021-08-28 00:00:00 +0000 UTC'>August 28, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 线性代数——二次型" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/"></a>
 </article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>线性代数——特征值特征向量
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>特征值与特征向量 性质  1.不同特征值的特征向量线性无关。
+2.ｋ重特征值至多有ｋ个线性无关的特征向量。(※)
+ 基本运算逻辑    三角矩阵特征值为主对角线元素⭐
+注意，当$\lambda=1$时😢
+  秩为1的矩阵A
+ 特征值 $\sum_{aii},0,0…$ $A^n=\sum_{aii}^{n-1} A$​  特征值证明：
+  求特征值不能先对A做任何变换，而应该带着λ变换
+ 定义法    如果两矩阵相似
+即 “两矩阵相似则具有相同特征值，特征向量也存在关系”
+ 真题&amp;例题 常识题？😢
+关于AB=0引申出的一题多解
+相似  AB相似，则 A&#43;kE ~ B&#43;kE
+ 行列式相等 俩秩相等 特征值相等 绩相等  利用已知构造方程组求参，进行预处理
+  由 $A^n=PB^nP^{-1}$
+ 若取B为∧，容易求得$A^n$​的值。(其他方法) 特征值也存在关系。(特征值规律)    用相似的传递性证明两矩阵相似
+ A~∧ ⭐  A~∧，$A=P∧P^{-1}$则
+ ∧是矩阵A的特征值 P列向量是A的特征向量  （要对应，别错位）...</p>
+  </section>
+  <footer class="entry-footer"><span title='2021-08-23 00:00:00 +0000 UTC'>August 23, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 线性代数——特征值特征向量" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/"></a>
+</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="next" href="https://www.fintinger.site/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/page/2/">Next Page »</a>
@@ -216,14 +222,14 @@ $X^T(A^TA)X=(AX)^{T}AX \geq 0$
 </script>
 
 <script>
-    if (window.location.pathname!="/") {
+    if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
     document.body.addEventListener("dblclick", _ => {
         document.querySelector("canvas").remove();
         randomLine();
     })
-    
+
     function randomLine() {
         function n(n, e, t) {
             return n.getAttribute(e) || t

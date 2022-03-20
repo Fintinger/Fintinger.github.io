@@ -119,6 +119,22 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Ajax基础及Express框架基本使用
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>Baike  Ajax 即“AsynchronousJavascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式、快速动态网页应用的网页开发技术，无需重新加载整个网页的情况下，能够更新部分网页的技术。
+通过在后台与服务器进行少量数据交换，Ajax 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。—百度百科
+ 请求报文 格式以及参数如下
+1 2 3 4 5 6 7 8  行 GET / HTTP/1.1 头 Host: fintinger.xyz Cookie: keyword=xyz Content-type: application/x-www-form-urlencoded User-agent: Chrome 83 空行 (必须有) 体 [GET]:空 [POST]:空/username=admin&amp;password=admin   响应报文 格式以及参数如下
+1 2 3 4 5 6 7 8 9 10 11 12  行 HTTP/1.1 200 Ok 头 Content-Type: text/html; charset=utf-8 Content-Length: 22 Content-encoding: gzip 空行 (必须有) 体 &lt;html&gt; &lt;head&gt; &lt;/head&gt; &lt;body&gt; &lt;h1&gt;Hello!...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-08-06 00:00:00 +0000 UTC'>August 6, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to Ajax基础及Express框架基本使用" href="https://www.fintinger.site/p/ajax%E5%9F%BA%E7%A1%80%E5%8F%8Aexpress%E6%A1%86%E6%9E%B6%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>vue.js学习心得
     </h2>
   </header>
@@ -181,27 +197,6 @@ v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做
   <footer class="entry-footer"><span title='2020-07-07 00:00:00 +0000 UTC'>July 7, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 剪贴板功能实现" href="https://www.fintinger.site/p/%E5%89%AA%E8%B4%B4%E6%9D%BF%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>ES6中新增关于Array的方法
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>在javascript中，Array()经常用到，利用ES6中的一些新特性会让数组的处理更加方便快捷
-1.迭代空数组 直接创建一个数组
-1 2  const arr=new Array(4); //Output:[undefined，undefined，undefined，undefined]   利用map方法，转化成新的数组，企图得到 [0,1,2,3] 数组
-1 2 3  const arr=new Array(4); arr.map((ele,index) =&gt; index); //Output:[undefined，undefined，undefined，undefined]   解决这个问题可以在创建数组时用到Array.apply
- apply与call类似，都是用来继承父类的方法的，不同之处是：
-  call() 方法分别接受参数。person.fullName.apply(person1, [&#34;Oslo&#34;, &#34;Norway&#34;]);
-  apply() 方法接受数组形式的参数.	person.fullName.call(person1, &#34;Oslo&#34;, &#34;Norway&#34;);
-  如果要使用数组而不是参数列表，则 apply() 方法非常方便。
- 1 2 3  const arr = Array.apply(null, new Array(4)); arr.map((ele,index) =&gt; index); //Output:[0,1,2,3]   由此，我们可以创建一个指定最大值、最小值、或者长度生成指定数列的方法
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  /** * 生成自定义的连续数列 * @param{Number}min * @param{Number}max * @param{Number}len */ function newArr({min = null, max = null, len = null} = {}) { let newArray=[], skip = min if (len == null) {len = max - min &#43; 1} if (min == null) {skip = -max} const arr = Array....</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-07-06 00:00:00 +0000 UTC'>July 6, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to ES6中新增关于Array的方法" href="https://www.fintinger.site/p/es6%E4%B8%AD%E6%96%B0%E5%A2%9E%E5%85%B3%E4%BA%8Earray%E7%9A%84%E6%96%B9%E6%B3%95/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://www.fintinger.site/posts/page/9/">« Prev Page</a>
@@ -229,14 +224,14 @@ v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做
 </script>
 
 <script>
-    if (window.location.pathname!="/") {
+    if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
     document.body.addEventListener("dblclick", _ => {
         document.querySelector("canvas").remove();
         randomLine();
     })
-    
+
     function randomLine() {
         function n(n, e, t) {
             return n.getAttribute(e) || t

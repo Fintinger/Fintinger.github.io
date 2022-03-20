@@ -104,6 +104,20 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>canvas绘制跟随鼠标移动的线条
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>在浏览网页时无意中发现了下面这种背景互动的效果：
+通过一番周折，最终找到以下实现代码
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45  function randomLine() { function n(n, e, t) { return n.getAttribute(e) || t } function e(n) { return document.getElementsByTagName(n) } function t() { var t = e(&#34;script&#34;), o = t....</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-03-20 00:00:00 +0000 UTC'>March 20, 2022</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to canvas绘制跟随鼠标移动的线条" href="https://www.fintinger.site/p/canvas%E7%BB%98%E5%88%B6%E8%B7%9F%E9%9A%8F%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%8A%A8%E7%9A%84%E7%BA%BF%E6%9D%A1/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>CSS揭秘一书中的知识
     </h2>
   </header>
@@ -138,14 +152,14 @@
 </script>
 
 <script>
-    if (window.location.pathname!="/") {
+    if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
     document.body.addEventListener("dblclick", _ => {
         document.querySelector("canvas").remove();
         randomLine();
     })
-    
+
     function randomLine() {
         function n(n, e, t) {
             return n.getAttribute(e) || t

@@ -377,10 +377,10 @@ Algorithms + Data Structures = Programs</p>
     <br>
     <span>减而治之与分而治之</span>
   </a>
-  <a class="next" href="https://www.fintinger.site/p/php%E5%BC%80%E5%8F%91%E9%AA%8C%E8%AF%81%E7%A0%81%E7%B1%BB/">
+  <a class="next" href="https://www.fintinger.site/p/php%E8%AF%AD%E6%B3%95%E5%B0%8F%E7%BB%93/">
     <span class="title">Next Page »</span>
     <br>
-    <span>PHP开发验证码类</span>
+    <span>PHP语法小结</span>
   </a>
 </nav>
 
@@ -422,14 +422,14 @@ Algorithms + Data Structures = Programs</p>
 </script>
 
 <script>
-    if (window.location.pathname!="/") {
+    if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
     document.body.addEventListener("dblclick", _ => {
         document.querySelector("canvas").remove();
         randomLine();
     })
-    
+
     function randomLine() {
         function n(n, e, t) {
             return n.getAttribute(e) || t
