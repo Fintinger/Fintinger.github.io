@@ -152,11 +152,17 @@
   <h1>Archive</h1>
 </header>
 <div class="archive-year">
-  <h2 class="archive-year-header">2022<sup class="archive-count">&nbsp;&nbsp;1</sup>
+  <h2 class="archive-year-header">2022<sup class="archive-count">&nbsp;&nbsp;2</sup>
   </h2>
   <div class="archive-month">
-    <h3 class="archive-month-header">March<sup class="archive-count">&nbsp;&nbsp;1</sup></h3>
+    <h3 class="archive-month-header">March<sup class="archive-count">&nbsp;&nbsp;2</sup></h3>
     <div class="archive-posts">
+      <div class="archive-entry">
+        <h3 class="archive-entry-title">Vue中的数据监视原理
+        </h3>
+        <div class="archive-meta"><span title='2022-03-21 00:00:00 +0000 UTC'>March 21, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</div>
+        <a class="entry-link" aria-label="post link to Vue中的数据监视原理" href="https://www.fintinger.site/p/vue%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%9B%91%E8%A7%86%E5%8E%9F%E7%90%86/"></a>
+      </div>
       <div class="archive-entry">
         <h3 class="archive-entry-title">canvas绘制跟随鼠标移动的线条
         </h3>
@@ -781,6 +787,7 @@ window.onerror=function(){return true;}
         xhr.onload = function (e) {
             if (this.status == 200) {
                 var blob = this.response;
+               console.log( blob);
                 vid.setAttribute("src", URL.createObjectURL(blob));
             }
         };

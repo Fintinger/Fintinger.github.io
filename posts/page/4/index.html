@@ -119,6 +119,27 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>查找算法相关
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>顺序查找 1 2 3 4 5 6 7 8 9 10 11  typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数组基址  int TableLen;//查找表长度 }SSTable; int Seq_Search(SSTable ST,int key){ ST.elem[0]=key; int i; for (i = ST.TableLen;ST.elem[i]!=key ; i--) {}//从后往前查找，最终返回下标i  return i;//返回0说明没找到 }   效率分析 对于长度为n的顺序表，如果查找成功 $$ ASL={\frac{1&#43;2&#43;…&#43;n}{n}}=\frac{n&#43;1}{2} $$ 若果查找失败，则 $ASL=n&#43;1$
+总体上，该算法时间复杂度为 $O(n)$
+优化思路 1.如果使得表中的元素有序存放……，可以构造出一棵查找判定树
+此时，查找失败时$ASL=\frac{1&#43;2&#43;…&#43;n&#43;n}{n&#43;1}=\frac{n}{2}&#43;\frac{n}{n&#43;1}$
+优点： 容易查找失败时ASL更小
+2.如果各元素被查找的概率不同……，可以把概率大的靠前
+优点： 容易查找成功时ASL更小
+折半查找  折半查找，又称“二分查找”，仅适用于有序的顺序表。
+ 针对升序排列的顺序表，代码实现如下
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数组基址  int TableLen;//查找表长度 }SSTable; int BinarySearch(SSTable L,int key){ int low=0,high=L....</p>
+  </section>
+  <footer class="entry-footer"><span title='2021-06-06 00:00:00 +0000 UTC'>June 6, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 查找算法相关" href="https://www.fintinger.site/p/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>图的应用
     </h2>
   </header>
@@ -202,48 +223,6 @@ $n_0=0$,$n_1=1$,$n_2=2$…存在递归关系 $n_h=n_{h-1}&#43;n_{h-2}&#43;1$,即
   </section>
   <footer class="entry-footer"><span title='2021-05-23 00:00:00 +0000 UTC'>May 23, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to AVL树" href="https://www.fintinger.site/p/avl%E6%A0%91/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>哈夫曼树
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>基本概念 1.结点的权
-每个结点带有的具有某种现实意义的数值(比如代表重要性等)
-2.结点的带权路径长度
-从树的根到该结点的路径长度（经过的边数）与该结点上权值的乘积
-3.树的带权路径长度
-树中所有叶结点的带权路径长度之和（WPL, Weighted Path Length）
-$WPL=\sum_{i=1}^{n}w_il_i$
-✨4.哈夫曼树
-在含有n个带权叶结点的二叉树中，其中带权路径长度（WPL）最小的二叉树称为哈夫曼树，也称最优二叉树
-构造哈夫曼树 给定n个权值分别为 $w_1,w_2,…,w_n$ 的结点，其构造过程描述如下：
-① 将这n个结点分别作为n棵仅含一个结点的二叉树，构成森林F
-② 构造一个新结点，从F中选取两棵根结点权值最小的树作为新结点的左右子树，并且将新结点的权值置为左、右子树上根结点的权值之和。
-③ 从F中删除刚才选出的两棵树，同时将新得到的树加入F中。
-④ 重复步骤②和③，直至F中只剩下一棵树为止。
-假设给定结点在经过步骤①之后如下
-则其②③④步骤为：
-$WPL_{min}=1*7&#43;2*3&#43;3*2&#43;4*1&#43;4*2=31$
-或者
-$WPL_{min}=1*7&#43;3*(1&#43;2&#43;2&#43;3)=31$
-👇👇👇👇👇👇
-哈夫曼树特点： ① 每个初始结点最终都成为叶结点，且权值越小的结点到根结点的路径长度越大。 ② 哈夫曼树的结点总数为2n-1。 ③ 哈夫曼树中不存在度为1的结点。 ④ 哈夫曼树并不唯一，但WPL必然相同且为最优。
-哈夫曼编码 固定长度编码 如ASCII码
-可变长度编码 前缀编码 没有一个编码是另一个编码的前缀
-哈夫曼编码 由哈夫曼树得到哈夫曼编码——字符集中的每个字符作为一个叶子结点，各个字符出现的频度作为结点的权值，根据之前介绍的方法构造哈夫曼树。
-✨ 应用
-可用于数据压缩
-如图，为英文字母使用频率表，若不进行压缩，第 i 个字母频率用$l_i表示$，路径长至少为5($2^4&lt;26&lt;2^5$)，则
-$WPL=5×\sum_{i=1}^{n}l_i$=500
-若通过构造哈夫曼树进行哈夫曼编码
-则$WPL_{min}=$
-$v=\frac{WPL_{min}}{WPL}$</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-05-23 00:00:00 +0000 UTC'>May 23, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 哈夫曼树" href="https://www.fintinger.site/p/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
@@ -402,6 +381,7 @@ window.onerror=function(){return true;}
         xhr.onload = function (e) {
             if (this.status == 200) {
                 var blob = this.response;
+               console.log( blob);
                 vid.setAttribute("src", URL.createObjectURL(blob));
             }
         };

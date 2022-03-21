@@ -132,6 +132,31 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>Vue中的数据监视原理
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>1.vue会监视data中所有层次的数据. vue对于配置在data中的所有对象都会以key值作为目标进行监视，不论多少层，都会递归地为每一个key配置getter和setter(通过Object.defineProperty())。
+ 相关阅读 MDN关于defineProperty的说明
+ 2.如何监测对象中的数据? 通过setter实现监视,且要在new Vue时就传入要监测的数据，即在data中提前配置。
+(1).对象中后追加的属性,Vue默认不做响应式处理
+直接通过修改vm._data或者vm来添加key，并不会配置getter和setter，因此不会做响应式
+(2).如需给后添加的属性做响应式,请使用如下API: Vue.set(target,key/index,value)或vm.$set(target,key/index,value)（可以同时修改数组和对象）
+​	特别注意: Vue.set()和vm.$set()不能直接给vm或vm的根数据对象(vm._data)添加属性!!!
+3.如何监测数组中的数据? 在数组中直接通过索引的方式修改数组并不会引起Vue的响应，那么要如何做呢？Vue通过包裹数组更新元素的方法(对原数组方法进行修改)实现,本质就是做了两件事:
+(1). 调用原生对应的方法对数组进行更新.
+(2). 重新解析模板,进而更新页面.
+就包裹了下面的七种数组方法：
+ push() pop() shift() unshift() splice() sort() reverse()  也就是说，通过上面七种方法修改数组，会让Vue做出响应。
+例如想要修改数组中索引为0的位置的数据，可以通过 vm.data.arr.splice(0,0,val)或Vue.set(vm.data.arr,0,val)又或者vm.$set(vm.data.arr,0,val)，在具体的由Vue管理的方法中this指向的应该就是vm！！
+数据劫持 Vue通过setter,getter对数据进行动态监测，其实就是“劫持”了数据😯</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-03-21 00:00:00 +0000 UTC'>March 21, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to Vue中的数据监视原理" href="https://www.fintinger.site/p/vue%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%9B%91%E8%A7%86%E5%8E%9F%E7%90%86/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>canvas绘制跟随鼠标移动的线条
     </h2>
   </header>
@@ -162,20 +187,6 @@
   </section>
   <footer class="entry-footer"><span title='2020-10-03 00:00:00 +0000 UTC'>October 3, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to PHP开发验证码类" href="https://www.fintinger.site/p/php%E5%BC%80%E5%8F%91%E9%AA%8C%E8%AF%81%E7%A0%81%E7%B1%BB/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>Git相关
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>基本命令 1 2 3 4 5 6 7 8  git config --global =&gt;全局配置 git config =&gt;当前仓库配置 mkdir =&gt;创建文件夹 ls =&gt;列出当前目录下(文件，文件夹) ls -a =&gt;所有all rm -rf * =&gt;删除当前目录下所有 touch =&gt;新建文件 cat =&gt;查看文件中的内容    不想`git add . 所有？
- 配置.gitignore 定义忽略提交的文件，其中
- 所有空行或者以注释符号 ＃ 开头的行都会被 Git 忽略。 匹配模式最后跟反斜杠（/）说明要忽略的是目录。 可以使用标准的 glob 模式(php)匹配。  从版本库删除 1 2  git rm ... =&gt;从版本库中删除，本地也会删除 git rm --cached ... =&gt;只从版本库删除   从版本库改名 1  git mv ....</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-09-29 00:00:00 +0000 UTC'>September 29, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to Git相关" href="https://www.fintinger.site/p/git%E7%9B%B8%E5%85%B3/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
@@ -333,6 +344,7 @@ window.onerror=function(){return true;}
         xhr.onload = function (e) {
             if (this.status == 200) {
                 var blob = this.response;
+               console.log( blob);
                 vid.setAttribute("src", URL.createObjectURL(blob));
             }
         };

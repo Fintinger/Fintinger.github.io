@@ -119,6 +119,18 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>线性代数——常用公式定理总结
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>公式 定理 附录 YO起来！ </p>
+  </section>
+  <footer class="entry-footer"><span title='2021-08-29 00:00:00 +0000 UTC'>August 29, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 线性代数——常用公式定理总结" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>线性代数——二次型
     </h2>
   </header>
@@ -226,29 +238,6 @@ $\Leftrightarrow$​​ r(A) &lt; s
   </section>
   <footer class="entry-footer"><span title='2021-08-15 00:00:00 +0000 UTC'>August 15, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 线性代数——向量" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>线性代数——矩阵
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>基本计算  对角矩阵存在交换律，即 $\bigwedge_1 \bigwedge_2=\bigwedge_2 \bigwedge_1$​
-  注意交换位置
- 对于 AB=C  B &amp; C均按列分块，则$A(\beta_1 \beta_2 \beta_3)=(\gamma_1 \gamma_2 \gamma_3)$，故B的列向量都是$AX=\gamma$ 的解，特别的，当AB=O即C=O时，B的列向量均是 $AX=0$ 的解。 B &amp; C按行分块，则 AB的行向量均可由B的行向量线性表出。 A &amp; C按列分块，则 AB的列向量均可由A的列向量线性表出。[2013]   规律1与解联系起来，尤其是AB=O推出B的列向量是Ax=0的解这一规律，除此之外AB=O也经常用r(A)&#43;r(B)≤ n这个不等式。
-“AB=O” 👉 方程的解(B的列向量是A的解)
-​	👉 秩 r(A)&#43;r(B) ≤ n (n为A的列,B的行)
-  规律2,3与线性表出关联，进而可以跟秩，向量组等价(能互相线性表出则等价)联系起来。
- 几个特殊符号  $a(a_1,a_2,a_3)^T$
- 矩阵: $ab^T$ = $(ba^T)^T$
- $r(ab^T)$​​ ≤ $r(a)$​ ≤ 1
-任何两行成比例
- $aa^T$: 对称矩阵
-数: $a^Tb = b^Ta$: $ab^T$ 或 $ba^T$​​​的绩(主对角线元素之和)...</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-08-13 00:00:00 +0000 UTC'>August 13, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 线性代数——矩阵" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
@@ -407,6 +396,7 @@ window.onerror=function(){return true;}
         xhr.onload = function (e) {
             if (this.status == 200) {
                 var blob = this.response;
+               console.log( blob);
                 vid.setAttribute("src", URL.createObjectURL(blob));
             }
         };

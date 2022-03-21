@@ -173,6 +173,9 @@
         <a href="https://www.fintinger.site/tags/python/">Python <sup><strong><sup>1</sup></strong></sup> </a>
     </li>
     <li>
+        <a href="https://www.fintinger.site/tags/vue/">Vue <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
         <a href="https://www.fintinger.site/tags/vue.js/">Vue.js <sup><strong><sup>1</sup></strong></sup> </a>
     </li>
     <li>
@@ -426,6 +429,7 @@ window.onerror=function(){return true;}
         xhr.onload = function (e) {
             if (this.status == 200) {
                 var blob = this.response;
+               console.log( blob);
                 vid.setAttribute("src", URL.createObjectURL(blob));
             }
         };

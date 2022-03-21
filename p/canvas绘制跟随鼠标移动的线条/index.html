@@ -336,10 +336,10 @@
       <li><a href="https://www.fintinger.site/tags/css/">CSS</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/">
+  <a class="prev" href="https://www.fintinger.site/p/vue%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%9B%91%E8%A7%86%E5%8E%9F%E7%90%86/">
     <span class="title">« Prev Page</span>
     <br>
-    <span>Ajax学习小结</span>
+    <span>Vue中的数据监视原理</span>
   </a>
   <a class="next" href="https://www.fintinger.site/p/%E9%80%9A%E8%BF%87u%E7%9B%98%E5%AE%89%E8%A3%85windows%E7%B3%BB%E7%BB%9F/">
     <span class="title">Next Page »</span>
@@ -563,6 +563,7 @@ window.onerror=function(){return true;}
         xhr.onload = function (e) {
             if (this.status == 200) {
                 var blob = this.response;
+               console.log( blob);
                 vid.setAttribute("src", URL.createObjectURL(blob));
             }
         };

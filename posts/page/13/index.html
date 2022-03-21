@@ -119,6 +119,18 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Javascript一些操作
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>1.通过id获取元素 1 2 3  function $(id) { return typeof id === &#39;string&#39; ? document.getElementById(id): null; }   2.日期格式化 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  function formatDate(cDate) { //1.判断  if (!cDate instanceof Date){ return; } //2.转化  var year=cDate.getFullYear(); var month=cDate.getMonth(); var date=cDate.getDate(); var hour=cDate.getHours(); var minute=cDate.getMinutes(); var second=cDate.getSeconds(); //2.1 补0  month=month&lt;10? &#39;0&#39;&#43;month:month; date=date&lt;10?...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-04-02 00:00:00 +0000 UTC'>April 2, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to Javascript一些操作" href="https://www.fintinger.site/p/javascript%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>常用的一些html代码
     </h2>
   </header>
@@ -330,6 +342,7 @@ window.onerror=function(){return true;}
         xhr.onload = function (e) {
             if (this.status == 200) {
                 var blob = this.response;
+               console.log( blob);
                 vid.setAttribute("src", URL.createObjectURL(blob));
             }
         };

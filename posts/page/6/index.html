@@ -119,6 +119,30 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>减而治之与分而治之
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>减而治之(Decrease and conquer)  什么是“减而治之”？
+为求解一个大规模的问题，可以将其划分为两个问题，其一平凡，另一规模缩减 ，分别求解子问题，由子问题的解得原问题的解
+ 比如说，对于一个数组A的求和问题，可以设计如下的算法
+1 2 3 4 5  sum( int A[], int n ) { return n &lt; 1? 0 : sum(A, n - 1) &#43; A[n - 1]; }   当规模缩减到一定程度后，抵达递归基，返回0
+复杂度分析 1. 递归跟踪
+ 绘出计算过程中出现过的所有递归实例（及其调用关系） ，那么它们各自所需时间之总和，即为整体运行时间
+ 上例中，共计n&#43;1个递归实例(分析)，各自只需O(1)时间 故总体运行时间为：
+T(n) =O(1) × (n&#43;1) =O(n)
+2.递推方程
+ 对于大规模的问题、复杂的递归算法，递归跟踪不再适用 此时可采用另一抽象的方法…
+ 在本例中，有T(n)=T(n-1) &#43; O(1),T(0)=O(1)
+则，T(n) = T(n-2)&#43;O(2) = T(n-3)&#43;O(3) = T(n-n)&#43;O(n)=O(n)
+ 可以看到，两种分析方法的出来复杂度都为O(n)...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-11-15 00:00:00 +0000 UTC'>November 15, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 减而治之与分而治之" href="https://www.fintinger.site/p/%E5%87%8F%E8%80%8C%E6%B2%BB%E4%B9%8B%E4%B8%8E%E5%88%86%E8%80%8C%E6%B2%BB%E4%B9%8B/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>DS导论
     </h2>
   </header>
@@ -192,25 +216,6 @@ const不能在条件语句中使用，必出错
   </section>
   <footer class="entry-footer"><span title='2020-09-29 00:00:00 +0000 UTC'>September 29, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to Git相关" href="https://www.fintinger.site/p/git%E7%9B%B8%E5%85%B3/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Javascript正则表达式
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>关于正则表达式的创建，就不做过多的赘述
- ::: tip
-由于不知名原因，span标签报错，因此全部替换为[sp]
-:::
-关于转义 1.字面量形式创建的RegExp 转义形式： \d, \., \s 等
-1 2 3  let str=&#39;fintinger2592030861.com$323e&#39; let reg=/\d&#43;\.com/ str.match(reg);//2592030861.com   2.对象形式创建的RegExp 转义形式： \\d, \\., \\s等
-1 2 3  let str = &#39;fintinger2592030861.com$323e&#39; let reg = new RegExp(&#39;\\d&#43;\\.com&#39;, &#39;g&#39;) str.match(reg)//2592030861.com   边界约束  利用^和$分别限制开头和结尾
- 1 2 3 4 5  let str = &#39;bdhw42556jbjkhb2592030861jrh4jbhkfehrbj43jk32kbbjhb&#39; let reg = /\d{3,6}/ let reg2 = /^\d{3,6}$/ str.match(reg)//42556 str....</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-09-20 00:00:00 +0000 UTC'>September 20, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to Javascript正则表达式" href="https://www.fintinger.site/p/javascript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
@@ -369,6 +374,7 @@ window.onerror=function(){return true;}
         xhr.onload = function (e) {
             if (this.status == 200) {
                 var blob = this.response;
+               console.log( blob);
                 vid.setAttribute("src", URL.createObjectURL(blob));
             }
         };
