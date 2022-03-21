@@ -11,7 +11,7 @@
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22  function doCopy($el, {deepCopy = false, copyTips = true, language = &#34;Chinese&#34;, bgColor = &#34;#ff6666&#34;, fontColor = &#34;#fff&#34;} = {}) { let tempEl = $(&#34;&lt;input id=&#39;selectEl&#39; type=&#39;text&#39; value=&#39;&#39;&gt;&#34;).val($el.text()) if (deepCopy) { tempEl.val($el.html()) } tempEl.appendTo($(&#34;body&#34;)) document.querySelector(&#39;#selectEl&#39;).select(); document.execCommand(&#39;copy&#39;); tempEl.remove() if (copyTips) { let tipEl = $(&#34;&lt;div class=&#39;copyTips&#39; &gt;成功复制到剪切板&lt;/div&gt;&#34;) tipEl.">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/p/%E5%89%AA%E8%B4%B4%E6%9D%BF%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c70fe7a765b250c57b69e8dccf90fd37034279a0e9a06e7607fb22a05b0f5589.css" integrity="sha256-xw/np2WyUMV7aejcz5D9NwNCeaDpoG52B/sioFsPVYk=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.5801d16a0eff04ddc43661d83501a64f9bd5ebd0d26c58a21acbae9272b6c64a.css" integrity="sha256-WAHRag7/BN3ENmHYNQGmT5vV69DSbFiiGsuuknK2xko=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -637,17 +637,27 @@ window.onerror=function(){return true;}
 </body>
 <script>
     
+    let vid =document.getElementById("liveBgBox");
     window.onload = function () {
-        vid.src = "https://jqf.oss-cn-beijing.aliyuncs.com/videos/7kgkoysahpw31.mp4"
-        vid.play();
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://jqf.oss-cn-beijing.aliyuncs.com/videos/7kgkoysahpw31.mp4', true);
+        xhr.responseType = 'blob';
+        xhr.onload = function (e) {
+            if (this.status == 200) {
+                var blob = this.response;
+                vid.setAttribute("src", URL.createObjectURL(blob));
+            }
+        };
+        xhr.send();
     }
 
-    let vid = document.getElementById("liveBgBox");
+    
     let profile = document.getElementsByClassName("profile")[0];
     if (profile) {
         vid.style.display = "block";
-        window.document.body.style.background="url('https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png') no-repeat  center/cover fixed";
+        window.document.body.style.background = "url('https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png') no-repeat  center/cover fixed";
     }
 
 </script>
+
 </html>

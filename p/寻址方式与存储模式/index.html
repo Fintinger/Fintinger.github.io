@@ -10,7 +10,7 @@
 <meta name="description" content="寻址方式    基本寻址方式 特 征 优 点 缺 点 备 注     隐含寻址 操作数的存放地由操作码决定      立即寻址 操作数直接在指令中 加快执行速度 增加指令长度，不方便修改操作数 适用提供常数，设定初始值   寄存器寻址 操作数在指令指定的寄存器中 方便修改，访问寄存器加快指令执行，缩短指令长度，编程更灵活     直接寻址 操作数地址在指令中，操作数在主存单元中  指令字较长，不方便地址修改    间接寻址 操作数地址的地址在指令中，操作数在主存中 方便修改指针，编程更灵活 访问两次主存获取操作数，降低执行速度 形式地址，有效地址EA(=操作数地址)   寄存器间接寻址 操作数地址在指令指定的寄存器中，操作数在主存单元中 压缩指令长度，修改寄存器内容就可以修改主存地址指针  方便编写循环程序   相对寻址 操作数地址由PC和指令提供的地址偏移量决定,操作数在主存单元中   EA=PC&#43;D，适用与地址无关的程序设计   基址寻址 操作数地址由基址寄存器(RB)和指令提供的地址偏移量决定，操作数在主存单元中 缩短指令长度，扩大寻址空间  大型计算机，用户的逻辑地址→主存的物理地址，EA=(RB)&#43;D   变址寻址 操作数地址由变址寄存器(RI)和指令提供的地址偏移量决定，操作数在主存单元中   寻址到操作数RI内容(地址)自动修改，EA=(RI)&#43;D   堆栈寻址 寻址方式由指令操作码决定   适用涉及堆栈操作的指令，EA=(SP)    存储模式 “按字节编址” 主存将一个存储单元定为8位，即一个字节，这称为按字节编址的存储器">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c70fe7a765b250c57b69e8dccf90fd37034279a0e9a06e7607fb22a05b0f5589.css" integrity="sha256-xw/np2WyUMV7aejcz5D9NwNCeaDpoG52B/sioFsPVYk=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.5801d16a0eff04ddc43661d83501a64f9bd5ebd0d26c58a21acbae9272b6c64a.css" integrity="sha256-WAHRag7/BN3ENmHYNQGmT5vV69DSbFiiGsuuknK2xko=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -562,17 +562,27 @@ window.onerror=function(){return true;}
 </body>
 <script>
     
+    let vid =document.getElementById("liveBgBox");
     window.onload = function () {
-        vid.src = "https://jqf.oss-cn-beijing.aliyuncs.com/videos/7kgkoysahpw31.mp4"
-        vid.play();
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://jqf.oss-cn-beijing.aliyuncs.com/videos/7kgkoysahpw31.mp4', true);
+        xhr.responseType = 'blob';
+        xhr.onload = function (e) {
+            if (this.status == 200) {
+                var blob = this.response;
+                vid.setAttribute("src", URL.createObjectURL(blob));
+            }
+        };
+        xhr.send();
     }
 
-    let vid = document.getElementById("liveBgBox");
+    
     let profile = document.getElementsByClassName("profile")[0];
     if (profile) {
         vid.style.display = "block";
-        window.document.body.style.background="url('https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png') no-repeat  center/cover fixed";
+        window.document.body.style.background = "url('https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png') no-repeat  center/cover fixed";
     }
 
 </script>
+
 </html>

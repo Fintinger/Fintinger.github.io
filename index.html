@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c70fe7a765b250c57b69e8dccf90fd37034279a0e9a06e7607fb22a05b0f5589.css" integrity="sha256-xw/np2WyUMV7aejcz5D9NwNCeaDpoG52B/sioFsPVYk=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.5801d16a0eff04ddc43661d83501a64f9bd5ebd0d26c58a21acbae9272b6c64a.css" integrity="sha256-WAHRag7/BN3ENmHYNQGmT5vV69DSbFiiGsuuknK2xko=" rel="preload stylesheet" as="style">
 <link rel="preload" href="https://jqf.oss-cn-beijing.aliyuncs.com/images/blog4.0_papermod/head.gif" as="image">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
@@ -168,7 +168,13 @@ stroke-linecap="round" stroke-linejoin="round">
 </svg>
     </a>
     <a href="https://space.bilibili.com/341626809" target="_blank" rel="noopener noreferrer me" title="Bilibili">
-        <svg t="1646564653037" class="icon" fill="currentColor" viewBox="0 0 1193 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2179" width="200" height="200"><path d="M868.93 171.112H697.817l77.535-77.535c13.369-13.368 13.369-32.084 0-45.452s-32.083-13.368-45.451 0L598.893 179.133H470.559L339.55 48.125c-10.695-13.368-26.736-16.041-42.778-8.02-2.674 0-2.674 2.673-5.347 5.347-13.369 13.368-13.369 32.083 0 45.451l80.208 80.21H200.522c-93.577 0-171.112 77.535-171.112 171.112v425.107c0 90.903 77.535 168.438 171.112 168.438h26.736c0 32.084 26.737 56.146 56.147 56.146s56.146-26.736 56.146-56.146h395.697c2.674 32.084 29.41 56.146 61.494 53.473 29.41-2.674 50.798-24.063 53.472-53.473h21.39c93.576 0 171.111-77.535 171.111-171.112V339.551c-2.673-93.577-80.208-168.439-173.785-168.439zM863.582 831.5H211.217c-34.757 0-61.494-29.41-64.167-64.167l-2.674-433.128c0-34.758 29.41-64.167 64.167-64.167H860.91c34.757 0 61.493 29.41 64.167 64.167l2.673 433.128c-2.673 37.43-29.41 64.167-64.167 64.167z" p-id="2039"></path><path d="M422.433 417.086l16.042 80.209-213.89 40.104-16.042-80.208 213.89-40.105z m205.87 80.209l16.042-80.209 213.89 40.105-16.042 80.208-213.89-40.104z m42.778 168.439c0 2.673 0 8.02-2.674 10.694-13.368 29.41-42.778 48.126-77.535 50.8-21.389 0-42.778-10.695-56.146-26.737-16.042 16.042-34.757 26.736-56.146 26.736-32.084-2.673-61.494-21.389-77.536-50.799 0-2.673-2.673-5.347-2.673-10.694 0-10.695 8.02-18.716 18.715-21.39h2.674c8.02 0 13.368 2.674 16.042 10.695 0 0 21.389 29.41 40.104 29.41 37.43 0 37.43-32.083 58.82-56.146 24.063 26.736 24.063 56.146 58.82 56.146 24.062 0 40.104-29.41 40.104-29.41 2.674-5.347 10.695-10.694 16.042-10.694 10.694-2.674 18.715 5.347 21.389 16.041v5.348z" p-id="2040"></path></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg">
+    <rect x="1.3333" y="6" width="21.333" height="15.333" rx="4" ry="4"/>
+    <path d="m8 12.4v1.2"/>
+    <path d="m16 12.4v1.2"/>
+    <path d="m5.8853 2.6667 2.6667 2.6667"/>
+    <path d="m18.115 2.6667-2.6667 2.6667"/>
+</svg>
     </a>
     <a href="https://gitee.com/fintinger/figure-bed/raw/master/img/202203061823492.jpg" target="_blank" rel="noopener noreferrer me" title="Qq">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -356,17 +362,27 @@ window.onerror=function(){return true;}
 </body>
 <script>
     
+    let vid =document.getElementById("liveBgBox");
     window.onload = function () {
-        vid.src = "https://jqf.oss-cn-beijing.aliyuncs.com/videos/7kgkoysahpw31.mp4"
-        vid.play();
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://jqf.oss-cn-beijing.aliyuncs.com/videos/7kgkoysahpw31.mp4', true);
+        xhr.responseType = 'blob';
+        xhr.onload = function (e) {
+            if (this.status == 200) {
+                var blob = this.response;
+                vid.setAttribute("src", URL.createObjectURL(blob));
+            }
+        };
+        xhr.send();
     }
 
-    let vid = document.getElementById("liveBgBox");
+    
     let profile = document.getElementsByClassName("profile")[0];
     if (profile) {
         vid.style.display = "block";
-        window.document.body.style.background="url('https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png') no-repeat  center/cover fixed";
+        window.document.body.style.background = "url('https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png') no-repeat  center/cover fixed";
     }
 
 </script>
+
 </html>

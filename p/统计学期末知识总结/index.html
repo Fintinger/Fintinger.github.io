@@ -17,7 +17,7 @@
  第四章 数据的概括性度量 1.集中趋势的度量   众数不受极端值影响，具有不唯一性 中位数不受极端值影响，数据分布偏斜程度较大时 平均数易受极端值影响   2.离散程度的度量    标准分数：也称标准化值或z分数（将数据平均值变为0，标准差为1） $$ z_i=\frac{x_i-\overline{x}}{s} $$">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/p/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%9C%9F%E6%9C%AB%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c70fe7a765b250c57b69e8dccf90fd37034279a0e9a06e7607fb22a05b0f5589.css" integrity="sha256-xw/np2WyUMV7aejcz5D9NwNCeaDpoG52B/sioFsPVYk=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.5801d16a0eff04ddc43661d83501a64f9bd5ebd0d26c58a21acbae9272b6c64a.css" integrity="sha256-WAHRag7/BN3ENmHYNQGmT5vV69DSbFiiGsuuknK2xko=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -982,17 +982,27 @@ window.onerror=function(){return true;}
 </body>
 <script>
     
+    let vid =document.getElementById("liveBgBox");
     window.onload = function () {
-        vid.src = "https://jqf.oss-cn-beijing.aliyuncs.com/videos/7kgkoysahpw31.mp4"
-        vid.play();
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://jqf.oss-cn-beijing.aliyuncs.com/videos/7kgkoysahpw31.mp4', true);
+        xhr.responseType = 'blob';
+        xhr.onload = function (e) {
+            if (this.status == 200) {
+                var blob = this.response;
+                vid.setAttribute("src", URL.createObjectURL(blob));
+            }
+        };
+        xhr.send();
     }
 
-    let vid = document.getElementById("liveBgBox");
+    
     let profile = document.getElementsByClassName("profile")[0];
     if (profile) {
         vid.style.display = "block";
-        window.document.body.style.background="url('https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png') no-repeat  center/cover fixed";
+        window.document.body.style.background = "url('https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png') no-repeat  center/cover fixed";
     }
 
 </script>
+
 </html>

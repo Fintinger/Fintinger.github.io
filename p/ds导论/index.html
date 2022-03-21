@@ -19,7 +19,7 @@
  1.图灵机模型(TM)    组成 说明     Tape 依次均匀地划分为单元格 各存有某一字符，初始均为&#39;#&#39;   Head 总是对准某一单元格，并可 读取或改写其中的字符。每经过一个节拍，可 转向左侧或右侧的邻格   Alphabet 字符的种类有限   State TM总是处于有限种状态中的某一种 。每经过一个节拍 可按照规则转向另一种状态 。统一约定，&lsquo;h&rsquo; = halt(停止)    2.">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/p/ds%E5%AF%BC%E8%AE%BA/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.c70fe7a765b250c57b69e8dccf90fd37034279a0e9a06e7607fb22a05b0f5589.css" integrity="sha256-xw/np2WyUMV7aejcz5D9NwNCeaDpoG52B/sioFsPVYk=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.5801d16a0eff04ddc43661d83501a64f9bd5ebd0d26c58a21acbae9272b6c64a.css" integrity="sha256-WAHRag7/BN3ENmHYNQGmT5vV69DSbFiiGsuuknK2xko=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -591,17 +591,27 @@ window.onerror=function(){return true;}
 </body>
 <script>
     
+    let vid =document.getElementById("liveBgBox");
     window.onload = function () {
-        vid.src = "https://jqf.oss-cn-beijing.aliyuncs.com/videos/7kgkoysahpw31.mp4"
-        vid.play();
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://jqf.oss-cn-beijing.aliyuncs.com/videos/7kgkoysahpw31.mp4', true);
+        xhr.responseType = 'blob';
+        xhr.onload = function (e) {
+            if (this.status == 200) {
+                var blob = this.response;
+                vid.setAttribute("src", URL.createObjectURL(blob));
+            }
+        };
+        xhr.send();
     }
 
-    let vid = document.getElementById("liveBgBox");
+    
     let profile = document.getElementsByClassName("profile")[0];
     if (profile) {
         vid.style.display = "block";
-        window.document.body.style.background="url('https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png') no-repeat  center/cover fixed";
+        window.document.body.style.background = "url('https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png') no-repeat  center/cover fixed";
     }
 
 </script>
+
 </html>
