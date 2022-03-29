@@ -1,3 +1,4 @@
+Vue.config.productionTip = false
 new Vue({
     el: "#shoppingCart",
     data: {

@@ -1024,7 +1024,6 @@ window.onerror=function(){return true;}
         xhr.onload = function (e) {
             if (this.status == 200) {
                 var blob = this.response;
-               console.log( blob);
                 vid.setAttribute("src", URL.createObjectURL(blob));
             }
         };

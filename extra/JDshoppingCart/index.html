@@ -47,7 +47,7 @@
                 </span>
         </div>
         <!--商品-->
-        <div class="shopItem" v-for="shop in shopListData">
+        <div v-cloak class="shopItem" v-for="shop in shopListData">
             <div class="shop_item">
             <span class="item_left">
                 <i class="select_box select_this" :class="{selected:shop.isSelect}" @click="singleShopSelect(shop)"></i>

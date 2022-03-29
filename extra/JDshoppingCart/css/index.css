@@ -3,6 +3,9 @@
     height: 100%;
     background-color: rgb(252,252,252);
 }
+[v-cloak]{
+    display: none;
+}
 /*头部*/
 .header{
     width: 100%;

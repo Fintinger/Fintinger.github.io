@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 21 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Vue</title>
-      <link>https://www.fintinger.site/tags/vue/</link>
+      <title>Vue.js</title>
+      <link>https://www.fintinger.site/tags/vue.js/</link>
       <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://www.fintinger.site/tags/vue/</guid>
+      <guid>https://www.fintinger.site/tags/vue.js/</guid>
       <description></description>
     </item>
     
@@ -453,15 +453,6 @@
       <pubDate>Thu, 06 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.fintinger.site/tags/express/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vue.js</title>
-      <link>https://www.fintinger.site/tags/vue.js/</link>
-      <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.fintinger.site/tags/vue.js/</guid>
       <description></description>
     </item>
     
