@@ -104,6 +104,20 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>关于Javascript模块化
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>模块功能主要由两个命令构成：export和import。export命令用于规定模块的对外接口，import命令用于输入其他模块提供的功能。
+//profile.jsexport var firstName = &#39;Michael&#39;;export var lastName = &#39;Jackson&#39;;export function sayName () {return firstName &#43; lastName;}export default function () {console.log(&#39;foo&#39;);}// main.jsimport { firstName, lastName , sayName} from &#39;./profile.js&#39;; 注意：在index.html中引入的时候需要给script加type=“module”,即
+ &lt;script type=&#34;module&#34; src=&#34;./profiles.js&#34;&gt;&lt;/script&gt;&lt;script type=&#34;module&#34; src=&#34;./main.js&#34;&gt;&lt;/script&gt;</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-05-29 00:00:00 +0000 UTC'>May 29, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 关于Javascript模块化" href="https://www.fintinger.site/p/%E5%85%B3%E4%BA%8Ejavascript%E6%A8%A1%E5%9D%97%E5%8C%96/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>常用的一些html小问题
     </h2>
   </header>
@@ -201,25 +215,10 @@ margin:0 auto
   <footer class="entry-footer"><span title='2020-03-21 00:00:00 +0000 UTC'>March 21, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 常用的一些html代码" href="https://www.fintinger.site/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E4%BB%A3%E7%A0%81/"></a>
 </article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>CSS揭秘一书中的知识
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>1.backgrouond简写  在background简写属性中指定background-sizing时，需要提供一个background-position值，而且要使用/作为分隔。  1  background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [ background-size] [background-origin] [background-clip];   —–P13—–
-2.background-clip 规定背景的绘制区域：得到一个白色背景并且有白色边框的盒子：
-1 2 3  border:10px solid hsla(0,0,100%,.5); background:white; background-clip:padding-box   若不设置background-clip，背景会延伸至边框，边框的透明无法显示
-——P18——-
-3.双重边框  box-shadow   background:orange;box-shadow:0 0 010px #655 , 0 0 0 15px deeppink; /*可以加任意层数边框*/ outline  1 2 3 4 5 6 7 8 9  width:180px; height:90px; margin:30px auto; text-align:center; padding:10px; background:##655; outline: ##fff dashed 1px; outline-offset: -15px; /*设置outline向内缩进*/ border-radius:8px;   注意： outline可能会产生不贴合border-radius圆角的情况 —-P20—-...</p>
-  </section>
-  <footer class="entry-footer"><span title='2019-12-23 00:00:00 +0000 UTC'>December 23, 2019</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to CSS揭秘一书中的知识" href="https://www.fintinger.site/p/css%E6%8F%AD%E7%A7%98%E4%B8%80%E4%B9%A6%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://www.fintinger.site/categories/%E5%89%8D%E7%AB%AF/page/6/">« Prev Page</a>
+    <a class="next" href="https://www.fintinger.site/categories/%E5%89%8D%E7%AB%AF/page/8/">Next Page »</a>
   </nav>
 </footer>
     </main>

@@ -5,24 +5,23 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Vue中的数据监视原理 | Archai&#39;s home</title>
-<meta name="keywords" content="Vue.js" />
-<meta name="description" content="1.vue会监视data中所有层次的数据. vue对于配置在data中的所有对象都会以key值作为目标进行监视，不论多少层，都会递归地为每一个key配置getter和setter(通过Object.defineProperty())。
- 相关阅读 MDN关于defineProperty的说明
- 2.如何监测对象中的数据? 通过setter实现监视,且要在new Vue时就传入要监测的数据，即在data中提前配置。
-(1).对象中后追加的属性,Vue默认不做响应式处理
-直接通过修改vm._data或者vm来添加key，并不会配置getter和setter，因此不会做响应式
-(2).如需给后添加的属性做响应式,请使用如下API: Vue.set(target,key/index,value)或vm.$set(target,key/index,value)（可以同时修改数组和对象）
-​	特别注意: Vue.set()和vm.$set()不能直接给vm或vm的根数据对象(vm._data)添加属性!!!
-3.如何监测数组中的数据? 在数组中直接通过索引的方式修改数组并不会引起Vue的响应，那么要如何做呢？Vue通过包裹数组更新元素的方法(对原数组方法进行修改)实现,本质就是做了两件事:
-(1). 调用原生对应的方法对数组进行更新.
-(2). 重新解析模板,进而更新页面.
-就包裹了下面的七种数组方法：
- push() pop() shift() unshift() splice() sort() reverse()  也就是说，通过上面七种方法修改数组，会让Vue做出响应。
-例如想要修改数组中索引为0的位置的数据，可以通过 vm.data.arr.splice(0,0,val)或Vue.set(vm.data.arr,0,val)又或者vm.$set(vm.data.arr,0,val)，在具体的由Vue管理的方法中this指向的应该就是vm！！
-数据劫持 Vue通过setter,getter对数据进行动态监测，其实就是“劫持”了数据😯">
+<title>浏览器本地存储 | Archai&#39;s home</title>
+<meta name="keywords" content="Javascript" />
+<meta name="description" content="webStorage   存储内容大小一般支持5MB左右(不同浏览器可能还不一样)。
+  浏览器端通过Window.sessionStorage和Window.localStorage属性来实现本地存储机制。
+  相关API:
+  xxxStorage.setItem(&#39;key&#39;,&#39;value&#39;);
+该方法接受一个键和值作为参数,会把键值对添加到存储中,如果键名存在,则更新其对应的值。
+  xxxStorage.getItem(&#39;key&#39;);
+该方法接受一个键名作为参数，返回键名对应的值。
+  xxxStorage.removeItem(&#39;key&#39;);
+该方法接受一个键名作为参数，并把该键名从存储中删除。
+  xxxStorage.clear();
+该方法会清空存储中的所有数据。
+    备注:
+ SessionStorage存储的内容会随着浏览器窗口关闭而消失。 LocalStorage存储的内容，需要手动清除才会消失。 xxxStorage.getItem(&#39;key&#39;);如果key对应的value获取不到，那么getItem的返回值是null。 可以通过JSON.stringify()存储对象，通过JSON.parse()解析对象，JSON.parse(null)的结果仍然是null。    ">
 <meta name="author" content="Archai">
-<link rel="canonical" href="https://www.fintinger.site/p/vue%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%9B%91%E8%A7%86%E5%8E%9F%E7%90%86/" />
+<link rel="canonical" href="https://www.fintinger.site/p/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.5801d16a0eff04ddc43661d83501a64f9bd5ebd0d26c58a21acbae9272b6c64a.css" integrity="sha256-WAHRag7/BN3ENmHYNQGmT5vV69DSbFiiGsuuknK2xko=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
@@ -39,42 +38,40 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Vue中的数据监视原理" />
-<meta property="og:description" content="1.vue会监视data中所有层次的数据. vue对于配置在data中的所有对象都会以key值作为目标进行监视，不论多少层，都会递归地为每一个key配置getter和setter(通过Object.defineProperty())。
- 相关阅读 MDN关于defineProperty的说明
- 2.如何监测对象中的数据? 通过setter实现监视,且要在new Vue时就传入要监测的数据，即在data中提前配置。
-(1).对象中后追加的属性,Vue默认不做响应式处理
-直接通过修改vm._data或者vm来添加key，并不会配置getter和setter，因此不会做响应式
-(2).如需给后添加的属性做响应式,请使用如下API: Vue.set(target,key/index,value)或vm.$set(target,key/index,value)（可以同时修改数组和对象）
-​	特别注意: Vue.set()和vm.$set()不能直接给vm或vm的根数据对象(vm._data)添加属性!!!
-3.如何监测数组中的数据? 在数组中直接通过索引的方式修改数组并不会引起Vue的响应，那么要如何做呢？Vue通过包裹数组更新元素的方法(对原数组方法进行修改)实现,本质就是做了两件事:
-(1). 调用原生对应的方法对数组进行更新.
-(2). 重新解析模板,进而更新页面.
-就包裹了下面的七种数组方法：
- push() pop() shift() unshift() splice() sort() reverse()  也就是说，通过上面七种方法修改数组，会让Vue做出响应。
-例如想要修改数组中索引为0的位置的数据，可以通过 vm.data.arr.splice(0,0,val)或Vue.set(vm.data.arr,0,val)又或者vm.$set(vm.data.arr,0,val)，在具体的由Vue管理的方法中this指向的应该就是vm！！
-数据劫持 Vue通过setter,getter对数据进行动态监测，其实就是“劫持”了数据😯" />
+</noscript><meta property="og:title" content="浏览器本地存储" />
+<meta property="og:description" content="webStorage   存储内容大小一般支持5MB左右(不同浏览器可能还不一样)。
+  浏览器端通过Window.sessionStorage和Window.localStorage属性来实现本地存储机制。
+  相关API:
+  xxxStorage.setItem(&#39;key&#39;,&#39;value&#39;);
+该方法接受一个键和值作为参数,会把键值对添加到存储中,如果键名存在,则更新其对应的值。
+  xxxStorage.getItem(&#39;key&#39;);
+该方法接受一个键名作为参数，返回键名对应的值。
+  xxxStorage.removeItem(&#39;key&#39;);
+该方法接受一个键名作为参数，并把该键名从存储中删除。
+  xxxStorage.clear();
+该方法会清空存储中的所有数据。
+    备注:
+ SessionStorage存储的内容会随着浏览器窗口关闭而消失。 LocalStorage存储的内容，需要手动清除才会消失。 xxxStorage.getItem(&#39;key&#39;);如果key对应的value获取不到，那么getItem的返回值是null。 可以通过JSON.stringify()存储对象，通过JSON.parse()解析对象，JSON.parse(null)的结果仍然是null。    " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.fintinger.site/p/vue%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%9B%91%E8%A7%86%E5%8E%9F%E7%90%86/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-03-21T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2022-03-21T00:00:00&#43;00:00" /><meta property="og:site_name" content="Archai&#39;s home" />
+<meta property="og:url" content="https://www.fintinger.site/p/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-03-30T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2022-03-30T00:00:00&#43;00:00" /><meta property="og:site_name" content="Archai&#39;s home" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Vue中的数据监视原理"/>
-<meta name="twitter:description" content="1.vue会监视data中所有层次的数据. vue对于配置在data中的所有对象都会以key值作为目标进行监视，不论多少层，都会递归地为每一个key配置getter和setter(通过Object.defineProperty())。
- 相关阅读 MDN关于defineProperty的说明
- 2.如何监测对象中的数据? 通过setter实现监视,且要在new Vue时就传入要监测的数据，即在data中提前配置。
-(1).对象中后追加的属性,Vue默认不做响应式处理
-直接通过修改vm._data或者vm来添加key，并不会配置getter和setter，因此不会做响应式
-(2).如需给后添加的属性做响应式,请使用如下API: Vue.set(target,key/index,value)或vm.$set(target,key/index,value)（可以同时修改数组和对象）
-​	特别注意: Vue.set()和vm.$set()不能直接给vm或vm的根数据对象(vm._data)添加属性!!!
-3.如何监测数组中的数据? 在数组中直接通过索引的方式修改数组并不会引起Vue的响应，那么要如何做呢？Vue通过包裹数组更新元素的方法(对原数组方法进行修改)实现,本质就是做了两件事:
-(1). 调用原生对应的方法对数组进行更新.
-(2). 重新解析模板,进而更新页面.
-就包裹了下面的七种数组方法：
- push() pop() shift() unshift() splice() sort() reverse()  也就是说，通过上面七种方法修改数组，会让Vue做出响应。
-例如想要修改数组中索引为0的位置的数据，可以通过 vm.data.arr.splice(0,0,val)或Vue.set(vm.data.arr,0,val)又或者vm.$set(vm.data.arr,0,val)，在具体的由Vue管理的方法中this指向的应该就是vm！！
-数据劫持 Vue通过setter,getter对数据进行动态监测，其实就是“劫持”了数据😯"/>
+<meta name="twitter:title" content="浏览器本地存储"/>
+<meta name="twitter:description" content="webStorage   存储内容大小一般支持5MB左右(不同浏览器可能还不一样)。
+  浏览器端通过Window.sessionStorage和Window.localStorage属性来实现本地存储机制。
+  相关API:
+  xxxStorage.setItem(&#39;key&#39;,&#39;value&#39;);
+该方法接受一个键和值作为参数,会把键值对添加到存储中,如果键名存在,则更新其对应的值。
+  xxxStorage.getItem(&#39;key&#39;);
+该方法接受一个键名作为参数，返回键名对应的值。
+  xxxStorage.removeItem(&#39;key&#39;);
+该方法接受一个键名作为参数，并把该键名从存储中删除。
+  xxxStorage.clear();
+该方法会清空存储中的所有数据。
+    备注:
+ SessionStorage存储的内容会随着浏览器窗口关闭而消失。 LocalStorage存储的内容，需要手动清除才会消失。 xxxStorage.getItem(&#39;key&#39;);如果key对应的value获取不到，那么getItem的返回值是null。 可以通过JSON.stringify()存储对象，通过JSON.parse()解析对象，JSON.parse(null)的结果仍然是null。    "/>
 
 
 <script type="application/ld+json">
@@ -91,8 +88,8 @@
     {
       "@type": "ListItem",
       "position":  3 ,
-      "name": "Vue中的数据监视原理",
-      "item": "https://www.fintinger.site/p/vue%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%9B%91%E8%A7%86%E5%8E%9F%E7%90%86/"
+      "name": "浏览器本地存储",
+      "item": "https://www.fintinger.site/p/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/"
     }
   ]
 }
@@ -101,24 +98,24 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Vue中的数据监视原理",
-  "name": "Vue中的数据监视原理",
-  "description": "1.vue会监视data中所有层次的数据. vue对于配置在data中的所有对象都会以key值作为目标进行监视，不论多少层，都会递归地为每一个key配置getter和setter(通过Object.defineProperty())。\n 相关阅读 MDN关于defineProperty的说明\n 2.如何监测对象中的数据? 通过setter实现监视,且要在new Vue时就传入要监测的数据，即在data中提前配置。\n(1).对象中后追加的属性,Vue默认不做响应式处理\n直接通过修改vm._data或者vm来添加key，并不会配置getter和setter，因此不会做响应式\n(2).如需给后添加的属性做响应式,请使用如下API: Vue.set(target,key/index,value)或vm.$set(target,key/index,value)（可以同时修改数组和对象）\n​\t特别注意: Vue.set()和vm.$set()不能直接给vm或vm的根数据对象(vm._data)添加属性!!!\n3.如何监测数组中的数据? 在数组中直接通过索引的方式修改数组并不会引起Vue的响应，那么要如何做呢？Vue通过包裹数组更新元素的方法(对原数组方法进行修改)实现,本质就是做了两件事:\n(1). 调用原生对应的方法对数组进行更新.\n(2). 重新解析模板,进而更新页面.\n就包裹了下面的七种数组方法：\n push() pop() shift() unshift() splice() sort() reverse()  也就是说，通过上面七种方法修改数组，会让Vue做出响应。\n例如想要修改数组中索引为0的位置的数据，可以通过 vm.data.arr.splice(0,0,val)或Vue.set(vm.data.arr,0,val)又或者vm.$set(vm.data.arr,0,val)，在具体的由Vue管理的方法中this指向的应该就是vm！！\n数据劫持 Vue通过setter,getter对数据进行动态监测，其实就是“劫持”了数据😯",
+  "headline": "浏览器本地存储",
+  "name": "浏览器本地存储",
+  "description": "webStorage   存储内容大小一般支持5MB左右(不同浏览器可能还不一样)。\n  浏览器端通过Window.sessionStorage和Window.localStorage属性来实现本地存储机制。\n  相关API:\n  xxxStorage.setItem('key','value');\n该方法接受一个键和值作为参数,会把键值对添加到存储中,如果键名存在,则更新其对应的值。\n  xxxStorage.getItem('key');\n该方法接受一个键名作为参数，返回键名对应的值。\n  xxxStorage.removeItem('key');\n该方法接受一个键名作为参数，并把该键名从存储中删除。\n  xxxStorage.clear();\n该方法会清空存储中的所有数据。\n    备注:\n SessionStorage存储的内容会随着浏览器窗口关闭而消失。 LocalStorage存储的内容，需要手动清除才会消失。 xxxStorage.getItem('key');如果key对应的value获取不到，那么getItem的返回值是null。 可以通过JSON.stringify()存储对象，通过JSON.parse()解析对象，JSON.parse(null)的结果仍然是null。    ",
   "keywords": [
-    "Vue.js"
+    "Javascript"
   ],
-  "articleBody": "1.vue会监视data中所有层次的数据. vue对于配置在data中的所有对象都会以key值作为目标进行监视，不论多少层，都会递归地为每一个key配置getter和setter(通过Object.defineProperty())。\n 相关阅读 MDN关于defineProperty的说明\n 2.如何监测对象中的数据? 通过setter实现监视,且要在new Vue时就传入要监测的数据，即在data中提前配置。\n(1).对象中后追加的属性,Vue默认不做响应式处理\n直接通过修改vm._data或者vm来添加key，并不会配置getter和setter，因此不会做响应式\n(2).如需给后添加的属性做响应式,请使用如下API: Vue.set(target,key/index,value)或vm.$set(target,key/index,value)（可以同时修改数组和对象）\n​\t特别注意: Vue.set()和vm.$set()不能直接给vm或vm的根数据对象(vm._data)添加属性!!!\n3.如何监测数组中的数据? 在数组中直接通过索引的方式修改数组并不会引起Vue的响应，那么要如何做呢？Vue通过包裹数组更新元素的方法(对原数组方法进行修改)实现,本质就是做了两件事:\n(1). 调用原生对应的方法对数组进行更新.\n(2). 重新解析模板,进而更新页面.\n就包裹了下面的七种数组方法：\n push() pop() shift() unshift() splice() sort() reverse()  也就是说，通过上面七种方法修改数组，会让Vue做出响应。\n例如想要修改数组中索引为0的位置的数据，可以通过 vm.data.arr.splice(0,0,val)或Vue.set(vm.data.arr,0,val)又或者vm.$set(vm.data.arr,0,val)，在具体的由Vue管理的方法中this指向的应该就是vm！！\n数据劫持 Vue通过setter,getter对数据进行动态监测，其实就是“劫持”了数据😯\n",
-  "wordCount" : "33",
+  "articleBody": "webStorage   存储内容大小一般支持5MB左右(不同浏览器可能还不一样)。\n  浏览器端通过Window.sessionStorage和Window.localStorage属性来实现本地存储机制。\n  相关API:\n  xxxStorage.setItem('key','value');\n该方法接受一个键和值作为参数,会把键值对添加到存储中,如果键名存在,则更新其对应的值。\n  xxxStorage.getItem('key');\n该方法接受一个键名作为参数，返回键名对应的值。\n  xxxStorage.removeItem('key');\n该方法接受一个键名作为参数，并把该键名从存储中删除。\n  xxxStorage.clear();\n该方法会清空存储中的所有数据。\n    备注:\n SessionStorage存储的内容会随着浏览器窗口关闭而消失。 LocalStorage存储的内容，需要手动清除才会消失。 xxxStorage.getItem('key');如果key对应的value获取不到，那么getItem的返回值是null。 可以通过JSON.stringify()存储对象，通过JSON.parse()解析对象，JSON.parse(null)的结果仍然是null。    ",
+  "wordCount" : "17",
   "inLanguage": "en",
-  "datePublished": "2022-03-21T00:00:00Z",
-  "dateModified": "2022-03-21T00:00:00Z",
+  "datePublished": "2022-03-30T00:00:00Z",
+  "dateModified": "2022-03-30T00:00:00Z",
   "author":{
     "@type": "Person",
     "name": "Archai"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.fintinger.site/p/vue%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%9B%91%E8%A7%86%E5%8E%9F%E7%90%86/"
+    "@id": "https://www.fintinger.site/p/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/"
   },
   "publisher": {
     "@type": "Organization",
@@ -197,9 +194,9 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://www.fintinger.site">Home</a>&nbsp;»&nbsp;<a href="https://www.fintinger.site/posts/">Posts</a></div>
     <h1 class="post-title">
-      Vue中的数据监视原理
+      浏览器本地存储
     </h1>
-    <div class="post-meta"><span title='2022-03-21 00:00:00 +0000 UTC'>March 21, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai
+    <div class="post-meta"><span title='2022-03-30 00:00:00 +0000 UTC'>March 30, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai
 
 </div>
   </header> <div class="toc">
@@ -210,67 +207,70 @@
 
         <div class="inner"><ul>
                 <li>
-                    <a href="#1vue%e4%bc%9a%e7%9b%91%e8%a7%86data%e4%b8%ad%e6%89%80%e6%9c%89%e5%b1%82%e6%ac%a1%e7%9a%84%e6%95%b0%e6%8d%ae" aria-label="1.vue会监视data中所有层次的数据.">1.vue会监视data中所有层次的数据.</a></li>
-                <li>
-                    <a href="#2%e5%a6%82%e4%bd%95%e7%9b%91%e6%b5%8b%e5%af%b9%e8%b1%a1%e4%b8%ad%e7%9a%84%e6%95%b0%e6%8d%ae" aria-label="2.如何监测对象中的数据?">2.如何监测<strong>对象</strong>中的数据?</a></li>
-                <li>
-                    <a href="#3%e5%a6%82%e4%bd%95%e7%9b%91%e6%b5%8b%e6%95%b0%e7%bb%84%e4%b8%ad%e7%9a%84%e6%95%b0%e6%8d%ae" aria-label="3.如何监测数组中的数据?">3.如何监测<strong>数组</strong>中的数据?</a></li>
-                <li>
-                    <a href="#%e6%95%b0%e6%8d%ae%e5%8a%ab%e6%8c%81" aria-label="数据劫持">数据劫持</a>
+                    <a href="#webstorage" aria-label="webStorage">webStorage</a>
                 </li>
             </ul>
         </div>
     </details>
 </div>
 
-  <div class="post-content"><h2 id="1vue会监视data中所有层次的数据">1.vue会监视data中所有层次的数据.<a hidden class="anchor" aria-hidden="true" href="#1vue会监视data中所有层次的数据">#</a></h2>
-<p>vue对于配置在data中的所有对象都会以key值作为目标进行监视，不论多少层，都会递归地为每一个key配置getter和setter(通过<code>Object.defineProperty()</code>)。</p>
-<blockquote>
-<p>相关阅读 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty">MDN关于defineProperty的说明</a></p>
-</blockquote>
-<h2 id="2如何监测对象中的数据">2.如何监测<strong>对象</strong>中的数据?<a hidden class="anchor" aria-hidden="true" href="#2如何监测对象中的数据">#</a></h2>
-<p>通过setter实现监视,且要在new Vue时就传入要监测的数据，即在data中提前配置。</p>
-<p>(1).对象中后追加的属性,Vue默认不做响应式处理</p>
-<p>直接通过修改vm._data或者vm来添加key，并不会配置getter和setter，因此不会做响应式</p>
-<p>(2).如需给后添加的属性做响应式,请使用如下API:
-<code>Vue.set(target,key/index,value)</code>或<code>vm.$set(target,key/index,value)</code>（可以同时修改数组和对象）</p>
-<p>​	 <strong>特别注意: Vue.set()和vm.$set()不能直接给vm或vm的根数据对象(vm._data)添加属性!!!</strong></p>
-<h2 id="3如何监测数组中的数据">3.如何监测<strong>数组</strong>中的数据?<a hidden class="anchor" aria-hidden="true" href="#3如何监测数组中的数据">#</a></h2>
-<p>在<strong>数组中直接通过索引的方式修改数组并不会引起Vue的响应</strong>，那么要如何做呢？Vue通过<a href="https://vuejs.bootcss.com/guide/list.html#%E6%95%B0%E7%BB%84%E6%9B%B4%E6%96%B0%E6%A3%80%E6%B5%8B">包裹数组更新元素的方法</a>(对原数组方法进行修改)实现,本质就是做了两件事:</p>
-<p>(1). 调用原生对应的方法对数组进行更新.</p>
-<p>(2). 重新解析模板,进而更新页面.</p>
-<p>就包裹了下面的七种数组方法：</p>
+  <div class="post-content"><h2 id="webstorage">webStorage<a hidden class="anchor" aria-hidden="true" href="#webstorage">#</a></h2>
+<ol>
+<li>
+<p>存储内容大小一般支持5MB左右(不同浏览器可能还不一样)。</p>
+</li>
+<li>
+<p>浏览器端通过Window.sessionStorage和Window.localStorage属性来实现本地存储机制。</p>
+</li>
+<li>
+<p>相关API:</p>
 <ul>
-<li><code>push()</code></li>
-<li><code>pop()</code></li>
-<li><code>shift()</code></li>
-<li><code>unshift()</code></li>
-<li><code>splice()</code></li>
-<li><code>sort()</code></li>
-<li><code>reverse()</code></li>
+<li>
+<p><code>xxxStorage.setItem('key','value');</code></p>
+<p>该方法接受一个键和值作为参数,会把键值对添加到存储中,如果键名存在,则更新其对应的值。</p>
+</li>
+<li>
+<p><code>xxxStorage.getItem('key');</code></p>
+<p>该方法接受一个键名作为参数，返回键名对应的值。</p>
+</li>
+<li>
+<p><code>xxxStorage.removeItem('key');</code></p>
+<p>该方法接受一个键名作为参数，并把该键名从存储中删除。</p>
+</li>
+<li>
+<p><code>xxxStorage.clear();</code></p>
+<p>该方法会清空存储中的所有数据。</p>
+</li>
 </ul>
-<p>也就是说，通过上面七种方法修改数组，会让Vue做出响应。</p>
-<p>例如想要修改数组中索引为0的位置的数据，可以通过 <code>vm.data.arr.splice(0,0,val)</code>或<code>Vue.set(vm.data.arr,0,val)</code>又或者<code>vm.$set(vm.data.arr,0,val)</code>，在具体的由Vue管理的方法中this指向的应该就是vm！！</p>
-<h2 id="数据劫持">数据劫持<a hidden class="anchor" aria-hidden="true" href="#数据劫持">#</a></h2>
-<p>Vue通过setter,getter对数据进行动态监测，其实就是“劫持”了数据😯</p>
+</li>
+<li>
+<p>备注:</p>
+<ol>
+<li>SessionStorage存储的内容会随着浏览器窗口关闭而消失。</li>
+<li>LocalStorage存储的内容，需要手动清除才会消失。</li>
+<li><code>xxxStorage.getItem('key');</code>如果key对应的value获取不到，那么getItem的返回值是null。</li>
+<li>可以通过<code>JSON.stringify()</code>存储对象，通过<code>JSON.parse()</code>解析对象，<code>JSON.parse(null)</code>的结果仍然是null。</li>
+</ol>
+</li>
+</ol>
 
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://www.fintinger.site/tags/vue.js/">Vue.js</a></li>
+      <li><a href="https://www.fintinger.site/tags/javascript/">Javascript</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://www.fintinger.site/p/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/">
+  <a class="prev" href="https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/">
     <span class="title">« Prev Page</span>
     <br>
-    <span>浏览器本地存储</span>
+    <span>Ajax学习小结</span>
   </a>
-  <a class="next" href="https://www.fintinger.site/p/canvas%E7%BB%98%E5%88%B6%E8%B7%9F%E9%9A%8F%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%8A%A8%E7%9A%84%E7%BA%BF%E6%9D%A1/">
+  <a class="next" href="https://www.fintinger.site/p/vue%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%9B%91%E8%A7%86%E5%8E%9F%E7%90%86/">
     <span class="title">Next Page »</span>
     <br>
-    <span>canvas绘制跟随鼠标移动的线条</span>
+    <span>Vue中的数据监视原理</span>
   </a>
 </nav>
 

@@ -119,6 +119,31 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>向量空间管理策略
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>向量的空间管理，有静态和动态两种策略
+ 静态空间管理策略 开辟内部数组_elem[]并使用一段地址连续的物理空间，_capacity表示总容量 ，_size表示当前的实际规模n，示意图如下：
+若采用静态空间管理策略，容量_capacity固定，则有明显的不足…
+上溢/overflow： _elem[]不足以存放所有元素，尽管此时系统往往仍有足够的空间
+下溢/underflow：  _elem[]中的元素寥寥无几，装填因子 λ = _size / _capacity « 50%
+动态空间管理策略 在即将上溢时，适当扩大内部数组的容量
+递增策略 当需要扩容时，为_capacity追加固定大小的空间，即
+1  T* oldElem = _elem; _elem = new T[ _capacity &#43;= INCREMENT ];   考虑最坏情况，在初始容量为0的空向量中连续插入n = m*I个元素
+那么，在第1，I&#43;1，2I&#43;1，3I&#43;1…次插入元素时都需要扩容，表示为
+倍增策略 当需要扩容时，增加_capacity 为原来的两倍，即
+1  T* oldElem = _elem; _elem = new T[ _capacity &lt;&lt;= 1 ];   考虑最坏情况，在初始容量为1的空向量中连续插入n = 2^m个元素
+那么，在第1，2，4，8…次插入元素时都需要扩容，表示为
+两种策略的复杂度分析 考虑最坏的情况，两种策略的复杂度分别为
+ 递增策略： 为算术级数，0&#43;I&#43;2I&#43;…=O(n ²) 倍增策略： 为几何级数，1&#43;2¹&#43;2²&#43;2³&#43;…=O(2^m)=O(n)      递增策略 倍增策略     累计时间 O(n ²) O(n)   分摊时间 O(n) O(1)   装填因子 λ ≈100% &gt;50%    可以看出，倍增策略在牺牲空间的基础上，换取时间上的巨大提升，可采取√...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-11-16 00:00:00 +0000 UTC'>November 16, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 向量空间管理策略" href="https://www.fintinger.site/p/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>减而治之与分而治之
     </h2>
   </header>
@@ -202,20 +227,6 @@ const不能在条件语句中使用，必出错
   </section>
   <footer class="entry-footer"><span title='2020-10-03 00:00:00 +0000 UTC'>October 3, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to PHP开发验证码类" href="https://www.fintinger.site/p/php%E5%BC%80%E5%8F%91%E9%AA%8C%E8%AF%81%E7%A0%81%E7%B1%BB/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Git相关
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>基本命令 1 2 3 4 5 6 7 8  git config --global =&gt;全局配置 git config =&gt;当前仓库配置 mkdir =&gt;创建文件夹 ls =&gt;列出当前目录下(文件，文件夹) ls -a =&gt;所有all rm -rf * =&gt;删除当前目录下所有 touch =&gt;新建文件 cat =&gt;查看文件中的内容    不想`git add . 所有？
- 配置.gitignore 定义忽略提交的文件，其中
- 所有空行或者以注释符号 ＃ 开头的行都会被 Git 忽略。 匹配模式最后跟反斜杠（/）说明要忽略的是目录。 可以使用标准的 glob 模式(php)匹配。  从版本库删除 1 2  git rm ... =&gt;从版本库中删除，本地也会删除 git rm --cached ... =&gt;只从版本库删除   从版本库改名 1  git mv ....</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-09-29 00:00:00 +0000 UTC'>September 29, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to Git相关" href="https://www.fintinger.site/p/git%E7%9B%B8%E5%85%B3/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

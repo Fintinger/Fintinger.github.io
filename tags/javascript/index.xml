@@ -5,7 +5,7 @@
     <link>https://www.fintinger.site/tags/javascript/</link>
     <description>Recent content in Javascript on Archai&#39;s home</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 20 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ES6之Promise用法小结</title>
       <link>https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/</link>
@@ -16,6 +16,27 @@
 基本用法 对于一个标准的Prommise，其基本写法为:
 1 2 3 4 5 6 7 8 9 10 11 12 13  new Promise(function (resolve, reject) { //do something...  //success  resolve(&amp;#39;success&amp;#39;) //fail &amp;amp; reject  // reject(&amp;#39;rejected&amp;#39;) *resolve和reject只能出现一个 }).then( function (value) { //if succeed,do something...  }, function (reason) { //if fail &amp;amp; reject,do something...  } )   如果采用ES6的箭头函数写法，则为:
 1 2 3 4 5 6 7  new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //reject(&amp;#39;rejected&amp;#39;) }).</description>
+    </item>
+    
+    <item>
+      <title>浏览器本地存储</title>
+      <link>https://www.fintinger.site/p/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/</link>
+      <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/</guid>
+      <description>webStorage   存储内容大小一般支持5MB左右(不同浏览器可能还不一样)。
+  浏览器端通过Window.sessionStorage和Window.localStorage属性来实现本地存储机制。
+  相关API:
+  xxxStorage.setItem(&#39;key&#39;,&#39;value&#39;);
+该方法接受一个键和值作为参数,会把键值对添加到存储中,如果键名存在,则更新其对应的值。
+  xxxStorage.getItem(&#39;key&#39;);
+该方法接受一个键名作为参数，返回键名对应的值。
+  xxxStorage.removeItem(&#39;key&#39;);
+该方法接受一个键名作为参数，并把该键名从存储中删除。
+  xxxStorage.clear();
+该方法会清空存储中的所有数据。
+    备注:
+ SessionStorage存储的内容会随着浏览器窗口关闭而消失。 LocalStorage存储的内容，需要手动清除才会消失。 xxxStorage.getItem(&#39;key&#39;);如果key对应的value获取不到，那么getItem的返回值是null。 可以通过JSON.stringify()存储对象，通过JSON.parse()解析对象，JSON.parse(null)的结果仍然是null。    </description>
     </item>
     
     <item>

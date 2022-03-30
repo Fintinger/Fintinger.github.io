@@ -147,6 +147,30 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>浏览器本地存储
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>webStorage   存储内容大小一般支持5MB左右(不同浏览器可能还不一样)。
+  浏览器端通过Window.sessionStorage和Window.localStorage属性来实现本地存储机制。
+  相关API:
+  xxxStorage.setItem(&#39;key&#39;,&#39;value&#39;);
+该方法接受一个键和值作为参数,会把键值对添加到存储中,如果键名存在,则更新其对应的值。
+  xxxStorage.getItem(&#39;key&#39;);
+该方法接受一个键名作为参数，返回键名对应的值。
+  xxxStorage.removeItem(&#39;key&#39;);
+该方法接受一个键名作为参数，并把该键名从存储中删除。
+  xxxStorage.clear();
+该方法会清空存储中的所有数据。
+    备注:
+ SessionStorage存储的内容会随着浏览器窗口关闭而消失。 LocalStorage存储的内容，需要手动清除才会消失。 xxxStorage.getItem(&#39;key&#39;);如果key对应的value获取不到，那么getItem的返回值是null。 可以通过JSON.stringify()存储对象，通过JSON.parse()解析对象，JSON.parse(null)的结果仍然是null。    </p>
+  </section>
+  <footer class="entry-footer"><span title='2022-03-30 00:00:00 +0000 UTC'>March 30, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 浏览器本地存储" href="https://www.fintinger.site/p/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Vue中的数据监视原理
     </h2>
   </header>
@@ -182,25 +206,6 @@
   </section>
   <footer class="entry-footer"><span title='2022-03-20 00:00:00 +0000 UTC'>March 20, 2022</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to canvas绘制跟随鼠标移动的线条" href="https://www.fintinger.site/p/canvas%E7%BB%98%E5%88%B6%E8%B7%9F%E9%9A%8F%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%8A%A8%E7%9A%84%E7%BA%BF%E6%9D%A1/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>通过U盘安装Windows系统
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>创建U盘介质  有至少 8GB 空间的空白 U 盘，若不是空白创建介质时会自动清空。
- 🐾官方工具: https://go.microsoft.com/fwlink/?LinkId=691209
- 直接下载按照提示操作就行了，不过仅限win10
- 🐾ventoy(绿色开源)： 官网 蓝奏云 直链下载
-第一步：选择设备
-第二步：安装
-第三步：将下载的系统镜像 .iso 文件移动到U盘即可，这里推荐一个下载windows正版系统的网站 ITELLYOU
-注意保存必要文件 如果电脑无法正常打开 </p>
-  </section>
-  <footer class="entry-footer"><span title='2021-09-19 00:00:00 +0000 UTC'>September 19, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 通过U盘安装Windows系统" href="https://www.fintinger.site/p/%E9%80%9A%E8%BF%87u%E7%9B%98%E5%AE%89%E8%A3%85windows%E7%B3%BB%E7%BB%9F/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

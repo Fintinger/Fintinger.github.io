@@ -104,6 +104,19 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>一组循环数组
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>做网页轮播图，或者音乐播放列表时经常要用到一组循环的数组，到最后一项返回第一项，第一项返回最后一项
+利用两次判断 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29  function doLoop( arr ){ arr.loop_idx = 0; // 返回当前的元素  arr.current = function(){ if( this.loop_idx &lt; 0 ){// 第一次检查  this.loop_idx = this.length - 1;// 更新 loop_idx  } if( this.loop_idx &gt;= this.length ){// 第二次检查  this.loop_idx = 0;// 更新 loop_idx  } return arr[ this....</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-07-08 00:00:00 +0000 UTC'>July 8, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 一组循环数组" href="https://www.fintinger.site/p/%E4%B8%80%E7%BB%84%E5%BE%AA%E7%8E%AF%E6%95%B0%E7%BB%84/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>剪贴板功能实现
     </h2>
   </header>
@@ -162,20 +175,6 @@
   </section>
   <footer class="entry-footer"><span title='2020-07-01 00:00:00 +0000 UTC'>July 1, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to JavaScript瀑布流布局" href="https://www.fintinger.site/p/javascript%E7%80%91%E5%B8%83%E6%B5%81%E5%B8%83%E5%B1%80/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>关于Javascript模块化
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>模块功能主要由两个命令构成：export和import。export命令用于规定模块的对外接口，import命令用于输入其他模块提供的功能。
-//profile.jsexport var firstName = &#39;Michael&#39;;export var lastName = &#39;Jackson&#39;;export function sayName () {return firstName &#43; lastName;}export default function () {console.log(&#39;foo&#39;);}// main.jsimport { firstName, lastName , sayName} from &#39;./profile.js&#39;; 注意：在index.html中引入的时候需要给script加type=“module”,即
- &lt;script type=&#34;module&#34; src=&#34;./profiles.js&#34;&gt;&lt;/script&gt;&lt;script type=&#34;module&#34; src=&#34;./main.js&#34;&gt;&lt;/script&gt;</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-05-29 00:00:00 +0000 UTC'>May 29, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 关于Javascript模块化" href="https://www.fintinger.site/p/%E5%85%B3%E4%BA%8Ejavascript%E6%A8%A1%E5%9D%97%E5%8C%96/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

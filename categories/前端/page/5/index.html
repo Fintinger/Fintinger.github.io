@@ -104,6 +104,20 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>Ajax重复请求
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>在发送某一次请求时，如果不对请求做去重处理那么，同一个请求有可能会发送很多次，一个个慢慢响应，这会很大程度影响性能以及页面的使用体验
+ 全局变量
+1 2 3 4 5 6 7  /** * baseURL 是每次请求的地址 * x 表示XMLHttpRequest实例，初始为null * isSending 是用来判断请求是否处于发送状态的标识 */ const baseURL = &#34;http://127.0.0.1:8000/delay&#34; let x = null, isSending = false   原生请求 1 2 3 4 5 6 7 8 9 10 11 12 13 14  if (isSending) x.abort() x = new XMLHttpRequest() //正处于发送状态，修改标识 isSending = true x.open(&#34;GET&#34;, baseURL) x.send() x.onreadystatechange = function () { if (x....</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-08-13 00:00:00 +0000 UTC'>August 13, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to Ajax重复请求" href="https://www.fintinger.site/p/ajax%E9%87%8D%E5%A4%8D%E8%AF%B7%E6%B1%82/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>跨域及CORS官方跨域
     </h2>
   </header>
@@ -169,19 +183,6 @@ v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做
   </section>
   <footer class="entry-footer"><span title='2020-07-09 00:00:00 +0000 UTC'>July 9, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 获取文件扩展名" href="https://www.fintinger.site/p/%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>一组循环数组
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>做网页轮播图，或者音乐播放列表时经常要用到一组循环的数组，到最后一项返回第一项，第一项返回最后一项
-利用两次判断 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29  function doLoop( arr ){ arr.loop_idx = 0; // 返回当前的元素  arr.current = function(){ if( this.loop_idx &lt; 0 ){// 第一次检查  this.loop_idx = this.length - 1;// 更新 loop_idx  } if( this.loop_idx &gt;= this.length ){// 第二次检查  this.loop_idx = 0;// 更新 loop_idx  } return arr[ this....</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-07-08 00:00:00 +0000 UTC'>July 8, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 一组循环数组" href="https://www.fintinger.site/p/%E4%B8%80%E7%BB%84%E5%BE%AA%E7%8E%AF%E6%95%B0%E7%BB%84/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

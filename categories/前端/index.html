@@ -132,6 +132,30 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>浏览器本地存储
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>webStorage   存储内容大小一般支持5MB左右(不同浏览器可能还不一样)。
+  浏览器端通过Window.sessionStorage和Window.localStorage属性来实现本地存储机制。
+  相关API:
+  xxxStorage.setItem(&#39;key&#39;,&#39;value&#39;);
+该方法接受一个键和值作为参数,会把键值对添加到存储中,如果键名存在,则更新其对应的值。
+  xxxStorage.getItem(&#39;key&#39;);
+该方法接受一个键名作为参数，返回键名对应的值。
+  xxxStorage.removeItem(&#39;key&#39;);
+该方法接受一个键名作为参数，并把该键名从存储中删除。
+  xxxStorage.clear();
+该方法会清空存储中的所有数据。
+    备注:
+ SessionStorage存储的内容会随着浏览器窗口关闭而消失。 LocalStorage存储的内容，需要手动清除才会消失。 xxxStorage.getItem(&#39;key&#39;);如果key对应的value获取不到，那么getItem的返回值是null。 可以通过JSON.stringify()存储对象，通过JSON.parse()解析对象，JSON.parse(null)的结果仍然是null。    </p>
+  </section>
+  <footer class="entry-footer"><span title='2022-03-30 00:00:00 +0000 UTC'>March 30, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 浏览器本地存储" href="https://www.fintinger.site/p/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>Vue中的数据监视原理
     </h2>
   </header>
@@ -167,26 +191,6 @@
   </section>
   <footer class="entry-footer"><span title='2022-03-20 00:00:00 +0000 UTC'>March 20, 2022</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to canvas绘制跟随鼠标移动的线条" href="https://www.fintinger.site/p/canvas%E7%BB%98%E5%88%B6%E8%B7%9F%E9%9A%8F%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%8A%A8%E7%9A%84%E7%BA%BF%E6%9D%A1/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>PHP开发验证码类
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>利用php中的GD库可以完成验证码类的开发。后盾人教程
- PHP创建图像步骤 发送HTTP头信息，声明内容为图像 1 2 3  header(&#39;Content-type:image/gif&#39;); header(&#39;Content-type:image/jpeg&#39;); header(&#39;Content-type:image/png&#39;);   通过设置头信息让浏览器渲染出图像，而不是HTML等其他类型
-创建画布 1  imageCreateTrueColor(width,height);   width &amp; height 画布宽高，即为输出图片的尺寸,返回为source 类型，后续操作都是针对这个资源展开。
-创建绘图所需要的颜色 1  imageColorAllocate(img_resource,R,G,B);   颜色从属于创建画布产生的图像资源而存在，后面三个值分别为红绿蓝三个通道的值，为int类型,在0—255之间。
-绘图（填充画布、画圆、画方块、画线条、画布上写字） 👉 填充画布(画布背景)
-1  imageFill(img_resource,x,y,color);   👉 画圆
-1 2 3 4  //绘制空心圆形 imageEllipse(img_res,x,y,w,h,color); //绘制填充好的实心圆 imageFilledEllipse(img_res,x,y,w,h,color);   绘制 圆心(x,y) 宽 x，高 h，的圆
-👉 画方
-1 2 3 4  //空心矩形 imageRectangle(img_res,x1,y1,x2,y2,color); //实心矩形 imageFilledRectangle (img_res,x1,y1,x2,y2,color);   (x1,y1)为左上角坐标， (x2,y2)为右下角坐标...</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-10-03 00:00:00 +0000 UTC'>October 3, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to PHP开发验证码类" href="https://www.fintinger.site/p/php%E5%BC%80%E5%8F%91%E9%AA%8C%E8%AF%81%E7%A0%81%E7%B1%BB/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

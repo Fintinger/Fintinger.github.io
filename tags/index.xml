@@ -5,7 +5,16 @@
     <link>https://www.fintinger.site/tags/</link>
     <description>Recent content in Tags on Archai&#39;s home</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 21 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Javascript</title>
+      <link>https://www.fintinger.site/tags/javascript/</link>
+      <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Vue.js</title>
       <link>https://www.fintinger.site/tags/vue.js/</link>
@@ -372,15 +381,6 @@
       <pubDate>Tue, 29 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.fintinger.site/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Javascript</title>
-      <link>https://www.fintinger.site/tags/javascript/</link>
-      <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.fintinger.site/tags/javascript/</guid>
       <description></description>
     </item>
     

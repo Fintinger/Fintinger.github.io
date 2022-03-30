@@ -104,6 +104,26 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>PHP开发验证码类
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>利用php中的GD库可以完成验证码类的开发。后盾人教程
+ PHP创建图像步骤 发送HTTP头信息，声明内容为图像 1 2 3  header(&#39;Content-type:image/gif&#39;); header(&#39;Content-type:image/jpeg&#39;); header(&#39;Content-type:image/png&#39;);   通过设置头信息让浏览器渲染出图像，而不是HTML等其他类型
+创建画布 1  imageCreateTrueColor(width,height);   width &amp; height 画布宽高，即为输出图片的尺寸,返回为source 类型，后续操作都是针对这个资源展开。
+创建绘图所需要的颜色 1  imageColorAllocate(img_resource,R,G,B);   颜色从属于创建画布产生的图像资源而存在，后面三个值分别为红绿蓝三个通道的值，为int类型,在0—255之间。
+绘图（填充画布、画圆、画方块、画线条、画布上写字） 👉 填充画布(画布背景)
+1  imageFill(img_resource,x,y,color);   👉 画圆
+1 2 3 4  //绘制空心圆形 imageEllipse(img_res,x,y,w,h,color); //绘制填充好的实心圆 imageFilledEllipse(img_res,x,y,w,h,color);   绘制 圆心(x,y) 宽 x，高 h，的圆
+👉 画方
+1 2 3 4  //空心矩形 imageRectangle(img_res,x1,y1,x2,y2,color); //实心矩形 imageFilledRectangle (img_res,x1,y1,x2,y2,color);   (x1,y1)为左上角坐标， (x2,y2)为右下角坐标...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-10-03 00:00:00 +0000 UTC'>October 3, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to PHP开发验证码类" href="https://www.fintinger.site/p/php%E5%BC%80%E5%8F%91%E9%AA%8C%E8%AF%81%E7%A0%81%E7%B1%BB/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>Git相关
     </h2>
   </header>
@@ -164,20 +184,6 @@
   </section>
   <footer class="entry-footer"><span title='2020-09-04 00:00:00 +0000 UTC'>September 4, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to JavaScript中的继承与原型链分析" href="https://www.fintinger.site/p/javascript%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%88%86%E6%9E%90/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>关于JavaScript模块化
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>自定义一个模块引擎 要求： 能够让模块之间产生依赖关系
-代码
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30  let _module = (function () { let moduleList = {} function define(name, modules, action) { modules.map((n, i) =&gt; { //将传入的只含名称的模块数组 =&gt; 指定名称模块的返回结果  modules[i] = moduleList[n] }) moduleList[name] = action.apply(null, modules) // console.log(moduleList);  } return {define} })(); //定义一个工具库，暴露给外界使用，输出 _module....</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-09-02 00:00:00 +0000 UTC'>September 2, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 关于JavaScript模块化" href="https://www.fintinger.site/p/%E5%85%B3%E4%BA%8Ejavascript%E6%A8%A1%E5%9D%97%E5%8C%96/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

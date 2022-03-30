@@ -119,6 +119,18 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>排序算法相关
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>排序算法 平均时间复杂度 空间复杂度 稳定性 适用情况     插入排序 $O(n^2)$ O(1) 稳定 n较小，初始序列基本有序   希尔排序 $O(n^{1.3})$ O(1) 不稳定    冒泡排序 $O(n^2)$ O(1) 稳定 n较小，初始序列基本有序   快速排序 $O(n\log_2n)$ $O(nlog_2n)$ 不稳定 初始序列无序   简单选择排序 $O(n^2)$ O(1) 不稳定 n较小   堆排序 $O(n\log_2n)$ O(1) 不稳定 n较大或只排前几位   2-路归并排序 $O(n\log_2n)$ O(n) 稳定 n很大   链式基数排序 $O(d(n&#43;rd))$ $O(rd)$ 稳定 n大，关键字值小    相关概念 1....</p>
+  </section>
+  <footer class="entry-footer"><span title='2021-06-10 00:00:00 +0000 UTC'>June 10, 2021</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 排序算法相关" href="https://www.fintinger.site/p/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>查找算法相关
     </h2>
   </header>
@@ -189,40 +201,6 @@ TD=ID&#43;OD    对于带权图（网） 1 2 3 4 5 6 7 8 9 10 11  #define MaxVex
   </section>
   <footer class="entry-footer"><span title='2021-06-02 00:00:00 +0000 UTC'>June 2, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 图的存储" href="https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>AVL树
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>平衡二叉树是Adelson-Velsky和 Landis发明，故命名为AVL树。也称平衡二叉查找树。
- ✨特点： ①左子树&lt;根&lt;右子树； ②任一节点，左右子树高度之差不超过1.
-平衡因子 $平衡因子=左子树高-右子树高$
-AVL树的插入操作 AVL树插入新结点导致不平衡之后，只需将最小不平衡子树平衡，其他祖先结点会随之恢复平衡。
-调整最小不平衡子树 注意：调整过后必须保证其BST的特性，即“左子树1.LL  即在以A为根节点的树的左孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
- 调整过程如下：
-2.RR  即在以A为根节点的树的右孩子B的右子树上插入新结点，导致A成为最小不平衡子树。
- 调整过程如下：
-3.LR  即在以A为根节点的树的左孩子B的右子树上插入新结点，导致A成为最小不平衡子树。
- 观察得知，所进行的调整就是保证$|平衡因子|&lt;=1$，因此若插入操作使得
-左 - 右 &gt; 1 =&gt; 右旋
-右 - 左 &gt; 1 =&gt;左旋
-而当进行了LR插入操作之后，导致以A为根节点的树 左-右&gt;1，理应右旋但是，由上述结果可知，经过右旋之后：
-可以看到，为了保证其左子树&lt;根&lt;右子树的特性，经过调整后，依然存在右-左&gt;1的问题；
-因此，对于LR型不能简单进行右旋调整，应该先将其转化为LL型 (左旋)，再进行右旋；
-为此，我们需要将BR结点展开，之后旋转成为LL型插入
-可以看到，展开后又出现两种插入情况CL&amp;CR，但其实两者处理大同小异：
-CR插入调整过程如下：
-4.RL  即在以A为根节点的树的右孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
- 参考LR型，其调整过程如下：
-查找操作效率分析 Assuming that, $n_h$表示深度为h的平衡树中含有的最少结点，则
-$n_0=0$,$n_1=1$,$n_2=2$…存在递归关系 $n_h=n_{h-1}&#43;n_{h-2}&#43;1$,即左右子树结点之和&#43;根节点。
-可以证明(AVL证明)，n个结点的平衡二叉树最大深度数量级为$\log_2n$，则其查找操作的复杂度为$O(\log_2n)$</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-05-23 00:00:00 +0000 UTC'>May 23, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to AVL树" href="https://www.fintinger.site/p/avl%E6%A0%91/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
