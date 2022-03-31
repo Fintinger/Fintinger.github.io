@@ -290,10 +290,6 @@
     if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
-    document.body.addEventListener("dblclick", _ => {
-        document.querySelector("canvas").remove();
-        randomLine();
-    })
 
     function randomLine() {
         function n(n, e, t) {
@@ -304,19 +300,8 @@
         }
         function t() {
             var t = e("script"), o = t.length, i = t[o - 1];
-            return { l: o, z: n(i, "zIndex", -88), o: n(i, "opacity", ro()), c: n(i, "color", rc()), n: n(i, "count", 300) }
+            return { l: o, z: n(i, "zIndex", -88), o: n(i, "opacity", .3), c: n(i, "color", '0,0,0'), n: n(i, "count", 300) }
         }
-        
-        function r() {
-            return Math.floor(Math.random() * 255);
-        }
-        function rc() {
-            return `${r()},${r()},${r()}`
-        }
-        function ro() {
-            return (Math.floor((Math.random() * 4 + 5))) / 10
-        }
-        
         function o() {
             a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
                 c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
@@ -456,26 +441,74 @@ window.onerror=function(){return true;}
 </body>
 <script>
     
-    let vid =document.getElementById("liveBgBox");
-    window.onload = function () {
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'https://jqf.oss-cn-beijing.aliyuncs.com/videos/7kgkoysahpw31.mp4', true);
-        xhr.responseType = 'blob';
-        xhr.onload = function (e) {
-            if (this.status == 200) {
-                var blob = this.response;
-                vid.setAttribute("src", URL.createObjectURL(blob));
+    function blobAjax(url) {
+        return new Promise((reslove, reject) => {
+            let x = new XMLHttpRequest()
+            x.open("GET", url, true)
+            x.responseType = 'blob';
+            x.send()
+            x.onreadystatechange = function () {
+                if (x.readyState === 4) {
+                    if (x.status >= 200 && x.status < 300) {
+                        reslove(x.response)
+                    } else {
+                        reject("加载失败")
+                    }
+                }
             }
-        };
-        xhr.send();
+            x.onerror = function () {
+                reject("其它错误")
+            }
+        })
     }
 
     
-    let profile = document.getElementsByClassName("profile")[0];
-    if (profile) {
-        vid.style.display = "block";
-        window.document.body.style.background = "url('https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png') no-repeat  center/cover fixed";
+    function getSetAllResource(resourceArr) {
+        resourceArr.forEach(resource => {
+            blobAjax(resource.url).then(data => resource.callBack(data))
+        }).catch(err => {
+            console.log(err);
+        })
     }
+    
+    function setBgImgCallBack(blobRes) {
+        
+        let vid = document.getElementById("liveBgBox");
+        let profile = document.getElementsByClassName("profile")[0];
+        if (profile) {
+            vid.style.display = "block";
+            window.document.body.setAttribute('style', "background:url(" + URL.createObjectURL(blobRes) + ") no-repeat  center/cover fixed")
+        }
+    }
+    
+    function setBgvidCallBack(blobRes) {
+        
+
+        let vid = document.getElementById("liveBgBox");
+        vid.setAttribute("src", URL.createObjectURL(blobRes));
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    getSetAllResource([
+            {url:'https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png',callBack:setBgImgCallBack},
+            {url:'https://jqf.oss-cn-beijing.aliyuncs.com/videos/7kgkoysahpw31.mp4',callBack:setBgvidCallBack},
+        ])
 
 </script>
 
