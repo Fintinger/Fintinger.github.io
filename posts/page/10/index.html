@@ -119,6 +119,18 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>红警常见问题(收录中……)
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p></p>
+  </section>
+  <footer class="entry-footer"><span title='2020-08-15 00:00:00 +0000 UTC'>August 15, 2020</span>&nbsp;·&nbsp;0 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 红警常见问题(收录中……)" href="https://www.fintinger.site/p/%E7%BA%A2%E8%AD%A6%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%94%B6%E5%BD%95%E4%B8%AD/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Ajax重复请求
     </h2>
   </header>
@@ -179,25 +191,6 @@ v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做
   </section>
   <footer class="entry-footer"><span title='2020-07-18 00:00:00 +0000 UTC'>July 18, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to vue.js学习心得" href="https://www.fintinger.site/p/vue.js%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>获取文件扩展名
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>该怎么去获得文件名字符串中的文件扩展名呢？
-一种较为强大的解决方法是利用String的slice、lastIndexOf方法：
-1 2 3 4 5 6 7 8 9  function getFileExtension(filename) { return filename.slice((filename.lastIndexOf(&#34;.&#34;) - 1 &gt;&gt;&gt; 0) &#43; 2); } console.log(getFileExtension3(&#39;&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;filename&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;filename.txt&#39;)); // &#39;txt&#39; console.log(getFileExtension3(&#39;.hiddenfile&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;hiddenfile.&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;filename.with.many.dots.ext&#39;)); // &#39;ext&#39;   说明 filename.slice((filename.lastIndexOf(&#34;.&#34;) - 1 &gt;&gt;&gt; 0) &#43; 2)
- 本方法中的&gt;&gt;&gt;运算目的是
-找到最后一个.所在索引，然后索引-1&#43;2，相当于&#43;1，则slice方法返回.后面的后缀名
-.不会再开头，否则索引会是0，因为-1&gt;&gt;&gt;0 =﻿﻿﻿﻿ 4294967295，所不会匹配到
-.出现在末尾，索引会等于length&#43;1，也不会匹配到
- slice(start,end)  说明：start必须指定，负值为从后往前数，若只指定start值，则返回start位置及后面一直到数组结尾所有的元素 **注意：**区别于删除数组中的一段元素的方法 Array.splice()  lastIndexOf(searchvalue,fromindex)  **说明：**如果要检索的字符串值没有出现，则该方法返回 -1，该方法对大小写敏感 使用：  1 2 3 4  var str=&#34;Hello world!...</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-07-09 00:00:00 +0000 UTC'>July 9, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 获取文件扩展名" href="https://www.fintinger.site/p/%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

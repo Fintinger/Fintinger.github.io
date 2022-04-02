@@ -119,6 +119,20 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>JavaScript生成图片文件路径json
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>在写小demo的过程中，经常需要把某个文件夹的图片文件的路径给引入，除非全部重命名成有序的数字，不然不好处理，这就用到了node中的fs和path模块，还没学…
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  const path=require(&#34;path&#34;); const fs = require(&#39;fs&#39;); fs.stat(&#39;../images&#39;,(err)=&gt;{//图片文件所在目录  if (err)return; var result=&#39;{&#39; fs.readdir(&#34;../images&#34;,(err,data)=&gt;{//图片文件所在目录  for(var i=0;i&lt;Object.keys(data).length;i&#43;&#43;){ let ImgPath=&#34;\&#34;images/&#34;&#43;data[i]&#43;&#34;\&#34;&#34;; result&#43;=&#34;\&#34;&#34;&#43;i&#43;&#34;\&#34;:&#34;&#43;ImgPath&#43;&#34;,&#34;; } result=result.substring(0,result.length-1); let length=&#34;\&#34;&#34;&#43;&#34;length&#34;&#43;&#34;\&#34;&#34;&#43;&#34;:&#34;&#43;&#34;\&#34;&#34;&#43;Object.keys(data).length&#43;&#34;\&#34;&#34;//文件数量  result&#43;=&#34;,&#34;&#43;length&#43;&#39;}&#39; fs.writeFile(&#34;../data/imgPath.json&#34;,result,(err)=&gt;{ if(err)return; console.log(&#34;写入文件成功，一共&#34;&#43;Object.keys(data).length&#43;&#34;个文件&#34;); }); }); });   生成的文件大概就是这样的一个json数据
+1  {&#34;0&#34;:&#34;images/1.jpg&#34;,&#34;1&#34;:&#34;images/10.jpg&#34;,&#34;2&#34;:&#34;images/100.jpg&#34;,&#34;3&#34;:&#34;images/101.jpg&#34;,&#34;4&#34;:&#34;images/102.jpg&#34;,&#34;5&#34;:&#34;images/103.jpg&#34;,&#34;6&#34;:&#34;images/104.jpg&#34;,&#34;7&#34;:&#34;images/105.jpg&#34;,&#34;8&#34;:&#34;images/106.jpg&#34;,&#34;9&#34;:&#34;images/107.jpg&#34;,&#34;10&#34;:&#34;images/108.jpg&#34;,&#34;length&#34;:&#34;109&#34;}   </p>
+  </section>
+  <footer class="entry-footer"><span title='2020-07-05 00:00:00 +0000 UTC'>July 5, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript生成图片文件路径json" href="https://www.fintinger.site/p/javascript%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84json/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>JavaScript瀑布流布局
     </h2>
   </header>
@@ -177,25 +191,6 @@ def main():try:with open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;u
   </section>
   <footer class="entry-footer"><span title='2020-05-29 00:00:00 +0000 UTC'>May 29, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 关于Javascript模块化" href="https://www.fintinger.site/p/%E5%85%B3%E4%BA%8Ejavascript%E6%A8%A1%E5%9D%97%E5%8C%96/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>常用的一些html小问题
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>1. 网页出现横向滚动条？ &lt;body style=`overflow:-Scroll;overflow-y:hidden &gt; &lt;/body&gt;让横条没有：
- &lt;body style=`overflow:-Scroll;overflow-x:hidden&gt; &lt;/body&gt;两个都去掉？更简单了
-&lt;body scroll=&#34;no&#34; &gt; &lt;/body&gt;火狐底部滚动条不显示：
- html { overflow:-moz-scrollbars-vertical; }2. 网页图标？ &lt;link rel=&#34;shortcut icon &#34; href=&#34;images/favicon.ico&#34;&gt;3. Height:100%失效？ &lt;html style=&#34;height: 100%;&#34;&gt;&lt;body style=&#34;height: 100%;&#34;&gt;&lt;div style=&#34;height: 100%;&#34;&gt;&lt;p&gt; 这样这个div的高度就会100%了 &lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;4. 设置一个元素不可见？ opacity 设为 0、将 visibility 设为 hidden、将 display 设为 none 或者将 position 设为 absolute
-注意：
-1&gt; display=none元素消失，不占位置
-2&gt; opacity =0、 visibility =hidden只是视觉上不可见，其实还在那里占位置
-5.input无法输入？ ==&gt; height:0; (将包裹提示的div高度设置为0，让其不再遮挡即可)...</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-05-24 00:00:00 +0000 UTC'>May 24, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 常用的一些html小问题" href="https://www.fintinger.site/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E5%B0%8F%E9%97%AE%E9%A2%98/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

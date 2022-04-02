@@ -147,6 +147,37 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Vue2.0再学习小结
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>关于Vue和VueComponent   一个重要的内置关系:VueComponent.prototype.proto===vue.prototype
+  为什么要有这个关系？
+让组件实例对象(vc)可以访间到Vue原型上的属性、方法.
+  ref属性 1.被用来给元素或子组件注册引用信息(id的替代者)
+2.应用在htm1标签上获取的是真实DOM元素,应用在组件标签上是组件实例对象(vc)
+3.使用方式: 打标识: &lt;h1 ref=&#34;xxx&#34;&gt;.....&lt;/h1&gt;或&lt;School ref=&#34;xxx&#34;&gt;&lt;/School&gt; 获取:this.$refs.xxx
+配置项props 功能:让组件接收外部传过来的数据
+(1).传递数据:
+&lt;Demo name=&#34;xxx&#34;/&gt;
+(2).接收数据:
+第一种方式(只接收):
+props:[&#39;name&#39;]
+第二种方式(限制类型):
+props:{ name:String }
+第三种方式(限制类型、限制必要性、指定默认值):
+1 2 3 4 5 6 7  props:{ name:{ type:String,//类型限制  required:true,//必要性  default:&#34;JQF&#34;//默认值  } }   备注: props是只读的,Vue底层会监测你对props的修改,如果进行了修改,就会发出警告, 若业务需求确实需要修改,那么请复制props的内容到data中一份,然后去修改data中 的数据.
+mixin(混入) 功能: 可以把多个组件共用的配置提取成一个混入对象
+使用方式:
+第一步：定义混合
+1 2 3 4 5 6  const mixData={ data(){....</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-04-02 00:00:00 +0000 UTC'>April 2, 2022</span>&nbsp;·&nbsp;8 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to Vue2.0再学习小结" href="https://www.fintinger.site/p/vue2.0%E5%86%8D%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>浏览器本地存储
     </h2>
   </header>
@@ -192,20 +223,6 @@
   </section>
   <footer class="entry-footer"><span title='2022-03-21 00:00:00 +0000 UTC'>March 21, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to Vue中的数据监视原理" href="https://www.fintinger.site/p/vue%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%9B%91%E8%A7%86%E5%8E%9F%E7%90%86/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>canvas绘制跟随鼠标移动的线条
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>在浏览网页时无意中发现了下面这种背景互动的效果：
-通过一番周折，最终找到以下实现代码
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45  function randomLine() { function n(n, e, t) { return n.getAttribute(e) || t } function e(n) { return document.getElementsByTagName(n) } function t() { var t = e(&#34;script&#34;), o = t....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-03-20 00:00:00 +0000 UTC'>March 20, 2022</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to canvas绘制跟随鼠标移动的线条" href="https://www.fintinger.site/p/canvas%E7%BB%98%E5%88%B6%E8%B7%9F%E9%9A%8F%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%8A%A8%E7%9A%84%E7%BA%BF%E6%9D%A1/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
