@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir=" auto">
+<html lang="zh-cn" dir=" auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.5801d16a0eff04ddc43661d83501a64f9bd5ebd0d26c58a21acbae9272b6c64a.css" integrity="sha256-WAHRag7/BN3ENmHYNQGmT5vV69DSbFiiGsuuknK2xko=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.82515ee3aebfe1ebd3d64679bfe6446c9279b71bc7a666741307404ca67eb398.css" integrity="sha256-glFe466/4evT1kZ5v&#43;ZEbJJ5txvHpmZ0EwdATKZ&#43;s5g=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -110,10 +110,13 @@
   <section class="entry-content">
     <p>Promise 对象用于表示一个异步操作的最终完成 (或失败), 及其结果值。其目的主要是解决以往回调中嵌套回调的&#34;嵌套地狱&#34;问题，使代码可读性更好，更美观!
 基本用法 对于一个标准的Prommise，其基本写法为:
-1 2 3 4 5 6 7 8 9 10 11 12 13  new Promise(function (resolve, reject) { //do something...  //success  resolve(&#39;success&#39;) //fail &amp; reject  // reject(&#39;rejected&#39;) *resolve和reject只能出现一个 }).then( function (value) { //if succeed,do something...  }, function (reason) { //if fail &amp; reject,do something...  } )   如果采用ES6的箭头函数写法，则为:
-1 2 3 4 5 6 7  new Promise((resolve, reject) =&gt; { resolve(&#39;success&#39;) //reject(&#39;rejected&#39;) })....</p>
+new Promise(function (resolve, reject) { //do something...  //success  resolve(&#39;success&#39;) //fail &amp; reject  // reject(&#39;rejected&#39;) *resolve和reject只能出现一个 }).then( function (value) { //if succeed,do something...  }, function (reason) { //if fail &amp; reject,do something...  } ) 如果采用ES6的箭头函数写法，则为:
+new Promise((resolve, reject) =&gt; { resolve(&#39;success&#39;) //reject(&#39;rejected&#39;) }).then( value =&gt; {}, reason =&gt; {} )  始终牢记，前一个Promise()必须是在后面一个.then()中处理，
+如果前一个Promsie()中没有改变状态，即没有resolve()/reject()方法，后面的.then就不会针对这个Promsie()处理
+ Promise错误处理  Promise()中的错误处理有两种方式,.then()和.catch()
+ .then()  特点： “一一对应”，即一个then()对应处理上一个Promise 用法：  new Promise((resolve, reject) =&gt; { // 12&#43;p  // throw new Error(&#39;fail&#39;)  reject(&#39;失败&#39;) })....</p>
   </section>
-  <footer class="entry-footer"><span title='2020-08-18 00:00:00 +0000 UTC'>August 18, 2020</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Archai</footer>
+  <footer class="entry-footer"><span title='2020-08-18 00:00:00 +0000 UTC'>Aug 18, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to ES6之Promise用法小结" href="https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/"></a>
 </article>
 
@@ -124,9 +127,10 @@
   </header>
   <section class="entry-content">
     <p>学习地址:https://www.bilibili.com/video/BV1WC4y1b78y，主要通过express的简单功能来搭建本地的服务，进而更好地学习Ajax
- 发送Ajax请求的方式 原生Ajax 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(&#34;GET&#34;,&#34;https://www.x.com&#34;) //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } }   说明：...</p>
+ 发送Ajax请求的方式 原生Ajax //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(&#34;GET&#34;,&#34;https://www.x.com&#34;) //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } } 说明：
+ readyState: 返回一个 XMLHttpRequest 代理当前所处的状态     值 状态 描述     0 UNSENT 代理被创建，但尚未调用 open() 方法。   1 OPENED open() 方法已经被调用。   2 HEADERS_RECEIVED send() 方法已经被调用，并且头部和状态已经可获得。   3 LOADING 下载中； responseText 属性已经包含部分数据。   4 DONE 下载操作已完成。     因此，xhr....</p>
   </section>
-  <footer class="entry-footer"><span title='2020-08-10 00:00:00 +0000 UTC'>August 10, 2020</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Archai</footer>
+  <footer class="entry-footer"><span title='2020-08-10 00:00:00 +0000 UTC'>Aug 10, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to Ajax学习小结" href="https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/"></a>
 </article>
 
@@ -136,9 +140,12 @@
     </h2>
   </header>
   <section class="entry-content">
-    <p>公式 定理 附录 YO起来！ </p>
+    <p>公式 
+定理 
+附录 
+YO起来！ </p>
   </section>
-  <footer class="entry-footer"><span title='2021-08-29 00:00:00 +0000 UTC'>August 29, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <footer class="entry-footer"><span title='2021-08-29 00:00:00 +0000 UTC'>Aug 29, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 线性代数——常用公式定理总结" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E5%AE%9A%E7%90%86%E6%80%BB%E7%BB%93/"></a>
 </article>
 
@@ -153,19 +160,23 @@
   配方法
 从$x_1$开始先合并再配方，将 f(x)⇒f(y)
   正交变换法
-   例题  说明在正交变换下，A不仅与∧合同，而且A与∧相似
+   例题 
+ 说明在正交变换下，A不仅与∧合同，而且A与∧相似
  用正交变换化二次型为标准形  参考用正交矩阵相似对角化
-  若是求正负惯性指数，根据特征值即可得到（特征值是二次型二次项系数✅）
- 标准型到规范型  标准型到规范性与系数的大小无关，只与系数的正负相关，即正负惯性系数，注意先排序，依次“大于0，等于0，小于0…”
- 例题  第一问参数的求解用到标准型化成规范型的规律。
+ 
+ 若是求正负惯性指数，根据特征值即可得到（特征值是二次型二次项系数✅）
+ 标准型到规范型 
+
+ 标准型到规范性与系数的大小无关，只与系数的正负相关，即正负惯性系数，注意先排序，依次“大于0，等于0，小于0…”
+ 例题 
+ 第一问参数的求解用到标准型化成规范型的规律。
 第二问的求解实际上就是正交矩阵相似对角化
- 正定    注意正定矩阵是二次型，所以正定矩阵必对称，检验正定之前，先检验对称性，即证明$A^{T}=A$
- 正定必要条件  $a_{ii}&gt;0$ |A| &gt; 0  正定充分必要条件  顺序主子式全大于0 特征值大于0 正惯性指数 p=n $A=C^TEC$，其中C可逆 ▲  经典例题  $(A^{T}A)^{T}=A^TA$，故$A^{T}A$实对称矩阵
-现证$\forall X$，有$X^T(A^TA)X&gt;0$
-$X^T(A^TA)X=(AX)^{T}AX \geq 0$
-现证$(AX)^{T}AX \neq 0$...</p>
+ 正定  
+  注意正定矩阵是二次型，所以正定矩阵必对称，检验正定之前，先检验对称性，即证明$A^{T}=A$
+ 正定必要条件  $a_{ii}&gt;0$ |A| &gt; 0  正定充分必要条件  顺序主子式全大于0 特征值大于0 正惯性指数 p=n $A=C^TEC$，其中C可逆 ▲  经典例题 
+ $(A^{T}A)^{T}=A^TA$，故$A^{T}A$实对称矩阵...</p>
   </section>
-  <footer class="entry-footer"><span title='2021-08-28 00:00:00 +0000 UTC'>August 28, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <footer class="entry-footer"><span title='2021-08-28 00:00:00 +0000 UTC'>Aug 28, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 线性代数——二次型" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%BA%8C%E6%AC%A1%E5%9E%8B/"></a>
 </article>
 
@@ -177,28 +188,32 @@ $X^T(A^TA)X=(AX)^{T}AX \geq 0$
   <section class="entry-content">
     <p>特征值与特征向量 性质  1.不同特征值的特征向量线性无关。
 2.ｋ重特征值至多有ｋ个线性无关的特征向量。(※)
- 基本运算逻辑    三角矩阵特征值为主对角线元素⭐
+ 基本运算逻辑  
+  三角矩阵特征值为主对角线元素⭐
 注意，当$\lambda=1$时😢
   秩为1的矩阵A
  特征值 $\sum_{aii},0,0…$ $A^n=\sum_{aii}^{n-1} A$​  特征值证明：
   求特征值不能先对A做任何变换，而应该带着λ变换
- 定义法    如果两矩阵相似
+ 定义法  
+  如果两矩阵相似
+
 即 “两矩阵相似则具有相同特征值，特征向量也存在关系”
  真题&amp;例题 常识题？😢
+
 关于AB=0引申出的一题多解
+
 相似  AB相似，则 A&#43;kE ~ B&#43;kE
  行列式相等 俩秩相等 特征值相等 绩相等  利用已知构造方程组求参，进行预处理
   由 $A^n=PB^nP^{-1}$
  若取B为∧，容易求得$A^n$​的值。(其他方法) 特征值也存在关系。(特征值规律)    用相似的传递性证明两矩阵相似
- A~∧ ⭐  A~∧，$A=P∧P^{-1}$则
- ∧是矩阵A的特征值 P列向量是A的特征向量  （要对应，别错位）...</p>
+ A~∧ ⭐  A~∧，$A=P∧P^{-1}$则...</p>
   </section>
-  <footer class="entry-footer"><span title='2021-08-23 00:00:00 +0000 UTC'>August 23, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <footer class="entry-footer"><span title='2021-08-23 00:00:00 +0000 UTC'>Aug 23, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 线性代数——特征值特征向量" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
-    <a class="next" href="https://www.fintinger.site/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/page/2/">Next Page »</a>
+    <a class="next" href="https://www.fintinger.site/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/page/2/"> »</a>
   </nav>
 </footer>
     </main>
@@ -215,13 +230,17 @@ $X^T(A^TA)X=(AX)^{T}AX \geq 0$
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a><script>
+</a><script class="testestteyftauj">
+    console.log("OK")
+</script>
+<script>
     if (window.screen.width <= 640 && window.location.pathname == "/") {
         document.querySelector(".profile_inner").style.opacity = 1;
     }
 </script>
 
 <script>
+     
     if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
@@ -230,49 +249,73 @@ $X^T(A^TA)X=(AX)^{T}AX \geq 0$
         function n(n, e, t) {
             return n.getAttribute(e) || t
         }
+
         function e(n) {
             return document.getElementsByTagName(n)
         }
+
         function t() {
             var t = e("script"), o = t.length, i = t[o - 1];
-            return { l: o, z: n(i, "zIndex", -88), o: n(i, "opacity", .3), c: n(i, "color", '0,0,0'), n: n(i, "count", 300) }
+            return {
+                l: o,
+                z: n(i, "zIndex", -88),
+                o: n(i, "opacity", .3),
+                c: n(i, "color", '0,0,0'),
+                n: n(i, "count", 300)
+            }
         }
+
         function o() {
             a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
                 c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
         }
+
         function i() {
             r.clearRect(0, 0, a, c);
             var n, e, t, o, m, l;
             s.forEach(function (i, x) {
-                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++)n = u[e],
-                    null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
-                        l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
-                            t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+                null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
+                    l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
+                    t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
             }),
                 x(i)
         }
+
         var a, c, u, m = document.createElement("canvas"),
             d = t(), l = "c_n" + d.l, r = m.getContext("2d"),
             x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
                 function (n) {
                     window.setTimeout(n, 1e3 / 45)
                 },
-            w = Math.random, y = { x: null, y: null, max: 2e4 }; m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
-                window.onmousemove = function (n) {
-                    n = n || window.event, y.x = n.clientX, y.y = n.clientY
-                },
-                window.onmouseout = function () {
-                    y.x = null, y.y = null
-                };
+            w = Math.random, y = {x: null, y: null, max: 2e4};
+        m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
+            window.onmousemove = function (n) {
+                n = n || window.event, y.x = n.clientX, y.y = n.clientY
+            },
+            window.onmouseout = function () {
+                y.x = null, y.y = null
+            };
         for (var s = [], f = 0; d.n > f; f++) {
-            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1; s.push({ x: h, y: g, xa: v, ya: p, max: 6e3 })
+            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1;
+            s.push({x: h, y: g, xa: v, ya: p, max: 6e3})
         }
         u = s.concat([y]),
-            setTimeout(function () { i() }, 100)
+            setTimeout(function () {
+                i()
+            }, 100)
     };
 
 </script>
+
+<script>
+    
+    document.querySelectorAll(".imgAlt").forEach(el => {
+        console.dir();
+        el.innerHTML = el.previousElementSibling.children[0].attributes.alt.value;
+    })
+</script>
+
 
 <script>
     let menu = document.getElementById('menu')

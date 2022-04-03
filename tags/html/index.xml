@@ -19,7 +19,7 @@
 注意：
 1&amp;gt; display=none元素消失，不占位置
 2&amp;gt; opacity =0、 visibility =hidden只是视觉上不可见，其实还在那里占位置
-5.input无法输入？ ==&amp;gt; height:0; (将包裹提示的div高度设置为0，让其不再遮挡即可)</description>
+5.input无法输入？</description>
     </item>
     
     <item>

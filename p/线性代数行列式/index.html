@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir=" auto">
+<html lang="zh-cn" dir=" auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,21 +8,28 @@
 <title>线性代数——行列式 | Archai&#39;s home</title>
 <meta name="keywords" content="线性代数" />
 <meta name="description" content="计算※ 数字型 题型 注意“存在三条对角线的情况”，通过 逐行相加 的到 “三角型”计算
-经典例题 抽象型 题型  行列式性质恒等变形 矩阵公式、法则恒等变形，E恒等变形 形特征值、相似  经典例题  思路：利用单位矩阵恒等变形
-  思路一：利用矩阵相似（$\alpha_1，\alpha_2，\alpha_3$无关，后面出现$A\alpha_1，A\alpha_2，A\alpha_3$想到相似）
+经典例题 
+
+抽象型 题型  行列式性质恒等变形 矩阵公式、法则恒等变形，E恒等变形 形特征值、相似  
+经典例题 
+ 思路：利用单位矩阵恒等变形
+ 
+ 思路一：利用矩阵相似（$\alpha_1，\alpha_2，\alpha_3$无关，后面出现$A\alpha_1，A\alpha_2，A\alpha_3$想到相似）
 利用乘法公式凑$PAP^{-1}=B$
 思路二：用行列式性质
-  思路：“不可逆”=&gt;“行列式为0”=&gt;观察看到为特征值形式$|\lambda E-A|=0$，利用特征值与行列式的关系求解
+ 
+ 思路：“不可逆”=&gt;“行列式为0”=&gt;观察看到为特征值形式$|\lambda E-A|=0$，利用特征值与行列式的关系求解
  应用 特征值 思路 “消0且得公因式”
-例题  对于特征多项式应两行（或列）加加减减，至多是三行（或列）的加加减减找出 $\lambda-a$ 的公因式，然后再解一个二次方程，就可求出矩阵A的三个特征值
+例题 
+
+ 对于特征多项式应两行（或列）加加减减，至多是三行（或列）的加加减减找出 $\lambda-a$ 的公因式，然后再解一个二次方程，就可求出矩阵A的三个特征值
  克拉默法则 思路  不用来解大的方程组，常用小的证明题，
- 齐次方程AX=0有非零解→ |A|=0 齐次方程AX=0没有非零解→ |A|≠0   经典例题  &ldquo;AB=O&rdquo; 👉 方程的解(B的列向量是A的解)
-​	👉 秩 r(A)&#43;r(B) ≤ n (n为A的列,B的行)
- 矩阵秩 注意点  r(A) = r 👉A中有r阶子式不为0,任何r&#43;1阶子式(若还有)必全为0.
-r(A) &lt; r 👉A中每一个r阶子式全为0">
+ 齐次方程AX=0有非零解→ |A|=0 齐次方程AX=0没有非零解→ |A|≠0   经典例题 
+ &ldquo;AB=O&rdquo; 👉 方程的解(B的列向量是A的解)
+​	👉 秩 r(A)&#43;r(B) ≤ n (n为A的列,B的行)">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.5801d16a0eff04ddc43661d83501a64f9bd5ebd0d26c58a21acbae9272b6c64a.css" integrity="sha256-WAHRag7/BN3ENmHYNQGmT5vV69DSbFiiGsuuknK2xko=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.82515ee3aebfe1ebd3d64679bfe6446c9279b71bc7a666741307404ca67eb398.css" integrity="sha256-glFe466/4evT1kZ5v&#43;ZEbJJ5txvHpmZ0EwdATKZ&#43;s5g=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -40,18 +47,25 @@ r(A) &lt; r 👉A中每一个r阶子式全为0">
     </style>
 </noscript><meta property="og:title" content="线性代数——行列式" />
 <meta property="og:description" content="计算※ 数字型 题型 注意“存在三条对角线的情况”，通过 逐行相加 的到 “三角型”计算
-经典例题 抽象型 题型  行列式性质恒等变形 矩阵公式、法则恒等变形，E恒等变形 形特征值、相似  经典例题  思路：利用单位矩阵恒等变形
-  思路一：利用矩阵相似（$\alpha_1，\alpha_2，\alpha_3$无关，后面出现$A\alpha_1，A\alpha_2，A\alpha_3$想到相似）
+经典例题 
+
+抽象型 题型  行列式性质恒等变形 矩阵公式、法则恒等变形，E恒等变形 形特征值、相似  
+经典例题 
+ 思路：利用单位矩阵恒等变形
+ 
+ 思路一：利用矩阵相似（$\alpha_1，\alpha_2，\alpha_3$无关，后面出现$A\alpha_1，A\alpha_2，A\alpha_3$想到相似）
 利用乘法公式凑$PAP^{-1}=B$
 思路二：用行列式性质
-  思路：“不可逆”=&gt;“行列式为0”=&gt;观察看到为特征值形式$|\lambda E-A|=0$，利用特征值与行列式的关系求解
+ 
+ 思路：“不可逆”=&gt;“行列式为0”=&gt;观察看到为特征值形式$|\lambda E-A|=0$，利用特征值与行列式的关系求解
  应用 特征值 思路 “消0且得公因式”
-例题  对于特征多项式应两行（或列）加加减减，至多是三行（或列）的加加减减找出 $\lambda-a$ 的公因式，然后再解一个二次方程，就可求出矩阵A的三个特征值
+例题 
+
+ 对于特征多项式应两行（或列）加加减减，至多是三行（或列）的加加减减找出 $\lambda-a$ 的公因式，然后再解一个二次方程，就可求出矩阵A的三个特征值
  克拉默法则 思路  不用来解大的方程组，常用小的证明题，
- 齐次方程AX=0有非零解→ |A|=0 齐次方程AX=0没有非零解→ |A|≠0   经典例题  &ldquo;AB=O&rdquo; 👉 方程的解(B的列向量是A的解)
-​	👉 秩 r(A)&#43;r(B) ≤ n (n为A的列,B的行)
- 矩阵秩 注意点  r(A) = r 👉A中有r阶子式不为0,任何r&#43;1阶子式(若还有)必全为0.
-r(A) &lt; r 👉A中每一个r阶子式全为0" />
+ 齐次方程AX=0有非零解→ |A|=0 齐次方程AX=0没有非零解→ |A|≠0   经典例题 
+ &ldquo;AB=O&rdquo; 👉 方程的解(B的列向量是A的解)
+​	👉 秩 r(A)&#43;r(B) ≤ n (n为A的列,B的行)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-08-10T00:00:00&#43;00:00" />
@@ -60,18 +74,25 @@ r(A) &lt; r 👉A中每一个r阶子式全为0" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="线性代数——行列式"/>
 <meta name="twitter:description" content="计算※ 数字型 题型 注意“存在三条对角线的情况”，通过 逐行相加 的到 “三角型”计算
-经典例题 抽象型 题型  行列式性质恒等变形 矩阵公式、法则恒等变形，E恒等变形 形特征值、相似  经典例题  思路：利用单位矩阵恒等变形
-  思路一：利用矩阵相似（$\alpha_1，\alpha_2，\alpha_3$无关，后面出现$A\alpha_1，A\alpha_2，A\alpha_3$想到相似）
+经典例题 
+
+抽象型 题型  行列式性质恒等变形 矩阵公式、法则恒等变形，E恒等变形 形特征值、相似  
+经典例题 
+ 思路：利用单位矩阵恒等变形
+ 
+ 思路一：利用矩阵相似（$\alpha_1，\alpha_2，\alpha_3$无关，后面出现$A\alpha_1，A\alpha_2，A\alpha_3$想到相似）
 利用乘法公式凑$PAP^{-1}=B$
 思路二：用行列式性质
-  思路：“不可逆”=&gt;“行列式为0”=&gt;观察看到为特征值形式$|\lambda E-A|=0$，利用特征值与行列式的关系求解
+ 
+ 思路：“不可逆”=&gt;“行列式为0”=&gt;观察看到为特征值形式$|\lambda E-A|=0$，利用特征值与行列式的关系求解
  应用 特征值 思路 “消0且得公因式”
-例题  对于特征多项式应两行（或列）加加减减，至多是三行（或列）的加加减减找出 $\lambda-a$ 的公因式，然后再解一个二次方程，就可求出矩阵A的三个特征值
+例题 
+
+ 对于特征多项式应两行（或列）加加减减，至多是三行（或列）的加加减减找出 $\lambda-a$ 的公因式，然后再解一个二次方程，就可求出矩阵A的三个特征值
  克拉默法则 思路  不用来解大的方程组，常用小的证明题，
- 齐次方程AX=0有非零解→ |A|=0 齐次方程AX=0没有非零解→ |A|≠0   经典例题  &ldquo;AB=O&rdquo; 👉 方程的解(B的列向量是A的解)
-​	👉 秩 r(A)&#43;r(B) ≤ n (n为A的列,B的行)
- 矩阵秩 注意点  r(A) = r 👉A中有r阶子式不为0,任何r&#43;1阶子式(若还有)必全为0.
-r(A) &lt; r 👉A中每一个r阶子式全为0"/>
+ 齐次方程AX=0有非零解→ |A|=0 齐次方程AX=0没有非零解→ |A|≠0   经典例题 
+ &ldquo;AB=O&rdquo; 👉 方程的解(B的列向量是A的解)
+​	👉 秩 r(A)&#43;r(B) ≤ n (n为A的列,B的行)"/>
 
 
 <script type="application/ld+json">
@@ -100,13 +121,13 @@ r(A) &lt; r 👉A中每一个r阶子式全为0"/>
   "@type": "BlogPosting",
   "headline": "线性代数——行列式",
   "name": "线性代数——行列式",
-  "description": "计算※ 数字型 题型 注意“存在三条对角线的情况”，通过 逐行相加 的到 “三角型”计算\n经典例题 抽象型 题型  行列式性质恒等变形 矩阵公式、法则恒等变形，E恒等变形 形特征值、相似  经典例题  思路：利用单位矩阵恒等变形\n  思路一：利用矩阵相似（$\\alpha_1，\\alpha_2，\\alpha_3$无关，后面出现$A\\alpha_1，A\\alpha_2，A\\alpha_3$想到相似）\n利用乘法公式凑$PAP^{-1}=B$\n思路二：用行列式性质\n  思路：“不可逆”=\u0026gt;“行列式为0”=\u0026gt;观察看到为特征值形式$|\\lambda E-A|=0$，利用特征值与行列式的关系求解\n 应用 特征值 思路 “消0且得公因式”\n例题  对于特征多项式应两行（或列）加加减减，至多是三行（或列）的加加减减找出 $\\lambda-a$ 的公因式，然后再解一个二次方程，就可求出矩阵A的三个特征值\n 克拉默法则 思路  不用来解大的方程组，常用小的证明题，\n 齐次方程AX=0有非零解→ |A|=0 齐次方程AX=0没有非零解→ |A|≠0   经典例题  \u0026ldquo;AB=O\u0026rdquo; 👉 方程的解(B的列向量是A的解)\n​\t👉 秩 r(A)+r(B) ≤ n (n为A的列,B的行)\n 矩阵秩 注意点  r(A) = r 👉A中有r阶子式不为0,任何r+1阶子式(若还有)必全为0.\nr(A) \u0026lt; r 👉A中每一个r阶子式全为0",
+  "description": "计算※ 数字型 题型 注意“存在三条对角线的情况”，通过 逐行相加 的到 “三角型”计算\n经典例题 \n\n抽象型 题型  行列式性质恒等变形 矩阵公式、法则恒等变形，E恒等变形 形特征值、相似  \n经典例题 \n 思路：利用单位矩阵恒等变形\n \n 思路一：利用矩阵相似（$\\alpha_1，\\alpha_2，\\alpha_3$无关，后面出现$A\\alpha_1，A\\alpha_2，A\\alpha_3$想到相似）\n利用乘法公式凑$PAP^{-1}=B$\n思路二：用行列式性质\n \n 思路：“不可逆”=\u0026gt;“行列式为0”=\u0026gt;观察看到为特征值形式$|\\lambda E-A|=0$，利用特征值与行列式的关系求解\n 应用 特征值 思路 “消0且得公因式”\n例题 \n\n 对于特征多项式应两行（或列）加加减减，至多是三行（或列）的加加减减找出 $\\lambda-a$ 的公因式，然后再解一个二次方程，就可求出矩阵A的三个特征值\n 克拉默法则 思路  不用来解大的方程组，常用小的证明题，\n 齐次方程AX=0有非零解→ |A|=0 齐次方程AX=0没有非零解→ |A|≠0   经典例题 \n \u0026ldquo;AB=O\u0026rdquo; 👉 方程的解(B的列向量是A的解)\n​\t👉 秩 r(A)+r(B) ≤ n (n为A的列,B的行)",
   "keywords": [
     "线性代数"
   ],
-  "articleBody": "计算※ 数字型 题型 注意“存在三条对角线的情况”，通过 逐行相加 的到 “三角型”计算\n经典例题 抽象型 题型  行列式性质恒等变形 矩阵公式、法则恒等变形，E恒等变形 形特征值、相似  经典例题  思路：利用单位矩阵恒等变形\n  思路一：利用矩阵相似（$\\alpha_1，\\alpha_2，\\alpha_3$无关，后面出现$A\\alpha_1，A\\alpha_2，A\\alpha_3$想到相似）\n利用乘法公式凑$PAP^{-1}=B$\n思路二：用行列式性质\n  思路：“不可逆”=“行列式为0”=观察看到为特征值形式$|\\lambda E-A|=0$，利用特征值与行列式的关系求解\n 应用 特征值 思路 “消0且得公因式”\n例题  对于特征多项式应两行（或列）加加减减，至多是三行（或列）的加加减减找出 $\\lambda-a$ 的公因式，然后再解一个二次方程，就可求出矩阵A的三个特征值\n 克拉默法则 思路  不用来解大的方程组，常用小的证明题，\n 齐次方程AX=0有非零解→ |A|=0 齐次方程AX=0没有非零解→ |A|≠0   经典例题  “AB=O” 👉 方程的解(B的列向量是A的解)\n​\t👉 秩 r(A)+r(B) ≤ n (n为A的列,B的行)\n 矩阵秩 注意点  r(A) = r 👉A中有r阶子式不为0,任何r+1阶子式(若还有)必全为0.\nr(A) r(A)≥r 👉A中有r阶子式不为0.(能确定r的范围)\nA ≠ O 👉 r|A| ≥ 1\nA是n阶,\n r(A) = n 👉 |A|≠0👉A可逆 r(A)  A是m×n矩阵,则r(A)≤min(m,n)\n  “三阶矩阵r(A)=2” → |A|=0\n  A — m×n , B — n×s ※\nr(AB) ≤ min { r(A), r(B) }\n 若A可逆，👉 r(AB)=r(BA)=r(B) 若A列满秩(r(A)=n)，👉 r(AB)=r(B)   证 |A| = 0 ？  构思一：证Ax=0有非零解(克拉默法则)\n  构思二：假设|A|≠0，用$A^{-1}$ 找出矛盾\n  构思三：证明 r(A)  构思四：$|A|= \\Pi \\lambda_i$​ (特征值)\n  构思五：证明 $|A|$ = $|A|^{-1}$\n 经典例题  这里又用到了 AB=O 型！！！！\n  解法一：用秩\n​\tr(AB) ≤ r(A) ≤ n ​\t∵ AB为m阶\n​\t故，|AB| = 0\t( r(AB) )\n解法二：用克拉默法则\n​\t构造两个齐次方程组，如下：\n​\tABX = 0 (1)\n​\tBX = 0 (2)\n​\t显然，(2)的解一定为(1)的解 ※\n​\t又∵ B为n×m，且 n ​\t∴ BX=0 一定有非零解\n​\t故，ABX = 0 一定有非零解\n​\t|AB|=0\n  用到$|A|=|A|^{-1} \\rightarrow |A|=0$\n 代数余子式 定理  i≠j时，有：\n$a_{i1}A_{j1}+a_{i2}A_{j2}+…+a_{in}A_{jn}=0$\n$a_{1j}A_{1k}+a_{2j}A_{2k}+…+a_{nj}A_{nk}=0$​\n某一行元素与另一行对应余子式乘积和为0（第j行与第i行的元素完全相同，故行列式为0）\n  $A_{ij}$元素大小与$a_{ij}$无关，可构造以$A_{ij}$元素系数为一行(列)的向量，则该构造的向量按$A_{ij}$​元素系数一行(列)的展开的行列式的值就为$\\sum A_{ij}$的值\n 例题 解答如下：\n真题 ",
+  "articleBody": "计算※ 数字型 题型 注意“存在三条对角线的情况”，通过 逐行相加 的到 “三角型”计算\n经典例题 \n\n抽象型 题型  行列式性质恒等变形 矩阵公式、法则恒等变形，E恒等变形 形特征值、相似  \n经典例题 \n 思路：利用单位矩阵恒等变形\n \n 思路一：利用矩阵相似（$\\alpha_1，\\alpha_2，\\alpha_3$无关，后面出现$A\\alpha_1，A\\alpha_2，A\\alpha_3$想到相似）\n利用乘法公式凑$PAP^{-1}=B$\n思路二：用行列式性质\n \n 思路：“不可逆”=“行列式为0”=观察看到为特征值形式$|\\lambda E-A|=0$，利用特征值与行列式的关系求解\n 应用 特征值 思路 “消0且得公因式”\n例题 \n\n 对于特征多项式应两行（或列）加加减减，至多是三行（或列）的加加减减找出 $\\lambda-a$ 的公因式，然后再解一个二次方程，就可求出矩阵A的三个特征值\n 克拉默法则 思路  不用来解大的方程组，常用小的证明题，\n 齐次方程AX=0有非零解→ |A|=0 齐次方程AX=0没有非零解→ |A|≠0   经典例题 \n “AB=O” 👉 方程的解(B的列向量是A的解)\n​\t👉 秩 r(A)+r(B) ≤ n (n为A的列,B的行)\n 矩阵秩 注意点  r(A) = r 👉A中有r阶子式不为0,任何r+1阶子式(若还有)必全为0.\nr(A) r(A)≥r 👉A中有r阶子式不为0.(能确定r的范围)\nA ≠ O 👉 r|A| ≥ 1\nA是n阶,\n r(A) = n 👉 |A|≠0👉A可逆 r(A)  A是m×n矩阵,则r(A)≤min(m,n)\n  “三阶矩阵r(A)=2” → |A|=0\n  A — m×n , B — n×s ※\nr(AB) ≤ min { r(A), r(B) }\n 若A可逆，👉 r(AB)=r(BA)=r(B) 若A列满秩(r(A)=n)，👉 r(AB)=r(B)   证 |A| = 0 ？  构思一：证Ax=0有非零解(克拉默法则)\n  构思二：假设|A|≠0，用$A^{-1}$ 找出矛盾\n  构思三：证明 r(A)  构思四：$|A|= \\Pi \\lambda_i$​ (特征值)\n  构思五：证明 $|A|$ = $|A|^{-1}$\n 经典例题 \n 这里又用到了 AB=O 型！！！！\n \n 解法一：用秩\n​\tr(AB) ≤ r(A) ≤ n ​\t∵ AB为m阶\n​\t故，|AB| = 0\t( r(AB) )\n解法二：用克拉默法则\n​\t构造两个齐次方程组，如下：\n​\tABX = 0 (1)\n​\tBX = 0 (2)\n​\t显然，(2)的解一定为(1)的解 ※\n​\t又∵ B为n×m，且 n ​\t∴ BX=0 一定有非零解\n​\t故，ABX = 0 一定有非零解\n​\t|AB|=0\n \n 用到$|A|=|A|^{-1} \\rightarrow |A|=0$\n 代数余子式 定理  i≠j时，有：\n$a_{i1}A_{j1}+a_{i2}A_{j2}+…+a_{in}A_{jn}=0$\n$a_{1j}A_{1k}+a_{2j}A_{2k}+…+a_{nj}A_{nk}=0$​\n某一行元素与另一行对应余子式乘积和为0（第j行与第i行的元素完全相同，故行列式为0）\n  $A_{ij}$元素大小与$a_{ij}$无关，可构造以$A_{ij}$元素系数为一行(列)的向量，则该构造的向量按$A_{ij}$​元素系数一行(列)的展开的行列式的值就为$\\sum A_{ij}$的值\n 例题 \n解答如下：\n\n真题 \n\n",
   "wordCount" : "193",
-  "inLanguage": "en",
+  "inLanguage": "zh-cn",
   "datePublished": "2021-08-10T00:00:00Z",
   "dateModified": "2021-08-10T00:00:00Z",
   "author":{
@@ -196,13 +217,14 @@ r(A) &lt; r 👉A中每一个r阶子式全为0"/>
     <h1 class="post-title">
       线性代数——行列式
     </h1>
-    <div class="post-meta"><span title='2021-08-10 00:00:00 +0000 UTC'>August 10, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai
+    <div class="post-meta"><span title='2021-08-10 00:00:00 +0000 UTC'>Aug 10, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai
 
 </div>
   </header> <div class="toc">
     <details >
         <summary accesskey="c" title="(Alt + C)">
             <span class="details">Table of Contents</span>
+            <span id="pinToc" title="pinned/unpinned"></span>
         </summary>
 
         <div class="inner"><ul>
@@ -277,16 +299,23 @@ r(A) &lt; r 👉A中每一个r阶子式全为0"/>
     </details>
 </div>
 
+<script>
+    const pinToc=document.querySelector("#pinToc");
+
+    pinToc.addEventListener("click",evt => {
+       evt.target.parentElement.parentElement.parentElement.classList.toggle('pinned')
+    })
+</script>
   <div class="post-content"><h2 id="计算">计算※<a hidden class="anchor" aria-hidden="true" href="#计算">#</a></h2>
 <h3 id="数字型">数字型<a hidden class="anchor" aria-hidden="true" href="#数字型">#</a></h3>
 <h4 id="题型">题型<a hidden class="anchor" aria-hidden="true" href="#题型">#</a></h4>
 <p>注意“存在三条对角线的情况”，通过 <strong>逐行相加</strong> 的到 “三角型”计算</p>
 <h4 id="经典例题">经典例题<a hidden class="anchor" aria-hidden="true" href="#经典例题">#</a></h4>
 <p><img loading="lazy" src="index.assets/1.jpg" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <hr />
 <p><img loading="lazy" src="index.assets/2.png" alt="2008-真题"  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <h3 id="抽象型">抽象型<a hidden class="anchor" aria-hidden="true" href="#抽象型">#</a></h3>
 <h4 id="题型-1">题型<a hidden class="anchor" aria-hidden="true" href="#题型-1">#</a></h4>
 <ol>
@@ -295,22 +324,22 @@ r(A) &lt; r 👉A中每一个r阶子式全为0"/>
 <li>形特征值、相似</li>
 </ol>
 <p><img loading="lazy" src="index.assets/3.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <h4 id="经典例题-1">经典例题<a hidden class="anchor" aria-hidden="true" href="#经典例题-1">#</a></h4>
 <p><img loading="lazy" src="index.assets/4.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <blockquote>
 <p>思路：利用单位矩阵恒等变形</p>
 </blockquote>
 <p><img loading="lazy" src="index.assets/5.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <blockquote>
 <p>思路一：利用矩阵相似（$\alpha_1，\alpha_2，\alpha_3$无关，后面出现$A\alpha_1，A\alpha_2，A\alpha_3$想到相似）</p>
 <p>利用乘法公式凑$PAP^{-1}=B$</p>
 <p>思路二：用行列式性质</p>
 </blockquote>
 <p><img loading="lazy" src="index.assets/6.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <blockquote>
 <p>思路：“不可逆”=&gt;“行列式为0”=&gt;观察看到为特征值形式$|\lambda E-A|=0$，利用特征值与行列式的关系求解</p>
 </blockquote>
@@ -320,10 +349,10 @@ r(A) &lt; r 👉A中每一个r阶子式全为0"/>
 <p>“消0且得公因式”</p>
 <h4 id="例题">例题<a hidden class="anchor" aria-hidden="true" href="#例题">#</a></h4>
 <p><img loading="lazy" src="index.assets/7.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <hr />
 <p><img loading="lazy" src="index.assets/8.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <blockquote>
 <p>对于特征多项式应两行（或列）加加减减，至多是三行（或列）的加加减减找出 $\lambda-a$ 的公因式，然后再解一个二次方程，就可求出矩阵A的三个特征值</p>
 </blockquote>
@@ -338,7 +367,7 @@ r(A) &lt; r 👉A中每一个r阶子式全为0"/>
 </blockquote>
 <h4 id="经典例题-2">经典例题<a hidden class="anchor" aria-hidden="true" href="#经典例题-2">#</a></h4>
 <p><img loading="lazy" src="index.assets/image-20210811155745415-16286686696181.png" alt="image-20210811155745415"  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <blockquote>
 <p>&ldquo;AB=O&rdquo; 👉 方程的解(B的列向量是A的解)</p>
 <p>​			    👉 秩 r(A)+r(B) ≤ n (n为A的列,B的行)</p>
@@ -386,12 +415,12 @@ r(A) &lt; r 👉A中每一个r阶子式全为0"/>
 </blockquote>
 <h3 id="经典例题-3">经典例题<a hidden class="anchor" aria-hidden="true" href="#经典例题-3">#</a></h3>
 <p><img loading="lazy" src="index.assets/image-20210811165203850-16286719246932.png" alt="image-20210811165203850"  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <blockquote>
 <p>这里又用到了 AB=O 型！！！！</p>
 </blockquote>
 <p><img loading="lazy" src="index.assets/image-20210811172107972-16286736700433.png" alt="image-20210811172107972"  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <blockquote>
 <p><strong>解法一：用秩</strong></p>
 <p>​	r(AB) ≤ r(A) ≤ n &lt; m</p>
@@ -408,7 +437,7 @@ r(A) &lt; r 👉A中每一个r阶子式全为0"/>
 <p>​	|AB|=0</p>
 </blockquote>
 <p><img loading="lazy" src="index.assets/image-20210815171948385.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <blockquote>
 <p>用到$|A|=|A|^{-1} \rightarrow |A|=0$</p>
 </blockquote>
@@ -425,15 +454,15 @@ r(A) &lt; r 👉A中每一个r阶子式全为0"/>
 </blockquote>
 <h4 id="例题-1">例题<a hidden class="anchor" aria-hidden="true" href="#例题-1">#</a></h4>
 <p><img loading="lazy" src="index.assets/image-20210812162231281.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <p>解答如下：</p>
 <p><img loading="lazy" src="index.assets/image-20210812162255101.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <h3 id="真题">真题<a hidden class="anchor" aria-hidden="true" href="#真题">#</a></h3>
 <p><img loading="lazy" src="index.assets/image-20210812160337838.png" alt="2021-数一"  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <p><img loading="lazy" src="index.assets/image-20210812161311360.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 
 
   </div>
@@ -444,30 +473,19 @@ r(A) &lt; r 👉A中每一个r阶子式全为0"/>
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/">
-    <span class="title">« Prev Page</span>
+    <span class="title">« </span>
     <br>
     <span>线性代数——矩阵</span>
   </a>
   <a class="next" href="https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F/">
-    <span class="title">Next Page »</span>
+    <span class="title"> »</span>
     <br>
     <span>寻址方式与存储模式</span>
   </a>
 </nav>
 
   </footer><script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
-<div id="waline" class="waline-container"></div>
-<style>
-    .waline-container {
-        background-color: var(--card-background);
-        border-radius: var(--card-border-radius);
-        box-shadow: var(--shadow-l1);
-        padding: var(--card-padding);
-    }
-    .waline-container .vcount {
-        color: var(--card-text-color-main);
-    }
-</style><script>
+<div id="waline" class="waline-container"></div><script>
     
     new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://waline-q3l7of5hj-fintinger.vercel.app/","visitor":true});
 </script>
@@ -486,13 +504,17 @@ r(A) &lt; r 👉A中每一个r阶子式全为0"/>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a><script>
+</a><script class="testestteyftauj">
+    console.log("OK")
+</script>
+<script>
     if (window.screen.width <= 640 && window.location.pathname == "/") {
         document.querySelector(".profile_inner").style.opacity = 1;
     }
 </script>
 
 <script>
+     
     if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
@@ -501,49 +523,73 @@ r(A) &lt; r 👉A中每一个r阶子式全为0"/>
         function n(n, e, t) {
             return n.getAttribute(e) || t
         }
+
         function e(n) {
             return document.getElementsByTagName(n)
         }
+
         function t() {
             var t = e("script"), o = t.length, i = t[o - 1];
-            return { l: o, z: n(i, "zIndex", -88), o: n(i, "opacity", .3), c: n(i, "color", '0,0,0'), n: n(i, "count", 300) }
+            return {
+                l: o,
+                z: n(i, "zIndex", -88),
+                o: n(i, "opacity", .3),
+                c: n(i, "color", '0,0,0'),
+                n: n(i, "count", 300)
+            }
         }
+
         function o() {
             a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
                 c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
         }
+
         function i() {
             r.clearRect(0, 0, a, c);
             var n, e, t, o, m, l;
             s.forEach(function (i, x) {
-                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++)n = u[e],
-                    null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
-                        l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
-                            t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+                null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
+                    l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
+                    t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
             }),
                 x(i)
         }
+
         var a, c, u, m = document.createElement("canvas"),
             d = t(), l = "c_n" + d.l, r = m.getContext("2d"),
             x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
                 function (n) {
                     window.setTimeout(n, 1e3 / 45)
                 },
-            w = Math.random, y = { x: null, y: null, max: 2e4 }; m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
-                window.onmousemove = function (n) {
-                    n = n || window.event, y.x = n.clientX, y.y = n.clientY
-                },
-                window.onmouseout = function () {
-                    y.x = null, y.y = null
-                };
+            w = Math.random, y = {x: null, y: null, max: 2e4};
+        m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
+            window.onmousemove = function (n) {
+                n = n || window.event, y.x = n.clientX, y.y = n.clientY
+            },
+            window.onmouseout = function () {
+                y.x = null, y.y = null
+            };
         for (var s = [], f = 0; d.n > f; f++) {
-            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1; s.push({ x: h, y: g, xa: v, ya: p, max: 6e3 })
+            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1;
+            s.push({x: h, y: g, xa: v, ya: p, max: 6e3})
         }
         u = s.concat([y]),
-            setTimeout(function () { i() }, 100)
+            setTimeout(function () {
+                i()
+            }, 100)
     };
 
 </script>
+
+<script>
+    
+    document.querySelectorAll(".imgAlt").forEach(el => {
+        console.dir();
+        el.innerHTML = el.previousElementSibling.children[0].attributes.alt.value;
+    })
+</script>
+
 
 <script>
     let menu = document.getElementById('menu')

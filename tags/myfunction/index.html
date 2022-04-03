@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir=" auto">
+<html lang="zh-cn" dir=" auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/tags/myfunction/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.5801d16a0eff04ddc43661d83501a64f9bd5ebd0d26c58a21acbae9272b6c64a.css" integrity="sha256-WAHRag7/BN3ENmHYNQGmT5vV69DSbFiiGsuuknK2xko=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.82515ee3aebfe1ebd3d64679bfe6446c9279b71bc7a666741307404ca67eb398.css" integrity="sha256-glFe466/4evT1kZ5v&#43;ZEbJJ5txvHpmZ0EwdATKZ&#43;s5g=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -110,14 +110,14 @@
   <section class="entry-content">
     <p>该怎么去获得文件名字符串中的文件扩展名呢？
 一种较为强大的解决方法是利用String的slice、lastIndexOf方法：
-1 2 3 4 5 6 7 8 9  function getFileExtension(filename) { return filename.slice((filename.lastIndexOf(&#34;.&#34;) - 1 &gt;&gt;&gt; 0) &#43; 2); } console.log(getFileExtension3(&#39;&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;filename&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;filename.txt&#39;)); // &#39;txt&#39; console.log(getFileExtension3(&#39;.hiddenfile&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;hiddenfile.&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;filename.with.many.dots.ext&#39;)); // &#39;ext&#39;   说明 filename.slice((filename.lastIndexOf(&#34;.&#34;) - 1 &gt;&gt;&gt; 0) &#43; 2)
+function getFileExtension(filename) { return filename.slice((filename.lastIndexOf(&#34;.&#34;) - 1 &gt;&gt;&gt; 0) &#43; 2); } console.log(getFileExtension3(&#39;&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;filename&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;filename.txt&#39;)); // &#39;txt&#39; console.log(getFileExtension3(&#39;.hiddenfile&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;hiddenfile.&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;filename.with.many.dots.ext&#39;)); // &#39;ext&#39; 说明 filename.slice((filename.lastIndexOf(&#34;.&#34;) - 1 &gt;&gt;&gt; 0) &#43; 2)
  本方法中的&gt;&gt;&gt;运算目的是
 找到最后一个.所在索引，然后索引-1&#43;2，相当于&#43;1，则slice方法返回.后面的后缀名
 .不会再开头，否则索引会是0，因为-1&gt;&gt;&gt;0 =﻿﻿﻿﻿ 4294967295，所不会匹配到
 .出现在末尾，索引会等于length&#43;1，也不会匹配到
- slice(start,end)  说明：start必须指定，负值为从后往前数，若只指定start值，则返回start位置及后面一直到数组结尾所有的元素 **注意：**区别于删除数组中的一段元素的方法 Array.splice()  lastIndexOf(searchvalue,fromindex)  **说明：**如果要检索的字符串值没有出现，则该方法返回 -1，该方法对大小写敏感 使用：  1 2 3 4  var str=&#34;Hello world!...</p>
+ slice(start,end)  说明：start必须指定，负值为从后往前数，若只指定start值，则返回start位置及后面一直到数组结尾所有的元素 **注意：**区别于删除数组中的一段元素的方法 Array.splice()  lastIndexOf(searchvalue,fromindex)  **说明：**如果要检索的字符串值没有出现，则该方法返回 -1，该方法对大小写敏感 使用：  var str=&#34;Hello world!&#34; document.write(str.lastIndexOf(&#34;Hello&#34;) &#43; &#34;&lt;br /&gt;&#34;)//0 document.write(str.lastIndexOf(&#34;World&#34;) &#43; &#34;&lt;br /&gt;&#34;)//-1 document....</p>
   </section>
-  <footer class="entry-footer"><span title='2020-07-09 00:00:00 +0000 UTC'>July 9, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <footer class="entry-footer"><span title='2020-07-09 00:00:00 +0000 UTC'>Jul 9, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 获取文件扩展名" href="https://www.fintinger.site/p/%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D/"></a>
 </article>
 
@@ -128,9 +128,9 @@
   </header>
   <section class="entry-content">
     <p>做网页轮播图，或者音乐播放列表时经常要用到一组循环的数组，到最后一项返回第一项，第一项返回最后一项
-利用两次判断 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29  function doLoop( arr ){ arr.loop_idx = 0; // 返回当前的元素  arr.current = function(){ if( this.loop_idx &lt; 0 ){// 第一次检查  this.loop_idx = this.length - 1;// 更新 loop_idx  } if( this.loop_idx &gt;= this.length ){// 第二次检查  this.loop_idx = 0;// 更新 loop_idx  } return arr[ this....</p>
+利用两次判断 function doLoop( arr ){ arr.loop_idx = 0; // 返回当前的元素  arr.current = function(){ if( this.loop_idx &lt; 0 ){// 第一次检查  this.loop_idx = this.length - 1;// 更新 loop_idx  } if( this.loop_idx &gt;= this.length ){// 第二次检查  this.loop_idx = 0;// 更新 loop_idx  } return arr[ this.loop_idx ];//返回元素  }; // 增加 loop_idx 然后返回新的当前元素  arr.next = function(){ this.loop_idx&#43;&#43;; return this.current(); }; // 减少 loop_idx 然后返回新的当前元素  arr.prev = function(){ this....</p>
   </section>
-  <footer class="entry-footer"><span title='2020-07-08 00:00:00 +0000 UTC'>July 8, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <footer class="entry-footer"><span title='2020-07-08 00:00:00 +0000 UTC'>Jul 8, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 一组循环数组" href="https://www.fintinger.site/p/%E4%B8%80%E7%BB%84%E5%BE%AA%E7%8E%AF%E6%95%B0%E7%BB%84/"></a>
 </article>
 
@@ -141,9 +141,9 @@
   </header>
   <section class="entry-content">
     <p>经常会用到指定内容的复制粘贴问题，用到document的execCommand 方法,为此，我将这个功能封装为一个简单的函数:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22  function doCopy($el, {deepCopy = false, copyTips = true, language = &#34;Chinese&#34;, bgColor = &#34;#ff6666&#34;, fontColor = &#34;#fff&#34;} = {}) { let tempEl = $(&#34;&lt;input id=&#39;selectEl&#39; type=&#39;text&#39; value=&#39;&#39;&gt;&#34;).val($el.text()) if (deepCopy) { tempEl.val($el.html()) } tempEl.appendTo($(&#34;body&#34;)) document.querySelector(&#39;#selectEl&#39;).select(); document.execCommand(&#39;copy&#39;); tempEl.remove() if (copyTips) { let tipEl = $(&#34;&lt;div class=&#39;copyTips&#39; &gt;成功复制到剪切板&lt;/div&gt;&#34;) tipEl....</p>
+function doCopy($el, {deepCopy = false, copyTips = true, language = &#34;Chinese&#34;, bgColor = &#34;#ff6666&#34;, fontColor = &#34;#fff&#34;} = {}) { let tempEl = $(&#34;&lt;input id=&#39;selectEl&#39; type=&#39;text&#39; value=&#39;&#39;&gt;&#34;).val($el.text()) if (deepCopy) { tempEl.val($el.html()) } tempEl.appendTo($(&#34;body&#34;)) document.querySelector(&#39;#selectEl&#39;).select(); document.execCommand(&#39;copy&#39;); tempEl.remove() if (copyTips) { let tipEl = $(&#34;&lt;div class=&#39;copyTips&#39; &gt;成功复制到剪切板&lt;/div&gt;&#34;) tipEl.css({fontFamily: &#34;&#39;Microsoft YaHei&#39;, sans-serif&#34;,fontSize: &#34;1.2rem&#34;,position: &#34;fixed&#34;,top: &#34;1rem&#34;,textAlign: &#34;center&#34;, left: &#34;50%&#34;,fontWeight: &#34;bolder&#34;, borderRadius: &#34;.5rem&#34;,marginLeft: &#34;-8rem&#34;,width: &#34;16rem&#34;,height: &#34;3rem&#34;, lineHeight:&#34;3rem&#34;, background: bgColor,boxShadow: &#34;0 6px 10px -8px #000&#34;,color: fontColor, letterSpacing: &#34;4px&#34;,boxSizing: &#34;border-box&#34;,padding: &#34;0 10px 0 10px&#34;, display: &#34;none&#34;}) if (language === &#34;English&#34;) { tipEl....</p>
   </section>
-  <footer class="entry-footer"><span title='2020-07-07 00:00:00 +0000 UTC'>July 7, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <footer class="entry-footer"><span title='2020-07-07 00:00:00 +0000 UTC'>Jul 7, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 剪贴板功能实现" href="https://www.fintinger.site/p/%E5%89%AA%E8%B4%B4%E6%9D%BF%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/"></a>
 </article>
 
@@ -154,10 +154,11 @@
   </header>
   <section class="entry-content">
     <p>什么是瀑布流？ 一种图片在网页的布局方式，具体要求为：从页面第二行开始，后续图片跟在页面中最矮的那张图片后面
+
 用JavaScript怎么实现？ 为此我将整个过程封装为一个函数。
-1 2 3 4 5 6 7 8  /*HTML部分*/ &lt;head&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;main.css&#34;&gt; &lt;/head&gt; &lt;div id=&#34;box&#34;&gt;&lt;/div&gt;//container和img由js动态加入 &lt;script src=&#34;jquery.min.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;loadFile.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;main.js&#34;&gt;&lt;/script&gt;   1 2 3 4 5 6 7 8 9 10 11 12 13 14  /*CSS部分*/ /*首先清空默认样式*/ #box{ position: relative; } .container{ float: left; } .container&gt;.pic{ width: 200px; } .container&gt;.pic&gt;img{ width: 100%; }   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54  /*JS部分*/ /*loadFile....</p>
+/*HTML部分*/ &lt;head&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;main.css&#34;&gt; &lt;/head&gt; &lt;div id=&#34;box&#34;&gt;&lt;/div&gt;//container和img由js动态加入 &lt;script src=&#34;jquery.min.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;loadFile.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;main.js&#34;&gt;&lt;/script&gt; /*CSS部分*/ /*首先清空默认样式*/ #box{ position: relative; } .container{ float: left; } .container&gt;.pic{ width: 200px; } .container&gt;.pic&gt;img{ width: 100%; } /*JS部分*/ /*loadFile.js(在window.onload之前执行，加载DOM树)*/	$(function () { function addImg(imgNum,eleID) { let container for (let i = 1; i &lt; imgNum; i&#43;&#43;) { container=$(&#34;&lt;div class=&#39;container&#39;&gt;&lt;div class=&#39;pic&#39;&gt;&lt;img src=&#39;images/&#34;&#43;i&#43;&#34;.jpg&#39; alt=&#39;&#39;&gt;&lt;/div&gt;&lt;/div&gt;&#34;) $(eleID).append(container) } } addImg(109,&#34;#box&#34;); }) /*******************************************/ /*main.js(在$(function(){})之前执行，DOM树加载完毕 )*/ window....</p>
   </section>
-  <footer class="entry-footer"><span title='2020-07-01 00:00:00 +0000 UTC'>July 1, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <footer class="entry-footer"><span title='2020-07-01 00:00:00 +0000 UTC'>Jul 1, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to JavaScript瀑布流布局" href="https://www.fintinger.site/p/javascript%E7%80%91%E5%B8%83%E6%B5%81%E5%B8%83%E5%B1%80/"></a>
 </article>
     </main>
@@ -174,13 +175,17 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a><script>
+</a><script class="testestteyftauj">
+    console.log("OK")
+</script>
+<script>
     if (window.screen.width <= 640 && window.location.pathname == "/") {
         document.querySelector(".profile_inner").style.opacity = 1;
     }
 </script>
 
 <script>
+     
     if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
@@ -189,49 +194,73 @@
         function n(n, e, t) {
             return n.getAttribute(e) || t
         }
+
         function e(n) {
             return document.getElementsByTagName(n)
         }
+
         function t() {
             var t = e("script"), o = t.length, i = t[o - 1];
-            return { l: o, z: n(i, "zIndex", -88), o: n(i, "opacity", .3), c: n(i, "color", '0,0,0'), n: n(i, "count", 300) }
+            return {
+                l: o,
+                z: n(i, "zIndex", -88),
+                o: n(i, "opacity", .3),
+                c: n(i, "color", '0,0,0'),
+                n: n(i, "count", 300)
+            }
         }
+
         function o() {
             a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
                 c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
         }
+
         function i() {
             r.clearRect(0, 0, a, c);
             var n, e, t, o, m, l;
             s.forEach(function (i, x) {
-                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++)n = u[e],
-                    null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
-                        l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
-                            t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+                null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
+                    l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
+                    t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
             }),
                 x(i)
         }
+
         var a, c, u, m = document.createElement("canvas"),
             d = t(), l = "c_n" + d.l, r = m.getContext("2d"),
             x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
                 function (n) {
                     window.setTimeout(n, 1e3 / 45)
                 },
-            w = Math.random, y = { x: null, y: null, max: 2e4 }; m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
-                window.onmousemove = function (n) {
-                    n = n || window.event, y.x = n.clientX, y.y = n.clientY
-                },
-                window.onmouseout = function () {
-                    y.x = null, y.y = null
-                };
+            w = Math.random, y = {x: null, y: null, max: 2e4};
+        m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
+            window.onmousemove = function (n) {
+                n = n || window.event, y.x = n.clientX, y.y = n.clientY
+            },
+            window.onmouseout = function () {
+                y.x = null, y.y = null
+            };
         for (var s = [], f = 0; d.n > f; f++) {
-            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1; s.push({ x: h, y: g, xa: v, ya: p, max: 6e3 })
+            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1;
+            s.push({x: h, y: g, xa: v, ya: p, max: 6e3})
         }
         u = s.concat([y]),
-            setTimeout(function () { i() }, 100)
+            setTimeout(function () {
+                i()
+            }, 100)
     };
 
 </script>
+
+<script>
+    
+    document.querySelectorAll(".imgAlt").forEach(el => {
+        console.dir();
+        el.innerHTML = el.previousElementSibling.children[0].attributes.alt.value;
+    })
+</script>
+
 
 <script>
     let menu = document.getElementById('menu')

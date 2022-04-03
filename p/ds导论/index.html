@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir=" auto">
+<html lang="zh-cn" dir=" auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,10 +16,11 @@
 (Algorithms &#43; Data Structures) x Efficiency = Computation
 :::
 如何评判算法的其优劣(计算模型)  实验统计是最直接的方法，但足以准确反映算法的真正效率？不足够！ - 不同的算法，可能更适应于不同规模的输入 - 不同的算法，可能更适应于不同类型的输入 - 同一算法，可能由不同程序员、用不同程序语言、经不同编译器生成 - 同一算法，可能实现并运行于不同的体系结构、操作系统&hellip; 为给出客观的评判，需要抽象出一个理想的平台或模型 - 不再依赖于上述种种具体的因素 - 从而直接而准确地描述、测量并评价算法
- 1.图灵机模型(TM)    组成 说明     Tape 依次均匀地划分为单元格 各存有某一字符，初始均为&#39;#&#39;   Head 总是对准某一单元格，并可 读取或改写其中的字符。每经过一个节拍，可 转向左侧或右侧的邻格   Alphabet 字符的种类有限   State TM总是处于有限种状态中的某一种 。每经过一个节拍 可按照规则转向另一种状态 。统一约定，&lsquo;h&rsquo; = halt(停止)    2.">
+ 1.图灵机模型(TM) 
+   组成 说明     Tape 依次均匀地划分为单元格 各存有某一字符，初始均为&#39;#&#39;   Head 总是对准某一单元格，并可 读取或改写其中的字符。每经过一个节拍，可 转向左侧或右侧的邻格   Alphabet 字符的种类有限   State TM总是处于有限种状态中的某一种 。每经过一个节拍 可按照规则转向另一种状态 。统一约定，&lsquo;h&rsquo; = halt(停止)    2.">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/p/ds%E5%AF%BC%E8%AE%BA/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.5801d16a0eff04ddc43661d83501a64f9bd5ebd0d26c58a21acbae9272b6c64a.css" integrity="sha256-WAHRag7/BN3ENmHYNQGmT5vV69DSbFiiGsuuknK2xko=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.82515ee3aebfe1ebd3d64679bfe6446c9279b71bc7a666741307404ca67eb398.css" integrity="sha256-glFe466/4evT1kZ5v&#43;ZEbJJ5txvHpmZ0EwdATKZ&#43;s5g=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -45,7 +46,8 @@
 (Algorithms &#43; Data Structures) x Efficiency = Computation
 :::
 如何评判算法的其优劣(计算模型)  实验统计是最直接的方法，但足以准确反映算法的真正效率？不足够！ - 不同的算法，可能更适应于不同规模的输入 - 不同的算法，可能更适应于不同类型的输入 - 同一算法，可能由不同程序员、用不同程序语言、经不同编译器生成 - 同一算法，可能实现并运行于不同的体系结构、操作系统&hellip; 为给出客观的评判，需要抽象出一个理想的平台或模型 - 不再依赖于上述种种具体的因素 - 从而直接而准确地描述、测量并评价算法
- 1.图灵机模型(TM)    组成 说明     Tape 依次均匀地划分为单元格 各存有某一字符，初始均为&#39;#&#39;   Head 总是对准某一单元格，并可 读取或改写其中的字符。每经过一个节拍，可 转向左侧或右侧的邻格   Alphabet 字符的种类有限   State TM总是处于有限种状态中的某一种 。每经过一个节拍 可按照规则转向另一种状态 。统一约定，&lsquo;h&rsquo; = halt(停止)    2." />
+ 1.图灵机模型(TM) 
+   组成 说明     Tape 依次均匀地划分为单元格 各存有某一字符，初始均为&#39;#&#39;   Head 总是对准某一单元格，并可 读取或改写其中的字符。每经过一个节拍，可 转向左侧或右侧的邻格   Alphabet 字符的种类有限   State TM总是处于有限种状态中的某一种 。每经过一个节拍 可按照规则转向另一种状态 。统一约定，&lsquo;h&rsquo; = halt(停止)    2." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.fintinger.site/p/ds%E5%AF%BC%E8%AE%BA/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-11-10T00:00:00&#43;00:00" />
@@ -62,7 +64,8 @@
 (Algorithms &#43; Data Structures) x Efficiency = Computation
 :::
 如何评判算法的其优劣(计算模型)  实验统计是最直接的方法，但足以准确反映算法的真正效率？不足够！ - 不同的算法，可能更适应于不同规模的输入 - 不同的算法，可能更适应于不同类型的输入 - 同一算法，可能由不同程序员、用不同程序语言、经不同编译器生成 - 同一算法，可能实现并运行于不同的体系结构、操作系统&hellip; 为给出客观的评判，需要抽象出一个理想的平台或模型 - 不再依赖于上述种种具体的因素 - 从而直接而准确地描述、测量并评价算法
- 1.图灵机模型(TM)    组成 说明     Tape 依次均匀地划分为单元格 各存有某一字符，初始均为&#39;#&#39;   Head 总是对准某一单元格，并可 读取或改写其中的字符。每经过一个节拍，可 转向左侧或右侧的邻格   Alphabet 字符的种类有限   State TM总是处于有限种状态中的某一种 。每经过一个节拍 可按照规则转向另一种状态 。统一约定，&lsquo;h&rsquo; = halt(停止)    2."/>
+ 1.图灵机模型(TM) 
+   组成 说明     Tape 依次均匀地划分为单元格 各存有某一字符，初始均为&#39;#&#39;   Head 总是对准某一单元格，并可 读取或改写其中的字符。每经过一个节拍，可 转向左侧或右侧的邻格   Alphabet 字符的种类有限   State TM总是处于有限种状态中的某一种 。每经过一个节拍 可按照规则转向另一种状态 。统一约定，&lsquo;h&rsquo; = halt(停止)    2."/>
 
 
 <script type="application/ld+json">
@@ -91,13 +94,13 @@
   "@type": "BlogPosting",
   "headline": "DS导论",
   "name": "DS导论",
-  "description": "导论  所谓算法，即特定计算模型下，旨在解决特定问题的指令序列。输入：待处理的信息（问题）输出：经处理的信息（答案）\n 正确性 的确可以解决指定的问题\n确定性 任一算法都可以描述为一个由基本操作组成的序列\n可行性 每一基本操作都可实现，且在常数时间内完成\n有穷性 对于任何输入，经有穷次基本操作，都可以得到输出\n::: tip Algorithms + Data Structures = Programs\n(Algorithms + Data Structures) x Efficiency = Computation\n:::\n如何评判算法的其优劣(计算模型)  实验统计是最直接的方法，但足以准确反映算法的真正效率？不足够！ - 不同的算法，可能更适应于不同规模的输入 - 不同的算法，可能更适应于不同类型的输入 - 同一算法，可能由不同程序员、用不同程序语言、经不同编译器生成 - 同一算法，可能实现并运行于不同的体系结构、操作系统\u0026hellip; 为给出客观的评判，需要抽象出一个理想的平台或模型 - 不再依赖于上述种种具体的因素 - 从而直接而准确地描述、测量并评价算法\n 1.图灵机模型(TM)    组成 说明     Tape 依次均匀地划分为单元格 各存有某一字符，初始均为'#'   Head 总是对准某一单元格，并可 读取或改写其中的字符。每经过一个节拍，可 转向左侧或右侧的邻格   Alphabet 字符的种类有限   State TM总是处于有限种状态中的某一种 。每经过一个节拍 可按照规则转向另一种状态 。统一约定，\u0026lsquo;h\u0026rsquo; = halt(停止)    2.",
+  "description": "导论  所谓算法，即特定计算模型下，旨在解决特定问题的指令序列。输入：待处理的信息（问题）输出：经处理的信息（答案）\n 正确性 的确可以解决指定的问题\n确定性 任一算法都可以描述为一个由基本操作组成的序列\n可行性 每一基本操作都可实现，且在常数时间内完成\n有穷性 对于任何输入，经有穷次基本操作，都可以得到输出\n::: tip Algorithms + Data Structures = Programs\n(Algorithms + Data Structures) x Efficiency = Computation\n:::\n如何评判算法的其优劣(计算模型)  实验统计是最直接的方法，但足以准确反映算法的真正效率？不足够！ - 不同的算法，可能更适应于不同规模的输入 - 不同的算法，可能更适应于不同类型的输入 - 同一算法，可能由不同程序员、用不同程序语言、经不同编译器生成 - 同一算法，可能实现并运行于不同的体系结构、操作系统\u0026hellip; 为给出客观的评判，需要抽象出一个理想的平台或模型 - 不再依赖于上述种种具体的因素 - 从而直接而准确地描述、测量并评价算法\n 1.图灵机模型(TM) \n   组成 说明     Tape 依次均匀地划分为单元格 各存有某一字符，初始均为'#'   Head 总是对准某一单元格，并可 读取或改写其中的字符。每经过一个节拍，可 转向左侧或右侧的邻格   Alphabet 字符的种类有限   State TM总是处于有限种状态中的某一种 。每经过一个节拍 可按照规则转向另一种状态 。统一约定，\u0026lsquo;h\u0026rsquo; = halt(停止)    2.",
   "keywords": [
     "数据结构"
   ],
-  "articleBody": "导论  所谓算法，即特定计算模型下，旨在解决特定问题的指令序列。输入：待处理的信息（问题）输出：经处理的信息（答案）\n 正确性 的确可以解决指定的问题\n确定性 任一算法都可以描述为一个由基本操作组成的序列\n可行性 每一基本操作都可实现，且在常数时间内完成\n有穷性 对于任何输入，经有穷次基本操作，都可以得到输出\n::: tip Algorithms + Data Structures = Programs\n(Algorithms + Data Structures) x Efficiency = Computation\n:::\n如何评判算法的其优劣(计算模型)  实验统计是最直接的方法，但足以准确反映算法的真正效率？不足够！ - 不同的算法，可能更适应于不同规模的输入 - 不同的算法，可能更适应于不同类型的输入 - 同一算法，可能由不同程序员、用不同程序语言、经不同编译器生成 - 同一算法，可能实现并运行于不同的体系结构、操作系统… 为给出客观的评判，需要抽象出一个理想的平台或模型 - 不再依赖于上述种种具体的因素 - 从而直接而准确地描述、测量并评价算法\n 1.图灵机模型(TM)    组成 说明     Tape 依次均匀地划分为单元格 各存有某一字符，初始均为'#'   Head 总是对准某一单元格，并可 读取或改写其中的字符。每经过一个节拍，可 转向左侧或右侧的邻格   Alphabet 字符的种类有限   State TM总是处于有限种状态中的某一种 。每经过一个节拍 可按照规则转向另一种状态 。统一约定，‘h’ = halt(停止)    2.RAM模型(Random Access Machine) 语法：\n 赋值操作 R[i] , R[i] , R[i]  仅加减运算 R[j] + R[k] R[i]  判断语句 IF R[i] = 0 GOTO # keyword STOP, GOTO  总之 在这些理想化模型中，\n✨独立于具体的平台，假定空间是无限的(不考虑空间)，对算法的效率做出可信的比较与评判\n✨算法的运行时间 = 算法需要执行的基本操作次数\n✨T(n) = 算法为求解规模为n的问题，所需执行的基本操作次数\nBig-O notation(大O记号)  Big-O就是T (n)的上限，对一个具体的f(n) 不断放大产生的结果，下图就是Big-O的原理\n 关系式\nT(n) =O(f(n)) iff ∃c0 s.t. T(n)  2\n规则\n✨常系数忽略，即O(f(n)) = O(c*f(n))\n✨低次数项忽略，即O(n^a+n^b) = O(n^a),ab0\n其他记号 Ω记号 :表示T(n)的下界，Ω(f(n))\nT(n) =O(f(n)) iff ∃c0 s.t. T(n)  c.f(n) ∀ n  2\nΘ记号：是O和Ω的结合\nT(n) =O(f(n)) iff ∃c₁c₂0 s.t. c₁·f(n)  T(n)  c₂·f(n) ∀ n  2\n 三者的关系可以用下图表示\n ::: tip\n不含转向(循环，调用，递归等)，必然是顺序执行，即是O(1)的复杂度\n:::\n几个注意点 对数O(logn)\n多项式复杂度\n级数 1.算术级数 T(n)=1+2+3+...+n=n(n+1)/2 = O(n²)\n::: tip\n与末项平方同阶\n:::\n2. 幂方级数 T₂(n)=1²+2²+3²+...+n²=n(n+1)(2n+1)/6 = O(n³)\n…\n::: tip\n比幂次高出一阶\n:::\n3.几何级数(a1) T(n)=1+2+2²+...+2ⁿ=O(2ⁿ)\n::: tip\n与末项同阶\n:::\n4.收敛级数 1/1×2 + 1/2×3 + 1/3×4 +...+ 1/(n-1)·n= 1-1/n = O(1)\n几何分布：(1- λ) · [1+ 2λ + 3λ² + 4λ³ +...]= 1/(1-λ)=O(1), 0\n::: tip\n收敛级数复杂度最终趋于常数，为O(1)\n:::\n5.未必收敛，但长度有限 ",
+  "articleBody": "导论  所谓算法，即特定计算模型下，旨在解决特定问题的指令序列。输入：待处理的信息（问题）输出：经处理的信息（答案）\n 正确性 的确可以解决指定的问题\n确定性 任一算法都可以描述为一个由基本操作组成的序列\n可行性 每一基本操作都可实现，且在常数时间内完成\n有穷性 对于任何输入，经有穷次基本操作，都可以得到输出\n::: tip Algorithms + Data Structures = Programs\n(Algorithms + Data Structures) x Efficiency = Computation\n:::\n如何评判算法的其优劣(计算模型)  实验统计是最直接的方法，但足以准确反映算法的真正效率？不足够！ - 不同的算法，可能更适应于不同规模的输入 - 不同的算法，可能更适应于不同类型的输入 - 同一算法，可能由不同程序员、用不同程序语言、经不同编译器生成 - 同一算法，可能实现并运行于不同的体系结构、操作系统… 为给出客观的评判，需要抽象出一个理想的平台或模型 - 不再依赖于上述种种具体的因素 - 从而直接而准确地描述、测量并评价算法\n 1.图灵机模型(TM) \n   组成 说明     Tape 依次均匀地划分为单元格 各存有某一字符，初始均为'#'   Head 总是对准某一单元格，并可 读取或改写其中的字符。每经过一个节拍，可 转向左侧或右侧的邻格   Alphabet 字符的种类有限   State TM总是处于有限种状态中的某一种 。每经过一个节拍 可按照规则转向另一种状态 。统一约定，‘h’ = halt(停止)    2.RAM模型(Random Access Machine) \n语法：\n 赋值操作 R[i] , R[i] , R[i]  仅加减运算 R[j] + R[k] R[i]  判断语句 IF R[i] = 0 GOTO # keyword STOP, GOTO  总之 在这些理想化模型中，\n✨独立于具体的平台，假定空间是无限的(不考虑空间)，对算法的效率做出可信的比较与评判\n✨算法的运行时间 = 算法需要执行的基本操作次数\n✨T(n) = 算法为求解规模为n的问题，所需执行的基本操作次数\nBig-O notation(大O记号)  Big-O就是T (n)的上限，对一个具体的f(n) 不断放大产生的结果，下图就是Big-O的原理\n \n关系式\nT(n) =O(f(n)) iff ∃c0 s.t. T(n)  2\n规则\n✨常系数忽略，即O(f(n)) = O(c*f(n))\n✨低次数项忽略，即O(n^a+n^b) = O(n^a),ab0\n其他记号 Ω记号 :表示T(n)的下界，Ω(f(n))\nT(n) =O(f(n)) iff ∃c0 s.t. T(n)  c.f(n) ∀ n  2\nΘ记号：是O和Ω的结合\nT(n) =O(f(n)) iff ∃c₁c₂0 s.t. c₁·f(n)  T(n)  c₂·f(n) ∀ n  2\n 三者的关系可以用下图表示\n \n::: tip\n不含转向(循环，调用，递归等)，必然是顺序执行，即是O(1)的复杂度\n:::\n几个注意点 对数O(logn)\n\n多项式复杂度\n\n级数 \n1.算术级数 T(n)=1+2+3+...+n=n(n+1)/2 = O(n²)\n::: tip\n与末项平方同阶\n:::\n2. 幂方级数 T₂(n)=1²+2²+3²+...+n²=n(n+1)(2n+1)/6 = O(n³)\n…\n\n::: tip\n比幂次高出一阶\n:::\n3.几何级数(a1) T(n)=1+2+2²+...+2ⁿ=O(2ⁿ)\n::: tip\n与末项同阶\n:::\n4.收敛级数 1/1×2 + 1/2×3 + 1/3×4 +...+ 1/(n-1)·n= 1-1/n = O(1)\n几何分布：(1- λ) · [1+ 2λ + 3λ² + 4λ³ +...]= 1/(1-λ)=O(1), 0\n::: tip\n收敛级数复杂度最终趋于常数，为O(1)\n:::\n5.未必收敛，但长度有限 \n",
   "wordCount" : "219",
-  "inLanguage": "en",
+  "inLanguage": "zh-cn",
   "datePublished": "2020-11-10T00:00:00Z",
   "dateModified": "2020-11-10T00:00:00Z",
   "author":{
@@ -187,13 +190,14 @@
     <h1 class="post-title">
       DS导论
     </h1>
-    <div class="post-meta"><span title='2020-11-10 00:00:00 +0000 UTC'>November 10, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai
+    <div class="post-meta"><span title='2020-11-10 00:00:00 +0000 UTC'>Nov 10, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai
 
 </div>
   </header> <div class="toc">
     <details >
         <summary accesskey="c" title="(Alt + C)">
             <span class="details">Table of Contents</span>
+            <span id="pinToc" title="pinned/unpinned"></span>
         </summary>
 
         <div class="inner"><ul>
@@ -241,6 +245,13 @@
     </details>
 </div>
 
+<script>
+    const pinToc=document.querySelector("#pinToc");
+
+    pinToc.addEventListener("click",evt => {
+       evt.target.parentElement.parentElement.parentElement.classList.toggle('pinned')
+    })
+</script>
   <div class="post-content"><h1 id="导论">导论<a hidden class="anchor" aria-hidden="true" href="#导论">#</a></h1>
 <blockquote>
 <p>所谓算法，即特定计算模型下，旨在解决特定问题的指令序列。输入：待处理的信息（问题）输出：经处理的信息（答案）</p>
@@ -260,7 +271,7 @@ Algorithms + Data Structures = Programs</p>
 </blockquote>
 <h3 id="1图灵机模型tm">1.图灵机模型(TM)<a hidden class="anchor" aria-hidden="true" href="#1图灵机模型tm">#</a></h3>
 <p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20201110122012.png" alt="示意图"  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <table>
 <thead>
 <tr>
@@ -289,7 +300,7 @@ Algorithms + Data Structures = Programs</p>
 </table>
 <h3 id="2ram模型random-access-machine">2.RAM模型(Random Access Machine)<a hidden class="anchor" aria-hidden="true" href="#2ram模型random-access-machine">#</a></h3>
 <p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20201115121515.png" alt="PAM模型"  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <p><strong>语法：</strong></p>
 <ul>
 <li>赋值操作 <code>R[i] &lt;- C</code> , <code>R[i] &lt;- R[j]</code>, <code>R[i] &lt;-R[R[j]]</code></li>
@@ -307,7 +318,7 @@ Algorithms + Data Structures = Programs</p>
 <p>Big-O就是T (n)的上限，对一个具体的f(n) 不断放大产生的结果，下图就是Big-O的原理</p>
 </blockquote>
 <p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20201115123716.png" alt="Big-O原理"  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <p><strong>关系式</strong></p>
 <p><code>T(n) =O(f(n)) iff ∃c&gt;0 s.t. T(n) &lt; c.f(n)  ∀ n &gt;&gt; 2</code></p>
 <p><strong>规则</strong></p>
@@ -322,20 +333,20 @@ Algorithms + Data Structures = Programs</p>
 <p>三者的关系可以用下图表示</p>
 </blockquote>
 <p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20201115125420.png" alt="关系图"  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <p>::: tip</p>
 <p>不含转向(循环，调用，递归等)，必然是顺序执行，即是O(1)的复杂度</p>
 <p>:::</p>
 <h3 id="几个注意点">几个注意点<a hidden class="anchor" aria-hidden="true" href="#几个注意点">#</a></h3>
 <p><strong>对数O(logn)</strong></p>
 <p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20201115133553.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <p><strong>多项式复杂度</strong></p>
 <p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20201115133846.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <h2 id="级数">级数<a hidden class="anchor" aria-hidden="true" href="#级数">#</a></h2>
 <p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20201115130322.png" alt="层次级别"  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <h3 id="1算术级数">1.算术级数<a hidden class="anchor" aria-hidden="true" href="#1算术级数">#</a></h3>
 <p><code>T(n)=1+2+3+...+n=n(n+1)/2 = O(n²)</code></p>
 <p>::: tip</p>
@@ -345,7 +356,7 @@ Algorithms + Data Structures = Programs</p>
 <p><code>T₂(n)=1²+2²+3²+...+n²=n(n+1)(2n+1)/6 = O(n³)</code></p>
 <p>&hellip;</p>
 <p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20201115130436.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <p>::: tip</p>
 <p><strong>比幂次高出一阶</strong></p>
 <p>:::</p>
@@ -362,7 +373,7 @@ Algorithms + Data Structures = Programs</p>
 <p>:::</p>
 <h3 id="5未必收敛但长度有限">5.未必收敛，但长度有限<a hidden class="anchor" aria-hidden="true" href="#5未必收敛但长度有限">#</a></h3>
 <p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20201115134527.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 
 
   </div>
@@ -373,30 +384,19 @@ Algorithms + Data Structures = Programs</p>
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://www.fintinger.site/p/%E5%87%8F%E8%80%8C%E6%B2%BB%E4%B9%8B%E4%B8%8E%E5%88%86%E8%80%8C%E6%B2%BB%E4%B9%8B/">
-    <span class="title">« Prev Page</span>
+    <span class="title">« </span>
     <br>
     <span>减而治之与分而治之</span>
   </a>
   <a class="next" href="https://www.fintinger.site/p/php%E8%AF%AD%E6%B3%95%E5%B0%8F%E7%BB%93/">
-    <span class="title">Next Page »</span>
+    <span class="title"> »</span>
     <br>
     <span>PHP语法小结</span>
   </a>
 </nav>
 
   </footer><script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
-<div id="waline" class="waline-container"></div>
-<style>
-    .waline-container {
-        background-color: var(--card-background);
-        border-radius: var(--card-border-radius);
-        box-shadow: var(--shadow-l1);
-        padding: var(--card-padding);
-    }
-    .waline-container .vcount {
-        color: var(--card-text-color-main);
-    }
-</style><script>
+<div id="waline" class="waline-container"></div><script>
     
     new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://waline-q3l7of5hj-fintinger.vercel.app/","visitor":true});
 </script>
@@ -415,13 +415,17 @@ Algorithms + Data Structures = Programs</p>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a><script>
+</a><script class="testestteyftauj">
+    console.log("OK")
+</script>
+<script>
     if (window.screen.width <= 640 && window.location.pathname == "/") {
         document.querySelector(".profile_inner").style.opacity = 1;
     }
 </script>
 
 <script>
+     
     if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
@@ -430,49 +434,73 @@ Algorithms + Data Structures = Programs</p>
         function n(n, e, t) {
             return n.getAttribute(e) || t
         }
+
         function e(n) {
             return document.getElementsByTagName(n)
         }
+
         function t() {
             var t = e("script"), o = t.length, i = t[o - 1];
-            return { l: o, z: n(i, "zIndex", -88), o: n(i, "opacity", .3), c: n(i, "color", '0,0,0'), n: n(i, "count", 300) }
+            return {
+                l: o,
+                z: n(i, "zIndex", -88),
+                o: n(i, "opacity", .3),
+                c: n(i, "color", '0,0,0'),
+                n: n(i, "count", 300)
+            }
         }
+
         function o() {
             a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
                 c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
         }
+
         function i() {
             r.clearRect(0, 0, a, c);
             var n, e, t, o, m, l;
             s.forEach(function (i, x) {
-                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++)n = u[e],
-                    null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
-                        l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
-                            t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+                null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
+                    l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
+                    t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
             }),
                 x(i)
         }
+
         var a, c, u, m = document.createElement("canvas"),
             d = t(), l = "c_n" + d.l, r = m.getContext("2d"),
             x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
                 function (n) {
                     window.setTimeout(n, 1e3 / 45)
                 },
-            w = Math.random, y = { x: null, y: null, max: 2e4 }; m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
-                window.onmousemove = function (n) {
-                    n = n || window.event, y.x = n.clientX, y.y = n.clientY
-                },
-                window.onmouseout = function () {
-                    y.x = null, y.y = null
-                };
+            w = Math.random, y = {x: null, y: null, max: 2e4};
+        m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
+            window.onmousemove = function (n) {
+                n = n || window.event, y.x = n.clientX, y.y = n.clientY
+            },
+            window.onmouseout = function () {
+                y.x = null, y.y = null
+            };
         for (var s = [], f = 0; d.n > f; f++) {
-            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1; s.push({ x: h, y: g, xa: v, ya: p, max: 6e3 })
+            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1;
+            s.push({x: h, y: g, xa: v, ya: p, max: 6e3})
         }
         u = s.concat([y]),
-            setTimeout(function () { i() }, 100)
+            setTimeout(function () {
+                i()
+            }, 100)
     };
 
 </script>
+
+<script>
+    
+    document.querySelectorAll(".imgAlt").forEach(el => {
+        console.dir();
+        el.innerHTML = el.previousElementSibling.children[0].attributes.alt.value;
+    })
+</script>
+
 
 <script>
     let menu = document.getElementById('menu')

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir=" auto">
+<html lang="zh-cn" dir=" auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,8 +9,9 @@
 <meta name="keywords" content="数据结构" />
 <meta name="description" content="减而治之(Decrease and conquer)  什么是“减而治之”？
 为求解一个大规模的问题，可以将其划分为两个问题，其一平凡，另一规模缩减 ，分别求解子问题，由子问题的解得原问题的解
- 比如说，对于一个数组A的求和问题，可以设计如下的算法
-1 2 3 4 5  sum( int A[], int n ) { return n &lt; 1? 0 : sum(A, n - 1) &#43; A[n - 1]; }   当规模缩减到一定程度后，抵达递归基，返回0
+ 
+比如说，对于一个数组A的求和问题，可以设计如下的算法
+sum( int A[], int n ) { return n &lt; 1? 0 : sum(A, n - 1) &#43; A[n - 1]; } 当规模缩减到一定程度后，抵达递归基，返回0
 复杂度分析 1. 递归跟踪
  绘出计算过程中出现过的所有递归实例（及其调用关系） ，那么它们各自所需时间之总和，即为整体运行时间
  上例中，共计n&#43;1个递归实例(分析)，各自只需O(1)时间 故总体运行时间为：
@@ -19,10 +20,11 @@ T(n) =O(1) × (n&#43;1) =O(n)
  对于大规模的问题、复杂的递归算法，递归跟踪不再适用 此时可采用另一抽象的方法&hellip;
  在本例中，有T(n)=T(n-1) &#43; O(1),T(0)=O(1)
 则，T(n) = T(n-2)&#43;O(2) = T(n-3)&#43;O(3) = T(n-n)&#43;O(n)=O(n)
- 可以看到，两种分析方法的出来复杂度都为O(n)">
+ 可以看到，两种分析方法的出来复杂度都为O(n)
+ 分而治之(Divide and conquer)  什么是“分而治之”？">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/p/%E5%87%8F%E8%80%8C%E6%B2%BB%E4%B9%8B%E4%B8%8E%E5%88%86%E8%80%8C%E6%B2%BB%E4%B9%8B/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.5801d16a0eff04ddc43661d83501a64f9bd5ebd0d26c58a21acbae9272b6c64a.css" integrity="sha256-WAHRag7/BN3ENmHYNQGmT5vV69DSbFiiGsuuknK2xko=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.82515ee3aebfe1ebd3d64679bfe6446c9279b71bc7a666741307404ca67eb398.css" integrity="sha256-glFe466/4evT1kZ5v&#43;ZEbJJ5txvHpmZ0EwdATKZ&#43;s5g=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -41,8 +43,9 @@ T(n) =O(1) × (n&#43;1) =O(n)
 </noscript><meta property="og:title" content="减而治之与分而治之" />
 <meta property="og:description" content="减而治之(Decrease and conquer)  什么是“减而治之”？
 为求解一个大规模的问题，可以将其划分为两个问题，其一平凡，另一规模缩减 ，分别求解子问题，由子问题的解得原问题的解
- 比如说，对于一个数组A的求和问题，可以设计如下的算法
-1 2 3 4 5  sum( int A[], int n ) { return n &lt; 1? 0 : sum(A, n - 1) &#43; A[n - 1]; }   当规模缩减到一定程度后，抵达递归基，返回0
+ 
+比如说，对于一个数组A的求和问题，可以设计如下的算法
+sum( int A[], int n ) { return n &lt; 1? 0 : sum(A, n - 1) &#43; A[n - 1]; } 当规模缩减到一定程度后，抵达递归基，返回0
 复杂度分析 1. 递归跟踪
  绘出计算过程中出现过的所有递归实例（及其调用关系） ，那么它们各自所需时间之总和，即为整体运行时间
  上例中，共计n&#43;1个递归实例(分析)，各自只需O(1)时间 故总体运行时间为：
@@ -51,7 +54,8 @@ T(n) =O(1) × (n&#43;1) =O(n)
  对于大规模的问题、复杂的递归算法，递归跟踪不再适用 此时可采用另一抽象的方法&hellip;
  在本例中，有T(n)=T(n-1) &#43; O(1),T(0)=O(1)
 则，T(n) = T(n-2)&#43;O(2) = T(n-3)&#43;O(3) = T(n-n)&#43;O(n)=O(n)
- 可以看到，两种分析方法的出来复杂度都为O(n)" />
+ 可以看到，两种分析方法的出来复杂度都为O(n)
+ 分而治之(Divide and conquer)  什么是“分而治之”？" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.fintinger.site/p/%E5%87%8F%E8%80%8C%E6%B2%BB%E4%B9%8B%E4%B8%8E%E5%88%86%E8%80%8C%E6%B2%BB%E4%B9%8B/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-11-15T00:00:00&#43;00:00" />
@@ -61,8 +65,9 @@ T(n) =O(1) × (n&#43;1) =O(n)
 <meta name="twitter:title" content="减而治之与分而治之"/>
 <meta name="twitter:description" content="减而治之(Decrease and conquer)  什么是“减而治之”？
 为求解一个大规模的问题，可以将其划分为两个问题，其一平凡，另一规模缩减 ，分别求解子问题，由子问题的解得原问题的解
- 比如说，对于一个数组A的求和问题，可以设计如下的算法
-1 2 3 4 5  sum( int A[], int n ) { return n &lt; 1? 0 : sum(A, n - 1) &#43; A[n - 1]; }   当规模缩减到一定程度后，抵达递归基，返回0
+ 
+比如说，对于一个数组A的求和问题，可以设计如下的算法
+sum( int A[], int n ) { return n &lt; 1? 0 : sum(A, n - 1) &#43; A[n - 1]; } 当规模缩减到一定程度后，抵达递归基，返回0
 复杂度分析 1. 递归跟踪
  绘出计算过程中出现过的所有递归实例（及其调用关系） ，那么它们各自所需时间之总和，即为整体运行时间
  上例中，共计n&#43;1个递归实例(分析)，各自只需O(1)时间 故总体运行时间为：
@@ -71,7 +76,8 @@ T(n) =O(1) × (n&#43;1) =O(n)
  对于大规模的问题、复杂的递归算法，递归跟踪不再适用 此时可采用另一抽象的方法&hellip;
  在本例中，有T(n)=T(n-1) &#43; O(1),T(0)=O(1)
 则，T(n) = T(n-2)&#43;O(2) = T(n-3)&#43;O(3) = T(n-n)&#43;O(n)=O(n)
- 可以看到，两种分析方法的出来复杂度都为O(n)"/>
+ 可以看到，两种分析方法的出来复杂度都为O(n)
+ 分而治之(Divide and conquer)  什么是“分而治之”？"/>
 
 
 <script type="application/ld+json">
@@ -100,13 +106,13 @@ T(n) =O(1) × (n&#43;1) =O(n)
   "@type": "BlogPosting",
   "headline": "减而治之与分而治之",
   "name": "减而治之与分而治之",
-  "description": "减而治之(Decrease and conquer)  什么是“减而治之”？\n为求解一个大规模的问题，可以将其划分为两个问题，其一平凡，另一规模缩减 ，分别求解子问题，由子问题的解得原问题的解\n 比如说，对于一个数组A的求和问题，可以设计如下的算法\n1 2 3 4 5  sum( int A[], int n ) { return n \u0026lt; 1? 0 : sum(A, n - 1) + A[n - 1]; }   当规模缩减到一定程度后，抵达递归基，返回0\n复杂度分析 1. 递归跟踪\n 绘出计算过程中出现过的所有递归实例（及其调用关系） ，那么它们各自所需时间之总和，即为整体运行时间\n 上例中，共计n+1个递归实例(分析)，各自只需O(1)时间 故总体运行时间为：\nT(n) =O(1) × (n+1) =O(n)\n2.递推方程\n 对于大规模的问题、复杂的递归算法，递归跟踪不再适用 此时可采用另一抽象的方法\u0026hellip;\n 在本例中，有T(n)=T(n-1) + O(1),T(0)=O(1)\n则，T(n) = T(n-2)+O(2) = T(n-3)+O(3) = T(n-n)+O(n)=O(n)\n 可以看到，两种分析方法的出来复杂度都为O(n)",
+  "description": "减而治之(Decrease and conquer)  什么是“减而治之”？\n为求解一个大规模的问题，可以将其划分为两个问题，其一平凡，另一规模缩减 ，分别求解子问题，由子问题的解得原问题的解\n \n比如说，对于一个数组A的求和问题，可以设计如下的算法\nsum( int A[], int n ) { return n \u0026lt; 1? 0 : sum(A, n - 1) + A[n - 1]; } 当规模缩减到一定程度后，抵达递归基，返回0\n复杂度分析 1. 递归跟踪\n 绘出计算过程中出现过的所有递归实例（及其调用关系） ，那么它们各自所需时间之总和，即为整体运行时间\n 上例中，共计n+1个递归实例(分析)，各自只需O(1)时间 故总体运行时间为：\nT(n) =O(1) × (n+1) =O(n)\n2.递推方程\n 对于大规模的问题、复杂的递归算法，递归跟踪不再适用 此时可采用另一抽象的方法\u0026hellip;\n 在本例中，有T(n)=T(n-1) + O(1),T(0)=O(1)\n则，T(n) = T(n-2)+O(2) = T(n-3)+O(3) = T(n-n)+O(n)=O(n)\n 可以看到，两种分析方法的出来复杂度都为O(n)\n 分而治之(Divide and conquer)  什么是“分而治之”？",
   "keywords": [
     "数据结构"
   ],
-  "articleBody": "减而治之(Decrease and conquer)  什么是“减而治之”？\n为求解一个大规模的问题，可以将其划分为两个问题，其一平凡，另一规模缩减 ，分别求解子问题，由子问题的解得原问题的解\n 比如说，对于一个数组A的求和问题，可以设计如下的算法\n1 2 3 4 5  sum( int A[], int n ) { return n  1? 0 : sum(A, n - 1) + A[n - 1]; }   当规模缩减到一定程度后，抵达递归基，返回0\n复杂度分析 1. 递归跟踪\n 绘出计算过程中出现过的所有递归实例（及其调用关系） ，那么它们各自所需时间之总和，即为整体运行时间\n 上例中，共计n+1个递归实例(分析)，各自只需O(1)时间 故总体运行时间为：\nT(n) =O(1) × (n+1) =O(n)\n2.递推方程\n 对于大规模的问题、复杂的递归算法，递归跟踪不再适用 此时可采用另一抽象的方法…\n 在本例中，有T(n)=T(n-1) + O(1),T(0)=O(1)\n则，T(n) = T(n-2)+O(2) = T(n-3)+O(3) = T(n-n)+O(n)=O(n)\n 可以看到，两种分析方法的出来复杂度都为O(n)\n 分而治之(Divide and conquer)  什么是“分而治之”？\n为求解一个大问题，可以将其划分为若干子问题，规模大体相当（可理解为将大问题等分），分别求解子问题，由子问题的解得原问题的解\n 对于数组A的求和问题，利用分而治之的思想可以设计出下面的算法\n1 2 3 4 5  sum( int A[], int lo, int hi ) {//区间范围A[lo, hi)  if ( hi - lo  2 ) return A[lo]; int mi = (lo + hi)  1; return sum( A, lo, mi ) + sum( A, mi, hi ); } //入口形式为sum( A, 0, n )   复杂度分析 1.递归跟踪\n对于上述算法，分析可知，其复杂度\nT(n)=O(1) × (1+2¹+2²+...+2^㏒n) = O(1) × (2^logn - 1) = O(n)\n更快捷地，作为几何级数，其复杂度与末项同阶，因此由分析图可知，其末项共有n项[(0,0)，(1,1,) … (n,n)]，因此其复杂度为O(n)\n2.递推方程\n为求解sum(A,lo,hi),\n需求解 sum(A, lo, mi) 和 sum(A, mi+1, hi) = T(n/2)\n进而将子问题累加 =O(1)\n递归基sum(A, lo, lo) = O(1)\n递推关系：T(n)=2·T(n/2) + O(1) === T(n) = O(n)\n",
-  "wordCount" : "161",
-  "inLanguage": "en",
+  "articleBody": "减而治之(Decrease and conquer)  什么是“减而治之”？\n为求解一个大规模的问题，可以将其划分为两个问题，其一平凡，另一规模缩减 ，分别求解子问题，由子问题的解得原问题的解\n \n比如说，对于一个数组A的求和问题，可以设计如下的算法\nsum( int A[], int n ) { return n  1? 0 : sum(A, n - 1) + A[n - 1]; } 当规模缩减到一定程度后，抵达递归基，返回0\n复杂度分析 1. 递归跟踪\n 绘出计算过程中出现过的所有递归实例（及其调用关系） ，那么它们各自所需时间之总和，即为整体运行时间\n 上例中，共计n+1个递归实例(分析)，各自只需O(1)时间 故总体运行时间为：\nT(n) =O(1) × (n+1) =O(n)\n2.递推方程\n 对于大规模的问题、复杂的递归算法，递归跟踪不再适用 此时可采用另一抽象的方法…\n 在本例中，有T(n)=T(n-1) + O(1),T(0)=O(1)\n则，T(n) = T(n-2)+O(2) = T(n-3)+O(3) = T(n-n)+O(n)=O(n)\n 可以看到，两种分析方法的出来复杂度都为O(n)\n 分而治之(Divide and conquer)  什么是“分而治之”？\n为求解一个大问题，可以将其划分为若干子问题，规模大体相当（可理解为将大问题等分），分别求解子问题，由子问题的解得原问题的解\n \n对于数组A的求和问题，利用分而治之的思想可以设计出下面的算法\nsum( int A[], int lo, int hi ) {//区间范围A[lo, hi)  if ( hi - lo  2 ) return A[lo]; int mi = (lo + hi)  1; return sum( A, lo, mi ) + sum( A, mi, hi ); } //入口形式为sum( A, 0, n ) 复杂度分析 1.递归跟踪\n对于上述算法，分析可知，其复杂度\nT(n)=O(1) × (1+2¹+2²+...+2^㏒n) = O(1) × (2^logn - 1) = O(n)\n更快捷地，作为几何级数，其复杂度与末项同阶，因此由分析图可知，其末项共有n项[(0,0)，(1,1,) … (n,n)]，因此其复杂度为O(n)\n2.递推方程\n为求解sum(A,lo,hi),\n需求解 sum(A, lo, mi) 和 sum(A, mi+1, hi) = T(n/2)\n进而将子问题累加 =O(1)\n递归基sum(A, lo, lo) = O(1)\n递推关系：T(n)=2·T(n/2) + O(1) === T(n) = O(n)\n",
+  "wordCount" : "151",
+  "inLanguage": "zh-cn",
   "datePublished": "2020-11-15T00:00:00Z",
   "dateModified": "2020-11-15T00:00:00Z",
   "author":{
@@ -196,13 +202,14 @@ T(n) =O(1) × (n&#43;1) =O(n)
     <h1 class="post-title">
       减而治之与分而治之
     </h1>
-    <div class="post-meta"><span title='2020-11-15 00:00:00 +0000 UTC'>November 15, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai
+    <div class="post-meta"><span title='2020-11-15 00:00:00 +0000 UTC'>Nov 15, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai
 
 </div>
   </header> <div class="toc">
     <details >
         <summary accesskey="c" title="(Alt + C)">
             <span class="details">Table of Contents</span>
+            <span id="pinToc" title="pinned/unpinned"></span>
         </summary>
 
         <div class="inner"><ul>
@@ -225,31 +232,27 @@ T(n) =O(1) × (n&#43;1) =O(n)
     </details>
 </div>
 
+<script>
+    const pinToc=document.querySelector("#pinToc");
+
+    pinToc.addEventListener("click",evt => {
+       evt.target.parentElement.parentElement.parentElement.classList.toggle('pinned')
+    })
+</script>
   <div class="post-content"><h2 id="减而治之decrease-and-conquer">减而治之(Decrease and conquer)<a hidden class="anchor" aria-hidden="true" href="#减而治之decrease-and-conquer">#</a></h2>
 <blockquote>
 <p>什么是“减而治之”？</p>
 <p>为求解一个大规模的问题，可以将其划分为两个问题，其一<strong>平凡</strong>，另一<strong>规模缩减</strong> ，分别求解子问题，由子问题的解得原问题的解</p>
 </blockquote>
 <p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20201115141617.png" alt="减而制之"  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <p>比如说，对于一个数组A的求和问题，可以设计如下的算法</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">sum( <span style="color:#66d9ef">int</span> A[], <span style="color:#66d9ef">int</span> n ) { 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">sum( <span style="color:#66d9ef">int</span> A[], <span style="color:#66d9ef">int</span> n ) { 
     <span style="color:#66d9ef">return</span> 
         n <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">?</span> 
         <span style="color:#ae81ff">0</span> <span style="color:#f92672">:</span> sum(A, n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> A[n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]; 
 }
-</code></pre></td></tr></table>
-</div>
-</div><p>当规模缩减到一定程度后，抵达<strong>递归基</strong>，返回0</p>
+</code></pre></div><p>当规模缩减到一定程度后，抵达<strong>递归基</strong>，返回0</p>
 <h3 id="复杂度分析">复杂度分析<a hidden class="anchor" aria-hidden="true" href="#复杂度分析">#</a></h3>
 <p><strong>1. 递归跟踪</strong></p>
 <blockquote>
@@ -272,25 +275,14 @@ T(n) =O(1) × (n&#43;1) =O(n)
 <p>为求解一个大问题，可以将其划分为若干子问题，规模大体相当（可理解为将大问题等分），分别求解子问题，由子问题的解得原问题的解</p>
 </blockquote>
 <p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20201115150641.png" alt="分而治之"  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <p>对于数组A的求和问题，利用分而治之的思想可以设计出下面的算法</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">sum( <span style="color:#66d9ef">int</span> A[], <span style="color:#66d9ef">int</span> lo, <span style="color:#66d9ef">int</span> hi ) {<span style="color:#75715e">//区间范围A[lo, hi) 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">sum( <span style="color:#66d9ef">int</span> A[], <span style="color:#66d9ef">int</span> lo, <span style="color:#66d9ef">int</span> hi ) {<span style="color:#75715e">//区间范围A[lo, hi) 
 </span><span style="color:#75715e"></span> <span style="color:#66d9ef">if</span> ( hi <span style="color:#f92672">-</span> lo <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span> ) <span style="color:#66d9ef">return</span> A[lo]; 
  <span style="color:#66d9ef">int</span> mi <span style="color:#f92672">=</span> (lo <span style="color:#f92672">+</span> hi) <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">1</span>; 
  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>( A, lo, mi ) <span style="color:#f92672">+</span> sum( A, mi, hi );
  } <span style="color:#75715e">//入口形式为sum( A, 0, n )
-</span></code></pre></td></tr></table>
-</div>
-</div><h3 id="复杂度分析-1">复杂度分析<a hidden class="anchor" aria-hidden="true" href="#复杂度分析-1">#</a></h3>
+</span></code></pre></div><h3 id="复杂度分析-1">复杂度分析<a hidden class="anchor" aria-hidden="true" href="#复杂度分析-1">#</a></h3>
 <p><strong>1.递归跟踪</strong></p>
 <p>对于上述算法，<a href="https://gitee.com/fintinger/figure-bed/raw/master//images/20201115192302.png">分析</a>可知，其复杂度</p>
 <p><code>T(n)=O(1) × (1+2¹+2²+...+2^㏒n) = O(1) × (2^logn - 1) = O(n)</code></p>
@@ -311,30 +303,19 @@ T(n) =O(1) × (n&#43;1) =O(n)
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://www.fintinger.site/p/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5/">
-    <span class="title">« Prev Page</span>
+    <span class="title">« </span>
     <br>
     <span>向量空间管理策略</span>
   </a>
   <a class="next" href="https://www.fintinger.site/p/ds%E5%AF%BC%E8%AE%BA/">
-    <span class="title">Next Page »</span>
+    <span class="title"> »</span>
     <br>
     <span>DS导论</span>
   </a>
 </nav>
 
   </footer><script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
-<div id="waline" class="waline-container"></div>
-<style>
-    .waline-container {
-        background-color: var(--card-background);
-        border-radius: var(--card-border-radius);
-        box-shadow: var(--shadow-l1);
-        padding: var(--card-padding);
-    }
-    .waline-container .vcount {
-        color: var(--card-text-color-main);
-    }
-</style><script>
+<div id="waline" class="waline-container"></div><script>
     
     new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://waline-q3l7of5hj-fintinger.vercel.app/","visitor":true});
 </script>
@@ -353,13 +334,17 @@ T(n) =O(1) × (n&#43;1) =O(n)
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a><script>
+</a><script class="testestteyftauj">
+    console.log("OK")
+</script>
+<script>
     if (window.screen.width <= 640 && window.location.pathname == "/") {
         document.querySelector(".profile_inner").style.opacity = 1;
     }
 </script>
 
 <script>
+     
     if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
@@ -368,49 +353,73 @@ T(n) =O(1) × (n&#43;1) =O(n)
         function n(n, e, t) {
             return n.getAttribute(e) || t
         }
+
         function e(n) {
             return document.getElementsByTagName(n)
         }
+
         function t() {
             var t = e("script"), o = t.length, i = t[o - 1];
-            return { l: o, z: n(i, "zIndex", -88), o: n(i, "opacity", .3), c: n(i, "color", '0,0,0'), n: n(i, "count", 300) }
+            return {
+                l: o,
+                z: n(i, "zIndex", -88),
+                o: n(i, "opacity", .3),
+                c: n(i, "color", '0,0,0'),
+                n: n(i, "count", 300)
+            }
         }
+
         function o() {
             a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
                 c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
         }
+
         function i() {
             r.clearRect(0, 0, a, c);
             var n, e, t, o, m, l;
             s.forEach(function (i, x) {
-                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++)n = u[e],
-                    null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
-                        l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
-                            t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+                null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
+                    l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
+                    t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
             }),
                 x(i)
         }
+
         var a, c, u, m = document.createElement("canvas"),
             d = t(), l = "c_n" + d.l, r = m.getContext("2d"),
             x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
                 function (n) {
                     window.setTimeout(n, 1e3 / 45)
                 },
-            w = Math.random, y = { x: null, y: null, max: 2e4 }; m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
-                window.onmousemove = function (n) {
-                    n = n || window.event, y.x = n.clientX, y.y = n.clientY
-                },
-                window.onmouseout = function () {
-                    y.x = null, y.y = null
-                };
+            w = Math.random, y = {x: null, y: null, max: 2e4};
+        m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
+            window.onmousemove = function (n) {
+                n = n || window.event, y.x = n.clientX, y.y = n.clientY
+            },
+            window.onmouseout = function () {
+                y.x = null, y.y = null
+            };
         for (var s = [], f = 0; d.n > f; f++) {
-            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1; s.push({ x: h, y: g, xa: v, ya: p, max: 6e3 })
+            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1;
+            s.push({x: h, y: g, xa: v, ya: p, max: 6e3})
         }
         u = s.concat([y]),
-            setTimeout(function () { i() }, 100)
+            setTimeout(function () {
+                i()
+            }, 100)
     };
 
 </script>
+
+<script>
+    
+    document.querySelectorAll(".imgAlt").forEach(el => {
+        console.dir();
+        el.innerHTML = el.previousElementSibling.children[0].attributes.alt.value;
+    })
+</script>
+
 
 <script>
     let menu = document.getElementById('menu')

@@ -14,7 +14,10 @@
       <guid>https://www.fintinger.site/p/%E8%B7%A8%E5%9F%9F%E5%8F%8Acors%E5%AE%98%E6%96%B9%E8%B7%A8%E5%9F%9F/</guid>
       <description>JSONP  jsonp跨域的实现仅限于GET请求，不可用于POST
  说明：实现的基本思路是利用html中script标签本身可跨域的特性，在发送请求时，在页面中创建script标签，追加到页面中。这实际上就像利用script标签引入外部资源
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  /*main.js*/ //申明handle函数 function handle(data) { //do something.... } ele.onclick = function () { //1.创建script标签  const script = document.createElement(&amp;#34;script&amp;#34;) //2.修改script的src属性  script.src = &amp;#34;http://127.0.0.1:8000/jsonP&amp;#34; script.id=&amp;#34;tempScript&amp;#34;//添加id方便移除  //3.追加到页面中  document.body.appendChild(script) }   1 2 3 4 5 6 7 8 9 10 11 12  /*server.js*/ app.get(&amp;#39;/jsonP&amp;#39;, (request, response) =&amp;gt; { const data = { exist:1, msg:&amp;#34;用户名已经存在!</description>
+/*main.js*/ //申明handle函数 function handle(data) { //do something.... } ele.onclick = function () { //1.创建script标签  const script = document.createElement(&amp;#34;script&amp;#34;) //2.修改script的src属性  script.src = &amp;#34;http://127.0.0.1:8000/jsonP&amp;#34; script.id=&amp;#34;tempScript&amp;#34;//添加id方便移除  //3.追加到页面中  document.body.appendChild(script) } /*server.js*/ app.get(&amp;#39;/jsonP&amp;#39;, (request, response) =&amp;gt; { const data = { exist:1, msg:&amp;#34;用户名已经存在!&amp;#34; } let str = JSON.stringify(data) response.send(` handle(${str}); document.body.removeChild(document.querySelector(&amp;#34;#tempScript&amp;#34;)) `) }) 注意：response.send()/response.end()中利用ES6语法规范中的模板字符串直接返回一段js代码，script标签会自动解析并作用到页面上
+
+CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置CORS响应头实现跨域，这种跨域GET或POST请求均有效
+//服务端设置响应头 app.all(&amp;#39;/data&amp;#39;, (request, response) =&amp;gt; { response.setHeader(&amp;#39;Access-Control-Allow-Origin&amp;#39;, &amp;#39;*&amp;#39;)//允许来自所有域的请求  response.</description>
     </item>
     
   </channel>

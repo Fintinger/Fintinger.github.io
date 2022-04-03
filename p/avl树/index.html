@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir=" auto">
+<html lang="zh-cn" dir=" auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,27 +12,37 @@
 平衡因子 $平衡因子=左子树高-右子树高$
 AVL树的插入操作 AVL树插入新结点导致不平衡之后，只需将最小不平衡子树平衡，其他祖先结点会随之恢复平衡。
 调整最小不平衡子树 注意：调整过后必须保证其BST的特性，即“左子树1.LL  即在以A为根节点的树的左孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
- 调整过程如下：
+ 
+调整过程如下：
+
 2.RR  即在以A为根节点的树的右孩子B的右子树上插入新结点，导致A成为最小不平衡子树。
- 调整过程如下：
+ 
+调整过程如下：
+
 3.LR  即在以A为根节点的树的左孩子B的右子树上插入新结点，导致A成为最小不平衡子树。
- 观察得知，所进行的调整就是保证$|平衡因子|&lt;=1$，因此若插入操作使得
+ 
+观察得知，所进行的调整就是保证$|平衡因子|&lt;=1$，因此若插入操作使得
 左 - 右 &gt; 1 =&gt; 右旋
 右 - 左 &gt; 1 =&gt;左旋
 而当进行了LR插入操作之后，导致以A为根节点的树 左-右&gt;1，理应右旋但是，由上述结果可知，经过右旋之后：
+
 可以看到，为了保证其左子树&lt;根&lt;右子树的特性，经过调整后，依然存在右-左&gt;1的问题；
 因此，对于LR型不能简单进行右旋调整，应该先将其转化为LL型 (左旋)，再进行右旋；
 为此，我们需要将BR结点展开，之后旋转成为LL型插入
+
 可以看到，展开后又出现两种插入情况CL&amp;CR，但其实两者处理大同小异：
 CR插入调整过程如下：
+
 4.RL  即在以A为根节点的树的右孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
- 参考LR型，其调整过程如下：
+ 
+参考LR型，其调整过程如下：
+
 查找操作效率分析 Assuming that, $n_h$表示深度为h的平衡树中含有的最少结点，则
 $n_0=0$,$n_1=1$,$n_2=2$&hellip;存在递归关系 $n_h=n_{h-1}&#43;n_{h-2}&#43;1$,即左右子树结点之和&#43;根节点。
 可以证明(AVL证明)，n个结点的平衡二叉树最大深度数量级为$\log_2n$，则其查找操作的复杂度为$O(\log_2n)$">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/p/avl%E6%A0%91/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.5801d16a0eff04ddc43661d83501a64f9bd5ebd0d26c58a21acbae9272b6c64a.css" integrity="sha256-WAHRag7/BN3ENmHYNQGmT5vV69DSbFiiGsuuknK2xko=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.82515ee3aebfe1ebd3d64679bfe6446c9279b71bc7a666741307404ca67eb398.css" integrity="sha256-glFe466/4evT1kZ5v&#43;ZEbJJ5txvHpmZ0EwdATKZ&#43;s5g=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -54,21 +64,31 @@ $n_0=0$,$n_1=1$,$n_2=2$&hellip;存在递归关系 $n_h=n_{h-1}&#43;n_{h-2}&#43;1
 平衡因子 $平衡因子=左子树高-右子树高$
 AVL树的插入操作 AVL树插入新结点导致不平衡之后，只需将最小不平衡子树平衡，其他祖先结点会随之恢复平衡。
 调整最小不平衡子树 注意：调整过后必须保证其BST的特性，即“左子树1.LL  即在以A为根节点的树的左孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
- 调整过程如下：
+ 
+调整过程如下：
+
 2.RR  即在以A为根节点的树的右孩子B的右子树上插入新结点，导致A成为最小不平衡子树。
- 调整过程如下：
+ 
+调整过程如下：
+
 3.LR  即在以A为根节点的树的左孩子B的右子树上插入新结点，导致A成为最小不平衡子树。
- 观察得知，所进行的调整就是保证$|平衡因子|&lt;=1$，因此若插入操作使得
+ 
+观察得知，所进行的调整就是保证$|平衡因子|&lt;=1$，因此若插入操作使得
 左 - 右 &gt; 1 =&gt; 右旋
 右 - 左 &gt; 1 =&gt;左旋
 而当进行了LR插入操作之后，导致以A为根节点的树 左-右&gt;1，理应右旋但是，由上述结果可知，经过右旋之后：
+
 可以看到，为了保证其左子树&lt;根&lt;右子树的特性，经过调整后，依然存在右-左&gt;1的问题；
 因此，对于LR型不能简单进行右旋调整，应该先将其转化为LL型 (左旋)，再进行右旋；
 为此，我们需要将BR结点展开，之后旋转成为LL型插入
+
 可以看到，展开后又出现两种插入情况CL&amp;CR，但其实两者处理大同小异：
 CR插入调整过程如下：
+
 4.RL  即在以A为根节点的树的右孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
- 参考LR型，其调整过程如下：
+ 
+参考LR型，其调整过程如下：
+
 查找操作效率分析 Assuming that, $n_h$表示深度为h的平衡树中含有的最少结点，则
 $n_0=0$,$n_1=1$,$n_2=2$&hellip;存在递归关系 $n_h=n_{h-1}&#43;n_{h-2}&#43;1$,即左右子树结点之和&#43;根节点。
 可以证明(AVL证明)，n个结点的平衡二叉树最大深度数量级为$\log_2n$，则其查找操作的复杂度为$O(\log_2n)$" />
@@ -84,21 +104,31 @@ $n_0=0$,$n_1=1$,$n_2=2$&hellip;存在递归关系 $n_h=n_{h-1}&#43;n_{h-2}&#43;1
 平衡因子 $平衡因子=左子树高-右子树高$
 AVL树的插入操作 AVL树插入新结点导致不平衡之后，只需将最小不平衡子树平衡，其他祖先结点会随之恢复平衡。
 调整最小不平衡子树 注意：调整过后必须保证其BST的特性，即“左子树1.LL  即在以A为根节点的树的左孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
- 调整过程如下：
+ 
+调整过程如下：
+
 2.RR  即在以A为根节点的树的右孩子B的右子树上插入新结点，导致A成为最小不平衡子树。
- 调整过程如下：
+ 
+调整过程如下：
+
 3.LR  即在以A为根节点的树的左孩子B的右子树上插入新结点，导致A成为最小不平衡子树。
- 观察得知，所进行的调整就是保证$|平衡因子|&lt;=1$，因此若插入操作使得
+ 
+观察得知，所进行的调整就是保证$|平衡因子|&lt;=1$，因此若插入操作使得
 左 - 右 &gt; 1 =&gt; 右旋
 右 - 左 &gt; 1 =&gt;左旋
 而当进行了LR插入操作之后，导致以A为根节点的树 左-右&gt;1，理应右旋但是，由上述结果可知，经过右旋之后：
+
 可以看到，为了保证其左子树&lt;根&lt;右子树的特性，经过调整后，依然存在右-左&gt;1的问题；
 因此，对于LR型不能简单进行右旋调整，应该先将其转化为LL型 (左旋)，再进行右旋；
 为此，我们需要将BR结点展开，之后旋转成为LL型插入
+
 可以看到，展开后又出现两种插入情况CL&amp;CR，但其实两者处理大同小异：
 CR插入调整过程如下：
+
 4.RL  即在以A为根节点的树的右孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
- 参考LR型，其调整过程如下：
+ 
+参考LR型，其调整过程如下：
+
 查找操作效率分析 Assuming that, $n_h$表示深度为h的平衡树中含有的最少结点，则
 $n_0=0$,$n_1=1$,$n_2=2$&hellip;存在递归关系 $n_h=n_{h-1}&#43;n_{h-2}&#43;1$,即左右子树结点之和&#43;根节点。
 可以证明(AVL证明)，n个结点的平衡二叉树最大深度数量级为$\log_2n$，则其查找操作的复杂度为$O(\log_2n)$"/>
@@ -130,13 +160,13 @@ $n_0=0$,$n_1=1$,$n_2=2$&hellip;存在递归关系 $n_h=n_{h-1}&#43;n_{h-2}&#43;1
   "@type": "BlogPosting",
   "headline": "AVL树",
   "name": "AVL树",
-  "description": "平衡二叉树是Adelson-Velsky和 Landis发明，故命名为AVL树。也称平衡二叉查找树。\n ✨特点： ①左子树\u0026lt;根\u0026lt;右子树； ②任一节点，左右子树高度之差不超过1.\n平衡因子 $平衡因子=左子树高-右子树高$\nAVL树的插入操作 AVL树插入新结点导致不平衡之后，只需将最小不平衡子树平衡，其他祖先结点会随之恢复平衡。\n调整最小不平衡子树 注意：调整过后必须保证其BST的特性，即“左子树1.LL  即在以A为根节点的树的左孩子B的左子树上插入新结点，导致A成为最小不平衡子树。\n 调整过程如下：\n2.RR  即在以A为根节点的树的右孩子B的右子树上插入新结点，导致A成为最小不平衡子树。\n 调整过程如下：\n3.LR  即在以A为根节点的树的左孩子B的右子树上插入新结点，导致A成为最小不平衡子树。\n 观察得知，所进行的调整就是保证$|平衡因子|\u0026lt;=1$，因此若插入操作使得\n左 - 右 \u0026gt; 1 =\u0026gt; 右旋\n右 - 左 \u0026gt; 1 =\u0026gt;左旋\n而当进行了LR插入操作之后，导致以A为根节点的树 左-右\u0026gt;1，理应右旋但是，由上述结果可知，经过右旋之后：\n可以看到，为了保证其左子树\u0026lt;根\u0026lt;右子树的特性，经过调整后，依然存在右-左\u0026gt;1的问题；\n因此，对于LR型不能简单进行右旋调整，应该先将其转化为LL型 (左旋)，再进行右旋；\n为此，我们需要将BR结点展开，之后旋转成为LL型插入\n可以看到，展开后又出现两种插入情况CL\u0026amp;CR，但其实两者处理大同小异：\nCR插入调整过程如下：\n4.RL  即在以A为根节点的树的右孩子B的左子树上插入新结点，导致A成为最小不平衡子树。\n 参考LR型，其调整过程如下：\n查找操作效率分析 Assuming that, $n_h$表示深度为h的平衡树中含有的最少结点，则\n$n_0=0$,$n_1=1$,$n_2=2$\u0026hellip;存在递归关系 $n_h=n_{h-1}+n_{h-2}+1$,即左右子树结点之和+根节点。\n可以证明(AVL证明)，n个结点的平衡二叉树最大深度数量级为$\\log_2n$，则其查找操作的复杂度为$O(\\log_2n)$",
+  "description": "平衡二叉树是Adelson-Velsky和 Landis发明，故命名为AVL树。也称平衡二叉查找树。\n ✨特点： ①左子树\u0026lt;根\u0026lt;右子树； ②任一节点，左右子树高度之差不超过1.\n平衡因子 $平衡因子=左子树高-右子树高$\nAVL树的插入操作 AVL树插入新结点导致不平衡之后，只需将最小不平衡子树平衡，其他祖先结点会随之恢复平衡。\n调整最小不平衡子树 注意：调整过后必须保证其BST的特性，即“左子树1.LL  即在以A为根节点的树的左孩子B的左子树上插入新结点，导致A成为最小不平衡子树。\n \n调整过程如下：\n\n2.RR  即在以A为根节点的树的右孩子B的右子树上插入新结点，导致A成为最小不平衡子树。\n \n调整过程如下：\n\n3.LR  即在以A为根节点的树的左孩子B的右子树上插入新结点，导致A成为最小不平衡子树。\n \n观察得知，所进行的调整就是保证$|平衡因子|\u0026lt;=1$，因此若插入操作使得\n左 - 右 \u0026gt; 1 =\u0026gt; 右旋\n右 - 左 \u0026gt; 1 =\u0026gt;左旋\n而当进行了LR插入操作之后，导致以A为根节点的树 左-右\u0026gt;1，理应右旋但是，由上述结果可知，经过右旋之后：\n\n可以看到，为了保证其左子树\u0026lt;根\u0026lt;右子树的特性，经过调整后，依然存在右-左\u0026gt;1的问题；\n因此，对于LR型不能简单进行右旋调整，应该先将其转化为LL型 (左旋)，再进行右旋；\n为此，我们需要将BR结点展开，之后旋转成为LL型插入\n\n可以看到，展开后又出现两种插入情况CL\u0026amp;CR，但其实两者处理大同小异：\nCR插入调整过程如下：\n\n4.RL  即在以A为根节点的树的右孩子B的左子树上插入新结点，导致A成为最小不平衡子树。\n \n参考LR型，其调整过程如下：\n\n查找操作效率分析 Assuming that, $n_h$表示深度为h的平衡树中含有的最少结点，则\n$n_0=0$,$n_1=1$,$n_2=2$\u0026hellip;存在递归关系 $n_h=n_{h-1}+n_{h-2}+1$,即左右子树结点之和+根节点。\n可以证明(AVL证明)，n个结点的平衡二叉树最大深度数量级为$\\log_2n$，则其查找操作的复杂度为$O(\\log_2n)$",
   "keywords": [
     "数据结构", "AVL"
   ],
-  "articleBody": " 平衡二叉树是Adelson-Velsky和 Landis发明，故命名为AVL树。也称平衡二叉查找树。\n ✨特点： ①左子树平衡因子 $平衡因子=左子树高-右子树高$\nAVL树的插入操作 AVL树插入新结点导致不平衡之后，只需将最小不平衡子树平衡，其他祖先结点会随之恢复平衡。\n调整最小不平衡子树 注意：调整过后必须保证其BST的特性，即“左子树1.LL  即在以A为根节点的树的左孩子B的左子树上插入新结点，导致A成为最小不平衡子树。\n 调整过程如下：\n2.RR  即在以A为根节点的树的右孩子B的右子树上插入新结点，导致A成为最小不平衡子树。\n 调整过程如下：\n3.LR  即在以A为根节点的树的左孩子B的右子树上插入新结点，导致A成为最小不平衡子树。\n 观察得知，所进行的调整就是保证$|平衡因子|左 - 右  1 = 右旋\n右 - 左  1 =左旋\n而当进行了LR插入操作之后，导致以A为根节点的树 左-右1，理应右旋但是，由上述结果可知，经过右旋之后：\n可以看到，为了保证其左子树1的问题；\n因此，对于LR型不能简单进行右旋调整，应该先将其转化为LL型 (左旋)，再进行右旋；\n为此，我们需要将BR结点展开，之后旋转成为LL型插入\n可以看到，展开后又出现两种插入情况CL\u0026CR，但其实两者处理大同小异：\nCR插入调整过程如下：\n4.RL  即在以A为根节点的树的右孩子B的左子树上插入新结点，导致A成为最小不平衡子树。\n 参考LR型，其调整过程如下：\n查找操作效率分析 Assuming that, $n_h$表示深度为h的平衡树中含有的最少结点，则\n$n_0=0$,$n_1=1$,$n_2=2$…存在递归关系 $n_h=n_{h-1}+n_{h-2}+1$,即左右子树结点之和+根节点。\n可以证明(AVL证明)，n个结点的平衡二叉树最大深度数量级为$\\log_2n$，则其查找操作的复杂度为$O(\\log_2n)$\n",
+  "articleBody": " 平衡二叉树是Adelson-Velsky和 Landis发明，故命名为AVL树。也称平衡二叉查找树。\n ✨特点： ①左子树平衡因子 $平衡因子=左子树高-右子树高$\nAVL树的插入操作 AVL树插入新结点导致不平衡之后，只需将最小不平衡子树平衡，其他祖先结点会随之恢复平衡。\n调整最小不平衡子树 注意：调整过后必须保证其BST的特性，即“左子树1.LL  即在以A为根节点的树的左孩子B的左子树上插入新结点，导致A成为最小不平衡子树。\n \n调整过程如下：\n\n2.RR  即在以A为根节点的树的右孩子B的右子树上插入新结点，导致A成为最小不平衡子树。\n \n调整过程如下：\n\n3.LR  即在以A为根节点的树的左孩子B的右子树上插入新结点，导致A成为最小不平衡子树。\n \n观察得知，所进行的调整就是保证$|平衡因子|左 - 右  1 = 右旋\n右 - 左  1 =左旋\n而当进行了LR插入操作之后，导致以A为根节点的树 左-右1，理应右旋但是，由上述结果可知，经过右旋之后：\n\n可以看到，为了保证其左子树1的问题；\n因此，对于LR型不能简单进行右旋调整，应该先将其转化为LL型 (左旋)，再进行右旋；\n为此，我们需要将BR结点展开，之后旋转成为LL型插入\n\n可以看到，展开后又出现两种插入情况CL\u0026CR，但其实两者处理大同小异：\nCR插入调整过程如下：\n\n4.RL  即在以A为根节点的树的右孩子B的左子树上插入新结点，导致A成为最小不平衡子树。\n \n参考LR型，其调整过程如下：\n\n查找操作效率分析 Assuming that, $n_h$表示深度为h的平衡树中含有的最少结点，则\n$n_0=0$,$n_1=1$,$n_2=2$…存在递归关系 $n_h=n_{h-1}+n_{h-2}+1$,即左右子树结点之和+根节点。\n可以证明(AVL证明)，n个结点的平衡二叉树最大深度数量级为$\\log_2n$，则其查找操作的复杂度为$O(\\log_2n)$\n",
   "wordCount" : "50",
-  "inLanguage": "en",
+  "inLanguage": "zh-cn",
   "datePublished": "2021-05-23T00:00:00Z",
   "dateModified": "2021-05-23T00:00:00Z",
   "author":{
@@ -233,6 +263,7 @@ $n_0=0$,$n_1=1$,$n_2=2$&hellip;存在递归关系 $n_h=n_{h-1}&#43;n_{h-2}&#43;1
     <details >
         <summary accesskey="c" title="(Alt + C)">
             <span class="details">Table of Contents</span>
+            <span id="pinToc" title="pinned/unpinned"></span>
         </summary>
 
         <div class="inner"><ul>
@@ -262,6 +293,13 @@ $n_0=0$,$n_1=1$,$n_2=2$&hellip;存在递归关系 $n_h=n_{h-1}&#43;n_{h-2}&#43;1
     </details>
 </div>
 
+<script>
+    const pinToc=document.querySelector("#pinToc");
+
+    pinToc.addEventListener("click",evt => {
+       evt.target.parentElement.parentElement.parentElement.classList.toggle('pinned')
+    })
+</script>
   <div class="post-content"><blockquote>
 <p>平衡二叉树是Adelson-Velsky和 Landis发明，故命名为AVL树。也称平衡二叉查找树。</p>
 </blockquote>
@@ -277,49 +315,49 @@ $n_0=0$,$n_1=1$,$n_2=2$&hellip;存在递归关系 $n_h=n_{h-1}&#43;n_{h-2}&#43;1
 <p>即在以A为根节点的树的<strong>左孩子B的左子树上</strong>插入新结点，导致A成为最小不平衡子树。</p>
 </blockquote>
 <p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210523093652.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <p>调整过程如下：</p>
 <p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210523094719.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <h4 id="2rr">2.RR<a hidden class="anchor" aria-hidden="true" href="#2rr">#</a></h4>
 <blockquote>
 <p>即在以A为根节点的树的<strong>右孩子B的右子树上</strong>插入新结点，导致A成为最小不平衡子树。</p>
 </blockquote>
 <p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210523095839.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <p>调整过程如下：</p>
 <p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210523100041.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <h4 id="3lr">3.LR<a hidden class="anchor" aria-hidden="true" href="#3lr">#</a></h4>
 <blockquote>
 <p>即在以A为根节点的树的<strong>左孩子B的右子树上</strong>插入新结点，导致A成为最小不平衡子树。</p>
 </blockquote>
 <p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210523101352.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <p>观察得知，所进行的调整就是保证$|平衡因子|&lt;=1$，因此若插入操作使得</p>
 <p>左 - 右 &gt; 1 =&gt; 右旋</p>
 <p>右 - 左 &gt; 1  =&gt;左旋</p>
 <p>而当进行了LR插入操作之后，导致以A为根节点的树 <strong>左-右&gt;1</strong>，理应右旋但是，由上述结果可知，经过右旋之后：</p>
 <p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210523105119.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <p>可以看到，为了保证其左子树&lt;根&lt;右子树的特性，经过调整后，依然存在右-左&gt;1的问题；</p>
 <p>因此，对于LR型不能简单进行右旋调整，应该先将其<strong>转化为LL型</strong> (左旋)，再进行右旋；</p>
 <p>为此，我们需要将BR结点展开，之后旋转成为LL型插入</p>
 <p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210523110018.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <p>可以看到，展开后又出现两种插入情况CL&amp;CR，但其实两者处理大同小异：</p>
 <p>CR插入调整过程如下：</p>
 <p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210523110155.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <h4 id="4rl">4.RL<a hidden class="anchor" aria-hidden="true" href="#4rl">#</a></h4>
 <blockquote>
 <p>即在以A为根节点的树的<strong>右孩子B的左子树上</strong>插入新结点，导致A成为最小不平衡子树。</p>
 </blockquote>
 <p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210523110426.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <p>参考LR型，其调整过程如下：</p>
 <p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210523110538.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <h2 id="查找操作效率分析">查找操作效率分析<a hidden class="anchor" aria-hidden="true" href="#查找操作效率分析">#</a></h2>
 <p>Assuming that, $n_h$表示深度为h的平衡树中含有的最少结点，则</p>
 <p>$n_0=0$,$n_1=1$,$n_2=2$&hellip;存在递归关系 $n_h=n_{h-1}+n_{h-2}+1$,即左右子树结点之和+根节点。</p>
@@ -335,30 +373,19 @@ $n_0=0$,$n_1=1$,$n_2=2$&hellip;存在递归关系 $n_h=n_{h-1}&#43;n_{h-2}&#43;1
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/">
-    <span class="title">« Prev Page</span>
+    <span class="title">« </span>
     <br>
     <span>图的存储</span>
   </a>
   <a class="next" href="https://www.fintinger.site/p/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/">
-    <span class="title">Next Page »</span>
+    <span class="title"> »</span>
     <br>
     <span>哈夫曼树</span>
   </a>
 </nav>
 
   </footer><script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
-<div id="waline" class="waline-container"></div>
-<style>
-    .waline-container {
-        background-color: var(--card-background);
-        border-radius: var(--card-border-radius);
-        box-shadow: var(--shadow-l1);
-        padding: var(--card-padding);
-    }
-    .waline-container .vcount {
-        color: var(--card-text-color-main);
-    }
-</style><script>
+<div id="waline" class="waline-container"></div><script>
     
     new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://waline-q3l7of5hj-fintinger.vercel.app/","visitor":true});
 </script>
@@ -377,13 +404,17 @@ $n_0=0$,$n_1=1$,$n_2=2$&hellip;存在递归关系 $n_h=n_{h-1}&#43;n_{h-2}&#43;1
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a><script>
+</a><script class="testestteyftauj">
+    console.log("OK")
+</script>
+<script>
     if (window.screen.width <= 640 && window.location.pathname == "/") {
         document.querySelector(".profile_inner").style.opacity = 1;
     }
 </script>
 
 <script>
+     
     if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
@@ -392,49 +423,73 @@ $n_0=0$,$n_1=1$,$n_2=2$&hellip;存在递归关系 $n_h=n_{h-1}&#43;n_{h-2}&#43;1
         function n(n, e, t) {
             return n.getAttribute(e) || t
         }
+
         function e(n) {
             return document.getElementsByTagName(n)
         }
+
         function t() {
             var t = e("script"), o = t.length, i = t[o - 1];
-            return { l: o, z: n(i, "zIndex", -88), o: n(i, "opacity", .3), c: n(i, "color", '0,0,0'), n: n(i, "count", 300) }
+            return {
+                l: o,
+                z: n(i, "zIndex", -88),
+                o: n(i, "opacity", .3),
+                c: n(i, "color", '0,0,0'),
+                n: n(i, "count", 300)
+            }
         }
+
         function o() {
             a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
                 c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
         }
+
         function i() {
             r.clearRect(0, 0, a, c);
             var n, e, t, o, m, l;
             s.forEach(function (i, x) {
-                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++)n = u[e],
-                    null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
-                        l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
-                            t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+                null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
+                    l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
+                    t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
             }),
                 x(i)
         }
+
         var a, c, u, m = document.createElement("canvas"),
             d = t(), l = "c_n" + d.l, r = m.getContext("2d"),
             x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
                 function (n) {
                     window.setTimeout(n, 1e3 / 45)
                 },
-            w = Math.random, y = { x: null, y: null, max: 2e4 }; m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
-                window.onmousemove = function (n) {
-                    n = n || window.event, y.x = n.clientX, y.y = n.clientY
-                },
-                window.onmouseout = function () {
-                    y.x = null, y.y = null
-                };
+            w = Math.random, y = {x: null, y: null, max: 2e4};
+        m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
+            window.onmousemove = function (n) {
+                n = n || window.event, y.x = n.clientX, y.y = n.clientY
+            },
+            window.onmouseout = function () {
+                y.x = null, y.y = null
+            };
         for (var s = [], f = 0; d.n > f; f++) {
-            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1; s.push({ x: h, y: g, xa: v, ya: p, max: 6e3 })
+            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1;
+            s.push({x: h, y: g, xa: v, ya: p, max: 6e3})
         }
         u = s.concat([y]),
-            setTimeout(function () { i() }, 100)
+            setTimeout(function () {
+                i()
+            }, 100)
     };
 
 </script>
+
+<script>
+    
+    document.querySelectorAll(".imgAlt").forEach(el => {
+        console.dir();
+        el.innerHTML = el.previousElementSibling.children[0].attributes.alt.value;
+    })
+</script>
+
 
 <script>
     let menu = document.getElementById('menu')

@@ -13,8 +13,9 @@
       
       <guid>https://www.fintinger.site/p/canvas%E7%BB%98%E5%88%B6%E8%B7%9F%E9%9A%8F%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%8A%A8%E7%9A%84%E7%BA%BF%E6%9D%A1/</guid>
       <description>在浏览网页时无意中发现了下面这种背景互动的效果：
+
 通过一番周折，最终找到以下实现代码
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45  function randomLine() { function n(n, e, t) { return n.getAttribute(e) || t } function e(n) { return document.getElementsByTagName(n) } function t() { var t = e(&amp;#34;script&amp;#34;), o = t.</description>
+function randomLine() { function n(n, e, t) { return n.getAttribute(e) || t } function e(n) { return document.getElementsByTagName(n) } function t() { var t = e(&amp;#34;script&amp;#34;), o = t.length, i = t[o - 1]; return { l: o, z: n(i, &amp;#34;zIndex&amp;#34;, -88), o: n(i, &amp;#34;opacity&amp;#34;, .5), c: n(i, &amp;#34;color&amp;#34;,&amp;#34;0,0,0&amp;#34;), n: n(i, &amp;#34;count&amp;#34;, 150) } } function o() { a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth, c = m.</description>
     </item>
     
     <item>
@@ -23,11 +24,14 @@
       <pubDate>Mon, 23 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.fintinger.site/p/css%E6%8F%AD%E7%A7%98%E4%B8%80%E4%B9%A6%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86/</guid>
-      <description>1.backgrouond简写  在background简写属性中指定background-sizing时，需要提供一个background-position值，而且要使用/作为分隔。  1  background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [ background-size] [background-origin] [background-clip];   &amp;mdash;&amp;ndash;P13&amp;mdash;&amp;ndash;
-2.background-clip 规定背景的绘制区域：得到一个白色背景并且有白色边框的盒子：
-1 2 3  border:10px solid hsla(0,0,100%,.5); background:white; background-clip:padding-box   若不设置background-clip，背景会延伸至边框，边框的透明无法显示
+      <description>1.backgrouond简写  在background简写属性中指定background-sizing时，需要提供一个background-position值，而且要使用/作为分隔。  background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [ background-size] [background-origin] [background-clip]; &amp;mdash;&amp;ndash;P13&amp;mdash;&amp;ndash;
+2.background-clip 规定背景的绘制区域： 得到一个白色背景并且有白色边框的盒子：
+border:10px solid hsla(0,0,100%,.5); background:white; background-clip:padding-box 
+若不设置background-clip，背景会延伸至边框，边框的透明无法显示
 &amp;mdash;&amp;mdash;P18&amp;mdash;&amp;mdash;-
-3.双重边框  box-shadow   background:orange;box-shadow:0 0 010px #655 , 0 0 0 15px deeppink; /*可以加任意层数边框*/ outline  1 2 3 4 5 6 7 8 9  width:180px; height:90px; margin:30px auto; text-align:center; padding:10px; background:##655; outline: ##fff dashed 1px; outline-offset: -15px; /*设置outline向内缩进*/ border-radius:8px;   注意： outline可能会产生不贴合border-radius圆角的情况 &amp;mdash;-P20&amp;mdash;-</description>
+3.双重边框  box-shadow   background:orange;box-shadow:0 0 010px #655 , 0 0 0 15px deeppink; /*可以加任意层数边框*/ outline  width:180px; height:90px; margin:30px auto; text-align:center; padding:10px; background:##655; outline: ##fff dashed 1px; outline-offset: -15px; /*设置outline向内缩进*/ border-radius:8px;  注意： outline可能会产生不贴合border-radius圆角的情况 
+&amp;mdash;-P20&amp;mdash;-
+4.box-shadow  只给下方设置阴影，（扩张半径为负的模糊半径）:  box-shadow: 0 5px 4px -4px black;  临边投影，(扩张半径为负的模糊半径的一半):  box-shadow: 3px 3px 6px -3px black; &amp;mdash;-P88&amp;mdash;-</description>
     </item>
     
   </channel>

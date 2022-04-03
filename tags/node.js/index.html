@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir=" auto">
+<html lang="zh-cn" dir=" auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/tags/node.js/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.5801d16a0eff04ddc43661d83501a64f9bd5ebd0d26c58a21acbae9272b6c64a.css" integrity="sha256-WAHRag7/BN3ENmHYNQGmT5vV69DSbFiiGsuuknK2xko=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.82515ee3aebfe1ebd3d64679bfe6446c9279b71bc7a666741307404ca67eb398.css" integrity="sha256-glFe466/4evT1kZ5v&#43;ZEbJJ5txvHpmZ0EwdATKZ&#43;s5g=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -109,10 +109,10 @@
   </header>
   <section class="entry-content">
     <p>在写小demo的过程中，经常需要把某个文件夹的图片文件的路径给引入，除非全部重命名成有序的数字，不然不好处理，这就用到了node中的fs和path模块，还没学…
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  const path=require(&#34;path&#34;); const fs = require(&#39;fs&#39;); fs.stat(&#39;../images&#39;,(err)=&gt;{//图片文件所在目录  if (err)return; var result=&#39;{&#39; fs.readdir(&#34;../images&#34;,(err,data)=&gt;{//图片文件所在目录  for(var i=0;i&lt;Object.keys(data).length;i&#43;&#43;){ let ImgPath=&#34;\&#34;images/&#34;&#43;data[i]&#43;&#34;\&#34;&#34;; result&#43;=&#34;\&#34;&#34;&#43;i&#43;&#34;\&#34;:&#34;&#43;ImgPath&#43;&#34;,&#34;; } result=result.substring(0,result.length-1); let length=&#34;\&#34;&#34;&#43;&#34;length&#34;&#43;&#34;\&#34;&#34;&#43;&#34;:&#34;&#43;&#34;\&#34;&#34;&#43;Object.keys(data).length&#43;&#34;\&#34;&#34;//文件数量  result&#43;=&#34;,&#34;&#43;length&#43;&#39;}&#39; fs.writeFile(&#34;../data/imgPath.json&#34;,result,(err)=&gt;{ if(err)return; console.log(&#34;写入文件成功，一共&#34;&#43;Object.keys(data).length&#43;&#34;个文件&#34;); }); }); });   生成的文件大概就是这样的一个json数据
-1  {&#34;0&#34;:&#34;images/1.jpg&#34;,&#34;1&#34;:&#34;images/10.jpg&#34;,&#34;2&#34;:&#34;images/100.jpg&#34;,&#34;3&#34;:&#34;images/101.jpg&#34;,&#34;4&#34;:&#34;images/102.jpg&#34;,&#34;5&#34;:&#34;images/103.jpg&#34;,&#34;6&#34;:&#34;images/104.jpg&#34;,&#34;7&#34;:&#34;images/105.jpg&#34;,&#34;8&#34;:&#34;images/106.jpg&#34;,&#34;9&#34;:&#34;images/107.jpg&#34;,&#34;10&#34;:&#34;images/108.jpg&#34;,&#34;length&#34;:&#34;109&#34;}   </p>
+const path=require(&#34;path&#34;); const fs = require(&#39;fs&#39;); fs.stat(&#39;../images&#39;,(err)=&gt;{//图片文件所在目录  if (err)return; var result=&#39;{&#39; fs.readdir(&#34;../images&#34;,(err,data)=&gt;{//图片文件所在目录  for(var i=0;i&lt;Object.keys(data).length;i&#43;&#43;){ let ImgPath=&#34;\&#34;images/&#34;&#43;data[i]&#43;&#34;\&#34;&#34;; result&#43;=&#34;\&#34;&#34;&#43;i&#43;&#34;\&#34;:&#34;&#43;ImgPath&#43;&#34;,&#34;; } result=result.substring(0,result.length-1); let length=&#34;\&#34;&#34;&#43;&#34;length&#34;&#43;&#34;\&#34;&#34;&#43;&#34;:&#34;&#43;&#34;\&#34;&#34;&#43;Object.keys(data).length&#43;&#34;\&#34;&#34;//文件数量  result&#43;=&#34;,&#34;&#43;length&#43;&#39;}&#39; fs.writeFile(&#34;../data/imgPath.json&#34;,result,(err)=&gt;{ if(err)return; console.log(&#34;写入文件成功，一共&#34;&#43;Object.keys(data).length&#43;&#34;个文件&#34;); }); }); }); 生成的文件大概就是这样的一个json数据
+{&#34;0&#34;:&#34;images/1.jpg&#34;,&#34;1&#34;:&#34;images/10.jpg&#34;,&#34;2&#34;:&#34;images/100.jpg&#34;,&#34;3&#34;:&#34;images/101.jpg&#34;,&#34;4&#34;:&#34;images/102.jpg&#34;,&#34;5&#34;:&#34;images/103.jpg&#34;,&#34;6&#34;:&#34;images/104.jpg&#34;,&#34;7&#34;:&#34;images/105.jpg&#34;,&#34;8&#34;:&#34;images/106.jpg&#34;,&#34;9&#34;:&#34;images/107.jpg&#34;,&#34;10&#34;:&#34;images/108.jpg&#34;,&#34;length&#34;:&#34;109&#34;} </p>
   </section>
-  <footer class="entry-footer"><span title='2020-07-05 00:00:00 +0000 UTC'>July 5, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <footer class="entry-footer"><span title='2020-07-05 00:00:00 +0000 UTC'>Jul 5, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to JavaScript生成图片文件路径json" href="https://www.fintinger.site/p/javascript%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84json/"></a>
 </article>
     </main>
@@ -129,13 +129,17 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a><script>
+</a><script class="testestteyftauj">
+    console.log("OK")
+</script>
+<script>
     if (window.screen.width <= 640 && window.location.pathname == "/") {
         document.querySelector(".profile_inner").style.opacity = 1;
     }
 </script>
 
 <script>
+     
     if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
@@ -144,49 +148,73 @@
         function n(n, e, t) {
             return n.getAttribute(e) || t
         }
+
         function e(n) {
             return document.getElementsByTagName(n)
         }
+
         function t() {
             var t = e("script"), o = t.length, i = t[o - 1];
-            return { l: o, z: n(i, "zIndex", -88), o: n(i, "opacity", .3), c: n(i, "color", '0,0,0'), n: n(i, "count", 300) }
+            return {
+                l: o,
+                z: n(i, "zIndex", -88),
+                o: n(i, "opacity", .3),
+                c: n(i, "color", '0,0,0'),
+                n: n(i, "count", 300)
+            }
         }
+
         function o() {
             a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
                 c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
         }
+
         function i() {
             r.clearRect(0, 0, a, c);
             var n, e, t, o, m, l;
             s.forEach(function (i, x) {
-                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++)n = u[e],
-                    null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
-                        l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
-                            t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+                null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
+                    l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
+                    t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
             }),
                 x(i)
         }
+
         var a, c, u, m = document.createElement("canvas"),
             d = t(), l = "c_n" + d.l, r = m.getContext("2d"),
             x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
                 function (n) {
                     window.setTimeout(n, 1e3 / 45)
                 },
-            w = Math.random, y = { x: null, y: null, max: 2e4 }; m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
-                window.onmousemove = function (n) {
-                    n = n || window.event, y.x = n.clientX, y.y = n.clientY
-                },
-                window.onmouseout = function () {
-                    y.x = null, y.y = null
-                };
+            w = Math.random, y = {x: null, y: null, max: 2e4};
+        m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
+            window.onmousemove = function (n) {
+                n = n || window.event, y.x = n.clientX, y.y = n.clientY
+            },
+            window.onmouseout = function () {
+                y.x = null, y.y = null
+            };
         for (var s = [], f = 0; d.n > f; f++) {
-            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1; s.push({ x: h, y: g, xa: v, ya: p, max: 6e3 })
+            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1;
+            s.push({x: h, y: g, xa: v, ya: p, max: 6e3})
         }
         u = s.concat([y]),
-            setTimeout(function () { i() }, 100)
+            setTimeout(function () {
+                i()
+            }, 100)
     };
 
 </script>
+
+<script>
+    
+    document.querySelectorAll(".imgAlt").forEach(el => {
+        console.dir();
+        el.innerHTML = el.previousElementSibling.children[0].attributes.alt.value;
+    })
+</script>
+
 
 <script>
     let menu = document.getElementById('menu')

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir=" auto">
+<html lang="zh-cn" dir=" auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/tags/vue.js/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.5801d16a0eff04ddc43661d83501a64f9bd5ebd0d26c58a21acbae9272b6c64a.css" integrity="sha256-WAHRag7/BN3ENmHYNQGmT5vV69DSbFiiGsuuknK2xko=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.82515ee3aebfe1ebd3d64679bfe6446c9279b71bc7a666741307404ca67eb398.css" integrity="sha256-glFe466/4evT1kZ5v&#43;ZEbJJ5txvHpmZ0EwdATKZ&#43;s5g=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -104,17 +104,18 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2>Vue2.0再学习小结
+    <h2>Vue2.0学习小结
     </h2>
   </header>
   <section class="entry-content">
     <p>关于Vue和VueComponent   一个重要的内置关系:VueComponent.prototype.proto===vue.prototype
+
   为什么要有这个关系？
 让组件实例对象(vc)可以访间到Vue原型上的属性、方法.
   ref属性 1.被用来给元素或子组件注册引用信息(id的替代者)
 2.应用在htm1标签上获取的是真实DOM元素,应用在组件标签上是组件实例对象(vc)
 3.使用方式: 打标识: &lt;h1 ref=&#34;xxx&#34;&gt;.....&lt;/h1&gt;或&lt;School ref=&#34;xxx&#34;&gt;&lt;/School&gt; 获取:this.$refs.xxx
-配置项props 功能:让组件接收外部传过来的数据
+配置项props 功能: 让组件接收外部传过来的数据
 (1).传递数据:
 &lt;Demo name=&#34;xxx&#34;/&gt;
 (2).接收数据:
@@ -123,14 +124,20 @@ props:[&#39;name&#39;]
 第二种方式(限制类型):
 props:{ name:String }
 第三种方式(限制类型、限制必要性、指定默认值):
-1 2 3 4 5 6 7  props:{ name:{ type:String,//类型限制  required:true,//必要性  default:&#34;JQF&#34;//默认值  } }   备注: props是只读的,Vue底层会监测你对props的修改,如果进行了修改,就会发出警告, 若业务需求确实需要修改,那么请复制props的内容到data中一份,然后去修改data中 的数据.
+props:{ name:{ type:String,//类型限制  required:true,//必要性  default:&#34;JQF&#34;//默认值  } } 备注: props是只读的,Vue底层会监测你对props的修改,如果进行了修改,就会发出警告, 若业务需求确实需要修改,那么请复制props的内容到data中一份,然后去修改data中的数据.
 mixin(混入) 功能: 可以把多个组件共用的配置提取成一个混入对象
 使用方式:
 第一步：定义混合
-1 2 3 4 5 6  const mixData={ data(){....</p>
+const mixData={ data(){...} }, const mixMethods= { methods:{...} } 第二步：使用混入
+(1).全局混入:Vue.mixin(xxx)
+(2).局部混入:mixins:[xxx&#39;]
+插件 功能:用于增强vue
+本质:包含install方法的一个对象,install的第一个参数是vue,第二个以后的参数是插件使用者传递的数据。
+定义插件:
+对象.install = function (Vue, options) { //1....</p>
   </section>
-  <footer class="entry-footer"><span title='2022-04-02 00:00:00 +0000 UTC'>April 2, 2022</span>&nbsp;·&nbsp;8 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to Vue2.0再学习小结" href="https://www.fintinger.site/p/vue2.0%E5%86%8D%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/"></a>
+  <footer class="entry-footer"><span title='2022-04-02 00:00:00 +0000 UTC'>Apr 2, 2022</span>&nbsp;·&nbsp;6 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to Vue2.0学习小结" href="https://www.fintinger.site/p/vue2.0%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -154,7 +161,7 @@ mixin(混入) 功能: 可以把多个组件共用的配置提取成一个混入�
 例如想要修改数组中索引为0的位置的数据，可以通过 vm.data.arr.splice(0,0,val)或Vue.set(vm.data.arr,0,val)又或者vm.$set(vm.data.arr,0,val)，在具体的由Vue管理的方法中this指向的应该就是vm！！
 数据劫持 Vue通过setter,getter对数据进行动态监测，其实就是“劫持”了数据😯</p>
   </section>
-  <footer class="entry-footer"><span title='2022-03-21 00:00:00 +0000 UTC'>March 21, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <footer class="entry-footer"><span title='2022-03-21 00:00:00 +0000 UTC'>Mar 21, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to Vue中的数据监视原理" href="https://www.fintinger.site/p/vue%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%9B%91%E8%A7%86%E5%8E%9F%E7%90%86/"></a>
 </article>
 
@@ -174,7 +181,7 @@ v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做
 这样做的好处就是不用再写一个&lt;div&gt;将需要隐藏的元素包裹
    # v-show  说明： 条件切换display属性  # v-for  说明： 在data中定义一个数组arr，然后用v-for=&#34;val in arr&#34;访问到  3....</p>
   </section>
-  <footer class="entry-footer"><span title='2020-07-18 00:00:00 +0000 UTC'>July 18, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
+  <footer class="entry-footer"><span title='2020-07-18 00:00:00 +0000 UTC'>Jul 18, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to vue.js学习心得" href="https://www.fintinger.site/p/vue.js%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"></a>
 </article>
     </main>
@@ -191,13 +198,17 @@ v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a><script>
+</a><script class="testestteyftauj">
+    console.log("OK")
+</script>
+<script>
     if (window.screen.width <= 640 && window.location.pathname == "/") {
         document.querySelector(".profile_inner").style.opacity = 1;
     }
 </script>
 
 <script>
+     
     if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
@@ -206,49 +217,73 @@ v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做
         function n(n, e, t) {
             return n.getAttribute(e) || t
         }
+
         function e(n) {
             return document.getElementsByTagName(n)
         }
+
         function t() {
             var t = e("script"), o = t.length, i = t[o - 1];
-            return { l: o, z: n(i, "zIndex", -88), o: n(i, "opacity", .3), c: n(i, "color", '0,0,0'), n: n(i, "count", 300) }
+            return {
+                l: o,
+                z: n(i, "zIndex", -88),
+                o: n(i, "opacity", .3),
+                c: n(i, "color", '0,0,0'),
+                n: n(i, "count", 300)
+            }
         }
+
         function o() {
             a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
                 c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
         }
+
         function i() {
             r.clearRect(0, 0, a, c);
             var n, e, t, o, m, l;
             s.forEach(function (i, x) {
-                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++)n = u[e],
-                    null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
-                        l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
-                            t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+                null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
+                    l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
+                    t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
             }),
                 x(i)
         }
+
         var a, c, u, m = document.createElement("canvas"),
             d = t(), l = "c_n" + d.l, r = m.getContext("2d"),
             x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
                 function (n) {
                     window.setTimeout(n, 1e3 / 45)
                 },
-            w = Math.random, y = { x: null, y: null, max: 2e4 }; m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
-                window.onmousemove = function (n) {
-                    n = n || window.event, y.x = n.clientX, y.y = n.clientY
-                },
-                window.onmouseout = function () {
-                    y.x = null, y.y = null
-                };
+            w = Math.random, y = {x: null, y: null, max: 2e4};
+        m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
+            window.onmousemove = function (n) {
+                n = n || window.event, y.x = n.clientX, y.y = n.clientY
+            },
+            window.onmouseout = function () {
+                y.x = null, y.y = null
+            };
         for (var s = [], f = 0; d.n > f; f++) {
-            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1; s.push({ x: h, y: g, xa: v, ya: p, max: 6e3 })
+            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1;
+            s.push({x: h, y: g, xa: v, ya: p, max: 6e3})
         }
         u = s.concat([y]),
-            setTimeout(function () { i() }, 100)
+            setTimeout(function () {
+                i()
+            }, 100)
     };
 
 </script>
+
+<script>
+    
+    document.querySelectorAll(".imgAlt").forEach(el => {
+        console.dir();
+        el.innerHTML = el.previousElementSibling.children[0].attributes.alt.value;
+    })
+</script>
+
 
 <script>
     let menu = document.getElementById('menu')

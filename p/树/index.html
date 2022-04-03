@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir=" auto">
+<html lang="zh-cn" dir=" auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,8 @@
 <meta name="keywords" content="数据结构" />
 <meta name="description" content="普通树 对于一棵普通类型的树形结构，可将其转化为二叉树之后再参考二叉树的方法进行相关操作。
 孩子兄弟表示法（链式结构） 通过此方法可将普通树转化为二叉树
-1 2 3 4 5  //孩子兄弟即Child, Sibling typedef struct CSNode{ Elemtype data; struct CSNode *firstchild,*nextsibling;//第一个孩子和右兄弟指针,等价于*lchild,*rchild }CSNode,*CSTree   图示如下
+//孩子兄弟即Child, Sibling typedef struct CSNode{ Elemtype data; struct CSNode *firstchild,*nextsibling;//第一个孩子和右兄弟指针,等价于*lchild,*rchild }CSNode,*CSTree 图示如下
+
 树的遍历 1.深度优先遍历（先根遍历&amp;后根遍历）
  先根遍历   若树非空，先访问根结点，再依次对每棵子树进行先根遍历(递归)。
  对如上图所示的树进行先根遍历：
@@ -21,10 +22,11 @@ A	(BEH) (CF)	(DG)
  后根遍历   若树非空，先依次对每棵子树进行后根遍历，最后再访问根结点。
  对如上图所示的树进行后根遍历：
 B	C	D	A
-(E	B) (F	C) (G	D) A">
+(E	B) (F	C) (G	D) A
+(H	E	B) (F	C) (GD) A">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/p/%E6%A0%91/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.5801d16a0eff04ddc43661d83501a64f9bd5ebd0d26c58a21acbae9272b6c64a.css" integrity="sha256-WAHRag7/BN3ENmHYNQGmT5vV69DSbFiiGsuuknK2xko=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.82515ee3aebfe1ebd3d64679bfe6446c9279b71bc7a666741307404ca67eb398.css" integrity="sha256-glFe466/4evT1kZ5v&#43;ZEbJJ5txvHpmZ0EwdATKZ&#43;s5g=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -43,7 +45,8 @@ B	C	D	A
 </noscript><meta property="og:title" content="树" />
 <meta property="og:description" content="普通树 对于一棵普通类型的树形结构，可将其转化为二叉树之后再参考二叉树的方法进行相关操作。
 孩子兄弟表示法（链式结构） 通过此方法可将普通树转化为二叉树
-1 2 3 4 5  //孩子兄弟即Child, Sibling typedef struct CSNode{ Elemtype data; struct CSNode *firstchild,*nextsibling;//第一个孩子和右兄弟指针,等价于*lchild,*rchild }CSNode,*CSTree   图示如下
+//孩子兄弟即Child, Sibling typedef struct CSNode{ Elemtype data; struct CSNode *firstchild,*nextsibling;//第一个孩子和右兄弟指针,等价于*lchild,*rchild }CSNode,*CSTree 图示如下
+
 树的遍历 1.深度优先遍历（先根遍历&amp;后根遍历）
  先根遍历   若树非空，先访问根结点，再依次对每棵子树进行先根遍历(递归)。
  对如上图所示的树进行先根遍历：
@@ -55,7 +58,8 @@ A	(BEH) (CF)	(DG)
  后根遍历   若树非空，先依次对每棵子树进行后根遍历，最后再访问根结点。
  对如上图所示的树进行后根遍历：
 B	C	D	A
-(E	B) (F	C) (G	D) A" />
+(E	B) (F	C) (G	D) A
+(H	E	B) (F	C) (GD) A" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.fintinger.site/p/%E6%A0%91/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-05-22T00:00:00&#43;00:00" />
@@ -65,7 +69,8 @@ B	C	D	A
 <meta name="twitter:title" content="树"/>
 <meta name="twitter:description" content="普通树 对于一棵普通类型的树形结构，可将其转化为二叉树之后再参考二叉树的方法进行相关操作。
 孩子兄弟表示法（链式结构） 通过此方法可将普通树转化为二叉树
-1 2 3 4 5  //孩子兄弟即Child, Sibling typedef struct CSNode{ Elemtype data; struct CSNode *firstchild,*nextsibling;//第一个孩子和右兄弟指针,等价于*lchild,*rchild }CSNode,*CSTree   图示如下
+//孩子兄弟即Child, Sibling typedef struct CSNode{ Elemtype data; struct CSNode *firstchild,*nextsibling;//第一个孩子和右兄弟指针,等价于*lchild,*rchild }CSNode,*CSTree 图示如下
+
 树的遍历 1.深度优先遍历（先根遍历&amp;后根遍历）
  先根遍历   若树非空，先访问根结点，再依次对每棵子树进行先根遍历(递归)。
  对如上图所示的树进行先根遍历：
@@ -77,7 +82,8 @@ A	(BEH) (CF)	(DG)
  后根遍历   若树非空，先依次对每棵子树进行后根遍历，最后再访问根结点。
  对如上图所示的树进行后根遍历：
 B	C	D	A
-(E	B) (F	C) (G	D) A"/>
+(E	B) (F	C) (G	D) A
+(H	E	B) (F	C) (GD) A"/>
 
 
 <script type="application/ld+json">
@@ -106,13 +112,13 @@ B	C	D	A
   "@type": "BlogPosting",
   "headline": "树",
   "name": "树",
-  "description": "普通树 对于一棵普通类型的树形结构，可将其转化为二叉树之后再参考二叉树的方法进行相关操作。\n孩子兄弟表示法（链式结构） 通过此方法可将普通树转化为二叉树\n1 2 3 4 5  //孩子兄弟即Child, Sibling typedef struct CSNode{ Elemtype data; struct CSNode *firstchild,*nextsibling;//第一个孩子和右兄弟指针,等价于*lchild,*rchild }CSNode,*CSTree   图示如下\n树的遍历 1.深度优先遍历（先根遍历\u0026amp;后根遍历）\n 先根遍历   若树非空，先访问根结点，再依次对每棵子树进行先根遍历(递归)。\n 对如上图所示的树进行先根遍历：\nA B C D\nA\t(BE )\t(CF)\t(DG)\nA\t(BEH) (CF)\t(DG)\n即先根遍历序列为A B E H C F D G\n发现与通过“孩子兄弟法”将树转为二叉树后的先序遍历序列相同\n 后根遍历   若树非空，先依次对每棵子树进行后根遍历，最后再访问根结点。\n 对如上图所示的树进行后根遍历：\nB\tC\tD\tA\n(E\tB) (F\tC) (G\tD) A",
+  "description": "普通树 对于一棵普通类型的树形结构，可将其转化为二叉树之后再参考二叉树的方法进行相关操作。\n孩子兄弟表示法（链式结构） 通过此方法可将普通树转化为二叉树\n//孩子兄弟即Child, Sibling typedef struct CSNode{ Elemtype data; struct CSNode *firstchild,*nextsibling;//第一个孩子和右兄弟指针,等价于*lchild,*rchild }CSNode,*CSTree 图示如下\n\n树的遍历 1.深度优先遍历（先根遍历\u0026amp;后根遍历）\n 先根遍历   若树非空，先访问根结点，再依次对每棵子树进行先根遍历(递归)。\n 对如上图所示的树进行先根遍历：\nA B C D\nA\t(BE )\t(CF)\t(DG)\nA\t(BEH) (CF)\t(DG)\n即先根遍历序列为A B E H C F D G\n发现与通过“孩子兄弟法”将树转为二叉树后的先序遍历序列相同\n 后根遍历   若树非空，先依次对每棵子树进行后根遍历，最后再访问根结点。\n 对如上图所示的树进行后根遍历：\nB\tC\tD\tA\n(E\tB) (F\tC) (G\tD) A\n(H\tE\tB) (F\tC) (GD) A",
   "keywords": [
     "数据结构"
   ],
-  "articleBody": "普通树 对于一棵普通类型的树形结构，可将其转化为二叉树之后再参考二叉树的方法进行相关操作。\n孩子兄弟表示法（链式结构） 通过此方法可将普通树转化为二叉树\n1 2 3 4 5  //孩子兄弟即Child, Sibling typedef struct CSNode{ Elemtype data; struct CSNode *firstchild,*nextsibling;//第一个孩子和右兄弟指针,等价于*lchild,*rchild }CSNode,*CSTree   图示如下\n树的遍历 1.深度优先遍历（先根遍历\u0026后根遍历）\n 先根遍历   若树非空，先访问根结点，再依次对每棵子树进行先根遍历(递归)。\n 对如上图所示的树进行先根遍历：\nA B C D\nA\t(BE )\t(CF)\t(DG)\nA\t(BEH) (CF)\t(DG)\n即先根遍历序列为A B E H C F D G\n发现与通过“孩子兄弟法”将树转为二叉树后的先序遍历序列相同\n 后根遍历   若树非空，先依次对每棵子树进行后根遍历，最后再访问根结点。\n 对如上图所示的树进行后根遍历：\nB\tC\tD\tA\n(E\tB) (F\tC) (G\tD) A\n(H\tE\tB) (F\tC) (GD) A\n即后根遍历序列为H E B F C G D A\n发现与通过“孩子兄弟法”将树转为二叉树后的中序遍历序列相同\n2.广度优先遍历（层序遍历）\n利用队列实现（参考二叉树层序遍历）\n对于上图所示的树进行层序遍历：\nA B C D E F G H\n 😯不难看出深度优先和广度优先分别表示遍历时的路径走向。前者是先往深处走，故为深度优先遍历；后者是先往宽了走，即为广度优先遍历。\n 森林 对于森林，也可以将其转化为二叉树之后进行操作\n同样的，我们采用孩子兄弟法将树转化为二叉树，具体操作为将森林中各个树的根节点视为兄弟关系。如下图所示：\n###　1.先序遍历\n若森林为非空，则按如下规则进行遍历：\n访问森林中第一棵树的根结点。\n先序遍历第一棵树中根结点的子树森林。\n先序遍历除去第一棵树之后剩余的树构成的森林。\nB\n(B E)\n(B E K L)\n(B E K L F)\n(B E K L F) C\n(B E K L F) (C G)\n(B E K L F) (C G) D\n(B E K L F) (C G) (D H)\n(B E K L F) (C G) (D H M)\n(B E K L F) (C G) (D H M I J)\n最终，对森林的先序遍历序列为 B E K L F C G D H M I J(也可以对各个树先根遍历得到)\n发现与通过“孩子兄弟法”将树转为二叉树后的先序遍历序列相同\n2.中序遍历 若森林为非空，则按如下规则进行遍历：\n中序遍历森林中第一棵树的根结点的子树森林。\n访问第一棵树的根结点。\n中序遍历除去第一棵树之后剩余的树构成的森林。\nK L\nK L E\nK L E F\n(K L E F B)\n(K L E F B) (G C)\n(K L E F B) (G C) (M)\n(K L E F B) (G C) (M H I J)\n(K L E F B) (G C) (M H I J D)\n最终，对森林的先序遍历序列为 K L E F B G C M H I J D(也可以对各个树后根遍历得到)\n发现与通过“孩子兄弟法”将树转为二叉树后的中序遍历序列相同\n总结 对于树或者森林进行遍历操作，与转化为二叉树之后的操作对应关系如下：\n   树 森林 二叉树     先根遍历 先序遍历 先序遍历   后根遍历 中序遍历 中序遍历    ",
-  "wordCount" : "259",
-  "inLanguage": "en",
+  "articleBody": "普通树 对于一棵普通类型的树形结构，可将其转化为二叉树之后再参考二叉树的方法进行相关操作。\n孩子兄弟表示法（链式结构） 通过此方法可将普通树转化为二叉树\n//孩子兄弟即Child, Sibling typedef struct CSNode{ Elemtype data; struct CSNode *firstchild,*nextsibling;//第一个孩子和右兄弟指针,等价于*lchild,*rchild }CSNode,*CSTree 图示如下\n\n树的遍历 1.深度优先遍历（先根遍历\u0026后根遍历）\n 先根遍历   若树非空，先访问根结点，再依次对每棵子树进行先根遍历(递归)。\n 对如上图所示的树进行先根遍历：\nA B C D\nA\t(BE )\t(CF)\t(DG)\nA\t(BEH) (CF)\t(DG)\n即先根遍历序列为A B E H C F D G\n发现与通过“孩子兄弟法”将树转为二叉树后的先序遍历序列相同\n 后根遍历   若树非空，先依次对每棵子树进行后根遍历，最后再访问根结点。\n 对如上图所示的树进行后根遍历：\nB\tC\tD\tA\n(E\tB) (F\tC) (G\tD) A\n(H\tE\tB) (F\tC) (GD) A\n即后根遍历序列为H E B F C G D A\n发现与通过“孩子兄弟法”将树转为二叉树后的中序遍历序列相同\n2.广度优先遍历（层序遍历）\n利用队列实现（参考二叉树层序遍历）\n对于上图所示的树进行层序遍历：\nA B C D E F G H\n 😯不难看出深度优先和广度优先分别表示遍历时的路径走向。前者是先往深处走，故为深度优先遍历；后者是先往宽了走，即为广度优先遍历。\n 森林 对于森林，也可以将其转化为二叉树之后进行操作\n同样的，我们采用孩子兄弟法将树转化为二叉树，具体操作为将森林中各个树的根节点视为兄弟关系。如下图所示：\n\n###　1.先序遍历\n若森林为非空，则按如下规则进行遍历：\n访问森林中第一棵树的根结点。\n先序遍历第一棵树中根结点的子树森林。\n先序遍历除去第一棵树之后剩余的树构成的森林。\nB\n(B E)\n(B E K L)\n(B E K L F)\n(B E K L F) C\n(B E K L F) (C G)\n(B E K L F) (C G) D\n(B E K L F) (C G) (D H)\n(B E K L F) (C G) (D H M)\n(B E K L F) (C G) (D H M I J)\n最终，对森林的先序遍历序列为 B E K L F C G D H M I J(也可以对各个树先根遍历得到)\n发现与通过“孩子兄弟法”将树转为二叉树后的先序遍历序列相同\n2.中序遍历 若森林为非空，则按如下规则进行遍历：\n中序遍历森林中第一棵树的根结点的子树森林。\n访问第一棵树的根结点。\n中序遍历除去第一棵树之后剩余的树构成的森林。\nK L\nK L E\nK L E F\n(K L E F B)\n(K L E F B) (G C)\n(K L E F B) (G C) (M)\n(K L E F B) (G C) (M H I J)\n(K L E F B) (G C) (M H I J D)\n最终，对森林的先序遍历序列为 K L E F B G C M H I J D(也可以对各个树后根遍历得到)\n发现与通过“孩子兄弟法”将树转为二叉树后的中序遍历序列相同\n总结 对于树或者森林进行遍历操作，与转化为二叉树之后的操作对应关系如下：\n   树 森林 二叉树     先根遍历 先序遍历 先序遍历   后根遍历 中序遍历 中序遍历    ",
+  "wordCount" : "254",
+  "inLanguage": "zh-cn",
   "datePublished": "2021-05-22T00:00:00Z",
   "dateModified": "2021-05-22T00:00:00Z",
   "author":{
@@ -209,6 +215,7 @@ B	C	D	A
     <details >
         <summary accesskey="c" title="(Alt + C)">
             <span class="details">Table of Contents</span>
+            <span id="pinToc" title="pinned/unpinned"></span>
         </summary>
 
         <div class="inner"><ul>
@@ -234,29 +241,25 @@ B	C	D	A
     </details>
 </div>
 
+<script>
+    const pinToc=document.querySelector("#pinToc");
+
+    pinToc.addEventListener("click",evt => {
+       evt.target.parentElement.parentElement.parentElement.classList.toggle('pinned')
+    })
+</script>
   <div class="post-content"><h2 id="普通树">普通树<a hidden class="anchor" aria-hidden="true" href="#普通树">#</a></h2>
 <p>对于一棵普通类型的树形结构，可将其<strong>转化为二叉树</strong>之后再参考二叉树的方法进行相关操作。</p>
 <h3 id="孩子兄弟表示法链式结构">孩子兄弟表示法（链式结构）<a hidden class="anchor" aria-hidden="true" href="#孩子兄弟表示法链式结构">#</a></h3>
 <p>通过此方法可将普通树转化为二叉树</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">//孩子兄弟即Child, Sibling
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">//孩子兄弟即Child, Sibling
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">CSNode</span>{
     Elemtype data;
     <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">CSNode</span> <span style="color:#f92672">*</span>firstchild,<span style="color:#f92672">*</span>nextsibling;<span style="color:#75715e">//第一个孩子和右兄弟指针,等价于*lchild,*rchild
 </span><span style="color:#75715e"></span>}CSNode,<span style="color:#f92672">*</span>CSTree
-</code></pre></td></tr></table>
-</div>
-</div><p>图示如下</p>
+</code></pre></div><p>图示如下</p>
 <p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210522103130.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <h3 id="树的遍历">树的遍历<a hidden class="anchor" aria-hidden="true" href="#树的遍历">#</a></h3>
 <p><strong>1.深度优先遍历（先根遍历&amp;后根遍历）</strong></p>
 <ul>
@@ -294,7 +297,7 @@ B	C	D	A
 <p>对于森林，也可以将其转化为二叉树之后进行操作</p>
 <p>同样的，我们采用孩子兄弟法将树转化为二叉树，具体操作为将森林中各个树的根节点视为兄弟关系。如下图所示：</p>
 <p><img loading="lazy" src="https://gitee.com/fintinger/figure-bed/raw/master//images/20210522110803.png" alt=""  />
-</p>
+<div class="imgAlt" style="text-align: center;color: #999;font-style: italic;margin-top: -10px"></div></p>
 <p>###　1.先序遍历</p>
 <p>若森林为非空，则按如下规则进行遍历：</p>
 <p>访问森林中第一棵树的根结点。</p>
@@ -360,30 +363,19 @@ B	C	D	A
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://www.fintinger.site/p/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/">
-    <span class="title">« Prev Page</span>
+    <span class="title">« </span>
     <br>
     <span>哈夫曼树</span>
   </a>
   <a class="next" href="https://www.fintinger.site/p/%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91/">
-    <span class="title">Next Page »</span>
+    <span class="title"> »</span>
     <br>
     <span>线索二叉树</span>
   </a>
 </nav>
 
   </footer><script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
-<div id="waline" class="waline-container"></div>
-<style>
-    .waline-container {
-        background-color: var(--card-background);
-        border-radius: var(--card-border-radius);
-        box-shadow: var(--shadow-l1);
-        padding: var(--card-padding);
-    }
-    .waline-container .vcount {
-        color: var(--card-text-color-main);
-    }
-</style><script>
+<div id="waline" class="waline-container"></div><script>
     
     new Waline({"avatar":"robohash","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji"],"highlight":true,"locale":{"admin":"Admin"},"placeholder":"说点什么༼ つ ◕_◕ ༽つ","requiredMeta":["name","email","url"],"serverURL":"https://waline-q3l7of5hj-fintinger.vercel.app/","visitor":true});
 </script>
@@ -402,13 +394,17 @@ B	C	D	A
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a><script>
+</a><script class="testestteyftauj">
+    console.log("OK")
+</script>
+<script>
     if (window.screen.width <= 640 && window.location.pathname == "/") {
         document.querySelector(".profile_inner").style.opacity = 1;
     }
 </script>
 
 <script>
+     
     if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
@@ -417,49 +413,73 @@ B	C	D	A
         function n(n, e, t) {
             return n.getAttribute(e) || t
         }
+
         function e(n) {
             return document.getElementsByTagName(n)
         }
+
         function t() {
             var t = e("script"), o = t.length, i = t[o - 1];
-            return { l: o, z: n(i, "zIndex", -88), o: n(i, "opacity", .3), c: n(i, "color", '0,0,0'), n: n(i, "count", 300) }
+            return {
+                l: o,
+                z: n(i, "zIndex", -88),
+                o: n(i, "opacity", .3),
+                c: n(i, "color", '0,0,0'),
+                n: n(i, "count", 300)
+            }
         }
+
         function o() {
             a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
                 c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
         }
+
         function i() {
             r.clearRect(0, 0, a, c);
             var n, e, t, o, m, l;
             s.forEach(function (i, x) {
-                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++)n = u[e],
-                    null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
-                        l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
-                            t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+                null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
+                    l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
+                    t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
             }),
                 x(i)
         }
+
         var a, c, u, m = document.createElement("canvas"),
             d = t(), l = "c_n" + d.l, r = m.getContext("2d"),
             x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
                 function (n) {
                     window.setTimeout(n, 1e3 / 45)
                 },
-            w = Math.random, y = { x: null, y: null, max: 2e4 }; m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
-                window.onmousemove = function (n) {
-                    n = n || window.event, y.x = n.clientX, y.y = n.clientY
-                },
-                window.onmouseout = function () {
-                    y.x = null, y.y = null
-                };
+            w = Math.random, y = {x: null, y: null, max: 2e4};
+        m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
+            window.onmousemove = function (n) {
+                n = n || window.event, y.x = n.clientX, y.y = n.clientY
+            },
+            window.onmouseout = function () {
+                y.x = null, y.y = null
+            };
         for (var s = [], f = 0; d.n > f; f++) {
-            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1; s.push({ x: h, y: g, xa: v, ya: p, max: 6e3 })
+            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1;
+            s.push({x: h, y: g, xa: v, ya: p, max: 6e3})
         }
         u = s.concat([y]),
-            setTimeout(function () { i() }, 100)
+            setTimeout(function () {
+                i()
+            }, 100)
     };
 
 </script>
+
+<script>
+    
+    document.querySelectorAll(".imgAlt").forEach(el => {
+        console.dir();
+        el.innerHTML = el.previousElementSibling.children[0].attributes.alt.value;
+    })
+</script>
+
 
 <script>
     let menu = document.getElementById('menu')

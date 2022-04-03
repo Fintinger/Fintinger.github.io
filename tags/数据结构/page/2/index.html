@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir=" auto">
+<html lang="zh-cn" dir=" auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.5801d16a0eff04ddc43661d83501a64f9bd5ebd0d26c58a21acbae9272b6c64a.css" integrity="sha256-WAHRag7/BN3ENmHYNQGmT5vV69DSbFiiGsuuknK2xko=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.82515ee3aebfe1ebd3d64679bfe6446c9279b71bc7a666741307404ca67eb398.css" integrity="sha256-glFe466/4evT1kZ5v&#43;ZEbJJ5txvHpmZ0EwdATKZ&#43;s5g=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -109,12 +109,15 @@
   </header>
   <section class="entry-content">
     <p>邻接矩阵  Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.
- 代码实现 1 2 3 4 5 6 7 8  #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph;   即找度 根据邻接矩阵计算结点的度TD
+ 
+代码实现 #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph; 即
+找度 根据邻接矩阵计算结点的度TD
     无向图 有向图     $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数
 $OD(V_i)$: i列非零元素个数
-TD=ID&#43;OD    对于带权图（网） 1 2 3 4 5 6 7 8 9 10 11  #define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph;   复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|&#43;|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。...</p>
+TD=ID&#43;OD    对于带权图（网） 
+#define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph; 复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|&#43;|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。...</p>
   </section>
-  <footer class="entry-footer"><span title='2021-06-02 00:00:00 +0000 UTC'>June 2, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <footer class="entry-footer"><span title='2021-06-02 00:00:00 +0000 UTC'>Jun 2, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 图的存储" href="https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/"></a>
 </article>
 
@@ -129,21 +132,31 @@ TD=ID&#43;OD    对于带权图（网） 1 2 3 4 5 6 7 8 9 10 11  #define MaxVex
 平衡因子 $平衡因子=左子树高-右子树高$
 AVL树的插入操作 AVL树插入新结点导致不平衡之后，只需将最小不平衡子树平衡，其他祖先结点会随之恢复平衡。
 调整最小不平衡子树 注意：调整过后必须保证其BST的特性，即“左子树1.LL  即在以A为根节点的树的左孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
- 调整过程如下：
+ 
+调整过程如下：
+
 2.RR  即在以A为根节点的树的右孩子B的右子树上插入新结点，导致A成为最小不平衡子树。
- 调整过程如下：
+ 
+调整过程如下：
+
 3.LR  即在以A为根节点的树的左孩子B的右子树上插入新结点，导致A成为最小不平衡子树。
- 观察得知，所进行的调整就是保证$|平衡因子|&lt;=1$，因此若插入操作使得
+ 
+观察得知，所进行的调整就是保证$|平衡因子|&lt;=1$，因此若插入操作使得
 左 - 右 &gt; 1 =&gt; 右旋
 右 - 左 &gt; 1 =&gt;左旋
 而当进行了LR插入操作之后，导致以A为根节点的树 左-右&gt;1，理应右旋但是，由上述结果可知，经过右旋之后：
+
 可以看到，为了保证其左子树&lt;根&lt;右子树的特性，经过调整后，依然存在右-左&gt;1的问题；
 因此，对于LR型不能简单进行右旋调整，应该先将其转化为LL型 (左旋)，再进行右旋；
 为此，我们需要将BR结点展开，之后旋转成为LL型插入
+
 可以看到，展开后又出现两种插入情况CL&amp;CR，但其实两者处理大同小异：
 CR插入调整过程如下：
+
 4.RL  即在以A为根节点的树的右孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
- 参考LR型，其调整过程如下：
+ 
+参考LR型，其调整过程如下：
+
 查找操作效率分析 Assuming that, $n_h$表示深度为h的平衡树中含有的最少结点，则
 $n_0=0$,$n_1=1$,$n_2=2$…存在递归关系 $n_h=n_{h-1}&#43;n_{h-2}&#43;1$,即左右子树结点之和&#43;根节点。
 可以证明(AVL证明)，n个结点的平衡二叉树最大深度数量级为$\log_2n$，则其查找操作的复杂度为$O(\log_2n)$</p>
@@ -173,19 +186,24 @@ $WPL=\sum_{i=1}^{n}w_il_i$
 ③ 从F中删除刚才选出的两棵树，同时将新得到的树加入F中。
 ④ 重复步骤②和③，直至F中只剩下一棵树为止。
 假设给定结点在经过步骤①之后如下
+
 则其②③④步骤为：
+
 $WPL_{min}=1*7&#43;2*3&#43;3*2&#43;4*1&#43;4*2=31$
 或者
+
 $WPL_{min}=1*7&#43;3*(1&#43;2&#43;2&#43;3)=31$
 👇👇👇👇👇👇
 哈夫曼树特点： ① 每个初始结点最终都成为叶结点，且权值越小的结点到根结点的路径长度越大。 ② 哈夫曼树的结点总数为2n-1。 ③ 哈夫曼树中不存在度为1的结点。 ④ 哈夫曼树并不唯一，但WPL必然相同且为最优。
 哈夫曼编码 固定长度编码 如ASCII码
 可变长度编码 前缀编码 没有一个编码是另一个编码的前缀
+
 哈夫曼编码 由哈夫曼树得到哈夫曼编码——字符集中的每个字符作为一个叶子结点，各个字符出现的频度作为结点的权值，根据之前介绍的方法构造哈夫曼树。
 ✨ 应用
 可用于数据压缩
 如图，为英文字母使用频率表，若不进行压缩，第 i 个字母频率用$l_i表示$，路径长至少为5($2^4&lt;26&lt;2^5$)，则
 $WPL=5×\sum_{i=1}^{n}l_i$=500
+
 若通过构造哈夫曼树进行哈夫曼编码
 则$WPL_{min}=$
 $v=\frac{WPL_{min}}{WPL}$</p>
@@ -202,7 +220,8 @@ $v=\frac{WPL_{min}}{WPL}$</p>
   <section class="entry-content">
     <p>普通树 对于一棵普通类型的树形结构，可将其转化为二叉树之后再参考二叉树的方法进行相关操作。
 孩子兄弟表示法（链式结构） 通过此方法可将普通树转化为二叉树
-1 2 3 4 5  //孩子兄弟即Child, Sibling typedef struct CSNode{ Elemtype data; struct CSNode *firstchild,*nextsibling;//第一个孩子和右兄弟指针,等价于*lchild,*rchild }CSNode,*CSTree   图示如下
+//孩子兄弟即Child, Sibling typedef struct CSNode{ Elemtype data; struct CSNode *firstchild,*nextsibling;//第一个孩子和右兄弟指针,等价于*lchild,*rchild }CSNode,*CSTree 图示如下
+
 树的遍历 1.深度优先遍历（先根遍历&amp;后根遍历）
  先根遍历   若树非空，先访问根结点，再依次对每棵子树进行先根遍历(递归)。
  对如上图所示的树进行先根遍历：
@@ -214,7 +233,8 @@ A	(BEH) (CF)	(DG)
  后根遍历   若树非空，先依次对每棵子树进行后根遍历，最后再访问根结点。
  对如上图所示的树进行后根遍历：
 B	C	D	A
-(E	B) (F	C) (G	D) A...</p>
+(E	B) (F	C) (G	D) A
+(H	E	B) (F	C) (GD) A...</p>
   </section>
   <footer class="entry-footer"><span title='2021-05-22 00:00:00 +0000 UTC'>May 22, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 树" href="https://www.fintinger.site/p/%E6%A0%91/"></a>
@@ -229,22 +249,27 @@ B	C	D	A
     <p>线索二叉树 WHY  方便从任一个结点出发，找到其前驱、后继；方便遍历
  普通二叉树中，对任意一个结点，若想找到其前驱/后继结点，只能再进行一次相应的前/中/后序遍历才行，复杂度太高。
 为此，我们引入前驱线索，后继线索的概念。其中，前驱线索由左孩子指针充当，后继线索由右孩子指针充当。
-1 2 3 4  typedef struct BiTNode{ ElemType data; struct BiTNode *lchild,*rchild; }BiTNode,*BiTree;   构建出如下图所示的结构：
+typedef struct BiTNode{ ElemType data; struct BiTNode *lchild,*rchild; }BiTNode,*BiTree; 构建出如下图所示的结构：
+
 但是，
 *lchild(*rchild)有可能指向存在的结点，为此我们引入线索标志。当线索标志为1时，表示孩子指针指向前驱后继，线索标志为0时，表示孩子指针指向左右孩子。此时
-1 2 3 4 5  typedef struct ThreadNode{ ElemType data; struct ThreadNode *lchild,*rchild; int ltag,rtag;//左右线索标志 }ThreadNode,*ThreadTree;   这样，每一个线索链表中的结点就可以图示为:
+typedef struct ThreadNode{ ElemType data; struct ThreadNode *lchild,*rchild; int ltag,rtag;//左右线索标志 }ThreadNode,*ThreadTree; 这样，每一个线索链表中的结点就可以图示为:
+
 HOW  如何分别用代码实现前中后序遍历下的线索链表
  1.中序线索化  其实中序线索化的过程就是再进行一遍中序遍历，为每个节点添加额外的信息(lchild, rcild, ltag, rtag).
  🍔初始定义结构体
-1 2 3 4 5  typedef struct ThreadNode{ ElemType data; struct ThreadNode *lchild,*rchild; int ltag,rtag; }ThreadNode,*ThreadTree;   🍔定义前驱指针...</p>
+typedef struct ThreadNode{ ElemType data; struct ThreadNode *lchild,*rchild; int ltag,rtag; }ThreadNode,*ThreadTree; 🍔定义前驱指针
+ThreadNode *pre=NULL;  前驱指针还可以定义在局部，这里为了方便起见，将pre定义为全局。
+ 🍔开始定义处理函数
+void CreatInThread(ThreadTree T){ pre=NULL; if(T!=NULL){ InThread(T); if(pre-&gt;rchild==NULL){ pre-&gt;rtag=1; } } }  注意：最后一个节点单独处理...</p>
   </section>
-  <footer class="entry-footer"><span title='2021-05-15 00:00:00 +0000 UTC'>May 15, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <footer class="entry-footer"><span title='2021-05-15 00:00:00 +0000 UTC'>May 15, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 线索二叉树" href="https://www.fintinger.site/p/%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
-    <a class="prev" href="https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">« Prev Page</a>
-    <a class="next" href="https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/page/3/">Next Page »</a>
+    <a class="prev" href="https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">« </a>
+    <a class="next" href="https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/page/3/"> »</a>
   </nav>
 </footer>
     </main>
@@ -261,13 +286,17 @@ HOW  如何分别用代码实现前中后序遍历下的线索链表
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a><script>
+</a><script class="testestteyftauj">
+    console.log("OK")
+</script>
+<script>
     if (window.screen.width <= 640 && window.location.pathname == "/") {
         document.querySelector(".profile_inner").style.opacity = 1;
     }
 </script>
 
 <script>
+     
     if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
@@ -276,49 +305,73 @@ HOW  如何分别用代码实现前中后序遍历下的线索链表
         function n(n, e, t) {
             return n.getAttribute(e) || t
         }
+
         function e(n) {
             return document.getElementsByTagName(n)
         }
+
         function t() {
             var t = e("script"), o = t.length, i = t[o - 1];
-            return { l: o, z: n(i, "zIndex", -88), o: n(i, "opacity", .3), c: n(i, "color", '0,0,0'), n: n(i, "count", 300) }
+            return {
+                l: o,
+                z: n(i, "zIndex", -88),
+                o: n(i, "opacity", .3),
+                c: n(i, "color", '0,0,0'),
+                n: n(i, "count", 300)
+            }
         }
+
         function o() {
             a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
                 c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
         }
+
         function i() {
             r.clearRect(0, 0, a, c);
             var n, e, t, o, m, l;
             s.forEach(function (i, x) {
-                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++)n = u[e],
-                    null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
-                        l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
-                            t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+                null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
+                    l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
+                    t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
             }),
                 x(i)
         }
+
         var a, c, u, m = document.createElement("canvas"),
             d = t(), l = "c_n" + d.l, r = m.getContext("2d"),
             x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
                 function (n) {
                     window.setTimeout(n, 1e3 / 45)
                 },
-            w = Math.random, y = { x: null, y: null, max: 2e4 }; m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
-                window.onmousemove = function (n) {
-                    n = n || window.event, y.x = n.clientX, y.y = n.clientY
-                },
-                window.onmouseout = function () {
-                    y.x = null, y.y = null
-                };
+            w = Math.random, y = {x: null, y: null, max: 2e4};
+        m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
+            window.onmousemove = function (n) {
+                n = n || window.event, y.x = n.clientX, y.y = n.clientY
+            },
+            window.onmouseout = function () {
+                y.x = null, y.y = null
+            };
         for (var s = [], f = 0; d.n > f; f++) {
-            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1; s.push({ x: h, y: g, xa: v, ya: p, max: 6e3 })
+            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1;
+            s.push({x: h, y: g, xa: v, ya: p, max: 6e3})
         }
         u = s.concat([y]),
-            setTimeout(function () { i() }, 100)
+            setTimeout(function () {
+                i()
+            }, 100)
     };
 
 </script>
+
+<script>
+    
+    document.querySelectorAll(".imgAlt").forEach(el => {
+        console.dir();
+        el.innerHTML = el.previousElementSibling.children[0].attributes.alt.value;
+    })
+</script>
+
 
 <script>
     let menu = document.getElementById('menu')

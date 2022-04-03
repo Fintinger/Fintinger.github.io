@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir=" auto">
+<html lang="zh-cn" dir=" auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.5801d16a0eff04ddc43661d83501a64f9bd5ebd0d26c58a21acbae9272b6c64a.css" integrity="sha256-WAHRag7/BN3ENmHYNQGmT5vV69DSbFiiGsuuknK2xko=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.82515ee3aebfe1ebd3d64679bfe6446c9279b71bc7a666741307404ca67eb398.css" integrity="sha256-glFe466/4evT1kZ5v&#43;ZEbJJ5txvHpmZ0EwdATKZ&#43;s5g=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -110,8 +110,9 @@
   <section class="entry-content">
     <p>减而治之(Decrease and conquer)  什么是“减而治之”？
 为求解一个大规模的问题，可以将其划分为两个问题，其一平凡，另一规模缩减 ，分别求解子问题，由子问题的解得原问题的解
- 比如说，对于一个数组A的求和问题，可以设计如下的算法
-1 2 3 4 5  sum( int A[], int n ) { return n &lt; 1? 0 : sum(A, n - 1) &#43; A[n - 1]; }   当规模缩减到一定程度后，抵达递归基，返回0
+ 
+比如说，对于一个数组A的求和问题，可以设计如下的算法
+sum( int A[], int n ) { return n &lt; 1? 0 : sum(A, n - 1) &#43; A[n - 1]; } 当规模缩减到一定程度后，抵达递归基，返回0
 复杂度分析 1. 递归跟踪
  绘出计算过程中出现过的所有递归实例（及其调用关系） ，那么它们各自所需时间之总和，即为整体运行时间
  上例中，共计n&#43;1个递归实例(分析)，各自只需O(1)时间 故总体运行时间为：
@@ -120,9 +121,10 @@ T(n) =O(1) × (n&#43;1) =O(n)
  对于大规模的问题、复杂的递归算法，递归跟踪不再适用 此时可采用另一抽象的方法…
  在本例中，有T(n)=T(n-1) &#43; O(1),T(0)=O(1)
 则，T(n) = T(n-2)&#43;O(2) = T(n-3)&#43;O(3) = T(n-n)&#43;O(n)=O(n)
- 可以看到，两种分析方法的出来复杂度都为O(n)...</p>
+ 可以看到，两种分析方法的出来复杂度都为O(n)
+ 分而治之(Divide and conquer)  什么是“分而治之”？...</p>
   </section>
-  <footer class="entry-footer"><span title='2020-11-15 00:00:00 +0000 UTC'>November 15, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <footer class="entry-footer"><span title='2020-11-15 00:00:00 +0000 UTC'>Nov 15, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 减而治之与分而治之" href="https://www.fintinger.site/p/%E5%87%8F%E8%80%8C%E6%B2%BB%E4%B9%8B%E4%B8%8E%E5%88%86%E8%80%8C%E6%B2%BB%E4%B9%8B/"></a>
 </article>
 
@@ -141,9 +143,10 @@ T(n) =O(1) × (n&#43;1) =O(n)
 (Algorithms &#43; Data Structures) x Efficiency = Computation
 :::
 如何评判算法的其优劣(计算模型)  实验统计是最直接的方法，但足以准确反映算法的真正效率？不足够！ - 不同的算法，可能更适应于不同规模的输入 - 不同的算法，可能更适应于不同类型的输入 - 同一算法，可能由不同程序员、用不同程序语言、经不同编译器生成 - 同一算法，可能实现并运行于不同的体系结构、操作系统… 为给出客观的评判，需要抽象出一个理想的平台或模型 - 不再依赖于上述种种具体的因素 - 从而直接而准确地描述、测量并评价算法
- 1.图灵机模型(TM)    组成 说明     Tape 依次均匀地划分为单元格 各存有某一字符，初始均为&#39;#&#39;   Head 总是对准某一单元格，并可 读取或改写其中的字符。每经过一个节拍，可 转向左侧或右侧的邻格   Alphabet 字符的种类有限   State TM总是处于有限种状态中的某一种 。每经过一个节拍 可按照规则转向另一种状态 。统一约定，‘h’ = halt(停止)    2....</p>
+ 1.图灵机模型(TM) 
+   组成 说明     Tape 依次均匀地划分为单元格 各存有某一字符，初始均为&#39;#&#39;   Head 总是对准某一单元格，并可 读取或改写其中的字符。每经过一个节拍，可 转向左侧或右侧的邻格   Alphabet 字符的种类有限   State TM总是处于有限种状态中的某一种 。每经过一个节拍 可按照规则转向另一种状态 。统一约定，‘h’ = halt(停止)    2....</p>
   </section>
-  <footer class="entry-footer"><span title='2020-11-10 00:00:00 +0000 UTC'>November 10, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <footer class="entry-footer"><span title='2020-11-10 00:00:00 +0000 UTC'>Nov 10, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to DS导论" href="https://www.fintinger.site/p/ds%E5%AF%BC%E8%AE%BA/"></a>
 </article>
 
@@ -165,7 +168,7 @@ const不能在条件语句中使用，必出错
 :::
  参考文章 《PHP中define() 与 const定义常量的区别详解》...</p>
   </section>
-  <footer class="entry-footer"><span title='2020-10-14 00:00:00 +0000 UTC'>October 14, 2020</span>&nbsp;·&nbsp;13 min&nbsp;·&nbsp;Archai</footer>
+  <footer class="entry-footer"><span title='2020-10-14 00:00:00 +0000 UTC'>Oct 14, 2020</span>&nbsp;·&nbsp;10 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to PHP语法小结" href="https://www.fintinger.site/p/php%E8%AF%AD%E6%B3%95%E5%B0%8F%E7%BB%93/"></a>
 </article>
 
@@ -182,14 +185,15 @@ const不能在条件语句中使用，必出错
    第二章 数据的搜集 1.数据的来源  **间接来源（二手数据）**与研究内容有关的原信息已经存在，我们只是重新加工、整理，使之成为分析可用的数据，这称为间接来源的数据 **直接来源（一手数据）**通过调查方法获得的为调查数据，实验得到为实验数据，都是直接来源的数据  2.数据误差  抽样误差：由抽样的随机性引起的样本结果与总体真值之间的差异 非抽样误差：抽样框误差、回答误差、无回答误差、调查员误差、测量误差  第三章 数据的图表展示 1.数据预处理  原始数据：完整性、准确性 二手数据：适用性、时效性  2.分类数据图示 ​  1&gt; 组数 5≤ K ≤15
 2&gt; 组距 组距=(Max-Min)/K
 3&gt; 为解决不重的问题，统计分组习惯上规定“上组限不在内”，即当相邻两组的上下限重叠时，恰好等于某一组上限的变量值不算在本组内，而计算在下一组内。即a≤ x &lt;b
- 第四章 数据的概括性度量 1.集中趋势的度量   众数不受极端值影响，具有不唯一性 中位数不受极端值影响，数据分布偏斜程度较大时 平均数易受极端值影响   2.离散程度的度量    标准分数：也称标准化值或z分数（将数据平均值变为0，标准差为1） $$ z_i=\frac{x_i-\overline{x}}{s} $$...</p>
+ 第四章 数据的概括性度量 1.集中趋势的度量 
+  众数不受极端值影响，具有不唯一性 中位数不受极端值影响，数据分布偏斜程度较大时 平均数易受极端值影响   2.离散程度的度量...</p>
   </section>
-  <footer class="entry-footer"><span title='2020-06-17 00:00:00 +0000 UTC'>June 17, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <footer class="entry-footer"><span title='2020-06-17 00:00:00 +0000 UTC'>Jun 17, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 统计学期末知识总结" href="https://www.fintinger.site/p/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%9C%9F%E6%9C%AB%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
-    <a class="prev" href="https://www.fintinger.site/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/page/2/">« Prev Page</a>
+    <a class="prev" href="https://www.fintinger.site/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/page/2/">« </a>
   </nav>
 </footer>
     </main>
@@ -206,13 +210,17 @@ const不能在条件语句中使用，必出错
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a><script>
+</a><script class="testestteyftauj">
+    console.log("OK")
+</script>
+<script>
     if (window.screen.width <= 640 && window.location.pathname == "/") {
         document.querySelector(".profile_inner").style.opacity = 1;
     }
 </script>
 
 <script>
+     
     if (window.location.pathname != "/" && window.screen.width > 640) {
         randomLine();
     }
@@ -221,49 +229,73 @@ const不能在条件语句中使用，必出错
         function n(n, e, t) {
             return n.getAttribute(e) || t
         }
+
         function e(n) {
             return document.getElementsByTagName(n)
         }
+
         function t() {
             var t = e("script"), o = t.length, i = t[o - 1];
-            return { l: o, z: n(i, "zIndex", -88), o: n(i, "opacity", .3), c: n(i, "color", '0,0,0'), n: n(i, "count", 300) }
+            return {
+                l: o,
+                z: n(i, "zIndex", -88),
+                o: n(i, "opacity", .3),
+                c: n(i, "color", '0,0,0'),
+                n: n(i, "count", 300)
+            }
         }
+
         function o() {
             a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
                 c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
         }
+
         function i() {
             r.clearRect(0, 0, a, c);
             var n, e, t, o, m, l;
             s.forEach(function (i, x) {
-                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++)n = u[e],
-                    null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
-                        l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
-                            t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+                null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
+                    l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
+                    t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
             }),
                 x(i)
         }
+
         var a, c, u, m = document.createElement("canvas"),
             d = t(), l = "c_n" + d.l, r = m.getContext("2d"),
             x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
                 function (n) {
                     window.setTimeout(n, 1e3 / 45)
                 },
-            w = Math.random, y = { x: null, y: null, max: 2e4 }; m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
-                window.onmousemove = function (n) {
-                    n = n || window.event, y.x = n.clientX, y.y = n.clientY
-                },
-                window.onmouseout = function () {
-                    y.x = null, y.y = null
-                };
+            w = Math.random, y = {x: null, y: null, max: 2e4};
+        m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
+            window.onmousemove = function (n) {
+                n = n || window.event, y.x = n.clientX, y.y = n.clientY
+            },
+            window.onmouseout = function () {
+                y.x = null, y.y = null
+            };
         for (var s = [], f = 0; d.n > f; f++) {
-            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1; s.push({ x: h, y: g, xa: v, ya: p, max: 6e3 })
+            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1;
+            s.push({x: h, y: g, xa: v, ya: p, max: 6e3})
         }
         u = s.concat([y]),
-            setTimeout(function () { i() }, 100)
+            setTimeout(function () {
+                i()
+            }, 100)
     };
 
 </script>
+
+<script>
+    
+    document.querySelectorAll(".imgAlt").forEach(el => {
+        console.dir();
+        el.innerHTML = el.previousElementSibling.children[0].attributes.alt.value;
+    })
+</script>
+
 
 <script>
     let menu = document.getElementById('menu')

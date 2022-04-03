@@ -17,9 +17,9 @@
 由于不知名原因，span标签报错，因此全部替换为[sp]
 :::
 关于转义 1.字面量形式创建的RegExp 转义形式： \d, \., \s 等
-1 2 3  let str=&amp;#39;fintinger2592030861.com$323e&amp;#39; let reg=/\d+\.com/ str.match(reg);//2592030861.com   2.对象形式创建的RegExp 转义形式： \\d, \\., \\s等
-1 2 3  let str = &amp;#39;fintinger2592030861.com$323e&amp;#39; let reg = new RegExp(&amp;#39;\\d+\\.com&amp;#39;, &amp;#39;g&amp;#39;) str.match(reg)//2592030861.com   边界约束  利用^和$分别限制开头和结尾
- 1 2 3 4 5  let str = &amp;#39;bdhw42556jbjkhb2592030861jrh4jbhkfehrbj43jk32kbbjhb&amp;#39; let reg = /\d{3,6}/ let reg2 = /^\d{3,6}$/ str.match(reg)//42556 str.</description>
+let str=&amp;#39;fintinger2592030861.com$323e&amp;#39; let reg=/\d+\.com/ str.match(reg);//2592030861.com 2.对象形式创建的RegExp 转义形式： \\d, \\., \\s等
+let str = &amp;#39;fintinger2592030861.com$323e&amp;#39; let reg = new RegExp(&amp;#39;\\d+\\.com&amp;#39;, &amp;#39;g&amp;#39;) str.match(reg)//2592030861.com 边界约束  利用^和$分别限制开头和结尾
+ let str = &amp;#39;bdhw42556jbjkhb2592030861jrh4jbhkfehrbj43jk32kbbjhb&amp;#39; let reg = /\d{3,6}/ let reg2 = /^\d{3,6}$/ str.match(reg)//42556 str.match(reg2)//null 元字符    元字符 用法     \d &amp;amp; \D 表示数字和非数字   \s &amp;amp; \S 表示空白（空格，换行，Tab制表符等）和非空白   \w &amp;amp; \W 表示字母，数字，下划线和非&amp;hellip;   .</description>
     </item>
     
   </channel>
