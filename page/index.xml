@@ -16,7 +16,14 @@
 (没什么可说的🤐，看看修狗👇)
 联系我   QQ : 2592030861
   GitHub : https://github.com/fintinger
-  </description>
+  待办事项 √ 基本结构做完，带评论。&amp;lt; Wed Mar 9&amp;gt;
+√ 初步优化，首页修改，资源引入使用阿里云(不然慢😥)(暂时)。但是gotop莫名其妙报错😑。 &amp;lt;Fri Mar 18&amp;gt;
+√ 首页添加花里胡哨的随机线条功能，手机端不再设置不能显示主页，改成profile不再透明。 &amp;lt;Sat Mar 19&amp;gt;
+√ 更改首页video加载方式防止嗅探 &amp;lt;Mon Mar 21&amp;gt;
+√ 新增首页背景图用Blob加密，优化代码结构 &amp;lt;Thu Mar 31&amp;gt;
+√ 代码结构优化，取消背景图设定，用video标签的poster属性代替，新增几个个平台视频解析 &amp;lt;Mon Apr 04&amp;gt;
+ bilibili：bilibili AV号或BV号 分P号 &amp;gt;}} tencent： tencent b31563j0jqw &amp;gt;}} 自定义视频：video src=&amp;quot;./video.mp4&amp;quot; autoplay=&amp;quot;true&amp;quot; poster=&amp;quot;./video-poster.png&amp;quot; &amp;gt;}}  □ 差优化评论功能(莫名其妙加载不出来评论😑)
+□ 想做个音乐播放器组件😛</description>
     </item>
     
   </channel>

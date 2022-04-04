@@ -10,7 +10,7 @@
 <meta name="description" content="Posts - Archai&#39;s home">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/posts/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.82515ee3aebfe1ebd3d64679bfe6446c9279b71bc7a666741307404ca67eb398.css" integrity="sha256-glFe466/4evT1kZ5v&#43;ZEbJJ5txvHpmZ0EwdATKZ&#43;s5g=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.81198fb07b3d855c6c6044255e486cf8ec372cc03d5ccc18e1a818d5bacba62f.css" integrity="sha256-gRmPsHs9hVxsYEQlXkhs&#43;Ow3LMA9XMwY4agY1brLpi8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -119,6 +119,22 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>JavaScript中的继承与原型链分析
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>原型链自定义设置  原型链的设置可以通过Object.creative , __proto__, Object.setProperty三种方法
+ Object.creative () 说明： 该方法只能设置原型链，而不能获取
+let a1 = {name: &#39;a1&#39;} let b1 = Object.create(a1) b1.name = &#39;b1&#39; console.log(b1);  Object.creative()为创建对象的方法，第一个参数为其原型对象，第二个参数为其默认属性，这些属性默认是不可写，不可遍历，不可修改的
+ let b=Object.create(null,{ a:{value:&#39;ohh&#39;, enumerable:true}, b:{value:&#39;jqf&#39;}, }) console.log(Object.getOwnPropertyDescriptors(b)); //a: {value: &#34;ohh&#34;, writable: false, enumerable: true, configurable: false} //b: {value: &#34;jqf&#34;, writable: false, enumerable: false, configurable: false} __proto__ 说明： 能设置，能获取，实质上是setter，getter
+let a2 = {name: &#39;a2&#39;} let b2 = {name: &#39;b2&#39;} a2.__proto__ = b2 console.log(a2); console.log(a2.__proto__);//{name: &#34;b2&#34;}  关于__proto__是setter,getter？...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-09-04 00:00:00 +0000 UTC'>Sep 4, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript中的继承与原型链分析" href="https://www.fintinger.site/p/javascript%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%88%86%E6%9E%90/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>关于JavaScript模块化
     </h2>
   </header>
@@ -182,32 +198,14 @@ console.log(map.has(user));//true 2.遍历 👉forEach(val,key,map)...</p>
   <footer class="entry-footer"><span title='2020-08-26 00:00:00 +0000 UTC'>Aug 26, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to JavaScript基础之Map与Weakmap类型" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bmap%E4%B8%8Eweakmap%E7%B1%BB%E5%9E%8B/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>JavaScript基础之Set与Weakset
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>Set类型 1.属性 👉 size ：数组长度
-let set = new Set([1, 2, 3]) console.log(set.size);//9 👉 add() ：添加元素
-console.log(set.add(99));//返回修改后的数组Set(4) { 1, 2, 3, 99 } console.log(set);//原数组已经被修改Set(4) { 1, 2, 3, 99 } 👉 delete() ：删除元素
-console.log(set.delete(99));//true console.log(set);//Set(3) { 1, 2, 3 } 👉 has() ：有某个元素
-console.log(set.has(3)); //true 👉 clear()：清空数组
-set.clear()//返回undefined console.log(set);//Set(0) {} 2.遍历Set 👉 forEach() 方法
-let set=new Set([&#39;jqf&#39;,&#39;fin&#39;,&#39;zzh&#39;]) set.forEach((value, samevalue, set) =&gt; { console.log(value);//jqf,fin,zzh  console.log(samevalue);//jqf,fin,zzh  console.log(set);//Set(3) { &#39;jqf&#39;, &#39;fin&#39;, &#39;zzh&#39; } }) //这里回调中的参数，前两个都是一样的值， //第三个参数为遍历的Set 👉 [....</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-08-26 00:00:00 +0000 UTC'>Aug 26, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之Set与Weakset" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bset%E4%B8%8Eweakset/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://www.fintinger.site/posts/page/7/">« </a>
     <a class="next" href="https://www.fintinger.site/posts/page/9/"> »</a>
   </nav>
 </footer>
-    </main>
-    
+</main>
+
 <footer class="footer">
     <span>&copy; 2022 <a href="https://www.fintinger.site">Archai&#39;s home</a></span>
     <span>
@@ -220,92 +218,8 @@ let set=new Set([&#39;jqf&#39;,&#39;fin&#39;,&#39;zzh&#39;]) set.forEach((value,
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a><script class="testestteyftauj">
-    console.log("OK")
-</script>
-<script>
-    if (window.screen.width <= 640 && window.location.pathname == "/") {
-        document.querySelector(".profile_inner").style.opacity = 1;
-    }
-</script>
-
-<script>
-     
-    if (window.location.pathname != "/" && window.screen.width > 640) {
-        randomLine();
-    }
-
-    function randomLine() {
-        function n(n, e, t) {
-            return n.getAttribute(e) || t
-        }
-
-        function e(n) {
-            return document.getElementsByTagName(n)
-        }
-
-        function t() {
-            var t = e("script"), o = t.length, i = t[o - 1];
-            return {
-                l: o,
-                z: n(i, "zIndex", -88),
-                o: n(i, "opacity", .3),
-                c: n(i, "color", '0,0,0'),
-                n: n(i, "count", 300)
-            }
-        }
-
-        function o() {
-            a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
-                c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
-        }
-
-        function i() {
-            r.clearRect(0, 0, a, c);
-            var n, e, t, o, m, l;
-            s.forEach(function (i, x) {
-                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
-                null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
-                    l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
-                    t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
-            }),
-                x(i)
-        }
-
-        var a, c, u, m = document.createElement("canvas"),
-            d = t(), l = "c_n" + d.l, r = m.getContext("2d"),
-            x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
-                function (n) {
-                    window.setTimeout(n, 1e3 / 45)
-                },
-            w = Math.random, y = {x: null, y: null, max: 2e4};
-        m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
-            window.onmousemove = function (n) {
-                n = n || window.event, y.x = n.clientX, y.y = n.clientY
-            },
-            window.onmouseout = function () {
-                y.x = null, y.y = null
-            };
-        for (var s = [], f = 0; d.n > f; f++) {
-            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1;
-            s.push({x: h, y: g, xa: v, ya: p, max: 6e3})
-        }
-        u = s.concat([y]),
-            setTimeout(function () {
-                i()
-            }, 100)
-    };
-
-</script>
-
-<script>
-    
-    document.querySelectorAll(".imgAlt").forEach(el => {
-        console.dir();
-        el.innerHTML = el.previousElementSibling.children[0].attributes.alt.value;
-    })
-</script>
-
+</a>
+<script src="/assets/js/extended/extend.763591e5898fbc9235a5f12cbafe7161de565869fc554ba234473be6345893fe.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -358,79 +272,6 @@ window.onerror=function(){return true;}
     };
 
 </script>
-<video id="liveBgBox" autoplay="" loop="true" muted="" src="" style="display: none;"></video>
+<video id="liveBgBox" autoplay loop poster="https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png" style="display: none;"></video>
 </body>
-<script>
-    
-    function blobAjax(url) {
-        return new Promise((reslove, reject) => {
-            let x = new XMLHttpRequest()
-            x.open("GET", url, true)
-            x.responseType = 'blob';
-            x.send()
-            x.onreadystatechange = function () {
-                if (x.readyState === 4) {
-                    if (x.status >= 200 && x.status < 300) {
-                        reslove(x.response)
-                    } else {
-                        reject("加载失败")
-                    }
-                }
-            }
-            x.onerror = function () {
-                reject("其它错误")
-            }
-        })
-    }
-
-    
-    function getSetAllResource(resourceArr) {
-        resourceArr.forEach(resource => {
-            blobAjax(resource.url).then(data => resource.callBack(data))
-        }).catch(err => {
-            console.log(err);
-        })
-    }
-    
-    function setBgImgCallBack(blobRes) {
-        
-        let vid = document.getElementById("liveBgBox");
-        let profile = document.getElementsByClassName("profile")[0];
-        if (profile) {
-            vid.style.display = "block";
-            window.document.body.setAttribute('style', "background:url(" + URL.createObjectURL(blobRes) + ") no-repeat  center/cover fixed")
-        }
-    }
-    
-    function setBgvidCallBack(blobRes) {
-        
-
-        let vid = document.getElementById("liveBgBox");
-        vid.setAttribute("src", URL.createObjectURL(blobRes));
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    getSetAllResource([
-            {url:'https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png',callBack:setBgImgCallBack},
-            {url:'https://jqf.oss-cn-beijing.aliyuncs.com/videos/7kgkoysahpw31.mp4',callBack:setBgvidCallBack},
-        ])
-
-</script>
-
 </html>

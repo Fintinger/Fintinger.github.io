@@ -5,7 +5,7 @@
     <link>https://www.fintinger.site/</link>
     <description>Recent content on Archai&#39;s home</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 02 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ES6之Promise用法小结</title>
       <link>https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/</link>
@@ -30,6 +30,15 @@ new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //r
       <description>学习地址:https://www.bilibili.com/video/BV1WC4y1b78y，主要通过express的简单功能来搭建本地的服务，进而更好地学习Ajax
  发送Ajax请求的方式 原生Ajax //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(&amp;#34;GET&amp;#34;,&amp;#34;https://www.x.com&amp;#34;) //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status &amp;gt;= 200 &amp;amp;&amp;amp; xhr.status &amp;lt; 300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } } 说明：
  readyState: 返回一个 XMLHttpRequest 代理当前所处的状态     值 状态 描述     0 UNSENT 代理被创建，但尚未调用 open() 方法。   1 OPENED open() 方法已经被调用。   2 HEADERS_RECEIVED send() 方法已经被调用，并且头部和状态已经可获得。   3 LOADING 下载中； responseText 属性已经包含部分数据。   4 DONE 下载操作已完成。     因此，xhr.</description>
+    </item>
+    
+    <item>
+      <title>测试shortcodes</title>
+      <link>https://www.fintinger.site/p/%E6%B5%8B%E8%AF%95shortcodes/</link>
+      <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/%E6%B5%8B%E8%AF%95shortcodes/</guid>
+      <description>Bilibli tecent  video Your browser doesn&#39;t support HTML5 video. Here is alink to the video instead.</description>
     </item>
     
     <item>
@@ -148,7 +157,7 @@ function randomLine() { function n(n, e, t) { return n.getAttribute(e) || t } fu
       <description>公式 
 定理 
 附录 
-YO起来！ </description>
+YO起来！ </description>
     </item>
     
     <item>
@@ -1197,7 +1206,14 @@ border:10px solid hsla(0,0,100%,.5); background:white; background-clip:padding-b
 (没什么可说的🤐，看看修狗👇)
 联系我   QQ : 2592030861
   GitHub : https://github.com/fintinger
-  </description>
+  待办事项 √ 基本结构做完，带评论。&amp;lt; Wed Mar 9&amp;gt;
+√ 初步优化，首页修改，资源引入使用阿里云(不然慢😥)(暂时)。但是gotop莫名其妙报错😑。 &amp;lt;Fri Mar 18&amp;gt;
+√ 首页添加花里胡哨的随机线条功能，手机端不再设置不能显示主页，改成profile不再透明。 &amp;lt;Sat Mar 19&amp;gt;
+√ 更改首页video加载方式防止嗅探 &amp;lt;Mon Mar 21&amp;gt;
+√ 新增首页背景图用Blob加密，优化代码结构 &amp;lt;Thu Mar 31&amp;gt;
+√ 代码结构优化，取消背景图设定，用video标签的poster属性代替，新增几个个平台视频解析 &amp;lt;Mon Apr 04&amp;gt;
+ bilibili：bilibili AV号或BV号 分P号 &amp;gt;}} tencent： tencent b31563j0jqw &amp;gt;}} 自定义视频：video src=&amp;quot;./video.mp4&amp;quot; autoplay=&amp;quot;true&amp;quot; poster=&amp;quot;./video-poster.png&amp;quot; &amp;gt;}}  □ 差优化评论功能(莫名其妙加载不出来评论😑)
+□ 想做个音乐播放器组件😛</description>
     </item>
     
     

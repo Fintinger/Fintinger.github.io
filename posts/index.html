@@ -10,7 +10,7 @@
 <meta name="description" content="Posts - Archai&#39;s home">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/posts/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.82515ee3aebfe1ebd3d64679bfe6446c9279b71bc7a666741307404ca67eb398.css" integrity="sha256-glFe466/4evT1kZ5v&#43;ZEbJJ5txvHpmZ0EwdATKZ&#43;s5g=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.81198fb07b3d855c6c6044255e486cf8ec372cc03d5ccc18e1a818d5bacba62f.css" integrity="sha256-gRmPsHs9hVxsYEQlXkhs&#43;Ow3LMA9XMwY4agY1brLpi8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -151,6 +151,18 @@ new Promise((resolve, reject) =&gt; { resolve(&#39;success&#39;) //reject(&#39;r
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>测试shortcodes
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>Bilibli tecent  video Your browser doesn&#39;t support HTML5 video. Here is alink to the video instead.</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-04-04 00:00:00 +0000 UTC'>Apr 4, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 测试shortcodes" href="https://www.fintinger.site/p/%E6%B5%8B%E8%AF%95shortcodes/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Vue2.0学习小结
     </h2>
   </header>
@@ -210,38 +222,13 @@ const mixData={ data(){...} }, const mixMethods= { methods:{...} } 第二步：�
   <footer class="entry-footer"><span title='2022-03-30 00:00:00 +0000 UTC'>Mar 30, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 浏览器本地存储" href="https://www.fintinger.site/p/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Vue中的数据监视原理
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>1.vue会监视data中所有层次的数据. vue对于配置在data中的所有对象都会以key值作为目标进行监视，不论多少层，都会递归地为每一个key配置getter和setter(通过Object.defineProperty())。
- 相关阅读 MDN关于defineProperty的说明
- 2.如何监测对象中的数据? 通过setter实现监视,且要在new Vue时就传入要监测的数据，即在data中提前配置。
-(1).对象中后追加的属性,Vue默认不做响应式处理
-直接通过修改vm._data或者vm来添加key，并不会配置getter和setter，因此不会做响应式
-(2).如需给后添加的属性做响应式,请使用如下API: Vue.set(target,key/index,value)或vm.$set(target,key/index,value)（可以同时修改数组和对象）
-​	特别注意: Vue.set()和vm.$set()不能直接给vm或vm的根数据对象(vm._data)添加属性!!!
-3.如何监测数组中的数据? 在数组中直接通过索引的方式修改数组并不会引起Vue的响应，那么要如何做呢？Vue通过包裹数组更新元素的方法(对原数组方法进行修改)实现,本质就是做了两件事:
-(1). 调用原生对应的方法对数组进行更新.
-(2). 重新解析模板,进而更新页面.
-就包裹了下面的七种数组方法：
- push() pop() shift() unshift() splice() sort() reverse()  也就是说，通过上面七种方法修改数组，会让Vue做出响应。
-例如想要修改数组中索引为0的位置的数据，可以通过 vm.data.arr.splice(0,0,val)或Vue.set(vm.data.arr,0,val)又或者vm.$set(vm.data.arr,0,val)，在具体的由Vue管理的方法中this指向的应该就是vm！！
-数据劫持 Vue通过setter,getter对数据进行动态监测，其实就是“劫持”了数据😯</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-03-21 00:00:00 +0000 UTC'>Mar 21, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to Vue中的数据监视原理" href="https://www.fintinger.site/p/vue%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%9B%91%E8%A7%86%E5%8E%9F%E7%90%86/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="next" href="https://www.fintinger.site/posts/page/2/"> »</a>
   </nav>
 </footer>
-    </main>
-    
+</main>
+
 <footer class="footer">
     <span>&copy; 2022 <a href="https://www.fintinger.site">Archai&#39;s home</a></span>
     <span>
@@ -254,92 +241,8 @@ const mixData={ data(){...} }, const mixMethods= { methods:{...} } 第二步：�
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
-</a><script class="testestteyftauj">
-    console.log("OK")
-</script>
-<script>
-    if (window.screen.width <= 640 && window.location.pathname == "/") {
-        document.querySelector(".profile_inner").style.opacity = 1;
-    }
-</script>
-
-<script>
-     
-    if (window.location.pathname != "/" && window.screen.width > 640) {
-        randomLine();
-    }
-
-    function randomLine() {
-        function n(n, e, t) {
-            return n.getAttribute(e) || t
-        }
-
-        function e(n) {
-            return document.getElementsByTagName(n)
-        }
-
-        function t() {
-            var t = e("script"), o = t.length, i = t[o - 1];
-            return {
-                l: o,
-                z: n(i, "zIndex", -88),
-                o: n(i, "opacity", .3),
-                c: n(i, "color", '0,0,0'),
-                n: n(i, "count", 300)
-            }
-        }
-
-        function o() {
-            a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
-                c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
-        }
-
-        function i() {
-            r.clearRect(0, 0, a, c);
-            var n, e, t, o, m, l;
-            s.forEach(function (i, x) {
-                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
-                null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
-                    l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
-                    t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
-            }),
-                x(i)
-        }
-
-        var a, c, u, m = document.createElement("canvas"),
-            d = t(), l = "c_n" + d.l, r = m.getContext("2d"),
-            x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
-                function (n) {
-                    window.setTimeout(n, 1e3 / 45)
-                },
-            w = Math.random, y = {x: null, y: null, max: 2e4};
-        m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
-            window.onmousemove = function (n) {
-                n = n || window.event, y.x = n.clientX, y.y = n.clientY
-            },
-            window.onmouseout = function () {
-                y.x = null, y.y = null
-            };
-        for (var s = [], f = 0; d.n > f; f++) {
-            var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1;
-            s.push({x: h, y: g, xa: v, ya: p, max: 6e3})
-        }
-        u = s.concat([y]),
-            setTimeout(function () {
-                i()
-            }, 100)
-    };
-
-</script>
-
-<script>
-    
-    document.querySelectorAll(".imgAlt").forEach(el => {
-        console.dir();
-        el.innerHTML = el.previousElementSibling.children[0].attributes.alt.value;
-    })
-</script>
-
+</a>
+<script src="/assets/js/extended/extend.763591e5898fbc9235a5f12cbafe7161de565869fc554ba234473be6345893fe.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -392,79 +295,6 @@ window.onerror=function(){return true;}
     };
 
 </script>
-<video id="liveBgBox" autoplay="" loop="true" muted="" src="" style="display: none;"></video>
+<video id="liveBgBox" autoplay loop poster="https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png" style="display: none;"></video>
 </body>
-<script>
-    
-    function blobAjax(url) {
-        return new Promise((reslove, reject) => {
-            let x = new XMLHttpRequest()
-            x.open("GET", url, true)
-            x.responseType = 'blob';
-            x.send()
-            x.onreadystatechange = function () {
-                if (x.readyState === 4) {
-                    if (x.status >= 200 && x.status < 300) {
-                        reslove(x.response)
-                    } else {
-                        reject("加载失败")
-                    }
-                }
-            }
-            x.onerror = function () {
-                reject("其它错误")
-            }
-        })
-    }
-
-    
-    function getSetAllResource(resourceArr) {
-        resourceArr.forEach(resource => {
-            blobAjax(resource.url).then(data => resource.callBack(data))
-        }).catch(err => {
-            console.log(err);
-        })
-    }
-    
-    function setBgImgCallBack(blobRes) {
-        
-        let vid = document.getElementById("liveBgBox");
-        let profile = document.getElementsByClassName("profile")[0];
-        if (profile) {
-            vid.style.display = "block";
-            window.document.body.setAttribute('style', "background:url(" + URL.createObjectURL(blobRes) + ") no-repeat  center/cover fixed")
-        }
-    }
-    
-    function setBgvidCallBack(blobRes) {
-        
-
-        let vid = document.getElementById("liveBgBox");
-        vid.setAttribute("src", URL.createObjectURL(blobRes));
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    getSetAllResource([
-            {url:'https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png',callBack:setBgImgCallBack},
-            {url:'https://jqf.oss-cn-beijing.aliyuncs.com/videos/7kgkoysahpw31.mp4',callBack:setBgvidCallBack},
-        ])
-
-</script>
-
 </html>

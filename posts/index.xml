@@ -5,7 +5,7 @@
     <link>https://www.fintinger.site/posts/</link>
     <description>Recent content in Posts on Archai&#39;s home</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 02 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ES6之Promise用法小结</title>
       <link>https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/</link>
@@ -30,6 +30,15 @@ new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //r
       <description>学习地址:https://www.bilibili.com/video/BV1WC4y1b78y，主要通过express的简单功能来搭建本地的服务，进而更好地学习Ajax
  发送Ajax请求的方式 原生Ajax //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(&amp;#34;GET&amp;#34;,&amp;#34;https://www.x.com&amp;#34;) //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status &amp;gt;= 200 &amp;amp;&amp;amp; xhr.status &amp;lt; 300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } } 说明：
  readyState: 返回一个 XMLHttpRequest 代理当前所处的状态     值 状态 描述     0 UNSENT 代理被创建，但尚未调用 open() 方法。   1 OPENED open() 方法已经被调用。   2 HEADERS_RECEIVED send() 方法已经被调用，并且头部和状态已经可获得。   3 LOADING 下载中； responseText 属性已经包含部分数据。   4 DONE 下载操作已完成。     因此，xhr.</description>
+    </item>
+    
+    <item>
+      <title>测试shortcodes</title>
+      <link>https://www.fintinger.site/p/%E6%B5%8B%E8%AF%95shortcodes/</link>
+      <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/%E6%B5%8B%E8%AF%95shortcodes/</guid>
+      <description>Bilibli tecent  video Your browser doesn&#39;t support HTML5 video. Here is alink to the video instead.</description>
     </item>
     
     <item>
@@ -148,7 +157,7 @@ function randomLine() { function n(n, e, t) { return n.getAttribute(e) || t } fu
       <description>公式 
 定理 
 附录 
-YO起来！ </description>
+YO起来！ </description>
     </item>
     
     <item>
