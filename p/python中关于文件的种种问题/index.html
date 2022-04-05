@@ -13,7 +13,7 @@
 def main():try:with open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;utf-8&#39;) as f:print(f.read())except FileNotFoundError:print(&#39;无法打开指定的文件!&#39;)except LookupError:print(&#39;指定了未知的编码!&#39;)except UnicodeDecodeError:print(&#39;读取文件时解码错误!&#39;)if __name__ == &#39;__main__&#39;:main()">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/p/python%E4%B8%AD%E5%85%B3%E4%BA%8E%E6%96%87%E4%BB%B6%E7%9A%84%E7%A7%8D%E7%A7%8D%E9%97%AE%E9%A2%98/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.81198fb07b3d855c6c6044255e486cf8ec372cc03d5ccc18e1a818d5bacba62f.css" integrity="sha256-gRmPsHs9hVxsYEQlXkhs&#43;Ow3LMA9XMwY4agY1brLpi8=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.286aec1e9630a9b9ad9f65bc74f5de62c1f244d221eff34da3bcfe1c8a42f62e.css" integrity="sha256-KGrsHpYwqbmtn2W8dPXeYsHyRNIh7/NNo7z&#43;HIpC9i4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -29,7 +29,9 @@ def main():try:with open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;u
         }
 
     </style>
-</noscript><meta property="og:title" content="python中关于文件的种种问题" />
+</noscript>
+<link crossorigin="anonymous" href="/assets/css/external/external.css" rel="preload stylesheet" as="style">
+<meta property="og:title" content="python中关于文件的种种问题" />
 <meta property="og:description" content=" 在python中，我们可以将那些在运行时可能会出现状况的代码放在try代码块中，在try代码块的后面可以跟上一个或多个except来捕获可能出现的异常状况。
   FileNotFoundError，文件找不到 LookupError指定了未知的编码 UnicodeDecodeError读取文件时无法按指定方式解码  def main():f = Nonetry:f = open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;utf-8&#39;)print(f.read())except FileNotFoundError:print(&#39;无法打开指定的文件!&#39;)except LookupError:print(&#39;指定了未知的编码!&#39;)except UnicodeDecodeError:print(&#39;读取文件时解码错误!&#39;)finally:if f:f.close()if __name__ == &#39;__main__&#39;:main() finally块的代码不论程序正常还是异常都会执行到（甚至是调用了sys模块的exit函数退出Python环境，finally块都会被执行，因为exit函数实质上是引发了SystemExit异常），因此我们通常把finally块称为“总是执行代码块”，它最适合用来做释放外部资源的操作。
  或者， with关键字指定文件对象的上下文环境并在离开上下文环境时自动释放文件资源
@@ -125,7 +127,7 @@ def main():try:with open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;u
     });
 </script>
 
-<header class="header">
+<header class="header animate__animated animate__bounce animate__slideInDown animate__fast">
     <nav class="nav">
         <div class="logo">
             <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
@@ -163,7 +165,7 @@ def main():try:with open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;u
 </header>
 <main class="main">
 
-<article class="post-single">
+<article class="post-single  animate__animated animate__bounce animate__fadeIn">
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://www.fintinger.site">Home</a>&nbsp;»&nbsp;<a href="https://www.fintinger.site/posts/">Posts</a></div>
     <h1 class="post-title">
@@ -246,13 +248,14 @@ if __name__ == '__main__':
         el: '#veditor',
         appId: '6lUYMvIcPEdh8TJIHPL1V8sd-gzGzoHsz',
         appKey: 'eQh9fRmGTn757NYWg7NfDETV',
+        master: '8c3025ceb5de0e61fe808054b49c325a',   
+        tagMeta: ["博主","小伙伴","访客"],     
+        friends:  ["7d8fe1d694bf4369865cab91848fe390","3a1c312d1834ecdcb338e5cdbae3f1f7","5ce4f387d0aa4e0054cec9c03d50805d"],  
         
-        
-        
-        metaPlaceholder: {"nick":"昵称/QQ号","mail":"邮箱（完全保密）"},
-        placeholder: "填写邮箱可以及时收到回复哦(●'◡'●)",
+        placeholder: `可以在上方填写相关信息，支持Markdown语法`,
         avatar: 'wavatar',
         enableQQ: true,
+        pageSize:5,
     })
 </script>
 </article>
@@ -271,7 +274,7 @@ if __name__ == '__main__':
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.763591e5898fbc9235a5f12cbafe7161de565869fc554ba234473be6345893fe.js"></script>
+<script src="/assets/js/extended/extend.b210f1f514e121bd59a440070cfd204feed045eb2c591d4e65230335b405545b.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -371,6 +374,6 @@ window.onerror=function(){return true;}
         }
     });
 </script>
-<video id="liveBgBox" autoplay loop poster="https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png" style="display: none;"></video>
+<video id="liveBgBox" autoplay loop muted poster="https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png" style="display: none;"></video>
 </body>
 </html>

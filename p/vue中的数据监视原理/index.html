@@ -23,7 +23,7 @@
 数据劫持 Vue通过setter,getter对数据进行动态监测，其实就是“劫持”了数据😯">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/p/vue%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%9B%91%E8%A7%86%E5%8E%9F%E7%90%86/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.81198fb07b3d855c6c6044255e486cf8ec372cc03d5ccc18e1a818d5bacba62f.css" integrity="sha256-gRmPsHs9hVxsYEQlXkhs&#43;Ow3LMA9XMwY4agY1brLpi8=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.286aec1e9630a9b9ad9f65bc74f5de62c1f244d221eff34da3bcfe1c8a42f62e.css" integrity="sha256-KGrsHpYwqbmtn2W8dPXeYsHyRNIh7/NNo7z&#43;HIpC9i4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -39,7 +39,9 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Vue中的数据监视原理" />
+</noscript>
+<link crossorigin="anonymous" href="/assets/css/external/external.css" rel="preload stylesheet" as="style">
+<meta property="og:title" content="Vue中的数据监视原理" />
 <meta property="og:description" content="1.vue会监视data中所有层次的数据. vue对于配置在data中的所有对象都会以key值作为目标进行监视，不论多少层，都会递归地为每一个key配置getter和setter(通过Object.defineProperty())。
  相关阅读 MDN关于defineProperty的说明
  2.如何监测对象中的数据? 通过setter实现监视,且要在new Vue时就传入要监测的数据，即在data中提前配置。
@@ -155,7 +157,7 @@
     });
 </script>
 
-<header class="header">
+<header class="header animate__animated animate__bounce animate__slideInDown animate__fast">
     <nav class="nav">
         <div class="logo">
             <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
@@ -193,7 +195,7 @@
 </header>
 <main class="main">
 
-<article class="post-single">
+<article class="post-single  animate__animated animate__bounce animate__fadeIn">
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://www.fintinger.site">Home</a>&nbsp;»&nbsp;<a href="https://www.fintinger.site/posts/">Posts</a></div>
     <h1 class="post-title">
@@ -202,11 +204,11 @@
     <div class="post-meta"><span title='2022-03-21 00:00:00 +0000 UTC'>Mar 21, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai
 
 </div>
-  </header> <div class="toc">
+  </header> <div class="toc  animate__animated">
     <details >
-        <summary accesskey="c" title="(Alt + C)">
+        <summary accesskey="c" title="(Alt + C)" style="height: 30px">
             <span class="details">Table of Contents</span>
-            <span id="pinToc" title="pinned/unpinned"></span>
+            <span id="pinToc" class="fab fa-thumb-tack" title="pinned/unpinned"></span>
         </summary>
 
         <div class="inner"><ul>
@@ -281,13 +283,14 @@
         el: '#veditor',
         appId: '6lUYMvIcPEdh8TJIHPL1V8sd-gzGzoHsz',
         appKey: 'eQh9fRmGTn757NYWg7NfDETV',
+        master: '8c3025ceb5de0e61fe808054b49c325a',   
+        tagMeta: ["博主","小伙伴","访客"],     
+        friends:  ["7d8fe1d694bf4369865cab91848fe390","3a1c312d1834ecdcb338e5cdbae3f1f7","5ce4f387d0aa4e0054cec9c03d50805d"],  
         
-        
-        
-        metaPlaceholder: {"nick":"昵称/QQ号","mail":"邮箱（完全保密）"},
-        placeholder: "填写邮箱可以及时收到回复哦(●'◡'●)",
+        placeholder: `可以在上方填写相关信息，支持Markdown语法`,
         avatar: 'wavatar',
         enableQQ: true,
+        pageSize:5,
     })
 </script>
 </article>
@@ -306,7 +309,7 @@
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.763591e5898fbc9235a5f12cbafe7161de565869fc554ba234473be6345893fe.js"></script>
+<script src="/assets/js/extended/extend.b210f1f514e121bd59a440070cfd204feed045eb2c591d4e65230335b405545b.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -406,6 +409,6 @@ window.onerror=function(){return true;}
         }
     });
 </script>
-<video id="liveBgBox" autoplay loop poster="https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png" style="display: none;"></video>
+<video id="liveBgBox" autoplay loop muted poster="https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png" style="display: none;"></video>
 </body>
 </html>

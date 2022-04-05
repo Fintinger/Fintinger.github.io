@@ -14,7 +14,7 @@ class Admin{ static show(){}//__proto__中  show(){}//prototype中 } console.dir
  1.Symbol /*利用Symbol创建一个受保护的属性的集合对象,无法直接获取，只能通过自定义的get/set方法*/ const protects = Symbol(&#39;受保护的属性&#39;) class User { constructor(name) { this.name = name this[protects] = { host: &#39;https://www.fintinger.xyz&#39;, token: &#39;5574f1b81bbe4e3847e7a83c0a84a442&#39;, password: &#39;123456&#39; } } set host(url) { if (!">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/p/es6%E4%B8%AD%E7%9A%84class%E7%B1%BB/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.81198fb07b3d855c6c6044255e486cf8ec372cc03d5ccc18e1a818d5bacba62f.css" integrity="sha256-gRmPsHs9hVxsYEQlXkhs&#43;Ow3LMA9XMwY4agY1brLpi8=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.286aec1e9630a9b9ad9f65bc74f5de62c1f244d221eff34da3bcfe1c8a42f62e.css" integrity="sha256-KGrsHpYwqbmtn2W8dPXeYsHyRNIh7/NNo7z&#43;HIpC9i4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -30,7 +30,9 @@ class Admin{ static show(){}//__proto__中  show(){}//prototype中 } console.dir
         }
 
     </style>
-</noscript><meta property="og:title" content="Es6中的class类" />
+</noscript>
+<link crossorigin="anonymous" href="/assets/css/external/external.css" rel="preload stylesheet" as="style">
+<meta property="og:title" content="Es6中的class类" />
 <meta property="og:description" content="class实质上是对js中继承的封装组合，用一种“语法糖”的形式实现原型链的继承
  静态属性/方法  静态方法/属性是指，函数作为对象时，定义在其原型(__proto__)上的方法，而需要实例化继承的动态方法是定义在其原型对象(prototype) 中的，静态方法中的参数都是固定的，直接通过整个构造函数调用，实例化对象并不会继承；而动态方法中的参数会因为实例化对象的不同而产生改变，实例化对象默认是继承的。
  function User(){} User.__proto__.show=function(){} console.dir(User) //这里的show()方法就属于静态方法 在class中，利用static定义静态属性/方法
@@ -128,7 +130,7 @@ class Admin{ static show(){}//__proto__中  show(){}//prototype中 } console.dir
     });
 </script>
 
-<header class="header">
+<header class="header animate__animated animate__bounce animate__slideInDown animate__fast">
     <nav class="nav">
         <div class="logo">
             <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
@@ -166,7 +168,7 @@ class Admin{ static show(){}//__proto__中  show(){}//prototype中 } console.dir
 </header>
 <main class="main">
 
-<article class="post-single">
+<article class="post-single  animate__animated animate__bounce animate__fadeIn">
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://www.fintinger.site">Home</a>&nbsp;»&nbsp;<a href="https://www.fintinger.site/posts/">Posts</a></div>
     <h1 class="post-title">
@@ -175,11 +177,11 @@ class Admin{ static show(){}//__proto__中  show(){}//prototype中 } console.dir
     <div class="post-meta"><span title='2020-09-09 00:00:00 +0000 UTC'>Sep 9, 2020</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Archai
 
 </div>
-  </header> <div class="toc">
+  </header> <div class="toc  animate__animated">
     <details >
-        <summary accesskey="c" title="(Alt + C)">
+        <summary accesskey="c" title="(Alt + C)" style="height: 30px">
             <span class="details">Table of Contents</span>
-            <span id="pinToc" title="pinned/unpinned"></span>
+            <span id="pinToc" class="fab fa-thumb-tack" title="pinned/unpinned"></span>
         </summary>
 
         <div class="inner"><ul>
@@ -668,13 +670,14 @@ B.m() // 3
         el: '#veditor',
         appId: '6lUYMvIcPEdh8TJIHPL1V8sd-gzGzoHsz',
         appKey: 'eQh9fRmGTn757NYWg7NfDETV',
+        master: '8c3025ceb5de0e61fe808054b49c325a',   
+        tagMeta: ["博主","小伙伴","访客"],     
+        friends:  ["7d8fe1d694bf4369865cab91848fe390","3a1c312d1834ecdcb338e5cdbae3f1f7","5ce4f387d0aa4e0054cec9c03d50805d"],  
         
-        
-        
-        metaPlaceholder: {"nick":"昵称/QQ号","mail":"邮箱（完全保密）"},
-        placeholder: "填写邮箱可以及时收到回复哦(●'◡'●)",
+        placeholder: `可以在上方填写相关信息，支持Markdown语法`,
         avatar: 'wavatar',
         enableQQ: true,
+        pageSize:5,
     })
 </script>
 </article>
@@ -693,7 +696,7 @@ B.m() // 3
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.763591e5898fbc9235a5f12cbafe7161de565869fc554ba234473be6345893fe.js"></script>
+<script src="/assets/js/extended/extend.b210f1f514e121bd59a440070cfd204feed045eb2c591d4e65230335b405545b.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -793,6 +796,6 @@ window.onerror=function(){return true;}
         }
     });
 </script>
-<video id="liveBgBox" autoplay loop poster="https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png" style="display: none;"></video>
+<video id="liveBgBox" autoplay loop muted poster="https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png" style="display: none;"></video>
 </body>
 </html>
