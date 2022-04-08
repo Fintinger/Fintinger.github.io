@@ -10,7 +10,7 @@
 <meta name="description" content="Posts - Archai&#39;s home">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/posts/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.286aec1e9630a9b9ad9f65bc74f5de62c1f244d221eff34da3bcfe1c8a42f62e.css" integrity="sha256-KGrsHpYwqbmtn2W8dPXeYsHyRNIh7/NNo7z&#43;HIpC9i4=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fae13974f92a364555f4383162b9be4a3b35895e399ea2254f90325fff2b2e59.css" integrity="sha256-&#43;uE5dPkqNkVV9DgxYrm&#43;Sjs1iV45nqIlT5AyX/8rLlk=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -119,102 +119,85 @@
   <h1>Posts</h1>
 </header>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>JavaScript基础之Set与Weakset
+    <h2>Javascript一些操作
     </h2>
   </header>
   <section class="entry-content">
-    <p>Set类型 1.属性 👉 size ：数组长度
-let set = new Set([1, 2, 3]) console.log(set.size);//9 👉 add() ：添加元素
-console.log(set.add(99));//返回修改后的数组Set(4) { 1, 2, 3, 99 } console.log(set);//原数组已经被修改Set(4) { 1, 2, 3, 99 } 👉 delete() ：删除元素
-console.log(set.delete(99));//true console.log(set);//Set(3) { 1, 2, 3 } 👉 has() ：有某个元素
-console.log(set.has(3)); //true 👉 clear()：清空数组
-set.clear()//返回undefined console.log(set);//Set(0) {} 2.遍历Set 👉 forEach() 方法
-let set=new Set([&#39;jqf&#39;,&#39;fin&#39;,&#39;zzh&#39;]) set.forEach((value, samevalue, set) =&gt; { console.log(value);//jqf,fin,zzh  console.log(samevalue);//jqf,fin,zzh  console.log(set);//Set(3) { &#39;jqf&#39;, &#39;fin&#39;, &#39;zzh&#39; } }) //这里回调中的参数，前两个都是一样的值， //第三个参数为遍历的Set 👉 [....</p>
+    <p>1.通过id获取元素 function $(id) { return typeof id === &#39;string&#39; ? document.getElementById(id): null; } 2.日期格式化 function formatDate(cDate) { //1.判断  if (!cDate instanceof Date){ return; } //2.转化  var year=cDate.getFullYear(); var month=cDate.getMonth(); var date=cDate.getDate(); var hour=cDate.getHours(); var minute=cDate.getMinutes(); var second=cDate.getSeconds(); //2.1 补0  month=month&lt;10? &#39;0&#39;&#43;month:month; date=date&lt;10? &#39;0&#39;&#43;date: date; minute=minute&lt;10? &#39;0&#39;&#43;minute:minute; second=second&lt;10? &#39;0&#39;&#43;second:second; return year &#43; &#39;-&#39; &#43; month &#43; &#39;-&#39; &#43; date &#43; &#39; &#39; &#43;hour&#43;&#39;:&#39;&#43;minute&#43;&#34;:&#34;&#43;second; } console.log(formatDate(new Date())); 3.匀速运动封装 /** * 设置一个盒子右边距匀速变化 * @param{string} btnId * @param{string} boxId * @param{number} step * @param{number}target */ function linearAnimation(btnId, boxId, step, target) { // 1....</p>
   </section>
-  <footer class="entry-footer"><span title='2020-08-26 00:00:00 +0000 UTC'>Aug 26, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之Set与Weakset" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bset%E4%B8%8Eweakset/"></a>
+  <footer class="entry-footer"><span title='2020-04-02 00:00:00 +0000 UTC'>Apr 2, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to Javascript一些操作" href="https://www.fintinger.site/p/javascript%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>JavaScript基础之Symbol类型
+    <h2>常用的一些html代码
     </h2>
   </header>
   <section class="entry-content">
-    <p>Symbol() 类型不能当做普通对象(不能加属性值)，只能当做一种永远都不会重复的字符串
- 定义 方法： Symbol(desc)、Symbol.for(desc)
-let s1 = Symbol(&#39;d&#39;) let s2 = Symbol.for(&#39;d&#39;) let s3 = Symbol.for(&#39;d&#39;) console.log(s1.description);//d console.log(Symbol.keyFor(s2));//d console.log(s1 === s3);//false console.log(s2 === s3);//true 注意： 利用Symbol() 定义的值永远都不会相等，而Symbol.for() 定义的，如果描述相同，则值相等
-定义对象时，key相同会覆盖的问题 普通方式定义：
-let user1={ name:&#39;李四&#39; } let user2={ name:&#39;李四&#39; } let grade={ [user1.name]:{C:98,E:60}, [user2.name]:{C:99,E:59} } console.log(grade);//{&#39;李四&#39;:{C:99,E:59}} 可以看到，后面的覆盖掉了前面的
-利用Symbol() 定义
-let user1={ name:&#39;李四&#39;, key:Symbol() } let user2={ name:&#39;李四&#39;, key:Symbol() } let grade={ [user1.key]:{C:98,E:60}, [user2.key]:{C:99,E:59} } console.log(grade)//{[Symbol(user1)]: { C: 98, E: 60 },[Symbol(user2)]: { C: 99, E: 59 }} console....</p>
+    <p>1. 获取网页logo 京东 : www.jd.com
+ 后面加 “/favicon.ico&#34;即可
+ 京东logo : www.jd.com/favicon.ico
+2. webstorm网页logo简易写法  link:favicon 按Tab键  3.meta标签  为搜索引擎提供的关键字列表( name=“keywords”)：   各关键词间用英文逗号“,”隔开。META的通常用处是指定搜索引擎用来提高搜索质量的关键词。
+ &lt;meta name=&#34;keywords&#34; content=&#34;牙疼怎么办，智齿是什么，拔牙多少钱，矫正多少钱，九院医生，北大口腔，瑞尔口腔，拜耳口腔&#34;&gt;
+ 用来告诉搜索引擎你的网站主要内容(name=“description”)：  &lt;meta name=&#34;description&#34; content=&#34;有牙齿问题,找河马牙医,儿童口腔，全国儿童口腔在线咨询，牙疼怎么办，拔牙多少钱，矫正多少钱，种植牙，有牙齿问题&#34;&gt;
+ 优先以webkit内核渲染页面(“renderer”)：  &lt;meta name=&#34;renderer&#34; content=&#34;webkit&#34; /&gt;
+4.复合选择器 div#main{ color:green}
+ 表示选中div中id为main的元素
+ 5.标签居中  水平居中 行内标签/行内-块级标签: text-align:center  块级标签:
+margin:0 auto
+2)垂直居中
+  行内标签/行内-块级标签:
+ 设置行高为盒子高度line-hight:50px; 图片加文字时:vertical-align:middle;    块级标签:
+   设置“子绝父相” ==&gt; top，left设置为50% ==&gt; margin-left和nargin-top设置为负的盒子对应宽高的一半...</p>
   </section>
-  <footer class="entry-footer"><span title='2020-08-24 00:00:00 +0000 UTC'>Aug 24, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之Symbol类型" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bsymbol%E7%B1%BB%E5%9E%8B/"></a>
+  <footer class="entry-footer"><span title='2020-03-21 00:00:00 +0000 UTC'>Mar 21, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 常用的一些html代码" href="https://www.fintinger.site/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E4%BB%A3%E7%A0%81/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>JavaScript基础之数组深倔
+    <h2>CSS揭秘一书中的知识
     </h2>
   </header>
   <section class="entry-content">
-    <p>数组是经常用到的一种数据结构
- 定义方法 let a = new Array(3) let b = [1, 2, 3]  如何定义一个只有一个元素的数组？
- new Array(n)表示有n个空元素的的数组，利用Array.of(n),可以定义一个只有n元素的数组
-类型转换  利用join 可以把数组转成字符串
- let a = [1, 2, 3, 4, 5] let b = a.join(&#39;&#39;) console.log(b); 说明： join 的作用就是将数组中的所有元素用指定的符号连接，成为一个字符串
- 如何把DOM集合NodeList转换成普通数组形式？
- Nodelist形式无法使用.map(),reduce()等方法(能用forEach())，处理不太方便，因此需要转换成普通数组类型
-let titles = document.querySelectorAll(&#39;h1&#39;); [...titles].map((v, i,titles) =&gt; { console.log(v); }) titles.map()//Uncaught TypeError: titles.map is not a function 注意： 利用展开语法可以把DOM集合转换成普通数组形式
-解构赋值  是一种数组间批量赋值的方法
- let [name, age] = [&#39;fin&#39;, 18] console....</p>
+    <p>1.backgrouond简写  在background简写属性中指定background-sizing时，需要提供一个background-position值，而且要使用/作为分隔。  background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [ background-size] [background-origin] [background-clip]; —–P13—–
+2.background-clip 规定背景的绘制区域： 得到一个白色背景并且有白色边框的盒子：
+border:10px solid hsla(0,0,100%,.5); background:white; background-clip:padding-box 
+若不设置background-clip，背景会延伸至边框，边框的透明无法显示
+——P18——-
+3.双重边框  box-shadow   background:orange;box-shadow:0 0 010px #655 , 0 0 0 15px deeppink; /*可以加任意层数边框*/ outline  width:180px; height:90px; margin:30px auto; text-align:center; padding:10px; background:##655; outline: ##fff dashed 1px; outline-offset: -15px; /*设置outline向内缩进*/ border-radius:8px;  注意： outline可能会产生不贴合border-radius圆角的情况 
+—-P20—-
+4.box-shadow  只给下方设置阴影，（扩张半径为负的模糊半径）:  box-shadow: 0 5px 4px -4px black;  临边投影，(扩张半径为负的模糊半径的一半):  box-shadow: 3px 3px 6px -3px black; —-P88—-...</p>
   </section>
-  <footer class="entry-footer"><span title='2020-08-24 00:00:00 +0000 UTC'>Aug 24, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之数组深倔" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%95%B0%E7%BB%84%E6%B7%B1%E5%80%94/"></a>
+  <footer class="entry-footer"><span title='2019-12-23 00:00:00 +0000 UTC'>Dec 23, 2019</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to CSS揭秘一书中的知识" href="https://www.fintinger.site/p/css%E6%8F%AD%E7%A7%98%E4%B8%80%E4%B9%A6%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>JavaScript基础之值类型
+    <h2>扁平设计和拟物设计
     </h2>
   </header>
   <section class="entry-content">
-    <p>字符串 1.截取字符串  主要有slice()、substr()、substring() 三种方法
-  一个参数[i]  都是从i开始截取，返回n及其后面的全部字符串。
- 第二个参数[i,n]  slice(i,n)和substring(i,n)表示从i开始截取到n；substr(i,n)，表示从i开始截取n个
- 负参数  slice()和substr()将最后一位记为-1，然后依次编号；substring()则会将任何负参数变为0，然后查找
-let w = &#39;fintinger.xyz&#39; let a = w.slice(-4, w.length) let b = w.substring(-1, 2) let c = w.substr(-4, 4) console.log(a, b, c);//.xyz fi .xyz 2.查找字符串  主要有indexof()、includes()、lastIndexof() 三种方法
- 共同点：
- 两个参数[searchString,position]，第一个为要检索的字符串，第二个为开始检索位置； 若position &lt; 0，则position = 0 position可以省略  不同之处：
- lastIndexof()为从右往左找，找到第一个立即返回索引！其他两个都是从左往右 indexof(),lastIndexof()找不到则返回-1，includes()找不到返回false position 省略之后，includes(),indexof()默认值为0，lastIndexof()则为str.length  3.重复函数 repeat() 作用： 复制粘贴指定字符串指定次数
-案例：
-/** * 电话号码模糊处理 * @param{String|Number}number * @param{Number}len * @returns {Error|string} * @constructor */ function Phone(number, len = 4) { number = String(number) return number....</p>
+    <p>什么扁平和拟物设计？ 扁平化设计(Flat design) 完全属于二次元，这个概念最核心的地方就是放弃一切装饰效果，诸如阴影，透视，纹理，渐变等等能做出3D效果的元素一概不用。所有的元素的边界都干净利落，没有任何羽化，渐变，或者阴影。
+拟物设计(Skeuomorph) 正好相反，他需要加入各种元素的效果，通过不同的效果组合达到模拟要呈现物件外观的目的，以使新的外观让人感觉熟悉和亲切。
+扁平化与拟物化的优缺点:
+ 扁平化设计单独设计起来更容易，突出内容主题，减弱各种渐变、阴影、高光等视觉效果对用户视线的干扰，让用户更加专注于内容本身，并且容易统一设计风格，调整设计方案更加方便。而现在手机平板电脑&#34;横行&#34;的今天，扁平化设计更能支持手势交互，而且它占用系统空间相对较少。 拟物化设计更适合初级人员了来做，这并不表示拟物化设计简单，而正是因为它的复杂所以更适合初级人员来做，可以让设计人员短时间内熟悉各种效果的实现，更好掌握色彩搭配等。并且拟物化设计认知和学习成本低，更能直接的表现出想表现的事物。   相对于它们的优点多多，它们的缺点却是一目了然。拟物化设计更倾向于视觉效果，功能实现很少。扁平化所能承载的信息量太少，会提高用户的学习成本。
+ </p>
   </section>
-  <footer class="entry-footer"><span title='2020-08-23 00:00:00 +0000 UTC'>Aug 23, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之值类型" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%80%BC%E7%B1%BB%E5%9E%8B/"></a>
-</article>
-
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
-  <header class="entry-header">
-    <h2>JavaScript基础之JS黑洞
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>JavaScript中最容易忽视的一些点
- let和var  都用来定义变量，但二者之间有些细微的差别
- 区别1: 是否有块作用域 var a = 1 { // var a=2  let a = 2 } console.log(a); //output var:a=2 let:a=1 var i=1 // for (var i = 0; i &lt;3; i&#43;&#43;) { for (let i = 0; i &lt;3; i&#43;&#43;) { //..do something } console.log(i); //output var:i=3 let:i=1 说明： 可以看出，var并没有作用域的概念，定义在特定作用于内的变量会受到作用域外的影响，let则不会
-区别2：全局污染问题 console.log(window.screenLeft);//600 // var screenLeft = 1 let screenLeft = 1 console.log(window.screenLeft); //output var:1 let:600 说明： var定义的变量用window对象也可以访问，当定义一些特定的key时，会造成全局的污染!...</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-08-22 00:00:00 +0000 UTC'>Aug 22, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之JS黑洞" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bjs%E9%BB%91%E6%B4%9E/"></a>
+  <footer class="entry-footer"><span title='2019-11-12 00:00:00 +0000 UTC'>Nov 12, 2019</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 扁平设计和拟物设计" href="https://www.fintinger.site/p/%E6%89%81%E5%B9%B3%E8%AE%BE%E8%AE%A1%E5%92%8C%E6%8B%9F%E7%89%A9%E8%AE%BE%E8%AE%A1/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://www.fintinger.site/posts/page/8/">« </a>
-    <a class="next" href="https://www.fintinger.site/posts/page/10/"> »</a>
   </nav>
 </footer>
 </main>
@@ -232,7 +215,7 @@ let w = &#39;fintinger.xyz&#39; let a = w.slice(-4, w.length) let b = w.substrin
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.b210f1f514e121bd59a440070cfd204feed045eb2c591d4e65230335b405545b.min.js"></script>
+<script src="/assets/js/extended/extend.fa3df6438f7c3b2ccdb1417e73e78d09dad45de34b8e8d1146747073cccd4ab9.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -285,6 +268,6 @@ window.onerror=function(){return true;}
     };
 
 </script>
-<video id="liveBgBox" autoplay loop muted poster="https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png" style="display: none;"></video>
+<video id="liveBgBox" autoplay loop muted poster="https://picgo-jqf.oss-cn-beijing.aliyuncs.com/img/202204051521692.png" style="display: none;"></video>
 </body>
 </html>

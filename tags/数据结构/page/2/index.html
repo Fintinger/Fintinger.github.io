@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.286aec1e9630a9b9ad9f65bc74f5de62c1f244d221eff34da3bcfe1c8a42f62e.css" integrity="sha256-KGrsHpYwqbmtn2W8dPXeYsHyRNIh7/NNo7z&#43;HIpC9i4=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fae13974f92a364555f4383162b9be4a3b35895e399ea2254f90325fff2b2e59.css" integrity="sha256-&#43;uE5dPkqNkVV9DgxYrm&#43;Sjs1iV45nqIlT5AyX/8rLlk=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -104,117 +104,8 @@
   <h1>数据结构</h1>
 </header>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
-  <header class="entry-header">
-    <h2>图的存储
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>邻接矩阵  Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.
- 
-代码实现 #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph; 即
-找度 根据邻接矩阵计算结点的度TD
-    无向图 有向图     $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数
-$OD(V_i)$: i列非零元素个数
-TD=ID&#43;OD    对于带权图（网） 
-#define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph; 复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|&#43;|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。...</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-06-02 00:00:00 +0000 UTC'>Jun 2, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 图的存储" href="https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
-  <header class="entry-header">
-    <h2>AVL树
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>平衡二叉树是Adelson-Velsky和 Landis发明，故命名为AVL树。也称平衡二叉查找树。
- ✨特点： ①左子树&lt;根&lt;右子树； ②任一节点，左右子树高度之差不超过1.
-平衡因子 $平衡因子=左子树高-右子树高$
-AVL树的插入操作 AVL树插入新结点导致不平衡之后，只需将最小不平衡子树平衡，其他祖先结点会随之恢复平衡。
-调整最小不平衡子树 注意：调整过后必须保证其BST的特性，即“左子树1.LL  即在以A为根节点的树的左孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
- 
-调整过程如下：
-
-2.RR  即在以A为根节点的树的右孩子B的右子树上插入新结点，导致A成为最小不平衡子树。
- 
-调整过程如下：
-
-3.LR  即在以A为根节点的树的左孩子B的右子树上插入新结点，导致A成为最小不平衡子树。
- 
-观察得知，所进行的调整就是保证$|平衡因子|&lt;=1$，因此若插入操作使得
-左 - 右 &gt; 1 =&gt; 右旋
-右 - 左 &gt; 1 =&gt;左旋
-而当进行了LR插入操作之后，导致以A为根节点的树 左-右&gt;1，理应右旋但是，由上述结果可知，经过右旋之后：
-
-可以看到，为了保证其左子树&lt;根&lt;右子树的特性，经过调整后，依然存在右-左&gt;1的问题；
-因此，对于LR型不能简单进行右旋调整，应该先将其转化为LL型 (左旋)，再进行右旋；
-为此，我们需要将BR结点展开，之后旋转成为LL型插入
-
-可以看到，展开后又出现两种插入情况CL&amp;CR，但其实两者处理大同小异：
-CR插入调整过程如下：
-
-4.RL  即在以A为根节点的树的右孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
- 
-参考LR型，其调整过程如下：
-
-查找操作效率分析 Assuming that, $n_h$表示深度为h的平衡树中含有的最少结点，则
-$n_0=0$,$n_1=1$,$n_2=2$…存在递归关系 $n_h=n_{h-1}&#43;n_{h-2}&#43;1$,即左右子树结点之和&#43;根节点。
-可以证明(AVL证明)，n个结点的平衡二叉树最大深度数量级为$\log_2n$，则其查找操作的复杂度为$O(\log_2n)$</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-05-23 00:00:00 +0000 UTC'>May 23, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to AVL树" href="https://www.fintinger.site/p/avl%E6%A0%91/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
-  <header class="entry-header">
-    <h2>哈夫曼树
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>基本概念 1.结点的权
-每个结点带有的具有某种现实意义的数值(比如代表重要性等)
-2.结点的带权路径长度
-从树的根到该结点的路径长度（经过的边数）与该结点上权值的乘积
-3.树的带权路径长度
-树中所有叶结点的带权路径长度之和（WPL, Weighted Path Length）
-$WPL=\sum_{i=1}^{n}w_il_i$
-✨4.哈夫曼树
-在含有n个带权叶结点的二叉树中，其中带权路径长度（WPL）最小的二叉树称为哈夫曼树，也称最优二叉树
-构造哈夫曼树 给定n个权值分别为 $w_1,w_2,…,w_n$ 的结点，其构造过程描述如下：
-① 将这n个结点分别作为n棵仅含一个结点的二叉树，构成森林F
-② 构造一个新结点，从F中选取两棵根结点权值最小的树作为新结点的左右子树，并且将新结点的权值置为左、右子树上根结点的权值之和。
-③ 从F中删除刚才选出的两棵树，同时将新得到的树加入F中。
-④ 重复步骤②和③，直至F中只剩下一棵树为止。
-假设给定结点在经过步骤①之后如下
-
-则其②③④步骤为：
-
-$WPL_{min}=1*7&#43;2*3&#43;3*2&#43;4*1&#43;4*2=31$
-或者
-
-$WPL_{min}=1*7&#43;3*(1&#43;2&#43;2&#43;3)=31$
-👇👇👇👇👇👇
-哈夫曼树特点： ① 每个初始结点最终都成为叶结点，且权值越小的结点到根结点的路径长度越大。 ② 哈夫曼树的结点总数为2n-1。 ③ 哈夫曼树中不存在度为1的结点。 ④ 哈夫曼树并不唯一，但WPL必然相同且为最优。
-哈夫曼编码 固定长度编码 如ASCII码
-可变长度编码 前缀编码 没有一个编码是另一个编码的前缀
-
-哈夫曼编码 由哈夫曼树得到哈夫曼编码——字符集中的每个字符作为一个叶子结点，各个字符出现的频度作为结点的权值，根据之前介绍的方法构造哈夫曼树。
-✨ 应用
-可用于数据压缩
-如图，为英文字母使用频率表，若不进行压缩，第 i 个字母频率用$l_i表示$，路径长至少为5($2^4&lt;26&lt;2^5$)，则
-$WPL=5×\sum_{i=1}^{n}l_i$=500
-
-若通过构造哈夫曼树进行哈夫曼编码
-则$WPL_{min}=$
-$v=\frac{WPL_{min}}{WPL}$</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-05-23 00:00:00 +0000 UTC'>May 23, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 哈夫曼树" href="https://www.fintinger.site/p/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>树
     </h2>
@@ -242,7 +133,8 @@ B	C	D	A
   <a class="entry-link" aria-label="post link to 树" href="https://www.fintinger.site/p/%E6%A0%91/"></a>
 </article>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>线索二叉树
     </h2>
@@ -268,10 +160,123 @@ void CreatInThread(ThreadTree T){ pre=NULL; if(T!=NULL){ InThread(T); if(pre-&gt
   <footer class="entry-footer"><span title='2021-05-15 00:00:00 +0000 UTC'>May 15, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 线索二叉树" href="https://www.fintinger.site/p/%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91/"></a>
 </article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>由遍历序列构造出二叉树
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>由遍历序列构造出二叉树 仅知道一种遍历序列是无法确定唯一的二叉树的，以中序遍历为例，对于一个中序遍历序列“BDCAE”，其对应的树形结构可能有下面三种：
+
+因此，至少需要两种遍历序列才可以推知树形结构。
+1.前序&#43;中序遍历序列 🎈基本步骤 由前序遍历的特性得知，前序遍历中第一个节点必然为根节点，因此根据中序遍历特性，根节点左边为左子树下的所有节点，右边为右子树下的所有节点，然后分别在左子树序列右子树序列中重复进行即可。
+🎈示例
+ 前序遍历序列：A D B C E 中序遍历序列：B D C A E  首先能确定根节点为A，根据中序遍历序列可以得到：
+
+对于左子树BDC，根据前序遍历，此子树根节点为D，根据中序遍历序列：
+
+至此，二叉树的还原工作就完成了！至于更复杂的序列，逐步推断即可😋
+2.后序&#43;中序遍历序列 🔑与1不用的是，后序遍历中根节点为后序遍历序列尾部的那个节点，其余参照1即可！
+3.层序遍历&#43;中序遍历 🔑 根据层序遍历特性，层序遍历中根节点始终在子树前面，“根左右”
+🎈示例
+ 层序遍历序列：A D E B C 中序遍历序列：B D C A E  根节点为A，根据中序遍历序列可以得到：
+
+对于左子树BDC，根据前序遍历，此子树根节点为D，根据中序遍历序列：
+
+思考  如果前序，后续，层序两两组合能否确定唯一的树结构？
+ 
+假设给定序列如下：
+ 前序：A B 后序：B A 层序：A B  其两两组合都满足两种结构：
+
+因此前序，后续，层序两两组合不能确定唯一的树结构。</p>
+  </section>
+  <footer class="entry-footer"><span title='2021-05-09 00:00:00 +0000 UTC'>May 9, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 由遍历序列构造出二叉树" href="https://www.fintinger.site/p/%E7%94%B1%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E5%87%BA%E4%BA%8C%E5%8F%89%E6%A0%91/"></a>
+</article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>向量空间管理策略
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>向量的空间管理，有静态和动态两种策略
+ 静态空间管理策略 开辟内部数组_elem[]并使用一段地址连续的物理空间，_capacity表示总容量 ，_size表示当前的实际规模n，示意图如下：
+
+若采用静态空间管理策略，容量_capacity固定，则有明显的不足…
+上溢/overflow： _elem[]不足以存放所有元素，尽管此时系统往往仍有足够的空间
+下溢/underflow：  _elem[]中的元素寥寥无几，装填因子 λ = _size / _capacity « 50%
+动态空间管理策略 在即将上溢时，适当扩大内部数组的容量
+递增策略 当需要扩容时，为_capacity追加固定大小的空间，即
+T* oldElem = _elem; _elem = new T[ _capacity &#43;= INCREMENT ]; 考虑最坏情况，在初始容量为0的空向量中连续插入n = m*I个元素
+那么，在第1，I&#43;1，2I&#43;1，3I&#43;1…次插入元素时都需要扩容，表示为
+
+倍增策略 当需要扩容时，增加_capacity 为原来的两倍，即
+T* oldElem = _elem; _elem = new T[ _capacity &lt;&lt;= 1 ]; 考虑最坏情况，在初始容量为1的空向量中连续插入n = 2^m个元素
+那么，在第1，2，4，8…次插入元素时都需要扩容，表示为
+
+两种策略的复杂度分析 考虑最坏的情况，两种策略的复杂度分别为
+ 递增策略： 为算术级数，0&#43;I&#43;2I&#43;…=O(n ²) 倍增策略： 为几何级数，1&#43;2¹&#43;2²&#43;2³&#43;…=O(2^m)=O(n)      递增策略 倍增策略     累计时间 O(n ²) O(n)   分摊时间 O(n) O(1)   装填因子 λ ≈100% &gt;50%    可以看出，倍增策略在牺牲空间的基础上，换取时间上的巨大提升，可采取√...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-11-16 00:00:00 +0000 UTC'>Nov 16, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 向量空间管理策略" href="https://www.fintinger.site/p/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5/"></a>
+</article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>减而治之与分而治之
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>减而治之(Decrease and conquer)  什么是“减而治之”？
+为求解一个大规模的问题，可以将其划分为两个问题，其一平凡，另一规模缩减 ，分别求解子问题，由子问题的解得原问题的解
+ 
+比如说，对于一个数组A的求和问题，可以设计如下的算法
+sum( int A[], int n ) { return n &lt; 1? 0 : sum(A, n - 1) &#43; A[n - 1]; } 当规模缩减到一定程度后，抵达递归基，返回0
+复杂度分析 1. 递归跟踪
+ 绘出计算过程中出现过的所有递归实例（及其调用关系） ，那么它们各自所需时间之总和，即为整体运行时间
+ 上例中，共计n&#43;1个递归实例(分析)，各自只需O(1)时间 故总体运行时间为：
+T(n) =O(1) × (n&#43;1) =O(n)
+2.递推方程
+ 对于大规模的问题、复杂的递归算法，递归跟踪不再适用 此时可采用另一抽象的方法…
+ 在本例中，有T(n)=T(n-1) &#43; O(1),T(0)=O(1)
+则，T(n) = T(n-2)&#43;O(2) = T(n-3)&#43;O(3) = T(n-n)&#43;O(n)=O(n)
+ 可以看到，两种分析方法的出来复杂度都为O(n)
+ 分而治之(Divide and conquer)  什么是“分而治之”？...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-11-15 00:00:00 +0000 UTC'>Nov 15, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 减而治之与分而治之" href="https://www.fintinger.site/p/%E5%87%8F%E8%80%8C%E6%B2%BB%E4%B9%8B%E4%B8%8E%E5%88%86%E8%80%8C%E6%B2%BB%E4%B9%8B/"></a>
+</article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>DS导论
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>导论  所谓算法，即特定计算模型下，旨在解决特定问题的指令序列。输入：待处理的信息（问题）输出：经处理的信息（答案）
+ 正确性 的确可以解决指定的问题
+确定性 任一算法都可以描述为一个由基本操作组成的序列
+可行性 每一基本操作都可实现，且在常数时间内完成
+有穷性 对于任何输入，经有穷次基本操作，都可以得到输出
+::: tip Algorithms &#43; Data Structures = Programs
+(Algorithms &#43; Data Structures) x Efficiency = Computation
+:::
+如何评判算法的其优劣(计算模型)  实验统计是最直接的方法，但足以准确反映算法的真正效率？不足够！ - 不同的算法，可能更适应于不同规模的输入 - 不同的算法，可能更适应于不同类型的输入 - 同一算法，可能由不同程序员、用不同程序语言、经不同编译器生成 - 同一算法，可能实现并运行于不同的体系结构、操作系统… 为给出客观的评判，需要抽象出一个理想的平台或模型 - 不再依赖于上述种种具体的因素 - 从而直接而准确地描述、测量并评价算法
+ 1.图灵机模型(TM) 
+   组成 说明     Tape 依次均匀地划分为单元格 各存有某一字符，初始均为&#39;#&#39;   Head 总是对准某一单元格，并可 读取或改写其中的字符。每经过一个节拍，可 转向左侧或右侧的邻格   Alphabet 字符的种类有限   State TM总是处于有限种状态中的某一种 。每经过一个节拍 可按照规则转向另一种状态 。统一约定，‘h’ = halt(停止)    2....</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-11-10 00:00:00 +0000 UTC'>Nov 10, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to DS导论" href="https://www.fintinger.site/p/ds%E5%AF%BC%E8%AE%BA/"></a>
+</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">« </a>
-    <a class="next" href="https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/page/3/"> »</a>
   </nav>
 </footer>
 </main>
@@ -289,7 +294,7 @@ void CreatInThread(ThreadTree T){ pre=NULL; if(T!=NULL){ InThread(T); if(pre-&gt
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.b210f1f514e121bd59a440070cfd204feed045eb2c591d4e65230335b405545b.min.js"></script>
+<script src="/assets/js/extended/extend.fa3df6438f7c3b2ccdb1417e73e78d09dad45de34b8e8d1146747073cccd4ab9.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -342,6 +347,6 @@ window.onerror=function(){return true;}
     };
 
 </script>
-<video id="liveBgBox" autoplay loop muted poster="https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png" style="display: none;"></video>
+<video id="liveBgBox" autoplay loop muted poster="https://picgo-jqf.oss-cn-beijing.aliyuncs.com/img/202204051521692.png" style="display: none;"></video>
 </body>
 </html>

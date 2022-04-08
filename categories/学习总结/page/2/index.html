@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.286aec1e9630a9b9ad9f65bc74f5de62c1f244d221eff34da3bcfe1c8a42f62e.css" integrity="sha256-KGrsHpYwqbmtn2W8dPXeYsHyRNIh7/NNo7z&#43;HIpC9i4=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fae13974f92a364555f4383162b9be4a3b35895e399ea2254f90325fff2b2e59.css" integrity="sha256-&#43;uE5dPkqNkVV9DgxYrm&#43;Sjs1iV45nqIlT5AyX/8rLlk=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -104,89 +104,8 @@
   <h1>学习总结</h1>
 </header>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
-  <header class="entry-header">
-    <h2>线性代数——方程组
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>Ax=0  重点： n-r(A)，基础解系
-  Ax=0有非零解 $\Leftrightarrow $​​ r(A) &lt; n (未知数个数)$\Leftrightarrow $​​​ A的列向量线性相关
-特别地(针对水平型阵和方阵)，※
- A-m×n,m&lt;n, Ax=0 必有非零解 A-n×n，Ax=0有非零解 $\Leftrightarrow $​ |A|=0（克拉默法则）    Ax=0有非零解，则其解线性组合必为Ax=0的解，所以Ax=0若有非零解，则必有无穷多解，在这无穷多解中，线性无关的解向量个数为 $t=n-r(A)$​​​​​，这就是基础解系​，基础解系是Ax=0的解向量中的极大线性无关组。此外，根据定理可知，Ax=0的任一解都可以由基础解系线性表出。
-  基础解系⭐
- 是解 是线性无关组 个数t=n-r(A)   真题 
- 【分析】“基础解系不存在”即为Ax=0没有非零解，根据 t=n-r(A) 知，本题等价转化为求解A的秩，求解秩时，找个大，找个小，通过夹逼，确定秩的值。
-【解】$A^{*}\neq0$，则$r(A^{ *})\geq 1$​，则$r(A)\geq n-1$
-Ax=b有解且不唯一，则$r(A) &lt; n$
-联立得，r(A)=n-1
-故t = n-r(A) = 1
- ⭐⭐⭐⭐⭐
-
- 【分析】根据通解的定义可知，若为通解，解必然线性无关，本题转化为证明 $a_1,a_2,a_3,a_4$哪三个线性无关
-
-这里用到了“低维无关，添加向量后的高维必无关”
-  此外，如果本题为证明计算题（证明基础解系），即 求$A^{*}x=0$​ 的基础解系，则...</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-08-21 00:00:00 +0000 UTC'>Aug 21, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 线性代数——方程组" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
-  <header class="entry-header">
-    <h2>线性代数——向量
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>相关、无关    向量组中含零向量必然线性相关
-  组中至少存在两个成比例的向量必然线性相关
-   相关计算  $A(\alpha_1,\alpha_2,\alpha_3…\alpha_s)$​ 是否线性相关？
-$\Leftrightarrow$​​​ AX=0是否有非零解？(联系克拉默法则)
-$\Leftrightarrow$​​ r(A) &lt; s
- 特别的，对于n维向量：⭐⭐
-  n个n维向量相关 $\Leftrightarrow$​ 行列式得0，即|A|=0 n&#43;1个n维向量必然线性相关   此外，还有以下几何性质
- “$\alpha$相关”$\Leftrightarrow$ $\alpha=0$
-“$\alpha_1,\alpha_2$相关”$\Leftrightarrow$ $\alpha_1,\alpha_2$​共线
- 存在$\alpha_1=k\alpha_2$
- “$\alpha_1,\alpha_2,\alpha_3$​相关”$\Leftrightarrow$​ $\alpha_1,\alpha_2,\alpha_3$​​共面
- 证明、选择  这是难点，重点
- 证明线性无关 ​	
- ⭐特征值不同的特征向量必线性无关。
-此外，不同特征值中如果某一特征值存在“一对多”的关系，这些特征向量也线性无关。即若$A \alpha_1=\lambda_1\alpha_1,A \alpha_2=\lambda_1\alpha_2,A \alpha=\lambda\alpha$，那么$\alpha_1,\alpha_2,\alpha_3$​线性无关​
-  恒等变形中乘的思路：
- 利用已知构造出0使得式子变短 直接两边乘A，得出式子，然后通过两个式子的加加减减化简   真题&amp;经典例题
-
- 本题第二问“写出和A相似的矩阵”(3分)
-分析：$\alpha_1，\alpha_2，\alpha_3$无关，后面出现$A\alpha_1，A\alpha_2，A\alpha_3$​想到相似...</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-08-15 00:00:00 +0000 UTC'>Aug 15, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 线性代数——向量" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
-  <header class="entry-header">
-    <h2>线性代数——矩阵
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>基本计算  对角矩阵存在交换律，即 $\bigwedge_1 \bigwedge_2=\bigwedge_2 \bigwedge_1$​
-  注意交换位置
- 对于 AB=C  B &amp; C均按列分块，则$A(\beta_1 \beta_2 \beta_3)=(\gamma_1 \gamma_2 \gamma_3)$，故B的列向量都是$AX=\gamma$ 的解，特别的，当AB=O即C=O时，B的列向量均是 $AX=0$ 的解。 B &amp; C按行分块，则 AB的行向量均可由B的行向量线性表出。 A &amp; C按列分块，则 AB的列向量均可由A的列向量线性表出。[2013]   规律1与解联系起来，尤其是AB=O推出B的列向量是Ax=0的解这一规律，除此之外AB=O也经常用r(A)&#43;r(B)≤ n这个不等式。
-“AB=O” 👉 方程的解(B的列向量是A的解)
-​	👉 秩 r(A)&#43;r(B) ≤ n (n为A的列,B的行)
-  规律2,3与线性表出关联，进而可以跟秩，向量组等价(能互相线性表出则等价)联系起来。
- 几个特殊符号  $a(a_1,a_2,a_3)^T$
- 矩阵: $ab^T$ = $(ba^T)^T$
- $r(ab^T)$​​ ≤ $r(a)$​ ≤ 1
-任何两行成比例
- $aa^T$: 对称矩阵
-数: $a^Tb = b^Ta$: $ab^T$ 或 $ba^T$​​​的绩(主对角线元素之和)...</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-08-13 00:00:00 +0000 UTC'>Aug 13, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 线性代数——矩阵" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>线性代数——行列式
     </h2>
@@ -217,7 +136,8 @@ $\Leftrightarrow$​​ r(A) &lt; s
   <a class="entry-link" aria-label="post link to 线性代数——行列式" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/"></a>
 </article>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>向量空间管理策略
     </h2>
@@ -244,10 +164,103 @@ T* oldElem = _elem; _elem = new T[ _capacity &lt;&lt;= 1 ]; 考虑最坏情况�
   <footer class="entry-footer"><span title='2020-11-16 00:00:00 +0000 UTC'>Nov 16, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 向量空间管理策略" href="https://www.fintinger.site/p/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5/"></a>
 </article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>减而治之与分而治之
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>减而治之(Decrease and conquer)  什么是“减而治之”？
+为求解一个大规模的问题，可以将其划分为两个问题，其一平凡，另一规模缩减 ，分别求解子问题，由子问题的解得原问题的解
+ 
+比如说，对于一个数组A的求和问题，可以设计如下的算法
+sum( int A[], int n ) { return n &lt; 1? 0 : sum(A, n - 1) &#43; A[n - 1]; } 当规模缩减到一定程度后，抵达递归基，返回0
+复杂度分析 1. 递归跟踪
+ 绘出计算过程中出现过的所有递归实例（及其调用关系） ，那么它们各自所需时间之总和，即为整体运行时间
+ 上例中，共计n&#43;1个递归实例(分析)，各自只需O(1)时间 故总体运行时间为：
+T(n) =O(1) × (n&#43;1) =O(n)
+2.递推方程
+ 对于大规模的问题、复杂的递归算法，递归跟踪不再适用 此时可采用另一抽象的方法…
+ 在本例中，有T(n)=T(n-1) &#43; O(1),T(0)=O(1)
+则，T(n) = T(n-2)&#43;O(2) = T(n-3)&#43;O(3) = T(n-n)&#43;O(n)=O(n)
+ 可以看到，两种分析方法的出来复杂度都为O(n)
+ 分而治之(Divide and conquer)  什么是“分而治之”？...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-11-15 00:00:00 +0000 UTC'>Nov 15, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 减而治之与分而治之" href="https://www.fintinger.site/p/%E5%87%8F%E8%80%8C%E6%B2%BB%E4%B9%8B%E4%B8%8E%E5%88%86%E8%80%8C%E6%B2%BB%E4%B9%8B/"></a>
+</article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>DS导论
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>导论  所谓算法，即特定计算模型下，旨在解决特定问题的指令序列。输入：待处理的信息（问题）输出：经处理的信息（答案）
+ 正确性 的确可以解决指定的问题
+确定性 任一算法都可以描述为一个由基本操作组成的序列
+可行性 每一基本操作都可实现，且在常数时间内完成
+有穷性 对于任何输入，经有穷次基本操作，都可以得到输出
+::: tip Algorithms &#43; Data Structures = Programs
+(Algorithms &#43; Data Structures) x Efficiency = Computation
+:::
+如何评判算法的其优劣(计算模型)  实验统计是最直接的方法，但足以准确反映算法的真正效率？不足够！ - 不同的算法，可能更适应于不同规模的输入 - 不同的算法，可能更适应于不同类型的输入 - 同一算法，可能由不同程序员、用不同程序语言、经不同编译器生成 - 同一算法，可能实现并运行于不同的体系结构、操作系统… 为给出客观的评判，需要抽象出一个理想的平台或模型 - 不再依赖于上述种种具体的因素 - 从而直接而准确地描述、测量并评价算法
+ 1.图灵机模型(TM) 
+   组成 说明     Tape 依次均匀地划分为单元格 各存有某一字符，初始均为&#39;#&#39;   Head 总是对准某一单元格，并可 读取或改写其中的字符。每经过一个节拍，可 转向左侧或右侧的邻格   Alphabet 字符的种类有限   State TM总是处于有限种状态中的某一种 。每经过一个节拍 可按照规则转向另一种状态 。统一约定，‘h’ = halt(停止)    2....</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-11-10 00:00:00 +0000 UTC'>Nov 10, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to DS导论" href="https://www.fintinger.site/p/ds%E5%AF%BC%E8%AE%BA/"></a>
+</article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>PHP语法小结
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>基本语法 输出语句    语句 功能     echo 输出字符串类型   print_r 输出引用类型(对象,数组等)   var_dunp 检测变量类型    ::: tip echo语句可用于给前端返回响应体。比如前端通过ajax请求，可以在xhr.response中直接得到echo的内容 :::
+变量&amp;常量 👉🏼 变量
+   语句 功能 返回值     isset() 检测变量是否存在 boolean   unset() 删除某个变量 none    👉🏼 常量
+常量用const 或 define 定义，常量名一般全部大写，不受作用域的限制
+::: tip
+一般是define在类外定义常量，const在类内定义常量，并且const必须通过类名::变量名来进行访问。但是php5.3以上支持类外通过const定义常量。
+:::
+:::danger
+const不能在条件语句中使用，必出错
+:::
+ 参考文章 《PHP中define() 与 const定义常量的区别详解》...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-10-14 00:00:00 +0000 UTC'>Oct 14, 2020</span>&nbsp;·&nbsp;10 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to PHP语法小结" href="https://www.fintinger.site/p/php%E8%AF%AD%E6%B3%95%E5%B0%8F%E7%BB%93/"></a>
+</article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>统计学期末知识总结
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>第一章 导 论 1.什么是统计学  统计学是收集、处理、分析、解释数据并从数据中得出结论的科学 数据分析所用的方法可分为描述统计方法和推断统计方法  2.参数和统计量   参数：总体特征，所关心的参数通常是总体平均数、总体标准差、总体比例等
+ 由于总体数据通常是不知道的，所以参数是一个未知的常量-
+   统计量：个体特征，所关心的参数通常是样本平均数、样本标准差、样本比例等
+ 由于样本是已经抽出来的，所以统计量总是知道的
+   第二章 数据的搜集 1.数据的来源  **间接来源（二手数据）**与研究内容有关的原信息已经存在，我们只是重新加工、整理，使之成为分析可用的数据，这称为间接来源的数据 **直接来源（一手数据）**通过调查方法获得的为调查数据，实验得到为实验数据，都是直接来源的数据  2.数据误差  抽样误差：由抽样的随机性引起的样本结果与总体真值之间的差异 非抽样误差：抽样框误差、回答误差、无回答误差、调查员误差、测量误差  第三章 数据的图表展示 1.数据预处理  原始数据：完整性、准确性 二手数据：适用性、时效性  2.分类数据图示 ​  1&gt; 组数 5≤ K ≤15
+2&gt; 组距 组距=(Max-Min)/K
+3&gt; 为解决不重的问题，统计分组习惯上规定“上组限不在内”，即当相邻两组的上下限重叠时，恰好等于某一组上限的变量值不算在本组内，而计算在下一组内。即a≤ x &lt;b
+ 第四章 数据的概括性度量 1.集中趋势的度量 
+  众数不受极端值影响，具有不唯一性 中位数不受极端值影响，数据分布偏斜程度较大时 平均数易受极端值影响   2.离散程度的度量...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-06-17 00:00:00 +0000 UTC'>Jun 17, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 统计学期末知识总结" href="https://www.fintinger.site/p/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%9C%9F%E6%9C%AB%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"></a>
+</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://www.fintinger.site/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">« </a>
-    <a class="next" href="https://www.fintinger.site/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/page/3/"> »</a>
   </nav>
 </footer>
 </main>
@@ -265,7 +278,7 @@ T* oldElem = _elem; _elem = new T[ _capacity &lt;&lt;= 1 ]; 考虑最坏情况�
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.b210f1f514e121bd59a440070cfd204feed045eb2c591d4e65230335b405545b.min.js"></script>
+<script src="/assets/js/extended/extend.fa3df6438f7c3b2ccdb1417e73e78d09dad45de34b8e8d1146747073cccd4ab9.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -318,6 +331,6 @@ window.onerror=function(){return true;}
     };
 
 </script>
-<video id="liveBgBox" autoplay loop muted poster="https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png" style="display: none;"></video>
+<video id="liveBgBox" autoplay loop muted poster="https://picgo-jqf.oss-cn-beijing.aliyuncs.com/img/202204051521692.png" style="display: none;"></video>
 </body>
 </html>

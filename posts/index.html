@@ -10,7 +10,7 @@
 <meta name="description" content="Posts - Archai&#39;s home">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/posts/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.286aec1e9630a9b9ad9f65bc74f5de62c1f244d221eff34da3bcfe1c8a42f62e.css" integrity="sha256-KGrsHpYwqbmtn2W8dPXeYsHyRNIh7/NNo7z&#43;HIpC9i4=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fae13974f92a364555f4383162b9be4a3b35895e399ea2254f90325fff2b2e59.css" integrity="sha256-&#43;uE5dPkqNkVV9DgxYrm&#43;Sjs1iV45nqIlT5AyX/8rLlk=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -119,7 +119,8 @@
   <h1>Posts</h1>
 </header>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>ES6之Promise用法小结
     </h2>
@@ -137,7 +138,8 @@ new Promise((resolve, reject) =&gt; { resolve(&#39;success&#39;) //reject(&#39;r
   <a class="entry-link" aria-label="post link to ES6之Promise用法小结" href="https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>Ajax学习小结
     </h2>
@@ -151,7 +153,33 @@ new Promise((resolve, reject) =&gt; { resolve(&#39;success&#39;) //reject(&#39;r
   <a class="entry-link" aria-label="post link to Ajax学习小结" href="https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>Vue在页面直接展示模板语法{{xx}}
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>用vue.js写成的页面中，可能出现由于外部请求导致的页面展示阻塞现象，进而导致模板语法{{xxx}}直接展示在页面上，这其实跟页面加载的流程有关，整个页面加载的流程是：
+解析html结构 -&gt; 加载外部脚本和样式表文件 -&gt; 解析并执行脚本代码 -&gt; 构造HTML DOM模型 -&gt; 加载图片等外部文件 -&gt; 页面加载完毕
+所以，当HTML加载的时候，就会把{{}} 当成文本加载出来，只有当vue初始化完成后，才会把{{}}解析成vue的语法。
+遇到这种情况有以下几种解决方案：
+  方案一(不推荐)：在head里面加入引入vue的script标签
+如果把引入vue的script放到head里面，那页面就不会出现{{}}，因为在body之前，vue就已经引入进并且加载完成了。
+  方案二：v-text|v-html
+使用v-text插入文字，使用v-html插入HTML结构，替换原本使用的模板语法{{xxx}}
+  方案三：template
+使用&lt;template&gt;标签包裹要渲染的HTML结构，那么只有vue解析时才会展示出该结构
+  方案四：v-cloak指令 &#43; CSS样式
+标签上的v-cloak属性在被vue解析到时会自动去掉，那么我们可以利用CSS的属性选择器，给有v-cloak属性的元素设置display:none样式，那么，在加载HTML时自然不会显示{{xxx}}，而在vue解析时又会显示出来，问题得以解决！
+  </p>
+  </section>
+  <footer class="entry-footer"><span title='2022-04-07 00:00:00 +0000 UTC'>Apr 7, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to Vue在页面直接展示模板语法{{xx}}" href="https://www.fintinger.site/p/vue%E5%9C%A8%E9%A1%B5%E9%9D%A2%E7%9B%B4%E6%8E%A5%E5%B1%95%E7%A4%BA%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95xx/"></a>
+</article>
+
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>测试shortcodes
     </h2>
@@ -163,7 +191,8 @@ new Promise((resolve, reject) =&gt; { resolve(&#39;success&#39;) //reject(&#39;r
   <a class="entry-link" aria-label="post link to 测试shortcodes" href="https://www.fintinger.site/p/%E6%B5%8B%E8%AF%95shortcodes/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>Vue2.0学习小结
     </h2>
@@ -201,7 +230,8 @@ const mixData={ data(){...} }, const mixMethods= { methods:{...} } 第二步：�
   <a class="entry-link" aria-label="post link to Vue2.0学习小结" href="https://www.fintinger.site/p/vue2.0%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>浏览器本地存储
     </h2>
@@ -224,6 +254,48 @@ const mixData={ data(){...} }, const mixMethods= { methods:{...} } 第二步：�
   <footer class="entry-footer"><span title='2022-03-30 00:00:00 +0000 UTC'>Mar 30, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 浏览器本地存储" href="https://www.fintinger.site/p/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/"></a>
 </article>
+
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>Vue中的数据监视原理
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>1.vue会监视data中所有层次的数据. vue对于配置在data中的所有对象都会以key值作为目标进行监视，不论多少层，都会递归地为每一个key配置getter和setter(通过Object.defineProperty())。
+ 相关阅读 MDN关于defineProperty的说明
+ 2.如何监测对象中的数据? 通过setter实现监视,且要在new Vue时就传入要监测的数据，即在data中提前配置。
+(1).对象中后追加的属性,Vue默认不做响应式处理
+直接通过修改vm._data或者vm来添加key，并不会配置getter和setter，因此不会做响应式
+(2).如需给后添加的属性做响应式,请使用如下API: Vue.set(target,key/index,value)或vm.$set(target,key/index,value)（可以同时修改数组和对象）
+​	特别注意: Vue.set()和vm.$set()不能直接给vm或vm的根数据对象(vm._data)添加属性!!!
+3.如何监测数组中的数据? 在数组中直接通过索引的方式修改数组并不会引起Vue的响应，那么要如何做呢？Vue通过包裹数组更新元素的方法(对原数组方法进行修改)实现,本质就是做了两件事:
+(1). 调用原生对应的方法对数组进行更新.
+(2). 重新解析模板,进而更新页面.
+就包裹了下面的七种数组方法：
+ push() pop() shift() unshift() splice() sort() reverse()  也就是说，通过上面七种方法修改数组，会让Vue做出响应。
+例如想要修改数组中索引为0的位置的数据，可以通过 vm.data.arr.splice(0,0,val)或Vue.set(vm.data.arr,0,val)又或者vm.$set(vm.data.arr,0,val)，在具体的由Vue管理的方法中this指向的应该就是vm！！
+数据劫持 Vue通过setter,getter对数据进行动态监测，其实就是“劫持”了数据😯</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-03-21 00:00:00 +0000 UTC'>Mar 21, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to Vue中的数据监视原理" href="https://www.fintinger.site/p/vue%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%9B%91%E8%A7%86%E5%8E%9F%E7%90%86/"></a>
+</article>
+
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>canvas绘制跟随鼠标移动的线条
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>在浏览网页时无意中发现了下面这种背景互动的效果：
+
+通过一番周折，最终找到以下实现代码
+function randomLine() { function n(n, e, t) { return n.getAttribute(e) || t } function e(n) { return document.getElementsByTagName(n) } function t() { var t = e(&#34;script&#34;), o = t.length, i = t[o - 1]; return { l: o, z: n(i, &#34;zIndex&#34;, -88), o: n(i, &#34;opacity&#34;, .5), c: n(i, &#34;color&#34;,&#34;0,0,0&#34;), n: n(i, &#34;count&#34;, 150) } } function o() { a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth, c = m....</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-03-20 00:00:00 +0000 UTC'>Mar 20, 2022</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to canvas绘制跟随鼠标移动的线条" href="https://www.fintinger.site/p/canvas%E7%BB%98%E5%88%B6%E8%B7%9F%E9%9A%8F%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%8A%A8%E7%9A%84%E7%BA%BF%E6%9D%A1/"></a>
+</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="next" href="https://www.fintinger.site/posts/page/2/"> »</a>
@@ -244,7 +316,7 @@ const mixData={ data(){...} }, const mixMethods= { methods:{...} } 第二步：�
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.b210f1f514e121bd59a440070cfd204feed045eb2c591d4e65230335b405545b.min.js"></script>
+<script src="/assets/js/extended/extend.fa3df6438f7c3b2ccdb1417e73e78d09dad45de34b8e8d1146747073cccd4ab9.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -297,6 +369,6 @@ window.onerror=function(){return true;}
     };
 
 </script>
-<video id="liveBgBox" autoplay loop muted poster="https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png" style="display: none;"></video>
+<video id="liveBgBox" autoplay loop muted poster="https://picgo-jqf.oss-cn-beijing.aliyuncs.com/img/202204051521692.png" style="display: none;"></video>
 </body>
 </html>

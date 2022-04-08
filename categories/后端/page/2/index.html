@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/categories/%E5%90%8E%E7%AB%AF/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.286aec1e9630a9b9ad9f65bc74f5de62c1f244d221eff34da3bcfe1c8a42f62e.css" integrity="sha256-KGrsHpYwqbmtn2W8dPXeYsHyRNIh7/NNo7z&#43;HIpC9i4=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fae13974f92a364555f4383162b9be4a3b35895e399ea2254f90325fff2b2e59.css" integrity="sha256-&#43;uE5dPkqNkVV9DgxYrm&#43;Sjs1iV45nqIlT5AyX/8rLlk=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -104,89 +104,8 @@
   <h1>后端</h1>
 </header>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
-  <header class="entry-header">
-    <h2>图的遍历
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>广度优先遍历（BFS）  BFS(Breadth-First-Search)，参考对树的层序遍历
- 
-对上面的图从①出发进行BFS得到序列：
-①②⑤ ⑥ ③⑦ ④⑧
-若采用不同的储存结构，可能会得到不同的遍历结果（这个差异主要来自寻找邻接点的过程），对于邻接矩阵存储的图，由于邻接矩阵是唯一的，所以BFS序列也是唯一的；同理，邻接表存储的图BFS序列不唯一。
-BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历过程中会出现重复访问的问题，故可构造visited数组，用来标记已访问过的数组。
-此外，还应针对非连通图做额外的判断，遍历完一个连通分量（极大连通子图）后，遍历查找visited数组中是否还存在未遍历的，如果有即为另一连通分量，继续调用BFS即可。
- void BFS(Graph G,int v); bool visited[MAX_VERTEX_NUM]; SqQueue Q;//辅助队列 void BFSTraverse(Graph G){ //初始化visited数组  for (int i = 0; i &lt; G.vexnum; &#43;&#43;i) {//使下标从1开始  visited[i]=false; } //对非连通图的处理  for (int v = 0; v &lt; G.vexnum; &#43;&#43;v) { if (!visited[v]) BFS(G,v); } } //从顶点v出发广度优先遍历图G void BFS(Graph G,int v){ visit(v); visited[v]=true; EnQueue(Q,v);//顶点v入队列Q  while(!isEmpty(Q)){ DeQueue(Q,v);//顶点v出队列Q  for (w=FirstNeighbor(G,v);w&gt;=0;w=NextNeighbor(G,v,w))//处理v的所有邻接点  if (!...</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-06-03 00:00:00 +0000 UTC'>Jun 3, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 图的遍历" href="https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
-  <header class="entry-header">
-    <h2>图的存储
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>邻接矩阵  Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.
- 
-代码实现 #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph; 即
-找度 根据邻接矩阵计算结点的度TD
-    无向图 有向图     $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数
-$OD(V_i)$: i列非零元素个数
-TD=ID&#43;OD    对于带权图（网） 
-#define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph; 复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|&#43;|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。...</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-06-02 00:00:00 +0000 UTC'>Jun 2, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 图的存储" href="https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
-  <header class="entry-header">
-    <h2>AVL树
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>平衡二叉树是Adelson-Velsky和 Landis发明，故命名为AVL树。也称平衡二叉查找树。
- ✨特点： ①左子树&lt;根&lt;右子树； ②任一节点，左右子树高度之差不超过1.
-平衡因子 $平衡因子=左子树高-右子树高$
-AVL树的插入操作 AVL树插入新结点导致不平衡之后，只需将最小不平衡子树平衡，其他祖先结点会随之恢复平衡。
-调整最小不平衡子树 注意：调整过后必须保证其BST的特性，即“左子树1.LL  即在以A为根节点的树的左孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
- 
-调整过程如下：
-
-2.RR  即在以A为根节点的树的右孩子B的右子树上插入新结点，导致A成为最小不平衡子树。
- 
-调整过程如下：
-
-3.LR  即在以A为根节点的树的左孩子B的右子树上插入新结点，导致A成为最小不平衡子树。
- 
-观察得知，所进行的调整就是保证$|平衡因子|&lt;=1$，因此若插入操作使得
-左 - 右 &gt; 1 =&gt; 右旋
-右 - 左 &gt; 1 =&gt;左旋
-而当进行了LR插入操作之后，导致以A为根节点的树 左-右&gt;1，理应右旋但是，由上述结果可知，经过右旋之后：
-
-可以看到，为了保证其左子树&lt;根&lt;右子树的特性，经过调整后，依然存在右-左&gt;1的问题；
-因此，对于LR型不能简单进行右旋调整，应该先将其转化为LL型 (左旋)，再进行右旋；
-为此，我们需要将BR结点展开，之后旋转成为LL型插入
-
-可以看到，展开后又出现两种插入情况CL&amp;CR，但其实两者处理大同小异：
-CR插入调整过程如下：
-
-4.RL  即在以A为根节点的树的右孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
- 
-参考LR型，其调整过程如下：
-
-查找操作效率分析 Assuming that, $n_h$表示深度为h的平衡树中含有的最少结点，则
-$n_0=0$,$n_1=1$,$n_2=2$…存在递归关系 $n_h=n_{h-1}&#43;n_{h-2}&#43;1$,即左右子树结点之和&#43;根节点。
-可以证明(AVL证明)，n个结点的平衡二叉树最大深度数量级为$\log_2n$，则其查找操作的复杂度为$O(\log_2n)$</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-05-23 00:00:00 +0000 UTC'>May 23, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to AVL树" href="https://www.fintinger.site/p/avl%E6%A0%91/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>哈夫曼树
     </h2>
@@ -233,7 +152,8 @@ $v=\frac{WPL_{min}}{WPL}$</p>
   <a class="entry-link" aria-label="post link to 哈夫曼树" href="https://www.fintinger.site/p/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/"></a>
 </article>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>树
     </h2>
@@ -260,10 +180,126 @@ B	C	D	A
   <footer class="entry-footer"><span title='2021-05-22 00:00:00 +0000 UTC'>May 22, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 树" href="https://www.fintinger.site/p/%E6%A0%91/"></a>
 </article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>线索二叉树
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>线索二叉树 WHY  方便从任一个结点出发，找到其前驱、后继；方便遍历
+ 普通二叉树中，对任意一个结点，若想找到其前驱/后继结点，只能再进行一次相应的前/中/后序遍历才行，复杂度太高。
+为此，我们引入前驱线索，后继线索的概念。其中，前驱线索由左孩子指针充当，后继线索由右孩子指针充当。
+typedef struct BiTNode{ ElemType data; struct BiTNode *lchild,*rchild; }BiTNode,*BiTree; 构建出如下图所示的结构：
+
+但是，
+*lchild(*rchild)有可能指向存在的结点，为此我们引入线索标志。当线索标志为1时，表示孩子指针指向前驱后继，线索标志为0时，表示孩子指针指向左右孩子。此时
+typedef struct ThreadNode{ ElemType data; struct ThreadNode *lchild,*rchild; int ltag,rtag;//左右线索标志 }ThreadNode,*ThreadTree; 这样，每一个线索链表中的结点就可以图示为:
+
+HOW  如何分别用代码实现前中后序遍历下的线索链表
+ 1.中序线索化  其实中序线索化的过程就是再进行一遍中序遍历，为每个节点添加额外的信息(lchild, rcild, ltag, rtag).
+ 🍔初始定义结构体
+typedef struct ThreadNode{ ElemType data; struct ThreadNode *lchild,*rchild; int ltag,rtag; }ThreadNode,*ThreadTree; 🍔定义前驱指针
+ThreadNode *pre=NULL;  前驱指针还可以定义在局部，这里为了方便起见，将pre定义为全局。
+ 🍔开始定义处理函数
+void CreatInThread(ThreadTree T){ pre=NULL; if(T!=NULL){ InThread(T); if(pre-&gt;rchild==NULL){ pre-&gt;rtag=1; } } }  注意：最后一个节点单独处理...</p>
+  </section>
+  <footer class="entry-footer"><span title='2021-05-15 00:00:00 +0000 UTC'>May 15, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 线索二叉树" href="https://www.fintinger.site/p/%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91/"></a>
+</article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>由遍历序列构造出二叉树
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>由遍历序列构造出二叉树 仅知道一种遍历序列是无法确定唯一的二叉树的，以中序遍历为例，对于一个中序遍历序列“BDCAE”，其对应的树形结构可能有下面三种：
+
+因此，至少需要两种遍历序列才可以推知树形结构。
+1.前序&#43;中序遍历序列 🎈基本步骤 由前序遍历的特性得知，前序遍历中第一个节点必然为根节点，因此根据中序遍历特性，根节点左边为左子树下的所有节点，右边为右子树下的所有节点，然后分别在左子树序列右子树序列中重复进行即可。
+🎈示例
+ 前序遍历序列：A D B C E 中序遍历序列：B D C A E  首先能确定根节点为A，根据中序遍历序列可以得到：
+
+对于左子树BDC，根据前序遍历，此子树根节点为D，根据中序遍历序列：
+
+至此，二叉树的还原工作就完成了！至于更复杂的序列，逐步推断即可😋
+2.后序&#43;中序遍历序列 🔑与1不用的是，后序遍历中根节点为后序遍历序列尾部的那个节点，其余参照1即可！
+3.层序遍历&#43;中序遍历 🔑 根据层序遍历特性，层序遍历中根节点始终在子树前面，“根左右”
+🎈示例
+ 层序遍历序列：A D E B C 中序遍历序列：B D C A E  根节点为A，根据中序遍历序列可以得到：
+
+对于左子树BDC，根据前序遍历，此子树根节点为D，根据中序遍历序列：
+
+思考  如果前序，后续，层序两两组合能否确定唯一的树结构？
+ 
+假设给定序列如下：
+ 前序：A B 后序：B A 层序：A B  其两两组合都满足两种结构：
+
+因此前序，后续，层序两两组合不能确定唯一的树结构。</p>
+  </section>
+  <footer class="entry-footer"><span title='2021-05-09 00:00:00 +0000 UTC'>May 9, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 由遍历序列构造出二叉树" href="https://www.fintinger.site/p/%E7%94%B1%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E5%87%BA%E4%BA%8C%E5%8F%89%E6%A0%91/"></a>
+</article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>PHP语法小结
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>基本语法 输出语句    语句 功能     echo 输出字符串类型   print_r 输出引用类型(对象,数组等)   var_dunp 检测变量类型    ::: tip echo语句可用于给前端返回响应体。比如前端通过ajax请求，可以在xhr.response中直接得到echo的内容 :::
+变量&amp;常量 👉🏼 变量
+   语句 功能 返回值     isset() 检测变量是否存在 boolean   unset() 删除某个变量 none    👉🏼 常量
+常量用const 或 define 定义，常量名一般全部大写，不受作用域的限制
+::: tip
+一般是define在类外定义常量，const在类内定义常量，并且const必须通过类名::变量名来进行访问。但是php5.3以上支持类外通过const定义常量。
+:::
+:::danger
+const不能在条件语句中使用，必出错
+:::
+ 参考文章 《PHP中define() 与 const定义常量的区别详解》...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-10-14 00:00:00 +0000 UTC'>Oct 14, 2020</span>&nbsp;·&nbsp;10 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to PHP语法小结" href="https://www.fintinger.site/p/php%E8%AF%AD%E6%B3%95%E5%B0%8F%E7%BB%93/"></a>
+</article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>JavaScript生成图片文件路径json
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>在写小demo的过程中，经常需要把某个文件夹的图片文件的路径给引入，除非全部重命名成有序的数字，不然不好处理，这就用到了node中的fs和path模块，还没学…
+const path=require(&#34;path&#34;); const fs = require(&#39;fs&#39;); fs.stat(&#39;../images&#39;,(err)=&gt;{//图片文件所在目录  if (err)return; var result=&#39;{&#39; fs.readdir(&#34;../images&#34;,(err,data)=&gt;{//图片文件所在目录  for(var i=0;i&lt;Object.keys(data).length;i&#43;&#43;){ let ImgPath=&#34;\&#34;images/&#34;&#43;data[i]&#43;&#34;\&#34;&#34;; result&#43;=&#34;\&#34;&#34;&#43;i&#43;&#34;\&#34;:&#34;&#43;ImgPath&#43;&#34;,&#34;; } result=result.substring(0,result.length-1); let length=&#34;\&#34;&#34;&#43;&#34;length&#34;&#43;&#34;\&#34;&#34;&#43;&#34;:&#34;&#43;&#34;\&#34;&#34;&#43;Object.keys(data).length&#43;&#34;\&#34;&#34;//文件数量  result&#43;=&#34;,&#34;&#43;length&#43;&#39;}&#39; fs.writeFile(&#34;../data/imgPath.json&#34;,result,(err)=&gt;{ if(err)return; console.log(&#34;写入文件成功，一共&#34;&#43;Object.keys(data).length&#43;&#34;个文件&#34;); }); }); }); 生成的文件大概就是这样的一个json数据
+{&#34;0&#34;:&#34;images/1.jpg&#34;,&#34;1&#34;:&#34;images/10.jpg&#34;,&#34;2&#34;:&#34;images/100.jpg&#34;,&#34;3&#34;:&#34;images/101.jpg&#34;,&#34;4&#34;:&#34;images/102.jpg&#34;,&#34;5&#34;:&#34;images/103.jpg&#34;,&#34;6&#34;:&#34;images/104.jpg&#34;,&#34;7&#34;:&#34;images/105.jpg&#34;,&#34;8&#34;:&#34;images/106.jpg&#34;,&#34;9&#34;:&#34;images/107.jpg&#34;,&#34;10&#34;:&#34;images/108.jpg&#34;,&#34;length&#34;:&#34;109&#34;} </p>
+  </section>
+  <footer class="entry-footer"><span title='2020-07-05 00:00:00 +0000 UTC'>Jul 5, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript生成图片文件路径json" href="https://www.fintinger.site/p/javascript%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84json/"></a>
+</article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>python中关于文件的种种问题
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p> 在python中，我们可以将那些在运行时可能会出现状况的代码放在try代码块中，在try代码块的后面可以跟上一个或多个except来捕获可能出现的异常状况。
+  FileNotFoundError，文件找不到 LookupError指定了未知的编码 UnicodeDecodeError读取文件时无法按指定方式解码  def main():f = Nonetry:f = open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;utf-8&#39;)print(f.read())except FileNotFoundError:print(&#39;无法打开指定的文件!&#39;)except LookupError:print(&#39;指定了未知的编码!&#39;)except UnicodeDecodeError:print(&#39;读取文件时解码错误!&#39;)finally:if f:f.close()if __name__ == &#39;__main__&#39;:main() finally块的代码不论程序正常还是异常都会执行到（甚至是调用了sys模块的exit函数退出Python环境，finally块都会被执行，因为exit函数实质上是引发了SystemExit异常），因此我们通常把finally块称为“总是执行代码块”，它最适合用来做释放外部资源的操作。
+ 或者， with关键字指定文件对象的上下文环境并在离开上下文环境时自动释放文件资源
+def main():try:with open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;utf-8&#39;) as f:print(f.read())except FileNotFoundError:print(&#39;无法打开指定的文件!&#39;)except LookupError:print(&#39;指定了未知的编码!&#39;)except UnicodeDecodeError:print(&#39;读取文件时解码错误!&#39;)if __name__ == &#39;__main__&#39;:main()</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-06-26 00:00:00 +0000 UTC'>Jun 26, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to python中关于文件的种种问题" href="https://www.fintinger.site/p/python%E4%B8%AD%E5%85%B3%E4%BA%8E%E6%96%87%E4%BB%B6%E7%9A%84%E7%A7%8D%E7%A7%8D%E9%97%AE%E9%A2%98/"></a>
+</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://www.fintinger.site/categories/%E5%90%8E%E7%AB%AF/">« </a>
-    <a class="next" href="https://www.fintinger.site/categories/%E5%90%8E%E7%AB%AF/page/3/"> »</a>
   </nav>
 </footer>
 </main>
@@ -281,7 +317,7 @@ B	C	D	A
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.b210f1f514e121bd59a440070cfd204feed045eb2c591d4e65230335b405545b.min.js"></script>
+<script src="/assets/js/extended/extend.fa3df6438f7c3b2ccdb1417e73e78d09dad45de34b8e8d1146747073cccd4ab9.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -334,6 +370,6 @@ window.onerror=function(){return true;}
     };
 
 </script>
-<video id="liveBgBox" autoplay loop muted poster="https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png" style="display: none;"></video>
+<video id="liveBgBox" autoplay loop muted poster="https://picgo-jqf.oss-cn-beijing.aliyuncs.com/img/202204051521692.png" style="display: none;"></video>
 </body>
 </html>

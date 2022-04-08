@@ -10,7 +10,7 @@
 <meta name="description" content="Posts - Archai&#39;s home">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/posts/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.286aec1e9630a9b9ad9f65bc74f5de62c1f244d221eff34da3bcfe1c8a42f62e.css" integrity="sha256-KGrsHpYwqbmtn2W8dPXeYsHyRNIh7/NNo7z&#43;HIpC9i4=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fae13974f92a364555f4383162b9be4a3b35895e399ea2254f90325fff2b2e59.css" integrity="sha256-&#43;uE5dPkqNkVV9DgxYrm&#43;Sjs1iV45nqIlT5AyX/8rLlk=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -119,86 +119,166 @@
   <h1>Posts</h1>
 </header>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>JavaScript中的继承与原型链分析
+    <h2>避免多条件并列
     </h2>
   </header>
   <section class="entry-content">
-    <p>原型链自定义设置  原型链的设置可以通过Object.creative , __proto__, Object.setProperty三种方法
- Object.creative () 说明： 该方法只能设置原型链，而不能获取
-let a1 = {name: &#39;a1&#39;} let b1 = Object.create(a1) b1.name = &#39;b1&#39; console.log(b1);  Object.creative()为创建对象的方法，第一个参数为其原型对象，第二个参数为其默认属性，这些属性默认是不可写，不可遍历，不可修改的
- let b=Object.create(null,{ a:{value:&#39;ohh&#39;, enumerable:true}, b:{value:&#39;jqf&#39;}, }) console.log(Object.getOwnPropertyDescriptors(b)); //a: {value: &#34;ohh&#34;, writable: false, enumerable: true, configurable: false} //b: {value: &#34;jqf&#34;, writable: false, enumerable: false, configurable: false} __proto__ 说明： 能设置，能获取，实质上是setter，getter
-let a2 = {name: &#39;a2&#39;} let b2 = {name: &#39;b2&#39;} a2.__proto__ = b2 console.log(a2); console.log(a2.__proto__);//{name: &#34;b2&#34;}  关于__proto__是setter,getter？...</p>
+    <p>开发中有时会遇到多个条件，执行相同的语句，也就是多个||这种：
+if (status === &#39;process&#39; || status === &#39;wait&#39; || status === &#39;fail&#39;) { doSomething() } 这种写法语义性、可读性都不太好。可以通过switch case或includes这种进行改造。
+switch case switch(status) { case &#39;process&#39;: case &#39;wait&#39;: case &#39;fail&#39;: doSomething() } includes const enum = [&#39;process&#39;, &#39;wait&#39;, &#39;fail&#39;] if (enum.includes(status)) { doSomething() </p>
   </section>
-  <footer class="entry-footer"><span title='2020-09-04 00:00:00 +0000 UTC'>Sep 4, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript中的继承与原型链分析" href="https://www.fintinger.site/p/javascript%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%88%86%E6%9E%90/"></a>
+  <footer class="entry-footer"><span title='2020-07-06 00:00:00 +0000 UTC'>Jul 6, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 避免多条件并列" href="https://www.fintinger.site/p/%E9%81%BF%E5%85%8D%E5%A4%9A%E6%9D%A1%E4%BB%B6%E5%B9%B6%E5%88%97/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>关于JavaScript模块化
+    <h2>JavaScript生成图片文件路径json
     </h2>
   </header>
   <section class="entry-content">
-    <p>自定义一个模块引擎 要求： 能够让模块之间产生依赖关系
-代码
-let _module = (function () { let moduleList = {} function define(name, modules, action) { modules.map((n, i) =&gt; { //将传入的只含名称的模块数组 =&gt; 指定名称模块的返回结果  modules[i] = moduleList[n] }) moduleList[name] = action.apply(null, modules) // console.log(moduleList);  } return {define} })(); //定义一个工具库，暴露给外界使用，输出 _module.define(&#39;tools&#39;, [], function () { return { max(arr) { return arr.sort((a, b) =&gt; b - a)[0]//获取最大值挺别致昂  }, min(arr) { return arr.sort((a, b) =&gt; b - a)[arr.length - 1]; } } }); //使用之前定义的工具库，引入 _module....</p>
+    <p>在写小demo的过程中，经常需要把某个文件夹的图片文件的路径给引入，除非全部重命名成有序的数字，不然不好处理，这就用到了node中的fs和path模块，还没学…
+const path=require(&#34;path&#34;); const fs = require(&#39;fs&#39;); fs.stat(&#39;../images&#39;,(err)=&gt;{//图片文件所在目录  if (err)return; var result=&#39;{&#39; fs.readdir(&#34;../images&#34;,(err,data)=&gt;{//图片文件所在目录  for(var i=0;i&lt;Object.keys(data).length;i&#43;&#43;){ let ImgPath=&#34;\&#34;images/&#34;&#43;data[i]&#43;&#34;\&#34;&#34;; result&#43;=&#34;\&#34;&#34;&#43;i&#43;&#34;\&#34;:&#34;&#43;ImgPath&#43;&#34;,&#34;; } result=result.substring(0,result.length-1); let length=&#34;\&#34;&#34;&#43;&#34;length&#34;&#43;&#34;\&#34;&#34;&#43;&#34;:&#34;&#43;&#34;\&#34;&#34;&#43;Object.keys(data).length&#43;&#34;\&#34;&#34;//文件数量  result&#43;=&#34;,&#34;&#43;length&#43;&#39;}&#39; fs.writeFile(&#34;../data/imgPath.json&#34;,result,(err)=&gt;{ if(err)return; console.log(&#34;写入文件成功，一共&#34;&#43;Object.keys(data).length&#43;&#34;个文件&#34;); }); }); }); 生成的文件大概就是这样的一个json数据
+{&#34;0&#34;:&#34;images/1.jpg&#34;,&#34;1&#34;:&#34;images/10.jpg&#34;,&#34;2&#34;:&#34;images/100.jpg&#34;,&#34;3&#34;:&#34;images/101.jpg&#34;,&#34;4&#34;:&#34;images/102.jpg&#34;,&#34;5&#34;:&#34;images/103.jpg&#34;,&#34;6&#34;:&#34;images/104.jpg&#34;,&#34;7&#34;:&#34;images/105.jpg&#34;,&#34;8&#34;:&#34;images/106.jpg&#34;,&#34;9&#34;:&#34;images/107.jpg&#34;,&#34;10&#34;:&#34;images/108.jpg&#34;,&#34;length&#34;:&#34;109&#34;} </p>
   </section>
-  <footer class="entry-footer"><span title='2020-09-02 00:00:00 +0000 UTC'>Sep 2, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 关于JavaScript模块化" href="https://www.fintinger.site/p/%E5%85%B3%E4%BA%8Ejavascript%E6%A8%A1%E5%9D%97%E5%8C%96/"></a>
+  <footer class="entry-footer"><span title='2020-07-05 00:00:00 +0000 UTC'>Jul 5, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript生成图片文件路径json" href="https://www.fintinger.site/p/javascript%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84json/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>JavaScript基础之对象
+    <h2>JavaScript瀑布流布局
     </h2>
   </header>
   <section class="entry-content">
-    <p>对象中参数获取和值的接收 1.对象中利用key获取value. |  [] let obj = {name: &#39;jqf&#39;, age: 19} for (let key in obj) { // console.log(obj.key);//会报undefined  console.log(obj[key]);//jqf,19 } 👉 delete Object.key()
-delete obj.name console.log(obj);//{ age: 19 } 2.参数/配置合并 👉 展开语法
- 利用展开语法合并对象，让后面传入的参数覆盖默认参数，完成合并
- function upload(params) { let config = { url: &#39;/images&#39;, type: &#39;*.jpg,*.png&#39; } config = {...config, ...params} //do something...  console.log(config); } upload({type:&#39;*.webp&#39;})//{ url: &#39;/images&#39;, type: &#39;*.webp&#39; } 👉 解构赋值
- 解构赋值会把相同key的进行合并，后面覆盖掉前面的
- function upload(params = {}) { let {url = &#39;/images&#39;, type = &#39;*....</p>
+    <p>什么是瀑布流？ 一种图片在网页的布局方式，具体要求为：从页面第二行开始，后续图片跟在页面中最矮的那张图片后面
+
+用JavaScript怎么实现？ 为此我将整个过程封装为一个函数。
+/*HTML部分*/ &lt;head&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;main.css&#34;&gt; &lt;/head&gt; &lt;div id=&#34;box&#34;&gt;&lt;/div&gt;//container和img由js动态加入 &lt;script src=&#34;jquery.min.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;loadFile.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;main.js&#34;&gt;&lt;/script&gt; /*CSS部分*/ /*首先清空默认样式*/ #box{ position: relative; } .container{ float: left; } .container&gt;.pic{ width: 200px; } .container&gt;.pic&gt;img{ width: 100%; } /*JS部分*/ /*loadFile.js(在window.onload之前执行，加载DOM树)*/	$(function () { function addImg(imgNum,eleID) { let container for (let i = 1; i &lt; imgNum; i&#43;&#43;) { container=$(&#34;&lt;div class=&#39;container&#39;&gt;&lt;div class=&#39;pic&#39;&gt;&lt;img src=&#39;images/&#34;&#43;i&#43;&#34;.jpg&#39; alt=&#39;&#39;&gt;&lt;/div&gt;&lt;/div&gt;&#34;) $(eleID).append(container) } } addImg(109,&#34;#box&#34;); }) /*******************************************/ /*main.js(在$(function(){})之前执行，DOM树加载完毕 )*/ window....</p>
   </section>
-  <footer class="entry-footer"><span title='2020-08-31 00:00:00 +0000 UTC'>Aug 31, 2020</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之对象" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%AF%B9%E8%B1%A1/"></a>
+  <footer class="entry-footer"><span title='2020-07-01 00:00:00 +0000 UTC'>Jul 1, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript瀑布流布局" href="https://www.fintinger.site/p/javascript%E7%80%91%E5%B8%83%E6%B5%81%E5%B8%83%E5%B1%80/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>JavaScript基础之函数相关
+    <h2>python中关于文件的种种问题
     </h2>
   </header>
   <section class="entry-content">
-    <p>关于函数传参  当参数数量不确定时，通常用arguments 来统一接收
- function sum() { return [...arguments].reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6 可以用展开语法代替arguments接收所有的参数：
-function sum(...args) { return args.reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6 注意： 接收参数时展开语法放其他形参后面，做统一接收
-递归函数  递归函数有两个关键点，一是要有退出执行的条件，二是要不断执行自身并返回
- 递归思想实现阶乘函数 function factorial(num) { if (num === 1) { return num } return num * factorial(--num) } 如果用到箭头函数，可以简写为：
-function factorial(num) { return num === 1 ?...</p>
+    <p> 在python中，我们可以将那些在运行时可能会出现状况的代码放在try代码块中，在try代码块的后面可以跟上一个或多个except来捕获可能出现的异常状况。
+  FileNotFoundError，文件找不到 LookupError指定了未知的编码 UnicodeDecodeError读取文件时无法按指定方式解码  def main():f = Nonetry:f = open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;utf-8&#39;)print(f.read())except FileNotFoundError:print(&#39;无法打开指定的文件!&#39;)except LookupError:print(&#39;指定了未知的编码!&#39;)except UnicodeDecodeError:print(&#39;读取文件时解码错误!&#39;)finally:if f:f.close()if __name__ == &#39;__main__&#39;:main() finally块的代码不论程序正常还是异常都会执行到（甚至是调用了sys模块的exit函数退出Python环境，finally块都会被执行，因为exit函数实质上是引发了SystemExit异常），因此我们通常把finally块称为“总是执行代码块”，它最适合用来做释放外部资源的操作。
+ 或者， with关键字指定文件对象的上下文环境并在离开上下文环境时自动释放文件资源
+def main():try:with open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;utf-8&#39;) as f:print(f.read())except FileNotFoundError:print(&#39;无法打开指定的文件!&#39;)except LookupError:print(&#39;指定了未知的编码!&#39;)except UnicodeDecodeError:print(&#39;读取文件时解码错误!&#39;)if __name__ == &#39;__main__&#39;:main()</p>
   </section>
-  <footer class="entry-footer"><span title='2020-08-28 00:00:00 +0000 UTC'>Aug 28, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之函数相关" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3/"></a>
+  <footer class="entry-footer"><span title='2020-06-26 00:00:00 +0000 UTC'>Jun 26, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to python中关于文件的种种问题" href="https://www.fintinger.site/p/python%E4%B8%AD%E5%85%B3%E4%BA%8E%E6%96%87%E4%BB%B6%E7%9A%84%E7%A7%8D%E7%A7%8D%E9%97%AE%E9%A2%98/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>JavaScript基础之Map与Weakmap类型
+    <h2>统计学期末知识总结
     </h2>
   </header>
   <section class="entry-content">
-    <p>Map类型 1.属性 👉 set() 设置值
-let map = new Map() let fn = function () {console.log(&#39;this is function&#39;)} let user = {name: &#39;jqf&#39;, age: 18} map.set(&#39;key&#39;, &#39;value&#39;) map.set(fn, &#39;function&#39;) map.set(user, &#39;object&#39;) console.log(map); /*Map(3){&#34;key&#34; =&gt; &#34;value&#34;, ƒ =&gt; &#34;function&#34;, {…} =&gt; &#34;object&#34;}*/ 注意： Map类型，字符串、函数、对象都可以作为key设置
-👉 size Map长度
-console.log(map.size);//3 👉get() 获取值
-console.log(map.get(fn));//function  //通过key获取value 👉 delete() / clear() 删除某个，清空Map
-console.log(map.delete(fn));//true console.log(map); /*Map(3){&#34;key&#34; =&gt; &#34;value&#34;, {…} =&gt; &#34;object&#34;}*/ 👉 has() 是否有某个key
-console.log(map.has(user));//true 2.遍历 👉forEach(val,key,map)...</p>
+    <p>第一章 导 论 1.什么是统计学  统计学是收集、处理、分析、解释数据并从数据中得出结论的科学 数据分析所用的方法可分为描述统计方法和推断统计方法  2.参数和统计量   参数：总体特征，所关心的参数通常是总体平均数、总体标准差、总体比例等
+ 由于总体数据通常是不知道的，所以参数是一个未知的常量-
+   统计量：个体特征，所关心的参数通常是样本平均数、样本标准差、样本比例等
+ 由于样本是已经抽出来的，所以统计量总是知道的
+   第二章 数据的搜集 1.数据的来源  **间接来源（二手数据）**与研究内容有关的原信息已经存在，我们只是重新加工、整理，使之成为分析可用的数据，这称为间接来源的数据 **直接来源（一手数据）**通过调查方法获得的为调查数据，实验得到为实验数据，都是直接来源的数据  2.数据误差  抽样误差：由抽样的随机性引起的样本结果与总体真值之间的差异 非抽样误差：抽样框误差、回答误差、无回答误差、调查员误差、测量误差  第三章 数据的图表展示 1.数据预处理  原始数据：完整性、准确性 二手数据：适用性、时效性  2.分类数据图示 ​  1&gt; 组数 5≤ K ≤15
+2&gt; 组距 组距=(Max-Min)/K
+3&gt; 为解决不重的问题，统计分组习惯上规定“上组限不在内”，即当相邻两组的上下限重叠时，恰好等于某一组上限的变量值不算在本组内，而计算在下一组内。即a≤ x &lt;b
+ 第四章 数据的概括性度量 1.集中趋势的度量 
+  众数不受极端值影响，具有不唯一性 中位数不受极端值影响，数据分布偏斜程度较大时 平均数易受极端值影响   2.离散程度的度量...</p>
   </section>
-  <footer class="entry-footer"><span title='2020-08-26 00:00:00 +0000 UTC'>Aug 26, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之Map与Weakmap类型" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bmap%E4%B8%8Eweakmap%E7%B1%BB%E5%9E%8B/"></a>
+  <footer class="entry-footer"><span title='2020-06-17 00:00:00 +0000 UTC'>Jun 17, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 统计学期末知识总结" href="https://www.fintinger.site/p/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%9C%9F%E6%9C%AB%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"></a>
+</article>
+
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>关于Javascript模块化
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>模块功能主要由两个命令构成：export和import。export命令用于规定模块的对外接口，import命令用于输入其他模块提供的功能。
+//profile.jsexport var firstName = &#39;Michael&#39;;export var lastName = &#39;Jackson&#39;;export function sayName () {return firstName &#43; lastName;}export default function () {console.log(&#39;foo&#39;);}// main.jsimport { firstName, lastName , sayName} from &#39;./profile.js&#39;; 注意：在index.html中引入的时候需要给script加type=“module”,即
+ &lt;script type=&#34;module&#34; src=&#34;./profiles.js&#34;&gt;&lt;/script&gt;&lt;script type=&#34;module&#34; src=&#34;./main.js&#34;&gt;&lt;/script&gt;</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-05-29 00:00:00 +0000 UTC'>May 29, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 关于Javascript模块化" href="https://www.fintinger.site/p/%E5%85%B3%E4%BA%8Ejavascript%E6%A8%A1%E5%9D%97%E5%8C%96/"></a>
+</article>
+
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>常用的一些html小问题
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>1. 网页出现横向滚动条？ &lt;body style=`overflow:-Scroll;overflow-y:hidden &gt; &lt;/body&gt;让横条没有：
+ &lt;body style=`overflow:-Scroll;overflow-x:hidden&gt; &lt;/body&gt;两个都去掉？更简单了
+&lt;body scroll=&#34;no&#34; &gt; &lt;/body&gt;火狐底部滚动条不显示：
+ html { overflow:-moz-scrollbars-vertical; }2. 网页图标？ &lt;link rel=&#34;shortcut icon &#34; href=&#34;images/favicon.ico&#34;&gt;3. Height:100%失效？ &lt;html style=&#34;height: 100%;&#34;&gt;&lt;body style=&#34;height: 100%;&#34;&gt;&lt;div style=&#34;height: 100%;&#34;&gt;&lt;p&gt; 这样这个div的高度就会100%了 &lt;/p&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;4. 设置一个元素不可见？ opacity 设为 0、将 visibility 设为 hidden、将 display 设为 none 或者将 position 设为 absolute
+注意：
+1&gt; display=none元素消失，不占位置
+2&gt; opacity =0、 visibility =hidden只是视觉上不可见，其实还在那里占位置
+5.input无法输入？...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-05-24 00:00:00 +0000 UTC'>May 24, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 常用的一些html小问题" href="https://www.fintinger.site/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E5%B0%8F%E9%97%AE%E9%A2%98/"></a>
+</article>
+
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>Jquery一些操作
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>Jquery属性操作 1.属性 attr(attrName [,attrValue]) 操作所有属性（自定义和内置的）
+prop(attrName [,attrValue)) 操作HTML元素内置属性
+removeAttr(attrNam)删除属性
+removeProp(attrName) 并不能删除HMTL元素上的属性
+2.CSS类 addclass()添加一个class值
+removeClass()删除一个class值
+toggleClass()切换一个class值(有则删掉该class，没有则加上，其他class不动)
+hasClasss() 判断是否有指定class
+3.HTML代码/文本/值 html([html]) 相当于innerHTML
+text([text)相当于innerText
+val([value]) 设置/获取表单控件的值
+Jquery样式操作 1.CSS操作 css(atr,[value])设置/获取CSS值
+ 参数可以是一个对象的形式css({atr: value,})
+ 2.位置 offset()[.left/.top]元素在页面中的坐标
+ 设置只需要传一个对象即可 {&#34;left:num,top:num&#34;}
+ position()[.left/.top] 元素在第一个定位的祖先元素内的坐标 (只读！)
+scollTop …
+scollLeft …
+3.尺寸 width()/height()内容尺寸
+innerwidth()/ innerHeight()内容尺寸&#43; padding
+outerWidth()/ outerHeight() 盒子的尺寸
+
+Jquery筛选操作 1. 过滤操作 first ()
+last() 
+eq()
+not() 
+filter()
+slice ()
+has()
+3.串联 add()把选中的元素加入当前集合
+addBack()把调用该方法的元素加入当前集合
+end()返回最后一次破坏性操作之前的DOM...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-04-23 00:00:00 +0000 UTC'>Apr 23, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to Jquery一些操作" href="https://www.fintinger.site/p/jquery%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
@@ -221,7 +301,7 @@ console.log(map.has(user));//true 2.遍历 👉forEach(val,key,map)...</p>
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.b210f1f514e121bd59a440070cfd204feed045eb2c591d4e65230335b405545b.min.js"></script>
+<script src="/assets/js/extended/extend.fa3df6438f7c3b2ccdb1417e73e78d09dad45de34b8e8d1146747073cccd4ab9.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -274,6 +354,6 @@ window.onerror=function(){return true;}
     };
 
 </script>
-<video id="liveBgBox" autoplay loop muted poster="https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png" style="display: none;"></video>
+<video id="liveBgBox" autoplay loop muted poster="https://picgo-jqf.oss-cn-beijing.aliyuncs.com/img/202204051521692.png" style="display: none;"></video>
 </body>
 </html>

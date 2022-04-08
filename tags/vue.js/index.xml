@@ -5,7 +5,28 @@
     <link>https://www.fintinger.site/tags/vue.js/</link>
     <description>Recent content in Vue.js on Archai&#39;s home</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 02 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/vue.js/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/tags/vue.js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vue在页面直接展示模板语法{{xx}}</title>
+      <link>https://www.fintinger.site/p/vue%E5%9C%A8%E9%A1%B5%E9%9D%A2%E7%9B%B4%E6%8E%A5%E5%B1%95%E7%A4%BA%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95xx/</link>
+      <pubDate>Thu, 07 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/vue%E5%9C%A8%E9%A1%B5%E9%9D%A2%E7%9B%B4%E6%8E%A5%E5%B1%95%E7%A4%BA%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95xx/</guid>
+      <description>用vue.js写成的页面中，可能出现由于外部请求导致的页面展示阻塞现象，进而导致模板语法{{xxx}}直接展示在页面上，这其实跟页面加载的流程有关，整个页面加载的流程是：
+解析html结构 -&amp;gt; 加载外部脚本和样式表文件 -&amp;gt; 解析并执行脚本代码 -&amp;gt; 构造HTML DOM模型 -&amp;gt; 加载图片等外部文件 -&amp;gt; 页面加载完毕
+所以，当HTML加载的时候，就会把{{}} 当成文本加载出来，只有当vue初始化完成后，才会把{{}}解析成vue的语法。
+遇到这种情况有以下几种解决方案：
+  方案一(不推荐)：在head里面加入引入vue的script标签
+如果把引入vue的script放到head里面，那页面就不会出现{{}}，因为在body之前，vue就已经引入进并且加载完成了。
+  方案二：v-text|v-html
+使用v-text插入文字，使用v-html插入HTML结构，替换原本使用的模板语法{{xxx}}
+  方案三：template
+使用&amp;lt;template&amp;gt;标签包裹要渲染的HTML结构，那么只有vue解析时才会展示出该结构
+  方案四：v-cloak指令 + CSS样式
+标签上的v-cloak属性在被vue解析到时会自动去掉，那么我们可以利用CSS的属性选择器，给有v-cloak属性的元素设置display:none样式，那么，在加载HTML时自然不会显示{{xxx}}，而在vue解析时又会显示出来，问题得以解决！
+  </description>
+    </item>
+    
     <item>
       <title>Vue2.0学习小结</title>
       <link>https://www.fintinger.site/p/vue2.0%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/</link>

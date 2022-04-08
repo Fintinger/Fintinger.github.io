@@ -22,8 +22,7 @@
 √ 更改首页video加载方式防止嗅探 &amp;lt;Mon Mar 21&amp;gt;
 √ 新增首页背景图用Blob加密，优化代码结构 &amp;lt;Thu Mar 31&amp;gt;
 √ 代码结构优化，取消背景图设定，用video标签的poster属性代替，新增几个个平台视频解析 &amp;lt;Mon Apr 04&amp;gt;
- bilibili：bilibili AV号或BV号 分P号 &amp;gt;}} tencent： tencent b31563j0jqw &amp;gt;}} 自定义视频：video src=&amp;quot;./video.mp4&amp;quot; autoplay=&amp;quot;true&amp;quot; poster=&amp;quot;./video-poster.png&amp;quot; &amp;gt;}}  □ 差优化评论功能(莫名其妙加载不出来评论😑)
-□ 想做个音乐播放器组件😛</description>
+ bilibili：bilibili AV号或BV号 分P号 &amp;gt;}} tencent： tencent b31563j0jqw &amp;gt;}} 自定义视频：video src=&amp;quot;./video.mp4&amp;quot; autoplay=&amp;quot;true&amp;quot; poster=&amp;quot;./video-poster.png&amp;quot; &amp;gt;}}  √ 引入animate.min.css加入动效，评论区优化;引入font-awesome.min.css,优化图标展示，而不是用png格式的图标 &amp;lt;Tue Apr 05&amp;gt;</description>
     </item>
     
   </channel>

@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/categories/%E5%89%8D%E7%AB%AF/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.286aec1e9630a9b9ad9f65bc74f5de62c1f244d221eff34da3bcfe1c8a42f62e.css" integrity="sha256-KGrsHpYwqbmtn2W8dPXeYsHyRNIh7/NNo7z&#43;HIpC9i4=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fae13974f92a364555f4383162b9be4a3b35895e399ea2254f90325fff2b2e59.css" integrity="sha256-&#43;uE5dPkqNkVV9DgxYrm&#43;Sjs1iV45nqIlT5AyX/8rLlk=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -104,7 +104,8 @@
   <h1>前端</h1>
 </header>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>ES6之Promise用法小结
     </h2>
@@ -122,7 +123,8 @@ new Promise((resolve, reject) =&gt; { resolve(&#39;success&#39;) //reject(&#39;r
   <a class="entry-link" aria-label="post link to ES6之Promise用法小结" href="https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/"></a>
 </article>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>Ajax学习小结
     </h2>
@@ -136,7 +138,33 @@ new Promise((resolve, reject) =&gt; { resolve(&#39;success&#39;) //reject(&#39;r
   <a class="entry-link" aria-label="post link to Ajax学习小结" href="https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/"></a>
 </article>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>Vue在页面直接展示模板语法{{xx}}
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>用vue.js写成的页面中，可能出现由于外部请求导致的页面展示阻塞现象，进而导致模板语法{{xxx}}直接展示在页面上，这其实跟页面加载的流程有关，整个页面加载的流程是：
+解析html结构 -&gt; 加载外部脚本和样式表文件 -&gt; 解析并执行脚本代码 -&gt; 构造HTML DOM模型 -&gt; 加载图片等外部文件 -&gt; 页面加载完毕
+所以，当HTML加载的时候，就会把{{}} 当成文本加载出来，只有当vue初始化完成后，才会把{{}}解析成vue的语法。
+遇到这种情况有以下几种解决方案：
+  方案一(不推荐)：在head里面加入引入vue的script标签
+如果把引入vue的script放到head里面，那页面就不会出现{{}}，因为在body之前，vue就已经引入进并且加载完成了。
+  方案二：v-text|v-html
+使用v-text插入文字，使用v-html插入HTML结构，替换原本使用的模板语法{{xxx}}
+  方案三：template
+使用&lt;template&gt;标签包裹要渲染的HTML结构，那么只有vue解析时才会展示出该结构
+  方案四：v-cloak指令 &#43; CSS样式
+标签上的v-cloak属性在被vue解析到时会自动去掉，那么我们可以利用CSS的属性选择器，给有v-cloak属性的元素设置display:none样式，那么，在加载HTML时自然不会显示{{xxx}}，而在vue解析时又会显示出来，问题得以解决！
+  </p>
+  </section>
+  <footer class="entry-footer"><span title='2022-04-07 00:00:00 +0000 UTC'>Apr 7, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to Vue在页面直接展示模板语法{{xx}}" href="https://www.fintinger.site/p/vue%E5%9C%A8%E9%A1%B5%E9%9D%A2%E7%9B%B4%E6%8E%A5%E5%B1%95%E7%A4%BA%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95xx/"></a>
+</article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>Vue2.0学习小结
     </h2>
@@ -174,7 +202,8 @@ const mixData={ data(){...} }, const mixMethods= { methods:{...} } 第二步：�
   <a class="entry-link" aria-label="post link to Vue2.0学习小结" href="https://www.fintinger.site/p/vue2.0%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/"></a>
 </article>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>浏览器本地存储
     </h2>
@@ -198,7 +227,8 @@ const mixData={ data(){...} }, const mixMethods= { methods:{...} } 第二步：�
   <a class="entry-link" aria-label="post link to 浏览器本地存储" href="https://www.fintinger.site/p/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/"></a>
 </article>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>Vue中的数据监视原理
     </h2>
@@ -222,6 +252,49 @@ const mixData={ data(){...} }, const mixMethods= { methods:{...} } 第二步：�
   <footer class="entry-footer"><span title='2022-03-21 00:00:00 +0000 UTC'>Mar 21, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to Vue中的数据监视原理" href="https://www.fintinger.site/p/vue%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%9B%91%E8%A7%86%E5%8E%9F%E7%90%86/"></a>
 </article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>canvas绘制跟随鼠标移动的线条
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>在浏览网页时无意中发现了下面这种背景互动的效果：
+
+通过一番周折，最终找到以下实现代码
+function randomLine() { function n(n, e, t) { return n.getAttribute(e) || t } function e(n) { return document.getElementsByTagName(n) } function t() { var t = e(&#34;script&#34;), o = t.length, i = t[o - 1]; return { l: o, z: n(i, &#34;zIndex&#34;, -88), o: n(i, &#34;opacity&#34;, .5), c: n(i, &#34;color&#34;,&#34;0,0,0&#34;), n: n(i, &#34;count&#34;, 150) } } function o() { a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth, c = m....</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-03-20 00:00:00 +0000 UTC'>Mar 20, 2022</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to canvas绘制跟随鼠标移动的线条" href="https://www.fintinger.site/p/canvas%E7%BB%98%E5%88%B6%E8%B7%9F%E9%9A%8F%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%8A%A8%E7%9A%84%E7%BA%BF%E6%9D%A1/"></a>
+</article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>PHP开发验证码类
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>利用php中的GD库可以完成验证码类的开发。后盾人教程
+ PHP创建图像步骤 发送HTTP头信息，声明内容为图像 header(&#39;Content-type:image/gif&#39;); header(&#39;Content-type:image/jpeg&#39;); header(&#39;Content-type:image/png&#39;); 通过设置头信息让浏览器渲染出图像，而不是HTML等其他类型
+创建画布 imageCreateTrueColor(width,height); width &amp; height 画布宽高，即为输出图片的尺寸,返回为source 类型，后续操作都是针对这个资源展开。
+创建绘图所需要的颜色 imageColorAllocate(img_resource,R,G,B); 颜色从属于创建画布产生的图像资源而存在，后面三个值分别为红绿蓝三个通道的值，为int类型,在0—255之间。
+绘图（填充画布、画圆、画方块、画线条、画布上写字） 👉 填充画布(画布背景)
+imageFill(img_resource,x,y,color); 👉 画圆
+//绘制空心圆形 imageEllipse(img_res,x,y,w,h,color); //绘制填充好的实心圆 imageFilledEllipse(img_res,x,y,w,h,color); 绘制 圆心(x,y) 宽 x，高 h，的圆
+👉 画方
+//空心矩形 imageRectangle(img_res,x1,y1,x2,y2,color); //实心矩形 imageFilledRectangle (img_res,x1,y1,x2,y2,color); (x1,y1)为左上角坐标， (x2,y2)为右下角坐标
+
+👉画线条
+imageLine(img_res,x1,y1,x2,y2,color)(x1,y1)与(x2,y2)两点确定的直线。
+👉 绘制像素(点)
+imagesetpixel ( img_res , x , y , color ) 👉 输入文本
+imagettftext (img_res , size , angle , x , y , color , fontfile ,text ) 图像资源，字体尺寸，角度，第一个字符的基本点（大概是字符的左下角），Y 坐标（字体基线的位置），颜色 ，字体文件绝对路径(realpath($path)获取)，文本字符串（UTF-8 编码）...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-10-03 00:00:00 +0000 UTC'>Oct 3, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to PHP开发验证码类" href="https://www.fintinger.site/p/php%E5%BC%80%E5%8F%91%E9%AA%8C%E8%AF%81%E7%A0%81%E7%B1%BB/"></a>
+</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="next" href="https://www.fintinger.site/categories/%E5%89%8D%E7%AB%AF/page/2/"> »</a>
@@ -242,7 +315,7 @@ const mixData={ data(){...} }, const mixMethods= { methods:{...} } 第二步：�
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.b210f1f514e121bd59a440070cfd204feed045eb2c591d4e65230335b405545b.min.js"></script>
+<script src="/assets/js/extended/extend.fa3df6438f7c3b2ccdb1417e73e78d09dad45de34b8e8d1146747073cccd4ab9.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -295,6 +368,6 @@ window.onerror=function(){return true;}
     };
 
 </script>
-<video id="liveBgBox" autoplay loop muted poster="https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png" style="display: none;"></video>
+<video id="liveBgBox" autoplay loop muted poster="https://picgo-jqf.oss-cn-beijing.aliyuncs.com/img/202204051521692.png" style="display: none;"></video>
 </body>
 </html>

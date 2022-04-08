@@ -10,7 +10,7 @@
 <meta name="description" content="Posts - Archai&#39;s home">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/posts/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.286aec1e9630a9b9ad9f65bc74f5de62c1f244d221eff34da3bcfe1c8a42f62e.css" integrity="sha256-KGrsHpYwqbmtn2W8dPXeYsHyRNIh7/NNo7z&#43;HIpC9i4=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fae13974f92a364555f4383162b9be4a3b35895e399ea2254f90325fff2b2e59.css" integrity="sha256-&#43;uE5dPkqNkVV9DgxYrm&#43;Sjs1iV45nqIlT5AyX/8rLlk=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -119,161 +119,151 @@
   <h1>Posts</h1>
 </header>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>图的遍历
+    <h2>PHP开发验证码类
     </h2>
   </header>
   <section class="entry-content">
-    <p>广度优先遍历（BFS）  BFS(Breadth-First-Search)，参考对树的层序遍历
- 
-对上面的图从①出发进行BFS得到序列：
-①②⑤ ⑥ ③⑦ ④⑧
-若采用不同的储存结构，可能会得到不同的遍历结果（这个差异主要来自寻找邻接点的过程），对于邻接矩阵存储的图，由于邻接矩阵是唯一的，所以BFS序列也是唯一的；同理，邻接表存储的图BFS序列不唯一。
-BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历过程中会出现重复访问的问题，故可构造visited数组，用来标记已访问过的数组。
-此外，还应针对非连通图做额外的判断，遍历完一个连通分量（极大连通子图）后，遍历查找visited数组中是否还存在未遍历的，如果有即为另一连通分量，继续调用BFS即可。
- void BFS(Graph G,int v); bool visited[MAX_VERTEX_NUM]; SqQueue Q;//辅助队列 void BFSTraverse(Graph G){ //初始化visited数组  for (int i = 0; i &lt; G.vexnum; &#43;&#43;i) {//使下标从1开始  visited[i]=false; } //对非连通图的处理  for (int v = 0; v &lt; G.vexnum; &#43;&#43;v) { if (!visited[v]) BFS(G,v); } } //从顶点v出发广度优先遍历图G void BFS(Graph G,int v){ visit(v); visited[v]=true; EnQueue(Q,v);//顶点v入队列Q  while(!isEmpty(Q)){ DeQueue(Q,v);//顶点v出队列Q  for (w=FirstNeighbor(G,v);w&gt;=0;w=NextNeighbor(G,v,w))//处理v的所有邻接点  if (!...</p>
+    <p>利用php中的GD库可以完成验证码类的开发。后盾人教程
+ PHP创建图像步骤 发送HTTP头信息，声明内容为图像 header(&#39;Content-type:image/gif&#39;); header(&#39;Content-type:image/jpeg&#39;); header(&#39;Content-type:image/png&#39;); 通过设置头信息让浏览器渲染出图像，而不是HTML等其他类型
+创建画布 imageCreateTrueColor(width,height); width &amp; height 画布宽高，即为输出图片的尺寸,返回为source 类型，后续操作都是针对这个资源展开。
+创建绘图所需要的颜色 imageColorAllocate(img_resource,R,G,B); 颜色从属于创建画布产生的图像资源而存在，后面三个值分别为红绿蓝三个通道的值，为int类型,在0—255之间。
+绘图（填充画布、画圆、画方块、画线条、画布上写字） 👉 填充画布(画布背景)
+imageFill(img_resource,x,y,color); 👉 画圆
+//绘制空心圆形 imageEllipse(img_res,x,y,w,h,color); //绘制填充好的实心圆 imageFilledEllipse(img_res,x,y,w,h,color); 绘制 圆心(x,y) 宽 x，高 h，的圆
+👉 画方
+//空心矩形 imageRectangle(img_res,x1,y1,x2,y2,color); //实心矩形 imageFilledRectangle (img_res,x1,y1,x2,y2,color); (x1,y1)为左上角坐标， (x2,y2)为右下角坐标
+
+👉画线条
+imageLine(img_res,x1,y1,x2,y2,color)(x1,y1)与(x2,y2)两点确定的直线。
+👉 绘制像素(点)
+imagesetpixel ( img_res , x , y , color ) 👉 输入文本
+imagettftext (img_res , size , angle , x , y , color , fontfile ,text ) 图像资源，字体尺寸，角度，第一个字符的基本点（大概是字符的左下角），Y 坐标（字体基线的位置），颜色 ，字体文件绝对路径(realpath($path)获取)，文本字符串（UTF-8 编码）...</p>
   </section>
-  <footer class="entry-footer"><span title='2021-06-03 00:00:00 +0000 UTC'>Jun 3, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 图的遍历" href="https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/"></a>
+  <footer class="entry-footer"><span title='2020-10-03 00:00:00 +0000 UTC'>Oct 3, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to PHP开发验证码类" href="https://www.fintinger.site/p/php%E5%BC%80%E5%8F%91%E9%AA%8C%E8%AF%81%E7%A0%81%E7%B1%BB/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>图的存储
+    <h2>Git相关
     </h2>
   </header>
   <section class="entry-content">
-    <p>邻接矩阵  Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.
- 
-代码实现 #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph; 即
-找度 根据邻接矩阵计算结点的度TD
-    无向图 有向图     $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数
-$OD(V_i)$: i列非零元素个数
-TD=ID&#43;OD    对于带权图（网） 
-#define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph; 复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|&#43;|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。...</p>
+    <p>基本命令 git config --global =&gt;全局配置 git config =&gt;当前仓库配置 mkdir =&gt;创建文件夹 ls =&gt;列出当前目录下(文件，文件夹) ls -a =&gt;所有all rm -rf * =&gt;删除当前目录下所有 touch =&gt;新建文件 cat =&gt;查看文件中的内容  不想`git add . 所有？
+ 配置.gitignore 定义忽略提交的文件，其中
+ 所有空行或者以注释符号 ＃ 开头的行都会被 Git 忽略。 匹配模式最后跟反斜杠（/）说明要忽略的是目录。 可以使用标准的 glob 模式(php)匹配。  从版本库删除 git rm ... =&gt;从版本库中删除，本地也会删除 git rm --cached ... =&gt;只从版本库删除 从版本库改名 git mv ... ... =&gt;改名 log git log -p =&gt;显示文件变动信息 git log -1 =&gt;最近一次提交 git log --oneline 修改最新一次提交commit描述 git commit --amend =&gt;最近一次提交的描述  也可以把最新的git add ....</p>
   </section>
-  <footer class="entry-footer"><span title='2021-06-02 00:00:00 +0000 UTC'>Jun 2, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 图的存储" href="https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/"></a>
+  <footer class="entry-footer"><span title='2020-09-29 00:00:00 +0000 UTC'>Sep 29, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to Git相关" href="https://www.fintinger.site/p/git%E7%9B%B8%E5%85%B3/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>AVL树
+    <h2>Javascript正则表达式
     </h2>
   </header>
   <section class="entry-content">
-    <p>平衡二叉树是Adelson-Velsky和 Landis发明，故命名为AVL树。也称平衡二叉查找树。
- ✨特点： ①左子树&lt;根&lt;右子树； ②任一节点，左右子树高度之差不超过1.
-平衡因子 $平衡因子=左子树高-右子树高$
-AVL树的插入操作 AVL树插入新结点导致不平衡之后，只需将最小不平衡子树平衡，其他祖先结点会随之恢复平衡。
-调整最小不平衡子树 注意：调整过后必须保证其BST的特性，即“左子树1.LL  即在以A为根节点的树的左孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
- 
-调整过程如下：
-
-2.RR  即在以A为根节点的树的右孩子B的右子树上插入新结点，导致A成为最小不平衡子树。
- 
-调整过程如下：
-
-3.LR  即在以A为根节点的树的左孩子B的右子树上插入新结点，导致A成为最小不平衡子树。
- 
-观察得知，所进行的调整就是保证$|平衡因子|&lt;=1$，因此若插入操作使得
-左 - 右 &gt; 1 =&gt; 右旋
-右 - 左 &gt; 1 =&gt;左旋
-而当进行了LR插入操作之后，导致以A为根节点的树 左-右&gt;1，理应右旋但是，由上述结果可知，经过右旋之后：
-
-可以看到，为了保证其左子树&lt;根&lt;右子树的特性，经过调整后，依然存在右-左&gt;1的问题；
-因此，对于LR型不能简单进行右旋调整，应该先将其转化为LL型 (左旋)，再进行右旋；
-为此，我们需要将BR结点展开，之后旋转成为LL型插入
-
-可以看到，展开后又出现两种插入情况CL&amp;CR，但其实两者处理大同小异：
-CR插入调整过程如下：
-
-4.RL  即在以A为根节点的树的右孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
- 
-参考LR型，其调整过程如下：
-
-查找操作效率分析 Assuming that, $n_h$表示深度为h的平衡树中含有的最少结点，则
-$n_0=0$,$n_1=1$,$n_2=2$…存在递归关系 $n_h=n_{h-1}&#43;n_{h-2}&#43;1$,即左右子树结点之和&#43;根节点。
-可以证明(AVL证明)，n个结点的平衡二叉树最大深度数量级为$\log_2n$，则其查找操作的复杂度为$O(\log_2n)$</p>
+    <p>关于正则表达式的创建，就不做过多的赘述
+ ::: tip
+由于不知名原因，span标签报错，因此全部替换为[sp]
+:::
+关于转义 1.字面量形式创建的RegExp 转义形式： \d, \., \s 等
+let str=&#39;fintinger2592030861.com$323e&#39; let reg=/\d&#43;\.com/ str.match(reg);//2592030861.com 2.对象形式创建的RegExp 转义形式： \\d, \\., \\s等
+let str = &#39;fintinger2592030861.com$323e&#39; let reg = new RegExp(&#39;\\d&#43;\\.com&#39;, &#39;g&#39;) str.match(reg)//2592030861.com 边界约束  利用^和$分别限制开头和结尾
+ let str = &#39;bdhw42556jbjkhb2592030861jrh4jbhkfehrbj43jk32kbbjhb&#39; let reg = /\d{3,6}/ let reg2 = /^\d{3,6}$/ str.match(reg)//42556 str.match(reg2)//null 元字符    元字符 用法     \d &amp; \D 表示数字和非数字   \s &amp; \S 表示空白（空格，换行，Tab制表符等）和非空白   \w &amp; \W 表示字母，数字，下划线和非…   ....</p>
   </section>
-  <footer class="entry-footer"><span title='2021-05-23 00:00:00 +0000 UTC'>May 23, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to AVL树" href="https://www.fintinger.site/p/avl%E6%A0%91/"></a>
+  <footer class="entry-footer"><span title='2020-09-20 00:00:00 +0000 UTC'>Sep 20, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to Javascript正则表达式" href="https://www.fintinger.site/p/javascript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>哈夫曼树
+    <h2>Es6中的class类
     </h2>
   </header>
   <section class="entry-content">
-    <p>基本概念 1.结点的权
-每个结点带有的具有某种现实意义的数值(比如代表重要性等)
-2.结点的带权路径长度
-从树的根到该结点的路径长度（经过的边数）与该结点上权值的乘积
-3.树的带权路径长度
-树中所有叶结点的带权路径长度之和（WPL, Weighted Path Length）
-$WPL=\sum_{i=1}^{n}w_il_i$
-✨4.哈夫曼树
-在含有n个带权叶结点的二叉树中，其中带权路径长度（WPL）最小的二叉树称为哈夫曼树，也称最优二叉树
-构造哈夫曼树 给定n个权值分别为 $w_1,w_2,…,w_n$ 的结点，其构造过程描述如下：
-① 将这n个结点分别作为n棵仅含一个结点的二叉树，构成森林F
-② 构造一个新结点，从F中选取两棵根结点权值最小的树作为新结点的左右子树，并且将新结点的权值置为左、右子树上根结点的权值之和。
-③ 从F中删除刚才选出的两棵树，同时将新得到的树加入F中。
-④ 重复步骤②和③，直至F中只剩下一棵树为止。
-假设给定结点在经过步骤①之后如下
-
-则其②③④步骤为：
-
-$WPL_{min}=1*7&#43;2*3&#43;3*2&#43;4*1&#43;4*2=31$
-或者
-
-$WPL_{min}=1*7&#43;3*(1&#43;2&#43;2&#43;3)=31$
-👇👇👇👇👇👇
-哈夫曼树特点： ① 每个初始结点最终都成为叶结点，且权值越小的结点到根结点的路径长度越大。 ② 哈夫曼树的结点总数为2n-1。 ③ 哈夫曼树中不存在度为1的结点。 ④ 哈夫曼树并不唯一，但WPL必然相同且为最优。
-哈夫曼编码 固定长度编码 如ASCII码
-可变长度编码 前缀编码 没有一个编码是另一个编码的前缀
-
-哈夫曼编码 由哈夫曼树得到哈夫曼编码——字符集中的每个字符作为一个叶子结点，各个字符出现的频度作为结点的权值，根据之前介绍的方法构造哈夫曼树。
-✨ 应用
-可用于数据压缩
-如图，为英文字母使用频率表，若不进行压缩，第 i 个字母频率用$l_i表示$，路径长至少为5($2^4&lt;26&lt;2^5$)，则
-$WPL=5×\sum_{i=1}^{n}l_i$=500
-
-若通过构造哈夫曼树进行哈夫曼编码
-则$WPL_{min}=$
-$v=\frac{WPL_{min}}{WPL}$</p>
+    <p>class实质上是对js中继承的封装组合，用一种“语法糖”的形式实现原型链的继承
+ 静态属性/方法  静态方法/属性是指，函数作为对象时，定义在其原型(__proto__)上的方法，而需要实例化继承的动态方法是定义在其原型对象(prototype) 中的，静态方法中的参数都是固定的，直接通过整个构造函数调用，实例化对象并不会继承；而动态方法中的参数会因为实例化对象的不同而产生改变，实例化对象默认是继承的。
+ function User(){} User.__proto__.show=function(){} console.dir(User) //这里的show()方法就属于静态方法 在class中，利用static定义静态属性/方法
+class Admin{ static show(){}//__proto__中  show(){}//prototype中 } console.dir(Admin) 关于class一些注意点  class中声明的方法在prototype对象中，由于默认的属性特征设置，这些方法是不可遍历的！  class Admin{ show(){} } console.log( Object.getOwnPropertyDescriptor( Admin.prototype,&#34;show&#34; )) //enumerable: false class中声明方法时，方法之间不用,隔开！ class中默认开启严格模式  class中的属性保护  主要可以通过三种途径实现属性保护：Symbol,weakmap,私有属性
+ 1.Symbol /*利用Symbol创建一个受保护的属性的集合对象,无法直接获取，只能通过自定义的get/set方法*/ const protects = Symbol(&#39;受保护的属性&#39;) class User { constructor(name) { this.name = name this[protects] = { host: &#39;https://www.fintinger.xyz&#39;, token: &#39;5574f1b81bbe4e3847e7a83c0a84a442&#39;, password: &#39;123456&#39; } } set host(url) { if (!...</p>
   </section>
-  <footer class="entry-footer"><span title='2021-05-23 00:00:00 +0000 UTC'>May 23, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 哈夫曼树" href="https://www.fintinger.site/p/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/"></a>
+  <footer class="entry-footer"><span title='2020-09-09 00:00:00 +0000 UTC'>Sep 9, 2020</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to Es6中的class类" href="https://www.fintinger.site/p/es6%E4%B8%AD%E7%9A%84class%E7%B1%BB/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>树
+    <h2>JavaScript中的继承与原型链分析
     </h2>
   </header>
   <section class="entry-content">
-    <p>普通树 对于一棵普通类型的树形结构，可将其转化为二叉树之后再参考二叉树的方法进行相关操作。
-孩子兄弟表示法（链式结构） 通过此方法可将普通树转化为二叉树
-//孩子兄弟即Child, Sibling typedef struct CSNode{ Elemtype data; struct CSNode *firstchild,*nextsibling;//第一个孩子和右兄弟指针,等价于*lchild,*rchild }CSNode,*CSTree 图示如下
-
-树的遍历 1.深度优先遍历（先根遍历&amp;后根遍历）
- 先根遍历   若树非空，先访问根结点，再依次对每棵子树进行先根遍历(递归)。
- 对如上图所示的树进行先根遍历：
-A B C D
-A	(BE )	(CF)	(DG)
-A	(BEH) (CF)	(DG)
-即先根遍历序列为A B E H C F D G
-发现与通过“孩子兄弟法”将树转为二叉树后的先序遍历序列相同
- 后根遍历   若树非空，先依次对每棵子树进行后根遍历，最后再访问根结点。
- 对如上图所示的树进行后根遍历：
-B	C	D	A
-(E	B) (F	C) (G	D) A
-(H	E	B) (F	C) (GD) A...</p>
+    <p>原型链自定义设置  原型链的设置可以通过Object.creative , __proto__, Object.setProperty三种方法
+ Object.creative () 说明： 该方法只能设置原型链，而不能获取
+let a1 = {name: &#39;a1&#39;} let b1 = Object.create(a1) b1.name = &#39;b1&#39; console.log(b1);  Object.creative()为创建对象的方法，第一个参数为其原型对象，第二个参数为其默认属性，这些属性默认是不可写，不可遍历，不可修改的
+ let b=Object.create(null,{ a:{value:&#39;ohh&#39;, enumerable:true}, b:{value:&#39;jqf&#39;}, }) console.log(Object.getOwnPropertyDescriptors(b)); //a: {value: &#34;ohh&#34;, writable: false, enumerable: true, configurable: false} //b: {value: &#34;jqf&#34;, writable: false, enumerable: false, configurable: false} __proto__ 说明： 能设置，能获取，实质上是setter，getter
+let a2 = {name: &#39;a2&#39;} let b2 = {name: &#39;b2&#39;} a2.__proto__ = b2 console.log(a2); console.log(a2.__proto__);//{name: &#34;b2&#34;}  关于__proto__是setter,getter？...</p>
   </section>
-  <footer class="entry-footer"><span title='2021-05-22 00:00:00 +0000 UTC'>May 22, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 树" href="https://www.fintinger.site/p/%E6%A0%91/"></a>
+  <footer class="entry-footer"><span title='2020-09-04 00:00:00 +0000 UTC'>Sep 4, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript中的继承与原型链分析" href="https://www.fintinger.site/p/javascript%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%88%86%E6%9E%90/"></a>
+</article>
+
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>关于JavaScript模块化
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>自定义一个模块引擎 要求： 能够让模块之间产生依赖关系
+代码
+let _module = (function () { let moduleList = {} function define(name, modules, action) { modules.map((n, i) =&gt; { //将传入的只含名称的模块数组 =&gt; 指定名称模块的返回结果  modules[i] = moduleList[n] }) moduleList[name] = action.apply(null, modules) // console.log(moduleList);  } return {define} })(); //定义一个工具库，暴露给外界使用，输出 _module.define(&#39;tools&#39;, [], function () { return { max(arr) { return arr.sort((a, b) =&gt; b - a)[0]//获取最大值挺别致昂  }, min(arr) { return arr.sort((a, b) =&gt; b - a)[arr.length - 1]; } } }); //使用之前定义的工具库，引入 _module....</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-09-02 00:00:00 +0000 UTC'>Sep 2, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 关于JavaScript模块化" href="https://www.fintinger.site/p/%E5%85%B3%E4%BA%8Ejavascript%E6%A8%A1%E5%9D%97%E5%8C%96/"></a>
+</article>
+
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>JavaScript基础之对象
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>对象中参数获取和值的接收 1.对象中利用key获取value. |  [] let obj = {name: &#39;jqf&#39;, age: 19} for (let key in obj) { // console.log(obj.key);//会报undefined  console.log(obj[key]);//jqf,19 } 👉 delete Object.key()
+delete obj.name console.log(obj);//{ age: 19 } 2.参数/配置合并 👉 展开语法
+ 利用展开语法合并对象，让后面传入的参数覆盖默认参数，完成合并
+ function upload(params) { let config = { url: &#39;/images&#39;, type: &#39;*.jpg,*.png&#39; } config = {...config, ...params} //do something...  console.log(config); } upload({type:&#39;*.webp&#39;})//{ url: &#39;/images&#39;, type: &#39;*.webp&#39; } 👉 解构赋值
+ 解构赋值会把相同key的进行合并，后面覆盖掉前面的
+ function upload(params = {}) { let {url = &#39;/images&#39;, type = &#39;*....</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-08-31 00:00:00 +0000 UTC'>Aug 31, 2020</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript基础之对象" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%AF%B9%E8%B1%A1/"></a>
+</article>
+
+<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>JavaScript基础之函数相关
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>关于函数传参  当参数数量不确定时，通常用arguments 来统一接收
+ function sum() { return [...arguments].reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6 可以用展开语法代替arguments接收所有的参数：
+function sum(...args) { return args.reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6 注意： 接收参数时展开语法放其他形参后面，做统一接收
+递归函数  递归函数有两个关键点，一是要有退出执行的条件，二是要不断执行自身并返回
+ 递归思想实现阶乘函数 function factorial(num) { if (num === 1) { return num } return num * factorial(--num) } 如果用到箭头函数，可以简写为：
+function factorial(num) { return num === 1 ?...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-08-28 00:00:00 +0000 UTC'>Aug 28, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript基础之函数相关" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
@@ -296,7 +286,7 @@ B	C	D	A
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.b210f1f514e121bd59a440070cfd204feed045eb2c591d4e65230335b405545b.min.js"></script>
+<script src="/assets/js/extended/extend.fa3df6438f7c3b2ccdb1417e73e78d09dad45de34b8e8d1146747073cccd4ab9.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -349,6 +339,6 @@ window.onerror=function(){return true;}
     };
 
 </script>
-<video id="liveBgBox" autoplay loop muted poster="https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png" style="display: none;"></video>
+<video id="liveBgBox" autoplay loop muted poster="https://picgo-jqf.oss-cn-beijing.aliyuncs.com/img/202204051521692.png" style="display: none;"></video>
 </body>
 </html>

@@ -5,7 +5,7 @@
     <link>https://www.fintinger.site/</link>
     <description>Recent content on Archai&#39;s home</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 04 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ES6之Promise用法小结</title>
       <link>https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/</link>
@@ -30,6 +30,27 @@ new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //r
       <description>学习地址:https://www.bilibili.com/video/BV1WC4y1b78y，主要通过express的简单功能来搭建本地的服务，进而更好地学习Ajax
  发送Ajax请求的方式 原生Ajax //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(&amp;#34;GET&amp;#34;,&amp;#34;https://www.x.com&amp;#34;) //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status &amp;gt;= 200 &amp;amp;&amp;amp; xhr.status &amp;lt; 300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } } 说明：
  readyState: 返回一个 XMLHttpRequest 代理当前所处的状态     值 状态 描述     0 UNSENT 代理被创建，但尚未调用 open() 方法。   1 OPENED open() 方法已经被调用。   2 HEADERS_RECEIVED send() 方法已经被调用，并且头部和状态已经可获得。   3 LOADING 下载中； responseText 属性已经包含部分数据。   4 DONE 下载操作已完成。     因此，xhr.</description>
+    </item>
+    
+    <item>
+      <title>Vue在页面直接展示模板语法{{xx}}</title>
+      <link>https://www.fintinger.site/p/vue%E5%9C%A8%E9%A1%B5%E9%9D%A2%E7%9B%B4%E6%8E%A5%E5%B1%95%E7%A4%BA%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95xx/</link>
+      <pubDate>Thu, 07 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/vue%E5%9C%A8%E9%A1%B5%E9%9D%A2%E7%9B%B4%E6%8E%A5%E5%B1%95%E7%A4%BA%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95xx/</guid>
+      <description>用vue.js写成的页面中，可能出现由于外部请求导致的页面展示阻塞现象，进而导致模板语法{{xxx}}直接展示在页面上，这其实跟页面加载的流程有关，整个页面加载的流程是：
+解析html结构 -&amp;gt; 加载外部脚本和样式表文件 -&amp;gt; 解析并执行脚本代码 -&amp;gt; 构造HTML DOM模型 -&amp;gt; 加载图片等外部文件 -&amp;gt; 页面加载完毕
+所以，当HTML加载的时候，就会把{{}} 当成文本加载出来，只有当vue初始化完成后，才会把{{}}解析成vue的语法。
+遇到这种情况有以下几种解决方案：
+  方案一(不推荐)：在head里面加入引入vue的script标签
+如果把引入vue的script放到head里面，那页面就不会出现{{}}，因为在body之前，vue就已经引入进并且加载完成了。
+  方案二：v-text|v-html
+使用v-text插入文字，使用v-html插入HTML结构，替换原本使用的模板语法{{xxx}}
+  方案三：template
+使用&amp;lt;template&amp;gt;标签包裹要渲染的HTML结构，那么只有vue解析时才会展示出该结构
+  方案四：v-cloak指令 + CSS样式
+标签上的v-cloak属性在被vue解析到时会自动去掉，那么我们可以利用CSS的属性选择器，给有v-cloak属性的元素设置display:none样式，那么，在加载HTML时自然不会显示{{xxx}}，而在vue解析时又会显示出来，问题得以解决！
+  </description>
     </item>
     
     <item>
@@ -1212,8 +1233,7 @@ border:10px solid hsla(0,0,100%,.5); background:white; background-clip:padding-b
 √ 更改首页video加载方式防止嗅探 &amp;lt;Mon Mar 21&amp;gt;
 √ 新增首页背景图用Blob加密，优化代码结构 &amp;lt;Thu Mar 31&amp;gt;
 √ 代码结构优化，取消背景图设定，用video标签的poster属性代替，新增几个个平台视频解析 &amp;lt;Mon Apr 04&amp;gt;
- bilibili：bilibili AV号或BV号 分P号 &amp;gt;}} tencent： tencent b31563j0jqw &amp;gt;}} 自定义视频：video src=&amp;quot;./video.mp4&amp;quot; autoplay=&amp;quot;true&amp;quot; poster=&amp;quot;./video-poster.png&amp;quot; &amp;gt;}}  □ 差优化评论功能(莫名其妙加载不出来评论😑)
-□ 想做个音乐播放器组件😛</description>
+ bilibili：bilibili AV号或BV号 分P号 &amp;gt;}} tencent： tencent b31563j0jqw &amp;gt;}} 自定义视频：video src=&amp;quot;./video.mp4&amp;quot; autoplay=&amp;quot;true&amp;quot; poster=&amp;quot;./video-poster.png&amp;quot; &amp;gt;}}  √ 引入animate.min.css加入动效，评论区优化;引入font-awesome.min.css,优化图标展示，而不是用png格式的图标 &amp;lt;Tue Apr 05&amp;gt;</description>
     </item>
     
     
