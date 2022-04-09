@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/categories/%E5%90%8E%E7%AB%AF/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fae13974f92a364555f4383162b9be4a3b35895e399ea2254f90325fff2b2e59.css" integrity="sha256-&#43;uE5dPkqNkVV9DgxYrm&#43;Sjs1iV45nqIlT5AyX/8rLlk=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.3c6e1a1ead1685963f285a2039c65fa7961a5aaad6a79f7379a21c0c8ed5dd10.css" integrity="sha256-PG4aHq0WhZY/KFogOcZfp5YaWqrWp59zeaIcDI7V3RA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -41,6 +41,12 @@
 </head>
 
 <body class=" list" id=" top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -68,6 +74,26 @@
         <div class="logo">
             <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
             <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
             </span>
         </div>
         <ul id="menu">
@@ -104,7 +130,7 @@
   <h1>后端</h1>
 </header>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>寻址方式与存储模式
@@ -117,7 +143,7 @@
   <a class="entry-link" aria-label="post link to 寻址方式与存储模式" href="https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F/"></a>
 </article>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>外部排序相关
@@ -172,7 +198,7 @@
   <a class="entry-link" aria-label="post link to 外部排序相关" href="https://www.fintinger.site/p/%E5%A4%96%E9%83%A8%E6%8E%92%E5%BA%8F%E7%9B%B8%E5%85%B3/"></a>
 </article>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>排序算法相关
@@ -185,7 +211,7 @@
   <a class="entry-link" aria-label="post link to 排序算法相关" href="https://www.fintinger.site/p/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/"></a>
 </article>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>查找算法相关
@@ -207,7 +233,7 @@ typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数�
   <a class="entry-link" aria-label="post link to 查找算法相关" href="https://www.fintinger.site/p/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/"></a>
 </article>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>图的应用
@@ -229,7 +255,7 @@ Prim（普利姆算法），Kruskal（克鲁斯卡尔算法）就是寻找最小
   <a class="entry-link" aria-label="post link to 图的应用" href="https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8/"></a>
 </article>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>图的遍历
@@ -247,71 +273,6 @@ BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历
   </section>
   <footer class="entry-footer"><span title='2021-06-03 00:00:00 +0000 UTC'>Jun 3, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 图的遍历" href="https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>图的存储
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>邻接矩阵  Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.
- 
-代码实现 #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph; 即
-找度 根据邻接矩阵计算结点的度TD
-    无向图 有向图     $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数
-$OD(V_i)$: i列非零元素个数
-TD=ID&#43;OD    对于带权图（网） 
-#define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph; 复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|&#43;|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。...</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-06-02 00:00:00 +0000 UTC'>Jun 2, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 图的存储" href="https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>AVL树
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>平衡二叉树是Adelson-Velsky和 Landis发明，故命名为AVL树。也称平衡二叉查找树。
- ✨特点： ①左子树&lt;根&lt;右子树； ②任一节点，左右子树高度之差不超过1.
-平衡因子 $平衡因子=左子树高-右子树高$
-AVL树的插入操作 AVL树插入新结点导致不平衡之后，只需将最小不平衡子树平衡，其他祖先结点会随之恢复平衡。
-调整最小不平衡子树 注意：调整过后必须保证其BST的特性，即“左子树1.LL  即在以A为根节点的树的左孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
- 
-调整过程如下：
-
-2.RR  即在以A为根节点的树的右孩子B的右子树上插入新结点，导致A成为最小不平衡子树。
- 
-调整过程如下：
-
-3.LR  即在以A为根节点的树的左孩子B的右子树上插入新结点，导致A成为最小不平衡子树。
- 
-观察得知，所进行的调整就是保证$|平衡因子|&lt;=1$，因此若插入操作使得
-左 - 右 &gt; 1 =&gt; 右旋
-右 - 左 &gt; 1 =&gt;左旋
-而当进行了LR插入操作之后，导致以A为根节点的树 左-右&gt;1，理应右旋但是，由上述结果可知，经过右旋之后：
-
-可以看到，为了保证其左子树&lt;根&lt;右子树的特性，经过调整后，依然存在右-左&gt;1的问题；
-因此，对于LR型不能简单进行右旋调整，应该先将其转化为LL型 (左旋)，再进行右旋；
-为此，我们需要将BR结点展开，之后旋转成为LL型插入
-
-可以看到，展开后又出现两种插入情况CL&amp;CR，但其实两者处理大同小异：
-CR插入调整过程如下：
-
-4.RL  即在以A为根节点的树的右孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
- 
-参考LR型，其调整过程如下：
-
-查找操作效率分析 Assuming that, $n_h$表示深度为h的平衡树中含有的最少结点，则
-$n_0=0$,$n_1=1$,$n_2=2$…存在递归关系 $n_h=n_{h-1}&#43;n_{h-2}&#43;1$,即左右子树结点之和&#43;根节点。
-可以证明(AVL证明)，n个结点的平衡二叉树最大深度数量级为$\log_2n$，则其查找操作的复杂度为$O(\log_2n)$</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-05-23 00:00:00 +0000 UTC'>May 23, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to AVL树" href="https://www.fintinger.site/p/avl%E6%A0%91/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
@@ -333,7 +294,7 @@ $n_0=0$,$n_1=1$,$n_2=2$…存在递归关系 $n_h=n_{h-1}&#43;n_{h-2}&#43;1$,即
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.fa3df6438f7c3b2ccdb1417e73e78d09dad45de34b8e8d1146747073cccd4ab9.min.js"></script>
+<script src="/assets/js/extended/extend.4a0deabf2968d39824344c0112b4d90c39c2696cd2ff9ce58f7ffe581437012f.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -384,6 +345,18 @@ window.onerror=function(){return true;}
             mybutton.style.opacity = "0";
         }
     };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
 
 </script>
 <video id="liveBgBox" autoplay loop muted poster="https://picgo-jqf.oss-cn-beijing.aliyuncs.com/img/202204051521692.png" style="display: none;"></video>

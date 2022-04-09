@@ -20,7 +20,7 @@
  bilibili：bilibili AV号或BV号 分P号 &gt;}} tencent： tencent b31563j0jqw &gt;}} 自定义视频：video src=&quot;./video.mp4&quot; autoplay=&quot;true&quot; poster=&quot;./video-poster.png&quot; &gt;}}  √ 引入animate.min.css加入动效，评论区优化;引入font-awesome.min.css,优化图标展示，而不是用png格式的图标 &lt;Tue Apr 05&gt;">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/about/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fae13974f92a364555f4383162b9be4a3b35895e399ea2254f90325fff2b2e59.css" integrity="sha256-&#43;uE5dPkqNkVV9DgxYrm&#43;Sjs1iV45nqIlT5AyX/8rLlk=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.3c6e1a1ead1685963f285a2039c65fa7961a5aaad6a79f7379a21c0c8ed5dd10.css" integrity="sha256-PG4aHq0WhZY/KFogOcZfp5YaWqrWp59zeaIcDI7V3RA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -100,8 +100,8 @@
   "keywords": [
     
   ],
-  "articleBody": "About me Hello 陌生人，欢迎访问 Archai’s blog\n(没什么可说的🤐，看看修狗👇)\n联系我   QQ : 2592030861\n  GitHub : https://github.com/fintinger\n  待办事项 √ 基本结构做完，带评论。√ 初步优化，首页修改，资源引入使用阿里云(不然慢😥)(暂时)。但是gotop莫名其妙报错😑。 √ 首页添加花里胡哨的随机线条功能，手机端不再设置不能显示主页，改成profile不再透明。 √ 更改首页video加载方式防止嗅探 √ 新增首页背景图用Blob加密，优化代码结构 √ 代码结构优化，取消背景图设定，用video标签的poster属性代替，新增几个个平台视频解析  bilibili：bilibili AV号或BV号 分P号 }} tencent： tencent b31563j0jqw }} 自定义视频：video src=\"./video.mp4\" autoplay=\"true\" poster=\"./video-poster.png\" }}  √ 引入animate.min.css加入动效，评论区优化;引入font-awesome.min.css,优化图标展示，而不是用png格式的图标 □ 想做个音乐播放器组件😛\n□ Ajax请求是否会进行缓存，想利用本地缓存Blob对象，结果无法实现😑。因为Blob中存在function，所以无法JSON.stringify\n🥸  图片视频之类的都在static目录下，这个即为根目录，在config或者自定义css中都可以引用 通过下面的方式，使得assets/js/extended/路径下的js文件全部压缩后打包成一整个js文件  {{- $extendJS := (resources.Match \"js/extended/*.js\") | resources.Concat \"assets/js/extended/extend.js\" | fingerprint | minify }} script src=\"{{ $extendJS.RelPermalink }}\"script  对font-awesome.min.css做了略微修改，与官网不同的是，通过给class添加fab fa-xxx才能使得字体图标生效  ",
-  "wordCount" : "89",
+  "articleBody": "About me Hello 陌生人，欢迎访问 Archai’s blog\n(没什么可说的🤐，看看修狗👇)\n联系我   QQ : 2592030861\n  GitHub : https://github.com/fintinger\n  待办事项 √ 基本结构做完，带评论。√ 初步优化，首页修改，资源引入使用阿里云(不然慢😥)(暂时)。但是gotop莫名其妙报错😑。 √ 首页添加花里胡哨的随机线条功能，手机端不再设置不能显示主页，改成profile不再透明。 √ 更改首页video加载方式防止嗅探 √ 新增首页背景图用Blob加密，优化代码结构 √ 代码结构优化，取消背景图设定，用video标签的poster属性代替，新增几个个平台视频解析  bilibili：bilibili AV号或BV号 分P号 }} tencent： tencent b31563j0jqw }} 自定义视频：video src=\"./video.mp4\" autoplay=\"true\" poster=\"./video-poster.png\" }}  √ 引入animate.min.css加入动效，评论区优化;引入font-awesome.min.css,优化图标展示，而不是用png格式的图标 √ 在文章列表页面，通过列表的footer尾注信息进行比较判断，筛选出pinned和newest文章，并为其添加相应样式 √ 黑暗模式适配✨ ✨ ！！□ 想做个音乐播放器组件😛\n□ Ajax请求是否会进行缓存，想利用本地缓存Blob对象，结果无法实现😑。因为Blob中存在function，所以无法JSON.stringify\n🥸  图片视频之类的都在static目录下，这个即为根目录，在config或者自定义css中都可以引用 通过下面的方式，使得assets/js/extended/路径下的js文件全部压缩后打包成一整个js文件  {{- $extendJS := (resources.Match \"js/extended/*.js\") | resources.Concat \"assets/js/extended/extend.js\" | fingerprint | minify }} script src=\"{{ $extendJS.RelPermalink }}\"script  对font-awesome.min.css做了略微修改，与官网不同的是，通过给class添加fab fa-xxx才能使得字体图标生效  ",
+  "wordCount" : "100",
   "inLanguage": "zh-cn",
   "datePublished": "2019-02-28T00:00:00Z",
   "dateModified": "2019-02-28T00:00:00Z",
@@ -126,6 +126,12 @@
 </head>
 
 <body class="" id=" top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -153,6 +159,26 @@
         <div class="logo">
             <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
             <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
             </span>
         </div>
         <ul id="menu">
@@ -222,6 +248,8 @@
 <li>自定义视频：<code>video src=&quot;./video.mp4&quot; autoplay=&quot;true&quot; poster=&quot;./video-poster.png&quot; &gt;}}</code></li>
 </ul>
 <p>√ 引入<a href="https://animate.style/">animate.min.css</a>加入动效，评论区优化;引入<a href="http://www.fontawesome.com.cn/">font-awesome.min.css</a>,优化图标展示，而不是用png格式的图标 &lt;Tue Apr 05&gt;</p>
+<p>√ 在文章列表页面，通过列表的footer尾注信息进行比较判断，筛选出<code>pinned</code>和<code>newest</code>文章，并为其添加相应样式 &lt;Fri Apr 08&gt;</p>
+<p>√  黑暗模式适配✨ ✨ ！！&lt;Sat Apr 09&gt;</p>
 <p>□ 想做个音乐播放器组件😛</p>
 <p>□ Ajax请求是否会进行缓存，想利用本地缓存Blob对象，结果无法实现😑。因为Blob中存在function，所以无法JSON.stringify</p>
 <h2 id="heading">🥸<a hidden class="anchor" aria-hidden="true" href="#heading">#</a></h2>
@@ -273,7 +301,7 @@
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.fa3df6438f7c3b2ccdb1417e73e78d09dad45de34b8e8d1146747073cccd4ab9.min.js"></script>
+<script src="/assets/js/extended/extend.4a0deabf2968d39824344c0112b4d90c39c2696cd2ff9ce58f7ffe581437012f.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -324,6 +352,18 @@ window.onerror=function(){return true;}
             mybutton.style.opacity = "0";
         }
     };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
 
 </script>
 <script>

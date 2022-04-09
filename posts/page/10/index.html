@@ -10,7 +10,7 @@
 <meta name="description" content="Posts - Archai&#39;s home">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/posts/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.286aec1e9630a9b9ad9f65bc74f5de62c1f244d221eff34da3bcfe1c8a42f62e.css" integrity="sha256-KGrsHpYwqbmtn2W8dPXeYsHyRNIh7/NNo7z&#43;HIpC9i4=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.3c6e1a1ead1685963f285a2039c65fa7961a5aaad6a79f7379a21c0c8ed5dd10.css" integrity="sha256-PG4aHq0WhZY/KFogOcZfp5YaWqrWp59zeaIcDI7V3RA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -56,6 +56,12 @@
 </head>
 
 <body class=" list" id=" top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -83,6 +89,26 @@
         <div class="logo">
             <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
             <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
             </span>
         </div>
         <ul id="menu">
@@ -119,81 +145,100 @@
   <h1>Posts</h1>
 </header>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>JavaScript基础之运算符
+    <h2>一组循环数组
     </h2>
   </header>
   <section class="entry-content">
-    <p>&#43;&#43;的前置与后置 let a1 = 1 let b1 = 2 let c1 = b1 &#43; a1&#43;&#43; console.log(a1, b1, c1);//2,2,3  let a2 = 1 let b2 = 2 let c2 = b2 &#43; &#43;&#43;a2 console.log(a2, b2, c2);//2,2,4 说明：
- 后置是先计算再&#43;&#43; 前置是先&#43;&#43;再计算  短路运算 let a = 0; let b = 1; let c = a || b; console.log(c);//1 利用这个原理，我们可以简化一些函数
-let sex = prompt(&#39;您的性别?&#39;) if (!sex){ sex=&#34;保密&#34; } console.log(sex); =&gt;
-let sex = prompt(&#39;您的性别?...</p>
+    <p>做网页轮播图，或者音乐播放列表时经常要用到一组循环的数组，到最后一项返回第一项，第一项返回最后一项
+利用两次判断 function doLoop( arr ){ arr.loop_idx = 0; // 返回当前的元素  arr.current = function(){ if( this.loop_idx &lt; 0 ){// 第一次检查  this.loop_idx = this.length - 1;// 更新 loop_idx  } if( this.loop_idx &gt;= this.length ){// 第二次检查  this.loop_idx = 0;// 更新 loop_idx  } return arr[ this.loop_idx ];//返回元素  }; // 增加 loop_idx 然后返回新的当前元素  arr.next = function(){ this.loop_idx&#43;&#43;; return this.current(); }; // 减少 loop_idx 然后返回新的当前元素  arr.prev = function(){ this....</p>
   </section>
-  <footer class="entry-footer"><span title='2020-08-22 00:00:00 +0000 UTC'>Aug 22, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之运算符" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E8%BF%90%E7%AE%97%E7%AC%A6/"></a>
+  <footer class="entry-footer"><span title='2020-07-08 00:00:00 +0000 UTC'>Jul 8, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 一组循环数组" href="https://www.fintinger.site/p/%E4%B8%80%E7%BB%84%E5%BE%AA%E7%8E%AF%E6%95%B0%E7%BB%84/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>红警常见问题(收录中……)
+    <h2>剪贴板功能实现
     </h2>
   </header>
   <section class="entry-content">
-    <p></p>
+    <p>经常会用到指定内容的复制粘贴问题，用到document的execCommand 方法,为此，我将这个功能封装为一个简单的函数:
+function doCopy($el, {deepCopy = false, copyTips = true, language = &#34;Chinese&#34;, bgColor = &#34;#ff6666&#34;, fontColor = &#34;#fff&#34;} = {}) { let tempEl = $(&#34;&lt;input id=&#39;selectEl&#39; type=&#39;text&#39; value=&#39;&#39;&gt;&#34;).val($el.text()) if (deepCopy) { tempEl.val($el.html()) } tempEl.appendTo($(&#34;body&#34;)) document.querySelector(&#39;#selectEl&#39;).select(); document.execCommand(&#39;copy&#39;); tempEl.remove() if (copyTips) { let tipEl = $(&#34;&lt;div class=&#39;copyTips&#39; &gt;成功复制到剪切板&lt;/div&gt;&#34;) tipEl.css({fontFamily: &#34;&#39;Microsoft YaHei&#39;, sans-serif&#34;,fontSize: &#34;1.2rem&#34;,position: &#34;fixed&#34;,top: &#34;1rem&#34;,textAlign: &#34;center&#34;, left: &#34;50%&#34;,fontWeight: &#34;bolder&#34;, borderRadius: &#34;.5rem&#34;,marginLeft: &#34;-8rem&#34;,width: &#34;16rem&#34;,height: &#34;3rem&#34;, lineHeight:&#34;3rem&#34;, background: bgColor,boxShadow: &#34;0 6px 10px -8px #000&#34;,color: fontColor, letterSpacing: &#34;4px&#34;,boxSizing: &#34;border-box&#34;,padding: &#34;0 10px 0 10px&#34;, display: &#34;none&#34;}) if (language === &#34;English&#34;) { tipEl....</p>
   </section>
-  <footer class="entry-footer"><span title='2020-08-15 00:00:00 +0000 UTC'>Aug 15, 2020</span>&nbsp;·&nbsp;0 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 红警常见问题(收录中……)" href="https://www.fintinger.site/p/%E7%BA%A2%E8%AD%A6%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%94%B6%E5%BD%95%E4%B8%AD/"></a>
+  <footer class="entry-footer"><span title='2020-07-07 00:00:00 +0000 UTC'>Jul 7, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 剪贴板功能实现" href="https://www.fintinger.site/p/%E5%89%AA%E8%B4%B4%E6%9D%BF%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>Ajax重复请求
+    <h2>ES6中新增关于Array的方法
     </h2>
   </header>
   <section class="entry-content">
-    <p>在发送某一次请求时，如果不对请求做去重处理那么，同一个请求有可能会发送很多次，一个个慢慢响应，这会很大程度影响性能以及页面的使用体验
- 全局变量
-/** * baseURL 是每次请求的地址 * x 表示XMLHttpRequest实例，初始为null * isSending 是用来判断请求是否处于发送状态的标识 */ const baseURL = &#34;http://127.0.0.1:8000/delay&#34; let x = null, isSending = false 原生请求 if (isSending) x.abort() x = new XMLHttpRequest() //正处于发送状态，修改标识 isSending = true x.open(&#34;GET&#34;, baseURL) x.send() x.onreadystatechange = function () { if (x.readyState === 4) {//当readyState=4,表示已经发送完毕，修改标识，是否成功返回则无需关心  isSending = false if (x.status &gt;= 200 &amp;&amp; x.status &lt; 300) { console.log(x.response); } } } jQuery 请求  jQuery做ajax请求时，可以仅针对一次请求，也可以利用jQuery全局事件对所有请求加以限制...</p>
+    <p>在javascript中，Array()经常用到，利用ES6中的一些新特性会让数组的处理更加方便快捷
+1.迭代空数组 直接创建一个数组
+const arr=new Array(4); //Output:[undefined，undefined，undefined，undefined] 利用map方法，转化成新的数组，企图得到 [0,1,2,3] 数组
+const arr=new Array(4); arr.map((ele,index) =&gt; index); //Output:[undefined，undefined，undefined，undefined] 解决这个问题可以在创建数组时用到Array.apply
+ apply与call类似，都是用来继承父类的方法的，不同之处是：
+  call() 方法分别接受参数。person.fullName.apply(person1, [&#34;Oslo&#34;, &#34;Norway&#34;]);
+  apply() 方法接受数组形式的参数.	person.fullName.call(person1, &#34;Oslo&#34;, &#34;Norway&#34;);
+  如果要使用数组而不是参数列表，则 apply() 方法非常方便。
+ const arr = Array.apply(null, new Array(4)); arr.map((ele,index) =&gt; index); //Output:[0,1,2,3] 由此，我们可以创建一个指定最大值、最小值、或者长度生成指定数列的方法
+/** * 生成自定义的连续数列 * @param{Number}min * @param{Number}max * @param{Number}len */ function newArr({min = null, max = null, len = null} = {}) { let newArray=[], skip = min if (len == null) {len = max - min &#43; 1} if (min == null) {skip = -max} const arr = Array....</p>
   </section>
-  <footer class="entry-footer"><span title='2020-08-13 00:00:00 +0000 UTC'>Aug 13, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to Ajax重复请求" href="https://www.fintinger.site/p/ajax%E9%87%8D%E5%A4%8D%E8%AF%B7%E6%B1%82/"></a>
+  <footer class="entry-footer"><span title='2020-07-06 00:00:00 +0000 UTC'>Jul 6, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to ES6中新增关于Array的方法" href="https://www.fintinger.site/p/es6%E4%B8%AD%E6%96%B0%E5%A2%9E%E5%85%B3%E4%BA%8Earray%E7%9A%84%E6%96%B9%E6%B3%95/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>跨域及CORS官方跨域
+    <h2>避免多条件并列
     </h2>
   </header>
   <section class="entry-content">
-    <p>JSONP  jsonp跨域的实现仅限于GET请求，不可用于POST
- 说明：实现的基本思路是利用html中script标签本身可跨域的特性，在发送请求时，在页面中创建script标签，追加到页面中。这实际上就像利用script标签引入外部资源
-/*main.js*/ //申明handle函数 function handle(data) { //do something.... } ele.onclick = function () { //1.创建script标签  const script = document.createElement(&#34;script&#34;) //2.修改script的src属性  script.src = &#34;http://127.0.0.1:8000/jsonP&#34; script.id=&#34;tempScript&#34;//添加id方便移除  //3.追加到页面中  document.body.appendChild(script) } /*server.js*/ app.get(&#39;/jsonP&#39;, (request, response) =&gt; { const data = { exist:1, msg:&#34;用户名已经存在!&#34; } let str = JSON.stringify(data) response.send(` handle(${str}); document.body.removeChild(document.querySelector(&#34;#tempScript&#34;)) `) }) 注意：response.send()/response.end()中利用ES6语法规范中的模板字符串直接返回一段js代码，script标签会自动解析并作用到页面上
-
-CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置CORS响应头实现跨域，这种跨域GET或POST请求均有效
-//服务端设置响应头 app.all(&#39;/data&#39;, (request, response) =&gt; { response.setHeader(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;)//允许来自所有域的请求  response....</p>
+    <p>开发中有时会遇到多个条件，执行相同的语句，也就是多个||这种：
+if (status === &#39;process&#39; || status === &#39;wait&#39; || status === &#39;fail&#39;) { doSomething() } 这种写法语义性、可读性都不太好。可以通过switch case或includes这种进行改造。
+switch case switch(status) { case &#39;process&#39;: case &#39;wait&#39;: case &#39;fail&#39;: doSomething() } includes const enum = [&#39;process&#39;, &#39;wait&#39;, &#39;fail&#39;] if (enum.includes(status)) { doSomething() </p>
   </section>
-  <footer class="entry-footer"><span title='2020-08-11 00:00:00 +0000 UTC'>Aug 11, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 跨域及CORS官方跨域" href="https://www.fintinger.site/p/%E8%B7%A8%E5%9F%9F%E5%8F%8Acors%E5%AE%98%E6%96%B9%E8%B7%A8%E5%9F%9F/"></a>
+  <footer class="entry-footer"><span title='2020-07-06 00:00:00 +0000 UTC'>Jul 6, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 避免多条件并列" href="https://www.fintinger.site/p/%E9%81%BF%E5%85%8D%E5%A4%9A%E6%9D%A1%E4%BB%B6%E5%B9%B6%E5%88%97/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>Ajax基础及Express框架基本使用
+    <h2>JavaScript生成图片文件路径json
     </h2>
   </header>
   <section class="entry-content">
-    <p>Baike  Ajax 即“AsynchronousJavascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式、快速动态网页应用的网页开发技术，无需重新加载整个网页的情况下，能够更新部分网页的技术。
-通过在后台与服务器进行少量数据交换，Ajax 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。—百度百科
- 请求报文 格式以及参数如下
-行 GET / HTTP/1.1 头 Host: fintinger.xyz Cookie: keyword=xyz Content-type: application/x-www-form-urlencoded User-agent: Chrome 83 空行 (必须有) 体 [GET]:空 [POST]:空/username=admin&amp;password=admin 
-响应报文 格式以及参数如下
-行 HTTP/1.1 200 Ok 头 Content-Type: text/html; charset=utf-8 Content-Length: 22 Content-encoding: gzip 空行 (必须有) 体 &lt;html&gt; &lt;head&gt; &lt;/head&gt; &lt;body&gt; &lt;h1&gt;Hello!&lt;/h1&gt; &lt;/body&gt; &lt;/html&gt; 
-
-Express框架使用 //1.引入express const express=require(&#39;express&#39;) //2.创建应用对象 const app=express() //3.创建路由规则 /** * request 请求报文封装 * response 响应报文封装 */ app....</p>
+    <p>在写小demo的过程中，经常需要把某个文件夹的图片文件的路径给引入，除非全部重命名成有序的数字，不然不好处理，这就用到了node中的fs和path模块，还没学…
+const path=require(&#34;path&#34;); const fs = require(&#39;fs&#39;); fs.stat(&#39;../images&#39;,(err)=&gt;{//图片文件所在目录  if (err)return; var result=&#39;{&#39; fs.readdir(&#34;../images&#34;,(err,data)=&gt;{//图片文件所在目录  for(var i=0;i&lt;Object.keys(data).length;i&#43;&#43;){ let ImgPath=&#34;\&#34;images/&#34;&#43;data[i]&#43;&#34;\&#34;&#34;; result&#43;=&#34;\&#34;&#34;&#43;i&#43;&#34;\&#34;:&#34;&#43;ImgPath&#43;&#34;,&#34;; } result=result.substring(0,result.length-1); let length=&#34;\&#34;&#34;&#43;&#34;length&#34;&#43;&#34;\&#34;&#34;&#43;&#34;:&#34;&#43;&#34;\&#34;&#34;&#43;Object.keys(data).length&#43;&#34;\&#34;&#34;//文件数量  result&#43;=&#34;,&#34;&#43;length&#43;&#39;}&#39; fs.writeFile(&#34;../data/imgPath.json&#34;,result,(err)=&gt;{ if(err)return; console.log(&#34;写入文件成功，一共&#34;&#43;Object.keys(data).length&#43;&#34;个文件&#34;); }); }); }); 生成的文件大概就是这样的一个json数据
+{&#34;0&#34;:&#34;images/1.jpg&#34;,&#34;1&#34;:&#34;images/10.jpg&#34;,&#34;2&#34;:&#34;images/100.jpg&#34;,&#34;3&#34;:&#34;images/101.jpg&#34;,&#34;4&#34;:&#34;images/102.jpg&#34;,&#34;5&#34;:&#34;images/103.jpg&#34;,&#34;6&#34;:&#34;images/104.jpg&#34;,&#34;7&#34;:&#34;images/105.jpg&#34;,&#34;8&#34;:&#34;images/106.jpg&#34;,&#34;9&#34;:&#34;images/107.jpg&#34;,&#34;10&#34;:&#34;images/108.jpg&#34;,&#34;length&#34;:&#34;109&#34;} </p>
   </section>
-  <footer class="entry-footer"><span title='2020-08-06 00:00:00 +0000 UTC'>Aug 6, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to Ajax基础及Express框架基本使用" href="https://www.fintinger.site/p/ajax%E5%9F%BA%E7%A1%80%E5%8F%8Aexpress%E6%A1%86%E6%9E%B6%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"></a>
+  <footer class="entry-footer"><span title='2020-07-05 00:00:00 +0000 UTC'>Jul 5, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript生成图片文件路径json" href="https://www.fintinger.site/p/javascript%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84json/"></a>
+</article>
+
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>JavaScript瀑布流布局
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>什么是瀑布流？ 一种图片在网页的布局方式，具体要求为：从页面第二行开始，后续图片跟在页面中最矮的那张图片后面
+
+用JavaScript怎么实现？ 为此我将整个过程封装为一个函数。
+/*HTML部分*/ &lt;head&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;main.css&#34;&gt; &lt;/head&gt; &lt;div id=&#34;box&#34;&gt;&lt;/div&gt;//container和img由js动态加入 &lt;script src=&#34;jquery.min.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;loadFile.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;main.js&#34;&gt;&lt;/script&gt; /*CSS部分*/ /*首先清空默认样式*/ #box{ position: relative; } .container{ float: left; } .container&gt;.pic{ width: 200px; } .container&gt;.pic&gt;img{ width: 100%; } /*JS部分*/ /*loadFile.js(在window.onload之前执行，加载DOM树)*/	$(function () { function addImg(imgNum,eleID) { let container for (let i = 1; i &lt; imgNum; i&#43;&#43;) { container=$(&#34;&lt;div class=&#39;container&#39;&gt;&lt;div class=&#39;pic&#39;&gt;&lt;img src=&#39;images/&#34;&#43;i&#43;&#34;.jpg&#39; alt=&#39;&#39;&gt;&lt;/div&gt;&lt;/div&gt;&#34;) $(eleID).append(container) } } addImg(109,&#34;#box&#34;); }) /*******************************************/ /*main.js(在$(function(){})之前执行，DOM树加载完毕 )*/ window....</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-07-01 00:00:00 +0000 UTC'>Jul 1, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript瀑布流布局" href="https://www.fintinger.site/p/javascript%E7%80%91%E5%B8%83%E6%B5%81%E5%B8%83%E5%B1%80/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
@@ -216,7 +261,7 @@ Express框架使用 //1.引入express const express=require(&#39;express&#39;) /
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.b210f1f514e121bd59a440070cfd204feed045eb2c591d4e65230335b405545b.min.js"></script>
+<script src="/assets/js/extended/extend.4a0deabf2968d39824344c0112b4d90c39c2696cd2ff9ce58f7ffe581437012f.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -269,6 +314,18 @@ window.onerror=function(){return true;}
     };
 
 </script>
-<video id="liveBgBox" autoplay loop muted poster="https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png" style="display: none;"></video>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<video id="liveBgBox" autoplay loop muted poster="https://picgo-jqf.oss-cn-beijing.aliyuncs.com/img/202204051521692.png" style="display: none;"></video>
 </body>
 </html>

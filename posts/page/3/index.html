@@ -10,7 +10,7 @@
 <meta name="description" content="Posts - Archai&#39;s home">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/posts/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fae13974f92a364555f4383162b9be4a3b35895e399ea2254f90325fff2b2e59.css" integrity="sha256-&#43;uE5dPkqNkVV9DgxYrm&#43;Sjs1iV45nqIlT5AyX/8rLlk=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.3c6e1a1ead1685963f285a2039c65fa7961a5aaad6a79f7379a21c0c8ed5dd10.css" integrity="sha256-PG4aHq0WhZY/KFogOcZfp5YaWqrWp59zeaIcDI7V3RA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -56,6 +56,12 @@
 </head>
 
 <body class=" list" id=" top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -83,6 +89,26 @@
         <div class="logo">
             <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
             <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
             </span>
         </div>
         <ul id="menu">
@@ -119,7 +145,157 @@
   <h1>Posts</h1>
 </header>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>线性代数——特征值特征向量
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>特征值与特征向量 性质  1.不同特征值的特征向量线性无关。
+2.ｋ重特征值至多有ｋ个线性无关的特征向量。(※)
+ 基本运算逻辑  
+  三角矩阵特征值为主对角线元素⭐
+注意，当$\lambda=1$时😢
+  秩为1的矩阵A
+ 特征值 $\sum_{aii},0,0…$ $A^n=\sum_{aii}^{n-1} A$​  特征值证明：
+  求特征值不能先对A做任何变换，而应该带着λ变换
+ 定义法  
+  如果两矩阵相似
+
+即 “两矩阵相似则具有相同特征值，特征向量也存在关系”
+ 真题&amp;例题 常识题？😢
+
+关于AB=0引申出的一题多解
+
+相似  AB相似，则 A&#43;kE ~ B&#43;kE
+ 行列式相等 俩秩相等 特征值相等 绩相等  利用已知构造方程组求参，进行预处理
+  由 $A^n=PB^nP^{-1}$
+ 若取B为∧，容易求得$A^n$​的值。(其他方法) 特征值也存在关系。(特征值规律)    用相似的传递性证明两矩阵相似
+ A~∧ ⭐  A~∧，$A=P∧P^{-1}$则...</p>
+  </section>
+  <footer class="entry-footer"><span title='2021-08-23 00:00:00 +0000 UTC'>Aug 23, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 线性代数——特征值特征向量" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%89%B9%E5%BE%81%E5%80%BC%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/"></a>
+</article>
+
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>线性代数——方程组
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>Ax=0  重点： n-r(A)，基础解系
+  Ax=0有非零解 $\Leftrightarrow $​​ r(A) &lt; n (未知数个数)$\Leftrightarrow $​​​ A的列向量线性相关
+特别地(针对水平型阵和方阵)，※
+ A-m×n,m&lt;n, Ax=0 必有非零解 A-n×n，Ax=0有非零解 $\Leftrightarrow $​ |A|=0（克拉默法则）    Ax=0有非零解，则其解线性组合必为Ax=0的解，所以Ax=0若有非零解，则必有无穷多解，在这无穷多解中，线性无关的解向量个数为 $t=n-r(A)$​​​​​，这就是基础解系​，基础解系是Ax=0的解向量中的极大线性无关组。此外，根据定理可知，Ax=0的任一解都可以由基础解系线性表出。
+  基础解系⭐
+ 是解 是线性无关组 个数t=n-r(A)   真题 
+ 【分析】“基础解系不存在”即为Ax=0没有非零解，根据 t=n-r(A) 知，本题等价转化为求解A的秩，求解秩时，找个大，找个小，通过夹逼，确定秩的值。
+【解】$A^{*}\neq0$，则$r(A^{ *})\geq 1$​，则$r(A)\geq n-1$
+Ax=b有解且不唯一，则$r(A) &lt; n$
+联立得，r(A)=n-1
+故t = n-r(A) = 1
+ ⭐⭐⭐⭐⭐
+
+ 【分析】根据通解的定义可知，若为通解，解必然线性无关，本题转化为证明 $a_1,a_2,a_3,a_4$哪三个线性无关
+
+这里用到了“低维无关，添加向量后的高维必无关”
+  此外，如果本题为证明计算题（证明基础解系），即 求$A^{*}x=0$​ 的基础解系，则...</p>
+  </section>
+  <footer class="entry-footer"><span title='2021-08-21 00:00:00 +0000 UTC'>Aug 21, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 线性代数——方程组" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%96%B9%E7%A8%8B%E7%BB%84/"></a>
+</article>
+
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>线性代数——向量
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>相关、无关    向量组中含零向量必然线性相关
+  组中至少存在两个成比例的向量必然线性相关
+   相关计算  $A(\alpha_1,\alpha_2,\alpha_3…\alpha_s)$​ 是否线性相关？
+$\Leftrightarrow$​​​ AX=0是否有非零解？(联系克拉默法则)
+$\Leftrightarrow$​​ r(A) &lt; s
+ 特别的，对于n维向量：⭐⭐
+  n个n维向量相关 $\Leftrightarrow$​ 行列式得0，即|A|=0 n&#43;1个n维向量必然线性相关   此外，还有以下几何性质
+ “$\alpha$相关”$\Leftrightarrow$ $\alpha=0$
+“$\alpha_1,\alpha_2$相关”$\Leftrightarrow$ $\alpha_1,\alpha_2$​共线
+ 存在$\alpha_1=k\alpha_2$
+ “$\alpha_1,\alpha_2,\alpha_3$​相关”$\Leftrightarrow$​ $\alpha_1,\alpha_2,\alpha_3$​​共面
+ 证明、选择  这是难点，重点
+ 证明线性无关 ​	
+ ⭐特征值不同的特征向量必线性无关。
+此外，不同特征值中如果某一特征值存在“一对多”的关系，这些特征向量也线性无关。即若$A \alpha_1=\lambda_1\alpha_1,A \alpha_2=\lambda_1\alpha_2,A \alpha=\lambda\alpha$，那么$\alpha_1,\alpha_2,\alpha_3$​线性无关​
+  恒等变形中乘的思路：
+ 利用已知构造出0使得式子变短 直接两边乘A，得出式子，然后通过两个式子的加加减减化简   真题&amp;经典例题
+
+ 本题第二问“写出和A相似的矩阵”(3分)
+分析：$\alpha_1，\alpha_2，\alpha_3$无关，后面出现$A\alpha_1，A\alpha_2，A\alpha_3$​想到相似...</p>
+  </section>
+  <footer class="entry-footer"><span title='2021-08-15 00:00:00 +0000 UTC'>Aug 15, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 线性代数——向量" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%90%91%E9%87%8F/"></a>
+</article>
+
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>线性代数——矩阵
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>基本计算  对角矩阵存在交换律，即 $\bigwedge_1 \bigwedge_2=\bigwedge_2 \bigwedge_1$​
+  注意交换位置
+ 对于 AB=C  B &amp; C均按列分块，则$A(\beta_1 \beta_2 \beta_3)=(\gamma_1 \gamma_2 \gamma_3)$，故B的列向量都是$AX=\gamma$ 的解，特别的，当AB=O即C=O时，B的列向量均是 $AX=0$ 的解。 B &amp; C按行分块，则 AB的行向量均可由B的行向量线性表出。 A &amp; C按列分块，则 AB的列向量均可由A的列向量线性表出。[2013]   规律1与解联系起来，尤其是AB=O推出B的列向量是Ax=0的解这一规律，除此之外AB=O也经常用r(A)&#43;r(B)≤ n这个不等式。
+“AB=O” 👉 方程的解(B的列向量是A的解)
+​	👉 秩 r(A)&#43;r(B) ≤ n (n为A的列,B的行)
+  规律2,3与线性表出关联，进而可以跟秩，向量组等价(能互相线性表出则等价)联系起来。
+ 几个特殊符号  $a(a_1,a_2,a_3)^T$
+ 矩阵: $ab^T$ = $(ba^T)^T$
+ $r(ab^T)$​​ ≤ $r(a)$​ ≤ 1
+任何两行成比例
+ $aa^T$: 对称矩阵
+数: $a^Tb = b^Ta$: $ab^T$ 或 $ba^T$​​​的绩(主对角线元素之和)...</p>
+  </section>
+  <footer class="entry-footer"><span title='2021-08-13 00:00:00 +0000 UTC'>Aug 13, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 线性代数——矩阵" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A9%E9%98%B5/"></a>
+</article>
+
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>线性代数——行列式
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>计算※ 数字型 题型 注意“存在三条对角线的情况”，通过 逐行相加 的到 “三角型”计算
+经典例题 
+
+抽象型 题型  行列式性质恒等变形 矩阵公式、法则恒等变形，E恒等变形 形特征值、相似  
+经典例题 
+ 思路：利用单位矩阵恒等变形
+ 
+ 思路一：利用矩阵相似（$\alpha_1，\alpha_2，\alpha_3$无关，后面出现$A\alpha_1，A\alpha_2，A\alpha_3$想到相似）
+利用乘法公式凑$PAP^{-1}=B$
+思路二：用行列式性质
+ 
+ 思路：“不可逆”=&gt;“行列式为0”=&gt;观察看到为特征值形式$|\lambda E-A|=0$，利用特征值与行列式的关系求解
+ 应用 特征值 思路 “消0且得公因式”
+例题 
+
+ 对于特征多项式应两行（或列）加加减减，至多是三行（或列）的加加减减找出 $\lambda-a$ 的公因式，然后再解一个二次方程，就可求出矩阵A的三个特征值
+ 克拉默法则 思路  不用来解大的方程组，常用小的证明题，
+ 齐次方程AX=0有非零解→ |A|=0 齐次方程AX=0没有非零解→ |A|≠0   经典例题 
+ “AB=O” 👉 方程的解(B的列向量是A的解)
+​	👉 秩 r(A)&#43;r(B) ≤ n (n为A的列,B的行)...</p>
+  </section>
+  <footer class="entry-footer"><span title='2021-08-10 00:00:00 +0000 UTC'>Aug 10, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 线性代数——行列式" href="https://www.fintinger.site/p/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E8%A1%8C%E5%88%97%E5%BC%8F/"></a>
+</article>
+
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>寻址方式与存储模式
@@ -130,203 +306,6 @@
   </section>
   <footer class="entry-footer"><span title='2021-07-22 00:00:00 +0000 UTC'>Jul 22, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 寻址方式与存储模式" href="https://www.fintinger.site/p/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E4%B8%8E%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F/"></a>
-</article>
-
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>外部排序相关
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>外部排序  由于数据元素太多，无法一次全部读入内存进行内部排序，这是就要通过外部排序来解决
- 1.外排原理 目的：通过内存的读写操作(每次读写操作都是成块的进行，比如每次1KB)，将存放于磁盘中的大量数据变得有序。
-(拿二路归并举例)
-如图，对于在磁盘中分块存放的数据，每块存入三个元素，共16块
-在内存中建立三个缓冲区输出缓冲区、输入缓冲区1以及输入缓冲区2
-
-1.1构造初始归并段 首先，依次地读入前两块数据，分别存入内存中的 缓冲区1、缓冲区2
-
-将输入缓冲区1以及输入缓冲区2中存放的数据经过 内存中的二路归并排序(内排)后，将生成的有序的块经 输出缓冲区 写入磁盘 得到一个有序的归并段
-
-同样的，对剩余块进行同样的操作可以得到
-
-1.2以归并段为单位进行归并 分别选取归并段1和2中较小的一块，依次读入至缓冲区1,2
-
-内排之后，写入内存，注意，输入缓冲区1(或2)空缺后要立即在归并段1(或2)中读入新的块到其中进行归并排序
-（以保证输出缓冲区始终输出归并段中较小的元素）
-
-
-最终，完成所有归并段的第一趟归并之后，会有
-
-之后，4块成一个归并段，两两归并
-
-……
-最终。经过3趟归并，整体会变得有序！
-
-2.优化思路 2.1时间开销分析 在整个排序过程中，时间开销分析如下
-
-可以看到，
-外部排序时间开销=读写外存的时间&#43;内部排序所需时间&#43;内部归并所需时间
-而读写外存时间是关键的时间开销，因此优化应该针对怎么减少读写外存的次数展开
-而文件总块数无法优化，只能针对归并的趟数优化
-为此，我们需要采用多路归并来解决
-2.3结论 
-2.4 优化思路一：采用多路归并 对上面的例子，如果采用四路归并
-
-只需96次读写即可！！
-2.5 优化思路二：减少初始归并段数量r 
-败者树 归并段数增加之后，内存中缓冲区数目增加，从中对比得出最小关键字的对比次数也会随之增多……
-1.算法思想 
-构造 如图所示的树结构，叶节点对应（脑补）各归并段（假设共有8个归并段），分支结点记录败者来自哪个归并段，最后根节点记录冠军来自哪个归并段，并且将冠军输出，为这8个归并段中的最小值。
-下轮选择冠军记录的那个归并段（归并段3）中的元素6，代替1的位置，如图，并依次向上的与各败者结点对比，胜则往上，败则留下，最终输出冠军
-接下来，循环这个过程
-2.效率分析 对于k路归并，第一次构造败者树需要对比关键字k-1次 有了败者树，选出最小元素，只需对比关键字次$\left \lceil \log_2k \right \rceil$...</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-06-10 00:00:00 +0000 UTC'>Jun 10, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 外部排序相关" href="https://www.fintinger.site/p/%E5%A4%96%E9%83%A8%E6%8E%92%E5%BA%8F%E7%9B%B8%E5%85%B3/"></a>
-</article>
-
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>排序算法相关
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>排序算法 平均时间复杂度 空间复杂度 稳定性 适用情况     插入排序 $O(n^2)$ O(1) 稳定 n较小，初始序列基本有序   希尔排序 $O(n^{1.3})$ O(1) 不稳定    冒泡排序 $O(n^2)$ O(1) 稳定 n较小，初始序列基本有序   快速排序 $O(n\log_2n)$ $O(nlog_2n)$ 不稳定 初始序列无序   简单选择排序 $O(n^2)$ O(1) 不稳定 n较小   堆排序 $O(n\log_2n)$ O(1) 不稳定 n较大或只排前几位   2-路归并排序 $O(n\log_2n)$ O(n) 稳定 n很大   链式基数排序 $O(d(n&#43;rd))$ $O(rd)$ 稳定 n大，关键字值小    相关概念 1....</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-06-10 00:00:00 +0000 UTC'>Jun 10, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 排序算法相关" href="https://www.fintinger.site/p/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/"></a>
-</article>
-
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>查找算法相关
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>顺序查找 typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数组基址  int TableLen;//查找表长度 }SSTable; int Seq_Search(SSTable ST,int key){ ST.elem[0]=key; int i; for (i = ST.TableLen;ST.elem[i]!=key ; i--) {}//从后往前查找，最终返回下标i  return i;//返回0说明没找到 } 效率分析 对于长度为n的顺序表，如果查找成功 $$ ASL={\frac{1&#43;2&#43;…&#43;n}{n}}=\frac{n&#43;1}{2} $$ 若果查找失败，则 $ASL=n&#43;1$
-总体上，该算法时间复杂度为 $O(n)$
-优化思路 1.如果使得表中的元素有序存放……，可以构造出一棵查找判定树
-此时，查找失败时$ASL=\frac{1&#43;2&#43;…&#43;n&#43;n}{n&#43;1}=\frac{n}{2}&#43;\frac{n}{n&#43;1}$
-优点： 容易查找失败时ASL更小
-2.如果各元素被查找的概率不同……，可以把概率大的靠前
-优点： 容易查找成功时ASL更小
-折半查找  折半查找，又称“二分查找”，仅适用于有序的顺序表。
- 针对升序排列的顺序表，代码实现如下
-typedef struct{//查找表的数据结构（顺序表）  int *elem;//动态数组基址  int TableLen;//查找表长度 }SSTable; int BinarySearch(SSTable L,int key){ int low=0,high=L.TableLen-1,mid; while (low&lt;=high) { mid=(low&#43;high)/2; if (L....</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-06-06 00:00:00 +0000 UTC'>Jun 6, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 查找算法相关" href="https://www.fintinger.site/p/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/"></a>
-</article>
-
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>图的应用
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>一、最小生成树 📌什么是生成树？ 连通图的生成树是包含图中所有顶点的一个极小连通子图，通俗地讲，就是“边尽可能少，但需保持连通”。
-规律： 对于一个顶点数|V|=n的树，其生成树的边数|E|=n-1。如果将|E|&#43;1，必然会形成回路；如果将|E|-1，则会成为非连通图。
-
-📌什么是最小生成树？  最小生成树，也称最小代价树(Minimum Spanning Tree，MST)
- 是带权连通无向图的生成树中边的权值之和最小的一棵树，联系实际问题不难理解其中“最小代价”的意味。
-Prim（普利姆算法），Kruskal（克鲁斯卡尔算法）就是寻找最小生成树的常用算法。
-1.Prim（普利姆算法）  从某一顶点开始，每次将代价最小的新顶点纳入生成树，直至所有顶点都纳入为止。
- 图示 
-易知，此方法得到的最小生成子树是不唯一的。
-代码实现 void MiniSpanTree_PRIMI(Graph G,int u){ //从顶点u出发找G的最小生成树  for (int i = 0; i &lt;G.vexnum; &#43;&#43;i) {//辅助数组初始化  if(i!=u){ closedge[i]={u,G.arcs[u][i]}; } } closedge[u].lowcost=0; for (int j = 0; j &lt; G.vexnum; j&#43;&#43;) { k=minimum(closedge);//求生成树的下一个节点  cout&lt;&lt;cloedge[k].adjvex&lt;&lt;G.vex[k]; closedge[k].lowcost=0; for (int i = 0; i &lt; G.vexnum; i&#43;&#43;) { if (G.arc[k][j].adj&lt;closedge[j].lowcost) { closedge[j]={G....</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-06-04 00:00:00 +0000 UTC'>Jun 4, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 图的应用" href="https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8/"></a>
-</article>
-
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>图的遍历
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>广度优先遍历（BFS）  BFS(Breadth-First-Search)，参考对树的层序遍历
- 
-对上面的图从①出发进行BFS得到序列：
-①②⑤ ⑥ ③⑦ ④⑧
-若采用不同的储存结构，可能会得到不同的遍历结果（这个差异主要来自寻找邻接点的过程），对于邻接矩阵存储的图，由于邻接矩阵是唯一的，所以BFS序列也是唯一的；同理，邻接表存储的图BFS序列不唯一。
-BFS算法  与树的层序遍历不同的是，由于图中存在回路，遍历过程中会出现重复访问的问题，故可构造visited数组，用来标记已访问过的数组。
-此外，还应针对非连通图做额外的判断，遍历完一个连通分量（极大连通子图）后，遍历查找visited数组中是否还存在未遍历的，如果有即为另一连通分量，继续调用BFS即可。
- void BFS(Graph G,int v); bool visited[MAX_VERTEX_NUM]; SqQueue Q;//辅助队列 void BFSTraverse(Graph G){ //初始化visited数组  for (int i = 0; i &lt; G.vexnum; &#43;&#43;i) {//使下标从1开始  visited[i]=false; } //对非连通图的处理  for (int v = 0; v &lt; G.vexnum; &#43;&#43;v) { if (!visited[v]) BFS(G,v); } } //从顶点v出发广度优先遍历图G void BFS(Graph G,int v){ visit(v); visited[v]=true; EnQueue(Q,v);//顶点v入队列Q  while(!isEmpty(Q)){ DeQueue(Q,v);//顶点v出队列Q  for (w=FirstNeighbor(G,v);w&gt;=0;w=NextNeighbor(G,v,w))//处理v的所有邻接点  if (!...</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-06-03 00:00:00 +0000 UTC'>Jun 3, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 图的遍历" href="https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/"></a>
-</article>
-
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>图的存储
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>邻接矩阵  Vextex/Vertices 顶点; Martix 矩阵; Arc 弧.
- 
-代码实现 #define MaxVextexNum 100//容许存储的最大顶点数  typedef struct{ char Vex[MaxVextexNum]; //可以将定点之间的关系用int 类型01表示，也可定义为boolean/枚举类型，占空间更小  bool Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum;//顶点数和弧|边数 }MGraph; 即
-找度 根据邻接矩阵计算结点的度TD
-    无向图 有向图     $TD(V_i)$ 第i行（或i列）中非零元素的个数 $ID(V_i)$ : i行非零元素个数
-$OD(V_i)$: i列非零元素个数
-TD=ID&#43;OD    对于带权图（网） 
-#define MaxVextexNum 100//容许存储的最大顶点数 #define INIFINITY //宏定义，表示无穷  typedef char VextexType;//顶点 typedef int EdgeType;//权值  typedef struct{ VextexType Vex[MaxVextexNum]; EdgeType Edge[MaxVextexNum][MaxVextexNum]; int vexnum,arcnum; }MGraph; 复杂度 空间复杂度来自数组Vex[]跟Edge[]，故空间复杂度为$|V|&#43;|V|^2=O(|V|^2)$，即为顶点数量的二次方，故此方法更适合存储稠密图，不然有较多浪费。...</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-06-02 00:00:00 +0000 UTC'>Jun 2, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 图的存储" href="https://www.fintinger.site/p/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/"></a>
-</article>
-
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>AVL树
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>平衡二叉树是Adelson-Velsky和 Landis发明，故命名为AVL树。也称平衡二叉查找树。
- ✨特点： ①左子树&lt;根&lt;右子树； ②任一节点，左右子树高度之差不超过1.
-平衡因子 $平衡因子=左子树高-右子树高$
-AVL树的插入操作 AVL树插入新结点导致不平衡之后，只需将最小不平衡子树平衡，其他祖先结点会随之恢复平衡。
-调整最小不平衡子树 注意：调整过后必须保证其BST的特性，即“左子树1.LL  即在以A为根节点的树的左孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
- 
-调整过程如下：
-
-2.RR  即在以A为根节点的树的右孩子B的右子树上插入新结点，导致A成为最小不平衡子树。
- 
-调整过程如下：
-
-3.LR  即在以A为根节点的树的左孩子B的右子树上插入新结点，导致A成为最小不平衡子树。
- 
-观察得知，所进行的调整就是保证$|平衡因子|&lt;=1$，因此若插入操作使得
-左 - 右 &gt; 1 =&gt; 右旋
-右 - 左 &gt; 1 =&gt;左旋
-而当进行了LR插入操作之后，导致以A为根节点的树 左-右&gt;1，理应右旋但是，由上述结果可知，经过右旋之后：
-
-可以看到，为了保证其左子树&lt;根&lt;右子树的特性，经过调整后，依然存在右-左&gt;1的问题；
-因此，对于LR型不能简单进行右旋调整，应该先将其转化为LL型 (左旋)，再进行右旋；
-为此，我们需要将BR结点展开，之后旋转成为LL型插入
-
-可以看到，展开后又出现两种插入情况CL&amp;CR，但其实两者处理大同小异：
-CR插入调整过程如下：
-
-4.RL  即在以A为根节点的树的右孩子B的左子树上插入新结点，导致A成为最小不平衡子树。
- 
-参考LR型，其调整过程如下：
-
-查找操作效率分析 Assuming that, $n_h$表示深度为h的平衡树中含有的最少结点，则
-$n_0=0$,$n_1=1$,$n_2=2$…存在递归关系 $n_h=n_{h-1}&#43;n_{h-2}&#43;1$,即左右子树结点之和&#43;根节点。
-可以证明(AVL证明)，n个结点的平衡二叉树最大深度数量级为$\log_2n$，则其查找操作的复杂度为$O(\log_2n)$</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-05-23 00:00:00 +0000 UTC'>May 23, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to AVL树" href="https://www.fintinger.site/p/avl%E6%A0%91/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
@@ -349,7 +328,7 @@ $n_0=0$,$n_1=1$,$n_2=2$…存在递归关系 $n_h=n_{h-1}&#43;n_{h-2}&#43;1$,即
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.fa3df6438f7c3b2ccdb1417e73e78d09dad45de34b8e8d1146747073cccd4ab9.min.js"></script>
+<script src="/assets/js/extended/extend.4a0deabf2968d39824344c0112b4d90c39c2696cd2ff9ce58f7ffe581437012f.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -400,6 +379,18 @@ window.onerror=function(){return true;}
             mybutton.style.opacity = "0";
         }
     };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
 
 </script>
 <video id="liveBgBox" autoplay loop muted poster="https://picgo-jqf.oss-cn-beijing.aliyuncs.com/img/202204051521692.png" style="display: none;"></video>

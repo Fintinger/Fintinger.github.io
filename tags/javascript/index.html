@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/tags/javascript/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fae13974f92a364555f4383162b9be4a3b35895e399ea2254f90325fff2b2e59.css" integrity="sha256-&#43;uE5dPkqNkVV9DgxYrm&#43;Sjs1iV45nqIlT5AyX/8rLlk=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.3c6e1a1ead1685963f285a2039c65fa7961a5aaad6a79f7379a21c0c8ed5dd10.css" integrity="sha256-PG4aHq0WhZY/KFogOcZfp5YaWqrWp59zeaIcDI7V3RA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -41,6 +41,12 @@
 </head>
 
 <body class=" list" id=" top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -68,6 +74,26 @@
         <div class="logo">
             <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
             <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
             </span>
         </div>
         <ul id="menu">
@@ -104,7 +130,7 @@
   <h1>Javascript</h1>
 </header>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>ES6之Promise用法小结
@@ -123,7 +149,7 @@ new Promise((resolve, reject) =&gt; { resolve(&#39;success&#39;) //reject(&#39;r
   <a class="entry-link" aria-label="post link to ES6之Promise用法小结" href="https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/"></a>
 </article>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>浏览器本地存储
@@ -148,7 +174,7 @@ new Promise((resolve, reject) =&gt; { resolve(&#39;success&#39;) //reject(&#39;r
   <a class="entry-link" aria-label="post link to 浏览器本地存储" href="https://www.fintinger.site/p/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/"></a>
 </article>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>Javascript正则表达式
@@ -168,7 +194,7 @@ let str = &#39;fintinger2592030861.com$323e&#39; let reg = new RegExp(&#39;\\d&#
   <a class="entry-link" aria-label="post link to Javascript正则表达式" href="https://www.fintinger.site/p/javascript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"></a>
 </article>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>Es6中的class类
@@ -185,7 +211,7 @@ class Admin{ static show(){}//__proto__中  show(){}//prototype中 } console.dir
   <a class="entry-link" aria-label="post link to Es6中的class类" href="https://www.fintinger.site/p/es6%E4%B8%AD%E7%9A%84class%E7%B1%BB/"></a>
 </article>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>JavaScript中的继承与原型链分析
@@ -202,7 +228,7 @@ let a2 = {name: &#39;a2&#39;} let b2 = {name: &#39;b2&#39;} a2.__proto__ = b2 co
   <a class="entry-link" aria-label="post link to JavaScript中的继承与原型链分析" href="https://www.fintinger.site/p/javascript%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%88%86%E6%9E%90/"></a>
 </article>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>关于JavaScript模块化
@@ -215,42 +241,6 @@ let _module = (function () { let moduleList = {} function define(name, modules, 
   </section>
   <footer class="entry-footer"><span title='2020-09-02 00:00:00 +0000 UTC'>Sep 2, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to 关于JavaScript模块化" href="https://www.fintinger.site/p/%E5%85%B3%E4%BA%8Ejavascript%E6%A8%A1%E5%9D%97%E5%8C%96/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>JavaScript基础之对象
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>对象中参数获取和值的接收 1.对象中利用key获取value. |  [] let obj = {name: &#39;jqf&#39;, age: 19} for (let key in obj) { // console.log(obj.key);//会报undefined  console.log(obj[key]);//jqf,19 } 👉 delete Object.key()
-delete obj.name console.log(obj);//{ age: 19 } 2.参数/配置合并 👉 展开语法
- 利用展开语法合并对象，让后面传入的参数覆盖默认参数，完成合并
- function upload(params) { let config = { url: &#39;/images&#39;, type: &#39;*.jpg,*.png&#39; } config = {...config, ...params} //do something...  console.log(config); } upload({type:&#39;*.webp&#39;})//{ url: &#39;/images&#39;, type: &#39;*.webp&#39; } 👉 解构赋值
- 解构赋值会把相同key的进行合并，后面覆盖掉前面的
- function upload(params = {}) { let {url = &#39;/images&#39;, type = &#39;*....</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-08-31 00:00:00 +0000 UTC'>Aug 31, 2020</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之对象" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%AF%B9%E8%B1%A1/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>JavaScript基础之函数相关
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>关于函数传参  当参数数量不确定时，通常用arguments 来统一接收
- function sum() { return [...arguments].reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6 可以用展开语法代替arguments接收所有的参数：
-function sum(...args) { return args.reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6 注意： 接收参数时展开语法放其他形参后面，做统一接收
-递归函数  递归函数有两个关键点，一是要有退出执行的条件，二是要不断执行自身并返回
- 递归思想实现阶乘函数 function factorial(num) { if (num === 1) { return num } return num * factorial(--num) } 如果用到箭头函数，可以简写为：
-function factorial(num) { return num === 1 ?...</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-08-28 00:00:00 +0000 UTC'>Aug 28, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之函数相关" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
@@ -272,7 +262,7 @@ function factorial(num) { return num === 1 ?...</p>
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.fa3df6438f7c3b2ccdb1417e73e78d09dad45de34b8e8d1146747073cccd4ab9.min.js"></script>
+<script src="/assets/js/extended/extend.4a0deabf2968d39824344c0112b4d90c39c2696cd2ff9ce58f7ffe581437012f.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -323,6 +313,18 @@ window.onerror=function(){return true;}
             mybutton.style.opacity = "0";
         }
     };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
 
 </script>
 <video id="liveBgBox" autoplay loop muted poster="https://picgo-jqf.oss-cn-beijing.aliyuncs.com/img/202204051521692.png" style="display: none;"></video>

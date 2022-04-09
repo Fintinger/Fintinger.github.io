@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.286aec1e9630a9b9ad9f65bc74f5de62c1f244d221eff34da3bcfe1c8a42f62e.css" integrity="sha256-KGrsHpYwqbmtn2W8dPXeYsHyRNIh7/NNo7z&#43;HIpC9i4=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.3c6e1a1ead1685963f285a2039c65fa7961a5aaad6a79f7379a21c0c8ed5dd10.css" integrity="sha256-PG4aHq0WhZY/KFogOcZfp5YaWqrWp59zeaIcDI7V3RA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -41,6 +41,12 @@
 </head>
 
 <body class=" list" id=" top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -68,6 +74,26 @@
         <div class="logo">
             <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
             <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
             </span>
         </div>
         <ul id="menu">
@@ -104,69 +130,8 @@
   <h1>数据结构</h1>
 </header>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
-  <header class="entry-header">
-    <h2>由遍历序列构造出二叉树
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>由遍历序列构造出二叉树 仅知道一种遍历序列是无法确定唯一的二叉树的，以中序遍历为例，对于一个中序遍历序列“BDCAE”，其对应的树形结构可能有下面三种：
-
-因此，至少需要两种遍历序列才可以推知树形结构。
-1.前序&#43;中序遍历序列 🎈基本步骤 由前序遍历的特性得知，前序遍历中第一个节点必然为根节点，因此根据中序遍历特性，根节点左边为左子树下的所有节点，右边为右子树下的所有节点，然后分别在左子树序列右子树序列中重复进行即可。
-🎈示例
- 前序遍历序列：A D B C E 中序遍历序列：B D C A E  首先能确定根节点为A，根据中序遍历序列可以得到：
-
-对于左子树BDC，根据前序遍历，此子树根节点为D，根据中序遍历序列：
-
-至此，二叉树的还原工作就完成了！至于更复杂的序列，逐步推断即可😋
-2.后序&#43;中序遍历序列 🔑与1不用的是，后序遍历中根节点为后序遍历序列尾部的那个节点，其余参照1即可！
-3.层序遍历&#43;中序遍历 🔑 根据层序遍历特性，层序遍历中根节点始终在子树前面，“根左右”
-🎈示例
- 层序遍历序列：A D E B C 中序遍历序列：B D C A E  根节点为A，根据中序遍历序列可以得到：
-
-对于左子树BDC，根据前序遍历，此子树根节点为D，根据中序遍历序列：
-
-思考  如果前序，后续，层序两两组合能否确定唯一的树结构？
- 
-假设给定序列如下：
- 前序：A B 后序：B A 层序：A B  其两两组合都满足两种结构：
-
-因此前序，后续，层序两两组合不能确定唯一的树结构。</p>
-  </section>
-  <footer class="entry-footer"><span title='2021-05-09 00:00:00 +0000 UTC'>May 9, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 由遍历序列构造出二叉树" href="https://www.fintinger.site/p/%E7%94%B1%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E5%87%BA%E4%BA%8C%E5%8F%89%E6%A0%91/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
-  <header class="entry-header">
-    <h2>向量空间管理策略
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>向量的空间管理，有静态和动态两种策略
- 静态空间管理策略 开辟内部数组_elem[]并使用一段地址连续的物理空间，_capacity表示总容量 ，_size表示当前的实际规模n，示意图如下：
-
-若采用静态空间管理策略，容量_capacity固定，则有明显的不足…
-上溢/overflow： _elem[]不足以存放所有元素，尽管此时系统往往仍有足够的空间
-下溢/underflow：  _elem[]中的元素寥寥无几，装填因子 λ = _size / _capacity « 50%
-动态空间管理策略 在即将上溢时，适当扩大内部数组的容量
-递增策略 当需要扩容时，为_capacity追加固定大小的空间，即
-T* oldElem = _elem; _elem = new T[ _capacity &#43;= INCREMENT ]; 考虑最坏情况，在初始容量为0的空向量中连续插入n = m*I个元素
-那么，在第1，I&#43;1，2I&#43;1，3I&#43;1…次插入元素时都需要扩容，表示为
-
-倍增策略 当需要扩容时，增加_capacity 为原来的两倍，即
-T* oldElem = _elem; _elem = new T[ _capacity &lt;&lt;= 1 ]; 考虑最坏情况，在初始容量为1的空向量中连续插入n = 2^m个元素
-那么，在第1，2，4，8…次插入元素时都需要扩容，表示为
-
-两种策略的复杂度分析 考虑最坏的情况，两种策略的复杂度分别为
- 递增策略： 为算术级数，0&#43;I&#43;2I&#43;…=O(n ²) 倍增策略： 为几何级数，1&#43;2¹&#43;2²&#43;2³&#43;…=O(2^m)=O(n)      递增策略 倍增策略     累计时间 O(n ²) O(n)   分摊时间 O(n) O(1)   装填因子 λ ≈100% &gt;50%    可以看出，倍增策略在牺牲空间的基础上，换取时间上的巨大提升，可采取√...</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-11-16 00:00:00 +0000 UTC'>Nov 16, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 向量空间管理策略" href="https://www.fintinger.site/p/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>减而治之与分而治之
     </h2>
@@ -192,7 +157,8 @@ T(n) =O(1) × (n&#43;1) =O(n)
   <a class="entry-link" aria-label="post link to 减而治之与分而治之" href="https://www.fintinger.site/p/%E5%87%8F%E8%80%8C%E6%B2%BB%E4%B9%8B%E4%B8%8E%E5%88%86%E8%80%8C%E6%B2%BB%E4%B9%8B/"></a>
 </article>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>DS导论
     </h2>
@@ -233,7 +199,7 @@ T(n) =O(1) × (n&#43;1) =O(n)
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.b210f1f514e121bd59a440070cfd204feed045eb2c591d4e65230335b405545b.min.js"></script>
+<script src="/assets/js/extended/extend.4a0deabf2968d39824344c0112b4d90c39c2696cd2ff9ce58f7ffe581437012f.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -286,6 +252,18 @@ window.onerror=function(){return true;}
     };
 
 </script>
-<video id="liveBgBox" autoplay loop muted poster="https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png" style="display: none;"></video>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<video id="liveBgBox" autoplay loop muted poster="https://picgo-jqf.oss-cn-beijing.aliyuncs.com/img/202204051521692.png" style="display: none;"></video>
 </body>
 </html>

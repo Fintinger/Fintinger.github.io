@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/categories/%E5%89%8D%E7%AB%AF/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fae13974f92a364555f4383162b9be4a3b35895e399ea2254f90325fff2b2e59.css" integrity="sha256-&#43;uE5dPkqNkVV9DgxYrm&#43;Sjs1iV45nqIlT5AyX/8rLlk=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.3c6e1a1ead1685963f285a2039c65fa7961a5aaad6a79f7379a21c0c8ed5dd10.css" integrity="sha256-PG4aHq0WhZY/KFogOcZfp5YaWqrWp59zeaIcDI7V3RA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -41,6 +41,12 @@
 </head>
 
 <body class=" list" id=" top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -68,6 +74,26 @@
         <div class="logo">
             <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
             <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
             </span>
         </div>
         <ul id="menu">
@@ -104,7 +130,77 @@
   <h1>前端</h1>
 </header>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>关于JavaScript模块化
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>自定义一个模块引擎 要求： 能够让模块之间产生依赖关系
+代码
+let _module = (function () { let moduleList = {} function define(name, modules, action) { modules.map((n, i) =&gt; { //将传入的只含名称的模块数组 =&gt; 指定名称模块的返回结果  modules[i] = moduleList[n] }) moduleList[name] = action.apply(null, modules) // console.log(moduleList);  } return {define} })(); //定义一个工具库，暴露给外界使用，输出 _module.define(&#39;tools&#39;, [], function () { return { max(arr) { return arr.sort((a, b) =&gt; b - a)[0]//获取最大值挺别致昂  }, min(arr) { return arr.sort((a, b) =&gt; b - a)[arr.length - 1]; } } }); //使用之前定义的工具库，引入 _module....</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-09-02 00:00:00 +0000 UTC'>Sep 2, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 关于JavaScript模块化" href="https://www.fintinger.site/p/%E5%85%B3%E4%BA%8Ejavascript%E6%A8%A1%E5%9D%97%E5%8C%96/"></a>
+</article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>JavaScript基础之对象
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>对象中参数获取和值的接收 1.对象中利用key获取value. |  [] let obj = {name: &#39;jqf&#39;, age: 19} for (let key in obj) { // console.log(obj.key);//会报undefined  console.log(obj[key]);//jqf,19 } 👉 delete Object.key()
+delete obj.name console.log(obj);//{ age: 19 } 2.参数/配置合并 👉 展开语法
+ 利用展开语法合并对象，让后面传入的参数覆盖默认参数，完成合并
+ function upload(params) { let config = { url: &#39;/images&#39;, type: &#39;*.jpg,*.png&#39; } config = {...config, ...params} //do something...  console.log(config); } upload({type:&#39;*.webp&#39;})//{ url: &#39;/images&#39;, type: &#39;*.webp&#39; } 👉 解构赋值
+ 解构赋值会把相同key的进行合并，后面覆盖掉前面的
+ function upload(params = {}) { let {url = &#39;/images&#39;, type = &#39;*....</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-08-31 00:00:00 +0000 UTC'>Aug 31, 2020</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript基础之对象" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%AF%B9%E8%B1%A1/"></a>
+</article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>JavaScript基础之函数相关
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>关于函数传参  当参数数量不确定时，通常用arguments 来统一接收
+ function sum() { return [...arguments].reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6 可以用展开语法代替arguments接收所有的参数：
+function sum(...args) { return args.reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6 注意： 接收参数时展开语法放其他形参后面，做统一接收
+递归函数  递归函数有两个关键点，一是要有退出执行的条件，二是要不断执行自身并返回
+ 递归思想实现阶乘函数 function factorial(num) { if (num === 1) { return num } return num * factorial(--num) } 如果用到箭头函数，可以简写为：
+function factorial(num) { return num === 1 ?...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-08-28 00:00:00 +0000 UTC'>Aug 28, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript基础之函数相关" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3/"></a>
+</article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>JavaScript基础之Map与Weakmap类型
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>Map类型 1.属性 👉 set() 设置值
+let map = new Map() let fn = function () {console.log(&#39;this is function&#39;)} let user = {name: &#39;jqf&#39;, age: 18} map.set(&#39;key&#39;, &#39;value&#39;) map.set(fn, &#39;function&#39;) map.set(user, &#39;object&#39;) console.log(map); /*Map(3){&#34;key&#34; =&gt; &#34;value&#34;, ƒ =&gt; &#34;function&#34;, {…} =&gt; &#34;object&#34;}*/ 注意： Map类型，字符串、函数、对象都可以作为key设置
+👉 size Map长度
+console.log(map.size);//3 👉get() 获取值
+console.log(map.get(fn));//function  //通过key获取value 👉 delete() / clear() 删除某个，清空Map
+console.log(map.delete(fn));//true console.log(map); /*Map(3){&#34;key&#34; =&gt; &#34;value&#34;, {…} =&gt; &#34;object&#34;}*/ 👉 has() 是否有某个key
+console.log(map.has(user));//true 2.遍历 👉forEach(val,key,map)...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-08-26 00:00:00 +0000 UTC'>Aug 26, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript基础之Map与Weakmap类型" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bmap%E4%B8%8Eweakmap%E7%B1%BB%E5%9E%8B/"></a>
+</article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>JavaScript基础之Set与Weakset
@@ -123,7 +219,7 @@ let set=new Set([&#39;jqf&#39;,&#39;fin&#39;,&#39;zzh&#39;]) set.forEach((value,
   <a class="entry-link" aria-label="post link to JavaScript基础之Set与Weakset" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bset%E4%B8%8Eweakset/"></a>
 </article>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>JavaScript基础之Symbol类型
@@ -140,115 +236,6 @@ let user1={ name:&#39;李四&#39;, key:Symbol() } let user2={ name:&#39;李四&#
   </section>
   <footer class="entry-footer"><span title='2020-08-24 00:00:00 +0000 UTC'>Aug 24, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to JavaScript基础之Symbol类型" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bsymbol%E7%B1%BB%E5%9E%8B/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>JavaScript基础之数组深倔
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>数组是经常用到的一种数据结构
- 定义方法 let a = new Array(3) let b = [1, 2, 3]  如何定义一个只有一个元素的数组？
- new Array(n)表示有n个空元素的的数组，利用Array.of(n),可以定义一个只有n元素的数组
-类型转换  利用join 可以把数组转成字符串
- let a = [1, 2, 3, 4, 5] let b = a.join(&#39;&#39;) console.log(b); 说明： join 的作用就是将数组中的所有元素用指定的符号连接，成为一个字符串
- 如何把DOM集合NodeList转换成普通数组形式？
- Nodelist形式无法使用.map(),reduce()等方法(能用forEach())，处理不太方便，因此需要转换成普通数组类型
-let titles = document.querySelectorAll(&#39;h1&#39;); [...titles].map((v, i,titles) =&gt; { console.log(v); }) titles.map()//Uncaught TypeError: titles.map is not a function 注意： 利用展开语法可以把DOM集合转换成普通数组形式
-解构赋值  是一种数组间批量赋值的方法
- let [name, age] = [&#39;fin&#39;, 18] console....</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-08-24 00:00:00 +0000 UTC'>Aug 24, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之数组深倔" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%95%B0%E7%BB%84%E6%B7%B1%E5%80%94/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>JavaScript基础之值类型
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>字符串 1.截取字符串  主要有slice()、substr()、substring() 三种方法
-  一个参数[i]  都是从i开始截取，返回n及其后面的全部字符串。
- 第二个参数[i,n]  slice(i,n)和substring(i,n)表示从i开始截取到n；substr(i,n)，表示从i开始截取n个
- 负参数  slice()和substr()将最后一位记为-1，然后依次编号；substring()则会将任何负参数变为0，然后查找
-let w = &#39;fintinger.xyz&#39; let a = w.slice(-4, w.length) let b = w.substring(-1, 2) let c = w.substr(-4, 4) console.log(a, b, c);//.xyz fi .xyz 2.查找字符串  主要有indexof()、includes()、lastIndexof() 三种方法
- 共同点：
- 两个参数[searchString,position]，第一个为要检索的字符串，第二个为开始检索位置； 若position &lt; 0，则position = 0 position可以省略  不同之处：
- lastIndexof()为从右往左找，找到第一个立即返回索引！其他两个都是从左往右 indexof(),lastIndexof()找不到则返回-1，includes()找不到返回false position 省略之后，includes(),indexof()默认值为0，lastIndexof()则为str.length  3.重复函数 repeat() 作用： 复制粘贴指定字符串指定次数
-案例：
-/** * 电话号码模糊处理 * @param{String|Number}number * @param{Number}len * @returns {Error|string} * @constructor */ function Phone(number, len = 4) { number = String(number) return number....</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-08-23 00:00:00 +0000 UTC'>Aug 23, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之值类型" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%80%BC%E7%B1%BB%E5%9E%8B/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>JavaScript基础之JS黑洞
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>JavaScript中最容易忽视的一些点
- let和var  都用来定义变量，但二者之间有些细微的差别
- 区别1: 是否有块作用域 var a = 1 { // var a=2  let a = 2 } console.log(a); //output var:a=2 let:a=1 var i=1 // for (var i = 0; i &lt;3; i&#43;&#43;) { for (let i = 0; i &lt;3; i&#43;&#43;) { //..do something } console.log(i); //output var:i=3 let:i=1 说明： 可以看出，var并没有作用域的概念，定义在特定作用于内的变量会受到作用域外的影响，let则不会
-区别2：全局污染问题 console.log(window.screenLeft);//600 // var screenLeft = 1 let screenLeft = 1 console.log(window.screenLeft); //output var:1 let:600 说明： var定义的变量用window对象也可以访问，当定义一些特定的key时，会造成全局的污染!...</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-08-22 00:00:00 +0000 UTC'>Aug 22, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之JS黑洞" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bjs%E9%BB%91%E6%B4%9E/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>JavaScript基础之运算符
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>&#43;&#43;的前置与后置 let a1 = 1 let b1 = 2 let c1 = b1 &#43; a1&#43;&#43; console.log(a1, b1, c1);//2,2,3  let a2 = 1 let b2 = 2 let c2 = b2 &#43; &#43;&#43;a2 console.log(a2, b2, c2);//2,2,4 说明：
- 后置是先计算再&#43;&#43; 前置是先&#43;&#43;再计算  短路运算 let a = 0; let b = 1; let c = a || b; console.log(c);//1 利用这个原理，我们可以简化一些函数
-let sex = prompt(&#39;您的性别?&#39;) if (!sex){ sex=&#34;保密&#34; } console.log(sex); =&gt;
-let sex = prompt(&#39;您的性别?...</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-08-22 00:00:00 +0000 UTC'>Aug 22, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript基础之运算符" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E8%BF%90%E7%AE%97%E7%AC%A6/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>Ajax重复请求
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>在发送某一次请求时，如果不对请求做去重处理那么，同一个请求有可能会发送很多次，一个个慢慢响应，这会很大程度影响性能以及页面的使用体验
- 全局变量
-/** * baseURL 是每次请求的地址 * x 表示XMLHttpRequest实例，初始为null * isSending 是用来判断请求是否处于发送状态的标识 */ const baseURL = &#34;http://127.0.0.1:8000/delay&#34; let x = null, isSending = false 原生请求 if (isSending) x.abort() x = new XMLHttpRequest() //正处于发送状态，修改标识 isSending = true x.open(&#34;GET&#34;, baseURL) x.send() x.onreadystatechange = function () { if (x.readyState === 4) {//当readyState=4,表示已经发送完毕，修改标识，是否成功返回则无需关心  isSending = false if (x.status &gt;= 200 &amp;&amp; x.status &lt; 300) { console.log(x.response); } } } jQuery 请求  jQuery做ajax请求时，可以仅针对一次请求，也可以利用jQuery全局事件对所有请求加以限制...</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-08-13 00:00:00 +0000 UTC'>Aug 13, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to Ajax重复请求" href="https://www.fintinger.site/p/ajax%E9%87%8D%E5%A4%8D%E8%AF%B7%E6%B1%82/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>跨域及CORS官方跨域
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>JSONP  jsonp跨域的实现仅限于GET请求，不可用于POST
- 说明：实现的基本思路是利用html中script标签本身可跨域的特性，在发送请求时，在页面中创建script标签，追加到页面中。这实际上就像利用script标签引入外部资源
-/*main.js*/ //申明handle函数 function handle(data) { //do something.... } ele.onclick = function () { //1.创建script标签  const script = document.createElement(&#34;script&#34;) //2.修改script的src属性  script.src = &#34;http://127.0.0.1:8000/jsonP&#34; script.id=&#34;tempScript&#34;//添加id方便移除  //3.追加到页面中  document.body.appendChild(script) } /*server.js*/ app.get(&#39;/jsonP&#39;, (request, response) =&gt; { const data = { exist:1, msg:&#34;用户名已经存在!&#34; } let str = JSON.stringify(data) response.send(` handle(${str}); document.body.removeChild(document.querySelector(&#34;#tempScript&#34;)) `) }) 注意：response.send()/response.end()中利用ES6语法规范中的模板字符串直接返回一段js代码，script标签会自动解析并作用到页面上
-
-CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置CORS响应头实现跨域，这种跨域GET或POST请求均有效
-//服务端设置响应头 app.all(&#39;/data&#39;, (request, response) =&gt; { response.setHeader(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;)//允许来自所有域的请求  response....</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-08-11 00:00:00 +0000 UTC'>Aug 11, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 跨域及CORS官方跨域" href="https://www.fintinger.site/p/%E8%B7%A8%E5%9F%9F%E5%8F%8Acors%E5%AE%98%E6%96%B9%E8%B7%A8%E5%9F%9F/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
@@ -271,7 +258,7 @@ CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置C
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.fa3df6438f7c3b2ccdb1417e73e78d09dad45de34b8e8d1146747073cccd4ab9.min.js"></script>
+<script src="/assets/js/extended/extend.4a0deabf2968d39824344c0112b4d90c39c2696cd2ff9ce58f7ffe581437012f.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -322,6 +309,18 @@ window.onerror=function(){return true;}
             mybutton.style.opacity = "0";
         }
     };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
 
 </script>
 <video id="liveBgBox" autoplay loop muted poster="https://picgo-jqf.oss-cn-beijing.aliyuncs.com/img/202204051521692.png" style="display: none;"></video>

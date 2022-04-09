@@ -10,7 +10,7 @@
 <meta name="description" content="Posts - Archai&#39;s home">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/posts/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fae13974f92a364555f4383162b9be4a3b35895e399ea2254f90325fff2b2e59.css" integrity="sha256-&#43;uE5dPkqNkVV9DgxYrm&#43;Sjs1iV45nqIlT5AyX/8rLlk=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.3c6e1a1ead1685963f285a2039c65fa7961a5aaad6a79f7379a21c0c8ed5dd10.css" integrity="sha256-PG4aHq0WhZY/KFogOcZfp5YaWqrWp59zeaIcDI7V3RA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -56,6 +56,12 @@
 </head>
 
 <body class=" list" id=" top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -83,6 +89,26 @@
         <div class="logo">
             <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
             <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
             </span>
         </div>
         <ul id="menu">
@@ -119,7 +145,7 @@
   <h1>Posts</h1>
 </header>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>ES6之Promise用法小结
@@ -138,7 +164,7 @@ new Promise((resolve, reject) =&gt; { resolve(&#39;success&#39;) //reject(&#39;r
   <a class="entry-link" aria-label="post link to ES6之Promise用法小结" href="https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>Ajax学习小结
@@ -153,7 +179,48 @@ new Promise((resolve, reject) =&gt; { resolve(&#39;success&#39;) //reject(&#39;r
   <a class="entry-link" aria-label="post link to Ajax学习小结" href="https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>《聪明人和傻子和奴才》
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>《聪明人和傻子和奴才》  这篇散文诗作于1925年12月26日，鲁迅最初将其发表于1926年1月4日《语丝》周刊第60期。
+ 奴才总不过是寻人诉苦。只要这样，也只能这样。有一日，他遇到一个聪明人。
+“先生！”他悲哀地说，眼泪联成一线，就从眼角上直流下来。“你知道的。我所过的简直不是人的生活。吃的是一天未必有一餐，这一餐又不过是高粱皮，连猪狗都不要吃的，尚且只有一小碗……”
+“这实在令人同情。”聪明人也惨然说。
+“可不是么！”他高兴了。“可是做工是昼夜无休息的：清早担水晚烧饭，上午跑街夜磨面，晴洗衣裳雨张伞，冬烧汽炉夏打扇。半夜要煨银耳，侍候主人耍钱；头钱从来没分，有时还挨皮鞭……。”
+“唉唉……”聪明人叹息着，眼圈有些发红，似乎要下泪。
+“先生！我这样是敷衍不下去的。我总得另外想法子。可是什么法子呢？……”
+“我想，你总会好起来……”
+“是么？但愿如此。可是我对先生诉了冤苦，又得你的同情和慰安，已经舒坦得不少了。可见天理没有灭绝……”
+但是，不几日，他又不平起来了，仍然寻人去诉苦。
+“先生！”他流着眼泪说，“你知道的。我住的简直比猪窠还不如。主人并不将我当人；他对他的叭儿狗还要好到几万倍……”
+“混帐！”那人大叫起来，使他吃惊了。那人是一个傻子。
+“先生，我住的只是一间破小屋，又湿，又阴，满是臭虫，睡下去就咬得真可以。秽气冲着鼻子，四面又没有一个窗……。”
+“你不会要你的主人开一个窗的么？”
+“这怎么行？……”
+“那么，你带我去看去！”
+傻子跟奴才到他屋外，动手就砸那泥墙。
+“先生！你干什么？”他大惊地说。
+“我给你打开一个窗洞来。”
+“这不行！主人要骂的！”
+“管他呢！”他仍然砸。
+“人来呀！强盗在毁咱们的屋子了！快来呀！迟一点可要打出窟窿来了！……”他哭嚷着，在地上团团地打滚。
+一群奴才都出来了，将傻子赶走。
+听到了喊声，慢慢地最后出来的是主人。
+“有强盗要来毁咱们的屋子，我首先叫喊起来，大家一同把他赶走了。”他恭敬而得胜地说。
+“你不错。”主人这样夸奖他。
+这一天就来了许多慰问的人，聪明人也在内。
+“先生。这回因为我有功，主人夸奖了我了。你先前说我总会好起来，实在是有先见之明……。”他大有希望似的高兴地说。
+“可不是么……”聪明人也代为高兴似的回答他。</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-04-09 00:00:00 +0000 UTC'>Apr 9, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 《聪明人和傻子和奴才》" href="https://www.fintinger.site/p/%E8%81%AA%E6%98%8E%E4%BA%BA%E5%92%8C%E5%82%BB%E5%AD%90%E5%92%8C%E5%A5%B4%E6%89%8D/"></a>
+</article>
+
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>Vue在页面直接展示模板语法{{xx}}
@@ -178,7 +245,7 @@ new Promise((resolve, reject) =&gt; { resolve(&#39;success&#39;) //reject(&#39;r
   <a class="entry-link" aria-label="post link to Vue在页面直接展示模板语法{{xx}}" href="https://www.fintinger.site/p/vue%E5%9C%A8%E9%A1%B5%E9%9D%A2%E7%9B%B4%E6%8E%A5%E5%B1%95%E7%A4%BA%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95xx/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>测试shortcodes
@@ -191,7 +258,7 @@ new Promise((resolve, reject) =&gt; { resolve(&#39;success&#39;) //reject(&#39;r
   <a class="entry-link" aria-label="post link to 测试shortcodes" href="https://www.fintinger.site/p/%E6%B5%8B%E8%AF%95shortcodes/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>Vue2.0学习小结
@@ -229,73 +296,6 @@ const mixData={ data(){...} }, const mixMethods= { methods:{...} } 第二步：�
   <footer class="entry-footer"><span title='2022-04-02 00:00:00 +0000 UTC'>Apr 2, 2022</span>&nbsp;·&nbsp;6 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to Vue2.0学习小结" href="https://www.fintinger.site/p/vue2.0%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/"></a>
 </article>
-
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>浏览器本地存储
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>webStorage   存储内容大小一般支持5MB左右(不同浏览器可能还不一样)。
-  浏览器端通过Window.sessionStorage和Window.localStorage属性来实现本地存储机制。
-  相关API:
-  xxxStorage.setItem(&#39;key&#39;,&#39;value&#39;);
-该方法接受一个键和值作为参数,会把键值对添加到存储中,如果键名存在,则更新其对应的值。
-  xxxStorage.getItem(&#39;key&#39;);
-该方法接受一个键名作为参数，返回键名对应的值。
-  xxxStorage.removeItem(&#39;key&#39;);
-该方法接受一个键名作为参数，并把该键名从存储中删除。
-  xxxStorage.clear();
-该方法会清空存储中的所有数据。
-    备注:
- SessionStorage存储的内容会随着浏览器窗口关闭而消失。 LocalStorage存储的内容，需要手动清除才会消失。 xxxStorage.getItem(&#39;key&#39;);如果key对应的value获取不到，那么getItem的返回值是null。 可以通过JSON.stringify()存储对象，通过JSON.parse()解析对象，JSON.parse(null)的结果仍然是null。    </p>
-  </section>
-  <footer class="entry-footer"><span title='2022-03-30 00:00:00 +0000 UTC'>Mar 30, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 浏览器本地存储" href="https://www.fintinger.site/p/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/"></a>
-</article>
-
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>Vue中的数据监视原理
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>1.vue会监视data中所有层次的数据. vue对于配置在data中的所有对象都会以key值作为目标进行监视，不论多少层，都会递归地为每一个key配置getter和setter(通过Object.defineProperty())。
- 相关阅读 MDN关于defineProperty的说明
- 2.如何监测对象中的数据? 通过setter实现监视,且要在new Vue时就传入要监测的数据，即在data中提前配置。
-(1).对象中后追加的属性,Vue默认不做响应式处理
-直接通过修改vm._data或者vm来添加key，并不会配置getter和setter，因此不会做响应式
-(2).如需给后添加的属性做响应式,请使用如下API: Vue.set(target,key/index,value)或vm.$set(target,key/index,value)（可以同时修改数组和对象）
-​	特别注意: Vue.set()和vm.$set()不能直接给vm或vm的根数据对象(vm._data)添加属性!!!
-3.如何监测数组中的数据? 在数组中直接通过索引的方式修改数组并不会引起Vue的响应，那么要如何做呢？Vue通过包裹数组更新元素的方法(对原数组方法进行修改)实现,本质就是做了两件事:
-(1). 调用原生对应的方法对数组进行更新.
-(2). 重新解析模板,进而更新页面.
-就包裹了下面的七种数组方法：
- push() pop() shift() unshift() splice() sort() reverse()  也就是说，通过上面七种方法修改数组，会让Vue做出响应。
-例如想要修改数组中索引为0的位置的数据，可以通过 vm.data.arr.splice(0,0,val)或Vue.set(vm.data.arr,0,val)又或者vm.$set(vm.data.arr,0,val)，在具体的由Vue管理的方法中this指向的应该就是vm！！
-数据劫持 Vue通过setter,getter对数据进行动态监测，其实就是“劫持”了数据😯</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-03-21 00:00:00 +0000 UTC'>Mar 21, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to Vue中的数据监视原理" href="https://www.fintinger.site/p/vue%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%9B%91%E8%A7%86%E5%8E%9F%E7%90%86/"></a>
-</article>
-
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>canvas绘制跟随鼠标移动的线条
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>在浏览网页时无意中发现了下面这种背景互动的效果：
-
-通过一番周折，最终找到以下实现代码
-function randomLine() { function n(n, e, t) { return n.getAttribute(e) || t } function e(n) { return document.getElementsByTagName(n) } function t() { var t = e(&#34;script&#34;), o = t.length, i = t[o - 1]; return { l: o, z: n(i, &#34;zIndex&#34;, -88), o: n(i, &#34;opacity&#34;, .5), c: n(i, &#34;color&#34;,&#34;0,0,0&#34;), n: n(i, &#34;count&#34;, 150) } } function o() { a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth, c = m....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-03-20 00:00:00 +0000 UTC'>Mar 20, 2022</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to canvas绘制跟随鼠标移动的线条" href="https://www.fintinger.site/p/canvas%E7%BB%98%E5%88%B6%E8%B7%9F%E9%9A%8F%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%8A%A8%E7%9A%84%E7%BA%BF%E6%9D%A1/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="next" href="https://www.fintinger.site/posts/page/2/"> »</a>
@@ -316,7 +316,7 @@ function randomLine() { function n(n, e, t) { return n.getAttribute(e) || t } fu
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.fa3df6438f7c3b2ccdb1417e73e78d09dad45de34b8e8d1146747073cccd4ab9.min.js"></script>
+<script src="/assets/js/extended/extend.4a0deabf2968d39824344c0112b4d90c39c2696cd2ff9ce58f7ffe581437012f.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -367,6 +367,18 @@ window.onerror=function(){return true;}
             mybutton.style.opacity = "0";
         }
     };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
 
 </script>
 <video id="liveBgBox" autoplay loop muted poster="https://picgo-jqf.oss-cn-beijing.aliyuncs.com/img/202204051521692.png" style="display: none;"></video>

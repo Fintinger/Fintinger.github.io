@@ -10,7 +10,7 @@
 <meta name="description" content="Posts - Archai&#39;s home">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/posts/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.286aec1e9630a9b9ad9f65bc74f5de62c1f244d221eff34da3bcfe1c8a42f62e.css" integrity="sha256-KGrsHpYwqbmtn2W8dPXeYsHyRNIh7/NNo7z&#43;HIpC9i4=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.3c6e1a1ead1685963f285a2039c65fa7961a5aaad6a79f7379a21c0c8ed5dd10.css" integrity="sha256-PG4aHq0WhZY/KFogOcZfp5YaWqrWp59zeaIcDI7V3RA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -56,6 +56,12 @@
 </head>
 
 <body class=" list" id=" top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -83,6 +89,26 @@
         <div class="logo">
             <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
             <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
             </span>
         </div>
         <ul id="menu">
@@ -119,87 +145,72 @@
   <h1>Posts</h1>
 </header>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>避免多条件并列
+    <h2>常用的一些html代码
     </h2>
   </header>
   <section class="entry-content">
-    <p>开发中有时会遇到多个条件，执行相同的语句，也就是多个||这种：
-if (status === &#39;process&#39; || status === &#39;wait&#39; || status === &#39;fail&#39;) { doSomething() } 这种写法语义性、可读性都不太好。可以通过switch case或includes这种进行改造。
-switch case switch(status) { case &#39;process&#39;: case &#39;wait&#39;: case &#39;fail&#39;: doSomething() } includes const enum = [&#39;process&#39;, &#39;wait&#39;, &#39;fail&#39;] if (enum.includes(status)) { doSomething() </p>
+    <p>1. 获取网页logo 京东 : www.jd.com
+ 后面加 “/favicon.ico&#34;即可
+ 京东logo : www.jd.com/favicon.ico
+2. webstorm网页logo简易写法  link:favicon 按Tab键  3.meta标签  为搜索引擎提供的关键字列表( name=“keywords”)：   各关键词间用英文逗号“,”隔开。META的通常用处是指定搜索引擎用来提高搜索质量的关键词。
+ &lt;meta name=&#34;keywords&#34; content=&#34;牙疼怎么办，智齿是什么，拔牙多少钱，矫正多少钱，九院医生，北大口腔，瑞尔口腔，拜耳口腔&#34;&gt;
+ 用来告诉搜索引擎你的网站主要内容(name=“description”)：  &lt;meta name=&#34;description&#34; content=&#34;有牙齿问题,找河马牙医,儿童口腔，全国儿童口腔在线咨询，牙疼怎么办，拔牙多少钱，矫正多少钱，种植牙，有牙齿问题&#34;&gt;
+ 优先以webkit内核渲染页面(“renderer”)：  &lt;meta name=&#34;renderer&#34; content=&#34;webkit&#34; /&gt;
+4.复合选择器 div#main{ color:green}
+ 表示选中div中id为main的元素
+ 5.标签居中  水平居中 行内标签/行内-块级标签: text-align:center  块级标签:
+margin:0 auto
+2)垂直居中
+  行内标签/行内-块级标签:
+ 设置行高为盒子高度line-hight:50px; 图片加文字时:vertical-align:middle;    块级标签:
+   设置“子绝父相” ==&gt; top，left设置为50% ==&gt; margin-left和nargin-top设置为负的盒子对应宽高的一半...</p>
   </section>
-  <footer class="entry-footer"><span title='2020-07-06 00:00:00 +0000 UTC'>Jul 6, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 避免多条件并列" href="https://www.fintinger.site/p/%E9%81%BF%E5%85%8D%E5%A4%9A%E6%9D%A1%E4%BB%B6%E5%B9%B6%E5%88%97/"></a>
+  <footer class="entry-footer"><span title='2020-03-21 00:00:00 +0000 UTC'>Mar 21, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 常用的一些html代码" href="https://www.fintinger.site/p/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bhtml%E4%BB%A3%E7%A0%81/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>JavaScript生成图片文件路径json
+    <h2>CSS揭秘一书中的知识
     </h2>
   </header>
   <section class="entry-content">
-    <p>在写小demo的过程中，经常需要把某个文件夹的图片文件的路径给引入，除非全部重命名成有序的数字，不然不好处理，这就用到了node中的fs和path模块，还没学…
-const path=require(&#34;path&#34;); const fs = require(&#39;fs&#39;); fs.stat(&#39;../images&#39;,(err)=&gt;{//图片文件所在目录  if (err)return; var result=&#39;{&#39; fs.readdir(&#34;../images&#34;,(err,data)=&gt;{//图片文件所在目录  for(var i=0;i&lt;Object.keys(data).length;i&#43;&#43;){ let ImgPath=&#34;\&#34;images/&#34;&#43;data[i]&#43;&#34;\&#34;&#34;; result&#43;=&#34;\&#34;&#34;&#43;i&#43;&#34;\&#34;:&#34;&#43;ImgPath&#43;&#34;,&#34;; } result=result.substring(0,result.length-1); let length=&#34;\&#34;&#34;&#43;&#34;length&#34;&#43;&#34;\&#34;&#34;&#43;&#34;:&#34;&#43;&#34;\&#34;&#34;&#43;Object.keys(data).length&#43;&#34;\&#34;&#34;//文件数量  result&#43;=&#34;,&#34;&#43;length&#43;&#39;}&#39; fs.writeFile(&#34;../data/imgPath.json&#34;,result,(err)=&gt;{ if(err)return; console.log(&#34;写入文件成功，一共&#34;&#43;Object.keys(data).length&#43;&#34;个文件&#34;); }); }); }); 生成的文件大概就是这样的一个json数据
-{&#34;0&#34;:&#34;images/1.jpg&#34;,&#34;1&#34;:&#34;images/10.jpg&#34;,&#34;2&#34;:&#34;images/100.jpg&#34;,&#34;3&#34;:&#34;images/101.jpg&#34;,&#34;4&#34;:&#34;images/102.jpg&#34;,&#34;5&#34;:&#34;images/103.jpg&#34;,&#34;6&#34;:&#34;images/104.jpg&#34;,&#34;7&#34;:&#34;images/105.jpg&#34;,&#34;8&#34;:&#34;images/106.jpg&#34;,&#34;9&#34;:&#34;images/107.jpg&#34;,&#34;10&#34;:&#34;images/108.jpg&#34;,&#34;length&#34;:&#34;109&#34;} </p>
+    <p>1.backgrouond简写  在background简写属性中指定background-sizing时，需要提供一个background-position值，而且要使用/作为分隔。  background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [ background-size] [background-origin] [background-clip]; —–P13—–
+2.background-clip 规定背景的绘制区域： 得到一个白色背景并且有白色边框的盒子：
+border:10px solid hsla(0,0,100%,.5); background:white; background-clip:padding-box 
+若不设置background-clip，背景会延伸至边框，边框的透明无法显示
+——P18——-
+3.双重边框  box-shadow   background:orange;box-shadow:0 0 010px #655 , 0 0 0 15px deeppink; /*可以加任意层数边框*/ outline  width:180px; height:90px; margin:30px auto; text-align:center; padding:10px; background:##655; outline: ##fff dashed 1px; outline-offset: -15px; /*设置outline向内缩进*/ border-radius:8px;  注意： outline可能会产生不贴合border-radius圆角的情况 
+—-P20—-
+4.box-shadow  只给下方设置阴影，（扩张半径为负的模糊半径）:  box-shadow: 0 5px 4px -4px black;  临边投影，(扩张半径为负的模糊半径的一半):  box-shadow: 3px 3px 6px -3px black; —-P88—-...</p>
   </section>
-  <footer class="entry-footer"><span title='2020-07-05 00:00:00 +0000 UTC'>Jul 5, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript生成图片文件路径json" href="https://www.fintinger.site/p/javascript%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84json/"></a>
+  <footer class="entry-footer"><span title='2019-12-23 00:00:00 +0000 UTC'>Dec 23, 2019</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to CSS揭秘一书中的知识" href="https://www.fintinger.site/p/css%E6%8F%AD%E7%A7%98%E4%B8%80%E4%B9%A6%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>JavaScript瀑布流布局
+    <h2>扁平设计和拟物设计
     </h2>
   </header>
   <section class="entry-content">
-    <p>什么是瀑布流？ 一种图片在网页的布局方式，具体要求为：从页面第二行开始，后续图片跟在页面中最矮的那张图片后面
-
-用JavaScript怎么实现？ 为此我将整个过程封装为一个函数。
-/*HTML部分*/ &lt;head&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;main.css&#34;&gt; &lt;/head&gt; &lt;div id=&#34;box&#34;&gt;&lt;/div&gt;//container和img由js动态加入 &lt;script src=&#34;jquery.min.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;loadFile.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;main.js&#34;&gt;&lt;/script&gt; /*CSS部分*/ /*首先清空默认样式*/ #box{ position: relative; } .container{ float: left; } .container&gt;.pic{ width: 200px; } .container&gt;.pic&gt;img{ width: 100%; } /*JS部分*/ /*loadFile.js(在window.onload之前执行，加载DOM树)*/	$(function () { function addImg(imgNum,eleID) { let container for (let i = 1; i &lt; imgNum; i&#43;&#43;) { container=$(&#34;&lt;div class=&#39;container&#39;&gt;&lt;div class=&#39;pic&#39;&gt;&lt;img src=&#39;images/&#34;&#43;i&#43;&#34;.jpg&#39; alt=&#39;&#39;&gt;&lt;/div&gt;&lt;/div&gt;&#34;) $(eleID).append(container) } } addImg(109,&#34;#box&#34;); }) /*******************************************/ /*main.js(在$(function(){})之前执行，DOM树加载完毕 )*/ window....</p>
+    <p>什么扁平和拟物设计？ 扁平化设计(Flat design) 完全属于二次元，这个概念最核心的地方就是放弃一切装饰效果，诸如阴影，透视，纹理，渐变等等能做出3D效果的元素一概不用。所有的元素的边界都干净利落，没有任何羽化，渐变，或者阴影。
+拟物设计(Skeuomorph) 正好相反，他需要加入各种元素的效果，通过不同的效果组合达到模拟要呈现物件外观的目的，以使新的外观让人感觉熟悉和亲切。
+扁平化与拟物化的优缺点:
+ 扁平化设计单独设计起来更容易，突出内容主题，减弱各种渐变、阴影、高光等视觉效果对用户视线的干扰，让用户更加专注于内容本身，并且容易统一设计风格，调整设计方案更加方便。而现在手机平板电脑&#34;横行&#34;的今天，扁平化设计更能支持手势交互，而且它占用系统空间相对较少。 拟物化设计更适合初级人员了来做，这并不表示拟物化设计简单，而正是因为它的复杂所以更适合初级人员来做，可以让设计人员短时间内熟悉各种效果的实现，更好掌握色彩搭配等。并且拟物化设计认知和学习成本低，更能直接的表现出想表现的事物。   相对于它们的优点多多，它们的缺点却是一目了然。拟物化设计更倾向于视觉效果，功能实现很少。扁平化所能承载的信息量太少，会提高用户的学习成本。
+ </p>
   </section>
-  <footer class="entry-footer"><span title='2020-07-01 00:00:00 +0000 UTC'>Jul 1, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript瀑布流布局" href="https://www.fintinger.site/p/javascript%E7%80%91%E5%B8%83%E6%B5%81%E5%B8%83%E5%B1%80/"></a>
-</article>
-
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
-  <header class="entry-header">
-    <h2>python中关于文件的种种问题
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p> 在python中，我们可以将那些在运行时可能会出现状况的代码放在try代码块中，在try代码块的后面可以跟上一个或多个except来捕获可能出现的异常状况。
-  FileNotFoundError，文件找不到 LookupError指定了未知的编码 UnicodeDecodeError读取文件时无法按指定方式解码  def main():f = Nonetry:f = open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;utf-8&#39;)print(f.read())except FileNotFoundError:print(&#39;无法打开指定的文件!&#39;)except LookupError:print(&#39;指定了未知的编码!&#39;)except UnicodeDecodeError:print(&#39;读取文件时解码错误!&#39;)finally:if f:f.close()if __name__ == &#39;__main__&#39;:main() finally块的代码不论程序正常还是异常都会执行到（甚至是调用了sys模块的exit函数退出Python环境，finally块都会被执行，因为exit函数实质上是引发了SystemExit异常），因此我们通常把finally块称为“总是执行代码块”，它最适合用来做释放外部资源的操作。
- 或者， with关键字指定文件对象的上下文环境并在离开上下文环境时自动释放文件资源
-def main():try:with open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;utf-8&#39;) as f:print(f.read())except FileNotFoundError:print(&#39;无法打开指定的文件!&#39;)except LookupError:print(&#39;指定了未知的编码!&#39;)except UnicodeDecodeError:print(&#39;读取文件时解码错误!&#39;)if __name__ == &#39;__main__&#39;:main()</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-06-26 00:00:00 +0000 UTC'>Jun 26, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to python中关于文件的种种问题" href="https://www.fintinger.site/p/python%E4%B8%AD%E5%85%B3%E4%BA%8E%E6%96%87%E4%BB%B6%E7%9A%84%E7%A7%8D%E7%A7%8D%E9%97%AE%E9%A2%98/"></a>
-</article>
-
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft "> 
-  <header class="entry-header">
-    <h2>统计学期末知识总结
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>第一章 导 论 1.什么是统计学  统计学是收集、处理、分析、解释数据并从数据中得出结论的科学 数据分析所用的方法可分为描述统计方法和推断统计方法  2.参数和统计量   参数：总体特征，所关心的参数通常是总体平均数、总体标准差、总体比例等
- 由于总体数据通常是不知道的，所以参数是一个未知的常量-
-   统计量：个体特征，所关心的参数通常是样本平均数、样本标准差、样本比例等
- 由于样本是已经抽出来的，所以统计量总是知道的
-   第二章 数据的搜集 1.数据的来源  **间接来源（二手数据）**与研究内容有关的原信息已经存在，我们只是重新加工、整理，使之成为分析可用的数据，这称为间接来源的数据 **直接来源（一手数据）**通过调查方法获得的为调查数据，实验得到为实验数据，都是直接来源的数据  2.数据误差  抽样误差：由抽样的随机性引起的样本结果与总体真值之间的差异 非抽样误差：抽样框误差、回答误差、无回答误差、调查员误差、测量误差  第三章 数据的图表展示 1.数据预处理  原始数据：完整性、准确性 二手数据：适用性、时效性  2.分类数据图示 ​  1&gt; 组数 5≤ K ≤15
-2&gt; 组距 组距=(Max-Min)/K
-3&gt; 为解决不重的问题，统计分组习惯上规定“上组限不在内”，即当相邻两组的上下限重叠时，恰好等于某一组上限的变量值不算在本组内，而计算在下一组内。即a≤ x &lt;b
- 第四章 数据的概括性度量 1.集中趋势的度量 
-  众数不受极端值影响，具有不唯一性 中位数不受极端值影响，数据分布偏斜程度较大时 平均数易受极端值影响   2.离散程度的度量...</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-06-17 00:00:00 +0000 UTC'>Jun 17, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 统计学期末知识总结" href="https://www.fintinger.site/p/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%9C%9F%E6%9C%AB%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"></a>
+  <footer class="entry-footer"><span title='2019-11-12 00:00:00 +0000 UTC'>Nov 12, 2019</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 扁平设计和拟物设计" href="https://www.fintinger.site/p/%E6%89%81%E5%B9%B3%E8%AE%BE%E8%AE%A1%E5%92%8C%E6%8B%9F%E7%89%A9%E8%AE%BE%E8%AE%A1/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://www.fintinger.site/posts/page/11/">« </a>
-    <a class="next" href="https://www.fintinger.site/posts/page/13/"> »</a>
   </nav>
 </footer>
 </main>
@@ -217,7 +228,7 @@ def main():try:with open(&#39;致橡树.txt&#39;, &#39;r&#39;, encoding=&#39;u
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.b210f1f514e121bd59a440070cfd204feed045eb2c591d4e65230335b405545b.min.js"></script>
+<script src="/assets/js/extended/extend.4a0deabf2968d39824344c0112b4d90c39c2696cd2ff9ce58f7ffe581437012f.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -270,6 +281,18 @@ window.onerror=function(){return true;}
     };
 
 </script>
-<video id="liveBgBox" autoplay loop muted poster="https://jqf.oss-cn-beijing.aliyuncs.com/images/poster1.png" style="display: none;"></video>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<video id="liveBgBox" autoplay loop muted poster="https://picgo-jqf.oss-cn-beijing.aliyuncs.com/img/202204051521692.png" style="display: none;"></video>
 </body>
 </html>

@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/tags/javascript/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fae13974f92a364555f4383162b9be4a3b35895e399ea2254f90325fff2b2e59.css" integrity="sha256-&#43;uE5dPkqNkVV9DgxYrm&#43;Sjs1iV45nqIlT5AyX/8rLlk=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.3c6e1a1ead1685963f285a2039c65fa7961a5aaad6a79f7379a21c0c8ed5dd10.css" integrity="sha256-PG4aHq0WhZY/KFogOcZfp5YaWqrWp59zeaIcDI7V3RA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -41,6 +41,12 @@
 </head>
 
 <body class=" list" id=" top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -68,6 +74,26 @@
         <div class="logo">
             <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
             <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
             </span>
         </div>
         <ul id="menu">
@@ -104,7 +130,81 @@
   <h1>Javascript</h1>
 </header>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>JavaScript基础之值类型
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>字符串 1.截取字符串  主要有slice()、substr()、substring() 三种方法
+  一个参数[i]  都是从i开始截取，返回n及其后面的全部字符串。
+ 第二个参数[i,n]  slice(i,n)和substring(i,n)表示从i开始截取到n；substr(i,n)，表示从i开始截取n个
+ 负参数  slice()和substr()将最后一位记为-1，然后依次编号；substring()则会将任何负参数变为0，然后查找
+let w = &#39;fintinger.xyz&#39; let a = w.slice(-4, w.length) let b = w.substring(-1, 2) let c = w.substr(-4, 4) console.log(a, b, c);//.xyz fi .xyz 2.查找字符串  主要有indexof()、includes()、lastIndexof() 三种方法
+ 共同点：
+ 两个参数[searchString,position]，第一个为要检索的字符串，第二个为开始检索位置； 若position &lt; 0，则position = 0 position可以省略  不同之处：
+ lastIndexof()为从右往左找，找到第一个立即返回索引！其他两个都是从左往右 indexof(),lastIndexof()找不到则返回-1，includes()找不到返回false position 省略之后，includes(),indexof()默认值为0，lastIndexof()则为str.length  3.重复函数 repeat() 作用： 复制粘贴指定字符串指定次数
+案例：
+/** * 电话号码模糊处理 * @param{String|Number}number * @param{Number}len * @returns {Error|string} * @constructor */ function Phone(number, len = 4) { number = String(number) return number....</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-08-23 00:00:00 +0000 UTC'>Aug 23, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript基础之值类型" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%80%BC%E7%B1%BB%E5%9E%8B/"></a>
+</article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>JavaScript基础之JS黑洞
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>JavaScript中最容易忽视的一些点
+ let和var  都用来定义变量，但二者之间有些细微的差别
+ 区别1: 是否有块作用域 var a = 1 { // var a=2  let a = 2 } console.log(a); //output var:a=2 let:a=1 var i=1 // for (var i = 0; i &lt;3; i&#43;&#43;) { for (let i = 0; i &lt;3; i&#43;&#43;) { //..do something } console.log(i); //output var:i=3 let:i=1 说明： 可以看出，var并没有作用域的概念，定义在特定作用于内的变量会受到作用域外的影响，let则不会
+区别2：全局污染问题 console.log(window.screenLeft);//600 // var screenLeft = 1 let screenLeft = 1 console.log(window.screenLeft); //output var:1 let:600 说明： var定义的变量用window对象也可以访问，当定义一些特定的key时，会造成全局的污染!...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-08-22 00:00:00 +0000 UTC'>Aug 22, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript基础之JS黑洞" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bjs%E9%BB%91%E6%B4%9E/"></a>
+</article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>JavaScript基础之运算符
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>&#43;&#43;的前置与后置 let a1 = 1 let b1 = 2 let c1 = b1 &#43; a1&#43;&#43; console.log(a1, b1, c1);//2,2,3  let a2 = 1 let b2 = 2 let c2 = b2 &#43; &#43;&#43;a2 console.log(a2, b2, c2);//2,2,4 说明：
+ 后置是先计算再&#43;&#43; 前置是先&#43;&#43;再计算  短路运算 let a = 0; let b = 1; let c = a || b; console.log(c);//1 利用这个原理，我们可以简化一些函数
+let sex = prompt(&#39;您的性别?&#39;) if (!sex){ sex=&#34;保密&#34; } console.log(sex); =&gt;
+let sex = prompt(&#39;您的性别?...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-08-22 00:00:00 +0000 UTC'>Aug 22, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript基础之运算符" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E8%BF%90%E7%AE%97%E7%AC%A6/"></a>
+</article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>获取文件扩展名
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>该怎么去获得文件名字符串中的文件扩展名呢？
+一种较为强大的解决方法是利用String的slice、lastIndexOf方法：
+function getFileExtension(filename) { return filename.slice((filename.lastIndexOf(&#34;.&#34;) - 1 &gt;&gt;&gt; 0) &#43; 2); } console.log(getFileExtension3(&#39;&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;filename&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;filename.txt&#39;)); // &#39;txt&#39; console.log(getFileExtension3(&#39;.hiddenfile&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;hiddenfile.&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;filename.with.many.dots.ext&#39;)); // &#39;ext&#39; 说明 filename.slice((filename.lastIndexOf(&#34;.&#34;) - 1 &gt;&gt;&gt; 0) &#43; 2)
+ 本方法中的&gt;&gt;&gt;运算目的是
+找到最后一个.所在索引，然后索引-1&#43;2，相当于&#43;1，则slice方法返回.后面的后缀名
+.不会再开头，否则索引会是0，因为-1&gt;&gt;&gt;0 =﻿﻿﻿﻿ 4294967295，所不会匹配到
+.出现在末尾，索引会等于length&#43;1，也不会匹配到
+ slice(start,end)  说明：start必须指定，负值为从后往前数，若只指定start值，则返回start位置及后面一直到数组结尾所有的元素 **注意：**区别于删除数组中的一段元素的方法 Array.splice()  lastIndexOf(searchvalue,fromindex)  **说明：**如果要检索的字符串值没有出现，则该方法返回 -1，该方法对大小写敏感 使用：  var str=&#34;Hello world!&#34; document.write(str.lastIndexOf(&#34;Hello&#34;) &#43; &#34;&lt;br /&gt;&#34;)//0 document.write(str.lastIndexOf(&#34;World&#34;) &#43; &#34;&lt;br /&gt;&#34;)//-1 document....</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-07-09 00:00:00 +0000 UTC'>Jul 9, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 获取文件扩展名" href="https://www.fintinger.site/p/%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D/"></a>
+</article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>一组循环数组
@@ -118,7 +218,7 @@
   <a class="entry-link" aria-label="post link to 一组循环数组" href="https://www.fintinger.site/p/%E4%B8%80%E7%BB%84%E5%BE%AA%E7%8E%AF%E6%95%B0%E7%BB%84/"></a>
 </article>
 
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
     <h2>ES6中新增关于Array的方法
@@ -139,83 +239,10 @@ const arr=new Array(4); arr.map((ele,index) =&gt; index); //Output:[undefined，
   <footer class="entry-footer"><span title='2020-07-06 00:00:00 +0000 UTC'>Jul 6, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to ES6中新增关于Array的方法" href="https://www.fintinger.site/p/es6%E4%B8%AD%E6%96%B0%E5%A2%9E%E5%85%B3%E4%BA%8Earray%E7%9A%84%E6%96%B9%E6%B3%95/"></a>
 </article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>避免多条件并列
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>开发中有时会遇到多个条件，执行相同的语句，也就是多个||这种：
-if (status === &#39;process&#39; || status === &#39;wait&#39; || status === &#39;fail&#39;) { doSomething() } 这种写法语义性、可读性都不太好。可以通过switch case或includes这种进行改造。
-switch case switch(status) { case &#39;process&#39;: case &#39;wait&#39;: case &#39;fail&#39;: doSomething() } includes const enum = [&#39;process&#39;, &#39;wait&#39;, &#39;fail&#39;] if (enum.includes(status)) { doSomething() </p>
-  </section>
-  <footer class="entry-footer"><span title='2020-07-06 00:00:00 +0000 UTC'>Jul 6, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 避免多条件并列" href="https://www.fintinger.site/p/%E9%81%BF%E5%85%8D%E5%A4%9A%E6%9D%A1%E4%BB%B6%E5%B9%B6%E5%88%97/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>JavaScript生成图片文件路径json
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>在写小demo的过程中，经常需要把某个文件夹的图片文件的路径给引入，除非全部重命名成有序的数字，不然不好处理，这就用到了node中的fs和path模块，还没学…
-const path=require(&#34;path&#34;); const fs = require(&#39;fs&#39;); fs.stat(&#39;../images&#39;,(err)=&gt;{//图片文件所在目录  if (err)return; var result=&#39;{&#39; fs.readdir(&#34;../images&#34;,(err,data)=&gt;{//图片文件所在目录  for(var i=0;i&lt;Object.keys(data).length;i&#43;&#43;){ let ImgPath=&#34;\&#34;images/&#34;&#43;data[i]&#43;&#34;\&#34;&#34;; result&#43;=&#34;\&#34;&#34;&#43;i&#43;&#34;\&#34;:&#34;&#43;ImgPath&#43;&#34;,&#34;; } result=result.substring(0,result.length-1); let length=&#34;\&#34;&#34;&#43;&#34;length&#34;&#43;&#34;\&#34;&#34;&#43;&#34;:&#34;&#43;&#34;\&#34;&#34;&#43;Object.keys(data).length&#43;&#34;\&#34;&#34;//文件数量  result&#43;=&#34;,&#34;&#43;length&#43;&#39;}&#39; fs.writeFile(&#34;../data/imgPath.json&#34;,result,(err)=&gt;{ if(err)return; console.log(&#34;写入文件成功，一共&#34;&#43;Object.keys(data).length&#43;&#34;个文件&#34;); }); }); }); 生成的文件大概就是这样的一个json数据
-{&#34;0&#34;:&#34;images/1.jpg&#34;,&#34;1&#34;:&#34;images/10.jpg&#34;,&#34;2&#34;:&#34;images/100.jpg&#34;,&#34;3&#34;:&#34;images/101.jpg&#34;,&#34;4&#34;:&#34;images/102.jpg&#34;,&#34;5&#34;:&#34;images/103.jpg&#34;,&#34;6&#34;:&#34;images/104.jpg&#34;,&#34;7&#34;:&#34;images/105.jpg&#34;,&#34;8&#34;:&#34;images/106.jpg&#34;,&#34;9&#34;:&#34;images/107.jpg&#34;,&#34;10&#34;:&#34;images/108.jpg&#34;,&#34;length&#34;:&#34;109&#34;} </p>
-  </section>
-  <footer class="entry-footer"><span title='2020-07-05 00:00:00 +0000 UTC'>Jul 5, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript生成图片文件路径json" href="https://www.fintinger.site/p/javascript%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84json/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>JavaScript瀑布流布局
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>什么是瀑布流？ 一种图片在网页的布局方式，具体要求为：从页面第二行开始，后续图片跟在页面中最矮的那张图片后面
-
-用JavaScript怎么实现？ 为此我将整个过程封装为一个函数。
-/*HTML部分*/ &lt;head&gt; &lt;link rel=&#34;stylesheet&#34; href=&#34;main.css&#34;&gt; &lt;/head&gt; &lt;div id=&#34;box&#34;&gt;&lt;/div&gt;//container和img由js动态加入 &lt;script src=&#34;jquery.min.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;loadFile.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;main.js&#34;&gt;&lt;/script&gt; /*CSS部分*/ /*首先清空默认样式*/ #box{ position: relative; } .container{ float: left; } .container&gt;.pic{ width: 200px; } .container&gt;.pic&gt;img{ width: 100%; } /*JS部分*/ /*loadFile.js(在window.onload之前执行，加载DOM树)*/	$(function () { function addImg(imgNum,eleID) { let container for (let i = 1; i &lt; imgNum; i&#43;&#43;) { container=$(&#34;&lt;div class=&#39;container&#39;&gt;&lt;div class=&#39;pic&#39;&gt;&lt;img src=&#39;images/&#34;&#43;i&#43;&#34;.jpg&#39; alt=&#39;&#39;&gt;&lt;/div&gt;&lt;/div&gt;&#34;) $(eleID).append(container) } } addImg(109,&#34;#box&#34;); }) /*******************************************/ /*main.js(在$(function(){})之前执行，DOM树加载完毕 )*/ window....</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-07-01 00:00:00 +0000 UTC'>Jul 1, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to JavaScript瀑布流布局" href="https://www.fintinger.site/p/javascript%E7%80%91%E5%B8%83%E6%B5%81%E5%B8%83%E5%B1%80/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>关于Javascript模块化
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>模块功能主要由两个命令构成：export和import。export命令用于规定模块的对外接口，import命令用于输入其他模块提供的功能。
-//profile.jsexport var firstName = &#39;Michael&#39;;export var lastName = &#39;Jackson&#39;;export function sayName () {return firstName &#43; lastName;}export default function () {console.log(&#39;foo&#39;);}// main.jsimport { firstName, lastName , sayName} from &#39;./profile.js&#39;; 注意：在index.html中引入的时候需要给script加type=“module”,即
- &lt;script type=&#34;module&#34; src=&#34;./profiles.js&#34;&gt;&lt;/script&gt;&lt;script type=&#34;module&#34; src=&#34;./main.js&#34;&gt;&lt;/script&gt;</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-05-29 00:00:00 +0000 UTC'>May 29, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 关于Javascript模块化" href="https://www.fintinger.site/p/%E5%85%B3%E4%BA%8Ejavascript%E6%A8%A1%E5%9D%97%E5%8C%96/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>Javascript一些操作
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>1.通过id获取元素 function $(id) { return typeof id === &#39;string&#39; ? document.getElementById(id): null; } 2.日期格式化 function formatDate(cDate) { //1.判断  if (!cDate instanceof Date){ return; } //2.转化  var year=cDate.getFullYear(); var month=cDate.getMonth(); var date=cDate.getDate(); var hour=cDate.getHours(); var minute=cDate.getMinutes(); var second=cDate.getSeconds(); //2.1 补0  month=month&lt;10? &#39;0&#39;&#43;month:month; date=date&lt;10? &#39;0&#39;&#43;date: date; minute=minute&lt;10? &#39;0&#39;&#43;minute:minute; second=second&lt;10? &#39;0&#39;&#43;second:second; return year &#43; &#39;-&#39; &#43; month &#43; &#39;-&#39; &#43; date &#43; &#39; &#39; &#43;hour&#43;&#39;:&#39;&#43;minute&#43;&#34;:&#34;&#43;second; } console.log(formatDate(new Date())); 3.匀速运动封装 /** * 设置一个盒子右边距匀速变化 * @param{string} btnId * @param{string} boxId * @param{number} step * @param{number}target */ function linearAnimation(btnId, boxId, step, target) { // 1....</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-04-02 00:00:00 +0000 UTC'>Apr 2, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to Javascript一些操作" href="https://www.fintinger.site/p/javascript%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://www.fintinger.site/tags/javascript/page/2/">« </a>
+    <a class="next" href="https://www.fintinger.site/tags/javascript/page/4/"> »</a>
   </nav>
 </footer>
 </main>
@@ -233,7 +260,7 @@ const path=require(&#34;path&#34;); const fs = require(&#39;fs&#39;); fs.stat(&#
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.fa3df6438f7c3b2ccdb1417e73e78d09dad45de34b8e8d1146747073cccd4ab9.min.js"></script>
+<script src="/assets/js/extended/extend.4a0deabf2968d39824344c0112b4d90c39c2696cd2ff9ce58f7ffe581437012f.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -284,6 +311,18 @@ window.onerror=function(){return true;}
             mybutton.style.opacity = "0";
         }
     };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
 
 </script>
 <video id="liveBgBox" autoplay loop muted poster="https://picgo-jqf.oss-cn-beijing.aliyuncs.com/img/202204051521692.png" style="display: none;"></video>

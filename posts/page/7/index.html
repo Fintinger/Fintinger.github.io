@@ -10,7 +10,7 @@
 <meta name="description" content="Posts - Archai&#39;s home">
 <meta name="author" content="Archai">
 <link rel="canonical" href="https://www.fintinger.site/posts/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fae13974f92a364555f4383162b9be4a3b35895e399ea2254f90325fff2b2e59.css" integrity="sha256-&#43;uE5dPkqNkVV9DgxYrm&#43;Sjs1iV45nqIlT5AyX/8rLlk=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.3c6e1a1ead1685963f285a2039c65fa7961a5aaad6a79f7379a21c0c8ed5dd10.css" integrity="sha256-PG4aHq0WhZY/KFogOcZfp5YaWqrWp59zeaIcDI7V3RA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.fintinger.site/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fintinger.site/images/favicon.ico">
@@ -56,6 +56,12 @@
 </head>
 
 <body class=" list" id=" top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -83,6 +89,26 @@
         <div class="logo">
             <a href="https://www.fintinger.site" accesskey="h" title="🛖Home (Alt + H)">🛖Home</a>
             <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
             </span>
         </div>
         <ul id="menu">
@@ -119,148 +145,108 @@
   <h1>Posts</h1>
 </header>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>Ajax重复请求
+    <h2>Es6中的class类
     </h2>
   </header>
   <section class="entry-content">
-    <p>在发送某一次请求时，如果不对请求做去重处理那么，同一个请求有可能会发送很多次，一个个慢慢响应，这会很大程度影响性能以及页面的使用体验
- 全局变量
-/** * baseURL 是每次请求的地址 * x 表示XMLHttpRequest实例，初始为null * isSending 是用来判断请求是否处于发送状态的标识 */ const baseURL = &#34;http://127.0.0.1:8000/delay&#34; let x = null, isSending = false 原生请求 if (isSending) x.abort() x = new XMLHttpRequest() //正处于发送状态，修改标识 isSending = true x.open(&#34;GET&#34;, baseURL) x.send() x.onreadystatechange = function () { if (x.readyState === 4) {//当readyState=4,表示已经发送完毕，修改标识，是否成功返回则无需关心  isSending = false if (x.status &gt;= 200 &amp;&amp; x.status &lt; 300) { console.log(x.response); } } } jQuery 请求  jQuery做ajax请求时，可以仅针对一次请求，也可以利用jQuery全局事件对所有请求加以限制...</p>
+    <p>class实质上是对js中继承的封装组合，用一种“语法糖”的形式实现原型链的继承
+ 静态属性/方法  静态方法/属性是指，函数作为对象时，定义在其原型(__proto__)上的方法，而需要实例化继承的动态方法是定义在其原型对象(prototype) 中的，静态方法中的参数都是固定的，直接通过整个构造函数调用，实例化对象并不会继承；而动态方法中的参数会因为实例化对象的不同而产生改变，实例化对象默认是继承的。
+ function User(){} User.__proto__.show=function(){} console.dir(User) //这里的show()方法就属于静态方法 在class中，利用static定义静态属性/方法
+class Admin{ static show(){}//__proto__中  show(){}//prototype中 } console.dir(Admin) 关于class一些注意点  class中声明的方法在prototype对象中，由于默认的属性特征设置，这些方法是不可遍历的！  class Admin{ show(){} } console.log( Object.getOwnPropertyDescriptor( Admin.prototype,&#34;show&#34; )) //enumerable: false class中声明方法时，方法之间不用,隔开！ class中默认开启严格模式  class中的属性保护  主要可以通过三种途径实现属性保护：Symbol,weakmap,私有属性
+ 1.Symbol /*利用Symbol创建一个受保护的属性的集合对象,无法直接获取，只能通过自定义的get/set方法*/ const protects = Symbol(&#39;受保护的属性&#39;) class User { constructor(name) { this.name = name this[protects] = { host: &#39;https://www.fintinger.xyz&#39;, token: &#39;5574f1b81bbe4e3847e7a83c0a84a442&#39;, password: &#39;123456&#39; } } set host(url) { if (!...</p>
   </section>
-  <footer class="entry-footer"><span title='2020-08-13 00:00:00 +0000 UTC'>Aug 13, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to Ajax重复请求" href="https://www.fintinger.site/p/ajax%E9%87%8D%E5%A4%8D%E8%AF%B7%E6%B1%82/"></a>
+  <footer class="entry-footer"><span title='2020-09-09 00:00:00 +0000 UTC'>Sep 9, 2020</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to Es6中的class类" href="https://www.fintinger.site/p/es6%E4%B8%AD%E7%9A%84class%E7%B1%BB/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>跨域及CORS官方跨域
+    <h2>JavaScript中的继承与原型链分析
     </h2>
   </header>
   <section class="entry-content">
-    <p>JSONP  jsonp跨域的实现仅限于GET请求，不可用于POST
- 说明：实现的基本思路是利用html中script标签本身可跨域的特性，在发送请求时，在页面中创建script标签，追加到页面中。这实际上就像利用script标签引入外部资源
-/*main.js*/ //申明handle函数 function handle(data) { //do something.... } ele.onclick = function () { //1.创建script标签  const script = document.createElement(&#34;script&#34;) //2.修改script的src属性  script.src = &#34;http://127.0.0.1:8000/jsonP&#34; script.id=&#34;tempScript&#34;//添加id方便移除  //3.追加到页面中  document.body.appendChild(script) } /*server.js*/ app.get(&#39;/jsonP&#39;, (request, response) =&gt; { const data = { exist:1, msg:&#34;用户名已经存在!&#34; } let str = JSON.stringify(data) response.send(` handle(${str}); document.body.removeChild(document.querySelector(&#34;#tempScript&#34;)) `) }) 注意：response.send()/response.end()中利用ES6语法规范中的模板字符串直接返回一段js代码，script标签会自动解析并作用到页面上
-
-CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置CORS响应头实现跨域，这种跨域GET或POST请求均有效
-//服务端设置响应头 app.all(&#39;/data&#39;, (request, response) =&gt; { response.setHeader(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;)//允许来自所有域的请求  response....</p>
+    <p>原型链自定义设置  原型链的设置可以通过Object.creative , __proto__, Object.setProperty三种方法
+ Object.creative () 说明： 该方法只能设置原型链，而不能获取
+let a1 = {name: &#39;a1&#39;} let b1 = Object.create(a1) b1.name = &#39;b1&#39; console.log(b1);  Object.creative()为创建对象的方法，第一个参数为其原型对象，第二个参数为其默认属性，这些属性默认是不可写，不可遍历，不可修改的
+ let b=Object.create(null,{ a:{value:&#39;ohh&#39;, enumerable:true}, b:{value:&#39;jqf&#39;}, }) console.log(Object.getOwnPropertyDescriptors(b)); //a: {value: &#34;ohh&#34;, writable: false, enumerable: true, configurable: false} //b: {value: &#34;jqf&#34;, writable: false, enumerable: false, configurable: false} __proto__ 说明： 能设置，能获取，实质上是setter，getter
+let a2 = {name: &#39;a2&#39;} let b2 = {name: &#39;b2&#39;} a2.__proto__ = b2 console.log(a2); console.log(a2.__proto__);//{name: &#34;b2&#34;}  关于__proto__是setter,getter？...</p>
   </section>
-  <footer class="entry-footer"><span title='2020-08-11 00:00:00 +0000 UTC'>Aug 11, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 跨域及CORS官方跨域" href="https://www.fintinger.site/p/%E8%B7%A8%E5%9F%9F%E5%8F%8Acors%E5%AE%98%E6%96%B9%E8%B7%A8%E5%9F%9F/"></a>
+  <footer class="entry-footer"><span title='2020-09-04 00:00:00 +0000 UTC'>Sep 4, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript中的继承与原型链分析" href="https://www.fintinger.site/p/javascript%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%88%86%E6%9E%90/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>Ajax基础及Express框架基本使用
+    <h2>关于JavaScript模块化
     </h2>
   </header>
   <section class="entry-content">
-    <p>Baike  Ajax 即“AsynchronousJavascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式、快速动态网页应用的网页开发技术，无需重新加载整个网页的情况下，能够更新部分网页的技术。
-通过在后台与服务器进行少量数据交换，Ajax 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。—百度百科
- 请求报文 格式以及参数如下
-行 GET / HTTP/1.1 头 Host: fintinger.xyz Cookie: keyword=xyz Content-type: application/x-www-form-urlencoded User-agent: Chrome 83 空行 (必须有) 体 [GET]:空 [POST]:空/username=admin&amp;password=admin 
-响应报文 格式以及参数如下
-行 HTTP/1.1 200 Ok 头 Content-Type: text/html; charset=utf-8 Content-Length: 22 Content-encoding: gzip 空行 (必须有) 体 &lt;html&gt; &lt;head&gt; &lt;/head&gt; &lt;body&gt; &lt;h1&gt;Hello!&lt;/h1&gt; &lt;/body&gt; &lt;/html&gt; 
-
-Express框架使用 //1.引入express const express=require(&#39;express&#39;) //2.创建应用对象 const app=express() //3.创建路由规则 /** * request 请求报文封装 * response 响应报文封装 */ app....</p>
+    <p>自定义一个模块引擎 要求： 能够让模块之间产生依赖关系
+代码
+let _module = (function () { let moduleList = {} function define(name, modules, action) { modules.map((n, i) =&gt; { //将传入的只含名称的模块数组 =&gt; 指定名称模块的返回结果  modules[i] = moduleList[n] }) moduleList[name] = action.apply(null, modules) // console.log(moduleList);  } return {define} })(); //定义一个工具库，暴露给外界使用，输出 _module.define(&#39;tools&#39;, [], function () { return { max(arr) { return arr.sort((a, b) =&gt; b - a)[0]//获取最大值挺别致昂  }, min(arr) { return arr.sort((a, b) =&gt; b - a)[arr.length - 1]; } } }); //使用之前定义的工具库，引入 _module....</p>
   </section>
-  <footer class="entry-footer"><span title='2020-08-06 00:00:00 +0000 UTC'>Aug 6, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to Ajax基础及Express框架基本使用" href="https://www.fintinger.site/p/ajax%E5%9F%BA%E7%A1%80%E5%8F%8Aexpress%E6%A1%86%E6%9E%B6%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"></a>
+  <footer class="entry-footer"><span title='2020-09-02 00:00:00 +0000 UTC'>Sep 2, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to 关于JavaScript模块化" href="https://www.fintinger.site/p/%E5%85%B3%E4%BA%8Ejavascript%E6%A8%A1%E5%9D%97%E5%8C%96/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>vue.js学习心得
+    <h2>JavaScript基础之对象
     </h2>
   </header>
   <section class="entry-content">
-    <p>1. 关于元素显示与隐藏  # v-show=&#34;name&#34;  说明： 如果data中name为true就显示，否则该元素display:none   # v-if=&#34;name&#34;  说明： 如果data中name为true就显示，否则该元素变成一段注释&lt;!----&gt;，就被删掉了!   v-if 是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。
-v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。
-相比之下，v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。
-一般来说，v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。
- 2. 访问data 　# v-model  说明： 与data中的值绑定，会随着data中的值得改变而改变，如果是input则data中的值会随着input中的值的改变而改变  # v-if   **说明：**用于条件性地渲染一块内容
- 在&lt;template&gt;元素上使用 v-if 条件渲染分组
-因为 v-if 是一个指令，所以必须将它添加到一个元素上。但是如果想切换(隐藏或显示)多个元素呢？此时可以把一个&lt;template&gt;元素当做不可见的包裹元素，并在上面使用 v-if。最终的渲染结果将不包含&lt;template&gt;元素。
-这样做的好处就是不用再写一个&lt;div&gt;将需要隐藏的元素包裹
-   # v-show  说明： 条件切换display属性  # v-for  说明： 在data中定义一个数组arr，然后用v-for=&#34;val in arr&#34;访问到  3....</p>
+    <p>对象中参数获取和值的接收 1.对象中利用key获取value. |  [] let obj = {name: &#39;jqf&#39;, age: 19} for (let key in obj) { // console.log(obj.key);//会报undefined  console.log(obj[key]);//jqf,19 } 👉 delete Object.key()
+delete obj.name console.log(obj);//{ age: 19 } 2.参数/配置合并 👉 展开语法
+ 利用展开语法合并对象，让后面传入的参数覆盖默认参数，完成合并
+ function upload(params) { let config = { url: &#39;/images&#39;, type: &#39;*.jpg,*.png&#39; } config = {...config, ...params} //do something...  console.log(config); } upload({type:&#39;*.webp&#39;})//{ url: &#39;/images&#39;, type: &#39;*.webp&#39; } 👉 解构赋值
+ 解构赋值会把相同key的进行合并，后面覆盖掉前面的
+ function upload(params = {}) { let {url = &#39;/images&#39;, type = &#39;*....</p>
   </section>
-  <footer class="entry-footer"><span title='2020-07-18 00:00:00 +0000 UTC'>Jul 18, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to vue.js学习心得" href="https://www.fintinger.site/p/vue.js%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"></a>
+  <footer class="entry-footer"><span title='2020-08-31 00:00:00 +0000 UTC'>Aug 31, 2020</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript基础之对象" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%AF%B9%E8%B1%A1/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>获取文件扩展名
+    <h2>JavaScript基础之函数相关
     </h2>
   </header>
   <section class="entry-content">
-    <p>该怎么去获得文件名字符串中的文件扩展名呢？
-一种较为强大的解决方法是利用String的slice、lastIndexOf方法：
-function getFileExtension(filename) { return filename.slice((filename.lastIndexOf(&#34;.&#34;) - 1 &gt;&gt;&gt; 0) &#43; 2); } console.log(getFileExtension3(&#39;&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;filename&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;filename.txt&#39;)); // &#39;txt&#39; console.log(getFileExtension3(&#39;.hiddenfile&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;hiddenfile.&#39;)); // &#39;&#39; console.log(getFileExtension3(&#39;filename.with.many.dots.ext&#39;)); // &#39;ext&#39; 说明 filename.slice((filename.lastIndexOf(&#34;.&#34;) - 1 &gt;&gt;&gt; 0) &#43; 2)
- 本方法中的&gt;&gt;&gt;运算目的是
-找到最后一个.所在索引，然后索引-1&#43;2，相当于&#43;1，则slice方法返回.后面的后缀名
-.不会再开头，否则索引会是0，因为-1&gt;&gt;&gt;0 =﻿﻿﻿﻿ 4294967295，所不会匹配到
-.出现在末尾，索引会等于length&#43;1，也不会匹配到
- slice(start,end)  说明：start必须指定，负值为从后往前数，若只指定start值，则返回start位置及后面一直到数组结尾所有的元素 **注意：**区别于删除数组中的一段元素的方法 Array.splice()  lastIndexOf(searchvalue,fromindex)  **说明：**如果要检索的字符串值没有出现，则该方法返回 -1，该方法对大小写敏感 使用：  var str=&#34;Hello world!&#34; document.write(str.lastIndexOf(&#34;Hello&#34;) &#43; &#34;&lt;br /&gt;&#34;)//0 document.write(str.lastIndexOf(&#34;World&#34;) &#43; &#34;&lt;br /&gt;&#34;)//-1 document....</p>
+    <p>关于函数传参  当参数数量不确定时，通常用arguments 来统一接收
+ function sum() { return [...arguments].reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6 可以用展开语法代替arguments接收所有的参数：
+function sum(...args) { return args.reduce((res, i,) =&gt; res &#43; i, 0) } let res = sum(1, 2, 3) console.log(res);//6 注意： 接收参数时展开语法放其他形参后面，做统一接收
+递归函数  递归函数有两个关键点，一是要有退出执行的条件，二是要不断执行自身并返回
+ 递归思想实现阶乘函数 function factorial(num) { if (num === 1) { return num } return num * factorial(--num) } 如果用到箭头函数，可以简写为：
+function factorial(num) { return num === 1 ?...</p>
   </section>
-  <footer class="entry-footer"><span title='2020-07-09 00:00:00 +0000 UTC'>Jul 9, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 获取文件扩展名" href="https://www.fintinger.site/p/%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D/"></a>
+  <footer class="entry-footer"><span title='2020-08-28 00:00:00 +0000 UTC'>Aug 28, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript基础之函数相关" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3/"></a>
 </article>
 
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>一组循环数组
+    <h2>JavaScript基础之Map与Weakmap类型
     </h2>
   </header>
   <section class="entry-content">
-    <p>做网页轮播图，或者音乐播放列表时经常要用到一组循环的数组，到最后一项返回第一项，第一项返回最后一项
-利用两次判断 function doLoop( arr ){ arr.loop_idx = 0; // 返回当前的元素  arr.current = function(){ if( this.loop_idx &lt; 0 ){// 第一次检查  this.loop_idx = this.length - 1;// 更新 loop_idx  } if( this.loop_idx &gt;= this.length ){// 第二次检查  this.loop_idx = 0;// 更新 loop_idx  } return arr[ this.loop_idx ];//返回元素  }; // 增加 loop_idx 然后返回新的当前元素  arr.next = function(){ this.loop_idx&#43;&#43;; return this.current(); }; // 减少 loop_idx 然后返回新的当前元素  arr.prev = function(){ this....</p>
+    <p>Map类型 1.属性 👉 set() 设置值
+let map = new Map() let fn = function () {console.log(&#39;this is function&#39;)} let user = {name: &#39;jqf&#39;, age: 18} map.set(&#39;key&#39;, &#39;value&#39;) map.set(fn, &#39;function&#39;) map.set(user, &#39;object&#39;) console.log(map); /*Map(3){&#34;key&#34; =&gt; &#34;value&#34;, ƒ =&gt; &#34;function&#34;, {…} =&gt; &#34;object&#34;}*/ 注意： Map类型，字符串、函数、对象都可以作为key设置
+👉 size Map长度
+console.log(map.size);//3 👉get() 获取值
+console.log(map.get(fn));//function  //通过key获取value 👉 delete() / clear() 删除某个，清空Map
+console.log(map.delete(fn));//true console.log(map); /*Map(3){&#34;key&#34; =&gt; &#34;value&#34;, {…} =&gt; &#34;object&#34;}*/ 👉 has() 是否有某个key
+console.log(map.has(user));//true 2.遍历 👉forEach(val,key,map)...</p>
   </section>
-  <footer class="entry-footer"><span title='2020-07-08 00:00:00 +0000 UTC'>Jul 8, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 一组循环数组" href="https://www.fintinger.site/p/%E4%B8%80%E7%BB%84%E5%BE%AA%E7%8E%AF%E6%95%B0%E7%BB%84/"></a>
-</article>
-
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>剪贴板功能实现
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>经常会用到指定内容的复制粘贴问题，用到document的execCommand 方法,为此，我将这个功能封装为一个简单的函数:
-function doCopy($el, {deepCopy = false, copyTips = true, language = &#34;Chinese&#34;, bgColor = &#34;#ff6666&#34;, fontColor = &#34;#fff&#34;} = {}) { let tempEl = $(&#34;&lt;input id=&#39;selectEl&#39; type=&#39;text&#39; value=&#39;&#39;&gt;&#34;).val($el.text()) if (deepCopy) { tempEl.val($el.html()) } tempEl.appendTo($(&#34;body&#34;)) document.querySelector(&#39;#selectEl&#39;).select(); document.execCommand(&#39;copy&#39;); tempEl.remove() if (copyTips) { let tipEl = $(&#34;&lt;div class=&#39;copyTips&#39; &gt;成功复制到剪切板&lt;/div&gt;&#34;) tipEl.css({fontFamily: &#34;&#39;Microsoft YaHei&#39;, sans-serif&#34;,fontSize: &#34;1.2rem&#34;,position: &#34;fixed&#34;,top: &#34;1rem&#34;,textAlign: &#34;center&#34;, left: &#34;50%&#34;,fontWeight: &#34;bolder&#34;, borderRadius: &#34;.5rem&#34;,marginLeft: &#34;-8rem&#34;,width: &#34;16rem&#34;,height: &#34;3rem&#34;, lineHeight:&#34;3rem&#34;, background: bgColor,boxShadow: &#34;0 6px 10px -8px #000&#34;,color: fontColor, letterSpacing: &#34;4px&#34;,boxSizing: &#34;border-box&#34;,padding: &#34;0 10px 0 10px&#34;, display: &#34;none&#34;}) if (language === &#34;English&#34;) { tipEl....</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-07-07 00:00:00 +0000 UTC'>Jul 7, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 剪贴板功能实现" href="https://www.fintinger.site/p/%E5%89%AA%E8%B4%B4%E6%9D%BF%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/"></a>
-</article>
-
-<article class="post-entry animate__animated animate__bounce animate__lightSpeedInLeft ">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>ES6中新增关于Array的方法
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>在javascript中，Array()经常用到，利用ES6中的一些新特性会让数组的处理更加方便快捷
-1.迭代空数组 直接创建一个数组
-const arr=new Array(4); //Output:[undefined，undefined，undefined，undefined] 利用map方法，转化成新的数组，企图得到 [0,1,2,3] 数组
-const arr=new Array(4); arr.map((ele,index) =&gt; index); //Output:[undefined，undefined，undefined，undefined] 解决这个问题可以在创建数组时用到Array.apply
- apply与call类似，都是用来继承父类的方法的，不同之处是：
-  call() 方法分别接受参数。person.fullName.apply(person1, [&#34;Oslo&#34;, &#34;Norway&#34;]);
-  apply() 方法接受数组形式的参数.	person.fullName.call(person1, &#34;Oslo&#34;, &#34;Norway&#34;);
-  如果要使用数组而不是参数列表，则 apply() 方法非常方便。
- const arr = Array.apply(null, new Array(4)); arr.map((ele,index) =&gt; index); //Output:[0,1,2,3] 由此，我们可以创建一个指定最大值、最小值、或者长度生成指定数列的方法
-/** * 生成自定义的连续数列 * @param{Number}min * @param{Number}max * @param{Number}len */ function newArr({min = null, max = null, len = null} = {}) { let newArray=[], skip = min if (len == null) {len = max - min &#43; 1} if (min == null) {skip = -max} const arr = Array....</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-07-06 00:00:00 +0000 UTC'>Jul 6, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to ES6中新增关于Array的方法" href="https://www.fintinger.site/p/es6%E4%B8%AD%E6%96%B0%E5%A2%9E%E5%85%B3%E4%BA%8Earray%E7%9A%84%E6%96%B9%E6%B3%95/"></a>
+  <footer class="entry-footer"><span title='2020-08-26 00:00:00 +0000 UTC'>Aug 26, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript基础之Map与Weakmap类型" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bmap%E4%B8%8Eweakmap%E7%B1%BB%E5%9E%8B/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
@@ -283,7 +269,7 @@ const arr=new Array(4); arr.map((ele,index) =&gt; index); //Output:[undefined，
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.fa3df6438f7c3b2ccdb1417e73e78d09dad45de34b8e8d1146747073cccd4ab9.min.js"></script>
+<script src="/assets/js/extended/extend.4a0deabf2968d39824344c0112b4d90c39c2696cd2ff9ce58f7ffe581437012f.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
@@ -334,6 +320,18 @@ window.onerror=function(){return true;}
             mybutton.style.opacity = "0";
         }
     };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
 
 </script>
 <video id="liveBgBox" autoplay loop muted poster="https://picgo-jqf.oss-cn-beijing.aliyuncs.com/img/202204051521692.png" style="display: none;"></video>
