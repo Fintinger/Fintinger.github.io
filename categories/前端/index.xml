@@ -5,54 +5,7 @@
     <link>https://www.fintinger.site/categories/%E5%89%8D%E7%AB%AF/</link>
     <description>Recent content in 前端 on Archai&#39;s home</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 07 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/categories/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>ES6之Promise用法小结</title>
-      <link>https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/</link>
-      <pubDate>Tue, 18 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/</guid>
-      <description>Promise 对象用于表示一个异步操作的最终完成 (或失败), 及其结果值。其目的主要是解决以往回调中嵌套回调的&amp;quot;嵌套地狱&amp;quot;问题，使代码可读性更好，更美观!
-基本用法 对于一个标准的Prommise，其基本写法为:
-new Promise(function (resolve, reject) { //do something...  //success  resolve(&amp;#39;success&amp;#39;) //fail &amp;amp; reject  // reject(&amp;#39;rejected&amp;#39;) *resolve和reject只能出现一个 }).then( function (value) { //if succeed,do something...  }, function (reason) { //if fail &amp;amp; reject,do something...  } ) 如果采用ES6的箭头函数写法，则为:
-new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //reject(&amp;#39;rejected&amp;#39;) }).then( value =&amp;gt; {}, reason =&amp;gt; {} )  始终牢记，前一个Promise()必须是在后面一个.then()中处理，
-如果前一个Promsie()中没有改变状态，即没有resolve()/reject()方法，后面的.then就不会针对这个Promsie()处理
- Promise错误处理  Promise()中的错误处理有两种方式,.then()和.catch()
- .then()  特点： &amp;ldquo;一一对应&amp;rdquo;，即一个then()对应处理上一个Promise 用法：  new Promise((resolve, reject) =&amp;gt; { // 12+p  // throw new Error(&amp;#39;fail&amp;#39;)  reject(&amp;#39;失败&amp;#39;) }).</description>
-    </item>
-    
-    <item>
-      <title>Ajax学习小结</title>
-      <link>https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/</link>
-      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/</guid>
-      <description>学习地址:https://www.bilibili.com/video/BV1WC4y1b78y，主要通过express的简单功能来搭建本地的服务，进而更好地学习Ajax
- 发送Ajax请求的方式 原生Ajax //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(&amp;#34;GET&amp;#34;,&amp;#34;https://www.x.com&amp;#34;) //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status &amp;gt;= 200 &amp;amp;&amp;amp; xhr.status &amp;lt; 300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } } 说明：
- readyState: 返回一个 XMLHttpRequest 代理当前所处的状态     值 状态 描述     0 UNSENT 代理被创建，但尚未调用 open() 方法。   1 OPENED open() 方法已经被调用。   2 HEADERS_RECEIVED send() 方法已经被调用，并且头部和状态已经可获得。   3 LOADING 下载中； responseText 属性已经包含部分数据。   4 DONE 下载操作已完成。     因此，xhr.</description>
-    </item>
-    
-    <item>
-      <title>Vue在页面直接展示模板语法{{xx}}</title>
-      <link>https://www.fintinger.site/p/vue%E5%9C%A8%E9%A1%B5%E9%9D%A2%E7%9B%B4%E6%8E%A5%E5%B1%95%E7%A4%BA%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95xx/</link>
-      <pubDate>Thu, 07 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.fintinger.site/p/vue%E5%9C%A8%E9%A1%B5%E9%9D%A2%E7%9B%B4%E6%8E%A5%E5%B1%95%E7%A4%BA%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95xx/</guid>
-      <description>用vue.js写成的页面中，可能出现由于外部请求导致的页面展示阻塞现象，进而导致模板语法{{xxx}}直接展示在页面上，这其实跟页面加载的流程有关，整个页面加载的流程是：
-解析html结构 -&amp;gt; 加载外部脚本和样式表文件 -&amp;gt; 解析并执行脚本代码 -&amp;gt; 构造HTML DOM模型 -&amp;gt; 加载图片等外部文件 -&amp;gt; 页面加载完毕
-所以，当HTML加载的时候，就会把{{}} 当成文本加载出来，只有当vue初始化完成后，才会把{{}}解析成vue的语法。
-遇到这种情况有以下几种解决方案：
-  方案一(不推荐)：在head里面加入引入vue的script标签
-如果把引入vue的script放到head里面，那页面就不会出现{{}}，因为在body之前，vue就已经引入进并且加载完成了。
-  方案二：v-text|v-html
-使用v-text插入文字，使用v-html插入HTML结构，替换原本使用的模板语法{{xxx}}
-  方案三：template
-使用&amp;lt;template&amp;gt;标签包裹要渲染的HTML结构，那么只有vue解析时才会展示出该结构
-  方案四：v-cloak指令 + CSS样式
-标签上的v-cloak属性在被vue解析到时会自动去掉，那么我们可以利用CSS的属性选择器，给有v-cloak属性的元素设置display:none样式，那么，在加载HTML时自然不会显示{{xxx}}，而在vue解析时又会显示出来，问题得以解决！
-  </description>
-    </item>
-    
+    <lastBuildDate>Sat, 16 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/categories/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vue2.0学习小结</title>
       <link>https://www.fintinger.site/p/vue2.0%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/</link>
@@ -86,6 +39,65 @@ const mixData={ data(){...} }, const mixMethods= { methods:{...} } 第二步：�
 本质:包含install方法的一个对象,install的第一个参数是vue,第二个以后的参数是插件使用者传递的数据。
 定义插件:
 对象.install = function (Vue, options) { //1.</description>
+    </item>
+    
+    <item>
+      <title>ES6之Promise用法小结</title>
+      <link>https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Tue, 18 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/</guid>
+      <description>Promise 对象用于表示一个异步操作的最终完成 (或失败), 及其结果值。其目的主要是解决以往回调中嵌套回调的&amp;quot;嵌套地狱&amp;quot;问题，使代码可读性更好，更美观!
+基本用法 对于一个标准的Prommise，其基本写法为:
+new Promise(function (resolve, reject) { //do something...  //success  resolve(&amp;#39;success&amp;#39;) //fail &amp;amp; reject  // reject(&amp;#39;rejected&amp;#39;) *resolve和reject只能出现一个 }).then( function (value) { //if succeed,do something...  }, function (reason) { //if fail &amp;amp; reject,do something...  } ) 如果采用ES6的箭头函数写法，则为:
+new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //reject(&amp;#39;rejected&amp;#39;) }).then( value =&amp;gt; {}, reason =&amp;gt; {} )  始终牢记，前一个Promise()必须是在后面一个.then()中处理，
+如果前一个Promsie()中没有改变状态，即没有resolve()/reject()方法，后面的.then就不会针对这个Promsie()处理
+ Promise错误处理  Promise()中的错误处理有两种方式,.then()和.catch()
+ .then()  特点： &amp;ldquo;一一对应&amp;rdquo;，即一个then()对应处理上一个Promise 用法：  new Promise((resolve, reject) =&amp;gt; { // 12+p  // throw new Error(&amp;#39;fail&amp;#39;)  reject(&amp;#39;失败&amp;#39;) }).</description>
+    </item>
+    
+    <item>
+      <title>Ajax学习小结</title>
+      <link>https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/</guid>
+      <description>学习地址:https://www.bilibili.com/video/BV1WC4y1b78y，主要通过express的简单功能来搭建本地的服务，进而更好地学习Ajax
+ 发送Ajax请求的方式 原生Ajax //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(&amp;#34;GET&amp;#34;,&amp;#34;https://www.x.com&amp;#34;) //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status &amp;gt;= 200 &amp;amp;&amp;amp; xhr.status &amp;lt; 300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } } 说明：
+ readyState: 返回一个 XMLHttpRequest 代理当前所处的状态     值 状态 描述     0 UNSENT 代理被创建，但尚未调用 open() 方法。   1 OPENED open() 方法已经被调用。   2 HEADERS_RECEIVED send() 方法已经被调用，并且头部和状态已经可获得。   3 LOADING 下载中； responseText 属性已经包含部分数据。   4 DONE 下载操作已完成。     因此，xhr.</description>
+    </item>
+    
+    <item>
+      <title>Vue路由地址改变，页面却不刷新？</title>
+      <link>https://www.fintinger.site/p/vue%E8%B7%AF%E7%94%B1%E5%9C%B0%E5%9D%80%E6%94%B9%E5%8F%98%E9%A1%B5%E9%9D%A2%E5%8D%B4%E4%B8%8D%E5%88%B7%E6%96%B0/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/vue%E8%B7%AF%E7%94%B1%E5%9C%B0%E5%9D%80%E6%94%B9%E5%8F%98%E9%A1%B5%E9%9D%A2%E5%8D%B4%E4%B8%8D%E5%88%B7%E6%96%B0/</guid>
+      <description>在网易云项目时，在歌手详情页点击相似的歌手跳转到query参数不同的另一个歌手详情页时，出现地址栏query参数变化，而页面却没有实时更新的现象，经过搜索找到以下解决方案：
+ 方案一：watch监听路由 watch: { // 方法1 //监听路由是否变化  &amp;#39;$route&amp;#39; (to, from) { if(to.query.id !== from.query.id){ this.id = to.query.id; this.init();//重新加载数据  } } } //方法 2 设置路径变化时的处理函数 watch: { &amp;#39;$route&amp;#39;: { handler: &amp;#39;init&amp;#39;, immediate: true } } 方案二：给router-view添加一个不同的key 给router-view添加一个不同的key，这样即使是公用组件，只要url变化了，就一定会重新创建这个组件。
+&amp;lt;router-view :key=&amp;#34;$route.fullpath&amp;#34;&amp;gt;&amp;lt;/router-view&amp;gt;	小洁🙎🏼‍♀️ 抽象问题描述：同一path的页面跳转时路由参数变化，但是组件没有对应的更新。
+实际原因：主要是因为获取参数写在了created或者mounted路由钩子函数中，路由参数变化的时候，这个生命周期不会重新执行。</description>
+    </item>
+    
+    <item>
+      <title>Vue在页面直接展示模板语法{{xx}}</title>
+      <link>https://www.fintinger.site/p/vue%E5%9C%A8%E9%A1%B5%E9%9D%A2%E7%9B%B4%E6%8E%A5%E5%B1%95%E7%A4%BA%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95xx/</link>
+      <pubDate>Thu, 07 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/vue%E5%9C%A8%E9%A1%B5%E9%9D%A2%E7%9B%B4%E6%8E%A5%E5%B1%95%E7%A4%BA%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95xx/</guid>
+      <description>用vue.js写成的页面中，可能出现由于外部请求导致的页面展示阻塞现象，进而导致模板语法{{xxx}}直接展示在页面上，这其实跟页面加载的流程有关，整个页面加载的流程是：
+解析html结构 -&amp;gt; 加载外部脚本和样式表文件 -&amp;gt; 解析并执行脚本代码 -&amp;gt; 构造HTML DOM模型 -&amp;gt; 加载图片等外部文件 -&amp;gt; 页面加载完毕
+所以，当HTML加载的时候，就会把{{}} 当成文本加载出来，只有当vue初始化完成后，才会把{{}}解析成vue的语法。
+遇到这种情况有以下几种解决方案：
+  方案一(不推荐)：在head里面加入引入vue的script标签
+如果把引入vue的script放到head里面，那页面就不会出现{{}}，因为在body之前，vue就已经引入进并且加载完成了。
+  方案二：v-text|v-html
+使用v-text插入文字，使用v-html插入HTML结构，替换原本使用的模板语法{{xxx}}
+  方案三：template
+使用&amp;lt;template&amp;gt;标签包裹要渲染的HTML结构，那么只有vue解析时才会展示出该结构
+  方案四：v-cloak指令 + CSS样式
+标签上的v-cloak属性在被vue解析到时会自动去掉，那么我们可以利用CSS的属性选择器，给有v-cloak属性的元素设置display:none样式，那么，在加载HTML时自然不会显示{{xxx}}，而在vue解析时又会显示出来，问题得以解决！
+  </description>
     </item>
     
     <item>
@@ -172,9 +184,9 @@ imagettftext (img_res , size , angle , x , y , color , fontfile ,text ) 图像�
       <pubDate>Tue, 29 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.fintinger.site/p/git%E7%9B%B8%E5%85%B3/</guid>
-      <description>基本命令 git config --global =&amp;gt;全局配置 git config =&amp;gt;当前仓库配置 mkdir =&amp;gt;创建文件夹 ls =&amp;gt;列出当前目录下(文件，文件夹) ls -a =&amp;gt;所有all rm -rf * =&amp;gt;删除当前目录下所有 touch =&amp;gt;新建文件 cat =&amp;gt;查看文件中的内容  不想`git add . 所有？
+      <description>基本命令 git config --global #全局配置 git config #当前仓库配置 mkdir #创建文件夹 ls #列出当前目录下(文件，文件夹) ls -a #所有all rm -rf * #删除当前目录下所有 touch #新建文件 cat #查看文件中的内容  不想`git add . 所有？
  配置.gitignore 定义忽略提交的文件，其中
- 所有空行或者以注释符号 ＃ 开头的行都会被 Git 忽略。 匹配模式最后跟反斜杠（/）说明要忽略的是目录。 可以使用标准的 glob 模式(php)匹配。  从版本库删除 git rm ... =&amp;gt;从版本库中删除，本地也会删除 git rm --cached ... =&amp;gt;只从版本库删除 从版本库改名 git mv ... ... =&amp;gt;改名 log git log -p =&amp;gt;显示文件变动信息 git log -1 =&amp;gt;最近一次提交 git log --oneline 修改最新一次提交commit描述 git commit --amend =&amp;gt;最近一次提交的描述  也可以把最新的git add .</description>
+ 所有空行或者以注释符号 ＃ 开头的行都会被 Git 忽略。 匹配模式最后跟反斜杠（/）说明要忽略的是目录。 可以使用标准的 glob 模式(php)匹配。  从版本库删除 git rm ... #从版本库中删除，本地也会删除 git rm --cached ... #只从版本库删除  从版本库改名 git mv ... ... #改名 log git log -p #显示文件变动信息 git log -1 #最近一次提交 git log --oneline 修改最新一次提交commit描述 git commit --amend -m &amp;#34;xxx&amp;#34; #最近一次提交的描述  也可以把最新的git add .</description>
     </item>
     
     <item>

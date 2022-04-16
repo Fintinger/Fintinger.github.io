@@ -148,6 +148,45 @@
 <article class="post-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
+    <h2>Vue2.0学习小结
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>关于Vue和VueComponent   一个重要的内置关系:VueComponent.prototype.proto===vue.prototype
+
+  为什么要有这个关系？
+让组件实例对象(vc)可以访间到Vue原型上的属性、方法.
+  ref属性 1.被用来给元素或子组件注册引用信息(id的替代者)
+2.应用在htm1标签上获取的是真实DOM元素,应用在组件标签上是组件实例对象(vc)
+3.使用方式: 打标识: &lt;h1 ref=&#34;xxx&#34;&gt;.....&lt;/h1&gt;或&lt;School ref=&#34;xxx&#34;&gt;&lt;/School&gt; 获取:this.$refs.xxx
+配置项props 功能: 让组件接收外部传过来的数据
+(1).传递数据:
+&lt;Demo name=&#34;xxx&#34;/&gt;
+(2).接收数据:
+第一种方式(只接收):
+props:[&#39;name&#39;]
+第二种方式(限制类型):
+props:{ name:String }
+第三种方式(限制类型、限制必要性、指定默认值):
+props:{ name:{ type:String,//类型限制  required:true,//必要性  default:&#34;JQF&#34;//默认值  } } 备注: props是只读的,Vue底层会监测你对props的修改,如果进行了修改,就会发出警告, 若业务需求确实需要修改,那么请复制props的内容到data中一份,然后去修改data中的数据.
+mixin(混入) 功能: 可以把多个组件共用的配置提取成一个混入对象
+使用方式:
+第一步：定义混合
+const mixData={ data(){...} }, const mixMethods= { methods:{...} } 第二步：使用混入
+(1).全局混入:Vue.mixin(xxx)
+(2).局部混入:mixins:[xxx&#39;]
+插件 功能:用于增强vue
+本质:包含install方法的一个对象,install的第一个参数是vue,第二个以后的参数是插件使用者传递的数据。
+定义插件:
+对象.install = function (Vue, options) { //1....</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-04-02 00:00:00 +0000 UTC'>Apr 2, 2022</span>&nbsp;·&nbsp;6 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to Vue2.0学习小结" href="https://www.fintinger.site/p/vue2.0%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/"></a>
+</article>
+
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
     <h2>ES6之Promise用法小结
     </h2>
   </header>
@@ -177,6 +216,22 @@ new Promise((resolve, reject) =&gt; { resolve(&#39;success&#39;) //reject(&#39;r
   </section>
   <footer class="entry-footer"><span title='2020-08-10 00:00:00 +0000 UTC'>Aug 10, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to Ajax学习小结" href="https://www.fintinger.site/p/ajax%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/"></a>
+</article>
+
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>Vue路由地址改变，页面却不刷新？
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>在网易云项目时，在歌手详情页点击相似的歌手跳转到query参数不同的另一个歌手详情页时，出现地址栏query参数变化，而页面却没有实时更新的现象，经过搜索找到以下解决方案：
+ 方案一：watch监听路由 watch: { // 方法1 //监听路由是否变化  &#39;$route&#39; (to, from) { if(to.query.id !== from.query.id){ this.id = to.query.id; this.init();//重新加载数据  } } } //方法 2 设置路径变化时的处理函数 watch: { &#39;$route&#39;: { handler: &#39;init&#39;, immediate: true } } 方案二：给router-view添加一个不同的key 给router-view添加一个不同的key，这样即使是公用组件，只要url变化了，就一定会重新创建这个组件。
+&lt;router-view :key=&#34;$route.fullpath&#34;&gt;&lt;/router-view&gt;	小洁🙎🏼‍♀️ 抽象问题描述：同一path的页面跳转时路由参数变化，但是组件没有对应的更新。
+实际原因：主要是因为获取参数写在了created或者mounted路由钩子函数中，路由参数变化的时候，这个生命周期不会重新执行。</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-04-16 00:00:00 +0000 UTC'>Apr 16, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to Vue路由地址改变，页面却不刷新？" href="https://www.fintinger.site/p/vue%E8%B7%AF%E7%94%B1%E5%9C%B0%E5%9D%80%E6%94%B9%E5%8F%98%E9%A1%B5%E9%9D%A2%E5%8D%B4%E4%B8%8D%E5%88%B7%E6%96%B0/"></a>
 </article>
 
 <article class="post-entry animate__animated animate__bounce animate__fadeIn">
@@ -244,58 +299,6 @@ new Promise((resolve, reject) =&gt; { resolve(&#39;success&#39;) //reject(&#39;r
   <footer class="entry-footer"><span title='2022-04-07 00:00:00 +0000 UTC'>Apr 7, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to Vue在页面直接展示模板语法{{xx}}" href="https://www.fintinger.site/p/vue%E5%9C%A8%E9%A1%B5%E9%9D%A2%E7%9B%B4%E6%8E%A5%E5%B1%95%E7%A4%BA%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95xx/"></a>
 </article>
-
-<article class="post-entry animate__animated animate__bounce animate__fadeIn">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>测试shortcodes
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>Bilibli tecent  video Your browser doesn&#39;t support HTML5 video. Here is alink to the video instead.</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-04-04 00:00:00 +0000 UTC'>Apr 4, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 测试shortcodes" href="https://www.fintinger.site/p/%E6%B5%8B%E8%AF%95shortcodes/"></a>
-</article>
-
-<article class="post-entry animate__animated animate__bounce animate__fadeIn">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>Vue2.0学习小结
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>关于Vue和VueComponent   一个重要的内置关系:VueComponent.prototype.proto===vue.prototype
-
-  为什么要有这个关系？
-让组件实例对象(vc)可以访间到Vue原型上的属性、方法.
-  ref属性 1.被用来给元素或子组件注册引用信息(id的替代者)
-2.应用在htm1标签上获取的是真实DOM元素,应用在组件标签上是组件实例对象(vc)
-3.使用方式: 打标识: &lt;h1 ref=&#34;xxx&#34;&gt;.....&lt;/h1&gt;或&lt;School ref=&#34;xxx&#34;&gt;&lt;/School&gt; 获取:this.$refs.xxx
-配置项props 功能: 让组件接收外部传过来的数据
-(1).传递数据:
-&lt;Demo name=&#34;xxx&#34;/&gt;
-(2).接收数据:
-第一种方式(只接收):
-props:[&#39;name&#39;]
-第二种方式(限制类型):
-props:{ name:String }
-第三种方式(限制类型、限制必要性、指定默认值):
-props:{ name:{ type:String,//类型限制  required:true,//必要性  default:&#34;JQF&#34;//默认值  } } 备注: props是只读的,Vue底层会监测你对props的修改,如果进行了修改,就会发出警告, 若业务需求确实需要修改,那么请复制props的内容到data中一份,然后去修改data中的数据.
-mixin(混入) 功能: 可以把多个组件共用的配置提取成一个混入对象
-使用方式:
-第一步：定义混合
-const mixData={ data(){...} }, const mixMethods= { methods:{...} } 第二步：使用混入
-(1).全局混入:Vue.mixin(xxx)
-(2).局部混入:mixins:[xxx&#39;]
-插件 功能:用于增强vue
-本质:包含install方法的一个对象,install的第一个参数是vue,第二个以后的参数是插件使用者传递的数据。
-定义插件:
-对象.install = function (Vue, options) { //1....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-04-02 00:00:00 +0000 UTC'>Apr 2, 2022</span>&nbsp;·&nbsp;6 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to Vue2.0学习小结" href="https://www.fintinger.site/p/vue2.0%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="next" href="https://www.fintinger.site/posts/page/2/"> »</a>
@@ -316,7 +319,7 @@ const mixData={ data(){...} }, const mixMethods= { methods:{...} } 第二步：�
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.a3aaaf62a93652db784b55fca43641ff71c19211a1e0859278db470c67f9e510.min.js"></script>
+<script src="/assets/js/extended/extend.75f342bc79e6d84a52627a780ba5858e1f6b0b9dce7c72e117021bf8d2034c16.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')

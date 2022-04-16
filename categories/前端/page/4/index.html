@@ -133,6 +133,25 @@
 <article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
+    <h2>JavaScript基础之Symbol类型
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>Symbol() 类型不能当做普通对象(不能加属性值)，只能当做一种永远都不会重复的字符串
+ 定义 方法： Symbol(desc)、Symbol.for(desc)
+let s1 = Symbol(&#39;d&#39;) let s2 = Symbol.for(&#39;d&#39;) let s3 = Symbol.for(&#39;d&#39;) console.log(s1.description);//d console.log(Symbol.keyFor(s2));//d console.log(s1 === s3);//false console.log(s2 === s3);//true 注意： 利用Symbol() 定义的值永远都不会相等，而Symbol.for() 定义的，如果描述相同，则值相等
+定义对象时，key相同会覆盖的问题 普通方式定义：
+let user1={ name:&#39;李四&#39; } let user2={ name:&#39;李四&#39; } let grade={ [user1.name]:{C:98,E:60}, [user2.name]:{C:99,E:59} } console.log(grade);//{&#39;李四&#39;:{C:99,E:59}} 可以看到，后面的覆盖掉了前面的
+利用Symbol() 定义
+let user1={ name:&#39;李四&#39;, key:Symbol() } let user2={ name:&#39;李四&#39;, key:Symbol() } let grade={ [user1.key]:{C:98,E:60}, [user2.key]:{C:99,E:59} } console.log(grade)//{[Symbol(user1)]: { C: 98, E: 60 },[Symbol(user2)]: { C: 99, E: 59 }} console....</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-08-24 00:00:00 +0000 UTC'>Aug 24, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to JavaScript基础之Symbol类型" href="https://www.fintinger.site/p/javascript%E5%9F%BA%E7%A1%80%E4%B9%8Bsymbol%E7%B1%BB%E5%9E%8B/"></a>
+</article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
     <h2>JavaScript基础之数组深倔
     </h2>
   </header>
@@ -220,24 +239,6 @@ let sex = prompt(&#39;您的性别?...</p>
   <footer class="entry-footer"><span title='2020-08-13 00:00:00 +0000 UTC'>Aug 13, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to Ajax重复请求" href="https://www.fintinger.site/p/ajax%E9%87%8D%E5%A4%8D%E8%AF%B7%E6%B1%82/"></a>
 </article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
-    <h2>跨域及CORS官方跨域
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>JSONP  jsonp跨域的实现仅限于GET请求，不可用于POST
- 说明：实现的基本思路是利用html中script标签本身可跨域的特性，在发送请求时，在页面中创建script标签，追加到页面中。这实际上就像利用script标签引入外部资源
-/*main.js*/ //申明handle函数 function handle(data) { //do something.... } ele.onclick = function () { //1.创建script标签  const script = document.createElement(&#34;script&#34;) //2.修改script的src属性  script.src = &#34;http://127.0.0.1:8000/jsonP&#34; script.id=&#34;tempScript&#34;//添加id方便移除  //3.追加到页面中  document.body.appendChild(script) } /*server.js*/ app.get(&#39;/jsonP&#39;, (request, response) =&gt; { const data = { exist:1, msg:&#34;用户名已经存在!&#34; } let str = JSON.stringify(data) response.send(` handle(${str}); document.body.removeChild(document.querySelector(&#34;#tempScript&#34;)) `) }) 注意：response.send()/response.end()中利用ES6语法规范中的模板字符串直接返回一段js代码，script标签会自动解析并作用到页面上
-
-CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置CORS响应头实现跨域，这种跨域GET或POST请求均有效
-//服务端设置响应头 app.all(&#39;/data&#39;, (request, response) =&gt; { response.setHeader(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;)//允许来自所有域的请求  response....</p>
-  </section>
-  <footer class="entry-footer"><span title='2020-08-11 00:00:00 +0000 UTC'>Aug 11, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to 跨域及CORS官方跨域" href="https://www.fintinger.site/p/%E8%B7%A8%E5%9F%9F%E5%8F%8Acors%E5%AE%98%E6%96%B9%E8%B7%A8%E5%9F%9F/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://www.fintinger.site/categories/%E5%89%8D%E7%AB%AF/page/3/">« </a>
@@ -259,7 +260,7 @@ CORS 如果要实现跨域，官方的解决方案是**CORS**，即通过设置C
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.a3aaaf62a93652db784b55fca43641ff71c19211a1e0859278db470c67f9e510.min.js"></script>
+<script src="/assets/js/extended/extend.75f342bc79e6d84a52627a780ba5858e1f6b0b9dce7c72e117021bf8d2034c16.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')

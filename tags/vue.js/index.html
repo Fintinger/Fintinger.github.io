@@ -133,31 +133,6 @@
 <article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
-    <h2>Vue在页面直接展示模板语法{{xx}}
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>用vue.js写成的页面中，可能出现由于外部请求导致的页面展示阻塞现象，进而导致模板语法{{xxx}}直接展示在页面上，这其实跟页面加载的流程有关，整个页面加载的流程是：
-解析html结构 -&gt; 加载外部脚本和样式表文件 -&gt; 解析并执行脚本代码 -&gt; 构造HTML DOM模型 -&gt; 加载图片等外部文件 -&gt; 页面加载完毕
-所以，当HTML加载的时候，就会把{{}} 当成文本加载出来，只有当vue初始化完成后，才会把{{}}解析成vue的语法。
-遇到这种情况有以下几种解决方案：
-  方案一(不推荐)：在head里面加入引入vue的script标签
-如果把引入vue的script放到head里面，那页面就不会出现{{}}，因为在body之前，vue就已经引入进并且加载完成了。
-  方案二：v-text|v-html
-使用v-text插入文字，使用v-html插入HTML结构，替换原本使用的模板语法{{xxx}}
-  方案三：template
-使用&lt;template&gt;标签包裹要渲染的HTML结构，那么只有vue解析时才会展示出该结构
-  方案四：v-cloak指令 &#43; CSS样式
-标签上的v-cloak属性在被vue解析到时会自动去掉，那么我们可以利用CSS的属性选择器，给有v-cloak属性的元素设置display:none样式，那么，在加载HTML时自然不会显示{{xxx}}，而在vue解析时又会显示出来，问题得以解决！
-  </p>
-  </section>
-  <footer class="entry-footer"><span title='2022-04-07 00:00:00 +0000 UTC'>Apr 7, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
-  <a class="entry-link" aria-label="post link to Vue在页面直接展示模板语法{{xx}}" href="https://www.fintinger.site/p/vue%E5%9C%A8%E9%A1%B5%E9%9D%A2%E7%9B%B4%E6%8E%A5%E5%B1%95%E7%A4%BA%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95xx/"></a>
-</article>
-
-<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
-  <i class="fab" style="display: none"></i> 
-  <header class="entry-header">
     <h2>Vue2.0学习小结
     </h2>
   </header>
@@ -192,6 +167,47 @@ const mixData={ data(){...} }, const mixMethods= { methods:{...} } 第二步：�
   </section>
   <footer class="entry-footer"><span title='2022-04-02 00:00:00 +0000 UTC'>Apr 2, 2022</span>&nbsp;·&nbsp;6 min&nbsp;·&nbsp;Archai</footer>
   <a class="entry-link" aria-label="post link to Vue2.0学习小结" href="https://www.fintinger.site/p/vue2.0%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/"></a>
+</article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>Vue路由地址改变，页面却不刷新？
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>在网易云项目时，在歌手详情页点击相似的歌手跳转到query参数不同的另一个歌手详情页时，出现地址栏query参数变化，而页面却没有实时更新的现象，经过搜索找到以下解决方案：
+ 方案一：watch监听路由 watch: { // 方法1 //监听路由是否变化  &#39;$route&#39; (to, from) { if(to.query.id !== from.query.id){ this.id = to.query.id; this.init();//重新加载数据  } } } //方法 2 设置路径变化时的处理函数 watch: { &#39;$route&#39;: { handler: &#39;init&#39;, immediate: true } } 方案二：给router-view添加一个不同的key 给router-view添加一个不同的key，这样即使是公用组件，只要url变化了，就一定会重新创建这个组件。
+&lt;router-view :key=&#34;$route.fullpath&#34;&gt;&lt;/router-view&gt;	小洁🙎🏼‍♀️ 抽象问题描述：同一path的页面跳转时路由参数变化，但是组件没有对应的更新。
+实际原因：主要是因为获取参数写在了created或者mounted路由钩子函数中，路由参数变化的时候，这个生命周期不会重新执行。</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-04-16 00:00:00 +0000 UTC'>Apr 16, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to Vue路由地址改变，页面却不刷新？" href="https://www.fintinger.site/p/vue%E8%B7%AF%E7%94%B1%E5%9C%B0%E5%9D%80%E6%94%B9%E5%8F%98%E9%A1%B5%E9%9D%A2%E5%8D%B4%E4%B8%8D%E5%88%B7%E6%96%B0/"></a>
+</article>
+
+<article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
+    <h2>Vue在页面直接展示模板语法{{xx}}
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>用vue.js写成的页面中，可能出现由于外部请求导致的页面展示阻塞现象，进而导致模板语法{{xxx}}直接展示在页面上，这其实跟页面加载的流程有关，整个页面加载的流程是：
+解析html结构 -&gt; 加载外部脚本和样式表文件 -&gt; 解析并执行脚本代码 -&gt; 构造HTML DOM模型 -&gt; 加载图片等外部文件 -&gt; 页面加载完毕
+所以，当HTML加载的时候，就会把{{}} 当成文本加载出来，只有当vue初始化完成后，才会把{{}}解析成vue的语法。
+遇到这种情况有以下几种解决方案：
+  方案一(不推荐)：在head里面加入引入vue的script标签
+如果把引入vue的script放到head里面，那页面就不会出现{{}}，因为在body之前，vue就已经引入进并且加载完成了。
+  方案二：v-text|v-html
+使用v-text插入文字，使用v-html插入HTML结构，替换原本使用的模板语法{{xxx}}
+  方案三：template
+使用&lt;template&gt;标签包裹要渲染的HTML结构，那么只有vue解析时才会展示出该结构
+  方案四：v-cloak指令 &#43; CSS样式
+标签上的v-cloak属性在被vue解析到时会自动去掉，那么我们可以利用CSS的属性选择器，给有v-cloak属性的元素设置display:none样式，那么，在加载HTML时自然不会显示{{xxx}}，而在vue解析时又会显示出来，问题得以解决！
+  </p>
+  </section>
+  <footer class="entry-footer"><span title='2022-04-07 00:00:00 +0000 UTC'>Apr 7, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to Vue在页面直接展示模板语法{{xx}}" href="https://www.fintinger.site/p/vue%E5%9C%A8%E9%A1%B5%E9%9D%A2%E7%9B%B4%E6%8E%A5%E5%B1%95%E7%A4%BA%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95xx/"></a>
 </article>
 
 <article class="post-entry tag-entry animate__animated animate__bounce animate__fadeIn">
@@ -255,7 +271,7 @@ v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.a3aaaf62a93652db784b55fca43641ff71c19211a1e0859278db470c67f9e510.min.js"></script>
+<script src="/assets/js/extended/extend.75f342bc79e6d84a52627a780ba5858e1f6b0b9dce7c72e117021bf8d2034c16.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')

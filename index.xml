@@ -5,7 +5,42 @@
     <link>https://www.fintinger.site/</link>
     <description>Recent content on Archai&#39;s home</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 09 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.fintinger.site/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vue2.0学习小结</title>
+      <link>https://www.fintinger.site/p/vue2.0%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/vue2.0%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/</guid>
+      <description>关于Vue和VueComponent   一个重要的内置关系:VueComponent.prototype.proto===vue.prototype
+
+  为什么要有这个关系？
+让组件实例对象(vc)可以访间到Vue原型上的属性、方法.
+  ref属性 1.被用来给元素或子组件注册引用信息(id的替代者)
+2.应用在htm1标签上获取的是真实DOM元素,应用在组件标签上是组件实例对象(vc)
+3.使用方式: 打标识: &amp;lt;h1 ref=&amp;quot;xxx&amp;quot;&amp;gt;.....&amp;lt;/h1&amp;gt;或&amp;lt;School ref=&amp;quot;xxx&amp;quot;&amp;gt;&amp;lt;/School&amp;gt; 获取:this.$refs.xxx
+配置项props 功能: 让组件接收外部传过来的数据
+(1).传递数据:
+&amp;lt;Demo name=&amp;quot;xxx&amp;quot;/&amp;gt;
+(2).接收数据:
+第一种方式(只接收):
+props:[&#39;name&#39;]
+第二种方式(限制类型):
+props:{ name:String }
+第三种方式(限制类型、限制必要性、指定默认值):
+props:{ name:{ type:String,//类型限制  required:true,//必要性  default:&amp;#34;JQF&amp;#34;//默认值  } } 备注: props是只读的,Vue底层会监测你对props的修改,如果进行了修改,就会发出警告, 若业务需求确实需要修改,那么请复制props的内容到data中一份,然后去修改data中的数据.
+mixin(混入) 功能: 可以把多个组件共用的配置提取成一个混入对象
+使用方式:
+第一步：定义混合
+const mixData={ data(){...} }, const mixMethods= { methods:{...} } 第二步：使用混入
+(1).全局混入:Vue.mixin(xxx)
+(2).局部混入:mixins:[xxx&#39;]
+插件 功能:用于增强vue
+本质:包含install方法的一个对象,install的第一个参数是vue,第二个以后的参数是插件使用者传递的数据。
+定义插件:
+对象.install = function (Vue, options) { //1.</description>
+    </item>
+    
     <item>
       <title>ES6之Promise用法小结</title>
       <link>https://www.fintinger.site/p/es6%E4%B9%8Bpromise%E7%94%A8%E6%B3%95%E5%B0%8F%E7%BB%93/</link>
@@ -30,6 +65,18 @@ new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //r
       <description>学习地址:https://www.bilibili.com/video/BV1WC4y1b78y，主要通过express的简单功能来搭建本地的服务，进而更好地学习Ajax
  发送Ajax请求的方式 原生Ajax //1.创建对象 const xhr = new XMLHttpRequest() //2.初始化 xhr.open([type], [url])//xhr.open(&amp;#34;GET&amp;#34;,&amp;#34;https://www.x.com&amp;#34;) //3.发送 xhr.send() //4.处理返回结果 xhr.onreadystatechange = function () { if (xhr.readyState === 4) { if (xhr.status &amp;gt;= 200 &amp;amp;&amp;amp; xhr.status &amp;lt; 300) { //...do something  console.log(xhr.status)//状态码  console.log(xhr.statusText)//状态字符串  console.log(xhr.getAllResponseHeaders)//所有请求头信息  console.log(xhr.response)//响应体  } } } 说明：
  readyState: 返回一个 XMLHttpRequest 代理当前所处的状态     值 状态 描述     0 UNSENT 代理被创建，但尚未调用 open() 方法。   1 OPENED open() 方法已经被调用。   2 HEADERS_RECEIVED send() 方法已经被调用，并且头部和状态已经可获得。   3 LOADING 下载中； responseText 属性已经包含部分数据。   4 DONE 下载操作已完成。     因此，xhr.</description>
+    </item>
+    
+    <item>
+      <title>Vue路由地址改变，页面却不刷新？</title>
+      <link>https://www.fintinger.site/p/vue%E8%B7%AF%E7%94%B1%E5%9C%B0%E5%9D%80%E6%94%B9%E5%8F%98%E9%A1%B5%E9%9D%A2%E5%8D%B4%E4%B8%8D%E5%88%B7%E6%96%B0/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.fintinger.site/p/vue%E8%B7%AF%E7%94%B1%E5%9C%B0%E5%9D%80%E6%94%B9%E5%8F%98%E9%A1%B5%E9%9D%A2%E5%8D%B4%E4%B8%8D%E5%88%B7%E6%96%B0/</guid>
+      <description>在网易云项目时，在歌手详情页点击相似的歌手跳转到query参数不同的另一个歌手详情页时，出现地址栏query参数变化，而页面却没有实时更新的现象，经过搜索找到以下解决方案：
+ 方案一：watch监听路由 watch: { // 方法1 //监听路由是否变化  &amp;#39;$route&amp;#39; (to, from) { if(to.query.id !== from.query.id){ this.id = to.query.id; this.init();//重新加载数据  } } } //方法 2 设置路径变化时的处理函数 watch: { &amp;#39;$route&amp;#39;: { handler: &amp;#39;init&amp;#39;, immediate: true } } 方案二：给router-view添加一个不同的key 给router-view添加一个不同的key，这样即使是公用组件，只要url变化了，就一定会重新创建这个组件。
+&amp;lt;router-view :key=&amp;#34;$route.fullpath&amp;#34;&amp;gt;&amp;lt;/router-view&amp;gt;	小洁🙎🏼‍♀️ 抽象问题描述：同一path的页面跳转时路由参数变化，但是组件没有对应的更新。
+实际原因：主要是因为获取参数写在了created或者mounted路由钩子函数中，路由参数变化的时候，这个生命周期不会重新执行。</description>
     </item>
     
     <item>
@@ -97,41 +144,6 @@ new Promise((resolve, reject) =&amp;gt; { resolve(&amp;#39;success&amp;#39;) //r
       
       <guid>https://www.fintinger.site/p/%E6%B5%8B%E8%AF%95shortcodes/</guid>
       <description>Bilibli tecent  video Your browser doesn&#39;t support HTML5 video. Here is alink to the video instead.</description>
-    </item>
-    
-    <item>
-      <title>Vue2.0学习小结</title>
-      <link>https://www.fintinger.site/p/vue2.0%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/</link>
-      <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.fintinger.site/p/vue2.0%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/</guid>
-      <description>关于Vue和VueComponent   一个重要的内置关系:VueComponent.prototype.proto===vue.prototype
-
-  为什么要有这个关系？
-让组件实例对象(vc)可以访间到Vue原型上的属性、方法.
-  ref属性 1.被用来给元素或子组件注册引用信息(id的替代者)
-2.应用在htm1标签上获取的是真实DOM元素,应用在组件标签上是组件实例对象(vc)
-3.使用方式: 打标识: &amp;lt;h1 ref=&amp;quot;xxx&amp;quot;&amp;gt;.....&amp;lt;/h1&amp;gt;或&amp;lt;School ref=&amp;quot;xxx&amp;quot;&amp;gt;&amp;lt;/School&amp;gt; 获取:this.$refs.xxx
-配置项props 功能: 让组件接收外部传过来的数据
-(1).传递数据:
-&amp;lt;Demo name=&amp;quot;xxx&amp;quot;/&amp;gt;
-(2).接收数据:
-第一种方式(只接收):
-props:[&#39;name&#39;]
-第二种方式(限制类型):
-props:{ name:String }
-第三种方式(限制类型、限制必要性、指定默认值):
-props:{ name:{ type:String,//类型限制  required:true,//必要性  default:&amp;#34;JQF&amp;#34;//默认值  } } 备注: props是只读的,Vue底层会监测你对props的修改,如果进行了修改,就会发出警告, 若业务需求确实需要修改,那么请复制props的内容到data中一份,然后去修改data中的数据.
-mixin(混入) 功能: 可以把多个组件共用的配置提取成一个混入对象
-使用方式:
-第一步：定义混合
-const mixData={ data(){...} }, const mixMethods= { methods:{...} } 第二步：使用混入
-(1).全局混入:Vue.mixin(xxx)
-(2).局部混入:mixins:[xxx&#39;]
-插件 功能:用于增强vue
-本质:包含install方法的一个对象,install的第一个参数是vue,第二个以后的参数是插件使用者传递的数据。
-定义插件:
-对象.install = function (Vue, options) { //1.</description>
     </item>
     
     <item>
@@ -751,9 +763,9 @@ imagettftext (img_res , size , angle , x , y , color , fontfile ,text ) 图像�
       <pubDate>Tue, 29 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.fintinger.site/p/git%E7%9B%B8%E5%85%B3/</guid>
-      <description>基本命令 git config --global =&amp;gt;全局配置 git config =&amp;gt;当前仓库配置 mkdir =&amp;gt;创建文件夹 ls =&amp;gt;列出当前目录下(文件，文件夹) ls -a =&amp;gt;所有all rm -rf * =&amp;gt;删除当前目录下所有 touch =&amp;gt;新建文件 cat =&amp;gt;查看文件中的内容  不想`git add . 所有？
+      <description>基本命令 git config --global #全局配置 git config #当前仓库配置 mkdir #创建文件夹 ls #列出当前目录下(文件，文件夹) ls -a #所有all rm -rf * #删除当前目录下所有 touch #新建文件 cat #查看文件中的内容  不想`git add . 所有？
  配置.gitignore 定义忽略提交的文件，其中
- 所有空行或者以注释符号 ＃ 开头的行都会被 Git 忽略。 匹配模式最后跟反斜杠（/）说明要忽略的是目录。 可以使用标准的 glob 模式(php)匹配。  从版本库删除 git rm ... =&amp;gt;从版本库中删除，本地也会删除 git rm --cached ... =&amp;gt;只从版本库删除 从版本库改名 git mv ... ... =&amp;gt;改名 log git log -p =&amp;gt;显示文件变动信息 git log -1 =&amp;gt;最近一次提交 git log --oneline 修改最新一次提交commit描述 git commit --amend =&amp;gt;最近一次提交的描述  也可以把最新的git add .</description>
+ 所有空行或者以注释符号 ＃ 开头的行都会被 Git 忽略。 匹配模式最后跟反斜杠（/）说明要忽略的是目录。 可以使用标准的 glob 模式(php)匹配。  从版本库删除 git rm ... #从版本库中删除，本地也会删除 git rm --cached ... #只从版本库删除  从版本库改名 git mv ... ... #改名 log git log -p #显示文件变动信息 git log -1 #最近一次提交 git log --oneline 修改最新一次提交commit描述 git commit --amend -m &amp;#34;xxx&amp;#34; #最近一次提交的描述  也可以把最新的git add .</description>
     </item>
     
     <item>

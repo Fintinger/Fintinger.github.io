@@ -148,6 +148,19 @@
 <article class="post-entry animate__animated animate__bounce animate__fadeIn">
   <i class="fab" style="display: none"></i> 
   <header class="entry-header">
+    <h2>Javascript一些操作
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>1.通过id获取元素 function $(id) { return typeof id === &#39;string&#39; ? document.getElementById(id): null; } 2.日期格式化 function formatDate(cDate) { //1.判断  if (!cDate instanceof Date){ return; } //2.转化  var year=cDate.getFullYear(); var month=cDate.getMonth(); var date=cDate.getDate(); var hour=cDate.getHours(); var minute=cDate.getMinutes(); var second=cDate.getSeconds(); //2.1 补0  month=month&lt;10? &#39;0&#39;&#43;month:month; date=date&lt;10? &#39;0&#39;&#43;date: date; minute=minute&lt;10? &#39;0&#39;&#43;minute:minute; second=second&lt;10? &#39;0&#39;&#43;second:second; return year &#43; &#39;-&#39; &#43; month &#43; &#39;-&#39; &#43; date &#43; &#39; &#39; &#43;hour&#43;&#39;:&#39;&#43;minute&#43;&#34;:&#34;&#43;second; } console.log(formatDate(new Date())); 3.匀速运动封装 /** * 设置一个盒子右边距匀速变化 * @param{string} btnId * @param{string} boxId * @param{number} step * @param{number}target */ function linearAnimation(btnId, boxId, step, target) { // 1....</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-04-02 00:00:00 +0000 UTC'>Apr 2, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Archai</footer>
+  <a class="entry-link" aria-label="post link to Javascript一些操作" href="https://www.fintinger.site/p/javascript%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/"></a>
+</article>
+
+<article class="post-entry animate__animated animate__bounce animate__fadeIn">
+  <i class="fab" style="display: none"></i> 
+  <header class="entry-header">
     <h2>常用的一些html代码
     </h2>
   </header>
@@ -228,7 +241,7 @@ border:10px solid hsla(0,0,100%,.5); background:white; background-clip:padding-b
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<script src="/assets/js/extended/extend.a3aaaf62a93652db784b55fca43641ff71c19211a1e0859278db470c67f9e510.min.js"></script>
+<script src="/assets/js/extended/extend.75f342bc79e6d84a52627a780ba5858e1f6b0b9dce7c72e117021bf8d2034c16.min.js"></script>
 
 <script>
     let menu = document.getElementById('menu')
