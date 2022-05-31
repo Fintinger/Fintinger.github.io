@@ -1,4 +1,4 @@
-GO https://www.fintinger.site
+GO [https://www.fintinger.site](https://blog.archai.site/)
 
 ## 关于commit
 
